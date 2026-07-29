@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내가 쉐프라면 어떤 셰프일까?</title>
+<meta name="description" content="주방에 선 나, 12문항이면 알 수 있어요.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="내가 쉐프라면 어떤 셰프일까?">
+<meta property="og:description" content="주방에 선 나, 12문항이면 알 수 있어요.">
+<meta property="og:image" content="if-i-were-a-chef-thumb.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<!-- 애드센스: 발급 후 주석 풀고 XXXX를 본인 코드로 교체
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<style>
+:root{--bg:#F3E9DC;--paper:#FFF9F0;--ink:#2E2318;--sub:#8A7A65;--line:#C9401E;--acc:#C9401E;--soft:rgba(201,64,30,0.12);--deep:rgba(201,64,30,0.24);--accFg:#fff;--softFg:#2E2318;--deepFg:#2E2318;--chip:rgba(46,35,24,0.07);--chips:rgba(46,35,24,0.1);--r:4px;--bw:3px;--shadow:4px 4px 0 #C9401E;--fh:'Black Han Sans','Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;--fb:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+*{box-sizing:border-box;}
+html{background:#F3E9DC;}
+body{margin:0;min-height:100vh;color:var(--ink);background-color:var(--bg);background-image:repeating-linear-gradient(0deg,transparent 0,transparent 31px,rgba(201,64,30,0.05) 32px);background-size:auto;font-family:var(--fb);word-break:keep-all;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;line-height:1.6;}
+h1,h2,h3,.qx,.rn h3,.sheeth h2,.reveal .code,.dsh,.blt,.cmph,.maph,.sheetsec{font-family:var(--fh);}
+button,input{font:inherit;-webkit-tap-highlight-color:transparent;}
+.app{width:100%;max-width:560px;margin:0 auto;padding:26px 14px 46px;}
+.sc{display:none;} .sc.on{display:block;animation:in .18s ease;}
+@keyframes in{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+.pa{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);}
+.btn{width:100%;min-height:54px;padding:12px;cursor:pointer;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--ink);font-size:16px;font-weight:800;}
+.btn:active{transform:scale(.99);}
+.btn.fill{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.stk{display:grid;gap:10px;margin-top:14px;}
+.intro{padding:0 0 24px;text-align:center;overflow:hidden;}
+.hero{margin:0 0 20px;line-height:0;}
+.hero svg{display:block;width:100%;height:auto;}
+.intro>h1,.intro>p,.intro>.castt,.intro>.cast,.intro>.mt,.intro>.em{margin-left:18px;margin-right:18px;}
+.intro>.em{padding-top:34px;}
+.intro .em{font-size:54px;line-height:1;margin-bottom:12px;}
+.intro h1{font-size:25px;line-height:1.45;margin:0 0 10px;font-weight:700;letter-spacing:-.2px;text-wrap:balance;}
+.intro p{font-size:14.5px;color:var(--sub);line-height:1.8;margin:0;font-weight:400;text-wrap:pretty;}
+.castt{margin:20px 0 10px;font-size:12.5px;font-weight:800;color:var(--acc);}
+.mt{margin-top:16px;font-size:12.5px;font-weight:700;color:var(--sub);}
+.langhint{margin-top:8px;font-size:11px;font-weight:500;color:var(--sub);opacity:.75;line-height:1.6;}
+.cast{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;}
+.ci{min-width:0;padding:9px 3px 8px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);text-align:center;}
+.ci .e{font-size:22px;line-height:1;display:block;margin-bottom:4px;}
+.ci .n{font-size:11px;font-weight:600;line-height:1.4;word-break:keep-all;text-wrap:balance;}
+.ci .t{font-size:8.5px;color:var(--sub);opacity:.8;font-weight:700;margin-top:2px;display:block;}
+.intro .mt{font-size:12px;color:var(--sub);opacity:.75;margin-top:16px;font-weight:700;}
+.nb{padding:40px 24px;text-align:center;}
+.nb h2{font-size:22px;margin:0 0 22px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.nb input{width:100%;max-width:340px;height:54px;padding:0 14px;text-align:center;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-size:19px;font-weight:800;outline:none;}
+.nb input:focus{border-color:var(--acc);}
+.gd{max-width:400px;margin:24px auto 0;padding:14px 16px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);font-size:13.5px;line-height:1.8;font-weight:600;text-align:left;color:var(--sub);text-wrap:pretty;}
+.qw{padding:24px 20px 28px;}
+.qt{padding-bottom:14px;border-bottom:var(--bw) solid var(--line);}
+.qi{display:flex;justify-content:space-between;gap:12px;margin-bottom:9px;font-size:12px;font-weight:800;}
+.qi .sec{color:var(--acc);}
+.trk{width:100%;height:14px;padding:2px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.fil{width:0;height:100%;background:var(--acc);border-radius:var(--r);transition:width .2s ease;}
+.pdots{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.pdot{height:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--chip);opacity:.35;}
+.pdot.dn{opacity:1;background:var(--acc);}
+.pdot.now{opacity:1;background:var(--acc);animation:blink .7s infinite alternate;}
+@keyframes blink{from{opacity:.4;}to{opacity:1;}}
+.psq{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.psq i{display:block;aspect-ratio:1/1;min-height:12px;border:1px solid var(--line);border-radius:2px;background:var(--chip);}
+.psq i.dn{background:var(--acc);}
+.qn{margin-top:22px;color:var(--acc);font-size:13px;font-weight:900;}
+.qx{min-height:76px;margin:14px 0 20px;text-align:center;font-size:21px;line-height:1.6;letter-spacing:-.2px;font-weight:700;display:flex;align-items:center;justify-content:center;text-wrap:balance;}
+.ops{display:grid;gap:11px;}
+.op{position:relative;width:100%;min-height:70px;padding:15px 16px 15px 52px;cursor:pointer;text-align:left;color:var(--ink);background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15.5px;line-height:1.6;font-weight:500;text-wrap:pretty;}
+.op::before{content:attr(data-n);position:absolute;left:14px;top:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border:var(--bw) solid var(--line);border-radius:var(--r);transform:translateY(-50%);font-size:13px;font-weight:900;background:var(--paper);}
+.op.pk{background:var(--soft);border-color:var(--acc);}
+.op:disabled{cursor:default;}
+.qnote{margin:20px 0 0;color:var(--sub);text-align:center;font-size:12px;font-weight:700;}
+.qback{display:block;margin:14px auto 0;padding:8px 4px;background:none;border:0;color:var(--sub);font-family:var(--fb);font-size:12.5px;font-weight:700;cursor:pointer;text-align:center;}
+.lw{min-height:420px;padding:40px 22px;display:flex;align-items:center;justify-content:center;text-align:center;}
+.lw h2{margin:0 0 10px;font-size:24px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.lw p{margin:0;color:var(--sub);font-size:14px;}
+.dts{display:flex;justify-content:center;gap:9px;margin:28px 0 24px;}
+.dts span{width:12px;height:12px;background:var(--acc);border:var(--bw) solid var(--line);border-radius:var(--r);animation:bump 1.1s ease-in-out infinite;}
+.dts span:nth-child(2){animation-delay:.15s;} .dts span:nth-child(3){animation-delay:.3s;}
+@keyframes bump{0%,100%{transform:translateY(0);opacity:.4;}50%{transform:translateY(-7px);opacity:1;}}
+.lbar{width:100%;height:14px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.lbar span{display:block;width:32%;height:100%;background:var(--acc);animation:sld 1.05s ease-in-out infinite;}
+@keyframes sld{from{transform:translateX(-110%);}to{transform:translateX(340%);}}
+.cap{overflow:hidden;max-width:100%;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rh{padding:13px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.rh h2{margin:0;color:var(--accFg);font-size:15.5px;font-weight:700;line-height:1.45;letter-spacing:-.1px;text-wrap:balance;}
+.rb{padding:14px;}
+.rn{padding:24px 16px 20px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rn .em{font-size:64px;line-height:1;}
+.rn h3{margin:10px 0 6px;font-size:29px;font-weight:700;line-height:1.3;letter-spacing:-.3px;color:var(--acc);text-wrap:balance;}
+.rn .tg2{font-size:14.5px;font-weight:600;color:var(--ink);opacity:.85;}
+.rn .cd{display:inline-block;margin-top:12px;padding:4px 12px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:11px;font-weight:800;letter-spacing:1.2px;}
+.rs{margin-top:12px;padding:15px 16px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15px;line-height:1.8;font-weight:400;text-wrap:pretty;}
+.blk{margin-top:14px;}
+.blt{margin:0;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-bottom:0;border-radius:var(--r) var(--r) 0 0;font-size:13px;font-weight:900;text-align:center;text-wrap:balance;}
+.qb{padding:18px 16px;text-align:center;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);font-size:17px;font-weight:600;line-height:1.65;text-wrap:balance;}
+.qbb{position:relative;margin:6px 16px 24px;padding:18px 16px;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:16px;font-weight:600;line-height:1.65;text-align:center;text-wrap:balance;}
+.qbb::before{content:"";position:absolute;left:32px;bottom:-11px;width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-top:13px solid var(--line);}
+.qbb::after{content:"";position:absolute;left:34.5px;bottom:-6.5px;width:0;height:0;border-left:8.5px solid transparent;border-right:8.5px solid transparent;border-top:10px solid var(--soft);}
+.trs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:var(--bw) solid var(--line);border-left:var(--bw) solid var(--line);}
+.tc{min-height:82px;padding:9px 6px;display:flex;align-items:center;justify-content:center;background:var(--chip);color:var(--ink);border-right:var(--bw) solid var(--line);border-bottom:var(--bw) solid var(--line);text-align:center;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;text-wrap:balance;}
+.tc:nth-child(even){background:var(--soft);color:var(--softFg);}
+.trss{display:flex;flex-wrap:wrap;gap:10px 8px;padding:16px 14px;background:var(--chip);border-top:var(--bw) solid var(--line);}
+.tst{padding:8px 13px;background:var(--paper);border:var(--bw) solid var(--line);border-radius:999px;font-size:12.5px;font-weight:700;box-shadow:2px 2px 0 var(--line);word-break:keep-all;text-wrap:balance;color:var(--ink);}
+.tst:nth-child(3n+1){transform:rotate(-2.5deg);}
+.tst:nth-child(3n+2){transform:rotate(1.5deg);}
+.tst:nth-child(3n){transform:rotate(-0.5deg);}
+.tst:nth-child(even){background:var(--soft);color:var(--softFg);}
+.duo{display:grid;gap:10px;}
+.dsec{border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.dsh{padding:9px;text-align:center;font-size:14px;font-weight:900;color:var(--deepFg);border-bottom:var(--bw) solid var(--line);}
+.dsec.g .dsh{background:var(--acc);color:var(--accFg);}
+.dsec.b .dsh{background:var(--deep);}
+.dls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px 10px;padding:12px 11px;background:var(--chip);}
+.dit span{text-wrap:pretty;}
+.dit{display:flex;align-items:flex-start;min-width:0;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;}
+.dit b{width:7px;height:7px;margin:5px 6px 0 0;flex:0 0 auto;background:var(--acc);border-radius:1px;}
+.dit.chk b{width:17px;height:17px;margin:1px 8px 0 0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;background:var(--acc);color:var(--accFg);}
+.dsec.b .dit.chk b{background:var(--sub);color:var(--paper);}
+.sts{padding:14px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);}
+.srow{display:grid;grid-template-columns:76px 1fr 42px;align-items:center;gap:9px;}
+.srow+.srow{margin-top:11px;}
+.slab{font-size:12.5px;font-weight:900;}
+.sqs{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;}
+.sq{aspect-ratio:1/1;min-height:11px;border-radius:2px;background:var(--chips);box-shadow:inset 0 0 0 1px rgba(201,64,30,0.35);}
+.sq.f{background:var(--acc);}
+.spc{text-align:right;font-size:12.5px;font-weight:900;}
+.stsr{padding:16px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:14px 8px;}
+.rgauge{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.rgauge svg{width:64px;height:64px;overflow:visible;}
+.rgauge .rtrack{fill:none;stroke:var(--chips);stroke-width:6;}
+.rgauge .rfill{fill:none;stroke:var(--acc);stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset .5s ease;}
+.rgauge .rlab{font-size:11px;font-weight:800;color:var(--sub);text-align:center;line-height:1.35;}
+.cds{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px;}
+.cd2{padding:12px 11px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.cd2 b{display:inline-block;margin-bottom:7px;padding:3px 9px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:10.5px;font-weight:800;}
+.cd2 p{margin:0;font-size:13.5px;line-height:1.65;font-weight:500;text-wrap:pretty;}
+.cdt{background:var(--paper);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);padding:2px 16px;}
+.cdti{padding:12px 0;border-bottom:var(--bw) dashed var(--line);}
+.cdti:last-child{border-bottom:0;}
+.cdti b{display:block;font-size:11px;font-weight:900;color:var(--acc);margin-bottom:3px;letter-spacing:.2px;}
+.cdti span{display:block;font-size:13.5px;font-weight:600;line-height:1.55;text-wrap:pretty;}
+.map{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.maph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.mapg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--chip);}
+.mapc{position:relative;min-width:0;padding:9px 3px 8px;text-align:center;border-right:1px solid rgba(201,64,30,0.18);border-bottom:1px solid rgba(201,64,30,0.18);}
+.mapc:nth-child(4n){border-right:0;}
+.mapc:nth-last-child(-n+4){border-bottom:0;}
+.mapc .e{display:block;font-size:20px;line-height:1;}
+.mapc .n{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;margin-top:4px;font-size:9px;font-weight:600;line-height:1.35;overflow:hidden;word-break:keep-all;text-wrap:balance;padding:0 2px;min-height:24px;}
+.mapc .p{display:block;margin-top:2px;font-size:9.5px;font-weight:900;opacity:.75;}
+.mapc.me{outline:var(--bw) solid var(--acc);outline-offset:-2px;}
+.mapc .badge{display:inline-block;margin-top:2px;padding:1px 7px;border-radius:999px;background:var(--acc);color:var(--accFg);font-size:9px;font-weight:800;}
+.mapf{display:flex;align-items:center;gap:7px;padding:9px 12px;background:var(--chip);border-top:var(--bw) solid var(--line);font-size:9.5px;font-weight:800;color:var(--sub);}
+.mapbar{flex:1;height:7px;border-radius:999px;}
+.cmp{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.cmph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.cmpg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--chip);}
+.cmpc{min-width:0;padding:12px 8px 13px;text-align:center;}
+.cmpc+.cmpc{border-left:var(--bw) solid var(--line);}
+.cmpc .lb{display:inline-block;margin-bottom:10px;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;background:var(--acc);color:var(--accFg);}
+.cmpc.bad .lb{background:#AEB4BF;color:#fff;}
+.cmpi{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:7px;}
+.cmpi .e{font-size:24px;line-height:1;}
+.cmpi .n{min-width:0;font-size:13px;font-weight:600;line-height:1.45;text-align:left;word-break:keep-all;text-wrap:balance;}
+.cmpi .p{font-size:11.5px;font-weight:900;color:var(--acc);display:block;}
+.cmpc.bad .cmpi .p{color:var(--sub);}
+.cmpnote{margin-top:11px;padding-top:9px;border-top:1px dashed rgba(201,64,30,0.3);font-size:12px;line-height:1.65;font-weight:500;color:var(--sub);}
+.rf{margin-top:16px;padding-top:12px;border-top:var(--bw) dashed var(--line);color:var(--sub);text-align:center;font-size:11px;font-weight:700;letter-spacing:.6px;}
+.ad{max-width:560px;margin:22px auto 0;min-height:110px;display:flex;align-items:center;justify-content:center;border:var(--bw) dashed var(--line);border-radius:var(--r);color:var(--sub);font-size:12px;opacity:.5;}
+.sheet{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.sheeth{padding:16px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.sheeth h2{margin:0;color:var(--accFg);font-size:18px;font-weight:800;letter-spacing:-.4px;}
+.sheeth p{margin:5px 0 0;color:var(--accFg);opacity:.85;font-size:11.5px;font-weight:700;}
+.reveal{margin:14px;padding:20px 16px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.reveal .em{font-size:46px;line-height:1;}
+.reveal .nm{margin-top:8px;font-size:19px;font-weight:700;line-height:1.45;text-wrap:balance;}
+.reveal .eq{margin:9px 0 7px;font-size:13px;font-weight:800;color:var(--sub);}
+.reveal .code{display:inline-block;padding:8px 22px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:26px;font-weight:800;letter-spacing:3px;}
+.sheetad{margin:0 14px 14px;min-height:100px;display:flex;align-items:center;justify-content:center;border:var(--bw) dashed var(--line);border-radius:var(--r);color:var(--sub);font-size:11.5px;opacity:.5;}
+.sheetsec{margin:0 14px 10px;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:12.5px;font-weight:900;text-align:center;}
+.rows{margin:0 14px 14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.row{display:grid;grid-template-columns:26px 30px minmax(0,1fr) auto;align-items:center;gap:9px;padding:10px 11px;background:var(--chip);border-bottom:1px solid rgba(201,64,30,0.18);}
+.row:last-child{border-bottom:0;}
+.row.me{background:var(--soft);color:var(--softFg);}
+.row .no{font-size:10px;font-weight:800;color:var(--sub);opacity:.7;}
+.row .em{font-size:22px;line-height:1;text-align:center;}
+.row .nm{font-size:14px;font-weight:600;line-height:1.45;min-width:0;word-break:keep-all;text-wrap:balance;}
+.row .tg{display:block;font-size:10.5px;font-weight:700;color:var(--sub);opacity:.85;margin-top:2px;}
+.row .cd{padding:4px 10px;border-radius:999px;background:var(--deep);font-size:11px;font-weight:800;letter-spacing:.8px;white-space:nowrap;}
+.row.me .cd{background:var(--acc);color:var(--accFg);}
+.mo{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(20,20,20,.82);overflow-y:auto;}
+.mo.on{display:flex;}
+.mb2{width:100%;max-width:360px;max-height:92vh;overflow:auto;padding:20px 16px;text-align:center;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);margin:auto;}
+.mb2 h3{margin:0 0 8px;font-size:18px;font-weight:900;}
+.mb2 p{margin:0 0 16px;color:var(--sub);font-size:13px;line-height:1.55;font-weight:600;}
+.mb2 img{display:block;width:100%;border:var(--bw) solid var(--line);border-radius:var(--r);}
+.mbtns{display:grid;gap:8px;margin-top:14px;}
+.mbtn{display:block;width:100%;padding:14px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-family:var(--fb);font-size:14.5px;font-weight:600;text-align:center;text-decoration:none;cursor:pointer;box-sizing:border-box;}
+.mbtn.pri{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.mtip{margin:12px 0 0!important;font-size:12px;line-height:1.6;color:var(--sub);}
+.mb2 .cl{width:100%;min-height:46px;margin-top:14px;cursor:pointer;color:#fff;background:var(--line);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:14px;font-weight:800;}
+.tst{position:fixed;left:50%;bottom:26px;z-index:200;max-width:calc(100% - 32px);padding:12px 18px;color:#fff;background:rgba(28,28,28,.95);border:var(--bw) solid #fff;border-radius:var(--r);font-size:13.5px;font-weight:700;transform:translate(-50%,16px);opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+.tst.show{opacity:1;transform:translate(-50%,0);}
+@media(hover:hover) and (pointer:fine){
+.btn:hover{background:var(--soft);}
+.btn.fill:hover{opacity:.9;background:var(--acc);}
+.op:hover{background:var(--soft);}
+.qback:hover{color:var(--ink);}
+}
+@media(max-width:520px){.app{padding:18px 11px 38px;}.intro{padding:28px 14px 20px;}.intro h1{font-size:22px;}
+.ci .n{font-size:9.5px;} .ci .e{font-size:19px;}
+.qw{padding:20px 15px 24px;}.qx{font-size:19px;min-height:66px;}
+.op{min-height:64px;padding:13px 13px 13px 48px;font-size:14px;}
+.tc{min-height:74px;font-size:11.5px;}.rn h3{font-size:26px;}.rh h2{font-size:14px;}
+.dls{gap:6px 7px;padding:10px 9px;}.dit{font-size:11.5px;}.cds{gap:7px;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <section class="sc on" id="s1"></section>
+  <section class="sc" id="s2"></section>
+  <section class="sc" id="s3"></section>
+  <section class="sc" id="s4"></section>
+  <section class="sc" id="s5"></section>
+  <section class="sc" id="s6"></section>
+  <div class="ad">광고 영역 (애드센스 코드 삽입 위치)</div>
+</div>
+<div class="mo" id="mo"><div class="mb2"><h3>이미지 꾹 눌러 저장하기</h3><p>아래 이미지를 길게 누르거나 우클릭해서<br>저장해 주세요.</p><div id="mw"><p style="padding:40px 0;">이미지를 만들고 있어요...</p></div><button class="cl" onclick="closeMo()">닫기</button></div></div>
+<div class="tst" id="tst"></div>
+<script>
+"use strict";
+var D={"useName":true,"meta":{"title":"내가 쉐프라면 어떤 셰프일까?","emoji":"👨‍🍳","intro":"주방에 선 나, 12문항이면 알 수 있어요.","loadingText":"오늘의 메뉴를 플레이팅하는 중...","sheetTitle":"16가지 셰프 유형 전체 공개","sheetCta":"내 진짜 셰프 유형 확인하기","setName":"주방 속 나의 정체","slug":"if-i-were-a-chef"},"blocks":["cards","stats","traits","duo","quote","map"],"blockLabels":{"quote":"◈ 이 셰프의 요리 철학","traits":"◈ 이 셰프의 특징","duo":{"good":"◈ 이 셰프의 강점","bad":"◈ 보완하면 좋은 점"},"stats":"◈ 지표로 보는 이 셰프","cards":"◈ 주방에서의 모습","map":"◈ 16가지 셰프 전체 궁합"},"compatLabels":{"title":"주방 궁합","good":"최고의 팀 조합","bad":"살짝 부딪히는 조합","mapTitle":"16가지 셰프 전체 궁합"},"compat":{"ISTJ":"ESTJ98 ISFJ96 ESFJ94 ISTP92 INTJ91 INFJ88 ISFP87 ENTJ86 INTP84 ENFJ82 ESFP80 INFP79 ESTP78 ENTP76 ENFP74","ISFJ":"ESFJ98 ISTJ96 ESTJ95 ISFP93 INFJ92 ENFJ90 INFP88 ISTP87 INTJ85 ESFP84 ENTJ82 ESTP80 ENFP79 INTP78 ENTP76","INFJ":"ENFP99 ENTP97 INFP96 ENFJ95 INTJ94 ISFP92 ISFJ91 INTP89 ENTJ88 ISTJ87 ESFP84 ISTP83 ESTJ80 ESFJ79 ESTP77","INTJ":"ENFP99 ENTP97 INFJ94 INTP93 ENTJ92 ISTJ91 INFP89 ISTP88 ISFJ85 ESTJ84 ENFJ83 ISFP81 ESFP78 ESTP76 ESFJ75","ISTP":"ESTP98 ISFP96 ISTJ92 INTP91 ENTP90 INTJ88 ESTJ87 ESFP86 ENTJ84 ISFJ83 INFP81 ENFP80 INFJ79 ESFJ78 ENFJ76","ISFP":"ESFP98 ISTP96 INFP95 ISFJ93 ENFP92 INFJ91 ESFJ89 INTJ88 ESTP87 ENFJ86 ISTJ85 INTP83 ENTP82 ESTJ80 ENTJ79","INFP":"ENFJ99 ENTJ97 ENFP96 INFJ96 ISFP95 INTP93 INTJ89 ISFJ88 ENTP87 ESFJ86 ISTP84 ESFP82 ISTJ79 ESTP78 ESTJ76","INTP":"ENTJ99 ENFJ97 ENTP96 INTJ93 INFP93 ISTP91 INFJ89 ESTP87 ENFP86 ISTJ84 ISFP83 ESTJ82 ISFJ78 ESFP77 ESFJ75","ESTP":"ISTP98 ESFP96 ENTP94 ESTJ93 ISTJ91 INTP87 ISFP87 ENTJ86 ENFP84 ESFJ83 ISFJ80 INFP78 INFJ77 INTJ76 ENFJ75","ESFP":"ISFP98 ESTP96 ESFJ95 ENFP94 ISFJ92 ESTJ90 ENFJ89 ISTP86 INFJ84 INFP82 ENTP81 ISTJ80 INTJ78 INTP77 ENTJ76","ENFP":"INFJ99 INTJ99 ENFJ98 INFP96 ESFP94 ISFP92 ENTP91 INTP86 ENTJ85 ESTP84 ISTP80 ESFJ80 ISFJ79 ISTJ74 ESTJ72","ENTP":"INFJ97 INTJ97 ENTJ96 INTP96 ESTP94 ENFP91 ISTP90 INFP87 ESTJ84 ENFJ83 ISFP82 ESFP81 ESFJ79 ISTJ76 ISFJ76","ESTJ":"ISTJ98 ESFJ96 ISFJ95 ENTJ94 ESTP93 ESFP90 ISTP87 INTJ84 ENTP84 INTP82 ENFJ81 INFJ80 ISFP80 INFP76 ENFP72","ESFJ":"ISFJ98 ESTJ96 ESFP95 ISTJ94 ENFJ94 ISFP89 INFP86 ESTP83 ENFP80 INFJ79 ENTP79 ENTJ78 ISTP78 INTJ75 INTP75","ENFJ":"INFP99 ENFP98 INTP97 INFJ95 ESFJ94 ISFJ90 ESFP89 ISFP86 ENTJ85 INTJ83 ENTP83 ISTJ82 ESTJ81 ISTP76 ESTP75","ENTJ":"INTP99 INFP97 ENTP96 ESTJ94 INTJ92 INFJ88 ISTJ86 ESTP86 ENFP85 ENFJ85 ISTP84 ISFJ82 ISFP79 ESFJ78 ESFP76"},"compatLines":[{"min":95,"text":"이 조합이면 미슐랭 별도 문제없어요"},{"min":88,"text":"손발이 척척 맞는 환상의 팀이에요"},{"min":82,"text":"스타일은 달라도 은근히 잘 맞는 조합이에요"},{"min":76,"text":"다른 스타일이라 오히려 배울 게 많아요"},{"min":0,"text":"완전히 다른 스타일이라 부딪힐 수 있지만 그만큼 성장해요"}],"statStyle":"squares","traitStyle":"sticker","cardStyle":"ticket","duoStyle":"check","quoteStyle":"bubble","cast":[{"type":"ISTJ","name":"레시피는 무조건 지키는 클래식 셰프","emoji":"📏","tagline":"기본기가 곧 최고의 무기"},{"type":"ISFJ","name":"손님 취향까지 기억하는 다정한 셰프","emoji":"🍲","tagline":"단골의 알레르기까지 외우는 사람"},{"type":"INFJ","name":"한 접시에 스토리를 담는 셰프","emoji":"🕯️","tagline":"맛보다 먼저 마음을 전하는 사람"},{"type":"INTJ","name":"새로운 조합을 연구하는 실험 셰프","emoji":"🧪","tagline":"안 어울릴 것 같은 걸 어울리게 만듦"},{"type":"ISTP","name":"손끝 감각으로 즉흥 요리하는 셰프","emoji":"🔪","tagline":"계량보다 감으로 완성하는 사람"},{"type":"ISFP","name":"플레이팅에 예술혼을 담는 셰프","emoji":"🎨","tagline":"접시 하나가 작품이 되는 순간"},{"type":"INFP","name":"제철 재료로 마음을 표현하는 셰프","emoji":"🌿","tagline":"계절이 접시 위에 그대로 담김"},{"type":"INTP","name":"재료를 파고드는 분석형 셰프","emoji":"🔬","tagline":"왜 맛있는지 끝까지 알아야 직성이 풀림"},{"type":"ESTP","name":"불 앞에서 제일 신나는 화끈한 셰프","emoji":"🔥","tagline":"주방의 열기를 즐기는 사람"},{"type":"ESFP","name":"주방을 축제로 만드는 흥 넘치는 셰프","emoji":"🎉","tagline":"오늘도 주방이 제일 신남"},{"type":"ENFP","name":"즉흥 메뉴로 매번 놀라게 하는 셰프","emoji":"✨","tagline":"오늘의 메뉴는 오늘 정하는 사람"},{"type":"ENTP","name":"고정관념 깨는 퓨전 요리 셰프","emoji":"🌀","tagline":"이 조합이 되네? 를 자주 만드는 사람"},{"type":"ESTJ","name":"주방을 군대처럼 지휘하는 셰프","emoji":"🧭","tagline":"타이밍 하나도 안 틀리는 지휘관"},{"type":"ESFJ","name":"다 같이 챙기는 살림꾼 셰프","emoji":"🍯","tagline":"주방 식구들 밥부터 챙기는 사람"},{"type":"ENFJ","name":"팀을 성장시키는 멘토 셰프","emoji":"🌟","tagline":"막내 요리사도 크게 키우는 사람"},{"type":"ENTJ","name":"미슐랭을 목표로 하는 야망 셰프","emoji":"👑","tagline":"오늘보다 내일 더 잘하려는 사람"}],"questions":[{"section":"주방 스타일","text":"바쁜 저녁 시간, 나는 주방에서 보통 어떤 모습이야?","options":[{"text":"동료들과 소리치며 텐션을 올린다","value":"E"},{"text":"묵묵히 내 자리에서 집중한다","value":"I"}]},{"section":"레시피 태도","text":"새 요리를 만들 때 나는?","options":[{"text":"레시피와 계량을 정확히 따른다","value":"S"},{"text":"영감이 떠오르는 대로 즉흥적으로 만든다","value":"N"}]},{"section":"실수 대처","text":"요리하다 실수했을 때 나는?","options":[{"text":"손님 입장에서 어떻게 보완할지부터 생각한다","value":"F"},{"text":"원인을 정확히 분석하고 고친다","value":"T"}]},{"section":"메뉴 준비","text":"내일 메뉴, 나는 보통 어떻게 준비해?","options":[{"text":"미리 다 계획하고 재료도 맞춰둔다","value":"J"},{"text":"그날 시장 상황 보고 정한다","value":"P"}]},{"section":"팀워크","text":"주방 막내가 실수했을 때 나는?","options":[{"text":"바로 나서서 같이 해결해준다","value":"E"},{"text":"혼자 해결하도록 지켜본다","value":"I"}]},{"section":"재료 선택","text":"장 보러 갔을 때 나는?","options":[{"text":"정해둔 재료를 정확히 산다","value":"S"},{"text":"오늘 눈에 띄는 재료로 즉흥적으로 정한다","value":"N"}]},{"section":"맛 평가","text":"내가 만든 요리를 스스로 평가할 때 나는?","options":[{"text":"솔직하고 냉정하게 문제점부터 본다","value":"T"},{"text":"먹는 사람이 어떻게 느낄지를 먼저 생각한다","value":"F"}]},{"section":"영업 준비","text":"오픈 전 세팅, 나는 보통?","options":[{"text":"체크리스트대로 순서대로 준비한다","value":"J"},{"text":"그때그때 필요한 걸 먼저 처리한다","value":"P"}]},{"section":"손님 응대","text":"손님이 맛에 대해 물어보면 나는?","options":[{"text":"적극적으로 설명하고 대화를 나눈다","value":"E"},{"text":"짧고 담백하게 답한다","value":"I"}]},{"section":"플레이팅","text":"플레이팅할 때 나는 뭘 더 중요하게 생각해?","options":[{"text":"재료 본연의 모습을 살린다","value":"S"},{"text":"전체적인 분위기와 느낌을 살린다","value":"N"}]},{"section":"컴플레인 대응","text":"손님이 맛 컴플레인을 하면 나는?","options":[{"text":"바로 대안을 제시하며 챙긴다","value":"F"},{"text":"원인을 분석해서 정확히 설명한다","value":"T"}]},{"section":"목표 의식","text":"셰프로서 나의 목표는?","options":[{"text":"꾸준히 완성도를 다져나가는 것","value":"J"},{"text":"매번 새로운 걸 시도해보는 것","value":"P"}]}],"results":[{"type":"ISTJ","summary":"기본기가 확실한 클래식 셰프예요. 레시피와 계량을 철저히 지키고, 한번 완성한 맛은 언제 먹어도 똑같아요. 화려함보다 '언제나 믿을 수 있는 맛'을 만드는 게 이 셰프의 진짜 실력이에요.","color":"#6B4F3B","traits":["레시피는 그램 단위로 지킴","계량 없이는 시작 안 함","한번 완성한 맛은 늘 똑같음","기본기에 진심","화려함보다 신뢰를 택함","정리정돈이 완벽함","실패를 잘 안 만듦","루틴이 확고함","재료 손질부터 꼼꼼함","맛의 일관성이 최우선","불필요한 변화는 안 함","묵묵히 실력을 쌓음"],"duo":{"good":["레시피를 완벽하게 지켜요","맛의 일관성을 유지해요","계량이 정확해요","기본기가 탄탄해요","묵묵히 실력을 쌓아요","믿을 수 있는 맛을 내요"],"bad":["새로운 시도를 주저해요","변화에 적응이 느려요","고집이 세다는 말을 들어요","감정 표현이 서툴러요","계획이 틀어지면 스트레스받아요","융통성이 부족할 때가 있어요"]},"stats":[{"label":"정확도","value":96},{"label":"즉흥성","value":25},{"label":"셰프 지수","value":85}],"cards":[{"label":"시그니처 메뉴 스타일","value":"클래식 스테이크, 흔들림 없는 정통 그대로"},{"label":"주방에서의 별명","value":"'계량왕'"}],"name":"레시피는 무조건 지키는 클래식 셰프","emoji":"📏","tagline":"기본기가 곧 최고의 무기"},{"type":"ISFJ","summary":"단골 손님의 입맛과 알레르기까지 기억하는 다정한 셰프예요. 요란한 이벤트보다 한 사람 한 사람을 위한 세심한 배려가 이 주방의 진짜 무기예요.","color":"#C77B4F","traits":["단골 취향을 다 기억함","알레르기까지 챙김","말없이 세심하게 배려함","손님 반응에 예민함","꾸준함이 무기","레시피에 정성을 더함","서비스가 조용히 다정함","작은 디테일도 놓치지 않음","한번 온 손님을 기억함","기본에 다정함을 더함","무리해서라도 챙겨줌","은은하게 실력자"],"duo":{"good":["손님 취향을 세심히 기억해요","알레르기까지 꼼꼼히 챙겨요","꾸준하게 다정해요","서비스가 섬세해요","눈치가 빨라요","기본에 정성을 더해요"],"bad":["싫은 소리를 잘 못해요","혼자 참는 경우가 많아요","거절을 어려워해요","자기 시간은 뒤로 미뤄요","갈등을 피하려고만 해요","서운함을 오래 담아둬요"]},"stats":[{"label":"세심함","value":93},{"label":"자기표현","value":38},{"label":"셰프 지수","value":86}],"cards":[{"label":"시그니처 메뉴 스타일","value":"집밥 같은 정성 담긴 스튜"},{"label":"주방에서의 별명","value":"'단골 앨범'"}],"name":"손님 취향까지 기억하는 다정한 셰프","emoji":"🍲","tagline":"단골의 알레르기까지 외우는 사람"},{"type":"INFJ","summary":"한 접시에 스토리를 담는 셰프예요. 재료 하나를 고를 때도 의미를 담고, 손님이 그 의미를 알아채주길 바라는 섬세한 마음이 있어요. 맛보다 먼저 마음이 전해지는 요리를 해요.","color":"#5C4B7A","traits":["요리에 의미를 담음","재료 선택에 스토리가 있음","맛보다 마음을 먼저 전함","섬세한 플레이팅","조용히 관찰하고 연구함","한번 정한 철학은 안 바뀜","손님 감정까지 헤아림","의미 없는 요리는 안 함","직감적으로 조합을 찾음","신비로운 메뉴 구성","깊이 있는 손맛","말보다 접시로 대화함"],"duo":{"good":["요리에 진심을 담아요","섬세한 플레이팅을 해요","손님 감정까지 헤아려요","조용한 카리스마가 있어요","한번 정한 철학이 확고해요","깊이 있는 맛을 내요"],"bad":["혼자만의 시간이 꼭 필요해요","생각이 많아 결정이 느려요","서운해도 티를 잘 안 내요","완벽주의 성향이 있어요","가끔 예측하기 어려워요","마음을 여는 데 시간이 걸려요"]},"stats":[{"label":"스토리텔링","value":90},{"label":"속도","value":40},{"label":"셰프 지수","value":87}],"cards":[{"label":"시그니처 메뉴 스타일","value":"한 접시로 계절을 표현하는 코스"},{"label":"주방에서의 별명","value":"'조용한 예술가'"}],"name":"한 접시에 스토리를 담는 셰프","emoji":"🕯️","tagline":"맛보다 먼저 마음을 전하는 사람"},{"type":"INTJ","summary":"안 어울릴 것 같은 재료들을 연구해서 새로운 조합을 만드는 실험적인 셰프예요. 실패를 두려워하지 않고 끊임없이 시도해서, 예상 못한 완성도를 만들어내요.","color":"#3B4A5C","traits":["새로운 조합을 끊임없이 연구","실패를 두려워 안 함","전략적으로 메뉴를 설계","효율적인 조리 과정을 추구","논리적으로 맛을 분석함","혼자 연구하는 시간이 필요","목표가 뚜렷한 메뉴 개발","완벽한 조합을 찾아냄","불필요한 과정은 생략","자기 확신이 강함","예상 밖의 완성도","의외로 다정한 서비스"],"duo":{"good":["끊임없이 새로운 조합을 연구해요","전략적으로 메뉴를 설계해요","완벽한 조합을 찾아내요","효율을 중요하게 생각해요","자기 확신이 강해요","목표가 뚜렷해요"],"bad":["감정 표현에 서툴러요","직설적이라 오해받기도 해요","혼자 생각할 시간이 필요해요","계획이 틀어지면 예민해져요","불필요한 감정소모를 피해요","가끔 차갑게 느껴질 수 있어요"]},"stats":[{"label":"창의성","value":92},{"label":"협업력","value":45},{"label":"셰프 지수","value":88}],"cards":[{"label":"시그니처 메뉴 스타일","value":"의외의 재료 조합 실험 요리"},{"label":"주방에서의 별명","value":"'연구소장'"}],"name":"새로운 조합을 연구하는 실험 셰프","emoji":"🧪","tagline":"안 어울릴 것 같은 걸 어울리게 만듦"},{"type":"ISTP","summary":"계량보다 손끝 감각을 믿는 즉흥형 셰프예요. 그날 재료 상태를 보고 바로 판단해서 만드는 요리가 오히려 제일 맛있을 때가 많아요.","color":"#4A4A4A","traits":["계량보다 감각을 믿음","위기 상황에도 침착함","즉흥적으로 완성도를 높임","실용적인 조리법을 선호","손재주가 뛰어남","말수는 적지만 실력은 확실","혼자 몰입하는 시간 필요","자유롭게 재료를 다룸","쿨하게 실수를 넘김","현장 감각이 탁월함","군더더기 없는 요리","은근히 다정한 손맛"],"duo":{"good":["감각적으로 완성도를 높여요","위기에도 침착해요","실용적으로 문제를 해결해요","손재주가 좋아요","자유롭게 재료를 다뤄요","은근히 다정하게 챙겨요"],"bad":["감정 표현이 무뚝뚝해요","말수가 적어 오해를 사기도 해요","혼자 있는 시간이 꼭 필요해요","무심해 보일 수 있어요","설명을 잘 안 해줘요","계획성이 부족할 때가 있어요"]},"stats":[{"label":"손감각","value":91},{"label":"계획성","value":30},{"label":"셰프 지수","value":84}],"cards":[{"label":"시그니처 메뉴 스타일","value":"그날 감으로 완성하는 즉흥 요리"},{"label":"주방에서의 별명","value":"'손맛 장인'"}],"name":"손끝 감각으로 즉흥 요리하는 셰프","emoji":"🔪","tagline":"계량보다 감으로 완성하는 사람"},{"type":"ISFP","summary":"접시 하나하나가 작품이 되는 플레이팅의 셰프예요. 맛은 기본이고 시각적인 아름다움까지 신경 써서, 먹기 아까운 요리를 만들어내요.","color":"#D67B94","traits":["플레이팅에 예술혼을 담음","시각적 아름다움을 중시함","조용히 완성도를 높임","자기만의 미감이 확고함","갈등보다 조화를 추구","말보다 접시로 표현함","여유로운 조리 스타일","섬세한 색감 조합","다정하지만 조용한 서비스","취향이 뚜렷함","감성적인 메뉴 구성","편안한 주방 분위기"],"duo":{"good":["플레이팅에 예술혼을 담아요","은근히 세심하게 배려해요","자기만의 미감이 확고해요","말보다 행동으로 보여줘요","다정함이 자연스러워요","여유롭게 완성도를 높여요"],"bad":["갈등을 피하고 싶어해요","싫은 티를 잘 안 내요","결정을 미루는 편이에요","상처를 혼자 삭이기도 해요","표현이 소극적일 때가 있어요","눈치를 많이 보는 편이에요"]},"stats":[{"label":"미감","value":94},{"label":"주도성","value":40},{"label":"셰프 지수","value":85}],"cards":[{"label":"시그니처 메뉴 스타일","value":"먹기 아까운 감성 플레이팅"},{"label":"주방에서의 별명","value":"'접시 위 화가'"}],"name":"플레이팅에 예술혼을 담는 셰프","emoji":"🎨","tagline":"접시 하나가 작품이 되는 순간"},{"type":"INFP","summary":"제철 재료로 마음을 표현하는 셰프예요. 그날그날 느낀 감정과 계절감이 접시 위에 고스란히 담겨서, 먹는 사람도 그 마음을 느끼게 돼요.","color":"#5B8C5A","traits":["제철 재료에 진심","감정을 요리에 담음","의미 없는 메뉴는 안 만듦","섬세하고 여린 감성","진지하게 재료를 고름","이상적인 한 끼를 꿈꿈","혼자만의 레시피 세계","다정함이 자연스러움","계절감을 살리는 데 능함","꾸밈없는 손맛","감정 기복이 요리에 드러남","진심이 담긴 플레이팅"],"duo":{"good":["제철 재료에 진심을 담아요","감정을 요리로 표현해요","다정함이 자연스럽게 나와요","이상적인 한 끼를 추구해요","섬세하게 마음을 써요","꾸밈없이 솔직해요"],"bad":["상처를 오래 담아둬요","현실보다 이상에 머물 때가 있어요","예민하게 받아들이기도 해요","혼자 생각이 많아져요","거절을 어려워해요","감정 기복이 있는 편이에요"]},"stats":[{"label":"감성","value":93},{"label":"현실감각","value":42},{"label":"셰프 지수","value":83}],"cards":[{"label":"시그니처 메뉴 스타일","value":"제철 재료로 만드는 감성 요리"},{"label":"주방에서의 별명","value":"'계절 시인'"}],"name":"제철 재료로 마음을 표현하는 셰프","emoji":"🌿","tagline":"계절이 접시 위에 그대로 담김"},{"type":"INTP","summary":"왜 맛있는지 원리부터 파고드는 분석형 셰프예요. 재료의 화학 작용까지 연구해서, 남들이 우연이라 여기는 맛도 이 셰프는 재현할 수 있어요.","color":"#4A6C8C","traits":["재료를 원리부터 파고듦","호기심으로 새 기법을 탐구","논리적으로 레시피를 설명함","감정보다 분석이 앞섬","혼자 실험하는 시간 필요","의외로 재치있는 메뉴명","직설적이지만 악의 없음","새로운 조리법에 몰입함","연구하듯 요리함","분석적인 미각","은근한 유머 감각","예상 밖의 창의력"],"duo":{"good":["재료를 원리부터 연구해요","새로운 기법을 탐구해요","논리적으로 설명해줘요","의외로 재치있는 메뉴를 만들어요","솔직하지만 악의는 없어요","분석적으로 완성도를 높여요"],"bad":["감정 표현이 서툴러요","무심해 보일 수 있어요","직설적이라 오해를 살 때도 있어요","계획성이 부족한 편이에요","혼자 생각에 빠질 때가 많아요","설명이 장황할 때가 있어요"]},"stats":[{"label":"분석력","value":90},{"label":"사교성","value":35},{"label":"셰프 지수","value":82}],"cards":[{"label":"시그니처 메뉴 스타일","value":"원리부터 파고든 분석 요리"},{"label":"주방에서의 별명","value":"'미식 연구원'"}],"name":"재료를 파고드는 분석형 셰프","emoji":"🔬","tagline":"왜 맛있는지 끝까지 알아야 직성이 풀림"},{"type":"ESTP","summary":"불 앞에서 제일 신나는 화끈한 셰프예요. 바쁜 주방의 열기와 속도감을 즐기고, 위기 상황일수록 더 빛나는 타입이에요.","color":"#D64545","traits":["불 앞에서 제일 신남","위기에도 유쾌하게 대처","즉흥적이고 스피디함","솔직하고 직설적인 성격","눈치 안 보고 밀어붙임","에너지 넘치는 주방 분위기","새로운 조리법에 도전적","리액션이 큰 편","현장 판단력이 빠름","친화력 좋은 서비스","승부욕 있는 완성도","분위기를 주도함"],"duo":{"good":["위기에도 유쾌하게 넘겨요","솔직하고 직설적이에요","새로운 걸 과감히 시도해요","리액션이 커서 즐거워요","친화력이 좋아요","현장 판단력이 빨라요"],"bad":["즉흥적이라 계획이 자주 바뀌어요","눈치보다 행동이 앞설 때가 있어요","진지한 대화를 어려워하기도 해요","승부욕이 강한 편이에요","꼼꼼함이 부족할 때가 있어요","서두르는 경향이 있어요"]},"stats":[{"label":"순발력","value":95},{"label":"꼼꼼함","value":38},{"label":"셰프 지수","value":86}],"cards":[{"label":"시그니처 메뉴 스타일","value":"불맛 가득한 라이브 파이어 요리"},{"label":"주방에서의 별명","value":"'화력왕'"}],"name":"불 앞에서 제일 신나는 화끈한 셰프","emoji":"🔥","tagline":"주방의 열기를 즐기는 사람"},{"type":"ESFP","summary":"주방을 축제 현장으로 만드는 흥 넘치는 셰프예요. 이 사람이 있으면 주방 분위기 자체가 달라지고, 그 에너지가 요리에도 그대로 담겨요.","color":"#E8A23D","traits":["주방을 축제로 만듦","텐션이 요리에 전염됨","감정 표현이 풍부함","즉흥적인 메뉴 구성을 즐김","팀원들과 어울리는 걸 좋아함","리액션 크고 솔직함","눈치가 빠른 서비스","다정함이 자연스레 드러남","함께 있으면 즐거운 주방","감성적인 순간을 소중히 함","웃음이 많은 편","적극적인 손님 응대"],"duo":{"good":["텐션이 주방 전체에 전염돼요","감정 표현이 솔직하고 풍부해요","즉흥적인 메뉴를 잘 만들어요","리액션이 크고 다정해요","함께 있으면 즐거워요","팀원들과 잘 어울려요"],"bad":["감정 기복이 있는 편이에요","계획보다 즉흥을 선호해요","진지한 순간을 어려워하기도 해요","집중력이 흩어질 때가 있어요","꼼꼼함이 아쉬울 때가 있어요","싫증을 잘 내는 편이에요"]},"stats":[{"label":"에너지","value":96},{"label":"차분함","value":33},{"label":"셰프 지수","value":85}],"cards":[{"label":"시그니처 메뉴 스타일","value":"보기만 해도 신나는 파티 요리"},{"label":"주방에서의 별명","value":"'분위기 메이커'"}],"name":"주방을 축제로 만드는 흥 넘치는 셰프","emoji":"🎉","tagline":"오늘도 주방이 제일 신남"},{"type":"ENFP","summary":"오늘의 메뉴를 오늘 정하는 즉흥 셰프예요. 예상 못한 조합으로 매번 손님을 놀라게 하는 재주가 있어서, 갈 때마다 다른 걸 기대하게 만드는 타입이에요.","color":"#E85D75","traits":["즉흥 메뉴가 특기","대화하듯 요리를 만듦","의미 없는 재료도 특별하게 씀","손님에 대한 애정이 큼","즉흥적이지만 진심 있음","다정함이 자연스럽게 흘러나옴","호기심 많고 에너지 넘침","리액션 크고 따뜻함","작은 반응에도 크게 기뻐함","공감 능력이 뛰어난 서비스","같이 있으면 편안한 주방","매번 다른 놀라움을 줌"],"duo":{"good":["즉흥 메뉴로 매번 놀라게 해요","대화가 즐겁고 유쾌해요","의미 없는 재료도 특별하게 써요","공감 능력이 뛰어나요","다정함이 자연스레 흘러나와요","리액션이 크고 따뜻해요"],"bad":["감정 기복이 있는 편이에요","계획성이 부족할 때가 있어요","싫증을 빨리 내기도 해요","산만해 보일 수 있어요","마무리가 아쉬울 때가 있어요","상처를 크게 받는 편이에요"]},"stats":[{"label":"창의성","value":94},{"label":"꾸준함","value":36},{"label":"셰프 지수","value":86}],"cards":[{"label":"시그니처 메뉴 스타일","value":"매번 다른 깜짝 오늘의 메뉴"},{"label":"주방에서의 별명","value":"'서프라이즈 셰프'"}],"name":"즉흥 메뉴로 매번 놀라게 하는 셰프","emoji":"✨","tagline":"오늘의 메뉴는 오늘 정하는 사람"},{"type":"ENTP","summary":"고정관념을 깨는 퓨전 요리의 셰프예요. '이게 되네?' 싶은 조합을 자꾸 만들어내는 도전 정신이 진짜 매력이에요.","color":"#6B5CA5","traits":["고정관념 깨는 조합을 즐김","새로운 아이디어를 잘 냄","논쟁도 즐기는 편","눈치보다 솔직함을 택함","의외로 다정한 서비스","호기심이 많은 편","도전하는 걸 즐김","유연하게 사고하는 편","같이 있으면 지루하지 않은 주방","재치있는 메뉴 이름을 지음","실험적인 접시 구성","말이 빠르고 재밌음"],"duo":{"good":["고정관념 깨는 조합을 잘 만들어요","재치있는 메뉴 이름을 잘 지어요","새로운 아이디어를 잘 내요","솔직함을 우선시해요","의외로 다정한 순간이 있어요","도전하는 걸 즐겨요"],"bad":["논쟁을 즐기다 선을 넘기도 해요","눈치보다 솔직함이 앞서요","싫증을 빨리 느끼는 편이에요","꼼꼼함이 부족할 때가 있어요","계획성이 부족한 편이에요","말이 앞설 때가 있어요"]},"stats":[{"label":"실험정신","value":93},{"label":"안정감","value":38},{"label":"셰프 지수","value":85}],"cards":[{"label":"시그니처 메뉴 스타일","value":"고정관념 깨는 퓨전 요리"},{"label":"주방에서의 별명","value":"'괴짜 셰프'"}],"name":"고정관념 깨는 퓨전 요리 셰프","emoji":"🌀","tagline":"이 조합이 되네? 를 자주 만드는 사람"},{"type":"ESTJ","summary":"주방을 군대처럼 정확하게 지휘하는 셰프예요. 타이밍 하나 안 틀리고 완벽하게 돌아가는 시스템을 만드는 데 탁월해요.","color":"#3B3B54","traits":["결정력 있고 확실한 지휘","약속된 맛은 반드시 지킴","책임감이 강한 주방장","흔들릴 때 기댈 수 있음","직설적이지만 신뢰감 있음","계획적으로 메뉴를 관리함","리더십이 자연스러움","현실적인 판단이 빠름","감정보다 완성도를 우선시함","한번 정한 기준은 끝까지 지킴","의외로 다정한 배려","든든한 존재감"],"duo":{"good":["결정력 있고 확실해요","약속된 맛은 반드시 지켜요","책임감이 강해요","흔들릴 때 기댈 수 있어요","현실적인 판단을 잘해요","리더십이 자연스러워요"],"bad":["직설적이라 강하게 느껴질 수 있어요","감정보다 완성도를 우선시해요","고집이 세다는 말을 들어요","계획이 틀어지면 예민해져요","감정 표현에 서툴 때가 있어요","완고해 보일 수 있어요"]},"stats":[{"label":"지휘력","value":94},{"label":"유연함","value":40},{"label":"셰프 지수","value":89}],"cards":[{"label":"시그니처 메뉴 스타일","value":"흐트러짐 없는 완벽한 코스"},{"label":"주방에서의 별명","value":"'주방 대장'"}],"name":"주방을 군대처럼 지휘하는 셰프","emoji":"🧭","tagline":"타이밍 하나도 안 틀리는 지휘관"},{"type":"ESFJ","summary":"주방 식구들 밥부터 챙기는 살림꾼 셰프예요. 팀워크와 분위기를 제일 중요하게 여겨서, 이 사람이 있는 주방은 늘 훈훈해요.","color":"#D4A24C","traits":["팀원들 컨디션까지 챙김","세심하게 서비스하는 스타일","분위기를 살피는 데 능숙함","다정함이 몸에 밴 사람","희생을 아끼지 않는 편","단골과의 관계를 소중히 함","감정 기복을 잘 다스림","눈치가 빠른 편","친절함이 기본값","배려가 자연스러움","곁에 있으면 편안한 주방장","팀워크를 최우선시함"],"duo":{"good":["팀원 컨디션까지 챙겨요","세심하게 서비스해요","다정함이 기본값이에요","단골과의 관계를 소중히 해요","친절함이 자연스러워요","분위기를 살피는 데 능숙해요"],"bad":["싫은 소리를 잘 못해요","혼자 참는 경우가 많아요","다른 사람 시선을 신경 쓰는 편이에요","거절을 어려워해요","서운함을 쌓아두기도 해요","자기 시간은 뒤로 미뤄요"]},"stats":[{"label":"팀워크","value":95},{"label":"자기주장","value":37},{"label":"셰프 지수","value":87}],"cards":[{"label":"시그니처 메뉴 스타일","value":"모두를 챙기는 넉넉한 한상"},{"label":"주방에서의 별명","value":"'주방 엄마'"}],"name":"다 같이 챙기는 살림꾼 셰프","emoji":"🍯","tagline":"주방 식구들 밥부터 챙기는 사람"},{"type":"ENFJ","summary":"막내 요리사도 크게 키워내는 멘토 셰프예요. 자기 실력보다 팀 전체의 성장을 더 중요하게 생각하는 리더십이 있어요.","color":"#4A8C6B","traits":["막내 요리사를 크게 키움","진심 어린 조언을 아끼지 않음","팀원의 장점을 잘 봐줌","감정 공감 능력이 뛰어남","리더십과 다정함을 동시에 가짐","곁에 있는 사람을 잘 챙김","따뜻한 카리스마가 있음","말 한마디에 힘을 실어줌","희생적인 면이 있음","분위기를 이끄는 편","진심이 느껴지는 서비스","팀 전체 성장을 중요시함"],"duo":{"good":["팀원을 크게 성장시켜요","진심 어린 조언을 아끼지 않아요","팀원의 장점을 잘 봐줘요","공감 능력이 뛰어나요","따뜻한 카리스마가 있어요","팀 전체를 이끄는 힘이 있어요"],"bad":["희생적인 면이 지나칠 때가 있어요","다른 사람 감정에 너무 몰입해요","자기 시간은 뒤로 미룰 때가 많아요","거절을 어려워해요","완벽하려는 부담을 느껴요","서운해도 티를 잘 안 내요"]},"stats":[{"label":"리더십","value":92},{"label":"이기심","value":18},{"label":"셰프 지수","value":88}],"cards":[{"label":"시그니처 메뉴 스타일","value":"팀 전체가 함께 만든 합작 요리"},{"label":"주방에서의 별명","value":"'주방 멘토'"}],"name":"팀을 성장시키는 멘토 셰프","emoji":"🌟","tagline":"막내 요리사도 크게 키우는 사람"},{"type":"ENTJ","summary":"미슐랭을 목표로 하는 야망 있는 셰프예요. 오늘보다 내일 더 나은 요리를 만들겠다는 목표의식이 확실해서, 함께 일하는 사람도 자극받게 만들어요.","color":"#8C1F3D","traits":["함께 있으면 실력이 늚","목표 지향적이고 확실함","자극이 되는 존재","직설적이지만 진심 있음","결단력이 강한 편","계획적으로 메뉴를 개발함","현실적인 조언을 잘함","자기 확신이 강함","의외로 다정한 순간 있음","리더십이 자연스러움","도전을 두려워하지 않음","곁에 있으면 든든함"],"duo":{"good":["함께 있으면 실력이 늘어요","목표 지향적이고 확실해요","결단력이 강해요","현실적인 조언을 잘해줘요","도전을 두려워하지 않아요","리더십이 자연스러워요"],"bad":["직설적이라 강하게 느껴질 수 있어요","감정보다 결과를 우선시해요","완고해 보일 수 있어요","속도를 맞추기 버거울 때가 있어요","감정 표현에 서툴 때가 있어요","완벽주의 성향이 있어요"]},"stats":[{"label":"야망","value":96},{"label":"여유","value":34},{"label":"셰프 지수","value":90}],"cards":[{"label":"시그니처 메뉴 스타일","value":"미슐랭을 겨냥한 야심찬 코스"},{"label":"주방에서의 별명","value":"'미래의 오너셰프'"}],"name":"미슐랭을 목표로 하는 야망 셰프","emoji":"👑","tagline":"오늘보다 내일 더 잘하려는 사람"}],"accent":"#C9401E","progress":"squares"};
+var AXES=[['E','I'],['S','N'],['T','F'],['J','P']];
+var nick="",qi=0,sc={},lock=false,tT=null,answers=[];
+function $(i){return document.getElementById(i);}
+function esc(s){if(s==null)return"";return String(s).replace(/[&<>"']/g,function(m){
+return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m];});}
+function show(id){var a=document.querySelectorAll(".sc");
+for(var i=0;i<a.length;i++)a[i].classList.remove("on");
+$(id).classList.add("on");window.scrollTo({top:0,behavior:"auto"});}
+function reset(){sc={};answers=[];["E","I","S","N","T","F","J","P"].forEach(function(k){sc[k]=0;});}
+function mix(hex,ratio){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
+r=Math.round(r+(255-r)*ratio);g=Math.round(g+(255-g)*ratio);b=Math.round(b+(255-b)*ratio);
+return "#"+[r,g,b].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function lerp2(hexA,hexB,t){function rgb(h){h=(h||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+return[parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+var a=rgb(hexA),b=rgb(hexB);
+var r=Math.round(a[0]+(b[0]-a[0])*t),g=Math.round(a[1]+(b[1]-a[1])*t),bl=Math.round(a[2]+(b[2]-a[2])*t);
+return "#"+[r,g,bl].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function luminance(hex){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16)/255,g=parseInt(h.slice(2,4),16)/255,b=parseInt(h.slice(4,6),16)/255;
+function lin(c){return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);}
+return 0.2126*lin(r)+0.7152*lin(g)+0.0722*lin(b);}
+function readable(bgHex){return luminance(bgHex)>0.53?"#1a1a1a":"#fff";}
+function setAcc(c){var s=document.documentElement.style;
+var soft=mix(c,.86),deep=mix(c,.68);
+s.setProperty("--acc",c);s.setProperty("--soft",soft);s.setProperty("--deep",deep);
+s.setProperty("--accFg",readable(c));s.setProperty("--softFg",readable(soft));s.setProperty("--deepFg",readable(deep));}
+function intro(){nick="";qi=0;lock=false;reset();setAcc(D.accent);
+var cast="";for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+cast+='<div class="ci"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+(c.tagline?'<span class="t">'+esc(c.tagline)+'</span>':"")+'</div>';}
+$("s1").innerHTML='<div class="pa intro">'+
+'<div class="em">'+D.meta.emoji+'</div>'+
+'<h1>'+esc(D.meta.title)+'</h1><p>'+esc(D.meta.intro)+'</p>'+
+'<div class="castt">'+esc(D.meta.setName||"16가지 유형")+'</div>'+
+'<div class="cast">'+cast+'</div>'+
+'<div class="mt">질문 '+D.questions.length+'개 · 결과 16가지</div>'+
+'<div class="langhint">🌐 Prefer another language? Use your browser\'s translate feature.<br>다른 언어로 보고 싶다면 브라우저의 번역 기능을 이용해주세요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="'+(D.useName?"nameScreen()":"begin()")+'">테스트 시작하기</button></div>';
+show("s1");}
+function nameScreen(){$("s2").innerHTML='<div class="pa nb"><h2>어떻게 불러드릴까요?</h2>'+
+'<input id="nk" type="text" maxlength="12" placeholder="닉네임을 입력해주세요" autocomplete="off">'+
+'<div class="gd">○ 총 '+D.questions.length+'문항입니다.<br>○ 나에게 더 가까운 답을 골라주세요.<br>○ 결과에 닉네임이 함께 표시돼요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="begin()">시작하기</button>'+
+'<button class="btn" onclick="intro()">처음으로</button></div>';show("s2");
+setTimeout(function(){var n=$("nk");if(n){n.focus();
+n.addEventListener("keydown",function(e){if(e.key==="Enter")begin();});}},80);}
+function begin(){if(D.useName){var n=$("nk"),v=n?n.value.trim():"";
+if(!v){alert("닉네임을 입력해주세요.");if(n)n.focus();return;}nick=v;}
+qi=0;lock=false;reset();question();show("s3");}
+function progHTML(cur,total){var p=D.progress||"bar";
+if(p==="bar"){return '<div class="trk"><div class="fil" style="width:'+Math.round(cur/total*100)+'%"></div></div>';}
+var h=p==="dots"?'<div class="pdots">':'<div class="psq">',n=Math.min(total,12);
+for(var i=0;i<n;i++){var st=i<cur-1?" dn":i===cur-1?(p==="dots"?" now":" dn"):"";
+h+=p==="dots"?'<div class="pdot'+st+'"></div>':'<i class="'+st.trim()+'"></i>';}
+return h+"</div>";}
+function question(){lock=false;var tot=D.questions.length,q=D.questions[qi];
+var num=("0"+(qi+1)).slice(-2);
+var h='<div class="pa qw"><div class="qt"><div class="qi">'+
+'<span class="sec">'+esc(q.section||"진행 중")+'</span><span>'+(qi+1)+' / '+tot+'</span></div>'+
+progHTML(qi+1,tot)+'</div>'+
+'<div class="qn">문항 '+num+(nick?" · "+esc(nick):"")+'</div>'+
+'<div class="qx">'+esc(q.text)+'</div><div class="ops">';
+for(var i=0;i<q.options.length;i++){
+h+='<button class="op" data-n="'+(i+1)+'" data-v="'+esc(q.options[i].value)+'">'+esc(q.options[i].text)+'</button>';}
+h+='</div><p class="qnote">더 가까운 쪽을 골라주세요.</p>'+
+(qi>0?'<button type="button" class="qback" onclick="prevQ()">← 이전 문항</button>':"")+
+'</div>';
+$("s3").innerHTML=h;
+window.scrollTo({top:0,behavior:"auto"});
+var bs=$("s3").querySelectorAll(".op");
+for(var j=0;j<bs.length;j++){bs[j].addEventListener("click",function(){pick(this);});}}
+function pick(btn){if(lock)return;lock=true;
+var all=$("s3").querySelectorAll(".op");
+for(var i=0;i<all.length;i++){all[i].disabled=true;all[i].classList.remove("pk");}
+btn.classList.add("pk");
+var v=btn.getAttribute("data-v");if(sc[v]==null)sc[v]=0;sc[v]++;answers[qi]=v;
+setTimeout(function(){qi++;if(qi<D.questions.length){question();return;}finish();},110);}
+function prevQ(){if(qi<=0||lock)return;lock=true;
+var prevV=answers[qi-1];if(prevV!=null&&sc[prevV]>0)sc[prevV]--;
+answers[qi-1]=null;qi--;question();}
+function finish(){var code="";
+for(var i=0;i<AXES.length;i++){code+=(sc[AXES[i][0]]>=sc[AXES[i][1]]?AXES[i][0]:AXES[i][1]);}
+loading(code);}
+function loading(code){
+$("s4").innerHTML='<div class="pa lw"><div style="width:100%">'+
+'<h2>'+esc(D.meta.loadingText||"결과를 정리하는 중")+'</h2><p>잠시만 기다려 주세요.</p>'+
+'<div class="dts"><span></span><span></span><span></span></div>'+
+'<div class="lbar"><span></span></div></div></div>';show("s4");
+setTimeout(function(){result(code);show("s5");},2500);}
+function lab(key,sub){var L=D.blockLabels||{};var v=L[key];
+if(sub){
+if(v&&typeof v==="object"&&v[sub])return v[sub];
+return sub==="good"?"잘 맞는 유형":sub==="bad"?"안 맞는 유형":"";}
+return typeof v==="string"?v:"";}
+function byType(t){for(var i=0;i<D.cast.length;i++){if(D.cast[i].type===t)return D.cast[i];}return null;}
+function compatList(type){var s=D.compat[type]||"";var out=[],m,re=/([A-Z]{4})(\d+)/g;
+while((m=re.exec(s))!==null){out.push({type:m[1],pct:parseInt(m[2],10)});}
+out.sort(function(a,b){return b.pct-a.pct;});return out;}
+function compatItems(arr){var h="";
+for(var i=0;i<arr.length;i++){var c=byType(arr[i].type);if(!c)continue;
+h+='<div class="cmpi"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+
+'<span class="p">'+arr[i].pct+'%</span></span></div>';}
+return h;}
+function lineFor(pct){var L=D.compatLines||[];
+for(var i=0;i<L.length;i++){if(pct>=L[i].min)return L[i].text;}
+return L.length?L[L.length-1].text:"";}
+function compatHTML(type){var L=D.compatLabels||{};var list=compatList(type);
+if(!list.length)return "";
+var best=list.slice(0,2),worst=list.slice(-2).reverse();
+return '<div class="cmp"><div class="cmph">'+esc(L.title||"궁합")+'</div><div class="cmpg">'+
+'<div class="cmpc"><span class="lb">'+esc(L.good||"최고의 궁합")+'</span>'+compatItems(best)+
+'<div class="cmpnote">'+esc(lineFor(best[0].pct))+'</div></div>'+
+'<div class="cmpc bad"><span class="lb">'+esc(L.bad||"아쉬운 궁합")+'</span>'+compatItems(worst)+
+'<div class="cmpnote">'+esc(lineFor(worst[0].pct))+'</div></div>'+
+'</div></div>';}
+function tint(color,pct){var s=Math.max(0,Math.min(1,(pct-70)/29));
+return lerp2("#AEB4BF",color,Math.pow(s,2.5));}
+function mapHTML(type,color){var L=D.compatLabels||{};
+var list=compatList(type);if(!list.length)return "";
+var pm={};list.forEach(function(x){pm[x.type]=x.pct;});
+var g="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+if(c.type===type){
+var meFg=readable(color);
+g+='<div class="mapc me" style="background:'+color+';color:'+meFg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="badge">나</span></div>';
+}else{var p=pm[c.type]||0;var bg=tint(color,p);var fg=readable(bg);
+g+='<div class="mapc" style="background:'+bg+';color:'+fg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="p" style="opacity:1">'+p+'%</span></div>';}}
+var bar="linear-gradient(90deg,"+tint(color,72)+","+tint(color,99)+")";
+return '<div class="map"><div class="maph">'+esc(L.mapTitle||"나의 궁합 지도")+'</div>'+
+'<div class="mapg">'+g+'</div>'+
+'<div class="mapf"><span>안 맞음</span><span class="mapbar" style="background:'+bar+'"></span>'+
+'<span>잘 맞음</span></div></div>';}
+function blockHTML(name,r){
+if(name==="quote"&&r.quote){var qcls=D.quoteStyle==="bubble"?"qbb":"qb";
+return '<div class="blk"><div class="blt">'+esc(lab("quote")||"한마디")+'</div>'+
+'<div class="'+qcls+'">'+esc(r.quote)+'</div></div>';}
+if(name==="traits"&&r.traits&&r.traits.length){var h='<div class="blk"><div class="blt">'+
+esc(lab("traits")||"세부 특징")+'</div>';
+if(D.traitStyle==="sticker"){h+='<div class="trss">';
+for(var i=0;i<r.traits.length;i++){h+='<div class="tst">'+esc(r.traits[i])+'</div>';}
+h+='</div>';
+}else{h+='<div class="trs">';
+for(var i2=0;i2<r.traits.length;i2++){h+='<div class="tc">'+esc(r.traits[i2])+'</div>';}
+h+='</div>';}
+return h+"</div>";}
+if(name==="duo"&&r.duo){var g=r.duo.good||[],b=r.duo.bad||[];var chk=D.duoStyle==="check";
+var gm=chk?"✓":"",bm=chk?"✗":"",dcls=chk?" chk":"";
+var h2='<div class="blk duo"><div class="dsec g"><div class="dsh">'+esc(lab("duo","good")||"좋은 면")+'</div><div class="dls">';
+for(var j=0;j<g.length;j++){h2+='<div class="dit'+dcls+'"><b>'+gm+'</b><span>'+esc(g[j])+'</span></div>';}
+h2+='</div></div><div class="dsec b"><div class="dsh">'+esc(lab("duo","bad")||"아쉬운 면")+'</div><div class="dls">';
+for(var k2=0;k2<b.length;k2++){h2+='<div class="dit'+dcls+'"><b>'+bm+'</b><span>'+esc(b[k2])+'</span></div>';}
+return h2+"</div></div></div>";}
+if(name==="stats"&&r.stats&&r.stats.length){
+var h3='<div class="blk"><div class="blt">'+esc(lab("stats")||"지표")+'</div>';
+if(D.statStyle==="radial"){
+h3+='<div class="stsr">';
+for(var m=0;m<r.stats.length;m++){var s=r.stats[m];var v=Math.max(0,Math.min(100,s.value||0));
+var C=100.53;var off=C*(1-v/100);
+h3+='<div class="rgauge"><svg viewBox="0 0 38 38">'+
+'<circle class="rtrack" cx="19" cy="19" r="16"/>'+
+'<circle class="rfill" cx="19" cy="19" r="16" stroke-dasharray="'+C+'" stroke-dashoffset="'+off+'" transform="rotate(-90 19 19)"/>'+
+'<text x="19" y="23" text-anchor="middle" style="font-size:10px;font-weight:900;fill:var(--ink)">'+v+'%</text>'+
+'</svg><div class="rlab">'+esc(s.label)+'</div></div>';}
+h3+='</div>';
+}else{
+h3+='<div class="sts">';
+for(var m2=0;m2<r.stats.length;m2++){var s2=r.stats[m2];var v2=Math.max(0,Math.min(100,s2.value||0));
+var fc=Math.max(1,Math.min(10,Math.round(v2/10)));var sq="";
+for(var n2=1;n2<=10;n2++){sq+='<span class="sq'+(n2<=fc?" f":"")+'"></span>';}
+h3+='<div class="srow"><div class="slab">'+esc(s2.label)+'</div><div class="sqs">'+sq+'</div>'+
+'<div class="spc">'+v2+'%</div></div>';}
+h3+='</div>';
+}
+return h3+"</div>";}
+if(name==="cards"&&r.cards&&r.cards.length){
+var h4='<div class="blk"><div class="blt">'+esc(lab("cards")||"이런 사람")+'</div>';
+if(D.cardStyle==="ticket"){h4+='<div class="cdt">';
+for(var p=0;p<r.cards.length;p++){h4+='<div class="cdti"><b>'+esc(r.cards[p].label)+'</b><span>'+
+esc(r.cards[p].value)+'</span></div>';}
+h4+='</div>';
+}else{h4+='<div class="cds" style="margin-top:9px">';
+for(var p2=0;p2<r.cards.length;p2++){h4+='<div class="cd2"><b>'+esc(r.cards[p2].label)+'</b><p>'+
+esc(r.cards[p2].value)+'</p></div>';}
+h4+='</div>';}
+return h4+"</div>";}
+return "";}
+function result(code){var r=null;
+for(var i=0;i<D.results.length;i++){if(D.results[i].type===code){r=D.results[i];break;}}
+if(!r)r=D.results[0];
+setAcc(r.color||D.accent);
+var sum=(nick?esc(nick)+"님은 ":"")+esc(r.summary);
+var h='<div class="cap" id="cap"><div class="rh"><h2>'+esc(D.meta.title)+'</h2></div><div class="rb">'+
+'<div class="rn"><div class="em">'+esc(r.emoji||"✨")+'</div><h3>'+esc(r.name||D.meta.title)+'</h3>'+
+(r.tagline?'<div class="tg2">'+esc(r.tagline)+'</div>':"")+'</div>'+
+'<div class="rs">'+sum+'</div>';
+var col=r.color||D.accent;
+for(var b=0;b<D.blocks.length;b++){if(D.blocks[b]!=="map")h+=blockHTML(D.blocks[b],r);}
+h+=compatHTML(r.type);
+if(D.blocks.indexOf("map")>=0)h+=mapHTML(r.type,col);
+h+='<div class="rf">POWERED BY MAGIC FACTORY</div></div></div>'+
+'<div class="stk"><button class="btn fill" onclick="sheet(\''+code+'\')">'+
+esc(D.meta.sheetCta||"내 유형의 정체 확인하기")+'</button>'+
+'<button class="btn" onclick="saveImg(this)">결과 이미지 저장하기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+$("s5").innerHTML=h;}
+function sheet(code){var me=byType(code)||D.cast[0];
+var rows="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];var isMe=c.type===code;
+if(i===8){rows+='</div><div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div><div class="rows">';}
+rows+='<div class="row'+(isMe?" me":"")+'"><span class="no">'+("0"+(i+1)).slice(-2)+'</span>'+
+'<span class="em">'+c.emoji+'</span>'+
+'<span class="nm">'+esc(c.name)+(c.tagline?'<span class="tg">'+esc(c.tagline)+'</span>':"")+'</span>'+
+'<span class="cd">'+esc(c.type)+'</span></div>';}
+$("s6").innerHTML='<div class="sheet">'+
+'<div class="sheeth"><h2>'+esc(D.meta.sheetTitle||"전체 유형 정답지")+'</h2>'+
+'<p>열여섯 종류가 각각 어떤 성격 유형인지 전부 공개해요</p></div>'+
+'<div class="reveal"><div class="em">'+me.emoji+'</div>'+
+'<div class="nm">'+(nick?esc(nick)+"님의 ":"")+esc(me.name)+'</div>'+
+'<div class="eq">의 성격 유형은</div>'+
+'<div class="code">'+esc(me.type)+'</div></div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'<div class="sheetsec">'+esc(D.meta.setName||"전체 16종")+' 전체 목록</div>'+
+'<div class="rows">'+rows+'</div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'</div>'+
+'<div class="stk"><button class="btn fill" onclick="show(\'s5\')">내 결과로 돌아가기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+show("s6");}
+function frames(){return new Promise(function(r){requestAnimationFrame(function(){requestAnimationFrame(r);});});}
+function wait(ms){return new Promise(function(r){setTimeout(r,ms);});}
+var lastBlob=null,lastUrl="";
+function fileName(){return (D.meta.slug||"result")+".png";}
+function saveOptions(){
+var canShare=false;
+try{canShare=!!(navigator.canShare&&lastBlob&&navigator.canShare({files:[new File([lastBlob],fileName(),{type:"image/png"})]}));}catch(e){}
+var h="";
+if(canShare)h+='<button class="mbtn pri" onclick="shareImg()">사진으로 저장 · 공유</button>';
+else h+='<p class="mtip" style="margin:0 0 10px;">위 이미지를 <b>길게 눌러서 사진에 저장</b>해 주세요.</p>';
+h+='<a class="mbtn" href="'+lastUrl+'" download="'+fileName()+'" target="_blank" rel="noopener">새 탭에서 이미지 열기</a>';
+return '<div class="mbtns">'+h+'</div>'+
+'<p class="mtip">"이미지 열기"를 눌렀을 때 저장이 안 되면, 위 이미지를 직접 길게 눌러 저장해 주세요.</p>';}
+async function shareImg(){
+try{var f=new File([lastBlob],fileName(),{type:"image/png"});
+await navigator.share({files:[f],title:D.meta.title});}
+catch(e){if(e&&e.name!=="AbortError")toast("공유를 취소했거나 지원되지 않아요.");}}
+async function saveImg(btn){
+if(typeof html2canvas!=="function"){toast("이미지 도구를 불러오지 못했어요. 새로고침 후 다시 시도해 주세요.");return;}
+btn.disabled=true;var old=btn.textContent;btn.textContent="이미지 만드는 중...";
+$("mw").innerHTML='<p style="padding:40px 0;">이미지를 만들고 있어요...</p>';
+$("mo").classList.add("on");document.body.style.overflow="hidden";
+try{
+if(document.fonts){try{await document.fonts.ready;}catch(e){}}
+await frames();await wait(260);
+var cv=await html2canvas($("cap"),{backgroundColor:getComputedStyle(document.body).backgroundColor,
+scale:Math.min(window.devicePixelRatio||2,2),useCORS:true,logging:false,
+scrollX:0,scrollY:-window.scrollY,windowWidth:document.documentElement.clientWidth});
+if(lastUrl&&lastUrl.indexOf("blob:")===0){try{URL.revokeObjectURL(lastUrl);}catch(e){}}
+var dataUrl=cv.toDataURL("image/png");
+lastBlob=await new Promise(function(res){
+if(cv.toBlob)cv.toBlob(function(b){res(b);},"image/png");else res(null);});
+if(!lastBlob){
+  var bin=atob(dataUrl.split(",")[1]),arr=new Uint8Array(bin.length);
+  for(var i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);
+  lastBlob=new Blob([arr],{type:"image/png"});}
+lastUrl=dataUrl;
+$("mw").innerHTML='<img src="'+lastUrl+'" alt="결과 이미지">'+saveOptions();
+}catch(e){console.error(e);
+$("mw").innerHTML='<p style="padding:32px 0 8px;">이미지를 만들지 못했어요.<br>'+
+'대신 화면을 캡처해서 공유해 주세요.</p>'+
+'<p class="mtip">오류: '+esc(String(e&&e.message||e))+'</p>';
+}finally{btn.disabled=false;btn.textContent=old;}}
+function closeMo(){$("mo").classList.remove("on");document.body.style.overflow="";}
+$("mo").addEventListener("click",function(e){if(e.target===$("mo"))closeMo();});
+document.addEventListener("keydown",function(e){
+if(e.key==="Escape"&&$("mo").classList.contains("on"))closeMo();});
+async function share(){var dt={title:D.meta.title,text:D.meta.intro,url:location.href};
+try{if(navigator.share){await navigator.share(dt);return;}
+var tx=dt.text+"\n"+dt.url;
+if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(tx);
+toast("링크를 복사했어요.");return;}
+var ta=document.createElement("textarea");ta.value=tx;ta.style.position="fixed";ta.style.opacity="0";
+document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();
+toast("링크를 복사했어요.");}catch(e){if(e&&e.name!=="AbortError")toast("공유하지 못했어요.");}}
+function toast(m){clearTimeout(tT);var e=$("tst");e.textContent=m;e.classList.add("show");
+tT=setTimeout(function(){e.classList.remove("show");},2100);}
+intro();
+</script>
+</body>
+</html>

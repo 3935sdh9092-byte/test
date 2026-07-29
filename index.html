@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>테스트팩토리 — 심리테스트 모음</title>
+<meta name="description" content="매번 다른 주제, 매번 새로 쓴 이야기. 테스트팩토리.">
+<meta property="og:title" content="테스트팩토리 — 심리테스트 모음">
+<meta property="og:description" content="매번 다른 주제, 매번 새로 쓴 이야기.">
+<meta property="og:image" content="site-thumb.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg:#FFFFFF;
+  --ink:#111111;
+  --sub:#767676;
+  --faint:#B8B8B8;
+}
+*{box-sizing:border-box;}
+html{background:#FFFFFF;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+a{color:inherit;text-decoration:none;}
+
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+/* ===== 히어로 ===== */
+.hero{padding:44px 0 0;}
+.mark{
+  font-size:clamp(52px,11vw,128px);
+  font-weight:900;
+  letter-spacing:-3px;
+  line-height:.92;
+  margin:0;
+  white-space:nowrap;
+}
+.mark .colon{color:var(--faint);padding:0 2px;}
+.rule{border:0;border-top:2px solid var(--ink);margin:18px 0 0;}
+.subrow{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:18px 0 40px;flex-wrap:wrap;}
+.desc{font-size:15px;line-height:1.65;color:var(--ink);max-width:520px;margin:0;font-weight:500;}
+.desc b{font-weight:800;}
+.nav{display:flex;align-items:center;gap:16px;font-size:13.5px;font-weight:700;color:var(--sub);white-space:nowrap;padding-top:2px;}
+.nav a{display:flex;align-items:center;gap:5px;}
+.nav a:hover{color:var(--ink);}
+.langs{display:flex;gap:2px;border-left:1px solid #E5E5E5;padding-left:14px;}
+.langs button{padding:3px 7px;border-radius:5px;font-weight:700;font-size:13px;background:none;border:0;cursor:pointer;color:var(--sub);font-family:inherit;}
+.langs button:hover{background:#F1F1F1;color:var(--ink);}
+.langs button.cur{color:var(--ink);text-decoration:underline;text-underline-offset:3px;}
+
+.searchrow{padding:0 0 20px;}
+.searchrow input{
+  width:100%;max-width:320px;padding:10px 4px;border:0;border-bottom:2px solid var(--ink);
+  font-size:14px;font-family:inherit;font-weight:600;background:transparent;
+}
+.searchrow input::placeholder{color:var(--faint);font-weight:500;}
+
+.catrow{display:flex;gap:8px;flex-wrap:wrap;padding-bottom:28px;}
+.catrow button{
+  padding:8px 16px;border:2px solid var(--ink);border-radius:999px;background:var(--bg);
+  font-family:inherit;font-weight:800;font-size:12.5px;cursor:pointer;color:var(--ink);
+  transition:background .12s ease,color .12s ease;
+}
+.catrow button:hover{background:#F1F1F1;}
+.catrow button.cur{background:var(--ink);color:#fff;}
+
+/* ===== 그리드 ===== */
+main{padding-bottom:70px;}
+.count{font-size:12.5px;font-weight:700;color:var(--faint);margin:0 0 18px;text-transform:uppercase;letter-spacing:.4px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:26px 16px;}
+
+/* ===== 폴더 카드 (작게, 썸네일이 안에 낀 느낌) ===== */
+.card{display:block;}
+.folder{
+  position:relative;
+  aspect-ratio:5/4;
+  margin-bottom:10px;
+  margin-top:14%;
+}
+.folder .back{
+  position:absolute;left:3%;right:3%;top:5px;bottom:-2px;
+  background:rgba(17,17,17,.06);
+  border-radius:4px 10px 10px 10px;
+  clip-path:polygon(0% 16%,12% 16%,17% 3%,44% 3%,49% 16%,100% 16%,100% 100%,0% 100%);
+  z-index:1;
+}
+.folder .peek{
+  position:absolute;
+  left:18%;right:18%;top:-16%;height:50%;
+  background-size:cover;background-position:center;
+  border:3px solid #fff;border-radius:5px;
+  box-shadow:0 4px 10px rgba(17,17,17,.22);
+  transform:rotate(-5deg);
+  z-index:2;
+  transition:transform .16s ease;
+}
+.card:hover .peek{transform:rotate(-7deg) translateY(-2px);}
+.folder .face{
+  position:absolute;inset:0;
+  background:var(--fc,#FFE066);
+  border-radius:4px 10px 10px 10px;
+  clip-path:polygon(0% 16%,12% 16%,17% 3%,44% 3%,49% 16%,100% 16%,100% 100%,0% 100%);
+  box-shadow:0 7px 16px -8px rgba(17,17,17,.35);
+  transition:transform .16s ease, box-shadow .16s ease;
+  z-index:3;
+  display:flex;align-items:center;justify-content:center;
+}
+.card:hover .face{transform:translateY(-3px);box-shadow:0 12px 20px -8px rgba(17,17,17,.4);}
+.folder.has-thumb .face .emoji{display:none;}
+.folder .emoji{font-size:26px;line-height:1;}
+
+.meta{display:flex;align-items:baseline;justify-content:space-between;gap:6px;}
+.label{font-size:13px;font-weight:800;line-height:1.35;letter-spacing:-.2px;}
+.new{font-size:9px;font-weight:900;color:var(--ink);background:#FFE066;padding:2px 5px;border-radius:4px;flex-shrink:0;}
+.date{font-size:10.5px;color:var(--faint);font-weight:600;margin-top:2px;font-variant-numeric:tabular-nums;}
+
+.empty{grid-column:1/-1;text-align:center;padding:70px 20px;color:var(--sub);font-weight:600;font-size:14px;}
+
+footer{border-top:1px solid #ECECEC;padding:22px 0 40px;text-align:center;font-size:12.5px;color:var(--sub);font-weight:600;}
+footer a{text-decoration:underline;text-underline-offset:2px;}
+footer a:hover{color:var(--ink);}
+
+@media(max-width:560px){
+  .grid{grid-template-columns:repeat(3,1fr);gap:20px 10px;}
+  .subrow{padding-bottom:28px;}
+  .label{font-size:11.5px;}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="hero">
+    <h1 class="mark">TEST<span class="colon">:</span>FACTORY</h1>
+    <hr class="rule">
+    <div class="subrow">
+      <p class="desc" id="t-desc"><b>테스트팩토리</b> — 매번 다른 주제, 매번 새로 쓴 이야기.</p>
+      <nav class="nav">
+        <a href="about.html" id="t-about">⊙ 공장장 소개</a>
+        <span class="langs" id="langs"></span>
+      </nav>
+    </div>
+    <div class="searchrow">
+      <input type="text" id="q">
+    </div>
+    <div class="catrow" id="catrow"></div>
+  </div>
+
+  <main>
+    <p class="count" id="count"></p>
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <footer id="t-footer">
+    테스트팩토리 · <a href="about.html">공장장 소개</a> · <a href="privacy.html">개인정보처리방침</a>
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   여기에 테스트를 하나씩 추가하세요. 새 테스트는 배열 맨 앞(위)에 추가하면
+   자동으로 최신순 정렬돼서 맨 위에 노출돼요. (Claude Code 자동화 시
+   이 배열에 한 줄 prepend 하는 방식으로 그대로 이어서 쓰면 됩니다)
+
+   title / titleEn / titleJa / titleZh : 언어별 제목. 번역 안 넣으면 한국어로만 보여요.
+   file  : 실제 테스트 HTML 파일명 (같은 폴더에 있어야 함)
+   thumb : 썸네일 파일명 (magic-factory.html에서 "슬러그-thumb.png" 로 저장한 것)
+   date  : "YYYY-MM-DD" — 정렬 기준
+   color : 폴더 카드 색 (hex). 비워두면 자동으로 순서대로 배정됨
+   (참고: 테스트 본문 자체는 한국어예요. 링크를 눌러 들어가면 한국어 테스트가 나와요.)
+============================================================ */
+var TESTS = [
+  {
+    title: "오늘의 사주 운세",
+    titleEn: "Today's Saju Fortune",
+    titleJa: "今日の四柱推命運勢",
+    titleZh: "今日生辰八字运势",
+    emoji: "📅",
+    file: "saju-today.html",
+    thumb: "saju-today-thumb.png",
+    date: "2026-07-29",
+    color: "",
+    category: "saju"
+  },
+  {
+    title: "나의 카톡 답장 스타일은?",
+    titleEn: "What's my KakaoTalk reply style?",
+    titleJa: "私のカカオトーク返信スタイルは？",
+    titleZh: "我的KakaoTalk回复风格是？",
+    emoji: "💬",
+    file: "kakao-reply-style.html",
+    thumb: "kakao-reply-style-thumb.png",
+    date: "2026-07-29",
+    color: "",
+    category: "mbti"
+  },
+  {
+    title: "내 사주+MBTI+혈액형+이름+별자리 보기",
+    titleEn: "See My Saju + MBTI + Blood Type + Name + Zodiac",
+    titleJa: "私の四柱推命+MBTI+血液型+名前+星座を見る",
+    titleZh: "查看我的生辰八字+MBTI+血型+姓名+星座",
+    emoji: "⭐",
+    file: "saju-zodiac.html",
+    thumb: "saju-zodiac-thumb.png",
+    date: "2026-07-31",
+    color: "",
+    category: "saju"
+  },
+  {
+    title: "내 사주+MBTI+혈액형+이름 보기",
+    titleEn: "See My Saju + MBTI + Blood Type + Name",
+    titleJa: "私の四柱推命+MBTI+血液型+名前を見る",
+    titleZh: "查看我的生辰八字+MBTI+血型+姓名",
+    emoji: "🔤",
+    file: "saju-full.html",
+    thumb: "saju-full-thumb.png",
+    date: "2026-07-30",
+    color: "",
+    category: "saju"
+  },
+  {
+    title: "내 사주+MBTI+혈액형 보기",
+    titleEn: "See My Saju + MBTI + Blood Type",
+    titleJa: "私の四柱推命+MBTI+血液型を見る",
+    titleZh: "查看我的生辰八字+MBTI+血型",
+    emoji: "🩸",
+    file: "saju-mbti-blood.html",
+    thumb: "saju-mbti-blood-thumb.png",
+    date: "2026-07-29",
+    color: "",
+    category: "saju"
+  },
+  {
+    title: "내 사주+MBTI 보기",
+    titleEn: "See My Saju + MBTI",
+    titleJa: "私の四柱推命+MBTIを見る",
+    titleZh: "查看我的生辰八字+MBTI",
+    emoji: "🧬",
+    file: "saju-mbti.html",
+    thumb: "saju-mbti-thumb.png",
+    date: "2026-07-28",
+    color: "",
+    category: "saju"
+  },
+  {
+    title: "내 사주 보기",
+    titleEn: "See My Saju (Four Pillars)",
+    titleJa: "私の四柱推命を見る",
+    titleZh: "查看我的生辰八字",
+    emoji: "🔮",
+    file: "saju-view.html",
+    thumb: "saju-view-thumb.png",
+    date: "2026-07-28",
+    color: "",
+    category: "saju"
+  },
+  {
+    title: "나의 출근 유형은?",
+    titleEn: "What's my commute type?",
+    titleJa: "私の通勤タイプは？",
+    titleZh: "我的通勤类型是？",
+    emoji: "🚇",
+    file: "my-commute-type.html",
+    thumb: "my-commute-type-thumb.png",
+    date: "2026-07-28",
+    color: "",
+    category: "mbti"
+  },
+  {
+    title: "내가 쉐프라면 어떤 셰프일까?",
+    titleEn: "If I were a chef, what kind would I be?",
+    titleJa: "私がシェフだったら、どんなシェフ？",
+    titleZh: "如果我是主厨，会是哪种类型？",
+    emoji: "👨‍🍳",
+    file: "if-i-were-a-chef.html",
+    thumb: "if-i-were-a-chef-thumb.png",
+    date: "2026-07-26",
+    color: "",
+    category: "mbti"
+  },
+  {
+    title: "나도 모르게 다른 사람을 홀리는 앙큼 포인트",
+    titleEn: "The sneaky charm point that captivates people without you knowing",
+    titleJa: "知らないうちに人を惹きつけるあざとポイント",
+    titleZh: "不知不觉迷倒他人的小心机魅力点",
+    emoji: "✨",
+    file: "sneaky-charm-point.html",
+    thumb: "sneaky-charm-point-thumb.png",
+    date: "2026-07-25",
+    color: "",
+    category: "mbti"
+  },
+  {
+    title: "헤어진 그 사람이 아직도 나 생각하는 이유",
+    titleEn: "The reason your ex still thinks about you",
+    titleJa: "別れた人がまだあなたを思い出す理由",
+    titleZh: "分手后对方还想着你的理由",
+    emoji: "💌",
+    file: "why-they-still-think-of-me.html",
+    thumb: "why-they-still-think-of-me-thumb.png",
+    date: "2026-07-25",
+    color: "",
+    category: "mbti"
+  },
+  {
+    title: "내가 계절 풍경이라면 어떤 풍경일까?",
+    titleEn: "If I were a seasonal landscape, which one would I be?",
+    titleJa: "私が季節の風景だったら、どんな景色？",
+    titleZh: "如果我是季节风景，会是哪种景色？",
+    emoji: "🍁",
+    file: "season-test.html",
+    thumb: "season-test-thumb.png",
+    date: "2026-07-24",
+    color: "",
+    category: "mbti"
+  },
+  {
+    title: "내가 포켓몬이라면 어떤 속성일까?",
+    titleEn: "If I were a Pokémon, what type would I be?",
+    titleJa: "私がポケモンだったら、どのタイプ？",
+    titleZh: "如果我是宝可梦，会是什么属性？",
+    emoji: "⚡",
+    file: "pokemon-test.html",
+    thumb: "pokemon-test-thumb.png",
+    date: "2026-07-23",
+    color: "",
+    category: "mbti"
+  },
+  {
+    title: "내가 직업을 가진다면 어떤 유형의 일꾼일까?",
+    titleEn: "What kind of worker would I be?",
+    titleJa: "私はどんなタイプの働き者？",
+    titleZh: "我会是哪种类型的职场人？",
+    emoji: "💼",
+    file: "job-test.html",
+    thumb: "job-test-thumb.png",
+    date: "2026-07-22",
+    color: "",
+    category: "mbti"
+  },
+  {
+    title: "내가 부모가 된다면 어떤 하늘이 되어줄까?",
+    titleEn: "What kind of sky would I be for my child?",
+    titleJa: "親になったら、どんな空になってあげられる？",
+    titleZh: "如果我成为父母，会是怎样的天空？",
+    emoji: "🌤️",
+    file: "parent-test.html",
+    thumb: "parent-test-thumb.png",
+    date: "2026-07-21",
+    color: "",
+    category: "mbti"
+  }
+  // { title:"...", titleEn:"...", titleJa:"...", titleZh:"...", emoji:"...", file:"...", thumb:"...", date:"YYYY-MM-DD", color:"" },
+];
+
+var PALETTE = ["#FFE066","#FFB4A8","#A8D8FF","#C9F2C0","#D9C6FF","#FFD1E8"];
+
+/* ===== 사이트 껍질 번역 (직접 작성한 문구 — 자동번역 아님) ===== */
+var I18N = {
+  ko: {
+    desc: '<b>테스트팩토리</b> — 매번 다른 주제, 매번 새로 쓴 이야기.',
+    about: '⊙ 공장장 소개',
+    search: '테스트 검색',
+    count: function(n){ return n + '개의 테스트'; },
+    empty: '검색 결과가 없어요.',
+    footer: '테스트팩토리 · <a href="about.html">공장장 소개</a> · <a href="privacy.html">개인정보처리방침</a>',
+    titleKey: 'title',
+    catAll: '전체',
+    catLabels: { mbti: 'MBTI', saju: '사주' }
+  },
+  en: {
+    desc: '<b>Test Factory</b> \u2014 a new topic, a new story, every time.',
+    about: '⊙ About',
+    search: 'Search tests',
+    count: function(n){ return n + ' tests'; },
+    empty: 'No results found.',
+    footer: 'Test Factory · <a href="about.html">About</a> · <a href="privacy.html">Privacy Policy</a>',
+    titleKey: 'titleEn',
+    catAll: 'All',
+    catLabels: { mbti: 'MBTI', saju: 'Saju' }
+  },
+  ja: {
+    desc: '<b>テストファクトリー</b> — 毎回違うテーマ、毎回新しい物語。',
+    about: '⊙ 紹介',
+    search: 'テストを検索',
+    count: function(n){ return n + '件のテスト'; },
+    empty: '検索結果がありません。',
+    footer: 'テストファクトリー · <a href="about.html">紹介</a> · <a href="privacy.html">プライバシーポリシー</a>',
+    titleKey: 'titleJa',
+    catAll: 'すべて',
+    catLabels: { mbti: 'MBTI', saju: '四柱推命' }
+  },
+  zh: {
+    desc: '<b>测试工厂</b> — 每次不同的主题，每次全新的故事。',
+    about: '⊙ 关于',
+    search: '搜索测试',
+    count: function(n){ return n + ' 个测试'; },
+    empty: '没有找到结果。',
+    footer: '测试工厂 · <a href="about.html">关于</a> · <a href="privacy.html">隐私政策</a>',
+    titleKey: 'titleZh',
+    catAll: '全部',
+    catLabels: { mbti: 'MBTI', saju: '生辰八字' }
+  }
+};
+var curLang = 'ko';
+
+function daysAgo(dateStr){
+  var d = new Date(dateStr+"T00:00:00");
+  var diff = Math.floor((Date.now()-d.getTime())/86400000);
+  return diff;
+}
+
+function esc(s){
+  return String(s==null?'':s).replace(/[&<>"']/g, function(m){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];
+  });
+}
+
+function sorted(){
+  return TESTS.slice().sort(function(a,b){ return (b.date||'').localeCompare(a.date||''); });
+}
+
+function titleFor(t){
+  var key = I18N[curLang].titleKey;
+  return t[key] || t.title;
+}
+
+function render(list){
+  var grid = document.getElementById('grid');
+  var count = document.getElementById('count');
+  count.textContent = I18N[curLang].count(list.length);
+  if(!list.length){
+    grid.innerHTML = '<div class="empty">'+I18N[curLang].empty+'</div>';
+    return;
+  }
+  grid.innerHTML = list.map(function(t, i){
+    var color = t.color || PALETTE[i % PALETTE.length];
+    var isNew = daysAgo(t.date) <= 3;
+    return '<a class="card" href="'+esc(t.file)+'">'+
+      '<div class="folder">'+
+        '<div class="back"></div>'+
+        '<div class="face" style="--fc:'+color+'"><span class="emoji">'+esc(t.emoji||'✨')+'</span></div>'+
+      '</div>'+
+      '<div class="meta">'+
+        '<span class="label">'+esc(titleFor(t))+'</span>'+
+        (isNew ? '<span class="new">NEW</span>' : '')+
+      '</div>'+
+      '<div class="date">'+esc(t.date)+'</div>'+
+    '</a>';
+  }).join('');
+
+  /* 썸네일이 있는 카드만 미리 로드해보고, 성공한 것만 폴더 위로 살짝 얹음 (실패하면 색+이모지 그대로 유지) */
+  var cards = grid.querySelectorAll('.card');
+  list.forEach(function(t, i){
+    if(!t.thumb) return;
+    var img = new Image();
+    img.onload = function(){
+      var card = cards[i];
+      if(!card) return;
+      var folder = card.querySelector('.folder');
+      var face = folder.querySelector('.face');
+      var peek = document.createElement('div');
+      peek.className = 'peek';
+      peek.style.backgroundImage = 'url("'+t.thumb.replace(/"/g,'')+'")';
+      folder.insertBefore(peek, face);
+      folder.classList.add('has-thumb');
+    };
+    img.src = t.thumb;
+  });
+}
+
+var ALL = sorted();
+var curCat = 'all';
+
+function catLabel(cat){
+  if(cat === 'all') return I18N[curLang].catAll;
+  return (I18N[curLang].catLabels && I18N[curLang].catLabels[cat]) || cat;
+}
+
+function applyFilter(){
+  var v = document.getElementById('q').value.trim().toLowerCase();
+  var list = ALL.filter(function(t){
+    var okCat = curCat === 'all' || t.category === curCat;
+    var okSearch = !v || titleFor(t).toLowerCase().indexOf(v) >= 0;
+    return okCat && okSearch;
+  });
+  render(list);
+}
+
+function renderCatTabs(){
+  var cats = ['all'];
+  ALL.forEach(function(t){
+    if(t.category && cats.indexOf(t.category) < 0) cats.push(t.category);
+  });
+  var box = document.getElementById('catrow');
+  box.innerHTML = cats.map(function(c){
+    return '<button type="button" data-cat="'+c+'" class="'+(c===curCat?'cur':'')+'">'+esc(catLabel(c))+'</button>';
+  }).join('');
+  box.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click', function(){
+      curCat = b.dataset.cat;
+      box.querySelectorAll('button').forEach(function(x){ x.classList.toggle('cur', x.dataset.cat === curCat); });
+      applyFilter();
+    });
+  });
+}
+
+function applyLang(lang){
+  curLang = lang;
+  var d = I18N[lang];
+  document.getElementById('t-desc').innerHTML = d.desc;
+  document.getElementById('t-about').innerHTML = d.about;
+  document.getElementById('q').placeholder = d.search;
+  document.getElementById('t-footer').innerHTML = d.footer;
+  document.querySelectorAll('.langs button').forEach(function(b){
+    b.classList.toggle('cur', b.dataset.lang === lang);
+  });
+  renderCatTabs();
+  applyFilter();
+}
+
+document.getElementById('q').addEventListener('input', applyFilter);
+
+(function(){
+  var LANGS = [{code:'ko',label:'한국어'},{code:'en',label:'EN'},{code:'ja',label:'日本語'},{code:'zh',label:'中文'}];
+  var box = document.getElementById('langs');
+  box.innerHTML = LANGS.map(function(l){
+    return '<button type="button" data-lang="'+l.code+'" class="'+(l.code==='ko'?'cur':'')+'">'+l.label+'</button>';
+  }).join('');
+  box.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click', function(){ applyLang(b.dataset.lang); });
+  });
+})();
+
+applyLang('ko');
+</script>
+
+</body>
+</html>

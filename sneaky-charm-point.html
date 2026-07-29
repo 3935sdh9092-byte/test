@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나도 모르게 다른 사람을 홀리는 앙큼 포인트</title>
+<meta name="description" content="본인은 모르는데 남들은 다 아는 그거, 12문항이면 나와요.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="나도 모르게 다른 사람을 홀리는 앙큼 포인트">
+<meta property="og:description" content="본인은 모르는데 남들은 다 아는 그거, 12문항이면 나와요.">
+<meta property="og:image" content="sneaky-charm-point-thumb.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquareRound@1.0/nanumsquareround.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<!-- 애드센스: 발급 후 주석 풀고 XXXX를 본인 코드로 교체
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<style>
+:root{--bg:#1B1030;--paper:#2A1B47;--ink:#F5EFFF;--sub:#C3AEE8;--line:#FF6FD8;--acc:#FFD23F;--soft:rgba(255,210,63,0.12);--deep:rgba(255,210,63,0.24);--accFg:#fff;--softFg:#F5EFFF;--deepFg:#F5EFFF;--chip:rgba(245,239,255,0.07);--chips:rgba(245,239,255,0.1);--r:14px;--bw:2px;--shadow:4px 4px 0 #FF6FD8;--fh:'NanumSquareRound','Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;--fb:'NanumSquareRound','Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+*{box-sizing:border-box;}
+html{background:#1B1030;}
+body{margin:0;min-height:100vh;color:var(--ink);background-color:var(--bg);background-image:repeating-linear-gradient(45deg,transparent 0,transparent 10px,rgba(255,111,216,0.06) 10px,rgba(255,111,216,0.06) 11px);background-size:auto;font-family:var(--fb);word-break:keep-all;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;line-height:1.6;}
+h1,h2,h3,.qx,.rn h3,.sheeth h2,.reveal .code,.dsh,.blt,.cmph,.maph,.sheetsec{font-family:var(--fh);}
+button,input{font:inherit;-webkit-tap-highlight-color:transparent;}
+.app{width:100%;max-width:560px;margin:0 auto;padding:26px 14px 46px;}
+.sc{display:none;} .sc.on{display:block;animation:in .18s ease;}
+@keyframes in{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+.pa{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);}
+.btn{width:100%;min-height:54px;padding:12px;cursor:pointer;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--ink);font-size:16px;font-weight:800;}
+.btn:active{transform:scale(.99);}
+.btn.fill{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.stk{display:grid;gap:10px;margin-top:14px;}
+.intro{padding:0 0 24px;text-align:center;overflow:hidden;}
+.hero{margin:0 0 20px;line-height:0;}
+.hero svg{display:block;width:100%;height:auto;}
+.intro>h1,.intro>p,.intro>.castt,.intro>.cast,.intro>.mt,.intro>.em{margin-left:18px;margin-right:18px;}
+.intro>.em{padding-top:34px;}
+.intro .em{font-size:54px;line-height:1;margin-bottom:12px;}
+.intro h1{font-size:25px;line-height:1.45;margin:0 0 10px;font-weight:700;letter-spacing:-.2px;text-wrap:balance;}
+.intro p{font-size:14.5px;color:var(--sub);line-height:1.8;margin:0;font-weight:400;text-wrap:pretty;}
+.castt{margin:20px 0 10px;font-size:12.5px;font-weight:800;color:var(--acc);}
+.mt{margin-top:16px;font-size:12.5px;font-weight:700;color:var(--sub);}
+.langhint{margin-top:8px;font-size:11px;font-weight:500;color:var(--sub);opacity:.75;line-height:1.6;}
+.cast{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;}
+.ci{min-width:0;padding:9px 3px 8px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);text-align:center;}
+.ci .e{font-size:22px;line-height:1;display:block;margin-bottom:4px;}
+.ci .n{font-size:11px;font-weight:600;line-height:1.4;word-break:keep-all;text-wrap:balance;}
+.ci .t{font-size:8.5px;color:var(--sub);opacity:.8;font-weight:700;margin-top:2px;display:block;}
+.intro .mt{font-size:12px;color:var(--sub);opacity:.75;margin-top:16px;font-weight:700;}
+.nb{padding:40px 24px;text-align:center;}
+.nb h2{font-size:22px;margin:0 0 22px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.nb input{width:100%;max-width:340px;height:54px;padding:0 14px;text-align:center;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-size:19px;font-weight:800;outline:none;}
+.nb input:focus{border-color:var(--acc);}
+.gd{max-width:400px;margin:24px auto 0;padding:14px 16px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);font-size:13.5px;line-height:1.8;font-weight:600;text-align:left;color:var(--sub);text-wrap:pretty;}
+.qw{padding:24px 20px 28px;}
+.qt{padding-bottom:14px;border-bottom:var(--bw) solid var(--line);}
+.qi{display:flex;justify-content:space-between;gap:12px;margin-bottom:9px;font-size:12px;font-weight:800;}
+.qi .sec{color:var(--acc);}
+.trk{width:100%;height:14px;padding:2px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.fil{width:0;height:100%;background:var(--acc);border-radius:var(--r);transition:width .2s ease;}
+.pdots{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.pdot{height:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--chip);opacity:.35;}
+.pdot.dn{opacity:1;background:var(--acc);}
+.pdot.now{opacity:1;background:var(--acc);animation:blink .7s infinite alternate;}
+@keyframes blink{from{opacity:.4;}to{opacity:1;}}
+.psq{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.psq i{display:block;aspect-ratio:1/1;min-height:12px;border:1px solid var(--line);border-radius:2px;background:var(--chip);}
+.psq i.dn{background:var(--acc);}
+.qn{margin-top:22px;color:var(--acc);font-size:13px;font-weight:900;}
+.qx{min-height:76px;margin:14px 0 20px;text-align:center;font-size:21px;line-height:1.6;letter-spacing:-.2px;font-weight:700;display:flex;align-items:center;justify-content:center;text-wrap:balance;}
+.ops{display:grid;gap:11px;}
+.op{position:relative;width:100%;min-height:70px;padding:15px 16px 15px 52px;cursor:pointer;text-align:left;color:var(--ink);background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15.5px;line-height:1.6;font-weight:500;text-wrap:pretty;}
+.op::before{content:attr(data-n);position:absolute;left:14px;top:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border:var(--bw) solid var(--line);border-radius:var(--r);transform:translateY(-50%);font-size:13px;font-weight:900;background:var(--paper);}
+.op.pk{background:var(--soft);border-color:var(--acc);}
+.op:disabled{cursor:default;}
+.qnote{margin:20px 0 0;color:var(--sub);text-align:center;font-size:12px;font-weight:700;}
+.qback{display:block;margin:14px auto 0;padding:8px 4px;background:none;border:0;color:var(--sub);font-family:var(--fb);font-size:12.5px;font-weight:700;cursor:pointer;text-align:center;}
+.lw{min-height:420px;padding:40px 22px;display:flex;align-items:center;justify-content:center;text-align:center;}
+.lw h2{margin:0 0 10px;font-size:24px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.lw p{margin:0;color:var(--sub);font-size:14px;}
+.dts{display:flex;justify-content:center;gap:9px;margin:28px 0 24px;}
+.dts span{width:12px;height:12px;background:var(--acc);border:var(--bw) solid var(--line);border-radius:var(--r);animation:bump 1.1s ease-in-out infinite;}
+.dts span:nth-child(2){animation-delay:.15s;} .dts span:nth-child(3){animation-delay:.3s;}
+@keyframes bump{0%,100%{transform:translateY(0);opacity:.4;}50%{transform:translateY(-7px);opacity:1;}}
+.lbar{width:100%;height:14px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.lbar span{display:block;width:32%;height:100%;background:var(--acc);animation:sld 1.05s ease-in-out infinite;}
+@keyframes sld{from{transform:translateX(-110%);}to{transform:translateX(340%);}}
+.cap{overflow:hidden;max-width:100%;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rh{padding:13px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.rh h2{margin:0;color:var(--accFg);font-size:15.5px;font-weight:700;line-height:1.45;letter-spacing:-.1px;text-wrap:balance;}
+.rb{padding:14px;}
+.rn{padding:24px 16px 20px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rn .em{font-size:64px;line-height:1;}
+.rn h3{margin:10px 0 6px;font-size:29px;font-weight:700;line-height:1.3;letter-spacing:-.3px;color:var(--acc);text-wrap:balance;}
+.rn .tg2{font-size:14.5px;font-weight:600;color:var(--ink);opacity:.85;}
+.rn .cd{display:inline-block;margin-top:12px;padding:4px 12px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:11px;font-weight:800;letter-spacing:1.2px;}
+.rs{margin-top:12px;padding:15px 16px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15px;line-height:1.8;font-weight:400;text-wrap:pretty;}
+.blk{margin-top:14px;}
+.blt{margin:0;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-bottom:0;border-radius:var(--r) var(--r) 0 0;font-size:13px;font-weight:900;text-align:center;text-wrap:balance;}
+.qb{padding:18px 16px;text-align:center;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);font-size:17px;font-weight:600;line-height:1.65;text-wrap:balance;}
+.qbb{position:relative;margin:6px 16px 24px;padding:18px 16px;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:16px;font-weight:600;line-height:1.65;text-align:center;text-wrap:balance;}
+.qbb::before{content:"";position:absolute;left:32px;bottom:-11px;width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-top:13px solid var(--line);}
+.qbb::after{content:"";position:absolute;left:34.5px;bottom:-6.5px;width:0;height:0;border-left:8.5px solid transparent;border-right:8.5px solid transparent;border-top:10px solid var(--soft);}
+.trs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:var(--bw) solid var(--line);border-left:var(--bw) solid var(--line);}
+.tc{min-height:82px;padding:9px 6px;display:flex;align-items:center;justify-content:center;background:var(--chip);color:var(--ink);border-right:var(--bw) solid var(--line);border-bottom:var(--bw) solid var(--line);text-align:center;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;text-wrap:balance;}
+.tc:nth-child(even){background:var(--soft);color:var(--softFg);}
+.trss{display:flex;flex-wrap:wrap;gap:10px 8px;padding:16px 14px;background:var(--chip);border-top:var(--bw) solid var(--line);}
+.tst{padding:8px 13px;background:var(--paper);border:var(--bw) solid var(--line);border-radius:999px;font-size:12.5px;font-weight:700;box-shadow:2px 2px 0 var(--line);word-break:keep-all;text-wrap:balance;color:var(--ink);}
+.tst:nth-child(3n+1){transform:rotate(-2.5deg);}
+.tst:nth-child(3n+2){transform:rotate(1.5deg);}
+.tst:nth-child(3n){transform:rotate(-0.5deg);}
+.tst:nth-child(even){background:var(--soft);color:var(--softFg);}
+.duo{display:grid;gap:10px;}
+.dsec{border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.dsh{padding:9px;text-align:center;font-size:14px;font-weight:900;color:var(--deepFg);border-bottom:var(--bw) solid var(--line);}
+.dsec.g .dsh{background:var(--acc);color:var(--accFg);}
+.dsec.b .dsh{background:var(--deep);}
+.dls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px 10px;padding:12px 11px;background:var(--chip);}
+.dit span{text-wrap:pretty;}
+.dit{display:flex;align-items:flex-start;min-width:0;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;}
+.dit b{width:7px;height:7px;margin:5px 6px 0 0;flex:0 0 auto;background:var(--acc);border-radius:1px;}
+.dit.chk b{width:17px;height:17px;margin:1px 8px 0 0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;background:var(--acc);color:var(--accFg);}
+.dsec.b .dit.chk b{background:var(--sub);color:var(--paper);}
+.sts{padding:14px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);}
+.srow{display:grid;grid-template-columns:76px 1fr 42px;align-items:center;gap:9px;}
+.srow+.srow{margin-top:11px;}
+.slab{font-size:12.5px;font-weight:900;}
+.sqs{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;}
+.sq{aspect-ratio:1/1;min-height:11px;border-radius:2px;background:var(--chips);box-shadow:inset 0 0 0 1px rgba(255,111,216,0.35);}
+.sq.f{background:var(--acc);}
+.spc{text-align:right;font-size:12.5px;font-weight:900;}
+.stsr{padding:16px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:14px 8px;}
+.rgauge{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.rgauge svg{width:64px;height:64px;overflow:visible;}
+.rgauge .rtrack{fill:none;stroke:var(--chips);stroke-width:6;}
+.rgauge .rfill{fill:none;stroke:var(--acc);stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset .5s ease;}
+.rgauge .rlab{font-size:11px;font-weight:800;color:var(--sub);text-align:center;line-height:1.35;}
+.cds{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px;}
+.cd2{padding:12px 11px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.cd2 b{display:inline-block;margin-bottom:7px;padding:3px 9px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:10.5px;font-weight:800;}
+.cd2 p{margin:0;font-size:13.5px;line-height:1.65;font-weight:500;text-wrap:pretty;}
+.cdt{background:var(--paper);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);padding:2px 16px;}
+.cdti{padding:12px 0;border-bottom:var(--bw) dashed var(--line);}
+.cdti:last-child{border-bottom:0;}
+.cdti b{display:block;font-size:11px;font-weight:900;color:var(--acc);margin-bottom:3px;letter-spacing:.2px;}
+.cdti span{display:block;font-size:13.5px;font-weight:600;line-height:1.55;text-wrap:pretty;}
+.map{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.maph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.mapg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--chip);}
+.mapc{position:relative;min-width:0;padding:9px 3px 8px;text-align:center;border-right:1px solid rgba(255,111,216,0.18);border-bottom:1px solid rgba(255,111,216,0.18);}
+.mapc:nth-child(4n){border-right:0;}
+.mapc:nth-last-child(-n+4){border-bottom:0;}
+.mapc .e{display:block;font-size:20px;line-height:1;}
+.mapc .n{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;margin-top:4px;font-size:9px;font-weight:600;line-height:1.35;overflow:hidden;word-break:keep-all;text-wrap:balance;padding:0 2px;min-height:24px;}
+.mapc .p{display:block;margin-top:2px;font-size:9.5px;font-weight:900;opacity:.75;}
+.mapc.me{outline:var(--bw) solid var(--acc);outline-offset:-2px;}
+.mapc .badge{display:inline-block;margin-top:2px;padding:1px 7px;border-radius:999px;background:var(--acc);color:var(--accFg);font-size:9px;font-weight:800;}
+.mapf{display:flex;align-items:center;gap:7px;padding:9px 12px;background:var(--chip);border-top:var(--bw) solid var(--line);font-size:9.5px;font-weight:800;color:var(--sub);}
+.mapbar{flex:1;height:7px;border-radius:999px;}
+.cmp{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.cmph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.cmpg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--chip);}
+.cmpc{min-width:0;padding:12px 8px 13px;text-align:center;}
+.cmpc+.cmpc{border-left:var(--bw) solid var(--line);}
+.cmpc .lb{display:inline-block;margin-bottom:10px;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;background:var(--acc);color:var(--accFg);}
+.cmpc.bad .lb{background:#AEB4BF;color:#fff;}
+.cmpi{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:7px;}
+.cmpi .e{font-size:24px;line-height:1;}
+.cmpi .n{min-width:0;font-size:13px;font-weight:600;line-height:1.45;text-align:left;word-break:keep-all;text-wrap:balance;}
+.cmpi .p{font-size:11.5px;font-weight:900;color:var(--acc);display:block;}
+.cmpc.bad .cmpi .p{color:var(--sub);}
+.cmpnote{margin-top:11px;padding-top:9px;border-top:1px dashed rgba(255,111,216,0.3);font-size:12px;line-height:1.65;font-weight:500;color:var(--sub);}
+.rf{margin-top:16px;padding-top:12px;border-top:var(--bw) dashed var(--line);color:var(--sub);text-align:center;font-size:11px;font-weight:700;letter-spacing:.6px;}
+.ad{max-width:560px;margin:22px auto 0;min-height:110px;display:flex;align-items:center;justify-content:center;border:var(--bw) dashed var(--line);border-radius:var(--r);color:var(--sub);font-size:12px;opacity:.5;}
+.sheet{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.sheeth{padding:16px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.sheeth h2{margin:0;color:var(--accFg);font-size:18px;font-weight:800;letter-spacing:-.4px;}
+.sheeth p{margin:5px 0 0;color:var(--accFg);opacity:.85;font-size:11.5px;font-weight:700;}
+.reveal{margin:14px;padding:20px 16px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.reveal .em{font-size:46px;line-height:1;}
+.reveal .nm{margin-top:8px;font-size:19px;font-weight:700;line-height:1.45;text-wrap:balance;}
+.reveal .eq{margin:9px 0 7px;font-size:13px;font-weight:800;color:var(--sub);}
+.reveal .code{display:inline-block;padding:8px 22px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:26px;font-weight:800;letter-spacing:3px;}
+.sheetad{margin:0 14px 14px;min-height:100px;display:flex;align-items:center;justify-content:center;border:var(--bw) dashed var(--line);border-radius:var(--r);color:var(--sub);font-size:11.5px;opacity:.5;}
+.sheetsec{margin:0 14px 10px;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:12.5px;font-weight:900;text-align:center;}
+.rows{margin:0 14px 14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.row{display:grid;grid-template-columns:26px 30px minmax(0,1fr) auto;align-items:center;gap:9px;padding:10px 11px;background:var(--chip);border-bottom:1px solid rgba(255,111,216,0.18);}
+.row:last-child{border-bottom:0;}
+.row.me{background:var(--soft);color:var(--softFg);}
+.row .no{font-size:10px;font-weight:800;color:var(--sub);opacity:.7;}
+.row .em{font-size:22px;line-height:1;text-align:center;}
+.row .nm{font-size:14px;font-weight:600;line-height:1.45;min-width:0;word-break:keep-all;text-wrap:balance;}
+.row .tg{display:block;font-size:10.5px;font-weight:700;color:var(--sub);opacity:.85;margin-top:2px;}
+.row .cd{padding:4px 10px;border-radius:999px;background:var(--deep);font-size:11px;font-weight:800;letter-spacing:.8px;white-space:nowrap;}
+.row.me .cd{background:var(--acc);color:var(--accFg);}
+.mo{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(20,20,20,.82);overflow-y:auto;}
+.mo.on{display:flex;}
+.mb2{width:100%;max-width:360px;max-height:92vh;overflow:auto;padding:20px 16px;text-align:center;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);margin:auto;}
+.mb2 h3{margin:0 0 8px;font-size:18px;font-weight:900;}
+.mb2 p{margin:0 0 16px;color:var(--sub);font-size:13px;line-height:1.55;font-weight:600;}
+.mb2 img{display:block;width:100%;border:var(--bw) solid var(--line);border-radius:var(--r);}
+.mbtns{display:grid;gap:8px;margin-top:14px;}
+.mbtn{display:block;width:100%;padding:14px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-family:var(--fb);font-size:14.5px;font-weight:600;text-align:center;text-decoration:none;cursor:pointer;box-sizing:border-box;}
+.mbtn.pri{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.mtip{margin:12px 0 0!important;font-size:12px;line-height:1.6;color:var(--sub);}
+.mb2 .cl{width:100%;min-height:46px;margin-top:14px;cursor:pointer;color:#fff;background:var(--line);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:14px;font-weight:800;}
+.tst{position:fixed;left:50%;bottom:26px;z-index:200;max-width:calc(100% - 32px);padding:12px 18px;color:#fff;background:rgba(28,28,28,.95);border:var(--bw) solid #fff;border-radius:var(--r);font-size:13.5px;font-weight:700;transform:translate(-50%,16px);opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+.tst.show{opacity:1;transform:translate(-50%,0);}
+@media(hover:hover) and (pointer:fine){
+.btn:hover{background:var(--soft);}
+.btn.fill:hover{opacity:.9;background:var(--acc);}
+.op:hover{background:var(--soft);}
+.qback:hover{color:var(--ink);}
+}
+@media(max-width:520px){.app{padding:18px 11px 38px;}.intro{padding:28px 14px 20px;}.intro h1{font-size:22px;}
+.ci .n{font-size:9.5px;} .ci .e{font-size:19px;}
+.qw{padding:20px 15px 24px;}.qx{font-size:19px;min-height:66px;}
+.op{min-height:64px;padding:13px 13px 13px 48px;font-size:14px;}
+.tc{min-height:74px;font-size:11.5px;}.rn h3{font-size:26px;}.rh h2{font-size:14px;}
+.dls{gap:6px 7px;padding:10px 9px;}.dit{font-size:11.5px;}.cds{gap:7px;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <section class="sc on" id="s1"></section>
+  <section class="sc" id="s2"></section>
+  <section class="sc" id="s3"></section>
+  <section class="sc" id="s4"></section>
+  <section class="sc" id="s5"></section>
+  <section class="sc" id="s6"></section>
+  <div class="ad">광고 영역 (애드센스 코드 삽입 위치)</div>
+</div>
+<div class="mo" id="mo"><div class="mb2"><h3>이미지 꾹 눌러 저장하기</h3><p>아래 이미지를 길게 누르거나 우클릭해서<br>저장해 주세요.</p><div id="mw"><p style="padding:40px 0;">이미지를 만들고 있어요...</p></div><button class="cl" onclick="closeMo()">닫기</button></div></div>
+<div class="tst" id="tst"></div>
+<script>
+"use strict";
+var D={"useName":true,"meta":{"title":"나도 모르게 다른 사람을 홀리는 앙큼 포인트","emoji":"✨","intro":"본인은 모르는데 남들은 다 아는 그거, 12문항이면 나와요.","loadingText":"당신의 앙큼 포인트를 찾는 중...","sheetTitle":"16가지 앙큼 포인트 전체 공개","sheetCta":"내 진짜 앙큼 포인트 확인하기","setName":"나도 몰랐던 앙큼 포인트","slug":"sneaky-charm-point"},"blocks":["quote","traits","duo","stats","cards","map"],"blockLabels":{"quote":"◈ 이 앙큼함을 한 문장으로","traits":"◈ 이 매력을 가진 사람 특징","duo":{"good":"◈ 사람들이 반하는 포인트","bad":"◈ 살짝 아쉬운 포인트"},"stats":"◈ 지수로 보는 이 매력","cards":"◈ 나도 몰랐던 순간들","map":"◈ 16가지 앙큼 포인트 전체 궁합"},"compatLabels":{"title":"앙큼 포인트 궁합","good":"같이 있으면 시너지 터지는 조합","bad":"묘하게 결이 다른 조합","mapTitle":"16가지 앙큼 포인트 전체 궁합"},"compat":{"ISTJ":"ESTJ98 ISFJ96 ESFJ94 ISTP92 INTJ91 INFJ88 ISFP87 ENTJ86 INTP84 ENFJ82 ESFP80 INFP79 ESTP78 ENTP76 ENFP74","ISFJ":"ESFJ98 ISTJ96 ESTJ95 ISFP93 INFJ92 ENFJ90 INFP88 ISTP87 INTJ85 ESFP84 ENTJ82 ESTP80 ENFP79 INTP78 ENTP76","INFJ":"ENFP99 ENTP97 INFP96 ENFJ95 INTJ94 ISFP92 ISFJ91 INTP89 ENTJ88 ISTJ87 ESFP84 ISTP83 ESTJ80 ESFJ79 ESTP77","INTJ":"ENFP99 ENTP97 INFJ94 INTP93 ENTJ92 ISTJ91 INFP89 ISTP88 ISFJ85 ESTJ84 ENFJ83 ISFP81 ESFP78 ESTP76 ESFJ75","ISTP":"ESTP98 ISFP96 ISTJ92 INTP91 ENTP90 INTJ88 ESTJ87 ESFP86 ENTJ84 ISFJ83 INFP81 ENFP80 INFJ79 ESFJ78 ENFJ76","ISFP":"ESFP98 ISTP96 INFP95 ISFJ93 ENFP92 INFJ91 ESFJ89 INTJ88 ESTP87 ENFJ86 ISTJ85 INTP83 ENTP82 ESTJ80 ENTJ79","INFP":"ENFJ99 ENTJ97 ENFP96 INFJ96 ISFP95 INTP93 INTJ89 ISFJ88 ENTP87 ESFJ86 ISTP84 ESFP82 ISTJ79 ESTP78 ESTJ76","INTP":"ENTJ99 ENFJ97 ENTP96 INTJ93 INFP93 ISTP91 INFJ89 ESTP87 ENFP86 ISTJ84 ISFP83 ESTJ82 ISFJ78 ESFP77 ESFJ75","ESTP":"ISTP98 ESFP96 ENTP94 ESTJ93 ISTJ91 INTP87 ISFP87 ENTJ86 ENFP84 ESFJ83 ISFJ80 INFP78 INFJ77 INTJ76 ENFJ75","ESFP":"ISFP98 ESTP96 ESFJ95 ENFP94 ISFJ92 ESTJ90 ENFJ89 ISTP86 INFJ84 INFP82 ENTP81 ISTJ80 INTJ78 INTP77 ENTJ76","ENFP":"INFJ99 INTJ99 ENFJ98 INFP96 ESFP94 ISFP92 ENTP91 INTP86 ENTJ85 ESTP84 ISTP80 ESFJ80 ISFJ79 ISTJ74 ESTJ72","ENTP":"INFJ97 INTJ97 ENTJ96 INTP96 ESTP94 ENFP91 ISTP90 INFP87 ESTJ84 ENFJ83 ISFP82 ESFP81 ESFJ79 ISTJ76 ISFJ76","ESTJ":"ISTJ98 ESFJ96 ISFJ95 ENTJ94 ESTP93 ESFP90 ISTP87 INTJ84 ENTP84 INTP82 ENFJ81 INFJ80 ISFP80 INFP76 ENFP72","ESFJ":"ISFJ98 ESTJ96 ESFP95 ISTJ94 ENFJ94 ISFP89 INFP86 ESTP83 ENFP80 INFJ79 ENTP79 ENTJ78 ISTP78 INTJ75 INTP75","ENFJ":"INFP99 ENFP98 INTP97 INFJ95 ESFJ94 ISFJ90 ESFP89 ISFP86 ENTJ85 INTJ83 ENTP83 ISTJ82 ESTJ81 ISTP76 ESTP75","ENTJ":"INTP99 INFP97 ENTP96 ESTJ94 INTJ92 INFJ88 ISTJ86 ESTP86 ENFP85 ENFJ85 ISTP84 ISFJ82 ISFP79 ESFJ78 ESFP76"},"compatLines":[{"min":95,"text":"둘이 만나면 주변 사람들 다 홀리고 다닐 조합이에요"},{"min":88,"text":"서로의 매력을 제일 잘 알아봐주는 궁합이에요"},{"min":82,"text":"결은 달라도 은근히 잘 어울리는 조합이에요"},{"min":76,"text":"다른 매력이라 오히려 서로 신선하게 느껴져요"},{"min":0,"text":"완전히 다른 매력이라 그만큼 배울 점도 많아요"}],"statStyle":"squares","traitStyle":"grid","cardStyle":"grid","duoStyle":"dot","quoteStyle":"banner","cast":[{"type":"ISTJ","name":"무심한 척 다 챙기는 거","emoji":"🗝️","tagline":"티 안 내고 다 해놓는 그 갭"},{"type":"ISFJ","name":"다정한데 은근 밀당하는 거","emoji":"🍯","tagline":"다 받아주다가 한 번씩 튕기는 매력"},{"type":"INFJ","name":"가끔 훅 들어오는 눈빛","emoji":"🔮","tagline":"평소엔 잔잔하다 훅 깊어지는 눈"},{"type":"INTJ","name":"웃을 때만 보이는 반전 매력","emoji":"♠️","tagline":"안 웃다가 웃으면 훅 가는 타입"},{"type":"ISTP","name":"무표정하다가 훅 웃는 거","emoji":"🖤","tagline":"차가운 줄 알았는데 은근 다정함"},{"type":"ISFP","name":"은근슬쩍 챙기면서 티 안 내는 거","emoji":"🌾","tagline":"챙겨놓고 안 챙긴 척하는 거"},{"type":"INFP","name":"혼잣말처럼 툭 던지는 진심","emoji":"🕯️","tagline":"장난인 척 진심을 흘리는 거"},{"type":"INTP","name":"예상 못한 타이밍에 훅 들어오는 드립","emoji":"🌀","tagline":"무심하다가 훅 웃기는 반전"},{"type":"ESTP","name":"장난치다가 갑자기 진지해지는 눈빛","emoji":"🔥","tagline":"놀리다가 훅 진지해지는 그 텀"},{"type":"ESFP","name":"관심 없는 척하다 결국 제일 챙기는 거","emoji":"🎀","tagline":"안 챙기는 척 다 챙기는 거"},{"type":"ENFP","name":"텐션 낮췄다가 훅 들어오는 순간","emoji":"✨","tagline":"신나다가 훅 진지해지는 갭"},{"type":"ENTP","name":"약 올리듯 웃으면서 던지는 말투","emoji":"😏","tagline":"놀리는 건데 은근 설레게 하는 거"},{"type":"ESTJ","name":"츤데레처럼 챙기는 말투","emoji":"🧷","tagline":"퉁명스러운데 다 챙겨주는 거"},{"type":"ESFJ","name":"다 챙기다가 은근슬쩍 흘리는 애정","emoji":"🍬","tagline":"다한테 다정한데 나한텐 좀 더한 거"},{"type":"ENFJ","name":"다정한데 눈빛이 진지해지는 순간","emoji":"🕊️","tagline":"장난스럽다가 훅 진심 어린 눈빛"},{"type":"ENTJ","name":"카리스마 있다가 갑자기 허당끼 보이는 거","emoji":"👑","tagline":"센 척하다 훅 풀리는 그 갭"}],"questions":[{"section":"평소 텐션","text":"친한 사람들 사이에서 나는 보통 어떤 텐션이야?","options":[{"text":"먼저 나서서 분위기를 띄우는 편","value":"E"},{"text":"옆에서 맞춰주며 지켜보는 편","value":"I"}]},{"section":"관심 표현","text":"누군가에게 관심이 생기면 나는?","options":[{"text":"평소 행동이나 습관을 유심히 본다","value":"S"},{"text":"그 사람 전체적인 느낌에 끌린다","value":"N"}]},{"section":"장난 스타일","text":"좋아하는 사람한테 장난칠 때 나는?","options":[{"text":"살짝 놀리면서 반응을 본다","value":"T"},{"text":"다정하게 챙기면서 다가간다","value":"F"}]},{"section":"약속 스타일","text":"좋아하는 사람과의 약속, 나는 보통?","options":[{"text":"미리 계획해서 알차게 준비한다","value":"J"},{"text":"그날 분위기 따라 즉흥적으로 움직인다","value":"P"}]},{"section":"웃는 타이밍","text":"나는 보통 언제 제일 크게 웃어?","options":[{"text":"사람들과 있을 때 자주 웃는 편","value":"E"},{"text":"단둘이 있을 때 훨씬 크게 웃는 편","value":"I"}]},{"section":"기억하는 것","text":"좋아하는 사람에 대해 나는 뭘 더 잘 기억해?","options":[{"text":"말투, 습관 같은 구체적인 것들","value":"S"},{"text":"그때 느꼈던 분위기나 감정","value":"N"}]},{"section":"티 내는 방식","text":"마음에 드는 티, 나는 어떻게 내는 편이야?","options":[{"text":"논리적으로 이유를 대며 다가간다","value":"T"},{"text":"그냥 마음 가는 대로 다정하게 대한다","value":"F"}]},{"section":"연락 스타일","text":"관심 있는 사람과 연락할 때 나는?","options":[{"text":"일정한 리듬으로 꾸준히 연락한다","value":"J"},{"text":"내키는 대로 연락하는 편이다","value":"P"}]},{"section":"칭찬 반응","text":"누가 나를 칭찬하면 나는 보통?","options":[{"text":"바로 리액션하며 좋아한다","value":"E"},{"text":"속으로 좋아하고 티는 잘 안 낸다","value":"I"}]},{"section":"매력 발견","text":"내 매력 포인트, 남들이 보통 어떻게 알아채?","options":[{"text":"평소 행동을 보다가 자연스럽게","value":"S"},{"text":"어떤 순간의 분위기에서 갑자기","value":"N"}]},{"section":"진심 표현","text":"진짜 마음을 전할 때 나는?","options":[{"text":"솔직하고 직접적으로 말한다","value":"T"},{"text":"돌려서 다정하게 표현한다","value":"F"}]},{"section":"관계 스타일","text":"좋아하는 사람과의 관계, 나는 어떤 쪽이야?","options":[{"text":"확실하게 정하고 나아가고 싶다","value":"J"},{"text":"흘러가는 대로 자연스럽게 두고 싶다","value":"P"}]}],"results":[{"type":"ISTJ","summary":"평소엔 딱딱하고 무심해 보이는데, 알고 보면 남들 몰래 다 챙겨놓는 스타일이에요. 티 안 내고 조용히 해결해주는 그 갭이, 사람들을 은근히 홀리는 포인트예요. 무심함 뒤에 숨겨진 다정함이 발견됐을 때 훅 빠지게 만드는 타입이죠.","color":"#5C6B73","traits":["티 안 내고 다 챙겨놓음","무심한 표정 뒤 다정함","말보다 행동으로 보여줌","은근히 세심함","일 처리는 확실하게","감정 표현은 서툰 편","한번 챙기면 끝까지 챙김","무뚝뚝해도 진심","눈치는 은근히 빠름","루틴 속에 다정함이 있음","티 안 나는 배려","무심함이 오히려 매력"],"duo":{"good":["티 안 내고 다 챙겨줘요","한번 신경 쓰면 끝까지 챙겨요","무심한 듯해도 진심이에요","약속은 반드시 지켜요","묵묵히 곁을 지켜요","꾸준함으로 믿음을 줘요"],"bad":["감정 표현이 서툴러요","다정함을 잘 안 드러내요","무뚝뚝해서 오해받기도 해요","마음을 알아채기 어려울 때가 있어요","고집이 세다는 말을 들어요","티 내는 걸 어색해해요"]},"stats":[{"label":"반전 매력","value":88},{"label":"티 내는 정도","value":25},{"label":"홀리는 지수","value":79}],"cards":[{"label":"언제 제일 티 나는지","value":"아무도 안 볼 때 몰래 다 정리해놨을 때"},{"label":"주의할 점","value":"티 좀 내도 괜찮아요, 다 알아요"}],"name":"무심한 척 다 챙기는 거","emoji":"🗝️","tagline":"티 안 내고 다 해놓는 그 갭"},{"type":"ISFJ","summary":"늘 다정하게 받아주다가도, 한 번씩 예상 못하게 튕기는 순간이 있어요. 그 잠깐의 밀당이 오히려 사람 마음을 더 애타게 만드는 포인트예요. 다정함과 은근한 새침함의 균형이 매력이에요.","color":"#D9A441","traits":["다정하다가 한 번씩 튕김","챙기다가 새침해짐","은근한 밀당의 고수","말투는 부드럽지만 할 말은 함","다정함 뒤에 자존심","챙김이 습관처럼 배어있음","가끔 예상 못한 새침함","섬세하게 마음을 씀","다정한데 츤데레끼 있음","은근 자기주장 있음","배려가 몸에 밴 스타일","다정함의 완급조절"],"duo":{"good":["다정함이 몸에 배어있어요","섬세하게 마음을 써요","은근한 밀당으로 설레게 해요","챙기는 게 자연스러워요","눈치가 빨라요","다정함 속에 자존심도 있어요"],"bad":["튕기다가 오해를 사기도 해요","속마음을 숨길 때가 있어요","서운함을 잘 표현 안 해요","거절을 어려워해요","눈치를 너무 많이 볼 때가 있어요","혼자 참는 경우가 많아요"]},"stats":[{"label":"밀당 지수","value":85},{"label":"솔직함","value":40},{"label":"홀리는 지수","value":84}],"cards":[{"label":"언제 제일 티 나는지","value":"다정하다가 갑자기 새침해지는 그 타이밍"},{"label":"주의할 점","value":"너무 튕기면 상대가 눈치 못 챌 수도"}],"name":"다정한데 은근 밀당하는 거","emoji":"🍯","tagline":"다 받아주다가 한 번씩 튕기는 매력"},{"type":"INFJ","summary":"평소엔 잔잔하고 신비로운 분위기인데, 가끔 훅 깊어지는 눈빛이 있어요. 그 순간 상대방은 완전히 붙잡히는 거예요. 말보다 눈빛으로 홀리는, 은근하지만 강력한 타입이에요.","color":"#6C5CE7","traits":["평소엔 잔잔한 분위기","가끔 훅 깊어지는 눈빛","말수는 적지만 임팩트 있음","신비로운 분위기 메이커","진심일 때 눈빛이 달라짐","조용히 사람을 관찰함","한번 마음 주면 깊게 줌","분위기로 매력을 만듦","은근한 카리스마","눈빛만으로 설레게 함","잔잔하다 훅 깊어짐","말보다 눈빛이 앞섬"],"duo":{"good":["눈빛만으로 설레게 해요","진심일 때 티가 확 나요","분위기로 매력을 만들어요","조용히 사람을 챙겨요","깊이 있는 마음을 가졌어요","한번 마음 주면 깊게 줘요"],"bad":["속마음을 잘 안 보여줘요","혼자 생각에 잠길 때가 많아요","가끔 예측하기 어려워요","거리를 두는 편이에요","서운해도 티를 안 내요","마음 여는 데 시간이 걸려요"]},"stats":[{"label":"눈빛 파워","value":92},{"label":"티 내는 정도","value":30},{"label":"홀리는 지수","value":90}],"cards":[{"label":"언제 제일 티 나는지","value":"평소와 다르게 눈을 오래 마주칠 때"},{"label":"주의할 점","value":"신비주의도 적당히, 가끔은 티 내기"}],"name":"가끔 훅 들어오는 눈빛","emoji":"🔮","tagline":"평소엔 잔잔하다 훅 깊어지는 눈"},{"type":"INTJ","summary":"평소엔 잘 안 웃는 편이라 웃을 때 반전이 커요. 그 흔치 않은 미소를 본 사람은 순간적으로 마음을 뺏겨버려요. 희소성이 곧 매력이 되는 타입이죠.","color":"#2D3142","traits":["평소엔 잘 안 웃음","웃을 때 반전 매력 폭발","할 말은 담백하게 함","은근히 자신감 있음","목표 앞에선 진지함","웃음이 희소해서 특별함","무심한 듯 관찰하는 편","티 안 나는 다정함","자기 확신이 매력","가끔 보이는 장난기","웃는 순간 분위기 반전","진지함 속 숨은 유쾌함"],"duo":{"good":["웃을 때 반전 매력이 커요","진지함 속 유쾌함이 있어요","자기 확신이 매력적이에요","할 말은 담백하게 해요","목표 앞에서 멋있어져요","은근한 다정함이 있어요"],"bad":["잘 안 웃는 편이에요","감정 표현에 서툴러요","직설적이라 오해를 살 때도 있어요","혼자만의 시간이 필요해요","차갑게 느껴질 때가 있어요","마음을 여는 게 느려요"]},"stats":[{"label":"반전 매력","value":95},{"label":"웃음 빈도","value":22},{"label":"홀리는 지수","value":88}],"cards":[{"label":"언제 제일 티 나는지","value":"안 웃다가 진짜 웃음이 터질 때"},{"label":"주의할 점","value":"웃음 아끼지 말고 좀 더 보여줘도 됨"}],"name":"웃을 때만 보이는 반전 매력","emoji":"♠️","tagline":"안 웃다가 웃으면 훅 가는 타입"},{"type":"ISTP","summary":"무표정하고 차가워 보이지만, 어느 순간 훅 웃는 얼굴이 반전 매력이에요. 예상 못했던 다정함이 드러날 때 사람들이 제일 크게 흔들려요.","color":"#3D3B40","traits":["무표정하다가 훅 웃음","차가운 듯 다정한 반전","말보다 행동이 앞섬","은근히 챙기는 스타일","리액션은 적지만 진심","예상 못한 다정함","츤데레 매력 강함","쿨한 듯 세심함","무심함이 매력 포인트","가끔 보이는 장난기","말투는 무뚝뚝해도 다정","웃는 얼굴이 반전 매력"],"duo":{"good":["반전 미소가 매력적이에요","무심한 듯 다정해요","은근히 챙기는 스타일이에요","쿨하게 받아들여요","위기에도 침착해요","츤데레 매력이 있어요"],"bad":["표정이 잘 안 드러나요","연락이 뜸할 때가 있어요","감정 표현이 무뚝뚝해요","혼자 있는 시간이 필요해요","무심해 보일 수 있어요","다정함을 표현하는 게 서툴러요"]},"stats":[{"label":"반전 미소","value":90},{"label":"표현력","value":28},{"label":"홀리는 지수","value":83}],"cards":[{"label":"언제 제일 티 나는지","value":"무표정하다가 입꼬리가 살짝 올라갈 때"},{"label":"주의할 점","value":"무심함이 매력이지만 가끔은 티 내기"}],"name":"무표정하다가 훅 웃는 거","emoji":"🖤","tagline":"차가운 줄 알았는데 은근 다정함"},{"type":"ISFP","summary":"티 안 내고 은근슬쩍 챙겨주는 스타일이에요. 나중에서야 '아, 그때 그거 챙겨준 거였구나' 깨닫게 만드는 그 은은함이 진짜 앙큼 포인트예요.","color":"#C9A66B","traits":["은근슬쩍 챙기고 티 안 냄","섬세한 배려가 습관","조용히 마음을 씀","취향까지 기억해서 챙김","티 안 나는 다정함","은은한 매력의 소유자","챙김이 자연스럽게 나옴","말보다 행동으로 표현","분위기 있는 매력","은근한 자기만의 색","배려가 몸에 밴 스타일","조용하지만 확실한 다정함"],"duo":{"good":["은근슬쩍 챙기는 센스가 있어요","섬세한 배려가 몸에 배어있어요","취향까지 기억해줘요","분위기 있는 매력이 있어요","조용하지만 확실히 다정해요","자기만의 색이 매력이에요"],"bad":["티 안 내다가 오해 살 때도 있어요","싫은 티를 잘 안 내요","결정을 미루는 편이에요","상처를 혼자 삭이기도 해요","표현이 소극적일 때가 있어요","눈치를 많이 보는 편이에요"]},"stats":[{"label":"은근함","value":91},{"label":"티 내는 정도","value":26},{"label":"홀리는 지수","value":81}],"cards":[{"label":"언제 제일 티 나는지","value":"안 챙기는 척하다 결국 먼저 챙길 때"},{"label":"주의할 점","value":"티 좀 내야 상대가 알아챔"}],"name":"은근슬쩍 챙기면서 티 안 내는 거","emoji":"🌾","tagline":"챙겨놓고 안 챙긴 척하는 거"},{"type":"INFP","summary":"장난처럼 말하다가 갑자기 훅 진심이 섞인 말을 흘려요. 그 순간의 온도차가 상대방을 완전히 무장해제시키는 포인트예요.","color":"#B08968","traits":["장난처럼 말하다 훅 진심","혼잣말처럼 흘리는 진심","감정 표현이 은근 솔직함","말투에 다정함이 묻어남","예상 못한 순간 진지해짐","섬세한 감성이 매력","꾸밈없는 말투가 무기","은근히 로맨틱함","진심이 묻어나는 말투","감정 기복이 매력이 됨","솔직함이 앙큼 포인트","말끝에 남는 여운"],"duo":{"good":["혼잣말처럼 진심을 흘려요","감정 표현이 솔직해요","은근히 로맨틱해요","섬세하게 마음을 써요","꾸밈없는 매력이 있어요","말끝에 여운을 남겨요"],"bad":["감정 기복이 있는 편이에요","상처를 오래 담아둬요","예민하게 받아들이기도 해요","현실보다 이상에 머물 때가 있어요","혼자 생각이 많아져요","거절을 어려워해요"]},"stats":[{"label":"진심도","value":93},{"label":"예측불가","value":70},{"label":"홀리는 지수","value":86}],"cards":[{"label":"언제 제일 티 나는지","value":"장난처럼 말하다 목소리 톤이 낮아질 때"},{"label":"주의할 점","value":"진심 흘릴 때 좀 더 자주 흘려도 됨"}],"name":"혼잣말처럼 툭 던지는 진심","emoji":"🕯️","tagline":"장난인 척 진심을 흘리는 거"},{"type":"INTP","summary":"평소엔 시크하다가 예상 못한 타이밍에 툭 웃긴 말을 던져요. 그 반전 타이밍이 사람 마음을 훅 가져가는 앙큼 포인트예요.","color":"#7286D3","traits":["평소엔 시크한 편","예상 못한 타이밍에 웃김","무심한 듯 재치있음","반전 매력이 강점","은근히 다정한 순간 있음","말투는 담백해도 위트 있음","호기심 어린 눈빛이 매력","가끔 보이는 다정한 배려","시크함 속 숨은 유머","의외의 순간에 설레게 함","무심함이 매력으로 작용","반전 타이밍이 무기"],"duo":{"good":["예상 못한 타이밍에 웃겨요","반전 매력이 강점이에요","무심한 듯 재치있어요","호기심 어린 눈빛이 매력이에요","은근히 다정한 순간이 있어요","솔직하지만 위트 있어요"],"bad":["감정 표현이 서툴러요","연락이 무심해 보일 수 있어요","직설적이라 오해를 살 때도 있어요","혼자 생각에 빠질 때가 많아요","계획성이 부족한 편이에요","진지한 순간을 가볍게 넘기기도 해요"]},"stats":[{"label":"반전 타이밍","value":89},{"label":"표현력","value":33},{"label":"홀리는 지수","value":80}],"cards":[{"label":"언제 제일 티 나는지","value":"예상 못한 타이밍에 빵 터질 때"},{"label":"주의할 점","value":"반전 타이밍 놓치지 않게 조심"}],"name":"예상 못한 타이밍에 훅 들어오는 드립","emoji":"🌀","tagline":"무심하다가 훅 웃기는 반전"},{"type":"ESTP","summary":"장난치고 놀리다가 갑자기 눈빛이 진지해지는 순간이 있어요. 그 텀이 짧을수록 상대방은 더 크게 흔들려요. 텐션의 완급조절이 무기예요.","color":"#E85D4C","traits":["장난치다 훅 진지해짐","텐션 완급조절의 고수","눈빛 하나로 분위기 바꿈","솔직한 매력이 강점","장난기와 진지함의 갭","리액션이 커서 눈에 띔","즉흥적인 매력 포인트","자신감 있는 눈빛","놀리다가 훅 다정해짐","에너지 넘치는 매력","텐션 조절이 앙큼 포인트","순간의 진지함이 무기"],"duo":{"good":["텐션 완급조절이 능숙해요","눈빛 하나로 분위기를 바꿔요","솔직한 매력이 있어요","자신감 있는 태도가 매력이에요","장난기와 진지함의 갭이 커요","에너지 넘치는 매력이 있어요"],"bad":["즉흥적이라 예측이 어려워요","눈치보다 행동이 앞설 때가 있어요","진지한 대화를 어려워하기도 해요","감정 기복이 있는 편이에요","승부욕이 강한 편이에요","깊은 얘기는 피하려는 경향이 있어요"]},"stats":[{"label":"완급조절","value":90},{"label":"진지함","value":42},{"label":"홀리는 지수","value":87}],"cards":[{"label":"언제 제일 티 나는지","value":"장난치다가 눈빛이 갑자기 진지해질 때"},{"label":"주의할 점","value":"장난이 너무 길어지면 진지함이 묻힘"}],"name":"장난치다가 갑자기 진지해지는 눈빛","emoji":"🔥","tagline":"놀리다가 훅 진지해지는 그 텀"},{"type":"ESFP","summary":"관심 없는 척 하다가 결국 제일 먼저 챙기고 있는 스타일이에요. 그 모순된 행동이 오히려 진심으로 느껴져서 사람을 홀리는 포인트가 돼요.","color":"#F582AE","traits":["관심 없는 척 다 챙김","모순된 행동이 매력","텐션이 전염되는 스타일","리액션으로 마음을 표현","은근히 세심하게 챙김","솔직한 감정 표현","챙기면서 안 챙긴 척","눈치는 빠른 편","다정함을 숨기지 못함","텐션과 다정함의 조합","관심 표현이 은근함","결국 다 티 나는 다정함"],"duo":{"good":["관심을 숨기지 못하는 매력이에요","텐션이 전염돼요","리액션으로 마음을 표현해요","은근히 세심하게 챙겨요","솔직한 감정 표현이 매력이에요","다정함을 결국 다 들켜요"],"bad":["감정 기복이 있는 편이에요","계획보다 즉흥을 선호해요","진지한 순간을 어려워하기도 해요","싫증을 잘 내는 편이에요","눈치보다 감정이 앞설 때가 있어요","집중력이 흩어질 때가 있어요"]},"stats":[{"label":"모순 매력","value":88},{"label":"숨기는 능력","value":24},{"label":"홀리는 지수","value":85}],"cards":[{"label":"언제 제일 티 나는지","value":"관심 없다면서 계속 힐끔대는 순간"},{"label":"주의할 점","value":"결국 다 티 나니까 그냥 티 내기"}],"name":"관심 없는 척하다 결국 제일 챙기는 거","emoji":"🎀","tagline":"안 챙기는 척 다 챙기는 거"},{"type":"ENFP","summary":"신나게 텐션 올리다가 갑자기 훅 진지해지는 순간이 있어요. 그 갭이 상대방에게 예상 못한 설렘을 줘요.","color":"#FFC145","traits":["텐션 낮췄다 훅 진지해짐","밝음과 진지함의 갭","웃음 뒤 숨은 진심","의외의 순간 설레게 함","감정 표현이 솔직함","텐션 조절이 매력 포인트","분위기 메이커 기질","순간의 진지함이 무기","밝은 에너지 속 다정함","예상 못한 감성적인 면","웃다가 훅 진심 보임","다정함이 툭 튀어나옴"],"duo":{"good":["텐션과 진지함의 갭이 매력이에요","웃다가 훅 진심을 보여요","감정 표현이 솔직해요","의외의 감성적인 면이 있어요","분위기를 밝게 만들어요","다정함이 자연스럽게 나와요"],"bad":["감정 기복이 있는 편이에요","계획성이 부족할 때가 있어요","싫증을 빨리 내기도 해요","산만해 보일 수 있어요","현실보다 이상에 취할 때가 있어요","상처를 크게 받는 편이에요"]},"stats":[{"label":"갭 매력","value":94},{"label":"차분함","value":30},{"label":"홀리는 지수","value":92}],"cards":[{"label":"언제 제일 티 나는지","value":"텐션 낮추고 조용히 진지해질 때"},{"label":"주의할 점","value":"갭이 매력이니 억지로 감출 필요 없음"}],"name":"텐션 낮췄다가 훅 들어오는 순간","emoji":"✨","tagline":"신나다가 훅 진지해지는 갭"},{"type":"ENTP","summary":"놀리듯 장난스럽게 말하는데 이상하게 그게 설레게 만들어요. 웃으면서 던지는 말 속에 숨은 관심이 앙큼 포인트예요.","color":"#F26B6B","traits":["놀리듯 말하며 설레게 함","장난 속에 숨은 관심","웃으면서 던지는 말투","은근한 관심 표현","위트있는 매력의 소유자","놀림이 오히려 설렘 유발","말투에 은근한 다정함","솔직하고 재치있는 매력","장난기 뒤 숨은 진심","티키타카가 매력 포인트","약 올리듯 다가오는 스타일","웃음 속 진심 한 스푼"],"duo":{"good":["놀리는 말투가 오히려 설레게 해요","위트있는 매력이 있어요","장난 속에 관심을 숨겨요","솔직하고 재치있어요","티키타카가 매력 포인트예요","웃음 속에 진심이 있어요"],"bad":["장난이 과할 때가 있어요","눈치보다 솔직함이 앞서요","싫증을 빨리 느끼는 편이에요","진지한 순간을 가볍게 넘길 때가 있어요","말이 앞설 때가 있어요","계획성이 부족한 편이에요"]},"stats":[{"label":"티키타카","value":91},{"label":"진지함","value":35},{"label":"홀리는 지수","value":86}],"cards":[{"label":"언제 제일 티 나는지","value":"놀리다가 눈이 웃고 있을 때"},{"label":"주의할 점","value":"놀림이 관심인 거 상대는 모를 수 있음"}],"name":"약 올리듯 웃으면서 던지는 말투","emoji":"😏","tagline":"놀리는 건데 은근 설레게 하는 거"},{"type":"ESTJ","summary":"퉁명스럽게 말하면서도 결국 다 챙겨주는 스타일이에요. 그 츤데레 같은 온도차가 사람을 은근히 애타게 만드는 매력이에요.","color":"#4A4E69","traits":["퉁명스러워도 다 챙김","츤데레 같은 말투","무뚝뚝한데 든든함","말은 세도 행동은 다정","은근한 온도차가 매력","챙기면서 티 안 냄","확실하게 책임지는 스타일","말투와 행동의 갭","무심한 듯 세심함","츤데레 매력이 강점","챙김이 은근히 애틋함","무뚝뚝함 속 다정함"],"duo":{"good":["츤데레 같은 매력이 있어요","무뚝뚝해도 든든해요","말은 세도 행동은 다정해요","책임감 있게 챙겨줘요","확실한 태도가 매력이에요","은근한 다정함이 있어요"],"bad":["직설적이라 강하게 느껴질 수 있어요","감정 표현에 서툴 때가 있어요","고집이 세다는 말을 들어요","완고해 보일 수 있어요","다정함을 티 안 내는 편이에요","말투가 퉁명스러울 때가 있어요"]},"stats":[{"label":"츤데레 지수","value":89},{"label":"부드러움","value":36},{"label":"홀리는 지수","value":82}],"cards":[{"label":"언제 제일 티 나는지","value":"퉁명스럽게 말하면서 다 챙겨줄 때"},{"label":"주의할 점","value":"말투 좀 더 부드럽게 해도 다정함은 안 사라짐"}],"name":"츤데레처럼 챙기는 말투","emoji":"🧷","tagline":"퉁명스러운데 다 챙겨주는 거"},{"type":"ESFJ","summary":"모두에게 다정하지만, 유독 한 사람한테만 살짝 다른 온도의 다정함을 흘려요. 그 미묘한 차이를 알아챈 사람만 홀리는 은밀한 매력이에요.","color":"#E27D8F","traits":["모두에게 다정하지만 다름","유독 한 사람에게만 다른 온도","섬세하게 다정함을 나눔","다정함 속 미묘한 차이","눈치가 빠르고 세심함","다정함이 습관처럼 배어있음","은밀하게 표현하는 관심","챙김 속에 숨은 특별함","다정함의 결이 다름","섬세한 배려의 고수","미묘한 온도차가 매력","다정함 속 숨은 진심"],"duo":{"good":["다정함의 결이 남달라요","세심하게 배려해요","눈치가 빠르고 다정해요","은밀한 관심 표현이 매력이에요","챙김 속에 특별함이 있어요","섬세한 배려의 고수예요"],"bad":["싫은 소리를 잘 못해요","혼자 참는 경우가 많아요","다른 사람 시선을 신경 써요","거절을 어려워해요","서운함을 쌓아두기도 해요","자기 감정은 뒤로 미뤄요"]},"stats":[{"label":"은밀한 다정","value":90},{"label":"평등한 다정함","value":30},{"label":"홀리는 지수","value":84}],"cards":[{"label":"언제 제일 티 나는지","value":"유독 한 사람에게만 다정함이 다를 때"},{"label":"주의할 점","value":"미묘한 차이, 상대가 놓칠 수도 있음"}],"name":"다 챙기다가 은근슬쩍 흘리는 애정","emoji":"🍬","tagline":"다한테 다정한데 나한텐 좀 더한 거"},{"type":"ENFJ","summary":"장난스럽고 밝다가도 순간 눈빛이 진지해지는 때가 있어요. 그 진심 어린 눈빛 하나가 상대방을 완전히 붙잡아버려요.","color":"#7FA99B","traits":["장난스럽다가 훅 진지해짐","눈빛으로 진심을 전함","다정함과 진지함의 균형","밝음 속 숨은 깊은 마음","순간의 눈빛이 무기","웃음 뒤 진심 어린 눈빛","다정함이 자연스럽게 나옴","은근한 카리스마","진심 어린 눈빛이 매력","분위기를 이끄는 다정함","밝지만 깊은 진심","진지해지는 순간이 포인트"],"duo":{"good":["진심 어린 눈빛이 매력이에요","밝음과 깊은 마음의 균형이 있어요","다정함이 자연스러워요","은근한 카리스마가 있어요","분위기를 이끄는 다정함이 있어요","진지해지는 순간이 매력이에요"],"bad":["희생적인 면이 지나칠 때가 있어요","다른 사람 감정에 너무 몰입해요","자기 감정은 뒤로 미룰 때가 많아요","거절을 어려워해요","완벽하려는 부담을 느껴요","서운해도 티를 잘 안 내요"]},"stats":[{"label":"진심 눈빛","value":93},{"label":"장난기","value":55},{"label":"홀리는 지수","value":89}],"cards":[{"label":"언제 제일 티 나는지","value":"장난스럽다가 눈빛이 진지해질 때"},{"label":"주의할 점","value":"진심 어린 순간을 더 자주 보여줘도 됨"}],"name":"다정한데 눈빛이 진지해지는 순간","emoji":"🕊️","tagline":"장난스럽다가 훅 진심 어린 눈빛"},{"type":"ENTJ","summary":"카리스마 넘치다가 갑자기 허당끼를 보이는 반전이 있어요. 센 줄만 알았던 사람의 빈틈이 드러날 때, 그게 제일 크게 매력으로 다가와요.","color":"#8B5CF6","traits":["카리스마 있다가 훅 허당끼","센 척하다 풀리는 반전","자신감 속 숨은 빈틈","카리스마와 허당의 갭","의외의 순간 귀여움 보임","강한 이미지 속 반전 매력","목표 앞에선 진지함","가끔 보이는 허술한 매력","센 이미지의 반전이 무기","카리스마 뒤 숨은 인간미","강해 보이다 훅 풀림","반전이 곧 매력 포인트"],"duo":{"good":["카리스마와 허당미의 반전이 매력이에요","자신감 있는 태도가 멋있어요","의외의 귀여움이 있어요","목표 앞에선 진지해져요","강한 이미지 속 인간미가 있어요","리더십이 자연스러워요"],"bad":["직설적이라 강하게 느껴질 수 있어요","감정보다 결과를 우선시해요","완고해 보일 수 있어요","속도를 맞추기 버거울 때가 있어요","감정 표현에 서툴 때가 있어요","완벽주의 성향이 있어요"]},"stats":[{"label":"반전 허당미","value":92},{"label":"평소 카리스마","value":88},{"label":"홀리는 지수","value":91}],"cards":[{"label":"언제 제일 티 나는지","value":"카리스마 넘치다 갑자기 허당끼 나올 때"},{"label":"주의할 점","value":"빈틈 보이는 거 두려워하지 않아도 됨"}],"name":"카리스마 있다가 갑자기 허당끼 보이는 거","emoji":"👑","tagline":"센 척하다 훅 풀리는 그 갭"}],"accent":"#FFD23F","progress":"squares"};
+var AXES=[['E','I'],['S','N'],['T','F'],['J','P']];
+var nick="",qi=0,sc={},lock=false,tT=null,answers=[];
+function $(i){return document.getElementById(i);}
+function esc(s){if(s==null)return"";return String(s).replace(/[&<>"']/g,function(m){
+return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m];});}
+function show(id){var a=document.querySelectorAll(".sc");
+for(var i=0;i<a.length;i++)a[i].classList.remove("on");
+$(id).classList.add("on");window.scrollTo({top:0,behavior:"auto"});}
+function reset(){sc={};answers=[];["E","I","S","N","T","F","J","P"].forEach(function(k){sc[k]=0;});}
+function mix(hex,ratio){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
+r=Math.round(r+(255-r)*ratio);g=Math.round(g+(255-g)*ratio);b=Math.round(b+(255-b)*ratio);
+return "#"+[r,g,b].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function lerp2(hexA,hexB,t){function rgb(h){h=(h||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+return[parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+var a=rgb(hexA),b=rgb(hexB);
+var r=Math.round(a[0]+(b[0]-a[0])*t),g=Math.round(a[1]+(b[1]-a[1])*t),bl=Math.round(a[2]+(b[2]-a[2])*t);
+return "#"+[r,g,bl].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function luminance(hex){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16)/255,g=parseInt(h.slice(2,4),16)/255,b=parseInt(h.slice(4,6),16)/255;
+function lin(c){return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);}
+return 0.2126*lin(r)+0.7152*lin(g)+0.0722*lin(b);}
+function readable(bgHex){return luminance(bgHex)>0.53?"#1a1a1a":"#fff";}
+function setAcc(c){var s=document.documentElement.style;
+var soft=mix(c,.86),deep=mix(c,.68);
+s.setProperty("--acc",c);s.setProperty("--soft",soft);s.setProperty("--deep",deep);
+s.setProperty("--accFg",readable(c));s.setProperty("--softFg",readable(soft));s.setProperty("--deepFg",readable(deep));}
+function intro(){nick="";qi=0;lock=false;reset();setAcc(D.accent);
+var cast="";for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+cast+='<div class="ci"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+(c.tagline?'<span class="t">'+esc(c.tagline)+'</span>':"")+'</div>';}
+$("s1").innerHTML='<div class="pa intro">'+
+'<div class="em">'+D.meta.emoji+'</div>'+
+'<h1>'+esc(D.meta.title)+'</h1><p>'+esc(D.meta.intro)+'</p>'+
+'<div class="castt">'+esc(D.meta.setName||"16가지 유형")+'</div>'+
+'<div class="cast">'+cast+'</div>'+
+'<div class="mt">질문 '+D.questions.length+'개 · 결과 16가지</div>'+
+'<div class="langhint">🌐 Prefer another language? Use your browser\'s translate feature.<br>다른 언어로 보고 싶다면 브라우저의 번역 기능을 이용해주세요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="'+(D.useName?"nameScreen()":"begin()")+'">테스트 시작하기</button></div>';
+show("s1");}
+function nameScreen(){$("s2").innerHTML='<div class="pa nb"><h2>어떻게 불러드릴까요?</h2>'+
+'<input id="nk" type="text" maxlength="12" placeholder="닉네임을 입력해주세요" autocomplete="off">'+
+'<div class="gd">○ 총 '+D.questions.length+'문항입니다.<br>○ 나에게 더 가까운 답을 골라주세요.<br>○ 결과에 닉네임이 함께 표시돼요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="begin()">시작하기</button>'+
+'<button class="btn" onclick="intro()">처음으로</button></div>';show("s2");
+setTimeout(function(){var n=$("nk");if(n){n.focus();
+n.addEventListener("keydown",function(e){if(e.key==="Enter")begin();});}},80);}
+function begin(){if(D.useName){var n=$("nk"),v=n?n.value.trim():"";
+if(!v){alert("닉네임을 입력해주세요.");if(n)n.focus();return;}nick=v;}
+qi=0;lock=false;reset();question();show("s3");}
+function progHTML(cur,total){var p=D.progress||"bar";
+if(p==="bar"){return '<div class="trk"><div class="fil" style="width:'+Math.round(cur/total*100)+'%"></div></div>';}
+var h=p==="dots"?'<div class="pdots">':'<div class="psq">',n=Math.min(total,12);
+for(var i=0;i<n;i++){var st=i<cur-1?" dn":i===cur-1?(p==="dots"?" now":" dn"):"";
+h+=p==="dots"?'<div class="pdot'+st+'"></div>':'<i class="'+st.trim()+'"></i>';}
+return h+"</div>";}
+function question(){lock=false;var tot=D.questions.length,q=D.questions[qi];
+var num=("0"+(qi+1)).slice(-2);
+var h='<div class="pa qw"><div class="qt"><div class="qi">'+
+'<span class="sec">'+esc(q.section||"진행 중")+'</span><span>'+(qi+1)+' / '+tot+'</span></div>'+
+progHTML(qi+1,tot)+'</div>'+
+'<div class="qn">문항 '+num+(nick?" · "+esc(nick):"")+'</div>'+
+'<div class="qx">'+esc(q.text)+'</div><div class="ops">';
+for(var i=0;i<q.options.length;i++){
+h+='<button class="op" data-n="'+(i+1)+'" data-v="'+esc(q.options[i].value)+'">'+esc(q.options[i].text)+'</button>';}
+h+='</div><p class="qnote">더 가까운 쪽을 골라주세요.</p>'+
+(qi>0?'<button type="button" class="qback" onclick="prevQ()">← 이전 문항</button>':"")+
+'</div>';
+$("s3").innerHTML=h;
+window.scrollTo({top:0,behavior:"auto"});
+var bs=$("s3").querySelectorAll(".op");
+for(var j=0;j<bs.length;j++){bs[j].addEventListener("click",function(){pick(this);});}}
+function pick(btn){if(lock)return;lock=true;
+var all=$("s3").querySelectorAll(".op");
+for(var i=0;i<all.length;i++){all[i].disabled=true;all[i].classList.remove("pk");}
+btn.classList.add("pk");
+var v=btn.getAttribute("data-v");if(sc[v]==null)sc[v]=0;sc[v]++;answers[qi]=v;
+setTimeout(function(){qi++;if(qi<D.questions.length){question();return;}finish();},110);}
+function prevQ(){if(qi<=0||lock)return;lock=true;
+var prevV=answers[qi-1];if(prevV!=null&&sc[prevV]>0)sc[prevV]--;
+answers[qi-1]=null;qi--;question();}
+function finish(){var code="";
+for(var i=0;i<AXES.length;i++){code+=(sc[AXES[i][0]]>=sc[AXES[i][1]]?AXES[i][0]:AXES[i][1]);}
+loading(code);}
+function loading(code){
+$("s4").innerHTML='<div class="pa lw"><div style="width:100%">'+
+'<h2>'+esc(D.meta.loadingText||"결과를 정리하는 중")+'</h2><p>잠시만 기다려 주세요.</p>'+
+'<div class="dts"><span></span><span></span><span></span></div>'+
+'<div class="lbar"><span></span></div></div></div>';show("s4");
+setTimeout(function(){result(code);show("s5");},2500);}
+function lab(key,sub){var L=D.blockLabels||{};var v=L[key];
+if(sub){
+if(v&&typeof v==="object"&&v[sub])return v[sub];
+return sub==="good"?"잘 맞는 유형":sub==="bad"?"안 맞는 유형":"";}
+return typeof v==="string"?v:"";}
+function byType(t){for(var i=0;i<D.cast.length;i++){if(D.cast[i].type===t)return D.cast[i];}return null;}
+function compatList(type){var s=D.compat[type]||"";var out=[],m,re=/([A-Z]{4})(\d+)/g;
+while((m=re.exec(s))!==null){out.push({type:m[1],pct:parseInt(m[2],10)});}
+out.sort(function(a,b){return b.pct-a.pct;});return out;}
+function compatItems(arr){var h="";
+for(var i=0;i<arr.length;i++){var c=byType(arr[i].type);if(!c)continue;
+h+='<div class="cmpi"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+
+'<span class="p">'+arr[i].pct+'%</span></span></div>';}
+return h;}
+function lineFor(pct){var L=D.compatLines||[];
+for(var i=0;i<L.length;i++){if(pct>=L[i].min)return L[i].text;}
+return L.length?L[L.length-1].text:"";}
+function compatHTML(type){var L=D.compatLabels||{};var list=compatList(type);
+if(!list.length)return "";
+var best=list.slice(0,2),worst=list.slice(-2).reverse();
+return '<div class="cmp"><div class="cmph">'+esc(L.title||"궁합")+'</div><div class="cmpg">'+
+'<div class="cmpc"><span class="lb">'+esc(L.good||"최고의 궁합")+'</span>'+compatItems(best)+
+'<div class="cmpnote">'+esc(lineFor(best[0].pct))+'</div></div>'+
+'<div class="cmpc bad"><span class="lb">'+esc(L.bad||"아쉬운 궁합")+'</span>'+compatItems(worst)+
+'<div class="cmpnote">'+esc(lineFor(worst[0].pct))+'</div></div>'+
+'</div></div>';}
+function tint(color,pct){var s=Math.max(0,Math.min(1,(pct-70)/29));
+return lerp2("#AEB4BF",color,Math.pow(s,2.5));}
+function mapHTML(type,color){var L=D.compatLabels||{};
+var list=compatList(type);if(!list.length)return "";
+var pm={};list.forEach(function(x){pm[x.type]=x.pct;});
+var g="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+if(c.type===type){
+var meFg=readable(color);
+g+='<div class="mapc me" style="background:'+color+';color:'+meFg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="badge">나</span></div>';
+}else{var p=pm[c.type]||0;var bg=tint(color,p);var fg=readable(bg);
+g+='<div class="mapc" style="background:'+bg+';color:'+fg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="p" style="opacity:1">'+p+'%</span></div>';}}
+var bar="linear-gradient(90deg,"+tint(color,72)+","+tint(color,99)+")";
+return '<div class="map"><div class="maph">'+esc(L.mapTitle||"나의 궁합 지도")+'</div>'+
+'<div class="mapg">'+g+'</div>'+
+'<div class="mapf"><span>안 맞음</span><span class="mapbar" style="background:'+bar+'"></span>'+
+'<span>잘 맞음</span></div></div>';}
+function blockHTML(name,r){
+if(name==="quote"&&r.quote){var qcls=D.quoteStyle==="bubble"?"qbb":"qb";
+return '<div class="blk"><div class="blt">'+esc(lab("quote")||"한마디")+'</div>'+
+'<div class="'+qcls+'">'+esc(r.quote)+'</div></div>';}
+if(name==="traits"&&r.traits&&r.traits.length){var h='<div class="blk"><div class="blt">'+
+esc(lab("traits")||"세부 특징")+'</div>';
+if(D.traitStyle==="sticker"){h+='<div class="trss">';
+for(var i=0;i<r.traits.length;i++){h+='<div class="tst">'+esc(r.traits[i])+'</div>';}
+h+='</div>';
+}else{h+='<div class="trs">';
+for(var i2=0;i2<r.traits.length;i2++){h+='<div class="tc">'+esc(r.traits[i2])+'</div>';}
+h+='</div>';}
+return h+"</div>";}
+if(name==="duo"&&r.duo){var g=r.duo.good||[],b=r.duo.bad||[];var chk=D.duoStyle==="check";
+var gm=chk?"✓":"",bm=chk?"✗":"",dcls=chk?" chk":"";
+var h2='<div class="blk duo"><div class="dsec g"><div class="dsh">'+esc(lab("duo","good")||"좋은 면")+'</div><div class="dls">';
+for(var j=0;j<g.length;j++){h2+='<div class="dit'+dcls+'"><b>'+gm+'</b><span>'+esc(g[j])+'</span></div>';}
+h2+='</div></div><div class="dsec b"><div class="dsh">'+esc(lab("duo","bad")||"아쉬운 면")+'</div><div class="dls">';
+for(var k2=0;k2<b.length;k2++){h2+='<div class="dit'+dcls+'"><b>'+bm+'</b><span>'+esc(b[k2])+'</span></div>';}
+return h2+"</div></div></div>";}
+if(name==="stats"&&r.stats&&r.stats.length){
+var h3='<div class="blk"><div class="blt">'+esc(lab("stats")||"지표")+'</div>';
+if(D.statStyle==="radial"){
+h3+='<div class="stsr">';
+for(var m=0;m<r.stats.length;m++){var s=r.stats[m];var v=Math.max(0,Math.min(100,s.value||0));
+var C=100.53;var off=C*(1-v/100);
+h3+='<div class="rgauge"><svg viewBox="0 0 38 38">'+
+'<circle class="rtrack" cx="19" cy="19" r="16"/>'+
+'<circle class="rfill" cx="19" cy="19" r="16" stroke-dasharray="'+C+'" stroke-dashoffset="'+off+'" transform="rotate(-90 19 19)"/>'+
+'<text x="19" y="23" text-anchor="middle" style="font-size:10px;font-weight:900;fill:var(--ink)">'+v+'%</text>'+
+'</svg><div class="rlab">'+esc(s.label)+'</div></div>';}
+h3+='</div>';
+}else{
+h3+='<div class="sts">';
+for(var m2=0;m2<r.stats.length;m2++){var s2=r.stats[m2];var v2=Math.max(0,Math.min(100,s2.value||0));
+var fc=Math.max(1,Math.min(10,Math.round(v2/10)));var sq="";
+for(var n2=1;n2<=10;n2++){sq+='<span class="sq'+(n2<=fc?" f":"")+'"></span>';}
+h3+='<div class="srow"><div class="slab">'+esc(s2.label)+'</div><div class="sqs">'+sq+'</div>'+
+'<div class="spc">'+v2+'%</div></div>';}
+h3+='</div>';
+}
+return h3+"</div>";}
+if(name==="cards"&&r.cards&&r.cards.length){
+var h4='<div class="blk"><div class="blt">'+esc(lab("cards")||"이런 사람")+'</div>';
+if(D.cardStyle==="ticket"){h4+='<div class="cdt">';
+for(var p=0;p<r.cards.length;p++){h4+='<div class="cdti"><b>'+esc(r.cards[p].label)+'</b><span>'+
+esc(r.cards[p].value)+'</span></div>';}
+h4+='</div>';
+}else{h4+='<div class="cds" style="margin-top:9px">';
+for(var p2=0;p2<r.cards.length;p2++){h4+='<div class="cd2"><b>'+esc(r.cards[p2].label)+'</b><p>'+
+esc(r.cards[p2].value)+'</p></div>';}
+h4+='</div>';}
+return h4+"</div>";}
+return "";}
+function result(code){var r=null;
+for(var i=0;i<D.results.length;i++){if(D.results[i].type===code){r=D.results[i];break;}}
+if(!r)r=D.results[0];
+setAcc(r.color||D.accent);
+var sum=(nick?esc(nick)+"님은 ":"")+esc(r.summary);
+var h='<div class="cap" id="cap"><div class="rh"><h2>'+esc(D.meta.title)+'</h2></div><div class="rb">'+
+'<div class="rn"><div class="em">'+esc(r.emoji||"✨")+'</div><h3>'+esc(r.name||D.meta.title)+'</h3>'+
+(r.tagline?'<div class="tg2">'+esc(r.tagline)+'</div>':"")+'</div>'+
+'<div class="rs">'+sum+'</div>';
+var col=r.color||D.accent;
+for(var b=0;b<D.blocks.length;b++){if(D.blocks[b]!=="map")h+=blockHTML(D.blocks[b],r);}
+h+=compatHTML(r.type);
+if(D.blocks.indexOf("map")>=0)h+=mapHTML(r.type,col);
+h+='<div class="rf">POWERED BY MAGIC FACTORY</div></div></div>'+
+'<div class="stk"><button class="btn fill" onclick="sheet(\''+code+'\')">'+
+esc(D.meta.sheetCta||"내 유형의 정체 확인하기")+'</button>'+
+'<button class="btn" onclick="saveImg(this)">결과 이미지 저장하기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+$("s5").innerHTML=h;}
+function sheet(code){var me=byType(code)||D.cast[0];
+var rows="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];var isMe=c.type===code;
+if(i===8){rows+='</div><div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div><div class="rows">';}
+rows+='<div class="row'+(isMe?" me":"")+'"><span class="no">'+("0"+(i+1)).slice(-2)+'</span>'+
+'<span class="em">'+c.emoji+'</span>'+
+'<span class="nm">'+esc(c.name)+(c.tagline?'<span class="tg">'+esc(c.tagline)+'</span>':"")+'</span>'+
+'<span class="cd">'+esc(c.type)+'</span></div>';}
+$("s6").innerHTML='<div class="sheet">'+
+'<div class="sheeth"><h2>'+esc(D.meta.sheetTitle||"전체 유형 정답지")+'</h2>'+
+'<p>열여섯 종류가 각각 어떤 성격 유형인지 전부 공개해요</p></div>'+
+'<div class="reveal"><div class="em">'+me.emoji+'</div>'+
+'<div class="nm">'+(nick?esc(nick)+"님의 ":"")+esc(me.name)+'</div>'+
+'<div class="eq">의 성격 유형은</div>'+
+'<div class="code">'+esc(me.type)+'</div></div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'<div class="sheetsec">'+esc(D.meta.setName||"전체 16종")+' 전체 목록</div>'+
+'<div class="rows">'+rows+'</div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'</div>'+
+'<div class="stk"><button class="btn fill" onclick="show(\'s5\')">내 결과로 돌아가기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+show("s6");}
+function frames(){return new Promise(function(r){requestAnimationFrame(function(){requestAnimationFrame(r);});});}
+function wait(ms){return new Promise(function(r){setTimeout(r,ms);});}
+var lastBlob=null,lastUrl="";
+function fileName(){return (D.meta.slug||"result")+".png";}
+function saveOptions(){
+var canShare=false;
+try{canShare=!!(navigator.canShare&&lastBlob&&navigator.canShare({files:[new File([lastBlob],fileName(),{type:"image/png"})]}));}catch(e){}
+var h="";
+if(canShare)h+='<button class="mbtn pri" onclick="shareImg()">사진으로 저장 · 공유</button>';
+else h+='<p class="mtip" style="margin:0 0 10px;">위 이미지를 <b>길게 눌러서 사진에 저장</b>해 주세요.</p>';
+h+='<a class="mbtn" href="'+lastUrl+'" download="'+fileName()+'" target="_blank" rel="noopener">새 탭에서 이미지 열기</a>';
+return '<div class="mbtns">'+h+'</div>'+
+'<p class="mtip">"이미지 열기"를 눌렀을 때 저장이 안 되면, 위 이미지를 직접 길게 눌러 저장해 주세요.</p>';}
+async function shareImg(){
+try{var f=new File([lastBlob],fileName(),{type:"image/png"});
+await navigator.share({files:[f],title:D.meta.title});}
+catch(e){if(e&&e.name!=="AbortError")toast("공유를 취소했거나 지원되지 않아요.");}}
+async function saveImg(btn){
+if(typeof html2canvas!=="function"){toast("이미지 도구를 불러오지 못했어요. 새로고침 후 다시 시도해 주세요.");return;}
+btn.disabled=true;var old=btn.textContent;btn.textContent="이미지 만드는 중...";
+$("mw").innerHTML='<p style="padding:40px 0;">이미지를 만들고 있어요...</p>';
+$("mo").classList.add("on");document.body.style.overflow="hidden";
+try{
+if(document.fonts){try{await document.fonts.ready;}catch(e){}}
+await frames();await wait(260);
+var cv=await html2canvas($("cap"),{backgroundColor:getComputedStyle(document.body).backgroundColor,
+scale:Math.min(window.devicePixelRatio||2,2),useCORS:true,logging:false,
+scrollX:0,scrollY:-window.scrollY,windowWidth:document.documentElement.clientWidth});
+if(lastUrl&&lastUrl.indexOf("blob:")===0){try{URL.revokeObjectURL(lastUrl);}catch(e){}}
+var dataUrl=cv.toDataURL("image/png");
+lastBlob=await new Promise(function(res){
+if(cv.toBlob)cv.toBlob(function(b){res(b);},"image/png");else res(null);});
+if(!lastBlob){
+  var bin=atob(dataUrl.split(",")[1]),arr=new Uint8Array(bin.length);
+  for(var i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);
+  lastBlob=new Blob([arr],{type:"image/png"});}
+lastUrl=dataUrl;
+$("mw").innerHTML='<img src="'+lastUrl+'" alt="결과 이미지">'+saveOptions();
+}catch(e){console.error(e);
+$("mw").innerHTML='<p style="padding:32px 0 8px;">이미지를 만들지 못했어요.<br>'+
+'대신 화면을 캡처해서 공유해 주세요.</p>'+
+'<p class="mtip">오류: '+esc(String(e&&e.message||e))+'</p>';
+}finally{btn.disabled=false;btn.textContent=old;}}
+function closeMo(){$("mo").classList.remove("on");document.body.style.overflow="";}
+$("mo").addEventListener("click",function(e){if(e.target===$("mo"))closeMo();});
+document.addEventListener("keydown",function(e){
+if(e.key==="Escape"&&$("mo").classList.contains("on"))closeMo();});
+async function share(){var dt={title:D.meta.title,text:D.meta.intro,url:location.href};
+try{if(navigator.share){await navigator.share(dt);return;}
+var tx=dt.text+"\n"+dt.url;
+if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(tx);
+toast("링크를 복사했어요.");return;}
+var ta=document.createElement("textarea");ta.value=tx;ta.style.position="fixed";ta.style.opacity="0";
+document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();
+toast("링크를 복사했어요.");}catch(e){if(e&&e.name!=="AbortError")toast("공유하지 못했어요.");}}
+function toast(m){clearTimeout(tT);var e=$("tst");e.textContent=m;e.classList.add("show");
+tT=setTimeout(function(){e.classList.remove("show");},2100);}
+intro();
+</script>
+</body>
+</html>

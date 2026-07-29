@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>공장장 소개 — 테스트팩토리</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{--bg:#FFFFFF;--ink:#111111;--sub:#767676;--faint:#B8B8B8;}
+*{box-sizing:border-box;}
+html{background:#FFFFFF;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;line-height:1.7;}
+a{color:var(--ink);}
+.wrap{max-width:600px;margin:0 auto;padding:44px 24px 80px;}
+.back{display:inline-block;font-size:13px;font-weight:700;color:var(--sub);text-decoration:none;}
+.back:hover{color:var(--ink);}
+.badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:64px;height:64px;font-size:30px;
+  background:#FFE066;border-radius:16px;margin-bottom:20px;
+}
+h1{font-size:26px;font-weight:900;letter-spacing:-.5px;margin:0 0 4px;}
+.role{font-size:14px;font-weight:700;color:var(--sub);margin:0 0 28px;}
+p{font-size:15px;color:#333;margin:0 0 16px;}
+h2{font-size:15px;font-weight:800;margin:32px 0 8px;}
+.contact{
+  margin-top:32px;padding:18px 20px;background:#FAFAFA;border-radius:12px;
+  font-size:14px;font-weight:600;
+}
+.contact a{text-decoration:underline;text-underline-offset:2px;}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;}
+.langs{display:flex;gap:2px;font-size:12.5px;}
+.langs button{padding:3px 7px;border-radius:5px;font-weight:700;font-size:13px;background:none;border:0;cursor:pointer;color:var(--sub);font-family:inherit;}
+.langs button:hover{background:#F1F1F1;color:var(--ink);}
+.langs button.cur{color:var(--ink);text-decoration:underline;text-underline-offset:3px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a class="back" href="index.html" id="t-back">← 목록으로</a>
+    <span class="langs" id="langs"></span>
+  </div>
+  <div class="badge">🏭</div>
+  <h1>심다희</h1>
+  <p class="role" id="t-role">테스트팩토리 공장장</p>
+
+  <p id="t-p1">안녕하세요, 테스트팩토리를 혼자 만들고 운영하는 공장장 심다희입니다.</p>
+  <p id="t-p2">뻔한 유형 테스트 말고, 그 사람만을 위한 이야기처럼 느껴지는 테스트를 만들고 싶어서 시작했어요. 결과는 저장해서 공유할 수도 있어요.</p>
+
+  <h2 id="t-h2a">알아두시면 좋은 것들</h2>
+  <p id="t-p3">테스트 결과는 과학적으로 검증된 심리 검사가 아니에요. 재미로만 봐주시고, 너무 진지하게 받아들이지는 말아주세요.</p>
+  <p id="t-p8">같은 사람이어도 테스트마다 결과가 다르게 나올 수 있어요. 테스트마다 질문이 매번 새로 쓰여서 같은 성향이라도 다르게 갈릴 수 있고, 12문항이라 애매한 경계에 있는 분들은 그때그때 조금씩 다르게 답할 수도 있거든요. 결과 자체보다는, 그 주제의 세계관 안에서 나랑 잘 맞는 캐릭터를 찾아가는 과정으로 즐겨주시면 좋겠어요.</p>
+  <p id="t-p4">이 사이트는 광고 수익(Google AdSense)으로 운영되고 있어요.</p>
+  <p id="t-p5">테스트 소재 중 실존하는 캐릭터·브랜드·콘텐츠와 관련해 문제가 될 만한 부분을 발견하시면 아래 메일로 알려주세요. 확인 후 바로 조치하겠습니다.</p>
+
+  <h2 id="t-h2b">문의</h2>
+  <p id="t-p6">버그 제보, 협업 제안, 저작권 관련 문의, 그 밖에 하고 싶은 말까지 뭐든 아래 메일로 편하게 보내주세요.</p>
+
+  <div class="contact">
+    <a href="mailto:plant0718@naver.com">plant0718@naver.com</a>
+  </div>
+
+  <h2 id="t-h2c">응원하기</h2>
+  <p id="t-p7">테스트팩토리가 마음에 드셨다면, 작은 후원으로 응원해주실 수 있어요. 무리하지 않으셔도 돼요 :)</p>
+
+  <div class="contact" id="t-bank">
+    신한은행 110-515-696612<br>예금주: 심다희
+  </div>
+</div>
+<script>
+var I18N = {
+  ko: {
+    back:'← 목록으로', role:'테스트팩토리 공장장',
+    p1:'안녕하세요, 테스트팩토리를 혼자 만들고 운영하는 공장장 심다희입니다.',
+    p2:'뻔한 유형 테스트 말고, 그 사람만을 위한 이야기처럼 느껴지는 테스트를 만들고 싶어서 시작했어요. 결과는 저장해서 공유할 수도 있어요.',
+    h2a:'알아두시면 좋은 것들',
+    p3:'테스트 결과는 과학적으로 검증된 심리 검사가 아니에요. 재미로만 봐주시고, 너무 진지하게 받아들이지는 말아주세요.',
+    p8:'같은 사람이어도 테스트마다 결과가 다르게 나올 수 있어요. 테스트마다 질문이 매번 새로 쓰여서 같은 성향이라도 다르게 갈릴 수 있고, 12문항이라 애매한 경계에 있는 분들은 그때그때 조금씩 다르게 답할 수도 있거든요. 결과 자체보다는, 그 주제의 세계관 안에서 나랑 잘 맞는 캐릭터를 찾아가는 과정으로 즐겨주시면 좋겠어요.',
+    p4:'이 사이트는 광고 수익(Google AdSense)으로 운영되고 있어요.',
+    p5:'테스트 소재 중 실존하는 캐릭터·브랜드·콘텐츠와 관련해 문제가 될 만한 부분을 발견하시면 아래 메일로 알려주세요. 확인 후 바로 조치하겠습니다.',
+    h2b:'문의',
+    p6:'버그 제보, 협업 제안, 저작권 관련 문의, 그 밖에 하고 싶은 말까지 뭐든 아래 메일로 편하게 보내주세요.',
+    h2c:'응원하기',
+    p7:'테스트팩토리가 마음에 드셨다면, 작은 후원으로 응원해주실 수 있어요. 무리하지 않으셔도 돼요 :)',
+    bank:'신한은행 110-515-696612<br>예금주: 심다희'
+  },
+  en: {
+    back:'← Back to list', role:'Owner of Test Factory',
+    p1:'Hi, I\u2019m Da Hee Sim \u2014 I build and run Test Factory on my own.',
+    p2:'I wanted to make tests that feel less like generic types and more like a story written just for you — you can save your result to share, too.',
+    h2a:'Good to know',
+    p3:'These results aren\u2019t scientifically validated psychological assessments. Please enjoy them just for fun, and don\u2019t take them too seriously.',
+    p8:'The same person might get different results on different tests. Each test\u2019s questions are freshly written, so borderline traits can go either way \u2014 especially with only 12 questions. Think of it less as a verdict and more as finding the character that fits you best within that test\u2019s world.',
+    p4:'This site is supported by ad revenue (Google AdSense).',
+    p5:'If you notice anything concerning related to real characters, brands, or content used as test material, please email me below. I\u2019ll look into it and take action right away.',
+    h2b:'Contact',
+    p6:'Bug reports, collaboration proposals, copyright concerns, or just anything you\u2019d like to say \u2014 feel free to email me below.',
+    h2c:'Support',
+    p7:'If you enjoyed Test Factory, you can support it with a small donation. No pressure at all :)',
+    bank:'Shinhan Bank 110-515-696612<br>Account holder: Sim Da-hee (Korean bank account)'
+  },
+  ja: {
+    back:'← 一覧へ', role:'テストファクトリー工場長',
+    p1:'こんにちは、テストファクトリーを一人で作って運営している工場長シム・ダヒです。',
+    p2:'ありきたりな診断ではなく、その人だけのための物語のように感じられるテストを作りたくて始めました。結果は保存して共有することもできます。',
+    h2a:'知っておいてほしいこと',
+    p3:'テスト結果は科学的に検証された心理検査ではありません。あくまで楽しみとして見ていただき、あまり真剣に受け止めないでください。',
+    p8:'同じ人でもテストによって結果が変わることがあります。テストごとに質問が新しく書かれるため、境界線上の傾向は毎回変わる可能性がありますし、12問なのでなおさらです。結果そのものより、そのテストの世界観の中で自分に合うキャラクターを見つける過程として楽しんでいただければと思います。',
+    p4:'このサイトは広告収益（Google AdSense）で運営されています。',
+    p5:'テストの題材の中で、実在するキャラクター・ブランド・コンテンツに関して問題になりそうな部分を発見された場合は、下記のメールでお知らせください。確認後すぐに対応いたします。',
+    h2b:'お問い合わせ',
+    p6:'バグ報告、コラボのご提案、著作権に関するお問い合わせ、その他何でもお気軽に下記メールまでお送りください。',
+    h2c:'応援する',
+    p7:'テストファクトリーを気に入っていただけたら、少しの後援で応援していただけます。無理しなくて大丈夫です :)',
+    bank:'新韓銀行 110-515-696612<br>受取人: シム・ダヒ（韓国の銀行口座）'
+  },
+  zh: {
+    back:'← 返回列表', role:'测试工厂厂长',
+    p1:'你好，我是沈多喜，一个人制作和运营测试工厂。',
+    p2:'我想做的不是千篇一律的类型测试，而是让人感觉像是专属于自己的故事。测试结果也可以保存分享。',
+    h2a:'须知事项',
+    p3:'测试结果并非经过科学验证的心理测验，请只当作娱乐，不要太当真。',
+    p8:'即使是同一个人，不同测试也可能得出不同结果。每个测试的题目都是重新撰写的，处于边界性格的人每次答案可能都不一样，何况只有12道题。比起结果本身，不如把它当作在那个测试的世界观里寻找最适合自己的角色的过程来享受。',
+    p4:'本网站通过广告收入（Google AdSense）运营。',
+    p5:'如果您发现测试素材中涉及的真实角色、品牌或内容有任何问题，请通过下方邮箱告知我，我会尽快确认并处理。',
+    h2b:'联系方式',
+    p6:'无论是错误反馈、合作提案、版权相关问题，还是任何想说的话，都欢迎发送邮件给我。',
+    h2c:'支持我',
+    p7:'如果你喜欢测试工厂，可以用一点小小的赞助来支持我。不用有压力 :)',
+    bank:'新韩银行 110-515-696612<br>账户名: 沈多喜（韩国银行账户）'
+  }
+};
+
+function applyLang(lang){
+  var d = I18N[lang];
+  document.getElementById('t-back').textContent = d.back;
+  document.getElementById('t-role').textContent = d.role;
+  document.getElementById('t-p1').textContent = d.p1;
+  document.getElementById('t-p2').textContent = d.p2;
+  document.getElementById('t-h2a').textContent = d.h2a;
+  document.getElementById('t-p3').textContent = d.p3;
+  document.getElementById('t-p8').textContent = d.p8;
+  document.getElementById('t-p4').textContent = d.p4;
+  document.getElementById('t-p5').textContent = d.p5;
+  document.getElementById('t-h2b').textContent = d.h2b;
+  document.getElementById('t-p6').textContent = d.p6;
+  document.getElementById('t-h2c').textContent = d.h2c;
+  document.getElementById('t-p7').textContent = d.p7;
+  document.getElementById('t-bank').innerHTML = d.bank;
+  document.querySelectorAll('.langs button').forEach(function(b){
+    b.classList.toggle('cur', b.dataset.lang === lang);
+  });
+}
+
+(function(){
+  var LANGS = [{code:'ko',label:'한국어'},{code:'en',label:'EN'},{code:'ja',label:'日本語'},{code:'zh',label:'中文'}];
+  var box = document.getElementById('langs');
+  box.innerHTML = LANGS.map(function(l){
+    return '<button type="button" data-lang="'+l.code+'" class="'+(l.code==='ko'?'cur':'')+'">'+l.label+'</button>';
+  }).join('');
+  box.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click', function(){ applyLang(b.dataset.lang); });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>개인정보처리방침 — 테스트팩토리</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+html{background:#F5F3EE;}
+body{margin:0;background:#F5F3EE;color:#1A1A1A;font-family:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;line-height:1.75;}
+.wrap{max-width:680px;margin:0 auto;padding:48px 20px 80px;}
+a{color:#1A1A1A;}
+h1{font-size:24px;font-weight:900;margin:0 0 6px;}
+.updated{font-size:13px;color:#6B6862;margin:0 0 32px;font-weight:600;}
+h2{font-size:16px;font-weight:800;margin:32px 0 8px;}
+p,li{font-size:14.5px;color:#3A3833;}
+ul{padding-left:20px;}
+.back{display:inline-block;font-size:13px;font-weight:700;text-decoration:underline;text-underline-offset:2px;}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
+.langs{display:flex;gap:2px;font-size:12.5px;}
+.langs button{padding:3px 7px;border-radius:5px;font-weight:700;font-size:12.5px;background:none;border:0;cursor:pointer;color:#6B6862;font-family:inherit;}
+.langs button:hover{background:#F1F1F1;color:#1A1A1A;}
+.langs button.cur{color:#1A1A1A;text-decoration:underline;text-underline-offset:3px;}
+.notice{display:none;background:#FFF3C4;border-radius:10px;padding:12px 16px;font-size:13px;font-weight:600;margin-bottom:24px;}
+.notice.on{display:block;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a class="back" href="index.html" id="t-back">← 목록으로</a>
+    <span class="langs" id="langs"></span>
+  </div>
+  <div class="notice" id="notice"></div>
+  <h1>개인정보처리방침</h1>
+  <p class="updated">시행일: <span id="today"></span></p>
+
+  <p>본 사이트(이하 "사이트")는 이용자의 개인정보를 소중히 여기며, 관련 법령을 준수합니다. 본 방침은 사이트 이용 시 수집되는 정보와 그 처리 방식을 안내합니다.</p>
+
+  <h2>1. 수집하는 정보</h2>
+  <p>사이트의 테스트는 별도의 회원가입 없이 이용할 수 있습니다. 테스트 진행 중 입력하는 닉네임은 결과 화면 표시 및 결과 이미지 생성 용도로만 사용되며, 서버에 저장되지 않고 이용자의 기기(브라우저)에서만 일시적으로 처리됩니다.</p>
+
+  <h2>2. 쿠키 및 광고</h2>
+  <p>본 사이트는 Google AdSense를 통해 광고를 게재하며, Google 및 광고 파트너는 쿠키를 사용해 이용자의 관심사에 기반한 광고를 제공할 수 있습니다.</p>
+  <ul>
+    <li>Google의 광고 쿠키 사용에 대한 자세한 내용은 <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google 광고 정책</a>에서 확인할 수 있습니다.</li>
+    <li>이용자는 <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google 광고 설정</a>에서 맞춤 광고를 비활성화할 수 있습니다.</li>
+  </ul>
+
+  <h2>3. 제3자 제공</h2>
+  <p>사이트는 이용자의 개인정보를 광고 서비스 제공(Google AdSense) 목적 외에 제3자에게 제공하지 않습니다.</p>
+
+  <h2>4. 문의</h2>
+  <p>본 방침에 대한 문의사항은 <a href="mailto:plant0718@naver.com">plant0718@naver.com</a>로 연락해주시기 바랍니다.</p>
+
+  <h2>5. 방침 변경</h2>
+  <p>본 방침은 법령 및 서비스 변경에 따라 수정될 수 있으며, 변경 시 본 페이지를 통해 공지합니다.</p>
+</div>
+<script>
+document.getElementById('today').textContent=new Date().toISOString().slice(0,10);
+
+var I18N = {
+  ko: {back:'← 목록으로', notice:''},
+  en: {back:'← Back to list', notice:'This policy is written in Korean. Please use your browser\u2019s translate feature to read it in English.'},
+  ja: {back:'← 一覧へ', notice:'このポリシーは韓国語で作成されています。日本語で読むにはブラウザの翻訳機能をご利用ください。'},
+  zh: {back:'← 返回列表', notice:'本政策以韩语撰写。如需中文阅读，请使用浏览器的翻译功能。'}
+};
+
+function applyLang(lang){
+  var d = I18N[lang];
+  document.getElementById('t-back').textContent = d.back;
+  var n = document.getElementById('notice');
+  if(d.notice){ n.textContent = d.notice; n.classList.add('on'); }
+  else { n.classList.remove('on'); }
+  document.querySelectorAll('.langs button').forEach(function(b){
+    b.classList.toggle('cur', b.dataset.lang === lang);
+  });
+}
+
+(function(){
+  var LANGS = [{code:'ko',label:'한국어'},{code:'en',label:'EN'},{code:'ja',label:'日本語'},{code:'zh',label:'中文'}];
+  var box = document.getElementById('langs');
+  box.innerHTML = LANGS.map(function(l){
+    return '<button type="button" data-lang="'+l.code+'" class="'+(l.code==='ko'?'cur':'')+'">'+l.label+'</button>';
+  }).join('');
+  box.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click', function(){ applyLang(b.dataset.lang); });
+  });
+})();
+</script>
+</body>
+</html>
