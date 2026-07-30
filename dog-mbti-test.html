@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>우리 강아지는 어떤 MBTI일까?</title>
+<meta name="description" content="견주가 대신 답해주는 우리 강아지 성격 테스트. 12문항이면 알 수 있어요.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="우리 강아지는 어떤 MBTI일까?">
+<meta property="og:description" content="견주가 대신 답해주는 우리 강아지 성격 테스트. 12문항이면 알 수 있어요.">
+<meta property="og:image" content="dog-mbti-test-thumb.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{--bg:#FFF8F0;--paper:#FFFFFF;--ink:#2B2318;--sub:#8C7B6B;--line:#F0D9C0;--acc:#E87B3A;--soft:rgba(232,123,58,0.12);--deep:rgba(232,123,58,0.24);--accFg:#fff;--softFg:#2B2318;--deepFg:#2B2318;--chip:rgba(43,35,24,0.07);--chips:rgba(43,35,24,0.1);--r:16px;--bw:2px;--shadow:0 6px 18px rgba(20,20,30,.10);--fh:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;--fb:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+*{box-sizing:border-box;}
+html{background:#FFF8F0;}
+body{margin:0;min-height:100vh;color:var(--ink);background-color:var(--bg);background-image:radial-gradient(rgba(240,217,192,0.1) 1px,transparent 1px);background-size:12px 12px;font-family:var(--fb);word-break:keep-all;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;line-height:1.6;}
+h1,h2,h3,.qx,.rn h3,.sheeth h2,.reveal .code,.dsh,.blt,.cmph,.maph,.sheetsec{font-family:var(--fh);}
+button,input{font:inherit;-webkit-tap-highlight-color:transparent;}
+.app{width:100%;max-width:560px;margin:0 auto;padding:26px 14px 46px;}
+.sc{display:none;} .sc.on{display:block;animation:in .18s ease;}
+@keyframes in{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+.pa{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);}
+.btn{width:100%;min-height:54px;padding:12px;cursor:pointer;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--ink);font-size:16px;font-weight:800;}
+.btn:active{transform:scale(.99);}
+.btn.fill{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.stk{display:grid;gap:10px;margin-top:14px;}
+.intro{padding:0 0 24px;text-align:center;overflow:hidden;}
+.hero{margin:0 0 20px;line-height:0;}
+.hero svg{display:block;width:100%;height:auto;}
+.intro>h1,.intro>p,.intro>.castt,.intro>.cast,.intro>.mt,.intro>.em{margin-left:18px;margin-right:18px;}
+.intro>.em{padding-top:34px;}
+.intro .em{font-size:54px;line-height:1;margin-bottom:12px;}
+.intro h1{font-size:25px;line-height:1.45;margin:0 0 10px;font-weight:700;letter-spacing:-.2px;text-wrap:balance;}
+.intro p{font-size:14.5px;color:var(--sub);line-height:1.8;margin:0;font-weight:400;text-wrap:pretty;}
+.castt{margin:20px 0 10px;font-size:12.5px;font-weight:800;color:var(--acc);}
+.mt{margin-top:16px;font-size:12.5px;font-weight:700;color:var(--sub);}
+.langhint{margin-top:8px;font-size:11px;font-weight:500;color:var(--sub);opacity:.75;line-height:1.6;}
+.cast{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;}
+.ci{min-width:0;padding:9px 3px 8px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);text-align:center;}
+.ci .e{font-size:22px;line-height:1;display:block;margin-bottom:4px;}
+.ci .n{font-size:11px;font-weight:600;line-height:1.4;word-break:keep-all;text-wrap:balance;}
+.ci .t{font-size:8.5px;color:var(--sub);opacity:.8;font-weight:700;margin-top:2px;display:block;}
+.intro .mt{font-size:12px;color:var(--sub);opacity:.75;margin-top:16px;font-weight:700;}
+.nb{padding:40px 24px;text-align:center;}
+.nb h2{font-size:22px;margin:0 0 22px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.nb input{width:100%;max-width:340px;height:54px;padding:0 14px;text-align:center;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-size:19px;font-weight:800;outline:none;}
+.nb input:focus{border-color:var(--acc);}
+.gd{max-width:400px;margin:24px auto 0;padding:14px 16px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);font-size:13.5px;line-height:1.8;font-weight:600;text-align:left;color:var(--sub);text-wrap:pretty;}
+.qw{padding:24px 20px 28px;}
+.qt{padding-bottom:14px;border-bottom:var(--bw) solid var(--line);}
+.qi{display:flex;justify-content:space-between;gap:12px;margin-bottom:9px;font-size:12px;font-weight:800;}
+.qi .sec{color:var(--acc);}
+.trk{width:100%;height:14px;padding:2px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.fil{width:0;height:100%;background:var(--acc);border-radius:var(--r);transition:width .2s ease;}
+.pdots{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.pdot{height:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--chip);opacity:.35;}
+.pdot.dn{opacity:1;background:var(--acc);}
+.pdot.now{opacity:1;background:var(--acc);animation:blink .7s infinite alternate;}
+@keyframes blink{from{opacity:.4;}to{opacity:1;}}
+.psq{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.psq i{display:block;aspect-ratio:1/1;min-height:12px;border:1px solid var(--line);border-radius:2px;background:var(--chip);}
+.psq i.dn{background:var(--acc);}
+.qn{margin-top:22px;color:var(--acc);font-size:13px;font-weight:900;}
+.qx{min-height:76px;margin:14px 0 20px;text-align:center;font-size:21px;line-height:1.6;letter-spacing:-.2px;font-weight:700;display:flex;align-items:center;justify-content:center;text-wrap:balance;}
+.ops{display:grid;gap:11px;}
+.op{position:relative;width:100%;min-height:70px;padding:15px 16px 15px 52px;cursor:pointer;text-align:left;color:var(--ink);background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15.5px;line-height:1.6;font-weight:500;text-wrap:pretty;}
+.op::before{content:attr(data-n);position:absolute;left:14px;top:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border:var(--bw) solid var(--line);border-radius:var(--r);transform:translateY(-50%);font-size:13px;font-weight:900;background:var(--paper);}
+.op.pk{background:var(--soft);border-color:var(--acc);color:var(--softFg);}
+.op.pk::before{color:var(--ink);}
+.op:disabled{cursor:default;}
+.qnote{margin:20px 0 0;color:var(--sub);text-align:center;font-size:12px;font-weight:700;}
+.qback{display:block;margin:14px auto 0;padding:8px 4px;background:none;border:0;color:var(--sub);font-family:var(--fb);font-size:12.5px;font-weight:700;cursor:pointer;text-align:center;}
+.lw{min-height:420px;padding:40px 22px;display:flex;align-items:center;justify-content:center;text-align:center;}
+.lw h2{margin:0 0 10px;font-size:24px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.lw p{margin:0;color:var(--sub);font-size:14px;}
+.dts{display:flex;justify-content:center;gap:9px;margin:28px 0 24px;}
+.dts span{width:12px;height:12px;background:var(--acc);border:var(--bw) solid var(--line);border-radius:var(--r);animation:bump 1.1s ease-in-out infinite;}
+.dts span:nth-child(2){animation-delay:.15s;} .dts span:nth-child(3){animation-delay:.3s;}
+@keyframes bump{0%,100%{transform:translateY(0);opacity:.4;}50%{transform:translateY(-7px);opacity:1;}}
+.lbar{width:100%;height:14px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.lbar span{display:block;width:32%;height:100%;background:var(--acc);animation:sld 1.05s ease-in-out infinite;}
+@keyframes sld{from{transform:translateX(-110%);}to{transform:translateX(340%);}}
+.cap{overflow:hidden;max-width:100%;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rh{padding:13px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.rh h2{margin:0;color:var(--accFg);font-size:15.5px;font-weight:700;line-height:1.45;letter-spacing:-.1px;text-wrap:balance;}
+.rb{padding:14px;}
+.rn{padding:24px 16px 20px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rn .em{font-size:64px;line-height:1;}
+.rn h3{margin:10px 0 6px;font-size:29px;font-weight:700;line-height:1.3;letter-spacing:-.3px;color:var(--acc);text-wrap:balance;}
+.rn .tg2{font-size:14.5px;font-weight:600;color:var(--ink);opacity:.85;}
+.rn .cd{display:inline-block;margin-top:12px;padding:4px 12px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:11px;font-weight:800;letter-spacing:1.2px;}
+.stage{position:relative;height:190px;overflow:hidden;border:var(--bw) solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,var(--soft) 0%,var(--chip) 100%);}
+.stg-cloud{position:absolute;top:18px;width:52px;height:20px;background:#fff;opacity:.85;border-radius:999px;}
+.stg-cloud::before,.stg-cloud::after{content:"";position:absolute;background:#fff;border-radius:50%;top:-9px;}
+.stg-cloud::before{width:22px;height:22px;left:8px;}
+.stg-cloud::after{width:16px;height:16px;right:9px;top:-6px;}
+.stg-cloud.l{left:24px;}
+.stg-cloud.r{right:26px;top:34px;transform:scale(.85);}
+.stg-hill{position:absolute;bottom:44px;height:70px;opacity:.9;}
+.stg-hill.l{left:-10%;width:58%;background:var(--soft);border-radius:0 100% 0 0;}
+.stg-hill.r{right:-10%;width:60%;height:82px;background:var(--deep);border-radius:100% 0 0 0;}
+.stg-ground{position:absolute;left:0;right:0;bottom:0;height:44px;background:var(--acc);opacity:.22;border-top:var(--bw) solid var(--line);}
+.stg-char{position:absolute;left:50%;bottom:38px;transform:translateX(-50%);font-size:58px;line-height:1;filter:drop-shadow(0 6px 4px rgba(0,0,0,.15));z-index:3;}
+.stg-badge{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);padding:5px 14px;background:var(--paper);border:var(--bw) solid var(--line);border-radius:999px;font-size:13px;font-weight:800;color:var(--ink);white-space:nowrap;z-index:3;}
+.rn.stage-wrap{background:none;border:0;padding:0;}
+.rs{margin-top:12px;padding:15px 16px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15px;line-height:1.8;font-weight:400;text-wrap:pretty;}
+.blk{margin-top:14px;}
+.blt{margin:0;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-bottom:0;border-radius:var(--r) var(--r) 0 0;font-size:13px;font-weight:900;text-align:center;text-wrap:balance;}
+.qb{padding:18px 16px;text-align:center;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);font-size:17px;font-weight:600;line-height:1.65;text-wrap:balance;}
+.qbb{position:relative;margin:6px 16px 24px;padding:18px 16px;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:16px;font-weight:600;line-height:1.65;text-align:center;text-wrap:balance;}
+.qbb::before{content:"";position:absolute;left:32px;bottom:-11px;width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-top:13px solid var(--line);}
+.qbb::after{content:"";position:absolute;left:34.5px;bottom:-6.5px;width:0;height:0;border-left:8.5px solid transparent;border-right:8.5px solid transparent;border-top:10px solid var(--soft);}
+.trs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:var(--bw) solid var(--line);border-left:var(--bw) solid var(--line);}
+.tc{min-height:82px;padding:9px 6px;display:flex;align-items:center;justify-content:center;background:var(--chip);color:var(--ink);border-right:var(--bw) solid var(--line);border-bottom:var(--bw) solid var(--line);text-align:center;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;text-wrap:balance;}
+.tc:nth-child(even){background:var(--soft);color:var(--softFg);}
+.trss{display:flex;flex-wrap:wrap;gap:10px 8px;padding:16px 14px;background:var(--chip);border-top:var(--bw) solid var(--line);}
+.tst{padding:8px 13px;background:var(--paper);border:var(--bw) solid var(--line);border-radius:999px;font-size:12.5px;font-weight:700;box-shadow:2px 2px 0 var(--line);word-break:keep-all;text-wrap:balance;color:var(--ink);}
+.tst:nth-child(3n+1){transform:rotate(-2.5deg);}
+.tst:nth-child(3n+2){transform:rotate(1.5deg);}
+.tst:nth-child(3n){transform:rotate(-0.5deg);}
+.tst:nth-child(even){background:var(--soft);color:var(--softFg);}
+.duo{display:grid;gap:10px;}
+.dsec{border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.dsh{padding:9px;text-align:center;font-size:14px;font-weight:900;color:var(--deepFg);border-bottom:var(--bw) solid var(--line);}
+.dsec.g .dsh{background:var(--acc);color:var(--accFg);}
+.dsec.b .dsh{background:var(--deep);}
+.dls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px 10px;padding:12px 11px;background:var(--chip);}
+.dit span{text-wrap:pretty;}
+.dit{display:flex;align-items:flex-start;min-width:0;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;}
+.dit b{width:7px;height:7px;margin:5px 6px 0 0;flex:0 0 auto;background:var(--acc);border-radius:1px;}
+.dit.chk b{width:17px;height:17px;margin:1px 8px 0 0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;background:var(--acc);color:var(--accFg);}
+.dsec.b .dit.chk b{background:var(--sub);color:var(--paper);}
+.sts{padding:14px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);}
+.srow{display:grid;grid-template-columns:76px 1fr 42px;align-items:center;gap:9px;}
+.srow+.srow{margin-top:11px;}
+.slab{font-size:12.5px;font-weight:900;}
+.sqs{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;}
+.sq{aspect-ratio:1/1;min-height:11px;border-radius:2px;background:var(--chips);box-shadow:inset 0 0 0 1px rgba(240,217,192,0.35);}
+.sq.f{background:var(--acc);}
+.spc{text-align:right;font-size:12.5px;font-weight:900;}
+.stsr{padding:16px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:14px 8px;}
+.rgauge{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.rgauge svg{width:64px;height:64px;overflow:visible;}
+.rgauge .rtrack{fill:none;stroke:var(--chips);stroke-width:6;}
+.rgauge .rfill{fill:none;stroke:var(--acc);stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset .5s ease;}
+.rgauge .rlab{font-size:11px;font-weight:800;color:var(--sub);text-align:center;line-height:1.35;}
+.cds{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px;}
+.cd2{padding:12px 11px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.cd2 b{display:inline-block;margin-bottom:7px;padding:3px 9px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:10.5px;font-weight:800;}
+.cd2 p{margin:0;font-size:13.5px;line-height:1.65;font-weight:500;text-wrap:pretty;}
+.cdt{background:var(--paper);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);padding:2px 16px;}
+.cdti{padding:12px 0;border-bottom:var(--bw) dashed var(--line);}
+.cdti:last-child{border-bottom:0;}
+.cdti b{display:block;font-size:11px;font-weight:900;color:var(--acc);margin-bottom:3px;letter-spacing:.2px;}
+.cdti span{display:block;font-size:13.5px;font-weight:600;line-height:1.55;text-wrap:pretty;}
+.map{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.maph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.mapg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--chip);}
+.mapc{position:relative;min-width:0;padding:9px 3px 8px;text-align:center;border-right:1px solid rgba(240,217,192,0.18);border-bottom:1px solid rgba(240,217,192,0.18);}
+.mapc:nth-child(4n){border-right:0;}
+.mapc:nth-last-child(-n+4){border-bottom:0;}
+.mapc .e{display:block;font-size:20px;line-height:1;}
+.mapc .n{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;margin-top:4px;font-size:9px;font-weight:600;line-height:1.35;overflow:hidden;word-break:keep-all;text-wrap:balance;padding:0 2px;min-height:24px;}
+.mapc .p{display:block;margin-top:2px;font-size:9.5px;font-weight:900;opacity:.75;}
+.mapc.me{outline:var(--bw) solid var(--acc);outline-offset:-2px;}
+.mapc .badge{display:inline-block;margin-top:2px;padding:1px 7px;border-radius:999px;background:var(--acc);color:var(--accFg);font-size:9px;font-weight:800;}
+.mapf{display:flex;align-items:center;gap:7px;padding:9px 12px;background:var(--chip);border-top:var(--bw) solid var(--line);font-size:9.5px;font-weight:800;color:var(--sub);}
+.mapbar{flex:1;height:7px;border-radius:999px;}
+.cmp{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.cmph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.cmpg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--chip);}
+.cmpc{min-width:0;padding:12px 8px 13px;text-align:center;}
+.cmpc+.cmpc{border-left:var(--bw) solid var(--line);}
+.cmpc .lb{display:inline-block;margin-bottom:10px;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;background:var(--acc);color:var(--accFg);}
+.cmpc.bad .lb{background:#AEB4BF;color:#fff;}
+.cmpi{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:7px;}
+.cmpi .e{font-size:24px;line-height:1;}
+.cmpi .n{min-width:0;font-size:13px;font-weight:600;line-height:1.45;text-align:left;word-break:keep-all;text-wrap:balance;}
+.cmpi .p{font-size:11.5px;font-weight:900;color:var(--acc);display:block;}
+.cmpc.bad .cmpi .p{color:var(--sub);}
+.cmpnote{margin-top:11px;padding-top:9px;border-top:1px dashed rgba(240,217,192,0.3);font-size:12px;line-height:1.65;font-weight:500;color:var(--sub);}
+.rf{margin-top:16px;padding-top:12px;border-top:var(--bw) dashed var(--line);color:var(--sub);text-align:center;font-size:11px;font-weight:700;letter-spacing:.6px;}
+.ad{max-width:560px;margin:22px auto 0;min-height:110px;display:flex;align-items:center;justify-content:center;border:var(--bw) dashed var(--line);border-radius:var(--r);color:var(--sub);font-size:12px;opacity:.5;}
+.sheet{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.sheeth{padding:16px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.sheeth h2{margin:0;color:var(--accFg);font-size:18px;font-weight:800;letter-spacing:-.4px;}
+.sheeth p{margin:5px 0 0;color:var(--accFg);opacity:.85;font-size:11.5px;font-weight:700;}
+.reveal{margin:14px;padding:20px 16px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.reveal .em{font-size:46px;line-height:1;}
+.reveal .nm{margin-top:8px;font-size:19px;font-weight:700;line-height:1.45;text-wrap:balance;}
+.reveal .eq{margin:9px 0 7px;font-size:13px;font-weight:800;color:var(--sub);}
+.reveal .code{display:inline-block;padding:8px 22px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:26px;font-weight:800;letter-spacing:3px;}
+.sheetad{margin:0 14px 14px;min-height:100px;display:flex;align-items:center;justify-content:center;border:var(--bw) dashed var(--line);border-radius:var(--r);color:var(--sub);font-size:11.5px;opacity:.5;}
+.sheetsec{margin:0 14px 10px;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:12.5px;font-weight:900;text-align:center;}
+.rows{margin:0 14px 14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.row{display:grid;grid-template-columns:26px 30px minmax(0,1fr) auto;align-items:center;gap:9px;padding:10px 11px;background:var(--chip);border-bottom:1px solid rgba(240,217,192,0.18);}
+.row:last-child{border-bottom:0;}
+.row.me{background:var(--soft);color:var(--softFg);}
+.row .no{font-size:10px;font-weight:800;color:var(--sub);opacity:.7;}
+.row .em{font-size:22px;line-height:1;text-align:center;}
+.row .nm{font-size:14px;font-weight:600;line-height:1.45;min-width:0;word-break:keep-all;text-wrap:balance;}
+.row .tg{display:block;font-size:10.5px;font-weight:700;color:var(--sub);opacity:.85;margin-top:2px;}
+.row .cd{padding:4px 10px;border-radius:999px;background:var(--deep);font-size:11px;font-weight:800;letter-spacing:.8px;white-space:nowrap;}
+.row.me .cd{background:var(--acc);color:var(--accFg);}
+.mo{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(20,20,20,.82);overflow-y:auto;}
+.mo.on{display:flex;}
+.mb2{width:100%;max-width:360px;max-height:92vh;overflow:auto;padding:20px 16px;text-align:center;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);margin:auto;}
+.mb2 h3{margin:0 0 8px;font-size:18px;font-weight:900;}
+.mb2 p{margin:0 0 16px;color:var(--sub);font-size:13px;line-height:1.55;font-weight:600;}
+.mb2 img{display:block;width:100%;border:var(--bw) solid var(--line);border-radius:var(--r);}
+.mbtns{display:grid;gap:8px;margin-top:14px;}
+.mbtn{display:block;width:100%;padding:14px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-family:var(--fb);font-size:14.5px;font-weight:600;text-align:center;text-decoration:none;cursor:pointer;box-sizing:border-box;}
+.mbtn.pri{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.mtip{margin:12px 0 0!important;font-size:12px;line-height:1.6;color:var(--sub);}
+.mb2 .cl{width:100%;min-height:46px;margin-top:14px;cursor:pointer;color:#1a1a1a;background:var(--line);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:14px;font-weight:800;}
+.tst{position:fixed;left:50%;bottom:26px;z-index:200;max-width:calc(100% - 32px);padding:12px 18px;color:#fff;background:rgba(28,28,28,.95);border:var(--bw) solid #fff;border-radius:var(--r);font-size:13.5px;font-weight:700;transform:translate(-50%,16px);opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+.tst.show{opacity:1;transform:translate(-50%,0);}
+@media(hover:hover) and (pointer:fine){
+.btn:hover{background:var(--soft);color:var(--softFg);}
+.btn.fill:hover{opacity:.9;background:var(--acc);}
+.op:hover{background:var(--soft);color:var(--softFg);}
+.op:hover::before{color:var(--ink);}
+.qback:hover{color:var(--ink);}
+}
+@media(max-width:520px){.app{padding:18px 11px 38px;}.intro{padding:28px 14px 20px;}.intro h1{font-size:22px;}
+.ci .n{font-size:9.5px;} .ci .e{font-size:19px;}
+.qw{padding:20px 15px 24px;}.qx{font-size:19px;min-height:66px;}
+.op{min-height:64px;padding:13px 13px 13px 48px;font-size:14px;}
+.tc{min-height:74px;font-size:11.5px;}.rn h3{font-size:26px;}.rh h2{font-size:14px;}
+.dls{gap:6px 7px;padding:10px 9px;}.dit{font-size:11.5px;}.cds{gap:7px;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <section class="sc on" id="s1"></section>
+  <section class="sc" id="s2"></section>
+  <section class="sc" id="s3"></section>
+  <section class="sc" id="s4"></section>
+  <section class="sc" id="s5"></section>
+  <section class="sc" id="s6"></section>
+  <div class="ad">광고 영역 (애드센스 코드 삽입 위치)</div>
+</div>
+<div class="mo" id="mo"><div class="mb2"><h3>이미지 꾹 눌러 저장하기</h3><p>아래 이미지를 길게 누르거나 우클릭해서<br>저장해 주세요.</p><div id="mw"><p style="padding:40px 0;">이미지를 만들고 있어요...</p></div><button class="cl" onclick="closeMo()">닫기</button></div></div>
+<div class="tst" id="tst"></div>
+<script>
+"use strict";
+var D={"useName":false,"meta":{"title":"우리 강아지는 어떤 MBTI일까?","emoji":"🐶","intro":"견주가 대신 답해주는 우리 강아지 성격 테스트. 12문항이면 알 수 있어요.","loadingText":"강아지 성격을 분석하는 중... 🐾","sheetTitle":"16가지 강아지 성격 유형","sheetCta":"우리 강아지 유형 확인하기","setName":"강아지 성격 연구소","slug":"dog-mbti-test"},"blocks":["quote","traits","stats","cards","duo","map"],"blockLabels":{"quote":"🐾 이 강아지를 한 문장으로","traits":"🐾 이 강아지의 특징","duo":{"good":"🐾 이 강아지의 장점","bad":"🐾 보완하면 좋은 점"},"stats":"🐾 지표로 보는 이 강아지","cards":"🐾 이 강아지의 일상","map":"🐾 16가지 강아지 성격 전체 궁합"},"compatLabels":{"title":"강아지 궁합","good":"찰떡 강아지 친구","bad":"살짝 템포 다른 친구","mapTitle":"16가지 강아지 성격 전체 궁합"},"compat":{"ISTJ":"ESTJ98 ISFJ96 ESFJ94 ISTP92 INTJ91 INFJ88 ISFP87 ENTJ86 INTP84 ENFJ82 ESFP80 INFP79 ESTP78 ENTP76 ENFP74","ISFJ":"ESFJ98 ISTJ96 ESTJ95 ISFP93 INFJ92 ENFJ90 INFP88 ISTP87 INTJ85 ESFP84 ENTJ82 ESTP80 ENFP79 INTP78 ENTP76","INFJ":"ENFP99 ENTP97 INFP96 ENFJ95 INTJ94 ISFP92 ISFJ91 INTP89 ENTJ88 ISTJ87 ESFP84 ISTP83 ESTJ80 ESFJ79 ESTP77","INTJ":"ENFP99 ENTP97 INFJ94 INTP93 ENTJ92 ISTJ91 INFP89 ISTP88 ISFJ85 ESTJ84 ENFJ83 ISFP81 ESFP78 ESTP76 ESFJ75","ISTP":"ESTP98 ISFP96 ISTJ92 INTP91 ENTP90 INTJ88 ESTJ87 ESFP86 ENTJ84 ISFJ83 INFP81 ENFP80 INFJ79 ESFJ78 ENFJ76","ISFP":"ESFP98 ISTP96 INFP95 ISFJ93 ENFP92 INFJ91 ESFJ89 INTJ88 ESTP87 ENFJ86 ISTJ85 INTP83 ENTP82 ESTJ80 ENTJ79","INFP":"ENFJ99 ENTJ97 ENFP96 INFJ96 ISFP95 INTP93 INTJ89 ISFJ88 ENTP87 ESFJ86 ISTP84 ESFP82 ISTJ79 ESTP78 ESTJ76","INTP":"ENTJ99 ENFJ97 ENTP96 INTJ93 INFP93 ISTP91 INFJ89 ESTP87 ENFP86 ISTJ84 ISFP83 ESTJ82 ISFJ78 ESFP77 ESFJ75","ESTP":"ISTP98 ESFP96 ENTP94 ESTJ93 ISTJ91 INTP87 ISFP87 ENTJ86 ENFP84 ESFJ83 ISFJ80 INFP78 INFJ77 INTJ76 ENFJ75","ESFP":"ISFP98 ESTP96 ESFJ95 ENFP94 ISFJ92 ESTJ90 ENFJ89 ISTP86 INFJ84 INFP82 ENTP81 ISTJ80 INTJ78 INTP77 ENTJ76","ENFP":"INFJ99 INTJ99 ENFJ98 INFP96 ESFP94 ISFP92 ENTP91 INTP86 ENTJ85 ESTP84 ISTP80 ESFJ80 ISFJ79 ISTJ74 ESTJ72","ENTP":"INFJ97 INTJ97 ENTJ96 INTP96 ESTP94 ENFP91 ISTP90 INFP87 ESTJ84 ENFJ83 ISFP82 ESFP81 ESFJ79 ISTJ76 ISFJ76","ESTJ":"ISTJ98 ESFJ96 ISFJ95 ENTJ94 ESTP93 ESFP90 ISTP87 INTJ84 ENTP84 INTP82 ENFJ81 INFJ80 ISFP80 INFP76 ENFP72","ESFJ":"ISFJ98 ESTJ96 ESFP95 ISTJ94 ENFJ94 ISFP89 INFP86 ESTP83 ENFP80 INFJ79 ENTP79 ENTJ78 ISTP78 INTJ75 INTP75","ENFJ":"INFP99 ENFP98 INTP97 INFJ95 ESFJ94 ISFJ90 ESFP89 ISFP86 ENTJ85 INTJ83 ENTP83 ISTJ82 ESTJ81 ISTP76 ESTP75","ENTJ":"INTP99 INFP97 ENTP96 ESTJ94 INTJ92 INFJ88 ISTJ86 ESTP86 ENFP85 ENFJ85 ISTP84 ISFJ82 ISFP79 ESFJ78 ESFP76"},"compatLines":[{"min":95,"text":"이 조합이면 최고의 단짝 강아지 친구예요"},{"min":88,"text":"같이 놀면 손발이 잘 맞는 사이예요"},{"min":82,"text":"스타일은 달라도 은근히 잘 어울려요"},{"min":76,"text":"다른 에너지라 오히려 배울 게 있어요"},{"min":0,"text":"완전히 다른 성격이라 새로운 자극이 돼요"}],"statStyle":"radial","traitStyle":"sticker","cardStyle":"ticket","duoStyle":"check","quoteStyle":"bubble","heroStyle":"stage","cast":[{"type":"ISTJ","name":"규칙지킴이 강아지","emoji":"📏","tagline":"산책 시간엔 칼같이 일어나는 강아지"},{"type":"ISFJ","name":"온순한 수호자 강아지","emoji":"🛡️","tagline":"온 가족을 조용히 챙기는 강아지"},{"type":"INFJ","name":"신비로운 철학자 강아지","emoji":"🌙","tagline":"혼자만의 세계가 있는 강아지"},{"type":"INTJ","name":"전략적 사냥꾼 강아지","emoji":"🎯","tagline":"원하는 걸 기어이 얻어내는 강아지"},{"type":"ISTP","name":"쿨한 기술자 강아지","emoji":"🔧","tagline":"말은 없지만 손재주 있는 강아지"},{"type":"ISFP","name":"감성 예술가 강아지","emoji":"🎨","tagline":"좋아하는 것엔 진심인 강아지"},{"type":"INFP","name":"몽상가 강아지","emoji":"🌈","tagline":"창밖만 봐도 행복한 강아지"},{"type":"INTP","name":"호기심 탐험가 강아지","emoji":"🔬","tagline":"모든 냄새를 분석하는 강아지"},{"type":"ESTP","name":"스턴트맨 강아지","emoji":"🏄","tagline":"일단 뛰고 보는 강아지"},{"type":"ESFP","name":"파티 강아지","emoji":"🎉","tagline":"손님 오면 제일 먼저 달려나가는 강아지"},{"type":"ENFP","name":"자유로운 영혼 강아지","emoji":"✨","tagline":"산책길이 매번 다른 강아지"},{"type":"ENTP","name":"장난꾸러기 강아지","emoji":"😈","tagline":"시키면 안 하고 안 시키면 하는 강아지"},{"type":"ESTJ","name":"대장 강아지","emoji":"👑","tagline":"집에서 제일 높은 서열인 줄 아는 강아지"},{"type":"ESFJ","name":"살림꾼 강아지","emoji":"🏠","tagline":"온 가족 곁을 빠짐없이 챙기는 강아지"},{"type":"ENFJ","name":"카리스마 리더 강아지","emoji":"🌟","tagline":"다른 강아지들도 따르는 강아지"},{"type":"ENTJ","name":"CEO 강아지","emoji":"💼","tagline":"간식 협상을 전략적으로 하는 강아지"}],"questions":[{"section":"일상 패턴","text":"강아지가 밥 시간이나 산책 시간이 조금 달라지면?","options":[{"text":"온몸으로 어필하며 루틴 고수 요구","value":"J"},{"text":"그날그날 다르게 유연하게 반응","value":"P"}]},{"section":"사교성","text":"낯선 사람이 집에 오면?","options":[{"text":"먼저 달려나가서 인사한다","value":"E"},{"text":"경계하거나 숨는다","value":"I"}]},{"section":"활동성","text":"놀이 스타일은?","options":[{"text":"에너지 폭발, 쉴 새 없이 뛰어다님","value":"E"},{"text":"조용히 혼자 장난감과 놀거나 낮잠","value":"I"}]},{"section":"감수성","text":"보호자가 슬프거나 아프면?","options":[{"text":"바로 옆에 붙어서 위로한다","value":"F"},{"text":"평소랑 비슷하게 행동한다","value":"T"}]},{"section":"탐구력","text":"새로운 물건이나 장소가 생기면?","options":[{"text":"바로 달려들어 탐색한다","value":"N"},{"text":"일단 멀리서 지켜보다가 익숙해지면 접근","value":"S"}]},{"section":"독립성","text":"혼자 있을 때?","options":[{"text":"잘 논다. 혼자도 충분함","value":"I"},{"text":"불안해하거나 보호자를 찾는다","value":"E"}]},{"section":"훈련 반응","text":"명령이나 훈련을 시키면?","options":[{"text":"잘 따르고 규칙적으로 행동한다","value":"J"},{"text":"기분 내키면 하고 아니면 무시한다","value":"P"}]},{"section":"감정 표현","text":"기쁠 때나 좋을 때 표현 방식은?","options":[{"text":"온몸으로 격렬하게 표현한다","value":"F"},{"text":"꼬리 살짝 흔들거나 조용히 붙어있다","value":"T"}]},{"section":"문제 해결","text":"장난감이나 간식이 손에 닿지 않는 곳에 있으면?","options":[{"text":"다양한 방법을 시도하며 기어이 꺼낸다","value":"N"},{"text":"포기하거나 보호자한테 신호 보낸다","value":"S"}]},{"section":"관계 형성","text":"다른 강아지를 만나면?","options":[{"text":"먼저 달려가서 인사한다","value":"E"},{"text":"천천히 거리를 두며 살핀다","value":"I"}]},{"section":"변화 적응","text":"새로운 환경(동물병원, 새집 등)에 가면?","options":[{"text":"금방 적응하고 탐색한다","value":"N"},{"text":"불안해하거나 경계한다","value":"S"}]},{"section":"애정 표현","text":"보호자에게 애정을 표현하는 방식은?","options":[{"text":"핥고 달라붙고 온몸으로 표현","value":"F"},{"text":"조용히 곁에 있거나 짧게 반응","value":"T"}]}],"results":[{"type":"ISTJ","name":"규칙지킴이 강아지","emoji":"📏","tagline":"산책 시간엔 칼같이 일어나는 강아지","summary":"이 강아지는 루틴이 곧 삶이에요. 밥 시간, 산책 시간이 조금만 어긋나도 온몸으로 항의하는 타입이에요. 규칙을 지키면 최고로 착한 강아지가 되고, 흐트러지면 묘하게 삐지는 그 패턴이 너무 사람 같죠.","color":"#4A6741","traits":["밥 시간 칼같이 기억함","루틴 어긋나면 삐짐","낯선 사람엔 경계 먼저","충직함의 끝판왕","자기 자리 영역의식 강함","훈련 잘 따름","짖음은 의미있을 때만","믿는 사람엔 온전히 기댐","조용히 충성하는 타입","꾸준히 같은 장소에서 잠","새로운 환경에 적응 느림","신뢰 쌓이면 절대 배신 없음"],"duo":{"good":["산책 시간 절대 안 잊어요","훈련 명령 잘 따라요","낯선 사람엔 경계를 서줘요","조용히 충직해요","자기 자리 잘 지켜요","변함없이 곁에 있어요"],"bad":["루틴 흐트러지면 삐져요","새 환경 적응이 느려요","낯선 사람과 친해지는 데 오래 걸려요","유연성이 부족해요","새 강아지 친구 사귀기 어려워해요","고집이 셀 때가 있어요"]},"stats":[{"label":"충직도","value":98},{"label":"적응력","value":42},{"label":"훈련 용이성","value":88}],"cards":[{"label":"최애 일과","value":"정확한 시간에 산책하기"},{"label":"스트레스 해소법","value":"자기 자리에서 낮잠"}],"quote":"산책 시간엔 칼같이 일어나는 강아지"},{"type":"ISFJ","name":"온순한 수호자 강아지","emoji":"🛡️","tagline":"온 가족을 조용히 챙기는 강아지","summary":"조용히 보호자 곁을 맴도는 강아지예요. 아프거나 슬플 때 먼저 알아채고 옆에 붙어있는 타입이에요. 크게 표현하진 않지만 제일 충직하고, 새 손님보다 오랜 가족을 더 좋아하는 속 깊은 강아지예요.","color":"#8B6B4A","traits":["보호자 감정 잘 읽음","아프면 먼저 옆에 앉음","조용한 관심 표현","낯선 사람엔 오래 경계","가족에겐 무한 헌신","물지 않고 참는 편","혼자 있으면 불안","다른 동물과도 잘 지냄","항상 같이 있고 싶어함","충직함이 제일 큰 장점","변화에 예민한 편","한번 정든 사람 절대 안 잊음"],"duo":{"good":["보호자 감정 잘 읽어요","아플 때 옆에 붙어있어요","가족에겐 무한 헌신해요","조용히 충직해요","다른 동물과도 잘 지내요","한번 정든 사람 안 잊어요"],"bad":["낯선 사람 경계가 길어요","혼자 두면 불안해해요","변화에 예민해요","새 환경 적응이 느려요","분리불안이 있을 수 있어요","소심한 편이에요"]},"stats":[{"label":"애착도","value":95},{"label":"독립심","value":35},{"label":"친화력","value":80}],"cards":[{"label":"최애 일과","value":"보호자 곁에 조용히 붙어있기"},{"label":"존재 이유","value":"가족의 수호자"}],"quote":"온 가족을 조용히 챙기는 강아지"},{"type":"INFJ","name":"신비로운 철학자 강아지","emoji":"🌙","tagline":"혼자만의 세계가 있는 강아지","summary":"조금 신비로운 강아지예요. 혼자 있는 시간도 좋아하고, 눈빛으로 말하는 것 같은 느낌이 들어요. 아무나한테 꼬리 치지 않는데, 마음을 열면 그 누구보다 깊이 교감하는 타입이에요.","color":"#5B4C8A","traits":["눈빛이 깊고 신비로움","혼자만의 공간이 필요","아무한테나 꼬리 안 침","마음 열면 깊이 교감","직감으로 상황 파악","조용한 환경 선호","독창적인 행동 패턴","말 안 해도 알아채는 능력","스트레스에 민감","신뢰 쌓는 데 시간 필요","감수성이 풍부한 편","내면세계가 복잡한 강아지"],"duo":{"good":["눈빛으로 교감해요","마음 열면 깊이 사랑해요","직감이 뛰어나요","조용하고 품위 있어요","독창적인 매력이 있어요","신뢰하면 절대 배신 없어요"],"bad":["낯선 사람엔 오래 경계해요","혼자만의 시간이 꼭 필요해요","스트레스에 예민해요","마음 열기까지 시간이 걸려요","환경 변화에 예민해요","이해하기 어려울 때가 있어요"]},"stats":[{"label":"교감 깊이","value":92},{"label":"사교성","value":38},{"label":"신비로움","value":90}],"cards":[{"label":"최애 시간","value":"창밖 보며 명상하기"},{"label":"특기","value":"말 안 해도 마음 읽기"}],"quote":"혼자만의 세계가 있는 강아지"},{"type":"INTJ","name":"전략적 사냥꾼 강아지","emoji":"🎯","tagline":"원하는 걸 기어이 얻어내는 강아지","summary":"원하는 게 있으면 기어이 얻어내는 영리한 강아지예요. 간식이 어디 있는지 이미 다 파악하고 있고, 명령은 선별적으로 따르는 편이에요. '너 지금 무슨 생각 하는 거야?'가 자주 나오는 강아지예요.","color":"#2C3E5C","traits":["간식 위치 이미 파악","명령 선택적으로 수행","지능적인 문제 해결","원하는 건 기어이 얻어냄","관심 없으면 무시","장기적 전략가 기질","영역의식 뚜렷","혼자 있어도 충분","규칙의 허점 잘 찾음","자기 페이스 유지","감정 표현 절제","한번 정한 건 끝까지"],"duo":{"good":["원하는 걸 정확히 표현해요","영리하게 규칙을 익혀요","독립적이어서 혼자도 잘 있어요","문제를 스스로 해결해요","감정 기복이 없어요","목표가 생기면 끝까지 해요"],"bad":["명령을 선별적으로 따라요","자기 페이스를 고집해요","사람을 가리는 편이에요","통제하려는 성향이 있어요","감정 표현이 적어요","고집이 셀 때가 있어요"]},"stats":[{"label":"지능","value":95},{"label":"순종성","value":40},{"label":"독립심","value":88}],"cards":[{"label":"최애 활동","value":"간식 숨긴 곳 찾아내기"},{"label":"인생 목표","value":"원하는 것 기어이 얻기"}],"quote":"원하는 걸 기어이 얻어내는 강아지"},{"type":"ISTP","name":"쿨한 기술자 강아지","emoji":"🔧","tagline":"말은 없지만 손재주 있는 강아지","summary":"말은 없지만 능숙하게 상황을 파악하는 강아지예요. 활동적이지만 정작 필요할 때만 움직이는 효율파예요. 장난감을 분해하는 걸 좋아하고, 쓸데없는 짖음보다 행동으로 말하는 타입이에요.","color":"#4A5859","traits":["행동으로 말하는 타입","장난감 분해 전문","필요할 때만 움직임","쓸데없는 짖음 없음","탈출 시도 은근 잦음","독립적인 편","효율 최고 우선","감정 표현 쿨함","수리 능력(?) 탁월","혼자도 잘 놀음","관심 표현은 짧고 정확","필요 이상 매달리지 않음"],"duo":{"good":["불필요하게 짖지 않아요","효율적으로 행동해요","독립적이에요","상황 파악이 빨라요","침착하게 대처해요","혼자서도 잘 놀아요"],"bad":["감정 표현이 적어요","탈출 시도를 해요","장난감을 분해해요","멀리서 관찰하는 편이에요","훈련이 일관성 있어야 해요","무뚝뚝하게 느껴질 수 있어요"]},"stats":[{"label":"효율성","value":90},{"label":"표현력","value":30},{"label":"침착성","value":88}],"cards":[{"label":"취미","value":"장난감 분해하기"},{"label":"삶의 철학","value":"말보다 행동"}],"quote":"말은 없지만 손재주 있는 강아지"},{"type":"ISFP","name":"감성 예술가 강아지","emoji":"🎨","tagline":"좋아하는 것엔 진심인 강아지","summary":"취향이 확고한 감성 강아지예요. 좋아하는 장난감, 좋아하는 간식, 좋아하는 낮잠 자리가 딱 정해져 있어요. 억지로 시키면 거부하고 본인이 하고 싶을 때 움직이는 예술가 기질이 있어요.","color":"#D68FA3","traits":["취향이 너무 확고함","억지로 시키면 거부","좋아하는 것엔 진심","낮잠 자리 절대 양보 안 함","감성적인 반응","부드럽지만 고집 있음","혼자만의 시간 필요","예쁜 것에 끌리는 편","조용히 애정 표현","강요 싫어함","자기 페이스 중요","아름다운 것 감상 능력"],"duo":{"good":["취향이 확고해서 예측 가능해요","좋아하는 것엔 진심이에요","부드럽고 온화해요","감성적인 반응을 해요","억지 상황에서 거부가 명확해요","자기 스타일이 있어요"],"bad":["억지로 시키면 거부해요","자기 자리 양보 안 해요","혼자만의 시간이 필요해요","고집이 있는 편이에요","새 친구 사귀기 느려요","낯선 상황에 예민해요"]},"stats":[{"label":"감수성","value":93},{"label":"유연성","value":40},{"label":"취향 확고함","value":92}],"cards":[{"label":"최애 장소","value":"내 낮잠 자리 (양보 불가)"},{"label":"삶의 원칙","value":"내 페이스대로"}],"quote":"좋아하는 것엔 진심인 강아지"},{"type":"INFP","name":"몽상가 강아지","emoji":"🌈","tagline":"창밖만 봐도 행복한 강아지","summary":"창밖 구경만 해도 행복한 강아지예요. 상상력이 풍부해서인지 혼자서도 잘 노는 편이에요. 상처받으면 오래 기억하지만, 보호자가 미안해하면 금방 녹아버리는 따뜻한 강아지예요.","color":"#8B7AB8","traits":["창밖 구경이 취미","혼자서도 잘 놀음","상처 오래 기억함","따뜻한 감수성","독창적인 놀이 방식","공감 능력 뛰어남","이상적인 꿈나라 강아지","억지 명령에 저항","미안해하면 금방 녹음","감정 기복 있는 편","상상력 풍부","진심이 느껴지는 눈빛"],"duo":{"good":["상처받은 사람 곁에 있어줘요","혼자서도 잘 놀아요","감수성이 풍부해요","독창적인 놀이를 해요","따뜻한 눈빛을 가졌어요","미안해하면 금방 풀려요"],"bad":["상처를 오래 기억해요","감정 기복이 있어요","억지 명령에 저항해요","낯선 환경에 예민해요","우울해 보일 때가 있어요","공상에 빠질 때가 있어요"]},"stats":[{"label":"공감력","value":92},{"label":"활동성","value":45},{"label":"감수성","value":90}],"cards":[{"label":"최애 취미","value":"창밖 구경하기"},{"label":"강점","value":"따뜻한 공감 눈빛"}],"quote":"창밖만 봐도 행복한 강아지"},{"type":"INTP","name":"호기심 탐험가 강아지","emoji":"🔬","tagline":"모든 냄새를 분석하는 강아지","summary":"모든 것에 의문을 품는 탐구형 강아지예요. 냄새 하나도 허투루 지나치지 않고, 새로운 물건은 반드시 직접 검사해야 해요. 흥미가 없으면 아무리 불러도 못 들은 척 하는 선택적 청각의 소유자예요.","color":"#4C7C8C","traits":["냄새 철저히 분석","선택적 청각 보유","새 물건 반드시 검사","호기심 무한대","흥미 없으면 무반응","독립적인 사고","탐험 본능 강함","문제 해결에 집중","감정보다 논리(?)","혼자 있어도 충분","새로운 자극 좋아함","예상 밖 행동 자주 함"],"duo":{"good":["새로운 것을 탐구해요","독립적이에요","문제를 혼자 해결해요","호기심이 풍부해요","혼자 있어도 충분해요","예상 밖의 행동으로 즐거움을 줘요"],"bad":["흥미 없으면 무반응이에요","선택적 청각이 있어요","집중력이 분산되는 편이에요","감정 표현이 부족해요","통제하기 어려울 때가 있어요","예측이 어려운 행동을 해요"]},"stats":[{"label":"호기심","value":95},{"label":"사교성","value":35},{"label":"독립심","value":88}],"cards":[{"label":"최애 활동","value":"모든 냄새 철저히 분석하기"},{"label":"삶의 방식","value":"의심하고 탐구하기"}],"quote":"모든 냄새를 분석하는 강아지"},{"type":"ESTP","name":"스턴트맨 강아지","emoji":"🏄","tagline":"일단 뛰고 보는 강아지","summary":"일단 뛰고 보는 강아지예요. 위험해 보이는 상황일수록 더 흥분하고, 모든 걸 즉흥적으로 해결해요. 에너지가 넘쳐서 하루 종일 같이 놀아도 지치는 건 보호자 쪽이에요.","color":"#D9542F","traits":["일단 뛰고 봄","위험할수록 더 흥분","즉흥 행동 전문","에너지 무한 공급","훈련이 어려운 편","모험을 즐김","지루한 건 못 참음","몸으로 부딪히는 스타일","순발력 최고","새로운 자극 갈망","보호자가 더 지침","현재에 충실한 강아지"],"duo":{"good":["에너지가 넘쳐요","모험을 즐겨요","순발력이 좋아요","현재에 충실해요","활동적인 보호자에게 딱이에요","지루할 틈이 없어요"],"bad":["훈련이 어려워요","위험한 곳에 달려들어요","에너지 발산이 충분해야 해요","보호자가 더 지쳐요","충동적인 행동을 해요","자극이 충분해야 해요"]},"stats":[{"label":"에너지","value":98},{"label":"차분함","value":20},{"label":"모험심","value":97}],"cards":[{"label":"좌우명","value":"일단 뛰고 본다"},{"label":"에너지 레벨","value":"상시 MAX"}],"quote":"일단 뛰고 보는 강아지"},{"type":"ESFP","name":"파티 강아지","emoji":"🎉","tagline":"손님 오면 제일 먼저 달려나가는 강아지","summary":"손님만 오면 제일 먼저 달려나가는 파티 강아지예요. 분위기를 밝게 만드는 능력이 있어서 이 강아지가 있으면 집이 시끌시끌해져요. 관심 받는 걸 엄청 좋아하고, 혼자 두면 금방 심심해하는 타입이에요.","color":"#F2A030","traits":["손님 오면 제일 먼저 달려감","관심받는 거 최고","분위기 메이커","혼자 두면 심심함","감정 표현 과함(좋은 의미)","소셜 버터플라이","친화력 갑","에너지 넘치는 편","같이 있을 때 제일 행복","이모티콘 폭격 스타일","모든 사람이 친구","지루함을 못 견딤"],"duo":{"good":["분위기를 밝게 만들어요","친화력이 갑이에요","모든 손님을 환영해요","감정 표현이 풍부해요","같이 있으면 즐거워요","소셜 스킬이 뛰어나요"],"bad":["혼자 두면 심심해해요","관심받지 못하면 삐져요","분리불안이 있을 수 있어요","에너지 발산이 필요해요","진정시키기 어려울 때가 있어요","자극에 과하게 반응해요"]},"stats":[{"label":"친화력","value":98},{"label":"독립심","value":25},{"label":"에너지","value":95}],"cards":[{"label":"최애 순간","value":"손님 왔을 때"},{"label":"삶의 목표","value":"모두의 친구 되기"}],"quote":"손님 오면 제일 먼저 달려나가는 강아지"},{"type":"ENFP","name":"자유로운 영혼 강아지","emoji":"✨","tagline":"산책길이 매번 다른 강아지","summary":"오늘 산책 경로는 오늘 정하는 즉흥 강아지예요. 매번 새로운 길로 가자고 끌고 다니고, 낯선 강아지한테도 먼저 인사하러 가요. 에너지가 넘치다가도 갑자기 지쳐서 뻗어버리는 게 반복돼요.","color":"#E85D75","traits":["산책 경로 매번 다름","낯선 강아지에게 먼저 인사","즉흥적인 행동","갑자기 지쳐서 뻗음","새로운 경험 갈망","에너지 넘침","창의적인 놀이 방식","모든 것에 열정","집중력이 짧은 편","아이디어 부자","감정 표현 풍부","순간순간 진심"],"duo":{"good":["매번 새로운 즐거움을 줘요","에너지가 넘쳐요","낯선 강아지와도 잘 지내요","열정적이에요","창의적인 놀이를 해요","삶에 활기를 줘요"],"bad":["집중력이 짧아요","즉흥적인 행동을 해요","에너지 발산이 충분해야 해요","갑자기 지쳐 뻗어요","일관된 훈련이 어려워요","새 자극을 항상 원해요"]},"stats":[{"label":"열정","value":96},{"label":"집중력","value":30},{"label":"사교성","value":93}],"cards":[{"label":"산책 스타일","value":"매번 새로운 길 개척"},{"label":"에너지 방식","value":"전력 질주 후 즉사"}],"quote":"산책길이 매번 다른 강아지"},{"type":"ENTP","name":"장난꾸러기 강아지","emoji":"😈","tagline":"시키면 안 하고 안 시키면 하는 강아지","summary":"시키면 안 하고 안 시키면 하는 장난꾸러기예요. 보호자를 골탕 먹이는 걸 즐기는 것 같지만 사실 관심을 원하는 거예요. 똑똑해서 규칙의 허점을 잘 찾아내는 전략가 강아지예요.","color":"#3E8C8C","traits":["시키면 안 하고 안 시키면 함","규칙 허점 잘 찾음","골탕 먹이기 전문","사실은 관심 원함","영리한 문제 해결","즉흥적 장난 즐김","지루한 건 절대 못 참음","재치있는 행동","새 자극 항상 필요","도전 즐기는 편","예상 밖 행동의 연속","유머 감각 있음"],"duo":{"good":["영리해서 빨리 배워요","재치 있는 행동으로 즐거움을 줘요","새로운 것을 금방 익혀요","도전을 즐겨요","지루할 틈이 없어요","창의적인 해결책을 찾아요"],"bad":["규칙의 허점을 찾아요","골탕 먹이기를 즐겨요","일관된 통제가 어려워요","자극이 계속 필요해요","지루하면 말썽을 부려요","예상 밖의 행동이 잦아요"]},"stats":[{"label":"영리함","value":95},{"label":"순종성","value":28},{"label":"장난기","value":93}],"cards":[{"label":"특기","value":"규칙 허점 찾기"},{"label":"숨겨진 욕구","value":"사실 관심받고 싶음"}],"quote":"시키면 안 하고 안 시키면 하는 강아지"},{"type":"ESTJ","name":"대장 강아지","emoji":"👑","tagline":"집에서 제일 높은 서열인 줄 아는 강아지","summary":"집에서 제일 높은 서열인 줄 아는 대장 강아지예요. 다른 동물이나 손님이 오면 먼저 영역을 체크하고, 자기 루틴을 방해받으면 꽤 강경하게 어필해요. 리더십 하나는 확실한 강아지예요.","color":"#2B4356","traits":["집 서열 1위 자칭","영역 체크 철저","루틴 방해받으면 강경 어필","리더십 타고남","다른 동물 통제 시도","명확한 의사 표현","훈련 빨리 익힘","규칙 정하면 철저히 지킴","보호자 말은 잘 들음","집 관리 총책임","결단력 있음","한번 정하면 끝까지"],"duo":{"good":["집 지키는 능력이 탁월해요","명확한 의사 표현을 해요","훈련을 잘 익혀요","리더십이 있어요","규칙을 지키면 최고예요","보호자 말을 잘 들어요"],"bad":["자기가 대장인 줄 알아요","영역의식이 강해요","루틴이 방해되면 어필해요","통제하려는 성향이 있어요","낯선 동물과 갈등이 있을 수 있어요","고집이 셀 때가 있어요"]},"stats":[{"label":"리더십","value":95},{"label":"유연성","value":35},{"label":"영역의식","value":92}],"cards":[{"label":"자아 인식","value":"집에서 제일 높은 서열"},{"label":"삶의 철학","value":"내 집은 내가 지킨다"}],"quote":"집에서 제일 높은 서열인 줄 아는 강아지"},{"type":"ESFJ","name":"살림꾼 강아지","emoji":"🏠","tagline":"온 가족 곁을 빠짐없이 챙기는 강아지","summary":"온 가족 곁을 빠짐없이 챙기는 살림꾼 강아지예요. 누군가 방에 혼자 있으면 찾아가서 옆에 앉아주는 타입이에요. 모두가 함께 있을 때 가장 행복한, 가족형 강아지예요.","color":"#C97B63","traits":["온 가족 곁 빠짐없이 챙김","혼자 있는 사람 찾아감","모두 함께일 때 제일 행복","사랑 표현 아낌없음","다른 동물과도 잘 지냄","손님도 가족처럼 환영","감정 공유 능력 탁월","눈치가 빠른 편","애교가 넘침","충직하고 헌신적","집 분위기 메이커","사랑받는 게 원동력"],"duo":{"good":["온 가족을 챙겨요","모두와 잘 지내요","사랑 표현이 넘쳐요","분위기를 따뜻하게 해요","손님도 가족처럼 대해요","헌신적이에요"],"bad":["혼자 두면 외로워해요","관심이 충분해야 해요","분리불안이 있을 수 있어요","눈치를 많이 봐요","감정에 예민해요","과한 애교로 피곤할 때가 있어요"]},"stats":[{"label":"애정표현","value":97},{"label":"독립심","value":28},{"label":"친화력","value":95}],"cards":[{"label":"최애 순간","value":"온 가족 다 같이 있을 때"},{"label":"삶의 의미","value":"모두를 행복하게 하기"}],"quote":"온 가족 곁을 빠짐없이 챙기는 강아지"},{"type":"ENFJ","name":"카리스마 리더 강아지","emoji":"🌟","tagline":"다른 강아지들도 따르는 강아지","summary":"다른 강아지들도 따르는 카리스마 있는 강아지예요. 보호자 감정에 누구보다 예민하게 반응하고, 슬플 때 꼭 옆에 있어줘요. 자신보다 가족이 먼저인 헌신적인 타입이에요.","color":"#E8A73E","traits":["보호자 감정 누구보다 예민하게 반응","슬플 때 꼭 옆에 있음","다른 강아지도 이끄는 카리스마","헌신적인 사랑","말 안 해도 공감","가족이 항상 우선","온기가 느껴지는 강아지","표정 읽는 능력 탁월","진심 어린 교감","모두를 하나로 만드는 힘","리더십과 따뜻함 공존","같이 있으면 치유되는 느낌"],"duo":{"good":["보호자 감정에 예민하게 반응해요","슬플 때 곁에 있어줘요","다른 강아지도 이끌어요","헌신적인 사랑을 줘요","교감 능력이 탁월해요","함께 있으면 치유돼요"],"bad":["감정에 너무 예민해요","보호자 스트레스를 흡수해요","혼자 두면 걱정해요","과한 헌신으로 지칠 수 있어요","다른 동물 챙기느라 정작 자신은 못 챙겨요","공감 과부하가 올 수 있어요"]},"stats":[{"label":"교감력","value":96},{"label":"이기심","value":15},{"label":"헌신도","value":94}],"cards":[{"label":"특기","value":"보호자 감정 읽기"},{"label":"존재 이유","value":"곁에 있어주는 것"}],"quote":"다른 강아지들도 따르는 강아지"},{"type":"ENTJ","name":"CEO 강아지","emoji":"💼","tagline":"간식 협상을 전략적으로 하는 강아지","summary":"간식 협상을 전략적으로 하는 CEO 강아지예요. 원하는 게 있을 때 울지 않고 정확하게 의사표현을 해요. 훈련을 빨리 익히고 영리하게 활용하는, 타고난 리더 강아지예요.","color":"#5C3E8C","traits":["원하는 건 정확히 표현","간식 협상 전략가","훈련 빨리 익히고 활용","타고난 리더","울지 않고 의사 전달","목표 있으면 끝까지","영리하게 규칙 활용","명확한 커뮤니케이션","결단력 있는 행동","효율 최우선","자기 페이스 고집","기대 이상의 이해력"],"duo":{"good":["원하는 걸 정확히 표현해요","훈련을 빨리 익혀요","영리하게 규칙을 활용해요","목표가 생기면 끝까지 해요","명확한 의사소통을 해요","기대 이상의 이해력을 보여요"],"bad":["자기 페이스를 고집해요","간식 협상에 전략적이에요","통제하려는 성향이 있어요","고집이 있는 편이에요","자기 방식을 고수해요","명령보다 협상을 원해요"]},"stats":[{"label":"지능","value":96},{"label":"순종성","value":33},{"label":"추진력","value":93}],"cards":[{"label":"협상 전략","value":"눈 맞추고 기다리기"},{"label":"리더십 스타일","value":"명확한 의사 표현"}],"quote":"간식 협상을 전략적으로 하는 강아지"}],"accent":"#E87B3A","progress":"dots"};
+var AXES=[['E','I'],['S','N'],['T','F'],['J','P']];
+var nick="",qi=0,sc={},lock=false,tT=null,answers=[];
+function $(i){return document.getElementById(i);}
+function esc(s){if(s==null)return"";return String(s).replace(/[&<>"']/g,function(m){
+return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m];});}
+function show(id){var a=document.querySelectorAll(".sc");
+for(var i=0;i<a.length;i++)a[i].classList.remove("on");
+$(id).classList.add("on");window.scrollTo({top:0,behavior:"auto"});}
+function reset(){sc={};answers=[];["E","I","S","N","T","F","J","P"].forEach(function(k){sc[k]=0;});}
+function mix(hex,ratio){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
+r=Math.round(r+(255-r)*ratio);g=Math.round(g+(255-g)*ratio);b=Math.round(b+(255-b)*ratio);
+return "#"+[r,g,b].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function lerp2(hexA,hexB,t){function rgb(h){h=(h||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+return[parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+var a=rgb(hexA),b=rgb(hexB);
+var r=Math.round(a[0]+(b[0]-a[0])*t),g=Math.round(a[1]+(b[1]-a[1])*t),bl=Math.round(a[2]+(b[2]-a[2])*t);
+return "#"+[r,g,bl].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function luminance(hex){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16)/255,g=parseInt(h.slice(2,4),16)/255,b=parseInt(h.slice(4,6),16)/255;
+function lin(c){return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);}
+return 0.2126*lin(r)+0.7152*lin(g)+0.0722*lin(b);}
+function readable(bgHex){return luminance(bgHex)>0.53?"#1a1a1a":"#fff";}
+function setAcc(c){var s=document.documentElement.style;
+var soft=mix(c,.86),deep=mix(c,.68);
+s.setProperty("--acc",c);s.setProperty("--soft",soft);s.setProperty("--deep",deep);
+s.setProperty("--accFg",readable(c));s.setProperty("--softFg",readable(soft));s.setProperty("--deepFg",readable(deep));}
+function intro(){nick="";qi=0;lock=false;reset();setAcc(D.accent);
+var cast="";for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+cast+='<div class="ci"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+(c.tagline?'<span class="t">'+esc(c.tagline)+'</span>':"")+'</div>';}
+$("s1").innerHTML='<div class="pa intro">'+
+'<div class="em">'+D.meta.emoji+'</div>'+
+'<h1>'+esc(D.meta.title)+'</h1><p>'+esc(D.meta.intro)+'</p>'+
+'<div class="castt">'+esc(D.meta.setName||"16가지 유형")+'</div>'+
+'<div class="cast">'+cast+'</div>'+
+'<div class="mt">질문 '+D.questions.length+'개 · 결과 16가지</div>'+
+'<div class="langhint">🌐 Prefer another language? Use your browser\'s translate feature.<br>다른 언어로 보고 싶다면 브라우저의 번역 기능을 이용해주세요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="'+(D.useName?"nameScreen()":"begin()")+'">테스트 시작하기</button></div>';
+show("s1");}
+function nameScreen(){$("s2").innerHTML='<div class="pa nb"><h2>어떻게 불러드릴까요?</h2>'+
+'<input id="nk" type="text" maxlength="12" placeholder="닉네임을 입력해주세요" autocomplete="off">'+
+'<div class="gd">○ 총 '+D.questions.length+'문항입니다.<br>○ 나에게 더 가까운 답을 골라주세요.<br>○ 결과에 닉네임이 함께 표시돼요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="begin()">시작하기</button>'+
+'<button class="btn" onclick="intro()">처음으로</button></div>';show("s2");
+setTimeout(function(){var n=$("nk");if(n){n.focus();
+n.addEventListener("keydown",function(e){if(e.key==="Enter")begin();});}},80);}
+function begin(){if(D.useName){var n=$("nk"),v=n?n.value.trim():"";
+if(!v){alert("닉네임을 입력해주세요.");if(n)n.focus();return;}nick=v;}
+qi=0;lock=false;reset();question();show("s3");}
+function progHTML(cur,total){var p=D.progress||"bar";
+if(p==="bar"){return '<div class="trk"><div class="fil" style="width:'+Math.round(cur/total*100)+'%"></div></div>';}
+var h=p==="dots"?'<div class="pdots">':'<div class="psq">',n=Math.min(total,12);
+for(var i=0;i<n;i++){var st=i<cur-1?" dn":i===cur-1?(p==="dots"?" now":" dn"):"";
+h+=p==="dots"?'<div class="pdot'+st+'"></div>':'<i class="'+st.trim()+'"></i>';}
+return h+"</div>";}
+function question(){lock=false;var tot=D.questions.length,q=D.questions[qi];
+var num=("0"+(qi+1)).slice(-2);
+var h='<div class="pa qw"><div class="qt"><div class="qi">'+
+'<span class="sec">'+esc(q.section||"진행 중")+'</span><span>'+(qi+1)+' / '+tot+'</span></div>'+
+progHTML(qi+1,tot)+'</div>'+
+'<div class="qn">문항 '+num+(nick?" · "+esc(nick):"")+'</div>'+
+'<div class="qx">'+esc(q.text)+'</div><div class="ops">';
+for(var i=0;i<q.options.length;i++){
+h+='<button class="op" data-n="'+(i+1)+'" data-v="'+esc(q.options[i].value)+'">'+esc(q.options[i].text)+'</button>';}
+h+='</div><p class="qnote">더 가까운 쪽을 골라주세요.</p>'+
+(qi>0?'<button type="button" class="qback" onclick="prevQ()">← 이전 문항</button>':"")+
+'</div>';
+$("s3").innerHTML=h;
+window.scrollTo({top:0,behavior:"auto"});
+var bs=$("s3").querySelectorAll(".op");
+for(var j=0;j<bs.length;j++){bs[j].addEventListener("click",function(){pick(this);});}}
+function pick(btn){if(lock)return;lock=true;
+var all=$("s3").querySelectorAll(".op");
+for(var i=0;i<all.length;i++){all[i].disabled=true;all[i].classList.remove("pk");}
+btn.classList.add("pk");
+var v=btn.getAttribute("data-v");if(sc[v]==null)sc[v]=0;sc[v]++;answers[qi]=v;
+setTimeout(function(){qi++;if(qi<D.questions.length){question();return;}finish();},110);}
+function prevQ(){if(qi<=0||lock)return;lock=true;
+var prevV=answers[qi-1];if(prevV!=null&&sc[prevV]>0)sc[prevV]--;
+answers[qi-1]=null;qi--;question();}
+function finish(){var code="";
+for(var i=0;i<AXES.length;i++){code+=(sc[AXES[i][0]]>=sc[AXES[i][1]]?AXES[i][0]:AXES[i][1]);}
+loading(code);}
+function loading(code){
+$("s4").innerHTML='<div class="pa lw"><div style="width:100%">'+
+'<h2>'+esc(D.meta.loadingText||"결과를 정리하는 중")+'</h2><p>잠시만 기다려 주세요.</p>'+
+'<div class="dts"><span></span><span></span><span></span></div>'+
+'<div class="lbar"><span></span></div></div></div>';show("s4");
+setTimeout(function(){result(code);show("s5");},2500);}
+function lab(key,sub){var L=D.blockLabels||{};var v=L[key];
+if(sub){
+if(v&&typeof v==="object"&&v[sub])return v[sub];
+return sub==="good"?"잘 맞는 유형":sub==="bad"?"안 맞는 유형":"";}
+return typeof v==="string"?v:"";}
+function byType(t){for(var i=0;i<D.cast.length;i++){if(D.cast[i].type===t)return D.cast[i];}return null;}
+function compatList(type){var s=D.compat[type]||"";var out=[],m,re=/([A-Z]{4})(\d+)/g;
+while((m=re.exec(s))!==null){out.push({type:m[1],pct:parseInt(m[2],10)});}
+out.sort(function(a,b){return b.pct-a.pct;});return out;}
+function compatItems(arr){var h="";
+for(var i=0;i<arr.length;i++){var c=byType(arr[i].type);if(!c)continue;
+h+='<div class="cmpi"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+
+'<span class="p">'+arr[i].pct+'%</span></span></div>';}
+return h;}
+function lineFor(pct){var L=D.compatLines||[];
+for(var i=0;i<L.length;i++){if(pct>=L[i].min)return L[i].text;}
+return L.length?L[L.length-1].text:"";}
+function compatHTML(type){var L=D.compatLabels||{};var list=compatList(type);
+if(!list.length)return "";
+var best=list.slice(0,2),worst=list.slice(-2).reverse();
+return '<div class="cmp"><div class="cmph">'+esc(L.title||"궁합")+'</div><div class="cmpg">'+
+'<div class="cmpc"><span class="lb">'+esc(L.good||"최고의 궁합")+'</span>'+compatItems(best)+
+'<div class="cmpnote">'+esc(lineFor(best[0].pct))+'</div></div>'+
+'<div class="cmpc bad"><span class="lb">'+esc(L.bad||"아쉬운 궁합")+'</span>'+compatItems(worst)+
+'<div class="cmpnote">'+esc(lineFor(worst[0].pct))+'</div></div>'+
+'</div></div>';}
+function tint(color,pct){var s=Math.max(0,Math.min(1,(pct-70)/29));
+return lerp2("#AEB4BF",color,Math.pow(s,2.5));}
+function mapHTML(type,color){var L=D.compatLabels||{};
+var list=compatList(type);if(!list.length)return "";
+var pm={};list.forEach(function(x){pm[x.type]=x.pct;});
+var g="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+if(c.type===type){
+var meFg=readable(color);
+g+='<div class="mapc me" style="background:'+color+';color:'+meFg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="badge">나</span></div>';
+}else{var p=pm[c.type]||0;var bg=tint(color,p);var fg=readable(bg);
+g+='<div class="mapc" style="background:'+bg+';color:'+fg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="p" style="opacity:1">'+p+'%</span></div>';}}
+var bar="linear-gradient(90deg,"+tint(color,72)+","+tint(color,99)+")";
+return '<div class="map"><div class="maph">'+esc(L.mapTitle||"나의 궁합 지도")+'</div>'+
+'<div class="mapg">'+g+'</div>'+
+'<div class="mapf"><span>안 맞음</span><span class="mapbar" style="background:'+bar+'"></span>'+
+'<span>잘 맞음</span></div></div>';}
+function blockHTML(name,r){
+if(name==="quote"&&r.quote){var qcls=D.quoteStyle==="bubble"?"qbb":"qb";
+return '<div class="blk"><div class="blt">'+esc(lab("quote")||"한마디")+'</div>'+
+'<div class="'+qcls+'">'+esc(r.quote)+'</div></div>';}
+if(name==="traits"&&r.traits&&r.traits.length){var h='<div class="blk"><div class="blt">'+
+esc(lab("traits")||"세부 특징")+'</div>';
+if(D.traitStyle==="sticker"){h+='<div class="trss">';
+for(var i=0;i<r.traits.length;i++){h+='<div class="tst">'+esc(r.traits[i])+'</div>';}
+h+='</div>';
+}else{h+='<div class="trs">';
+for(var i2=0;i2<r.traits.length;i2++){h+='<div class="tc">'+esc(r.traits[i2])+'</div>';}
+h+='</div>';}
+return h+"</div>";}
+if(name==="duo"&&r.duo){var g=r.duo.good||[],b=r.duo.bad||[];var chk=D.duoStyle==="check";
+var gm=chk?"✓":"",bm=chk?"✗":"",dcls=chk?" chk":"";
+function safeStr(v){if(typeof v==="string")return v; if(v&&typeof v==="object")return v.text||v.content||v.value||JSON.stringify(v); return String(v||"");}
+var h2='<div class="blk duo"><div class="dsec g"><div class="dsh">'+esc(lab("duo","good")||"좋은 면")+'</div><div class="dls">';
+for(var j=0;j<g.length;j++){h2+='<div class="dit'+dcls+'"><b>'+gm+'</b><span>'+esc(safeStr(g[j]))+'</span></div>';}
+h2+='</div></div><div class="dsec b"><div class="dsh">'+esc(lab("duo","bad")||"아쉬운 면")+'</div><div class="dls">';
+for(var k2=0;k2<b.length;k2++){h2+='<div class="dit'+dcls+'"><b>'+bm+'</b><span>'+esc(safeStr(b[k2]))+'</span></div>';}
+return h2+"</div></div></div>";}
+if(name==="stats"&&r.stats&&r.stats.length){
+var h3='<div class="blk"><div class="blt">'+esc(lab("stats")||"지표")+'</div>';
+if(D.statStyle==="radial"){
+h3+='<div class="stsr">';
+for(var m=0;m<r.stats.length;m++){var s=r.stats[m];var v=Math.max(0,Math.min(100,s.value||0));
+var C=100.53;var off=C*(1-v/100);
+h3+='<div class="rgauge"><svg viewBox="0 0 38 38">'+
+'<circle class="rtrack" cx="19" cy="19" r="16"/>'+
+'<circle class="rfill" cx="19" cy="19" r="16" stroke-dasharray="'+C+'" stroke-dashoffset="'+off+'" transform="rotate(-90 19 19)"/>'+
+'<text x="19" y="23" text-anchor="middle" style="font-size:10px;font-weight:900;fill:var(--ink)">'+v+'%</text>'+
+'</svg><div class="rlab">'+esc(s.label)+'</div></div>';}
+h3+='</div>';
+}else{
+h3+='<div class="sts">';
+for(var m2=0;m2<r.stats.length;m2++){var s2=r.stats[m2];var v2=Math.max(0,Math.min(100,s2.value||0));
+var fc=Math.max(1,Math.min(10,Math.round(v2/10)));var sq="";
+for(var n2=1;n2<=10;n2++){sq+='<span class="sq'+(n2<=fc?" f":"")+'"></span>';}
+h3+='<div class="srow"><div class="slab">'+esc(s2.label)+'</div><div class="sqs">'+sq+'</div>'+
+'<div class="spc">'+v2+'%</div></div>';}
+h3+='</div>';
+}
+return h3+"</div>";}
+if(name==="cards"&&r.cards&&r.cards.length){
+var h4='<div class="blk"><div class="blt">'+esc(lab("cards")||"이런 사람")+'</div>';
+if(D.cardStyle==="ticket"){h4+='<div class="cdt">';
+for(var p=0;p<r.cards.length;p++){h4+='<div class="cdti"><b>'+esc(r.cards[p].label)+'</b><span>'+
+esc(r.cards[p].value)+'</span></div>';}
+h4+='</div>';
+}else{h4+='<div class="cds" style="margin-top:9px">';
+for(var p2=0;p2<r.cards.length;p2++){h4+='<div class="cd2"><b>'+esc(r.cards[p2].label)+'</b><p>'+
+esc(r.cards[p2].value)+'</p></div>';}
+h4+='</div>';}
+return h4+"</div>";}
+return "";}
+function result(code){var r=null;
+for(var i=0;i<D.results.length;i++){if(D.results[i].type===code){r=D.results[i];break;}}
+if(!r)r=D.results[0];
+setAcc(r.color||D.accent);
+var sum=(nick?esc(nick)+"님은 ":"")+esc(r.summary);
+var heroHtml;
+if(D.heroStyle==="stage"){
+heroHtml='<div class="rn stage-wrap"><div class="stage">'+
+'<div class="stg-cloud l"></div><div class="stg-cloud r"></div>'+
+'<div class="stg-hill l"></div><div class="stg-hill r"></div><div class="stg-ground"></div>'+
+'<div class="stg-char">'+esc(r.emoji||"✨")+'</div>'+
+'<div class="stg-badge">'+esc(r.name||D.meta.title)+'</div>'+
+'</div>'+(r.tagline?'<div class="tg2">'+esc(r.tagline)+'</div>':"")+'</div>';
+}else{
+heroHtml='<div class="rn"><div class="em">'+esc(r.emoji||"✨")+'</div><h3>'+esc(r.name||D.meta.title)+'</h3>'+
+(r.tagline?'<div class="tg2">'+esc(r.tagline)+'</div>':"")+'</div>';
+}
+var h='<div class="cap" id="cap"><div class="rh"><h2>'+esc(D.meta.title)+'</h2></div><div class="rb">'+
+heroHtml+
+'<div class="rs">'+sum+'</div>';
+var col=r.color||D.accent;
+for(var b=0;b<D.blocks.length;b++){if(D.blocks[b]!=="map")h+=blockHTML(D.blocks[b],r);}
+h+=compatHTML(r.type);
+if(D.blocks.indexOf("map")>=0)h+=mapHTML(r.type,col);
+h+='<div class="rf">POWERED BY MAGIC FACTORY</div></div></div>'+
+'<div class="stk"><button class="btn fill" onclick="sheet(\''+code+'\')">'+
+esc(D.meta.sheetCta||"내 유형의 정체 확인하기")+'</button>'+
+'<button class="btn" onclick="saveImg(this)">결과 이미지 저장하기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+$("s5").innerHTML=h;}
+function sheet(code){var me=byType(code)||D.cast[0];
+var rows="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];var isMe=c.type===code;
+if(i===8){rows+='</div><div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div><div class="rows">';}
+rows+='<div class="row'+(isMe?" me":"")+'"><span class="no">'+("0"+(i+1)).slice(-2)+'</span>'+
+'<span class="em">'+c.emoji+'</span>'+
+'<span class="nm">'+esc(c.name)+(c.tagline?'<span class="tg">'+esc(c.tagline)+'</span>':"")+'</span>'+
+'<span class="cd">'+esc(c.type)+'</span></div>';}
+$("s6").innerHTML='<div class="sheet">'+
+'<div class="sheeth"><h2>'+esc(D.meta.sheetTitle||"전체 유형 정답지")+'</h2>'+
+'<p>열여섯 종류가 각각 어떤 성격 유형인지 전부 공개해요</p></div>'+
+'<div class="reveal"><div class="em">'+me.emoji+'</div>'+
+'<div class="nm">'+(nick?esc(nick)+"님의 ":"")+esc(me.name)+'</div>'+
+'<div class="eq">의 성격 유형은</div>'+
+'<div class="code">'+esc(me.type)+'</div></div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'<div class="sheetsec">'+esc(D.meta.setName||"전체 16종")+' 전체 목록</div>'+
+'<div class="rows">'+rows+'</div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'</div>'+
+'<div class="stk"><button class="btn fill" onclick="show(\'s5\')">내 결과로 돌아가기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+show("s6");}
+function frames(){return new Promise(function(r){requestAnimationFrame(function(){requestAnimationFrame(r);});});}
+function wait(ms){return new Promise(function(r){setTimeout(r,ms);});}
+var lastBlob=null,lastUrl="";
+function fileName(){return (D.meta.slug||"result")+".png";}
+function saveOptions(){
+var canShare=false;
+try{canShare=!!(navigator.canShare&&lastBlob&&navigator.canShare({files:[new File([lastBlob],fileName(),{type:"image/png"})]}));}catch(e){}
+var h="";
+if(canShare)h+='<button class="mbtn pri" onclick="shareImg()">사진으로 저장 · 공유</button>';
+else h+='<p class="mtip" style="margin:0 0 10px;">위 이미지를 <b>길게 눌러서 사진에 저장</b>해 주세요.</p>';
+h+='<a class="mbtn" href="'+lastUrl+'" download="'+fileName()+'" target="_blank" rel="noopener">새 탭에서 이미지 열기</a>';
+return '<div class="mbtns">'+h+'</div>'+
+'<p class="mtip">"이미지 열기"를 눌렀을 때 저장이 안 되면, 위 이미지를 직접 길게 눌러 저장해 주세요.</p>';}
+async function shareImg(){
+try{var f=new File([lastBlob],fileName(),{type:"image/png"});
+await navigator.share({files:[f],title:D.meta.title});}
+catch(e){if(e&&e.name!=="AbortError")toast("공유를 취소했거나 지원되지 않아요.");}}
+async function saveImg(btn){
+if(typeof html2canvas!=="function"){toast("이미지 도구를 불러오지 못했어요. 새로고침 후 다시 시도해 주세요.");return;}
+btn.disabled=true;var old=btn.textContent;btn.textContent="이미지 만드는 중...";
+$("mw").innerHTML='<p style="padding:40px 0;">이미지를 만들고 있어요...</p>';
+$("mo").classList.add("on");document.body.style.overflow="hidden";
+try{
+if(document.fonts){try{await document.fonts.ready;}catch(e){}}
+await frames();await wait(260);
+var cv=await html2canvas($("cap"),{backgroundColor:getComputedStyle(document.body).backgroundColor,
+scale:Math.min(window.devicePixelRatio||2,2),useCORS:true,logging:false,
+scrollX:0,scrollY:-window.scrollY,windowWidth:document.documentElement.clientWidth});
+if(lastUrl&&lastUrl.indexOf("blob:")===0){try{URL.revokeObjectURL(lastUrl);}catch(e){}}
+var dataUrl=cv.toDataURL("image/png");
+lastBlob=await new Promise(function(res){
+if(cv.toBlob)cv.toBlob(function(b){res(b);},"image/png");else res(null);});
+if(!lastBlob){
+  var bin=atob(dataUrl.split(",")[1]),arr=new Uint8Array(bin.length);
+  for(var i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);
+  lastBlob=new Blob([arr],{type:"image/png"});}
+lastUrl=dataUrl;
+$("mw").innerHTML='<img src="'+lastUrl+'" alt="결과 이미지">'+saveOptions();
+}catch(e){console.error(e);
+$("mw").innerHTML='<p style="padding:32px 0 8px;">이미지를 만들지 못했어요.<br>'+
+'대신 화면을 캡처해서 공유해 주세요.</p>'+
+'<p class="mtip">오류: '+esc(String(e&&e.message||e))+'</p>';
+}finally{btn.disabled=false;btn.textContent=old;}}
+function closeMo(){$("mo").classList.remove("on");document.body.style.overflow="";}
+$("mo").addEventListener("click",function(e){if(e.target===$("mo"))closeMo();});
+document.addEventListener("keydown",function(e){
+if(e.key==="Escape"&&$("mo").classList.contains("on"))closeMo();});
+async function share(){var dt={title:D.meta.title,text:D.meta.intro,url:location.href};
+try{if(navigator.share){await navigator.share(dt);return;}
+var tx=dt.text+"\n"+dt.url;
+if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(tx);
+toast("링크를 복사했어요.");return;}
+var ta=document.createElement("textarea");ta.value=tx;ta.style.position="fixed";ta.style.opacity="0";
+document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();
+toast("링크를 복사했어요.");}catch(e){if(e&&e.name!=="AbortError")toast("공유하지 못했어요.");}}
+function toast(m){clearTimeout(tT);var e=$("tst");e.textContent=m;e.classList.add("show");
+tT=setTimeout(function(){e.classList.remove("show");},2100);}
+intro();
+</script>
+</body>
+</html>

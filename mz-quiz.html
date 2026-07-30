@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 MZ 감성 지수는? — 테스트팩토리</title>
+<meta name="description" content="일상 속 선택으로 알아보는 나의 MZ 감성. 10문항이면 바로 알 수 있어요.">
+<meta property="og:title" content="나의 MZ 감성 지수는? — 테스트팩토리">
+<meta property="og:description" content="일상 속 선택으로 알아보는 나의 MZ 감성. 10문항이면 바로 알 수 있어요.">
+<meta property="og:image" content="mz-quiz-thumb.png">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg:#FDFCE4; --paper:#FFFFFF; --ink:#1A1D2E; --sub:#6B7280;
+  --line:#FEF08A; --acc:#CA8A04; --chip:rgba(0,0,0,.06); --r:14px; --bw:2px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;min-height:100vh;}
+.wrap{max-width:560px;margin:0 auto;padding:28px 18px 80px;}
+.back{display:inline-block;margin-bottom:18px;font-size:13px;font-weight:700;color:var(--sub);text-decoration:none;}
+.hero{text-align:center;padding:16px 0 24px;}
+.hero .em{font-size:52px;line-height:1;margin-bottom:12px;}
+.hero h1{font-size:23px;font-weight:900;margin-bottom:8px;letter-spacing:-.3px;}
+.hero p{font-size:14px;color:var(--sub);line-height:1.65;}
+.start-btn{width:100%;padding:16px;border:0;border-radius:var(--r);background:var(--acc);color:#fff;
+  font-family:inherit;font-size:16px;font-weight:900;cursor:pointer;margin-top:20px;}
+.prog-wrap{margin-bottom:20px;}
+.prog-info{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;margin-bottom:8px;color:var(--sub);}
+.prog-track{height:8px;background:var(--chip);border-radius:999px;overflow:hidden;border:var(--bw) solid var(--line);}
+.prog-fill{height:100%;background:var(--acc);border-radius:999px;transition:width .25s ease;}
+.qcard{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:22px 18px;}
+.qnum{display:inline-block;padding:4px 10px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:11px;font-weight:800;margin-bottom:14px;}
+.qtext{font-size:18px;font-weight:800;line-height:1.5;margin-bottom:18px;word-break:keep-all;}
+.opts{display:grid;gap:10px;}
+.opt{width:100%;padding:13px 15px;border:var(--bw) solid var(--line);border-radius:10px;
+  background:#fff;font-family:inherit;font-size:14px;font-weight:600;text-align:left;cursor:pointer;
+  color:var(--ink);transition:all .15s ease;word-break:keep-all;}
+.opt:hover{background:var(--chip);border-color:var(--acc);}
+.opt.correct{background:#D1FAE5;border-color:#10B981;color:#065F46;}
+.opt.wrong{background:#FEE2E2;border-color:#EF4444;color:#991B1B;}
+.opt:disabled{cursor:default;}
+#cap{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:22px 18px;margin-bottom:16px;}
+.res-header{text-align:center;padding:18px 0 14px;border-bottom:var(--bw) solid var(--line);margin-bottom:18px;}
+.res-grade{display:inline-block;padding:6px 18px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:13px;font-weight:900;margin-bottom:12px;}
+.res-score{font-size:42px;font-weight:900;color:var(--acc);margin-bottom:4px;}
+.res-score span{font-size:18px;color:var(--sub);}
+.res-title{font-size:22px;font-weight:900;margin-bottom:8px;}
+.res-desc{font-size:14.5px;line-height:1.75;color:var(--sub);}
+.score-bar-wrap{margin:18px 0;}
+.score-bar-label{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--sub);margin-bottom:6px;}
+.score-bar-track{height:14px;background:var(--chip);border-radius:999px;overflow:hidden;border:var(--bw) solid var(--line);}
+.score-bar-fill{height:100%;background:var(--acc);border-radius:999px;transition:width .5s ease;}
+.wrong-list{margin-top:16px;}
+.wrong-title{font-size:13px;font-weight:800;color:var(--sub);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--line);}
+.wrong-item{padding:10px 12px;background:var(--chip);border-radius:10px;margin-bottom:8px;font-size:13px;line-height:1.6;}
+.wrong-item .wq{font-weight:700;margin-bottom:4px;}
+.wrong-item .wa{color:var(--acc);font-weight:800;}
+.footer-note{font-size:11px;color:var(--sub);text-align:center;margin-top:16px;}
+.stk{display:grid;gap:10px;}
+.btn{width:100%;padding:14px;border:var(--bw) solid var(--ink);border-radius:var(--r);background:#fff;
+  font-family:inherit;font-weight:800;font-size:14.5px;cursor:pointer;color:var(--ink);}
+.btn.fill{background:var(--acc);color:#fff;border-color:var(--acc);}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:center;justify-content:center;padding:20px;}
+.mo.on{display:flex;}
+.mb{background:#fff;border-radius:16px;padding:20px;max-width:340px;width:100%;text-align:center;}
+.mb img{width:100%;border-radius:10px;margin-bottom:12px;}
+.mb .cl{width:100%;padding:12px;border:0;border-radius:10px;background:var(--chip);font-family:inherit;font-weight:800;cursor:pointer;}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← 목록으로</a>
+  <div id="s1">
+    <div class="hero">
+      <div class="em">✨</div>
+      <h1>나의 MZ 감성 지수는?</h1>
+      <p>일상 속 선택으로 알아보는 나의 MZ 감성. 10문항이면 바로 알 수 있어요.</p>
+      <button class="start-btn" onclick="startQuiz()">테스트 시작하기</button>
+    </div>
+  </div>
+  <div id="s2" class="hidden">
+    <div class="prog-wrap">
+      <div class="prog-info"><span id="progLabel">1 / 10</span><span id="progScore">0점</span></div>
+      <div class="prog-track"><div class="prog-fill" id="progFill" style="width:5%"></div></div>
+    </div>
+    <div class="qcard">
+      <div class="qnum" id="qNum">Q1</div>
+      <div class="qtext" id="qText"></div>
+      <div class="opts" id="opts"></div>
+    </div>
+  </div>
+  <div id="s3" class="hidden">
+    <div id="cap">
+      <div class="res-header">
+        <div class="res-grade" id="resGrade"></div>
+        <div class="res-score" id="resScore"></div>
+        <div class="res-title" id="resTitle"></div>
+        <div class="res-desc" id="resDesc"></div>
+        <div class="score-bar-wrap">
+          <div class="score-bar-label"><span>0점</span><span id="resMax"></span></div>
+          <div class="score-bar-track"><div class="score-bar-fill" id="resBar"></div></div>
+        </div>
+      </div>
+      <div class="wrong-list" id="wrongList"></div>
+      <div class="footer-note">POWERED BY 테스트팩토리 · 재미로 봐주세요.</div>
+    </div>
+    <div class="stk">
+      <button class="btn fill" onclick="saveImg()">결과 이미지 저장하기</button>
+      <button class="btn" onclick="location.reload()">다시 풀기</button>
+      <button class="btn" onclick="location.href='index.html'">다른 테스트 보기</button>
+    </div>
+  </div>
+</div>
+<div class="mo" id="mo">
+  <div class="mb">
+    <div id="mw">이미지를 만들고 있어요...</div>
+    <button class="cl" onclick="document.getElementById('mo').classList.remove('on')">닫기</button>
+  </div>
+</div>
+<script>
+var QUESTIONS = [{"q": "카페에서 음료를 주문할 때 나는?", "options": ["아메리카노 아이스 한 잔(가성비)", "오늘의 기분에 맞는 시즌 음료", "SNS에서 본 예쁜 음료", "단골 메뉴 그대로"], "scores": [5, 10, 9, 6]}, {"q": "주말 계획을 세울 때 나는?", "options": ["팝업스토어나 전시회 찾아본다", "유튜브 보다가 자연스럽게 흘러간다", "미리 예약해둔 식당/카페 간다", "집에서 최대한 쉰다"], "scores": [10, 7, 9, 6]}, {"q": "사진을 찍을 때 나는?", "options": ["감성 필터 필수", "최대한 자연스럽게", "여러 장 찍고 제일 잘 나온 거", "사진 잘 안 찍음"], "scores": [9, 8, 10, 4]}, {"q": "새 제품 살 때 나는?", "options": ["유튜브 리뷰 필수 시청", "그냥 마음에 들면 바로 삼", "친환경/지속가능 여부 확인", "최저가 비교 사이트 탐방"], "scores": [8, 6, 10, 7]}, {"q": "플레이리스트 관리는?", "options": ["기분별로 여러 개 만들어둠", "즐겨찾기에 닥치는 대로 저장", "아티스트 별로 정리", "그냥 유튜브 알고리즘에 맡김"], "scores": [10, 7, 9, 5]}, {"q": "저녁에 혼자 있을 때 주로 하는 것은?", "options": ["넷플릭스/왓챠 정주행", "SNS 피드 구경", "유튜브 쇼츠 무한스크롤", "취미활동(독서/운동 등)"], "scores": [8, 7, 6, 10]}, {"q": "가고 싶은 여행지는?", "options": ["일본 감성 골목(교토/오사카)", "유럽 배낭여행", "국내 로컬 여행", "리조트에서 아무것도 안 하기"], "scores": [9, 8, 10, 6]}, {"q": "옷 사는 방식은?", "options": ["빈티지샵/구제샵 탐방", "온라인 쇼핑몰 위주", "대형 브랜드 세일 때", "입던 옷 계속 입음"], "scores": [10, 8, 7, 5]}, {"q": "친구들이랑 밥 먹고 나서?", "options": ["카드값 N빵 정확히", "제일 어린 사람이 냄", "그때그때 번갈아가며", "맛있게 먹었으면 됐지"], "scores": [9, 5, 8, 7]}, {"q": "나의 SNS 활용 방식은?", "options": ["일상 감성샷 업로드", "구경만 함(눈팅)", "익명 계정 여러 개 운영", "거의 안 함"], "scores": [9, 6, 10, 4]}];
+var GRADES = [{"min": 88, "grade": "S", "title": "찐 MZ", "desc": "MZ 감성 100% 장착 완료예요. 트렌드를 선도하는 타입이라 주변에서 '이거 어디서 알았어?'를 자주 듣겠어요."}, {"min": 73, "grade": "A", "title": "MZ 상위권", "desc": "MZ 문화를 잘 흡수하고 즐기는 편이에요. 유행을 빠르게 캐치하는 센스가 있어요."}, {"min": 58, "grade": "B", "title": "MZ 중간쯤", "desc": "MZ 감성을 부분적으로 갖고 있어요. 좋은 건 받아들이고 불필요한 건 걸러내는 현명한 스타일이에요."}, {"min": 43, "grade": "C", "title": "MZ와 기성세대 사이", "desc": "MZ보다는 약간 클래식한 감성이에요. 그게 오히려 남다른 매력이 될 수 있어요."}, {"min": 0, "grade": "D", "title": "레트로 감성 보유자", "desc": "유행보다 자기 스타일을 고수하는 타입이에요. 흔들리지 않는 나만의 세계가 있는 것, 멋진 거예요."}];
+var qi=0, score=0, maxScore=0, wrongs=[];
+function show(id){ ['s1','s2','s3'].forEach(function(s){ document.getElementById(s).className=s===id?'':'hidden'; }); }
+function startQuiz(){ qi=0; score=0; maxScore=0; wrongs=[]; show('s2'); renderQ(); }
+function renderQ(){
+  var q=QUESTIONS[qi], total=QUESTIONS.length;
+  document.getElementById('progLabel').textContent=(qi+1)+' / '+total;
+  document.getElementById('progScore').textContent=score+'점';
+  document.getElementById('progFill').style.width=Math.round((qi+1)/total*100)+'%';
+  document.getElementById('qNum').textContent='Q'+(qi+1);
+  document.getElementById('qText').textContent=q.q;
+  var opts=document.getElementById('opts');
+  opts.innerHTML='';
+  q.options.forEach(function(opt,i){
+    var b=document.createElement('button');
+    b.className='opt'; b.textContent=opt;
+    b.onclick=function(){ pick(i); };
+    opts.appendChild(b);
+  });
+}
+function pick(i){
+  var q=QUESTIONS[qi], btns=document.querySelectorAll('.opt');
+  btns.forEach(function(b){ b.disabled=true; });
+  var isAnswer=q.hasOwnProperty('answer');
+  if(isAnswer){
+    var correct=(i===q.answer);
+    btns[i].className='opt '+(correct?'correct':'wrong');
+    if(!correct) btns[q.answer].className='opt correct';
+    if(correct){ score+=5; maxScore+=5; }
+    else{ maxScore+=5; wrongs.push({q:q.q,a:q.options[q.answer]}); }
+  } else {
+    score+=q.scores[i];
+    maxScore+=Math.max.apply(null,q.scores);
+  }
+  setTimeout(function(){ qi++; if(qi<QUESTIONS.length){ renderQ(); } else { showResult(); } }, isAnswer?700:0);
+}
+function showResult(){
+  show('s3');
+  var pct=Math.round(score/maxScore*100);
+  var grade=GRADES[GRADES.length-1];
+  for(var i=0;i<GRADES.length;i++){ if(pct>=GRADES[i].min){ grade=GRADES[i]; break; } }
+  document.getElementById('resGrade').textContent=grade.grade+'등급';
+  document.getElementById('resScore').innerHTML=score+'점 <span>/ '+maxScore+'점</span>';
+  document.getElementById('resTitle').textContent=grade.title;
+  document.getElementById('resDesc').textContent=grade.desc;
+  document.getElementById('resMax').textContent=maxScore+'점';
+  setTimeout(function(){ document.getElementById('resBar').style.width=pct+'%'; },200);
+  if(wrongs.length>0){
+    var wl=document.getElementById('wrongList');
+    wl.innerHTML='<div class="wrong-title">⚡ 틀린 문제 다시보기 ('+wrongs.length+'개)</div>';
+    wrongs.forEach(function(w){ wl.innerHTML+='<div class="wrong-item"><div class="wq">'+w.q+'</div><div class="wa">✓ 정답: '+w.a+'</div></div>'; });
+  }
+}
+async function saveImg(){
+  document.getElementById('mo').classList.add('on');
+  document.getElementById('mw').innerHTML='이미지를 만들고 있어요...';
+  try{
+    if(document.fonts) await document.fonts.ready;
+    var cv=await html2canvas(document.getElementById('cap'),{backgroundColor:'#FFFFFF',scale:2});
+    var img=new Image(); img.src=cv.toDataURL('image/png');
+    document.getElementById('mw').innerHTML='';
+    document.getElementById('mw').appendChild(img);
+    var p=document.createElement('p'); p.style.cssText='font-size:12px;color:#888;margin-top:8px;';
+    p.textContent='이미지를 길게 눌러서 저장해주세요.';
+    document.getElementById('mw').appendChild(p);
+  }catch(e){ document.getElementById('mw').textContent='이미지 생성에 실패했어요.'; }
+}
+</script>
+</body>
+</html>

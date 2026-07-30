@@ -174,6 +174,90 @@ footer a:hover{color:var(--ink);}
 ============================================================ */
 var TESTS = [
   {
+    title: "우리 고양이는 어떤 MBTI일까?",
+    titleEn: "What MBTI is my cat?",
+    titleJa: "うちの猫はどんなMBTI？",
+    titleZh: "我的猫咪是什么MBTI？",
+    emoji: "🐱",
+    file: "cat-mbti-test.html",
+    thumb: "cat-mbti-test-thumb.png",
+    date: "2026-07-30",
+    color: "",
+    category: "mbti"
+  },
+  {
+    title: "우리 강아지는 어떤 MBTI일까?",
+    titleEn: "What MBTI is my dog?",
+    titleJa: "うちの犬はどんなMBTI？",
+    titleZh: "我的狗狗是什么MBTI？",
+    emoji: "🐶",
+    file: "dog-mbti-test.html",
+    thumb: "dog-mbti-test-thumb.png",
+    date: "2026-07-30",
+    color: "",
+    category: "mbti"
+  },
+  {
+    title: "연애 밸런스 게임",
+    titleEn: "Love Balance Game",
+    titleJa: "恋愛バランスゲーム",
+    titleZh: "恋爱平衡游戏",
+    emoji: "💘",
+    file: "love-balance.html",
+    thumb: "love-balance-thumb.png",
+    date: "2026-07-30",
+    color: "",
+    category: "balance"
+  },
+  {
+    title: "나의 신조어 레벨은?",
+    titleEn: "What's your Gen Z slang level?",
+    titleJa: "あなたの新造語レベルは？",
+    titleZh: "我的网络用语等级是多少？",
+    emoji: "🗣️",
+    file: "slang-quiz.html",
+    thumb: "slang-quiz-thumb.png",
+    date: "2026-07-30",
+    color: "",
+    category: "quiz"
+  },
+  {
+    title: "나의 연애 고수 레벨은?",
+    titleEn: "What's your love expert level?",
+    titleJa: "あなたの恋愛上手レベルは？",
+    titleZh: "我的恋爱达人等级是多少？",
+    emoji: "💕",
+    file: "love-quiz.html",
+    thumb: "love-quiz-thumb.png",
+    date: "2026-07-30",
+    color: "",
+    category: "quiz"
+  },
+  {
+    title: "K-드라마 덕후 지수 테스트",
+    titleEn: "K-Drama Fan Level Test",
+    titleJa: "K-ドラマ好き指数テスト",
+    titleZh: "K-剧迷指数测试",
+    emoji: "🎬",
+    file: "kdrama-quiz.html",
+    thumb: "kdrama-quiz-thumb.png",
+    date: "2026-07-30",
+    color: "",
+    category: "quiz"
+  },
+  {
+    title: "나의 MZ 감성 지수는?",
+    titleEn: "What's your MZ Vibe Score?",
+    titleJa: "私のMZ感性指数は？",
+    titleZh: "我的MZ感性指数是多少？",
+    emoji: "✨",
+    file: "mz-quiz.html",
+    thumb: "mz-quiz-thumb.png",
+    date: "2026-07-30",
+    color: "",
+    category: "quiz"
+  },
+  {
     title: "나의 띠 성격 보기",
     titleEn: "My Zodiac Animal Personality",
     titleJa: "私の干支性格占い",
@@ -393,7 +477,7 @@ var I18N = {
     footer: '테스트팩토리 · <a href="about.html">공장장 소개</a> · <a href="privacy.html">개인정보처리방침</a>',
     titleKey: 'title',
     catAll: '전체',
-    catLabels: { mbti: 'MBTI', saju: '사주' }
+    catLabels: { mbti: 'MBTI', saju: '사주', quiz: '퀴즈', balance: '밸런스게임' }
   },
   en: {
     desc: '<b>Test Factory</b> \u2014 a new topic, a new story, every time.',
@@ -404,7 +488,7 @@ var I18N = {
     footer: 'Test Factory · <a href="about.html">About</a> · <a href="privacy.html">Privacy Policy</a>',
     titleKey: 'titleEn',
     catAll: 'All',
-    catLabels: { mbti: 'MBTI', saju: 'Saju' }
+    catLabels: { mbti: 'MBTI', saju: 'Saju', quiz: 'Quiz', balance: 'Balance Game' }
   },
   ja: {
     desc: '<b>テストファクトリー</b> — 毎回違うテーマ、毎回新しい物語。',
@@ -415,7 +499,7 @@ var I18N = {
     footer: 'テストファクトリー · <a href="about.html">紹介</a> · <a href="privacy.html">プライバシーポリシー</a>',
     titleKey: 'titleJa',
     catAll: 'すべて',
-    catLabels: { mbti: 'MBTI', saju: '四柱推命' }
+    catLabels: { mbti: 'MBTI', saju: '四柱推命', quiz: 'クイズ', balance: 'バランスゲーム' }
   },
   zh: {
     desc: '<b>测试工厂</b> — 每次不同的主题，每次全新的故事。',
@@ -426,7 +510,7 @@ var I18N = {
     footer: '测试工厂 · <a href="about.html">关于</a> · <a href="privacy.html">隐私政策</a>',
     titleKey: 'titleZh',
     catAll: '全部',
-    catLabels: { mbti: 'MBTI', saju: '生辰八字' }
+    catLabels: { mbti: 'MBTI', saju: '生辰八字', quiz: '测验', balance: '平衡游戏' }
   }
 };
 var curLang = 'ko';
