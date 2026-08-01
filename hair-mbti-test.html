@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 헤어스타일 MBTI는? — 테스트팩토리</title>
+<meta name="description" content="미용실 예약 습관과 스타일링 취향으로 알아보는 나의 헤어스타일 MBTI 유형.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="나의 헤어스타일 MBTI는? — 테스트팩토리">
+<meta property="og:description" content="미용실 예약 습관과 스타일링 취향으로 알아보는 나의 헤어스타일 MBTI 유형.">
+<meta property="og:image" content="hair-mbti-test-thumb.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{--bg:#F4F2ED;--paper:#FDFCF8;--ink:#1C1C1C;--sub:#6B6B6B;--line:#B0A898;--acc:#8E6FB0;--soft:rgba(142,111,176,0.12);--deep:rgba(142,111,176,0.24);--accFg:#fff;--softFg:#1C1C1C;--deepFg:#1C1C1C;--chip:rgba(28,28,28,0.07);--chips:rgba(28,28,28,0.1);--r:2px;--bw:2px;--shadow:none;--fh:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;--fb:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+*{box-sizing:border-box;}
+html{background:#F4F2ED;}
+body{margin:0;min-height:100vh;color:var(--ink);background-color:var(--bg);background-image:none;background-size:auto;font-family:var(--fb);word-break:keep-all;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;line-height:1.6;}
+h1,h2,h3,.qx,.rn h3,.sheeth h2,.reveal .code,.dsh,.blt,.cmph,.maph,.sheetsec{font-family:var(--fh);}
+button,input{font:inherit;-webkit-tap-highlight-color:transparent;}
+.app{width:100%;max-width:560px;margin:0 auto;padding:26px 14px 46px;}
+.sc{display:none;} .sc.on{display:block;animation:in .18s ease;}
+@keyframes in{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+.pa{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);}
+.btn{width:100%;min-height:54px;padding:12px;cursor:pointer;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--ink);font-size:16px;font-weight:800;}
+.btn:active{transform:scale(.99);}
+.btn.fill{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.stk{display:grid;gap:10px;margin-top:14px;}
+.intro{padding:0 0 24px;text-align:center;overflow:hidden;}
+.hero{margin:0 0 20px;line-height:0;}
+.hero svg{display:block;width:100%;height:auto;}
+.intro>h1,.intro>p,.intro>.castt,.intro>.cast,.intro>.mt,.intro>.em{margin-left:18px;margin-right:18px;}
+.intro>.em{padding-top:34px;}
+.intro .em{font-size:54px;line-height:1;margin-bottom:12px;}
+.intro h1{font-size:25px;line-height:1.45;margin:0 0 10px;font-weight:700;letter-spacing:-.2px;text-wrap:balance;}
+.intro p{font-size:14.5px;color:var(--sub);line-height:1.8;margin:0;font-weight:400;text-wrap:pretty;}
+.castt{margin:20px 0 10px;font-size:12.5px;font-weight:800;color:var(--acc);}
+.mt{margin-top:16px;font-size:12.5px;font-weight:700;color:var(--sub);}
+.langhint{margin-top:8px;font-size:11px;font-weight:500;color:var(--sub);opacity:.75;line-height:1.6;}
+.cast{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;}
+.ci{min-width:0;padding:9px 3px 8px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);text-align:center;}
+.ci .e{font-size:22px;line-height:1;display:block;margin-bottom:4px;}
+.ci .n{font-size:11px;font-weight:600;line-height:1.4;word-break:keep-all;text-wrap:balance;}
+.ci .t{font-size:8.5px;color:var(--sub);opacity:.8;font-weight:700;margin-top:2px;display:block;}
+.intro .mt{font-size:12px;color:var(--sub);opacity:.75;margin-top:16px;font-weight:700;}
+.nb{padding:40px 24px;text-align:center;}
+.nb h2{font-size:22px;margin:0 0 22px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.nb input{width:100%;max-width:340px;height:54px;padding:0 14px;text-align:center;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-size:19px;font-weight:800;outline:none;}
+.nb input:focus{border-color:var(--acc);}
+.gd{max-width:400px;margin:24px auto 0;padding:14px 16px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);font-size:13.5px;line-height:1.8;font-weight:600;text-align:left;color:var(--sub);text-wrap:pretty;}
+.qw{padding:24px 20px 28px;}
+.qt{padding-bottom:14px;border-bottom:var(--bw) solid var(--line);}
+.qi{display:flex;justify-content:space-between;gap:12px;margin-bottom:9px;font-size:12px;font-weight:800;}
+.qi .sec{color:var(--acc);}
+.trk{width:100%;height:14px;padding:2px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.fil{width:0;height:100%;background:var(--acc);border-radius:var(--r);transition:width .2s ease;}
+.pdots{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.pdot{height:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--chip);opacity:.35;}
+.pdot.dn{opacity:1;background:var(--acc);}
+.pdot.now{opacity:1;background:var(--acc);animation:blink .7s infinite alternate;}
+@keyframes blink{from{opacity:.4;}to{opacity:1;}}
+.psq{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.psq i{display:block;aspect-ratio:1/1;min-height:12px;border:1px solid var(--line);border-radius:2px;background:var(--chip);}
+.psq i.dn{background:var(--acc);}
+.qn{margin-top:22px;color:var(--acc);font-size:13px;font-weight:900;}
+.qx{min-height:76px;margin:14px 0 20px;text-align:center;font-size:21px;line-height:1.6;letter-spacing:-.2px;font-weight:700;display:flex;align-items:center;justify-content:center;text-wrap:balance;}
+.ops{display:grid;gap:11px;}
+.op{position:relative;width:100%;min-height:70px;padding:15px 16px 15px 52px;cursor:pointer;text-align:left;color:var(--ink);background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15.5px;line-height:1.6;font-weight:500;text-wrap:pretty;}
+.op::before{content:attr(data-n);position:absolute;left:14px;top:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border:var(--bw) solid var(--line);border-radius:var(--r);transform:translateY(-50%);font-size:13px;font-weight:900;background:var(--paper);}
+.op.pk{background:var(--soft);border-color:var(--acc);color:var(--softFg);}
+.op.pk::before{color:var(--ink);}
+.op:disabled{cursor:default;}
+.qnote{margin:20px 0 0;color:var(--sub);text-align:center;font-size:12px;font-weight:700;}
+.qback{display:block;margin:14px auto 0;padding:8px 4px;background:none;border:0;color:var(--sub);font-family:var(--fb);font-size:12.5px;font-weight:700;cursor:pointer;text-align:center;}
+.lw{min-height:420px;padding:40px 22px;display:flex;align-items:center;justify-content:center;text-align:center;}
+.lw h2{margin:0 0 10px;font-size:24px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.lw p{margin:0;color:var(--sub);font-size:14px;}
+.dts{display:flex;justify-content:center;gap:9px;margin:28px 0 24px;}
+.dts span{width:12px;height:12px;background:var(--acc);border:var(--bw) solid var(--line);border-radius:var(--r);animation:bump 1.1s ease-in-out infinite;}
+.dts span:nth-child(2){animation-delay:.15s;} .dts span:nth-child(3){animation-delay:.3s;}
+@keyframes bump{0%,100%{transform:translateY(0);opacity:.4;}50%{transform:translateY(-7px);opacity:1;}}
+.lbar{width:100%;height:14px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.lbar span{display:block;width:32%;height:100%;background:var(--acc);animation:sld 1.05s ease-in-out infinite;}
+@keyframes sld{from{transform:translateX(-110%);}to{transform:translateX(340%);}}
+.cap{overflow:hidden;max-width:100%;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rh{padding:13px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.rh h2{margin:0;color:var(--accFg);font-size:15.5px;font-weight:700;line-height:1.45;letter-spacing:-.1px;text-wrap:balance;}
+.rb{padding:14px;}
+.rn{padding:24px 16px 20px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rn .em{font-size:64px;line-height:1;}
+.rn h3{margin:10px 0 6px;font-size:29px;font-weight:700;line-height:1.3;letter-spacing:-.3px;color:var(--acc);text-wrap:balance;}
+.rn .tg2{font-size:14.5px;font-weight:600;color:var(--ink);opacity:.85;}
+.rn .cd{display:inline-block;margin-top:12px;padding:4px 12px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:11px;font-weight:800;letter-spacing:1.2px;}
+.rs{margin-top:12px;padding:15px 16px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15px;line-height:1.8;font-weight:400;text-wrap:pretty;}
+.blk{margin-top:14px;}
+.blt{margin:0;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-bottom:0;border-radius:var(--r) var(--r) 0 0;font-size:13px;font-weight:900;text-align:center;text-wrap:balance;}
+.qb{padding:18px 16px;text-align:center;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);font-size:17px;font-weight:600;line-height:1.65;text-wrap:balance;}
+.qbb{position:relative;margin:6px 16px 24px;padding:18px 16px;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:16px;font-weight:600;line-height:1.65;text-align:center;text-wrap:balance;}
+.qbb::before{content:"";position:absolute;left:32px;bottom:-11px;width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-top:13px solid var(--line);}
+.qbb::after{content:"";position:absolute;left:34.5px;bottom:-6.5px;width:0;height:0;border-left:8.5px solid transparent;border-right:8.5px solid transparent;border-top:10px solid var(--soft);}
+.trs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:var(--bw) solid var(--line);border-left:var(--bw) solid var(--line);}
+.tc{min-height:82px;padding:9px 6px;display:flex;align-items:center;justify-content:center;background:var(--chip);color:var(--ink);border-right:var(--bw) solid var(--line);border-bottom:var(--bw) solid var(--line);text-align:center;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;text-wrap:balance;}
+.tc:nth-child(even){background:var(--soft);color:var(--softFg);}
+.trss{display:flex;flex-wrap:wrap;gap:10px 8px;padding:16px 14px;background:var(--chip);border-top:var(--bw) solid var(--line);}
+.tst{padding:8px 13px;background:var(--paper);border:var(--bw) solid var(--line);border-radius:999px;font-size:12.5px;font-weight:700;box-shadow:2px 2px 0 var(--line);word-break:keep-all;text-wrap:balance;color:var(--ink);}
+.tst:nth-child(3n+1){transform:rotate(-2.5deg);}
+.tst:nth-child(3n+2){transform:rotate(1.5deg);}
+.tst:nth-child(3n){transform:rotate(-0.5deg);}
+.tst:nth-child(even){background:var(--soft);color:var(--softFg);}
+.duo{display:grid;gap:10px;}
+.dsec{border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.dsh{padding:9px;text-align:center;font-size:14px;font-weight:900;color:var(--deepFg);border-bottom:var(--bw) solid var(--line);}
+.dsec.g .dsh{background:var(--acc);color:var(--accFg);}
+.dsec.b .dsh{background:var(--deep);}
+.dls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px 10px;padding:12px 11px;background:var(--chip);}
+.dit span{text-wrap:pretty;}
+.dit{display:flex;align-items:flex-start;min-width:0;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;}
+.dit b{width:7px;height:7px;margin:5px 6px 0 0;flex:0 0 auto;background:var(--acc);border-radius:1px;}
+.dit.chk b{width:17px;height:17px;margin:1px 8px 0 0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;background:var(--acc);color:var(--accFg);}
+.dsec.b .dit.chk b{background:var(--sub);color:var(--paper);}
+.sts{padding:14px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);}
+.srow{display:grid;grid-template-columns:76px 1fr 42px;align-items:center;gap:9px;}
+.srow+.srow{margin-top:11px;}
+.slab{font-size:12.5px;font-weight:900;}
+.sqs{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;}
+.sq{aspect-ratio:1/1;min-height:11px;border-radius:2px;background:var(--chips);box-shadow:inset 0 0 0 1px rgba(176,168,152,0.35);}
+.sq.f{background:var(--acc);}
+.spc{text-align:right;font-size:12.5px;font-weight:900;}
+.stsr{padding:16px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:14px 8px;}
+.rgauge{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.rgauge svg{width:64px;height:64px;overflow:visible;}
+.rgauge .rtrack{fill:none;stroke:var(--chips);stroke-width:6;}
+.rgauge .rfill{fill:none;stroke:var(--acc);stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset .5s ease;}
+.rgauge .rlab{font-size:11px;font-weight:800;color:var(--sub);text-align:center;line-height:1.35;}
+.cds{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px;}
+.cd2{padding:12px 11px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.cd2 b{display:inline-block;margin-bottom:7px;padding:3px 9px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:10.5px;font-weight:800;}
+.cd2 p{margin:0;font-size:13.5px;line-height:1.65;font-weight:500;text-wrap:pretty;}
+.cdt{background:var(--paper);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);padding:2px 16px;}
+.cdti{padding:12px 0;border-bottom:var(--bw) dashed var(--line);}
+.cdti:last-child{border-bottom:0;}
+.cdti b{display:block;font-size:11px;font-weight:900;color:var(--acc);margin-bottom:3px;letter-spacing:.2px;}
+.cdti span{display:block;font-size:13.5px;font-weight:600;line-height:1.55;text-wrap:pretty;}
+.map{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.maph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.mapg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--chip);}
+.mapc{position:relative;min-width:0;padding:9px 3px 8px;text-align:center;border-right:1px solid rgba(176,168,152,0.18);border-bottom:1px solid rgba(176,168,152,0.18);}
+.mapc:nth-child(4n){border-right:0;}
+.mapc:nth-last-child(-n+4){border-bottom:0;}
+.mapc .e{display:block;font-size:20px;line-height:1;}
+.mapc .n{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;margin-top:4px;font-size:9px;font-weight:600;line-height:1.35;overflow:hidden;word-break:keep-all;text-wrap:balance;padding:0 2px;min-height:24px;}
+.mapc .p{display:block;margin-top:2px;font-size:9.5px;font-weight:900;opacity:.75;}
+.mapc.me{outline:var(--bw) solid var(--acc);outline-offset:-2px;}
+.mapc .badge{display:inline-block;margin-top:2px;padding:1px 7px;border-radius:999px;background:var(--acc);color:var(--accFg);font-size:9px;font-weight:800;}
+.mapf{display:flex;align-items:center;gap:7px;padding:9px 12px;background:var(--chip);border-top:var(--bw) solid var(--line);font-size:9.5px;font-weight:800;color:var(--sub);}
+.mapbar{flex:1;height:7px;border-radius:999px;}
+.cmp{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.cmph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.cmpg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--chip);}
+.cmpc{min-width:0;padding:12px 8px 13px;text-align:center;}
+.cmpc+.cmpc{border-left:var(--bw) solid var(--line);}
+.cmpc .lb{display:inline-block;margin-bottom:10px;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;background:var(--acc);color:var(--accFg);}
+.cmpc.bad .lb{background:#AEB4BF;color:#fff;}
+.cmpi{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:7px;}
+.cmpi .e{font-size:24px;line-height:1;}
+.cmpi .n{min-width:0;font-size:13px;font-weight:600;line-height:1.45;text-align:left;word-break:keep-all;text-wrap:balance;}
+.cmpi .p{font-size:11.5px;font-weight:900;color:var(--acc);display:block;}
+.cmpc.bad .cmpi .p{color:var(--sub);}
+.cmpnote{margin-top:11px;padding-top:9px;border-top:1px dashed rgba(176,168,152,0.3);font-size:12px;line-height:1.65;font-weight:500;color:var(--sub);}
+.rf{margin-top:16px;padding-top:12px;border-top:var(--bw) dashed var(--line);color:var(--sub);text-align:center;font-size:11px;font-weight:700;letter-spacing:.6px;}
+.ad{display:none;}
+.sheet{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.sheeth{padding:16px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.sheeth h2{margin:0;color:var(--accFg);font-size:18px;font-weight:800;letter-spacing:-.4px;}
+.sheeth p{margin:5px 0 0;color:var(--accFg);opacity:.85;font-size:11.5px;font-weight:700;}
+.reveal{margin:14px;padding:20px 16px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.reveal .em{font-size:46px;line-height:1;}
+.reveal .nm{margin-top:8px;font-size:19px;font-weight:700;line-height:1.45;text-wrap:balance;}
+.reveal .eq{margin:9px 0 7px;font-size:13px;font-weight:800;color:var(--sub);}
+.reveal .code{display:inline-block;padding:8px 22px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:26px;font-weight:800;letter-spacing:3px;}
+.sheetad{display:none;}
+.sheetsec{margin:0 14px 10px;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:12.5px;font-weight:900;text-align:center;}
+.rows{margin:0 14px 14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.row{display:grid;grid-template-columns:26px 30px minmax(0,1fr) auto;align-items:center;gap:9px;padding:10px 11px;background:var(--chip);border-bottom:1px solid rgba(176,168,152,0.18);}
+.row:last-child{border-bottom:0;}
+.row.me{background:var(--soft);color:var(--softFg);}
+.row .no{font-size:10px;font-weight:800;color:var(--sub);opacity:.7;}
+.row .em{font-size:22px;line-height:1;text-align:center;}
+.row .nm{font-size:14px;font-weight:600;line-height:1.45;min-width:0;word-break:keep-all;text-wrap:balance;}
+.row .tg{display:block;font-size:10.5px;font-weight:700;color:var(--sub);opacity:.85;margin-top:2px;}
+.row .cd{padding:4px 10px;border-radius:999px;background:var(--deep);font-size:11px;font-weight:800;letter-spacing:.8px;white-space:nowrap;}
+.row.me .cd{background:var(--acc);color:var(--accFg);}
+.mo{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(20,20,20,.82);overflow-y:auto;}
+.mo.on{display:flex;}
+.mb2{width:100%;max-width:360px;max-height:92vh;overflow:auto;padding:20px 16px;text-align:center;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);margin:auto;}
+.mb2 h3{margin:0 0 8px;font-size:18px;font-weight:900;}
+.mb2 p{margin:0 0 16px;color:var(--sub);font-size:13px;line-height:1.55;font-weight:600;}
+.mb2 img{display:block;width:100%;border:var(--bw) solid var(--line);border-radius:var(--r);}
+.mbtns{display:grid;gap:8px;margin-top:14px;}
+.mbtn{display:block;width:100%;padding:14px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-family:var(--fb);font-size:14.5px;font-weight:600;text-align:center;text-decoration:none;cursor:pointer;box-sizing:border-box;}
+.mbtn.pri{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.mtip{margin:12px 0 0!important;font-size:12px;line-height:1.6;color:var(--sub);}
+.mb2 .cl{width:100%;min-height:46px;margin-top:14px;cursor:pointer;color:#fff;background:var(--line);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:14px;font-weight:800;}
+.tst{position:fixed;left:50%;bottom:26px;z-index:200;max-width:calc(100% - 32px);padding:12px 18px;color:#fff;background:rgba(28,28,28,.95);border:var(--bw) solid #fff;border-radius:var(--r);font-size:13.5px;font-weight:700;transform:translate(-50%,16px);opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+.tst.show{opacity:1;transform:translate(-50%,0);}
+@media(hover:hover) and (pointer:fine){
+.btn:hover{background:var(--soft);color:var(--softFg);}
+.btn.fill:hover{opacity:.9;background:var(--acc);}
+.op:hover{background:var(--soft);color:var(--softFg);}
+.op:hover::before{color:var(--ink);}
+.qback:hover{color:var(--ink);}
+}
+@media(max-width:520px){.app{padding:18px 11px 38px;}.intro{padding:28px 14px 20px;}.intro h1{font-size:22px;}
+.ci .n{font-size:9.5px;} .ci .e{font-size:19px;}
+.qw{padding:20px 15px 24px;}.qx{font-size:19px;min-height:66px;}
+.op{min-height:64px;padding:13px 13px 13px 48px;font-size:14px;}
+.tc{min-height:74px;font-size:11.5px;}.rn h3{font-size:26px;}.rh h2{font-size:14px;}
+.dls{gap:6px 7px;padding:10px 9px;}.dit{font-size:11.5px;}.cds{gap:7px;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <section class="sc on" id="s1"></section>
+  <section class="sc" id="s2"></section>
+  <section class="sc" id="s3"></section>
+  <section class="sc" id="s4"></section>
+  <section class="sc" id="s5"></section>
+  <section class="sc" id="s6"></section>
+  <div class="ad">광고 영역 (애드센스 코드 삽입 위치)</div>
+</div>
+<div class="mo" id="mo"><div class="mb2"><h3>이미지 꾹 눌러 저장하기</h3><p>아래 이미지를 길게 누르거나 우클릭해서<br>저장해 주세요.</p><div id="mw"><p style="padding:40px 0;">이미지를 만들고 있어요...</p></div><button class="cl" onclick="closeMo()">닫기</button></div></div>
+<div class="tst" id="tst"></div>
+<script>
+"use strict";
+var D={"useName":false,"meta":{"title":"나의 헤어스타일 MBTI는?","emoji":"💇‍♀️","intro":"미용실 예약 습관부터 스타일링 취향까지. 12문항이면 내 안의 헤어스타일 유형을 알 수 있어요.","loadingText":"당신의 헤어스타일 유형을 다듬는 중... 💇‍♀️","sheetTitle":"16가지 헤어스타일 유형 전체 도감","sheetCta":"16가지 헤어스타일 유형 전체 보기","slug":"hair-mbti-test","setName":"헤어스타일 유형 연구소"},"blocks":["cards","duo"],"blockLabels":{"cards":"💇‍♀️ 이 스타일의 특징 카드","duo":{"good":"💇‍♀️ 이 스타일의 매력","bad":"💇‍♀️ 아쉬운 점"}},"compatLabels":{"title":"헤어 취향 궁합","good":"찰떡궁합 헤어 친구","bad":"살짝 안 어울리는 헤어 친구","mapTitle":"16가지 헤어스타일 전체 궁합"},"compat":{"ISTJ":"INTJ92 ESTJ92 ESTP82 ENTJ82 INFJ81 ISFJ80 ISTP80 INTP72 ESFP72 ISFP71 ESFJ69 ENFJ68 INFP64 ENTP59 ENFP51","ISFJ":"ISFP92 INFJ91 ESFJ90 ISTJ86 ISTP79 ESTJ77 ENFJ76 INFP73 ESTP72 INTP70 INTJ69 ESFP68 ENFP66 ENTJ65 ENTP54","INFJ":"ENFJ92 ISFJ85 INTJ85 ENTJ82 ISTJ80 INFP79 ESFJ76 INTP74 ISFP71 ENFP70 ENTP68 ESFP64 ISTP62 ESTJ60 ESTP53","INTJ":"ENTJ91 INTP89 ISFJ79 INFJ79 ISTJ78 INFP78 ENFJ78 ISTP76 ESTJ74 ENFP69 ENTP68 ISFP66 ESFJ66 ESTP62 ESFP48","ISTP":"ESTP88 ISTJ87 ISFP87 INTP83 ESFP80 ISFJ78 INFP72 INFJ71 ENTP71 ESTJ71 INTJ69 ENFP66 ESFJ64 ENTJ64 ENFJ58","ISFP":"INFP86 ISFJ84 ESFP82 INFJ79 ISTP79 ESTP78 ISTJ73 ENFP72 INTP70 ESFJ68 ENFJ66 INTJ65 ENTP63 ESTJ61 ENTJ59","INFP":"ENFP92 INTP90 INFJ82 ISFP80 INTJ74 ENTP74 ISTP73 ESFP73 ESTP71 ISFJ70 ENFJ69 ISTJ63 ENTJ62 ESFJ60 ESTJ48","INTP":"INFP91 ENTP90 ISTP87 ISTJ80 ESTP80 INTJ78 ENFP75 ESFP72 ENTJ72 ESTJ71 ISFP70 INFJ68 ENFJ61 ISFJ58 ESFJ53","ESTP":"ISTP90 ESTJ87 ESFP85 ESFJ80 ENTJ80 ENTP79 ISTJ76 ISFP74 INTP73 ENFP72 ENFJ67 ISFJ61 INTJ59 INFP58 INFJ53","ESFP":"ISFP92 ESFJ91 ESTJ82 ISFJ81 INFP80 ESTP80 ENFP80 ENFJ75 ISTP74 ENTP74 INFJ71 ISTJ69 ENTJ69 INTP68 INTJ54","ENFP":"ESFP92 ENTP90 ENFJ89 ESTP82 ENTJ79 ISFP78 INFP78 INTP77 ESFJ71 ISFJ70 INFJ70 INTJ63 ESTJ61 ISTJ60 ISTP60","ENTP":"ESTP88 ENFP82 ENTJ82 INTP81 ISTP78 ENFJ78 INFP76 ESTJ75 INTJ74 ISFP70 ESFP69 ESFJ63 INFJ61 ISTJ59 ISFJ57","ESTJ":"ENTJ92 ESFJ82 ISTJ80 ESFP79 ESTP78 ENTP76 ENFJ74 ISTP70 ISFJ69 INTJ68 ENFP66 INFJ65 ISFP64 INTP64 INFP57","ESFJ":"ESFP88 ESTJ85 ENFJ84 ISFP82 ISFJ79 ESTP76 ISTJ75 INTJ71 ENFP71 ENTJ71 INFJ68 ISTP67 INFP65 ENTP65 INTP53","ENFJ":"ENFP85 ESFJ84 ENTJ84 INTJ80 INFJ79 ENTP78 ISFJ73 INFP72 ESTJ71 ISTJ69 INTP69 ESFP68 ESTP67 ISFP60 ISTP53","ENTJ":"ENTP91 ENFJ81 INTJ80 ENFP80 ESTJ79 INTP78 ESTP78 ESFJ74 ISFJ72 INFJ70 ESFP70 ISTJ69 INFP69 ISTP63 ISFP57"},"compatLines":[{"min":95,"text":"이 조합이면 헤어 취향까지 완벽하게 통해요"},{"min":88,"text":"같이 미용실 가면 스타일 고민이 필요 없는 사이예요"},{"min":82,"text":"다르지만 서로의 스타일에 은근히 끌리는 조합이에요"},{"min":76,"text":"각자 취향이 달라 새로운 스타일에 눈뜨게 돼요"},{"min":0,"text":"완전히 다른 스타일이라 오히려 신선한 조합이에요"}],"statStyle":"squares","traitStyle":"grid","cardStyle":"grid","duoStyle":"dot","quoteStyle":"banner","cast":[{"type":"ISTJ","name":"클래식 단발","emoji":"💇‍♀️","tagline":"10년 전에도 지금도 흔들림 없는 그 길이"},{"type":"ISFJ","name":"자연스러운 히피펌","emoji":"🌾","tagline":"손질 없이도 늘 단정해 보이는 결"},{"type":"INFJ","name":"애시브라운 롱스트레이트","emoji":"🌙","tagline":"조용히 오래 바라보게 되는 차분한 윤기"},{"type":"INTJ","name":"슬릭 로우포니","emoji":"🖤","tagline":"군더더기 하나 없이 딱 떨어지는 라인"},{"type":"ISTP","name":"숏컷","emoji":"⚡","tagline":"손질 5분, 신경 쓸 일 없는 심플함"},{"type":"ISFP","name":"러프한 웨이브 롱","emoji":"🍃","tagline":"바람에 자연스럽게 날리는 그 결"},{"type":"INFP","name":"애시라벤더 브릿지","emoji":"💜","tagline":"머릿결 하나에도 담아내는 조용한 상상"},{"type":"INTP","name":"무심한 반묶음","emoji":"🧪","tagline":"신경 안 쓴 척하지만 다 계산된 흐트러짐"},{"type":"ESTP","name":"애즈머 크롭컷","emoji":"🔥","tagline":"거울 한 번 안 보고도 자신 있는 그 느낌"},{"type":"ESFP","name":"볼륨 셋팅펌","emoji":"✨","tagline":"사진 찍을 때마다 살아나는 풍성함"},{"type":"ENFP","name":"레이어드 히피펌","emoji":"🌈","tagline":"오늘 기분 따라 다르게 넘기는 컬"},{"type":"ENTP","name":"투블럭 포인트컬러","emoji":"🎨","tagline":"한 번쯤 시도해보는 과감한 브릿지"},{"type":"ESTJ","name":"단정한 로우번","emoji":"📎","tagline":"흐트러짐 없이 하루 종일 그대로"},{"type":"ESFJ","name":"미디엄 히피펌","emoji":"🍯","tagline":"누구에게 보여줘도 무난하게 예쁜 스타일"},{"type":"ENFJ","name":"우아한 웨이브 롱","emoji":"🕊️","tagline":"함께 있는 사람까지 신경 쓴 부드러운 곡선"},{"type":"ENTJ","name":"슬릭 하이포니","emoji":"🚀","tagline":"이마부터 정수리까지 완벽하게 정돈된 각"}],"questions":[{"section":"미용실 예약","text":"미용실 예약을 할 때 나는?","options":[{"text":"친구들과 정보 나누며 다 같이 예약한다","value":"E"},{"text":"혼자 조용히 알아보고 예약한다","value":"I"}]},{"section":"새 미용실","text":"새로 생긴 미용실을 발견하면?","options":[{"text":"바로 친구한테 같이 가자고 말한다","value":"E"},{"text":"일단 혼자 가서 먼저 경험해본다","value":"I"}]},{"section":"헤어 변신 후","text":"머리를 새로 하고 나면?","options":[{"text":"SNS에 바로 올려서 반응을 살핀다","value":"E"},{"text":"마음에 들면 그냥 조용히 만족한다","value":"I"}]},{"section":"스타일 선택 기준","text":"헤어스타일을 고를 때 중요한 것은?","options":[{"text":"실제로 해본 적 있는 익숙한 스타일","value":"S"},{"text":"한 번도 안 해본 새로운 스타일","value":"N"}]},{"section":"레퍼런스","text":"미용실에 갈 때 레퍼런스는?","options":[{"text":"사진을 캡처해서 정확히 보여준다","value":"S"},{"text":"머릿속 이미지를 말로 설명한다","value":"N"}]},{"section":"헤어 취향 설명","text":"원하는 스타일을 설명할 때 나는?","options":[{"text":"길이, 컬 굵기를 수치로 구체적으로 말한다","value":"S"},{"text":"'봄바람 같은 느낌'처럼 비유로 말한다","value":"N"}]},{"section":"마음에 안 들 때","text":"스타일이 마음에 안 들게 나왔다면?","options":[{"text":"어느 부분이 문제였는지 원인을 분석한다","value":"T"},{"text":"속상한 기분을 느끼고 조용히 넘어간다","value":"F"}]},{"section":"친구 헤어 조언","text":"친구가 헤어스타일을 물어보면?","options":[{"text":"얼굴형과 장단점을 객관적으로 짚어준다","value":"T"},{"text":"친구가 좋아할지부터 먼저 생각한다","value":"F"}]},{"section":"미용실 후기","text":"미용실 후기를 남긴다면?","options":[{"text":"가격, 소요 시간을 항목별로 정리한다","value":"T"},{"text":"그날 느낀 분위기와 감상을 적는다","value":"F"}]},{"section":"손질 습관","text":"평소 머리 손질 습관은?","options":[{"text":"정해둔 순서대로 매일 똑같이","value":"J"},{"text":"그날 기분 따라 다르게","value":"P"}]},{"section":"미용실 방문 계획","text":"미용실 가는 주기는?","options":[{"text":"미리 정해둔 주기에 맞춰 예약한다","value":"J"},{"text":"머리가 신경 쓰일 때 즉흥적으로 간다","value":"P"}]},{"section":"셀프 스타일링","text":"집에서 셀프로 머리를 만질 때?","options":[{"text":"순서와 방법을 정확히 지켜서 한다","value":"J"},{"text":"그때그때 손 가는 대로 만진다","value":"P"}]}],"results":[{"type":"ISTJ","name":"클래식 단발","emoji":"💇‍♀️","tagline":"10년 전에도 지금도 흔들림 없는 그 길이","summary":"클래식 단발처럼 손이 가는 헤어 취향을 가진 타입이에요. 미용실 예약부터 스타일링까지, 머리를 대하는 태도에서 성격이 자연스럽게 드러나요.","color":"#5B4636","cards":[{"label":"헤어 루틴","value":"10년 넘게 바꾸지 않은 미용실과 디자이너"},{"label":"스타일링 시간","value":"아침 5분, 늘 똑같은 순서"},{"label":"변신 욕구","value":"웬만해선 길이도 색도 그대로"},{"label":"미용실 대화","value":"군더더기 없이 원하는 길이만 정확히 전달"}],"duo":{"good":[{"label":"한결같음","value":"몇 년이 지나도 알아볼 수 있는 그 스타일 그대로예요"},{"label":"신뢰감","value":"약속한 시간에 늘 단정한 모습으로 나타나요"},{"label":"관리력","value":"머릿결 관리만큼은 꾸준히 잘 챙겨요"}],"bad":[{"label":"새로운 시도","value":"낯선 스타일에는 좀처럼 손이 안 가요"},{"label":"즉흥적인 변신","value":"계획에 없던 변화는 불편하게 느껴요"}]}},{"type":"ISFJ","name":"자연스러운 히피펌","emoji":"🌾","tagline":"손질 없이도 늘 단정해 보이는 결","summary":"자연스러운 히피펌처럼 손이 가는 헤어 취향을 가진 타입이에요. 미용실 예약부터 스타일링까지, 머리를 대하는 태도에서 성격이 자연스럽게 드러나요.","color":"#B08968","cards":[{"label":"헤어 루틴","value":"다듬는 정도로만, 큰 변화는 부담스러움"},{"label":"스타일링 시간","value":"자연 건조로도 충분한 잔잔한 웨이브"},{"label":"변신 욕구","value":"가족이나 친구가 권하면 그제야 조금씩"},{"label":"미용실 대화","value":"디자이너 의견을 거의 그대로 따르는 편"}],"duo":{"good":[{"label":"포근한 인상","value":"보기만 해도 편안한 느낌을 줘요"},{"label":"잔잔한 매력","value":"꾸미지 않아도 자연스럽게 예뻐 보여요"},{"label":"배려심","value":"미용실에서도 상대 의견을 잘 들어줘요"}],"bad":[{"label":"내 취향 말하기","value":"원하는 스타일을 적극적으로 요구하기 어려워해요"},{"label":"과감한 도전","value":"화려한 컬러는 늘 다음으로 미뤄요"}]}},{"type":"INFJ","name":"애시브라운 롱스트레이트","emoji":"🌙","tagline":"조용히 오래 바라보게 되는 차분한 윤기","summary":"애시브라운 롱스트레이트처럼 손이 가는 헤어 취향을 가진 타입이에요. 미용실 예약부터 스타일링까지, 머리를 대하는 태도에서 성격이 자연스럽게 드러나요.","color":"#3D4C63","cards":[{"label":"헤어 루틴","value":"한번 정한 스타일은 오래 유지"},{"label":"스타일링 시간","value":"트리트먼트에 공들이는 조용한 시간"},{"label":"변신 욕구","value":"마음이 크게 흔들릴 때만 과감히 자름"},{"label":"미용실 대화","value":"분위기를 먼저 설명하고 디테일은 맡김"}],"duo":{"good":[{"label":"차분한 분위기","value":"머릿결 하나로도 조용한 존재감을 남겨요"},{"label":"섬세한 관리","value":"트리트먼트나 두피 케어에 진심이에요"},{"label":"깊은 여운","value":"한번 스타일이 어울리면 오래도록 기억에 남아요"}],"bad":[{"label":"빠른 결정","value":"스타일 바꾸기 전 고민이 꽤 길어요"},{"label":"가벼운 변화","value":"작은 변화도 신중하게 재요"}]}},{"type":"INTJ","name":"슬릭 로우포니","emoji":"🖤","tagline":"군더더기 하나 없이 딱 떨어지는 라인","summary":"슬릭 로우포니처럼 손이 가는 헤어 취향을 가진 타입이에요. 미용실 예약부터 스타일링까지, 머리를 대하는 태도에서 성격이 자연스럽게 드러나요.","color":"#1F2430","cards":[{"label":"헤어 루틴","value":"효율적인 손질법을 미리 연구해둠"},{"label":"스타일링 시간","value":"정해진 시간 안에 완벽하게 마무리"},{"label":"변신 욕구","value":"계획에 없던 스타일 변화는 잘 안 함"},{"label":"미용실 대화","value":"레퍼런스 사진까지 준비해서 정확히 요청"}],"duo":{"good":[{"label":"완성도","value":"흐트러짐 없는 깔끔한 라인을 유지해요"},{"label":"효율적인 관리","value":"최소 시간으로 최대 효과를 내는 법을 알아요"},{"label":"확고한 취향","value":"어울리는 스타일을 정확히 알고 있어요"}],"bad":[{"label":"감상 표현","value":"새 스타일이 마음에 들어도 티를 잘 안 내요"},{"label":"즉흥적인 시도","value":"계획 없이 미용실 가는 일은 거의 없어요"}]}},{"type":"ISTP","name":"숏컷","emoji":"⚡","tagline":"손질 5분, 신경 쓸 일 없는 심플함","summary":"숏컷처럼 손이 가는 헤어 취향을 가진 타입이에요. 미용실 예약부터 스타일링까지, 머리를 대하는 태도에서 성격이 자연스럽게 드러나요.","color":"#4A4A4A","cards":[{"label":"헤어 루틴","value":"드라이도 생략할 때가 많은 심플함"},{"label":"스타일링 시간","value":"3분이면 준비 끝"},{"label":"변신 욕구","value":"귀찮으면 그냥 확 잘라버림"},{"label":"미용실 대화","value":"'알아서 해주세요'가 제일 편함"}],"duo":{"good":[{"label":"쿨한 매력","value":"꾸미지 않아도 자연스러운 멋이 있어요"},{"label":"실용성","value":"관리하기 편한 스타일을 잘 골라요"},{"label":"담백함","value":"호들갑 없이 담담하게 어울려요"}],"bad":[{"label":"세심한 관리","value":"트리트먼트 챙기는 걸 자주 잊어요"},{"label":"긴 상담","value":"미용실에서 긴 상담은 살짝 지루해해요"}]}},{"type":"ISFP","name":"러프한 웨이브 롱","emoji":"🍃","tagline":"바람에 자연스럽게 날리는 그 결","summary":"러프한 웨이브 롱처럼 손이 가는 헤어 취향을 가진 타입이에요. 미용실 예약부터 스타일링까지, 머리를 대하는 태도에서 성격이 자연스럽게 드러나요.","color":"#C98FA6","cards":[{"label":"헤어 루틴","value":"그날 기분 따라 자연스럽게 넘기기"},{"label":"스타일링 시간","value":"꾸민 듯 안 꾸민 듯한 러프함"},{"label":"변신 욕구","value":"색감 변화는 조금씩, 은은하게"},{"label":"미용실 대화","value":"분위기나 색 이름으로 감성적으로 설명"}],"duo":{"good":[{"label":"자연스러운 감각","value":"억지스럽지 않은 편안한 예쁨이 있어요"},{"label":"섬세한 색감","value":"은은한 컬러 톤을 고르는 눈이 좋아요"},{"label":"편안한 매력","value":"꾸민 듯 안 꾸민 듯한 매력이 있어요"}],"bad":[{"label":"계획 세우기","value":"예약 없이 갔다가 오래 기다릴 때가 있어요"},{"label":"단호한 거절","value":"마음에 안 들어도 티를 잘 못 내요"}]}},{"type":"INFP","name":"애시라벤더 브릿지","emoji":"💜","tagline":"머릿결 하나에도 담아내는 조용한 상상","summary":"애시라벤더 브릿지처럼 손이 가는 헤어 취향을 가진 타입이에요. 미용실 예약부터 스타일링까지, 머리를 대하는 태도에서 성격이 자연스럽게 드러나요.","color":"#8E6FB0","cards":[{"label":"헤어 루틴","value":"좋아하는 향 나는 제품에 진심"},{"label":"스타일링 시간","value":"거울 보며 이런저런 상상에 잠기는 시간"},{"label":"변신 욕구","value":"마음속으로만 파격 변신을 수십 번 상상"},{"label":"미용실 대화","value":"원하는 느낌을 비유로 설명하는 편"}],"duo":{"good":[{"label":"고유한 감성","value":"남들과 다른 자기만의 분위기가 있어요"},{"label":"섬세한 취향","value":"좋아하는 색과 향에 진심이에요"},{"label":"은은한 매력","value":"보면 볼수록 정이 가는 스타일이에요"}],"bad":[{"label":"빠른 결정","value":"스타일 고르다 예약 시간을 넘길 때가 있어요"},{"label":"현실적인 관리","value":"이상만 크고 실제 손질은 소홀할 때가 있어요"}]}},{"type":"INTP","name":"무심한 반묶음","emoji":"🧪","tagline":"신경 안 쓴 척하지만 다 계산된 흐트러짐","summary":"무심한 반묶음처럼 손이 가는 헤어 취향을 가진 타입이에요. 미용실 예약부터 스타일링까지, 머리를 대하는 태도에서 성격이 자연스럽게 드러나요.","color":"#5A6470","cards":[{"label":"헤어 루틴","value":"최소한의 손질로 효율 추구"},{"label":"스타일링 시간","value":"머리보다 딴생각에 더 오래 씀"},{"label":"변신 욕구","value":"궁금하면 셀프로 이것저것 시도해봄"},{"label":"미용실 대화","value":"왜 이 스타일이 어울리는지 이유가 궁금함"}],"duo":{"good":[{"label":"독창적인 스타일","value":"남들이 잘 안 하는 조합도 잘 소화해요"},{"label":"호기심","value":"새로운 손질법을 궁금해하고 시도해요"},{"label":"담백한 태도","value":"과하지 않게 자연스레 잘 어울려요"}],"bad":[{"label":"꾸준한 관리","value":"관심 시들면 손질을 미루곤 해요"},{"label":"정돈된 마무리","value":"실험하다 정작 마무리는 대충일 때가 있어요"}]}},{"type":"ESTP","name":"애즈머 크롭컷","emoji":"🔥","tagline":"거울 한 번 안 보고도 자신 있는 그 느낌","summary":"애즈머 크롭컷처럼 손이 가는 헤어 취향을 가진 타입이에요. 미용실 예약부터 스타일링까지, 머리를 대하는 태도에서 성격이 자연스럽게 드러나요.","color":"#C1440E","cards":[{"label":"헤어 루틴","value":"유행하는 스타일은 바로바로 시도"},{"label":"스타일링 시간","value":"빠르게 만지고 바로 나감"},{"label":"변신 욕구","value":"마음먹으면 바로 미용실行"},{"label":"미용실 대화","value":"'요즘 뭐가 핫해요?' 먼저 물어봄"}],"duo":{"good":[{"label":"자신감","value":"어떤 스타일이든 당당하게 소화해요"},{"label":"트렌드 감각","value":"유행하는 스타일을 빠르게 캐치해요"},{"label":"실행력","value":"마음먹으면 바로 변신을 시도해요"}],"bad":[{"label":"신중한 선택","value":"충동적으로 잘랐다 후회할 때가 있어요"},{"label":"차분한 관리","value":"꾸준한 트리트먼트는 잘 안 챙겨요"}]}},{"type":"ESFP","name":"볼륨 셋팅펌","emoji":"✨","tagline":"사진 찍을 때마다 살아나는 풍성함","summary":"볼륨 셋팅펌처럼 손이 가는 헤어 취향을 가진 타입이에요. 미용실 예약부터 스타일링까지, 머리를 대하는 태도에서 성격이 자연스럽게 드러나요.","color":"#E0568C","cards":[{"label":"헤어 루틴","value":"사진발 잘 받는 볼륨에 진심"},{"label":"스타일링 시간","value":"셀카 찍을 때까지 계속 매만짐"},{"label":"변신 욕구","value":"기분 전환하고 싶을 때 바로 실행"},{"label":"미용실 대화","value":"레퍼런스 사진 여러 장 들고 감"}],"duo":{"good":[{"label":"화사한 매력","value":"사진 찍을 때마다 화사하게 나와요"},{"label":"긍정 에너지","value":"스타일 바뀔 때마다 주변까지 신나게 만들어요"},{"label":"표현력","value":"좋아하는 스타일을 솔직하게 드러내요"}],"bad":[{"label":"차분한 유지","value":"금방 질려서 또 바꾸고 싶어져요"},{"label":"과한 지출","value":"스타일링에 돈을 많이 쓰게 돼요"}]}},{"type":"ENFP","name":"레이어드 히피펌","emoji":"🌈","tagline":"오늘 기분 따라 다르게 넘기는 컬","summary":"레이어드 히피펌처럼 손이 가는 헤어 취향을 가진 타입이에요. 미용실 예약부터 스타일링까지, 머리를 대하는 태도에서 성격이 자연스럽게 드러나요.","color":"#F2994A","cards":[{"label":"헤어 루틴","value":"이번 주와 다음 주 스타일이 다를 수 있음"},{"label":"스타일링 시간","value":"컬 마는 재미에 시간 가는 줄 모름"},{"label":"변신 욕구","value":"새로운 컬러 앞에서는 늘 마음이 흔들림"},{"label":"미용실 대화","value":"이런저런 아이디어를 신나게 먼저 제안"}],"duo":{"good":[{"label":"발랄한 매력","value":"보는 사람도 덩달아 기분 좋아지는 분위기예요"},{"label":"호기심 가득","value":"새로운 스타일에 늘 열려있어요"},{"label":"따뜻한 나눔","value":"좋은 미용실 정보를 먼저 공유해줘요"}],"bad":[{"label":"한 스타일 유지","value":"한 가지 스타일을 오래 못 고수해요"},{"label":"차분한 마무리","value":"마음이 앞서 손질이 살짝 급해질 때가 있어요"}]}},{"type":"ENTP","name":"투블럭 포인트컬러","emoji":"🎨","tagline":"한 번쯤 시도해보는 과감한 브릿지","summary":"투블럭 포인트컬러처럼 손이 가는 헤어 취향을 가진 타입이에요. 미용실 예약부터 스타일링까지, 머리를 대하는 태도에서 성격이 자연스럽게 드러나요.","color":"#C23B5A","cards":[{"label":"헤어 루틴","value":"남들이 잘 안 하는 조합을 시도"},{"label":"스타일링 시간","value":"실험적인 셀프 스타일링도 즐김"},{"label":"변신 욕구","value":"논쟁이 될 만한 과감한 컬러도 도전"},{"label":"미용실 대화","value":"디자이너와 아이디어 배틀하듯 상의"}],"duo":{"good":[{"label":"재치있는 발상","value":"의외의 스타일 조합을 재밌게 시도해요"},{"label":"빠른 적응력","value":"새로운 유행에도 금방 관심을 가져요"},{"label":"당당한 개성","value":"눈치 안 보고 원하는 스타일을 밀고 나가요"}],"bad":[{"label":"꾸준함","value":"금방 질려서 다음 스타일로 넘어가요"},{"label":"무난한 선택","value":"가끔은 너무 과감해서 부담스러울 때도 있어요"}]}},{"type":"ESTJ","name":"단정한 로우번","emoji":"📎","tagline":"흐트러짐 없이 하루 종일 그대로","summary":"단정한 로우번처럼 손이 가는 헤어 취향을 가진 타입이에요. 미용실 예약부터 스타일링까지, 머리를 대하는 태도에서 성격이 자연스럽게 드러나요.","color":"#3B2A20","cards":[{"label":"헤어 루틴","value":"아침 루틴에 딱 맞춰진 손질 순서"},{"label":"스타일링 시간","value":"시간 낭비 없이 효율적으로"},{"label":"변신 욕구","value":"필요하다고 판단되면 바로 실행"},{"label":"미용실 대화","value":"원하는 스타일을 명확한 기준으로 전달"}],"duo":{"good":[{"label":"완벽한 정돈","value":"어디서든 흐트러짐 없는 모습을 유지해요"},{"label":"결단력","value":"바꾸기로 하면 망설임 없이 실행해요"},{"label":"신뢰감","value":"늘 단정해서 믿음이 가는 인상이에요"}],"bad":[{"label":"여유로운 변화","value":"완벽하지 않으면 스트레스를 받아요"},{"label":"가벼운 시도","value":"실험적인 스타일엔 손이 잘 안 가요"}]}},{"type":"ESFJ","name":"미디엄 히피펌","emoji":"🍯","tagline":"누구에게 보여줘도 무난하게 예쁜 스타일","summary":"미디엄 히피펌처럼 손이 가는 헤어 취향을 가진 타입이에요. 미용실 예약부터 스타일링까지, 머리를 대하는 태도에서 성격이 자연스럽게 드러나요.","color":"#D9A441","cards":[{"label":"헤어 루틴","value":"모임 있는 날은 조금 더 신경 씀"},{"label":"스타일링 시간","value":"다들 예쁘다고 할 만한 무난함 추구"},{"label":"변신 욕구","value":"주변 반응을 먼저 살피고 결정"},{"label":"미용실 대화","value":"단골 디자이너와 수다 떨며 편하게"}],"duo":{"good":[{"label":"다정한 인상","value":"누구에게나 호감 가는 무난한 매력이 있어요"},{"label":"세심한 관리","value":"모임 전엔 늘 신경 써서 준비해요"},{"label":"배려심","value":"디자이너와도 편하게 소통하는 편이에요"}],"bad":[{"label":"내 취향 우선","value":"남 신경 쓰다 정작 원하는 스타일을 못 할 때가 있어요"},{"label":"과감한 변신","value":"다들 놀랄 만한 변화는 망설이게 돼요"}]}},{"type":"ENFJ","name":"우아한 웨이브 롱","emoji":"🕊️","tagline":"함께 있는 사람까지 신경 쓴 부드러운 곡선","summary":"우아한 웨이브 롱처럼 손이 가는 헤어 취향을 가진 타입이에요. 미용실 예약부터 스타일링까지, 머리를 대하는 태도에서 성격이 자연스럽게 드러나요.","color":"#7C6A9C","cards":[{"label":"헤어 루틴","value":"상대가 보기에도 부담 없는 스타일 선호"},{"label":"스타일링 시간","value":"다른 사람 챙기다 정작 내 머리는 뒷전"},{"label":"변신 욕구","value":"주변 사람과 함께 변화를 시도하기도"},{"label":"미용실 대화","value":"디자이너 의견을 존중하며 소통"}],"duo":{"good":[{"label":"우아한 분위기","value":"곁에 있으면 마음이 편안해지는 인상이에요"},{"label":"따뜻한 배려","value":"상대 시선까지 고려하는 세심함이 있어요"},{"label":"자연스러운 리더십","value":"모임의 스타일 트렌드를 자연스레 이끌어요"}],"bad":[{"label":"내 스타일 챙기기","value":"남 챙기다 정작 내 머리는 뒷전이 돼요"},{"label":"솔직한 요구","value":"마음에 안 들어도 좋게 돌려 말해요"}]}},{"type":"ENTJ","name":"슬릭 하이포니","emoji":"🚀","tagline":"이마부터 정수리까지 완벽하게 정돈된 각","summary":"슬릭 하이포니처럼 손이 가는 헤어 취향을 가진 타입이에요. 미용실 예약부터 스타일링까지, 머리를 대하는 태도에서 성격이 자연스럽게 드러나요.","color":"#2B2B3D","cards":[{"label":"헤어 루틴","value":"이미지 관리 차원에서 철저히 계획"},{"label":"스타일링 시간","value":"완벽한 각이 나올 때까지 정돈"},{"label":"변신 욕구","value":"목표에 맞춰 과감하게 이미지 변신"},{"label":"미용실 대화","value":"원하는 결과를 구체적인 기준으로 제시"}],"duo":{"good":[{"label":"완벽한 이미지 관리","value":"목표에 맞춰 스타일을 전략적으로 바꿔요"},{"label":"당당한 카리스마","value":"어떤 스타일이든 자신감 있게 소화해요"},{"label":"추진력","value":"마음먹은 변신은 바로 실행에 옮겨요"}],"bad":[{"label":"여유 갖기","value":"완벽한 결과가 아니면 아쉬워해요"},{"label":"타협하기","value":"디자이너 제안보다 내 계획을 우선해요"}]}}],"accent":"#8E6FB0","progress":"bar"};
+var AXES=[['E','I'],['S','N'],['T','F'],['J','P']];
+var nick="",qi=0,sc={},lock=false,tT=null,answers=[];
+function $(i){return document.getElementById(i);}
+function esc(s){if(s==null)return"";return String(s).replace(/[&<>"']/g,function(m){
+return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m];});}
+function show(id){var a=document.querySelectorAll(".sc");
+for(var i=0;i<a.length;i++)a[i].classList.remove("on");
+$(id).classList.add("on");window.scrollTo({top:0,behavior:"auto"});}
+function reset(){sc={};answers=[];["E","I","S","N","T","F","J","P"].forEach(function(k){sc[k]=0;});}
+function mix(hex,ratio){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
+r=Math.round(r+(255-r)*ratio);g=Math.round(g+(255-g)*ratio);b=Math.round(b+(255-b)*ratio);
+return "#"+[r,g,b].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function lerp2(hexA,hexB,t){function rgb(h){h=(h||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+return[parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+var a=rgb(hexA),b=rgb(hexB);
+var r=Math.round(a[0]+(b[0]-a[0])*t),g=Math.round(a[1]+(b[1]-a[1])*t),bl=Math.round(a[2]+(b[2]-a[2])*t);
+return "#"+[r,g,bl].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function luminance(hex){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16)/255,g=parseInt(h.slice(2,4),16)/255,b=parseInt(h.slice(4,6),16)/255;
+function lin(c){return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);}
+return 0.2126*lin(r)+0.7152*lin(g)+0.0722*lin(b);}
+function readable(bgHex){return luminance(bgHex)>0.53?"#1a1a1a":"#fff";}
+function setAcc(c){var s=document.documentElement.style;
+var soft=mix(c,.86),deep=mix(c,.68);
+s.setProperty("--acc",c);s.setProperty("--soft",soft);s.setProperty("--deep",deep);
+s.setProperty("--accFg",readable(c));s.setProperty("--softFg",readable(soft));s.setProperty("--deepFg",readable(deep));}
+function intro(){nick="";qi=0;lock=false;reset();setAcc(D.accent);
+var cast="";for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+cast+='<div class="ci"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+(c.tagline?'<span class="t">'+esc(c.tagline)+'</span>':"")+'</div>';}
+$("s1").innerHTML='<div class="pa intro">'+
+'<div class="em">'+D.meta.emoji+'</div>'+
+'<h1>'+esc(D.meta.title)+'</h1><p>'+esc(D.meta.intro)+'</p>'+
+'<div class="castt">'+esc(D.meta.setName||"16가지 유형")+'</div>'+
+'<div class="cast">'+cast+'</div>'+
+'<div class="mt">질문 '+D.questions.length+'개 · 결과 16가지</div>'+
+'<div class="langhint">🌐 Prefer another language? Use your browser\'s translate feature.<br>다른 언어로 보고 싶다면 브라우저의 번역 기능을 이용해주세요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="'+(D.useName?"nameScreen()":"begin()")+'">테스트 시작하기</button></div>';
+show("s1");}
+function nameScreen(){$("s2").innerHTML='<div class="pa nb"><h2>어떻게 불러드릴까요?</h2>'+
+'<input id="nk" type="text" maxlength="12" placeholder="닉네임을 입력해주세요" autocomplete="off">'+
+'<div class="gd">○ 총 '+D.questions.length+'문항입니다.<br>○ 나에게 더 가까운 답을 골라주세요.<br>○ 결과에 닉네임이 함께 표시돼요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="begin()">시작하기</button>'+
+'<button class="btn" onclick="intro()">처음으로</button></div>';show("s2");
+setTimeout(function(){var n=$("nk");if(n){n.focus();
+n.addEventListener("keydown",function(e){if(e.key==="Enter")begin();});}},80);}
+function begin(){if(D.useName){var n=$("nk"),v=n?n.value.trim():"";
+if(!v){alert("닉네임을 입력해주세요.");if(n)n.focus();return;}nick=v;}
+qi=0;lock=false;reset();question();show("s3");}
+function progHTML(cur,total){var p=D.progress||"bar";
+if(p==="bar"){return '<div class="trk"><div class="fil" style="width:'+Math.round(cur/total*100)+'%"></div></div>';}
+var h=p==="dots"?'<div class="pdots">':'<div class="psq">',n=Math.min(total,12);
+for(var i=0;i<n;i++){var st=i<cur-1?" dn":i===cur-1?(p==="dots"?" now":" dn"):"";
+h+=p==="dots"?'<div class="pdot'+st+'"></div>':'<i class="'+st.trim()+'"></i>';}
+return h+"</div>";}
+function question(){lock=false;var tot=D.questions.length,q=D.questions[qi];
+var num=("0"+(qi+1)).slice(-2);
+var h='<div class="pa qw"><div class="qt"><div class="qi">'+
+'<span class="sec">'+esc(q.section||"진행 중")+'</span><span>'+(qi+1)+' / '+tot+'</span></div>'+
+progHTML(qi+1,tot)+'</div>'+
+'<div class="qn">문항 '+num+(nick?" · "+esc(nick):"")+'</div>'+
+'<div class="qx">'+esc(q.text)+'</div><div class="ops">';
+for(var i=0;i<q.options.length;i++){
+h+='<button class="op" data-n="'+(i+1)+'" data-v="'+esc(q.options[i].value)+'">'+esc(q.options[i].text)+'</button>';}
+h+='</div><p class="qnote">더 가까운 쪽을 골라주세요.</p>'+
+(qi>0?'<button type="button" class="qback" onclick="prevQ()">← 이전 문항</button>':"")+
+'</div>';
+$("s3").innerHTML=h;
+window.scrollTo({top:0,behavior:"auto"});
+var bs=$("s3").querySelectorAll(".op");
+for(var j=0;j<bs.length;j++){bs[j].addEventListener("click",function(){pick(this);});}}
+function pick(btn){if(lock)return;lock=true;
+var all=$("s3").querySelectorAll(".op");
+for(var i=0;i<all.length;i++){all[i].disabled=true;all[i].classList.remove("pk");}
+btn.classList.add("pk");
+var v=btn.getAttribute("data-v");if(sc[v]==null)sc[v]=0;sc[v]++;answers[qi]=v;
+setTimeout(function(){qi++;if(qi<D.questions.length){question();return;}finish();},110);}
+function prevQ(){if(qi<=0||lock)return;lock=true;
+var prevV=answers[qi-1];if(prevV!=null&&sc[prevV]>0)sc[prevV]--;
+answers[qi-1]=null;qi--;question();}
+function finish(){var code="";
+for(var i=0;i<AXES.length;i++){code+=(sc[AXES[i][0]]>=sc[AXES[i][1]]?AXES[i][0]:AXES[i][1]);}
+loading(code);}
+function loading(code){
+$("s4").innerHTML='<div class="pa lw"><div style="width:100%">'+
+'<h2>'+esc(D.meta.loadingText||"결과를 정리하는 중")+'</h2><p>잠시만 기다려 주세요.</p>'+
+'<div class="dts"><span></span><span></span><span></span></div>'+
+'<div class="lbar"><span></span></div></div></div>';show("s4");
+setTimeout(function(){result(code);show("s5");},2500);}
+function lab(key,sub){var L=D.blockLabels||{};var v=L[key];
+if(sub){
+if(v&&typeof v==="object"&&v[sub])return v[sub];
+return sub==="good"?"잘 맞는 유형":sub==="bad"?"안 맞는 유형":"";}
+return typeof v==="string"?v:"";}
+function byType(t){for(var i=0;i<D.cast.length;i++){if(D.cast[i].type===t)return D.cast[i];}return null;}
+function compatList(type){var s=D.compat[type]||"";var out=[],m,re=/([A-Z]{4})(\d+)/g;
+while((m=re.exec(s))!==null){out.push({type:m[1],pct:parseInt(m[2],10)});}
+out.sort(function(a,b){return b.pct-a.pct;});return out;}
+function compatItems(arr){var h="";
+for(var i=0;i<arr.length;i++){var c=byType(arr[i].type);if(!c)continue;
+h+='<div class="cmpi"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+
+'<span class="p">'+arr[i].pct+'%</span></span></div>';}
+return h;}
+function lineFor(pct){var L=D.compatLines||[];
+for(var i=0;i<L.length;i++){if(pct>=L[i].min)return L[i].text;}
+return L.length?L[L.length-1].text:"";}
+function compatHTML(type){var L=D.compatLabels||{};var list=compatList(type);
+if(!list.length)return "";
+var best=list.slice(0,2),worst=list.slice(-2).reverse();
+return '<div class="cmp"><div class="cmph">'+esc(L.title||"궁합")+'</div><div class="cmpg">'+
+'<div class="cmpc"><span class="lb">'+esc(L.good||"최고의 궁합")+'</span>'+compatItems(best)+
+'<div class="cmpnote">'+esc(lineFor(best[0].pct))+'</div></div>'+
+'<div class="cmpc bad"><span class="lb">'+esc(L.bad||"아쉬운 궁합")+'</span>'+compatItems(worst)+
+'<div class="cmpnote">'+esc(lineFor(worst[0].pct))+'</div></div>'+
+'</div></div>';}
+function tint(color,pct){var s=Math.max(0,Math.min(1,(pct-70)/29));
+return lerp2("#AEB4BF",color,Math.pow(s,2.5));}
+function mapHTML(type,color){var L=D.compatLabels||{};
+var list=compatList(type);if(!list.length)return "";
+var pm={};list.forEach(function(x){pm[x.type]=x.pct;});
+var g="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+if(c.type===type){
+var meFg=readable(color);
+g+='<div class="mapc me" style="background:'+color+';color:'+meFg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="badge">나</span></div>';
+}else{var p=pm[c.type]||0;var bg=tint(color,p);var fg=readable(bg);
+g+='<div class="mapc" style="background:'+bg+';color:'+fg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="p" style="opacity:1">'+p+'%</span></div>';}}
+var bar="linear-gradient(90deg,"+tint(color,72)+","+tint(color,99)+")";
+return '<div class="map"><div class="maph">'+esc(L.mapTitle||"나의 궁합 지도")+'</div>'+
+'<div class="mapg">'+g+'</div>'+
+'<div class="mapf"><span>안 맞음</span><span class="mapbar" style="background:'+bar+'"></span>'+
+'<span>잘 맞음</span></div></div>';}
+function blockHTML(name,r){
+if(name==="quote"&&r.quote){var qcls=D.quoteStyle==="bubble"?"qbb":"qb";
+return '<div class="blk"><div class="blt">'+esc(lab("quote")||"한마디")+'</div>'+
+'<div class="'+qcls+'">'+esc(r.quote)+'</div></div>';}
+if(name==="traits"&&r.traits&&r.traits.length){var h='<div class="blk"><div class="blt">'+
+esc(lab("traits")||"세부 특징")+'</div>';
+if(D.traitStyle==="sticker"){h+='<div class="trss">';
+for(var i=0;i<r.traits.length;i++){h+='<div class="tst">'+esc(r.traits[i])+'</div>';}
+h+='</div>';
+}else{h+='<div class="trs">';
+for(var i2=0;i2<r.traits.length;i2++){h+='<div class="tc">'+esc(r.traits[i2])+'</div>';}
+h+='</div>';}
+return h+"</div>";}
+if(name==="duo"&&r.duo){var g=r.duo.good||[],b=r.duo.bad||[];var chk=D.duoStyle==="check";
+var gm=chk?"✓":"",bm=chk?"✗":"",dcls=chk?" chk":"";
+var h2='<div class="blk duo"><div class="dsec g"><div class="dsh">'+esc(lab("duo","good")||"좋은 면")+'</div><div class="dls">';
+for(var j=0;j<g.length;j++){h2+='<div class="dit'+dcls+'"><b>'+gm+'</b><span>'+esc(g[j])+'</span></div>';}
+h2+='</div></div><div class="dsec b"><div class="dsh">'+esc(lab("duo","bad")||"아쉬운 면")+'</div><div class="dls">';
+for(var k2=0;k2<b.length;k2++){h2+='<div class="dit'+dcls+'"><b>'+bm+'</b><span>'+esc(b[k2])+'</span></div>';}
+return h2+"</div></div></div>";}
+if(name==="stats"&&r.stats&&r.stats.length){
+var h3='<div class="blk"><div class="blt">'+esc(lab("stats")||"지표")+'</div>';
+if(D.statStyle==="radial"){
+h3+='<div class="stsr">';
+for(var m=0;m<r.stats.length;m++){var s=r.stats[m];var v=Math.max(0,Math.min(100,s.value||0));
+var C=100.53;var off=C*(1-v/100);
+h3+='<div class="rgauge"><svg viewBox="0 0 38 38">'+
+'<circle class="rtrack" cx="19" cy="19" r="16"/>'+
+'<circle class="rfill" cx="19" cy="19" r="16" stroke-dasharray="'+C+'" stroke-dashoffset="'+off+'" transform="rotate(-90 19 19)"/>'+
+'<text x="19" y="23" text-anchor="middle" style="font-size:10px;font-weight:900;fill:var(--ink)">'+v+'%</text>'+
+'</svg><div class="rlab">'+esc(s.label)+'</div></div>';}
+h3+='</div>';
+}else{
+h3+='<div class="sts">';
+for(var m2=0;m2<r.stats.length;m2++){var s2=r.stats[m2];var v2=Math.max(0,Math.min(100,s2.value||0));
+var fc=Math.max(1,Math.min(10,Math.round(v2/10)));var sq="";
+for(var n2=1;n2<=10;n2++){sq+='<span class="sq'+(n2<=fc?" f":"")+'"></span>';}
+h3+='<div class="srow"><div class="slab">'+esc(s2.label)+'</div><div class="sqs">'+sq+'</div>'+
+'<div class="spc">'+v2+'%</div></div>';}
+h3+='</div>';
+}
+return h3+"</div>";}
+if(name==="cards"&&r.cards&&r.cards.length){
+var h4='<div class="blk"><div class="blt">'+esc(lab("cards")||"이런 사람")+'</div>';
+if(D.cardStyle==="ticket"){h4+='<div class="cdt">';
+for(var p=0;p<r.cards.length;p++){h4+='<div class="cdti"><b>'+esc(r.cards[p].label)+'</b><span>'+
+esc(r.cards[p].value)+'</span></div>';}
+h4+='</div>';
+}else{h4+='<div class="cds" style="margin-top:9px">';
+for(var p2=0;p2<r.cards.length;p2++){h4+='<div class="cd2"><b>'+esc(r.cards[p2].label)+'</b><p>'+
+esc(r.cards[p2].value)+'</p></div>';}
+h4+='</div>';}
+return h4+"</div>";}
+return "";}
+function result(code){var r=null;
+for(var i=0;i<D.results.length;i++){if(D.results[i].type===code){r=D.results[i];break;}}
+if(!r)r=D.results[0];
+setAcc(r.color||D.accent);
+var sum=(nick?esc(nick)+"님은 ":"")+esc(r.summary);
+var h='<div class="cap" id="cap"><div class="rh"><h2>'+esc(D.meta.title)+'</h2></div><div class="rb">'+
+'<div class="rn"><div class="em">'+esc(r.emoji||"✨")+'</div><h3>'+esc(r.name||D.meta.title)+'</h3>'+
+(r.tagline?'<div class="tg2">'+esc(r.tagline)+'</div>':"")+'</div>'+
+'<div class="rs">'+sum+'</div>';
+var col=r.color||D.accent;
+for(var b=0;b<D.blocks.length;b++){if(D.blocks[b]!=="map")h+=blockHTML(D.blocks[b],r);}
+h+=compatHTML(r.type);
+if(D.blocks.indexOf("map")>=0)h+=mapHTML(r.type,col);
+h+='<div class="rf">POWERED BY MAGIC FACTORY</div></div></div>'+
+'<div class="stk"><button class="btn fill" onclick="sheet(\''+code+'\')">'+
+esc(D.meta.sheetCta||"내 유형의 정체 확인하기")+'</button>'+
+'<button class="btn" onclick="saveImg(this)">결과 이미지 저장하기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+$("s5").innerHTML=h;}
+function sheet(code){var me=byType(code)||D.cast[0];
+var rows="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];var isMe=c.type===code;
+if(i===8){rows+='</div><div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div><div class="rows">';}
+rows+='<div class="row'+(isMe?" me":"")+'"><span class="no">'+("0"+(i+1)).slice(-2)+'</span>'+
+'<span class="em">'+c.emoji+'</span>'+
+'<span class="nm">'+esc(c.name)+(c.tagline?'<span class="tg">'+esc(c.tagline)+'</span>':"")+'</span>'+
+'<span class="cd">'+esc(c.type)+'</span></div>';}
+$("s6").innerHTML='<div class="sheet">'+
+'<div class="sheeth"><h2>'+esc(D.meta.sheetTitle||"전체 유형 정답지")+'</h2>'+
+'<p>열여섯 종류가 각각 어떤 성격 유형인지 전부 공개해요</p></div>'+
+'<div class="reveal"><div class="em">'+me.emoji+'</div>'+
+'<div class="nm">'+(nick?esc(nick)+"님의 ":"")+esc(me.name)+'</div>'+
+'<div class="eq">의 성격 유형은</div>'+
+'<div class="code">'+esc(me.type)+'</div></div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'<div class="sheetsec">'+esc(D.meta.setName||"전체 16종")+' 전체 목록</div>'+
+'<div class="rows">'+rows+'</div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'</div>'+
+'<div class="stk"><button class="btn fill" onclick="show(\'s5\')">내 결과로 돌아가기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+show("s6");}
+function frames(){return new Promise(function(r){requestAnimationFrame(function(){requestAnimationFrame(r);});});}
+function wait(ms){return new Promise(function(r){setTimeout(r,ms);});}
+var lastBlob=null,lastUrl="";
+function fileName(){return (D.meta.slug||"result")+".png";}
+function saveOptions(){
+var canShare=false;
+try{canShare=!!(navigator.canShare&&lastBlob&&navigator.canShare({files:[new File([lastBlob],fileName(),{type:"image/png"})]}));}catch(e){}
+var h="";
+if(canShare)h+='<button class="mbtn pri" onclick="shareImg()">사진으로 저장 · 공유</button>';
+else h+='<p class="mtip" style="margin:0 0 10px;">위 이미지를 <b>길게 눌러서 사진에 저장</b>해 주세요.</p>';
+h+='<a class="mbtn" href="'+lastUrl+'" download="'+fileName()+'" target="_blank" rel="noopener">새 탭에서 이미지 열기</a>';
+return '<div class="mbtns">'+h+'</div>'+
+'<p class="mtip">"이미지 열기"를 눌렀을 때 저장이 안 되면, 위 이미지를 직접 길게 눌러 저장해 주세요.</p>';}
+async function shareImg(){
+try{var f=new File([lastBlob],fileName(),{type:"image/png"});
+await navigator.share({files:[f],title:D.meta.title});}
+catch(e){if(e&&e.name!=="AbortError")toast("공유를 취소했거나 지원되지 않아요.");}}
+async function saveImg(btn){
+if(typeof html2canvas!=="function"){toast("이미지 도구를 불러오지 못했어요. 새로고침 후 다시 시도해 주세요.");return;}
+btn.disabled=true;var old=btn.textContent;btn.textContent="이미지 만드는 중...";
+$("mw").innerHTML='<p style="padding:40px 0;">이미지를 만들고 있어요...</p>';
+$("mo").classList.add("on");document.body.style.overflow="hidden";
+try{
+if(document.fonts){try{await document.fonts.ready;}catch(e){}}
+await frames();await wait(260);
+var cv=await html2canvas($("cap"),{backgroundColor:getComputedStyle(document.body).backgroundColor,
+scale:Math.min(window.devicePixelRatio||2,2),useCORS:true,logging:false,
+scrollX:0,scrollY:-window.scrollY,windowWidth:document.documentElement.clientWidth});
+if(lastUrl&&lastUrl.indexOf("blob:")===0){try{URL.revokeObjectURL(lastUrl);}catch(e){}}
+var dataUrl=cv.toDataURL("image/png");
+lastBlob=await new Promise(function(res){
+if(cv.toBlob)cv.toBlob(function(b){res(b);},"image/png");else res(null);});
+if(!lastBlob){
+  var bin=atob(dataUrl.split(",")[1]),arr=new Uint8Array(bin.length);
+  for(var i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);
+  lastBlob=new Blob([arr],{type:"image/png"});}
+lastUrl=dataUrl;
+$("mw").innerHTML='<img src="'+lastUrl+'" alt="결과 이미지">'+saveOptions();
+}catch(e){console.error(e);
+$("mw").innerHTML='<p style="padding:32px 0 8px;">이미지를 만들지 못했어요.<br>'+
+'대신 화면을 캡처해서 공유해 주세요.</p>'+
+'<p class="mtip">오류: '+esc(String(e&&e.message||e))+'</p>';
+}finally{btn.disabled=false;btn.textContent=old;}}
+function closeMo(){$("mo").classList.remove("on");document.body.style.overflow="";}
+$("mo").addEventListener("click",function(e){if(e.target===$("mo"))closeMo();});
+document.addEventListener("keydown",function(e){
+if(e.key==="Escape"&&$("mo").classList.contains("on"))closeMo();});
+async function share(){var dt={title:D.meta.title,text:D.meta.intro,url:location.href};
+try{if(navigator.share){await navigator.share(dt);return;}
+var tx=dt.text+"\n"+dt.url;
+if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(tx);
+toast("링크를 복사했어요.");return;}
+var ta=document.createElement("textarea");ta.value=tx;ta.style.position="fixed";ta.style.opacity="0";
+document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();
+toast("링크를 복사했어요.");}catch(e){if(e&&e.name!=="AbortError")toast("공유하지 못했어요.");}}
+function toast(m){clearTimeout(tT);var e=$("tst");e.textContent=m;e.classList.add("show");
+tT=setTimeout(function(){e.classList.remove("show");},2100);}
+intro();
+</script>
+</body>
+</html>
