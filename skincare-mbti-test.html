@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 스킨케어 루틴 MBTI는?</title>
+<meta name="description" content="화장품 고르는 방식부터 루틴을 지키는 습관까지, 스킨케어 취향에도 성격이 묻어나요. 12문항이면 당신의 스킨케어 유형이 드러납니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="나의 스킨케어 루틴 MBTI는?">
+<meta property="og:description" content="화장품 고르는 방식부터 루틴을 지키는 습관까지, 스킨케어 취향에도 성격이 묻어나요. 12문항이면 당신의 스킨케어 유형이 드러납니다.">
+<meta property="og:image" content="skincare-mbti-test-thumb.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{--bg:#F4F2ED;--paper:#FDFCF8;--ink:#1C1C1C;--sub:#6B6B6B;--line:#B0A898;--acc:#2C4A7C;--soft:rgba(44,74,124,0.12);--deep:rgba(44,74,124,0.24);--accFg:#fff;--softFg:#1C1C1C;--deepFg:#1C1C1C;--chip:rgba(28,28,28,0.07);--chips:rgba(28,28,28,0.1);--r:2px;--bw:2px;--shadow:none;--fh:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;--fb:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+*{box-sizing:border-box;}
+html{background:#F4F2ED;}
+body{margin:0;min-height:100vh;color:var(--ink);background-color:var(--bg);background-image:none;background-size:auto;font-family:var(--fb);word-break:keep-all;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;line-height:1.6;}
+h1,h2,h3,.qx,.rn h3,.sheeth h2,.reveal .code,.dsh,.blt,.cmph,.maph,.sheetsec{font-family:var(--fh);}
+button,input{font:inherit;-webkit-tap-highlight-color:transparent;}
+.app{width:100%;max-width:560px;margin:0 auto;padding:26px 14px 46px;}
+.sc{display:none;} .sc.on{display:block;animation:in .18s ease;}
+@keyframes in{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+.pa{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);}
+.btn{width:100%;min-height:54px;padding:12px;cursor:pointer;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--ink);font-size:16px;font-weight:800;}
+.btn:active{transform:scale(.99);}
+.btn.fill{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.stk{display:grid;gap:10px;margin-top:14px;}
+.intro{padding:0 0 24px;text-align:center;overflow:hidden;}
+.hero{margin:0 0 20px;line-height:0;}
+.hero svg{display:block;width:100%;height:auto;}
+.intro>h1,.intro>p,.intro>.castt,.intro>.cast,.intro>.mt,.intro>.em{margin-left:18px;margin-right:18px;}
+.intro>.em{padding-top:34px;}
+.intro .em{font-size:54px;line-height:1;margin-bottom:12px;}
+.intro h1{font-size:25px;line-height:1.45;margin:0 0 10px;font-weight:700;letter-spacing:-.2px;text-wrap:balance;}
+.intro p{font-size:14.5px;color:var(--sub);line-height:1.8;margin:0;font-weight:400;text-wrap:pretty;}
+.castt{margin:20px 0 10px;font-size:12.5px;font-weight:800;color:var(--acc);}
+.mt{margin-top:16px;font-size:12.5px;font-weight:700;color:var(--sub);}
+.langhint{margin-top:8px;font-size:11px;font-weight:500;color:var(--sub);opacity:.75;line-height:1.6;}
+.cast{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;}
+.ci{min-width:0;padding:9px 3px 8px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);text-align:center;}
+.ci .e{font-size:22px;line-height:1;display:block;margin-bottom:4px;}
+.ci .n{font-size:11px;font-weight:600;line-height:1.4;word-break:keep-all;text-wrap:balance;}
+.ci .t{font-size:8.5px;color:var(--sub);opacity:.8;font-weight:700;margin-top:2px;display:block;}
+.intro .mt{font-size:12px;color:var(--sub);opacity:.75;margin-top:16px;font-weight:700;}
+.nb{padding:40px 24px;text-align:center;}
+.nb h2{font-size:22px;margin:0 0 22px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.nb input{width:100%;max-width:340px;height:54px;padding:0 14px;text-align:center;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-size:19px;font-weight:800;outline:none;}
+.nb input:focus{border-color:var(--acc);}
+.gd{max-width:400px;margin:24px auto 0;padding:14px 16px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);font-size:13.5px;line-height:1.8;font-weight:600;text-align:left;color:var(--sub);text-wrap:pretty;}
+.qw{padding:24px 20px 28px;}
+.qt{padding-bottom:14px;border-bottom:var(--bw) solid var(--line);}
+.qi{display:flex;justify-content:space-between;gap:12px;margin-bottom:9px;font-size:12px;font-weight:800;}
+.qi .sec{color:var(--acc);}
+.trk{width:100%;height:14px;padding:2px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.fil{width:0;height:100%;background:var(--acc);border-radius:var(--r);transition:width .2s ease;}
+.pdots{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.pdot{height:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--chip);opacity:.35;}
+.pdot.dn{opacity:1;background:var(--acc);}
+.pdot.now{opacity:1;background:var(--acc);animation:blink .7s infinite alternate;}
+@keyframes blink{from{opacity:.4;}to{opacity:1;}}
+.psq{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.psq i{display:block;aspect-ratio:1/1;min-height:12px;border:1px solid var(--line);border-radius:2px;background:var(--chip);}
+.psq i.dn{background:var(--acc);}
+.qn{margin-top:22px;color:var(--acc);font-size:13px;font-weight:900;}
+.qx{min-height:76px;margin:14px 0 20px;text-align:center;font-size:21px;line-height:1.6;letter-spacing:-.2px;font-weight:700;display:flex;align-items:center;justify-content:center;text-wrap:balance;}
+.ops{display:grid;gap:11px;}
+.op{position:relative;width:100%;min-height:70px;padding:15px 16px 15px 52px;cursor:pointer;text-align:left;color:var(--ink);background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15.5px;line-height:1.6;font-weight:500;text-wrap:pretty;}
+.op::before{content:attr(data-n);position:absolute;left:14px;top:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border:var(--bw) solid var(--line);border-radius:var(--r);transform:translateY(-50%);font-size:13px;font-weight:900;background:var(--paper);}
+.op.pk{background:var(--soft);border-color:var(--acc);color:var(--softFg);}
+.op.pk::before{color:var(--ink);}
+.op:disabled{cursor:default;}
+.qnote{margin:20px 0 0;color:var(--sub);text-align:center;font-size:12px;font-weight:700;}
+.qback{display:block;margin:14px auto 0;padding:8px 4px;background:none;border:0;color:var(--sub);font-family:var(--fb);font-size:12.5px;font-weight:700;cursor:pointer;text-align:center;}
+.lw{min-height:420px;padding:40px 22px;display:flex;align-items:center;justify-content:center;text-align:center;}
+.lw h2{margin:0 0 10px;font-size:24px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.lw p{margin:0;color:var(--sub);font-size:14px;}
+.dts{display:flex;justify-content:center;gap:9px;margin:28px 0 24px;}
+.dts span{width:12px;height:12px;background:var(--acc);border:var(--bw) solid var(--line);border-radius:var(--r);animation:bump 1.1s ease-in-out infinite;}
+.dts span:nth-child(2){animation-delay:.15s;} .dts span:nth-child(3){animation-delay:.3s;}
+@keyframes bump{0%,100%{transform:translateY(0);opacity:.4;}50%{transform:translateY(-7px);opacity:1;}}
+.lbar{width:100%;height:14px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.lbar span{display:block;width:32%;height:100%;background:var(--acc);animation:sld 1.05s ease-in-out infinite;}
+@keyframes sld{from{transform:translateX(-110%);}to{transform:translateX(340%);}}
+.cap{overflow:hidden;max-width:100%;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rh{padding:13px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.rh h2{margin:0;color:var(--accFg);font-size:15.5px;font-weight:700;line-height:1.45;letter-spacing:-.1px;text-wrap:balance;}
+.rb{padding:14px;}
+.rn{padding:24px 16px 20px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rn .em{font-size:64px;line-height:1;}
+.rn h3{margin:10px 0 6px;font-size:29px;font-weight:700;line-height:1.3;letter-spacing:-.3px;color:var(--acc);text-wrap:balance;}
+.rn .tg2{font-size:14.5px;font-weight:600;color:var(--ink);opacity:.85;}
+.rn .cd{display:inline-block;margin-top:12px;padding:4px 12px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:11px;font-weight:800;letter-spacing:1.2px;}
+.rs{margin-top:12px;padding:15px 16px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15px;line-height:1.8;font-weight:400;text-wrap:pretty;}
+.blk{margin-top:14px;}
+.blt{margin:0;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-bottom:0;border-radius:var(--r) var(--r) 0 0;font-size:13px;font-weight:900;text-align:center;text-wrap:balance;}
+.qb{padding:18px 16px;text-align:center;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);font-size:17px;font-weight:600;line-height:1.65;text-wrap:balance;}
+.qbb{position:relative;margin:6px 16px 24px;padding:18px 16px;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:16px;font-weight:600;line-height:1.65;text-align:center;text-wrap:balance;}
+.qbb::before{content:"";position:absolute;left:32px;bottom:-11px;width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-top:13px solid var(--line);}
+.qbb::after{content:"";position:absolute;left:34.5px;bottom:-6.5px;width:0;height:0;border-left:8.5px solid transparent;border-right:8.5px solid transparent;border-top:10px solid var(--soft);}
+.trs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:var(--bw) solid var(--line);border-left:var(--bw) solid var(--line);}
+.tc{min-height:82px;padding:9px 6px;display:flex;align-items:center;justify-content:center;background:var(--chip);color:var(--ink);border-right:var(--bw) solid var(--line);border-bottom:var(--bw) solid var(--line);text-align:center;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;text-wrap:balance;}
+.tc:nth-child(even){background:var(--soft);color:var(--softFg);}
+.trss{display:flex;flex-wrap:wrap;gap:10px 8px;padding:16px 14px;background:var(--chip);border-top:var(--bw) solid var(--line);}
+.tst{padding:8px 13px;background:var(--paper);border:var(--bw) solid var(--line);border-radius:999px;font-size:12.5px;font-weight:700;box-shadow:2px 2px 0 var(--line);word-break:keep-all;text-wrap:balance;color:var(--ink);}
+.tst:nth-child(3n+1){transform:rotate(-2.5deg);}
+.tst:nth-child(3n+2){transform:rotate(1.5deg);}
+.tst:nth-child(3n){transform:rotate(-0.5deg);}
+.tst:nth-child(even){background:var(--soft);color:var(--softFg);}
+.duo{display:grid;gap:10px;}
+.dsec{border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.dsh{padding:9px;text-align:center;font-size:14px;font-weight:900;color:var(--deepFg);border-bottom:var(--bw) solid var(--line);}
+.dsec.g .dsh{background:var(--acc);color:var(--accFg);}
+.dsec.b .dsh{background:var(--deep);}
+.dls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px 10px;padding:12px 11px;background:var(--chip);}
+.dit span{text-wrap:pretty;}
+.dit{display:flex;align-items:flex-start;min-width:0;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;}
+.dit b{width:7px;height:7px;margin:5px 6px 0 0;flex:0 0 auto;background:var(--acc);border-radius:1px;}
+.dit.chk b{width:17px;height:17px;margin:1px 8px 0 0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;background:var(--acc);color:var(--accFg);}
+.dsec.b .dit.chk b{background:var(--sub);color:var(--paper);}
+.sts{padding:14px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);}
+.srow{display:grid;grid-template-columns:76px 1fr 42px;align-items:center;gap:9px;}
+.srow+.srow{margin-top:11px;}
+.slab{font-size:12.5px;font-weight:900;}
+.sqs{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;}
+.sq{aspect-ratio:1/1;min-height:11px;border-radius:2px;background:var(--chips);box-shadow:inset 0 0 0 1px rgba(176,168,152,0.35);}
+.sq.f{background:var(--acc);}
+.spc{text-align:right;font-size:12.5px;font-weight:900;}
+.stsr{padding:16px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:14px 8px;}
+.rgauge{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.rgauge svg{width:64px;height:64px;overflow:visible;}
+.rgauge .rtrack{fill:none;stroke:var(--chips);stroke-width:6;}
+.rgauge .rfill{fill:none;stroke:var(--acc);stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset .5s ease;}
+.rgauge .rlab{font-size:11px;font-weight:800;color:var(--sub);text-align:center;line-height:1.35;}
+.cds{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px;}
+.cd2{padding:12px 11px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.cd2 b{display:inline-block;margin-bottom:7px;padding:3px 9px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:10.5px;font-weight:800;}
+.cd2 p{margin:0;font-size:13.5px;line-height:1.65;font-weight:500;text-wrap:pretty;}
+.cdt{background:var(--paper);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);padding:2px 16px;}
+.cdti{padding:12px 0;border-bottom:var(--bw) dashed var(--line);}
+.cdti:last-child{border-bottom:0;}
+.cdti b{display:block;font-size:11px;font-weight:900;color:var(--acc);margin-bottom:3px;letter-spacing:.2px;}
+.cdti span{display:block;font-size:13.5px;font-weight:600;line-height:1.55;text-wrap:pretty;}
+.map{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.maph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.mapg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--chip);}
+.mapc{position:relative;min-width:0;padding:9px 3px 8px;text-align:center;border-right:1px solid rgba(176,168,152,0.18);border-bottom:1px solid rgba(176,168,152,0.18);}
+.mapc:nth-child(4n){border-right:0;}
+.mapc:nth-last-child(-n+4){border-bottom:0;}
+.mapc .e{display:block;font-size:20px;line-height:1;}
+.mapc .n{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;margin-top:4px;font-size:9px;font-weight:600;line-height:1.35;overflow:hidden;word-break:keep-all;text-wrap:balance;padding:0 2px;min-height:24px;}
+.mapc .p{display:block;margin-top:2px;font-size:9.5px;font-weight:900;opacity:.75;}
+.mapc.me{outline:var(--bw) solid var(--acc);outline-offset:-2px;}
+.mapc .badge{display:inline-block;margin-top:2px;padding:1px 7px;border-radius:999px;background:var(--acc);color:var(--accFg);font-size:9px;font-weight:800;}
+.mapf{display:flex;align-items:center;gap:7px;padding:9px 12px;background:var(--chip);border-top:var(--bw) solid var(--line);font-size:9.5px;font-weight:800;color:var(--sub);}
+.mapbar{flex:1;height:7px;border-radius:999px;}
+.cmp{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.cmph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.cmpg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--chip);}
+.cmpc{min-width:0;padding:12px 8px 13px;text-align:center;}
+.cmpc+.cmpc{border-left:var(--bw) solid var(--line);}
+.cmpc .lb{display:inline-block;margin-bottom:10px;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;background:var(--acc);color:var(--accFg);}
+.cmpc.bad .lb{background:#AEB4BF;color:#fff;}
+.cmpi{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:7px;}
+.cmpi .e{font-size:24px;line-height:1;}
+.cmpi .n{min-width:0;font-size:13px;font-weight:600;line-height:1.45;text-align:left;word-break:keep-all;text-wrap:balance;}
+.cmpi .p{font-size:11.5px;font-weight:900;color:var(--acc);display:block;}
+.cmpc.bad .cmpi .p{color:var(--sub);}
+.cmpnote{margin-top:11px;padding-top:9px;border-top:1px dashed rgba(176,168,152,0.3);font-size:12px;line-height:1.65;font-weight:500;color:var(--sub);}
+.rf{margin-top:16px;padding-top:12px;border-top:var(--bw) dashed var(--line);color:var(--sub);text-align:center;font-size:11px;font-weight:700;letter-spacing:.6px;}
+.ad{display:none;}
+.sheet{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.sheeth{padding:16px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.sheeth h2{margin:0;color:var(--accFg);font-size:18px;font-weight:800;letter-spacing:-.4px;}
+.sheeth p{margin:5px 0 0;color:var(--accFg);opacity:.85;font-size:11.5px;font-weight:700;}
+.reveal{margin:14px;padding:20px 16px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.reveal .em{font-size:46px;line-height:1;}
+.reveal .nm{margin-top:8px;font-size:19px;font-weight:700;line-height:1.45;text-wrap:balance;}
+.reveal .eq{margin:9px 0 7px;font-size:13px;font-weight:800;color:var(--sub);}
+.reveal .code{display:inline-block;padding:8px 22px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:26px;font-weight:800;letter-spacing:3px;}
+.sheetad{display:none;}
+.sheetsec{margin:0 14px 10px;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:12.5px;font-weight:900;text-align:center;}
+.rows{margin:0 14px 14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.row{display:grid;grid-template-columns:26px 30px minmax(0,1fr) auto;align-items:center;gap:9px;padding:10px 11px;background:var(--chip);border-bottom:1px solid rgba(176,168,152,0.18);}
+.row:last-child{border-bottom:0;}
+.row.me{background:var(--soft);color:var(--softFg);}
+.row .no{font-size:10px;font-weight:800;color:var(--sub);opacity:.7;}
+.row .em{font-size:22px;line-height:1;text-align:center;}
+.row .nm{font-size:14px;font-weight:600;line-height:1.45;min-width:0;word-break:keep-all;text-wrap:balance;}
+.row .tg{display:block;font-size:10.5px;font-weight:700;color:var(--sub);opacity:.85;margin-top:2px;}
+.row .cd{padding:4px 10px;border-radius:999px;background:var(--deep);font-size:11px;font-weight:800;letter-spacing:.8px;white-space:nowrap;}
+.row.me .cd{background:var(--acc);color:var(--accFg);}
+.mo{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(20,20,20,.82);overflow-y:auto;}
+.mo.on{display:flex;}
+.mb2{width:100%;max-width:360px;max-height:92vh;overflow:auto;padding:20px 16px;text-align:center;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);margin:auto;}
+.mb2 h3{margin:0 0 8px;font-size:18px;font-weight:900;}
+.mb2 p{margin:0 0 16px;color:var(--sub);font-size:13px;line-height:1.55;font-weight:600;}
+.mb2 img{display:block;width:100%;border:var(--bw) solid var(--line);border-radius:var(--r);}
+.mbtns{display:grid;gap:8px;margin-top:14px;}
+.mbtn{display:block;width:100%;padding:14px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-family:var(--fb);font-size:14.5px;font-weight:600;text-align:center;text-decoration:none;cursor:pointer;box-sizing:border-box;}
+.mbtn.pri{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.mtip{margin:12px 0 0!important;font-size:12px;line-height:1.6;color:var(--sub);}
+.mb2 .cl{width:100%;min-height:46px;margin-top:14px;cursor:pointer;color:#fff;background:var(--line);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:14px;font-weight:800;}
+.tst{position:fixed;left:50%;bottom:26px;z-index:200;max-width:calc(100% - 32px);padding:12px 18px;color:#fff;background:rgba(28,28,28,.95);border:var(--bw) solid #fff;border-radius:var(--r);font-size:13.5px;font-weight:700;transform:translate(-50%,16px);opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+.tst.show{opacity:1;transform:translate(-50%,0);}
+@media(hover:hover) and (pointer:fine){
+.btn:hover{background:var(--soft);color:var(--softFg);}
+.btn.fill:hover{opacity:.9;background:var(--acc);}
+.op:hover{background:var(--soft);color:var(--softFg);}
+.op:hover::before{color:var(--ink);}
+.qback:hover{color:var(--ink);}
+}
+@media(max-width:520px){.app{padding:18px 11px 38px;}.intro{padding:28px 14px 20px;}.intro h1{font-size:22px;}
+.ci .n{font-size:9.5px;} .ci .e{font-size:19px;}
+.qw{padding:20px 15px 24px;}.qx{font-size:19px;min-height:66px;}
+.op{min-height:64px;padding:13px 13px 13px 48px;font-size:14px;}
+.tc{min-height:74px;font-size:11.5px;}.rn h3{font-size:26px;}.rh h2{font-size:14px;}
+.dls{gap:6px 7px;padding:10px 9px;}.dit{font-size:11.5px;}.cds{gap:7px;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <section class="sc on" id="s1"></section>
+  <section class="sc" id="s2"></section>
+  <section class="sc" id="s3"></section>
+  <section class="sc" id="s4"></section>
+  <section class="sc" id="s5"></section>
+  <section class="sc" id="s6"></section>
+  <div class="ad">광고 영역 (애드센스 코드 삽입 위치)</div>
+</div>
+<div class="mo" id="mo"><div class="mb2"><h3>이미지 꾹 눌러 저장하기</h3><p>아래 이미지를 길게 누르거나 우클릭해서<br>저장해 주세요.</p><div id="mw"><p style="padding:40px 0;">이미지를 만들고 있어요...</p></div><button class="cl" onclick="closeMo()">닫기</button></div></div>
+<div class="tst" id="tst"></div>
+<script>
+"use strict";
+var D={"useName":true,"meta":{"title":"나의 스킨케어 루틴 MBTI는?","emoji":"🧴","intro":"화장품 고르는 방식부터 루틴을 지키는 습관까지, 스킨케어 취향에도 성격이 묻어나요. 12문항이면 당신의 스킨케어 유형이 드러납니다.","loadingText":"당신의 피부 결과 루틴을 분석하는 중...🧴","sheetTitle":"16가지 스킨케어 유형 전체 공개","sheetCta":"내 스킨케어 유형 정체 확인하기","slug":"skincare-mbti-test","setName":"스킨케어 루틴 연구소"},"blocks":["cards","duo"],"blockLabels":{"cards":"🧴 이 유형의 스킨케어 카드","duo":{"good":"🧴 이 유형의 강점","bad":"🧴 아쉬운 점"}},"compatLabels":{"title":"스킨케어 궁합","good":"찰떡 루틴 메이트","bad":"살짝 다른 템포","mapTitle":"16가지 스킨케어 유형 궁합"},"compat":{"ISTJ":"ISFJ98 INFJ82 INTJ95 ISTP95 ISFP87 INFP72 INTP88 ESTP83 ESFP77 ENFP63 ENTP79 ESTJ98 ESFJ88 ENFJ76 ENTJ89","ISFJ":"ISTJ95 INFJ91 INTJ85 ISTP86 ISFP98 INFP89 INTP72 ESTP77 ESFP84 ENFP74 ENTP69 ESTJ87 ESFJ90 ENFJ86 ENTJ73","INFJ":"ISTJ81 ISFJ97 INTJ97 ISTP76 ISFP81 INFP91 INTP81 ESTP65 ESFP75 ENFP86 ENTP76 ESTJ74 ESFJ83 ENFJ98 ENTJ83","INTJ":"ISTJ96 ISFJ86 INFJ97 ISTP89 ISFP80 INFP82 INTP98 ESTP73 ESFP63 ENFP80 ENTP87 ESTJ84 ESFJ77 ENFJ88 ENTJ94","ISTP":"ISTJ93 ISFJ88 INFJ76 INTJ82 ISFP90 INFP88 INTP98 ESTP91 ESFP81 ENFP80 ENTP81 ESTJ84 ESFJ72 ENFJ64 ENTJ78","ISFP":"ISTJ86 ISFJ93 INFJ86 INTJ79 ISTP97 INFP98 INTP89 ESTP85 ESFP97 ENFP88 ENTP80 ESTJ72 ESFJ84 ENFJ80 ENTJ65","INFP":"ISTJ80 ISFJ83 INFJ97 INTJ84 ISTP86 ISFP92 INTP93 ESTP76 ESFP83 ENFP92 ENTP84 ESTJ63 ESFJ77 ENFJ88 ENTJ73","INTP":"ISTJ87 ISFJ75 INFJ84 INTJ90 ISTP90 ISFP83 INFP97 ESTP81 ESFP80 ENFP85 ENTP93 ESTJ76 ESFJ65 ENFJ75 ENTJ85","ESTP":"ISTJ83 ISFJ75 INFJ71 INTJ79 ISTP90 ISFP87 INFP75 INTP83 ESFP94 ENFP82 ENTP91 ESTJ93 ESFJ84 ENFJ75 ENTJ87","ESFP":"ISTJ80 ISFJ85 INFJ76 INTJ69 ISTP87 ISFP92 INFP81 INTP79 ESTP92 ENFP95 ENTP81 ESTJ89 ESFJ91 ENFJ85 ENTJ80","ENFP":"ISTJ66 ISFJ78 INFJ89 INTJ80 ISTP80 ISFP82 INFP93 INTP84 ESTP89 ESFP92 ENTP90 ESTJ75 ESFJ81 ENFJ95 ENTJ86","ENTP":"ISTJ76 ISFJ66 INFJ78 INTJ84 ISTP85 ISFP78 INFP83 INTP93 ESTP97 ESFP88 ENFP97 ESTJ82 ESFJ80 ENFJ82 ENTJ97","ESTJ":"ISTJ95 ISFJ88 INFJ76 INTJ87 ISTP83 ISFP75 INFP66 INTP75 ESTP90 ESFP89 ENFP74 ENTP89 ESFJ97 ENFJ87 ENTJ98","ESFJ":"ISTJ88 ISFJ94 INFJ81 INTJ79 ISTP75 ISFP89 INFP73 INTP68 ESTP83 ESFP91 ENFP87 ENTP73 ESTJ97 ENFJ90 ENTJ87","ENFJ":"ISTJ80 ISFJ89 INFJ97 INTJ81 ISTP65 ISFP74 INFP88 INTP80 ESTP78 ESFP84 ENFP91 ENTP82 ESTJ87 ESFJ90 ENTJ90","ENTJ":"ISTJ82 ISFJ74 INFJ83 INTJ95 ISTP77 ISFP69 INFP80 INTP88 ESTP88 ESFP72 ENFP87 ENTP91 ESTJ94 ESFJ81 ENFJ96"},"compatLines":[{"min":95,"text":"같은 파우치를 나눠 써도 될 사이예요. 스킨케어 취향이 놀랍도록 잘 맞아떨어집니다."},{"min":88,"text":"제품 얘기만 나오면 대화가 끊이지 않는 사이예요. 취향의 결이 비슷해서 편하게 어울립니다."},{"min":82,"text":"서로 다른 장점을 채워주는 조합이에요. 한쪽이 놓친 걸 다른 한쪽이 알아서 챙겨줍니다."},{"min":76,"text":"루틴은 달라도 지향점은 비슷해요. 오히려 그 차이가 서로에게 새로운 팁이 되어줍니다."},{"min":0,"text":"전혀 다른 스타일의 루틴을 쓰는 사이지만, 그래서 서로에게 없는 관점을 배울 수 있는 조합이에요."}],"cardStyle":"grid","duoStyle":"check","cast":[{"type":"ISTJ","name":"꼼꼼 성분분석러","emoji":"🔬","tagline":"전성분표부터 정독하는 사람"},{"type":"ISFJ","name":"다정 기초템 지킴이","emoji":"🫙","tagline":"쓰던 것만 꾸준히 쓰는 사람"},{"type":"INFJ","name":"직감형 스킨테라피스트","emoji":"🌙","tagline":"피부 신호를 먼저 알아채는 사람"},{"type":"INTJ","name":"전략적 피부설계자","emoji":"🧪","tagline":"장기 로드맵으로 관리하는 사람"},{"type":"ISTP","name":"실전파 원포인트 케어러","emoji":"🩹","tagline":"필요한 것만 딱 쓰는 사람"},{"type":"ISFP","name":"감성 텍스처 마니아","emoji":"🎨","tagline":"향과 질감에 몰입하는 사람"},{"type":"INFP","name":"몰입형 클린뷰티러","emoji":"🌿","tagline":"가치관 따라 제품을 고르는 사람"},{"type":"INTP","name":"분석형 성분 덕후","emoji":"🧬","tagline":"원리를 파고드는 성분 연구가"},{"type":"ESTP","name":"스피드 원스텝러","emoji":"⚡","tagline":"바르는 것도 빠르게 끝내는 사람"},{"type":"ESFP","name":"트렌드 팝업 스토어러","emoji":"🎪","tagline":"핫한 신상은 일단 발라보는 사람"},{"type":"ENFP","name":"얼리어답터 뷰티 헌터","emoji":"🧭","tagline":"새 제품 소식에 심장이 뛰는 사람"},{"type":"ENTP","name":"실험정신 스킨해커","emoji":"🔥","tagline":"성분 조합을 직접 실험하는 사람"},{"type":"ESTJ","name":"체계적 루틴 매니저","emoji":"📋","tagline":"아침저녁 루틴을 칼같이 지키는 사람"},{"type":"ESFJ","name":"인싸 스킨케어 전도사","emoji":"💌","tagline":"좋은 제품은 꼭 공유하는 사람"},{"type":"ENFJ","name":"코치형 피부 멘토","emoji":"🌸","tagline":"친구 피부 고민까지 챙기는 사람"},{"type":"ENTJ","name":"결과지향 피부CEO","emoji":"👑","tagline":"숫자와 결과로 루틴을 관리하는 사람"}],"questions":[{"section":"매장 탐방기","text":"드디어 쉬는 날, 근처에 새로 생긴 화장품 편집숍에 들어갔어요. 당신은?","options":[{"text":"직원분께 이것저것 물어보며 신나게 둘러본다","value":"E"},{"text":"혼자 조용히 진열대를 천천히 살펴본다","value":"I"}]},{"section":"정보 수집법","text":"새로운 스킨케어 제품을 알아볼 때, 당신은 주로?","options":[{"text":"성분표와 실제 사용 후기, 데이터를 꼼꼼히 비교한다","value":"S"},{"text":"브랜드 스토리나 전체적인 느낌, 컨셉에 먼저 끌린다","value":"N"}]},{"section":"트러블 대처법","text":"갑자기 피부에 트러블이 났어요. 가장 먼저 하는 행동은?","options":[{"text":"친구나 커뮤니티에 바로 물어보고 의견을 구한다","value":"E"},{"text":"일단 혼자 원인을 찬찬히 되짚어본다","value":"I"}]},{"section":"루틴 설계","text":"스킨케어 루틴을 새로 짤 때, 당신의 방식은?","options":[{"text":"지금 내 피부 상태에 맞는 제품부터 하나씩 채워간다","value":"S"},{"text":"이상적인 피부가 된 모습을 먼저 그리고 거기서 역산한다","value":"N"}]},{"section":"추천 순간","text":"친구가 '나한테 맞는 화장품 좀 추천해줘'라고 물어봐요.","options":[{"text":"그 친구 피부 타입과 성분을 따져서 논리적으로 추천한다","value":"T"},{"text":"그 친구가 요즘 어떤 기분인지부터 물어보고 마음에 맞춰 추천한다","value":"F"}]},{"section":"아침 루틴","text":"바쁜 아침, 스킨케어 시간이 5분밖에 안 남았어요.","options":[{"text":"정해둔 순서대로 꼭 필요한 단계만 빠르게 해낸다","value":"J"},{"text":"그날 기분에 따라 손 가는 대로 대충 바른다","value":"P"}]},{"section":"커뮤니티 반응","text":"스킨케어 커뮤니티에서 내가 쓰는 제품 얘기가 나왔어요.","options":[{"text":"반갑게 댓글 달며 적극적으로 대화에 낀다","value":"E"},{"text":"눈으로만 조용히 읽고 넘어간다","value":"I"}]},{"section":"후기 읽는 법","text":"제품 후기를 읽을 때 가장 눈에 들어오는 부분은?","options":[{"text":"정확한 사용 기간, 변화 사진 같은 구체적인 기록","value":"S"},{"text":"이 제품이 나에게 어떤 느낌을 줄지 상상하게 만드는 표현","value":"N"}]},{"section":"리뷰 남기는 법","text":"직접 써본 제품에 리뷰를 남긴다면?","options":[{"text":"성분과 효과를 항목별로 객관적으로 정리해서 쓴다","value":"T"},{"text":"쓰면서 느꼈던 감정과 만족감을 진솔하게 담아서 쓴다","value":"F"}]},{"section":"여행 준비","text":"2박 3일 여행을 가요. 스킨케어 짐을 쌀 때 당신은?","options":[{"text":"평소 쓰는 제품을 정량만큼 미리 소분해 챙긴다","value":"J"},{"text":"일단 손에 잡히는 대로 넣고 가서 필요한 만큼 쓴다","value":"P"}]},{"section":"피부과 상담","text":"피부과에서 원장님이 예상과 다른 진단을 내렸어요.","options":[{"text":"왜 그런 결론이 나왔는지 근거를 차분히 따져 묻는다","value":"T"},{"text":"일단 그 말에 마음이 좀 복잡해지고 감정이 앞선다","value":"F"}]},{"section":"화장대 정리","text":"화장대나 파우치 속 화장품들, 당신의 상태는?","options":[{"text":"라벨 붙이고 유통기한까지 관리하며 각 잡혀 있다","value":"J"},{"text":"쓰다 보니 자연스럽게 여기저기 널려 있다","value":"P"}]}],"results":[{"type":"ISTJ","name":"꼼꼼 성분분석러","emoji":"🔬","tagline":"전성분표부터 정독하는 사람","summary":"꼼꼼 성분분석러는 화장품 하나를 사기 전에 전성분표부터 꼼꼼히 확인하는 사람입니다. 유행보다 근거를, 후기보다 데이터를 믿는 당신은 한 번 정착한 루틴을 쉽게 바꾸지 않아요. 그 꾸준함 덕분에 당신의 피부는 이미 안정적인 컨디션을 유지하고 있을 거예요.","color":"#4A6FA5","cards":[{"label":"제품 고르는 기준","value":"전성분표와 성분 조합을 꼼꼼히 대조"},{"label":"루틴 유지력","value":"한 번 정착한 루틴은 몇 년째 그대로"},{"label":"신제품 반응","value":"충분히 검증된 후에야 조심스럽게 시도"},{"label":"피부 기록","value":"트러블 원인까지 노트에 기록해둠"}],"duo":{"good":["성분 하나하나 이유를 알고 쓰는 꼼꼼함","트러블 원인을 끝까지 추적하는 분석력","한번 맞으면 끝까지 지키는 우직한 꾸준함"],"bad":["새로운 제품 시도까지 시간이 꽤 오래 걸림","이미 정한 루틴을 바꾸는 데 거부감이 큰 편"]}},{"type":"ISFJ","name":"다정 기초템 지킴이","emoji":"🫙","tagline":"쓰던 것만 꾸준히 쓰는 사람","summary":"다정 기초템 지킴이는 한 번 손에 익은 제품을 끝까지 함께하는 사람입니다. 화려한 신상보다 내 피부가 이미 좋아한다고 검증된 것들을 더 소중히 여겨요. 곁에 있는 사람의 피부 고민까지 살뜰히 챙기는 다정함이 이 유형의 진짜 매력입니다.","color":"#6DBF8E","cards":[{"label":"제품 선택","value":"기존에 잘 맞았던 기초템을 재구매"},{"label":"공유 습관","value":"좋았던 제품은 주변에 꼭 알려줌"},{"label":"피부 관찰력","value":"작은 컨디션 변화도 먼저 알아챔"},{"label":"루틴 태도","value":"무리하지 않는 순한 단계 유지"}],"duo":{"good":["한번 맞는 제품은 끝까지 함께하는 신뢰","친구 피부 고민까지 세심하게 챙기는 다정함","순하고 안정적인 루틴을 꾸준히 지키는 힘"],"bad":["새로운 제품 도전에는 살짝 소극적인 편","가끔은 내 피부보다 남 챙기기를 우선함"]}},{"type":"INFJ","name":"직감형 스킨테라피스트","emoji":"🌙","tagline":"피부 신호를 먼저 알아채는 사람","summary":"직감형 스킨테라피스트는 거울을 보는 순간 오늘 피부 컨디션을 직감으로 알아채는 사람입니다. 남들이 놓치는 미세한 변화까지 감지하고, 그 신호에 맞춰 조용히 루틴을 조정해요. 겉으로 드러내지 않아도 이미 나만의 피부 철학이 확고하게 자리 잡혀 있습니다.","color":"#9B7DC8","cards":[{"label":"피부 감지력","value":"작은 컨디션 변화도 즉시 알아챔"},{"label":"루틴 조정","value":"그날 신호에 맞춰 유연하게 바꿈"},{"label":"제품 취향","value":"의미와 가치가 담긴 브랜드 선호"},{"label":"정보 습득","value":"혼자 깊이 파고들어 이해함"}],"duo":{"good":["피부 신호를 남들보다 먼저 알아채는 직감","나만의 확고한 케어 철학을 지키는 힘","조용하지만 꾸준한 실천력"],"bad":["고민이 많아지면 결정을 오래 미루는 편","혼자 끙끙 앓다가 뒤늦게 도움을 청함"]}},{"type":"INTJ","name":"전략적 피부설계자","emoji":"🧪","tagline":"장기 로드맵으로 관리하는 사람","summary":"전략적 피부설계자는 오늘의 한 방울이 아니라 3년 뒤 피부를 먼저 그리는 사람입니다. 감이 아니라 근거로, 유행이 아니라 장기 계획으로 루틴을 설계해요. 목표를 세우면 끝까지 밀고 나가는 그 뚝심이 결국 남다른 피부 결과로 돌아옵니다.","color":"#35507A","cards":[{"label":"루틴 설계","value":"장기 목표를 세우고 역산해서 계획"},{"label":"정보 분석","value":"성분 논문과 데이터를 직접 찾아봄"},{"label":"효율 추구","value":"불필요한 단계는 과감히 생략"},{"label":"목표 관리","value":"정기적으로 피부 변화를 체크함"}],"duo":{"good":["장기적인 그림을 보고 흔들림 없이 실행함","비효율적인 단계는 과감히 걷어내는 판단력","목표한 피부 상태에 도달할 때까지 지속하는 뚝심"],"bad":["과정보다 결과에 집중하다 계획이 빡빡해짐","예상과 다른 변수엔 스트레스를 좀 받는 편"]}},{"type":"ISTP","name":"실전파 원포인트 케어러","emoji":"🩹","tagline":"필요한 것만 딱 쓰는 사람","summary":"실전파 원포인트 케어러는 필요한 만큼만, 딱 필요한 곳에만 쓰는 실용주의자입니다. 복잡한 다단계 루틴보다 문제를 정확히 짚어내는 최소한의 케어를 선호해요. 손이 많이 가지 않아도 결과로 증명하는, 조용하지만 확실한 스타일입니다.","color":"#2E86AB","cards":[{"label":"케어 방식","value":"트러블 부위에만 정확히 원포인트 케어"},{"label":"루틴 길이","value":"꼭 필요한 단계만 최소한으로"},{"label":"문제 해결","value":"원인을 빠르게 파악해 바로 대응"},{"label":"제품 선호","value":"기능 검증된 실용적인 제품"}],"duo":{"good":["불필요한 단계 없이 핵심만 짚는 효율성","돌발 트러블에도 침착하게 대응하는 문제 해결력","군더더기 없는 깔끔한 자기 관리"],"bad":["루틴을 꾸준히 기록하고 챙기는 데는 약함","가끔 필요한 케어까지 귀찮아서 건너뜀"]}},{"type":"ISFP","name":"감성 텍스처 마니아","emoji":"🎨","tagline":"향과 질감에 몰입하는 사람","summary":"감성 텍스처 마니아는 향과 발림성, 그 순간의 기분까지 챙기는 섬세한 사람입니다. 효능표보다 먼저 마음을 사로잡는 건 은은한 향과 부드러운 질감이에요. 스킨케어 시간을 나를 위한 작은 힐링으로 만들 줄 아는, 감각이 뛰어난 유형입니다.","color":"#E8A0BF","cards":[{"label":"선택 기준","value":"향과 텍스처가 마음에 드는 제품 우선"},{"label":"루틴 분위기","value":"스킨케어 시간을 힐링처럼 즐김"},{"label":"감각 취향","value":"색감과 패키지 디자인에도 진심"},{"label":"기분 반영","value":"그날 기분 따라 제품을 바꿔 씀"}],"duo":{"good":["케어 시간을 나만의 힐링으로 바꾸는 감각","향과 분위기로 기분까지 챙기는 섬세함","자기만의 확고한 취향을 지키는 자연스러움"],"bad":["기분에 따라 루틴이 자주 바뀌는 편","성분 분석보다 감각을 우선해 놓치는 정보가 있음"]}},{"type":"INFP","name":"몰입형 클린뷰티러","emoji":"🌿","tagline":"가치관 따라 제품을 고르는 사람","summary":"몰입형 클린뷰티러는 성분표 너머의 가치관까지 들여다보는 사람입니다. 브랜드의 철학과 나의 신념이 맞아야 비로소 손이 가는, 진심이 담긴 소비를 하는 유형이에요. 한번 믿음이 생긴 브랜드에는 깊고 오래가는 애정을 쏟습니다.","color":"#5FAE7D","cards":[{"label":"선택 기준","value":"브랜드 철학과 가치관이 맞는지 먼저 확인"},{"label":"몰입도","value":"좋아하는 성분은 끝까지 깊게 파고듦"},{"label":"소비 태도","value":"의미 있는 소비를 지향함"},{"label":"애정 방식","value":"믿는 브랜드는 오래도록 지지함"}],"duo":{"good":["가치관에 맞는 진심 어린 소비를 실천함","좋아하는 것에는 깊이 몰입하는 집중력","오래가는 애정으로 브랜드를 지지함"],"bad":["완벽한 선택을 고민하다 결정이 늦어짐","가끔 감정에 휩쓸려 루틴이 흔들림"]}},{"type":"INTP","name":"분석형 성분 덕후","emoji":"🧬","tagline":"원리를 파고드는 성분 연구가","summary":"분석형 성분 덕후는 이 성분이 왜 효과가 있는지 원리부터 파고드는 탐구자입니다. 유행보다 근거, 후기보다 메커니즘을 믿고 끝까지 검증한 뒤에야 지갑을 엽니다. 궁금한 게 생기면 논문까지 찾아보는 그 집요함이 결국 나만의 최적 루틴을 완성시켜요.","color":"#4E9A8B","cards":[{"label":"탐구 방식","value":"성분의 작용 원리까지 파고들어 이해"},{"label":"정보 수집","value":"논문과 자료를 직접 찾아 비교함"},{"label":"루틴 최적화","value":"끊임없이 더 나은 조합을 실험함"},{"label":"의사결정","value":"충분히 검증된 후에야 구매 결정"}],"duo":{"good":["궁금한 건 끝까지 파고드는 탐구력","데이터로 최적의 루틴을 찾아내는 분석력","유행에 휩쓸리지 않는 독립적인 판단"],"bad":["분석에 시간을 쓰다 정작 실행이 늦어짐","루틴을 꾸준히 기록하는 건 살짝 귀찮아함"]}},{"type":"ESTP","name":"스피드 원스텝러","emoji":"⚡","tagline":"바르는 것도 빠르게 끝내는 사람","summary":"스피드 원스텝러는 고민할 시간에 일단 발라보는 행동파입니다. 복잡한 다단계보다 빠르고 확실한 결과를 주는 제품을 선호하고, 효과가 없으면 미련 없이 다음으로 넘어가요. 그 실전 감각 덕분에 의외로 나에게 딱 맞는 제품을 빨리 찾아냅니다.","color":"#FF5733","cards":[{"label":"실행 속도","value":"고민보다 일단 발라보고 판단"},{"label":"루틴 스타일","value":"빠르고 간단한 원스텝 위주"},{"label":"판단 기준","value":"효과가 바로 느껴지는지가 중요"},{"label":"변화 대응","value":"안 맞으면 바로 다음 제품으로 전환"}],"duo":{"good":["일단 시도해보는 빠른 실행력","효과 없는 건 미련 없이 정리하는 결단력","실전에서 나에게 맞는 걸 빨리 찾아내는 감각"],"bad":["꾸준한 기록이나 관리는 살짝 약한 편","급하게 바르다 순서를 건너뛸 때가 있음"]}},{"type":"ESFP","name":"트렌드 팝업 스토어러","emoji":"🎪","tagline":"핫한 신상은 일단 발라보는 사람","summary":"트렌드 팝업 스토어러는 핫한 신상 소식을 듣는 순간 이미 발라보고 있는 사람입니다. SNS에서 화제인 제품은 일단 궁금해서 참을 수가 없고, 그 경험을 사람들과 신나게 나눠요. 스킨케어마저 즐거운 이벤트로 만들어버리는 에너지가 이 유형의 매력입니다.","color":"#FF9F1C","cards":[{"label":"신상 반응","value":"화제의 신제품은 일단 발라보고 판단"},{"label":"공유 습관","value":"써본 후기를 SNS에 신나게 공유"},{"label":"루틴 분위기","value":"케어 시간도 즐거운 이벤트처럼"},{"label":"정보 채널","value":"트렌드와 후기를 발 빠르게 접함"}],"duo":{"good":["새로운 걸 즐겁게 시도하는 열린 마음","좋은 경험을 아낌없이 나누는 공유력","트렌드를 빠르게 캐치하는 감각"],"bad":["꾸준한 루틴 유지보다 새 자극을 더 좋아함","충동적으로 구매한 제품이 쌓이는 편"]}},{"type":"ENFP","name":"얼리어답터 뷰티 헌터","emoji":"🧭","tagline":"새 제품 소식에 심장이 뛰는 사람","summary":"얼리어답터 뷰티 헌터는 새로운 제품 소식만 들어도 심장이 뛰는 사람입니다. 궁금한 건 못 참고 직접 써봐야 직성이 풀리고, 발견한 좋은 제품은 주변에 신나게 소개해요. 그 호기심과 에너지가 모여 어느새 나만의 취향 지도가 완성됩니다.","color":"#2EC4B6","cards":[{"label":"탐색력","value":"새로운 제품 정보에 항상 안테나를 세움"},{"label":"시도 정신","value":"궁금하면 일단 직접 써봐야 직성이 풀림"},{"label":"공유 에너지","value":"좋은 발견은 주변에 적극적으로 알림"},{"label":"취향 다양성","value":"여러 브랜드를 넘나들며 탐색함"}],"duo":{"good":["호기심 가득한 눈으로 새로움을 발견하는 힘","좋은 걸 나누고 싶어하는 진심 어린 열정","다양한 시도 속에서 나만의 취향을 찾아냄"],"bad":["써보고 싶은 게 많아 루틴이 자주 바뀜","시작한 루틴을 끝까지 지속하기 어려워함"]}},{"type":"ENTP","name":"실험정신 스킨해커","emoji":"🔥","tagline":"성분 조합을 직접 실험하는 사람","summary":"실험정신 스킨해커는 정해진 순서를 그대로 따르기보다 나만의 조합을 만들어보는 사람입니다. 왜 이 순서여야 하는지 의문을 품고, 성분을 섞고 배합하며 최적의 답을 찾아나가요. 그 실험정신이 남들과는 다른, 나만 아는 노하우로 이어집니다.","color":"#7B2FBE","cards":[{"label":"실험 정신","value":"제품 조합을 직접 바꿔가며 실험함"},{"label":"사고 방식","value":"정해진 루틴에 의문을 품고 재구성"},{"label":"토론 취향","value":"성분 논쟁을 즐기며 근거를 따짐"},{"label":"적응력","value":"새로운 정보가 나오면 바로 반영함"}],"duo":{"good":["틀에 얽매이지 않는 창의적인 조합 감각","근거를 따지며 논리적으로 설득하는 힘","변화를 두려워하지 않는 빠른 적응력"],"bad":["실험이 잦다 보니 루틴이 자주 뒤바뀜","꾸준함보다 새로운 시도를 더 즐기는 편"]}},{"type":"ESTJ","name":"체계적 루틴 매니저","emoji":"📋","tagline":"아침저녁 루틴을 칼같이 지키는 사람","summary":"체계적 루틴 매니저는 아침저녁 스킨케어 순서를 칼같이 지키는 사람입니다. 정해둔 단계를 흐트러짐 없이 실천하고, 그 꾸준함이 곧 좋은 결과로 이어진다는 걸 몸으로 증명해왔어요. 믿고 따라가면 반드시 좋아진다는 확신이 이 유형의 가장 큰 무기입니다.","color":"#2563EB","cards":[{"label":"루틴 관리","value":"아침저녁 순서를 흐트러짐 없이 실천"},{"label":"계획성","value":"제품 소진 시기까지 미리 계산해둠"},{"label":"결과 확인","value":"정기적으로 피부 변화를 체크함"},{"label":"정보 신뢰","value":"검증된 효능 자료를 우선 신뢰함"}],"duo":{"good":["세운 루틴을 흔들림 없이 지켜내는 실행력","체계적으로 관리해 눈에 보이는 결과를 만듦","믿을 만한 정보를 빠르게 판단하는 능력"],"bad":["예상 밖 변수가 생기면 스트레스를 좀 받음","가끔은 융통성 있게 넘어가도 괜찮음"]}},{"type":"ESFJ","name":"인싸 스킨케어 전도사","emoji":"💌","tagline":"좋은 제품은 꼭 공유하는 사람","summary":"인싸 스킨케어 전도사는 좋은 제품을 발견하면 혼자 쓰기 아까운 사람입니다. 주변 사람들의 피부 고민까지 살뜰히 챙기고, 검증된 꿀템은 신나게 공유해요. 그 다정한 오지랖 덕분에 친구들 사이에서 늘 믿고 찾는 스킨케어 상담사가 됩니다.","color":"#F59E0B","cards":[{"label":"공유 습관","value":"좋은 제품은 주변에 적극적으로 소개"},{"label":"관계 케어","value":"친구 피부 고민도 함께 챙김"},{"label":"정보 신뢰","value":"주변 반응과 후기를 두루 참고함"},{"label":"루틴 꾸준함","value":"함께할 땐 더 열심히 지속함"}],"duo":{"good":["좋은 정보를 아낌없이 나누는 따뜻한 오지랖","주변 사람 피부까지 세심하게 챙기는 다정함","함께할 때 더 힘이 나는 루틴 지속력"],"bad":["내 피부보다 남 챙기기를 우선할 때가 있음","유행과 주변 반응에 흔들릴 때가 있음"]}},{"type":"ENFJ","name":"코치형 피부 멘토","emoji":"🌸","tagline":"친구 피부 고민까지 챙기는 사람","summary":"코치형 피부 멘토는 친구의 피부 고민마저 내 일처럼 챙기는 사람입니다. 상대에게 맞는 루틴을 함께 고민해주고, 좋아지는 모습을 볼 때 진심으로 뿌듯해해요. 사람을 성장시키는 마음이 스킨케어에서도 고스란히 드러나는 유형입니다.","color":"#10B981","cards":[{"label":"코칭 성향","value":"친구 피부 고민에 맞춰 루틴을 제안"},{"label":"동기 부여","value":"함께 관리하며 서로 응원함"},{"label":"정보 정리","value":"배운 걸 알기 쉽게 정리해 알려줌"},{"label":"관계 중심","value":"함께하는 루틴에서 힘을 얻음"}],"duo":{"good":["상대에게 맞는 조언을 세심하게 건네는 힘","함께할 때 서로 성장하게 만드는 동기 부여","진심을 담아 꾸준히 응원하는 다정함"],"bad":["남 챙기느라 정작 내 루틴은 뒷전이 됨","모두를 만족시키려다 스스로 지칠 때가 있음"]}},{"type":"ENTJ","name":"결과지향 피부CEO","emoji":"👑","tagline":"숫자와 결과로 루틴을 관리하는 사람","summary":"결과지향 피부CEO는 스킨케어도 숫자와 결과로 증명하는 사람입니다. 목표 피부 상태를 명확히 세우고, 그에 맞는 최적의 루틴을 전략적으로 설계해요. 효율이 낮은 단계는 과감히 걷어내는 결단력이 결국 확실한 성과로 이어집니다.","color":"#7C3AED","cards":[{"label":"목표 설정","value":"원하는 피부 상태를 구체적으로 정함"},{"label":"전략 수립","value":"목표에 맞는 최적의 루틴을 설계"},{"label":"효율 관리","value":"성과 없는 단계는 과감히 정리함"},{"label":"결과 추적","value":"변화를 수치와 사진으로 기록함"}],"duo":{"good":["명확한 목표를 세우고 밀어붙이는 추진력","비효율은 걷어내는 냉철한 판단력","결과로 증명해내는 강한 실행력"],"bad":["과정의 즐거움보다 결과를 더 중시하는 편","루틴이 계획대로 안 되면 스트레스를 받음"]}}],"accent":"#E8A0BF","progress":"bar"};
+var AXES=[['E','I'],['S','N'],['T','F'],['J','P']];
+var nick="",qi=0,sc={},lock=false,tT=null,answers=[];
+function $(i){return document.getElementById(i);}
+function esc(s){if(s==null)return"";return String(s).replace(/[&<>"']/g,function(m){
+return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m];});}
+function show(id){var a=document.querySelectorAll(".sc");
+for(var i=0;i<a.length;i++)a[i].classList.remove("on");
+$(id).classList.add("on");window.scrollTo({top:0,behavior:"auto"});}
+function reset(){sc={};answers=[];["E","I","S","N","T","F","J","P"].forEach(function(k){sc[k]=0;});}
+function mix(hex,ratio){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
+r=Math.round(r+(255-r)*ratio);g=Math.round(g+(255-g)*ratio);b=Math.round(b+(255-b)*ratio);
+return "#"+[r,g,b].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function lerp2(hexA,hexB,t){function rgb(h){h=(h||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+return[parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+var a=rgb(hexA),b=rgb(hexB);
+var r=Math.round(a[0]+(b[0]-a[0])*t),g=Math.round(a[1]+(b[1]-a[1])*t),bl=Math.round(a[2]+(b[2]-a[2])*t);
+return "#"+[r,g,bl].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function luminance(hex){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16)/255,g=parseInt(h.slice(2,4),16)/255,b=parseInt(h.slice(4,6),16)/255;
+function lin(c){return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);}
+return 0.2126*lin(r)+0.7152*lin(g)+0.0722*lin(b);}
+function readable(bgHex){return luminance(bgHex)>0.53?"#1a1a1a":"#fff";}
+function setAcc(c){var s=document.documentElement.style;
+var soft=mix(c,.86),deep=mix(c,.68);
+s.setProperty("--acc",c);s.setProperty("--soft",soft);s.setProperty("--deep",deep);
+s.setProperty("--accFg",readable(c));s.setProperty("--softFg",readable(soft));s.setProperty("--deepFg",readable(deep));}
+function intro(){nick="";qi=0;lock=false;reset();setAcc(D.accent);
+var cast="";for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+cast+='<div class="ci"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+(c.tagline?'<span class="t">'+esc(c.tagline)+'</span>':"")+'</div>';}
+$("s1").innerHTML='<div class="pa intro">'+
+'<div class="em">'+D.meta.emoji+'</div>'+
+'<h1>'+esc(D.meta.title)+'</h1><p>'+esc(D.meta.intro)+'</p>'+
+'<div class="castt">'+esc(D.meta.setName||"16가지 유형")+'</div>'+
+'<div class="cast">'+cast+'</div>'+
+'<div class="mt">질문 '+D.questions.length+'개 · 결과 16가지</div>'+
+'<div class="langhint">🌐 Prefer another language? Use your browser\'s translate feature.<br>다른 언어로 보고 싶다면 브라우저의 번역 기능을 이용해주세요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="'+(D.useName?"nameScreen()":"begin()")+'">테스트 시작하기</button></div>';
+show("s1");}
+function nameScreen(){$("s2").innerHTML='<div class="pa nb"><h2>어떻게 불러드릴까요?</h2>'+
+'<input id="nk" type="text" maxlength="12" placeholder="닉네임을 입력해주세요" autocomplete="off">'+
+'<div class="gd">○ 총 '+D.questions.length+'문항입니다.<br>○ 나에게 더 가까운 답을 골라주세요.<br>○ 결과에 닉네임이 함께 표시돼요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="begin()">시작하기</button>'+
+'<button class="btn" onclick="intro()">처음으로</button></div>';show("s2");
+setTimeout(function(){var n=$("nk");if(n){n.focus();
+n.addEventListener("keydown",function(e){if(e.key==="Enter")begin();});}},80);}
+function begin(){if(D.useName){var n=$("nk"),v=n?n.value.trim():"";
+if(!v){alert("닉네임을 입력해주세요.");if(n)n.focus();return;}nick=v;}
+qi=0;lock=false;reset();question();show("s3");}
+function progHTML(cur,total){var p=D.progress||"bar";
+if(p==="bar"){return '<div class="trk"><div class="fil" style="width:'+Math.round(cur/total*100)+'%"></div></div>';}
+var h=p==="dots"?'<div class="pdots">':'<div class="psq">',n=Math.min(total,12);
+for(var i=0;i<n;i++){var st=i<cur-1?" dn":i===cur-1?(p==="dots"?" now":" dn"):"";
+h+=p==="dots"?'<div class="pdot'+st+'"></div>':'<i class="'+st.trim()+'"></i>';}
+return h+"</div>";}
+function question(){lock=false;var tot=D.questions.length,q=D.questions[qi];
+var num=("0"+(qi+1)).slice(-2);
+var h='<div class="pa qw"><div class="qt"><div class="qi">'+
+'<span class="sec">'+esc(q.section||"진행 중")+'</span><span>'+(qi+1)+' / '+tot+'</span></div>'+
+progHTML(qi+1,tot)+'</div>'+
+'<div class="qn">문항 '+num+(nick?" · "+esc(nick):"")+'</div>'+
+'<div class="qx">'+esc(q.text)+'</div><div class="ops">';
+for(var i=0;i<q.options.length;i++){
+h+='<button class="op" data-n="'+(i+1)+'" data-v="'+esc(q.options[i].value)+'">'+esc(q.options[i].text)+'</button>';}
+h+='</div><p class="qnote">더 가까운 쪽을 골라주세요.</p>'+
+(qi>0?'<button type="button" class="qback" onclick="prevQ()">← 이전 문항</button>':"")+
+'</div>';
+$("s3").innerHTML=h;
+window.scrollTo({top:0,behavior:"auto"});
+var bs=$("s3").querySelectorAll(".op");
+for(var j=0;j<bs.length;j++){bs[j].addEventListener("click",function(){pick(this);});}}
+function pick(btn){if(lock)return;lock=true;
+var all=$("s3").querySelectorAll(".op");
+for(var i=0;i<all.length;i++){all[i].disabled=true;all[i].classList.remove("pk");}
+btn.classList.add("pk");
+var v=btn.getAttribute("data-v");if(sc[v]==null)sc[v]=0;sc[v]++;answers[qi]=v;
+setTimeout(function(){qi++;if(qi<D.questions.length){question();return;}finish();},110);}
+function prevQ(){if(qi<=0||lock)return;lock=true;
+var prevV=answers[qi-1];if(prevV!=null&&sc[prevV]>0)sc[prevV]--;
+answers[qi-1]=null;qi--;question();}
+function finish(){var code="";
+for(var i=0;i<AXES.length;i++){code+=(sc[AXES[i][0]]>=sc[AXES[i][1]]?AXES[i][0]:AXES[i][1]);}
+loading(code);}
+function loading(code){
+$("s4").innerHTML='<div class="pa lw"><div style="width:100%">'+
+'<h2>'+esc(D.meta.loadingText||"결과를 정리하는 중")+'</h2><p>잠시만 기다려 주세요.</p>'+
+'<div class="dts"><span></span><span></span><span></span></div>'+
+'<div class="lbar"><span></span></div></div></div>';show("s4");
+setTimeout(function(){result(code);show("s5");},2500);}
+function lab(key,sub){var L=D.blockLabels||{};var v=L[key];
+if(sub){
+if(v&&typeof v==="object"&&v[sub])return v[sub];
+return sub==="good"?"잘 맞는 유형":sub==="bad"?"안 맞는 유형":"";}
+return typeof v==="string"?v:"";}
+function byType(t){for(var i=0;i<D.cast.length;i++){if(D.cast[i].type===t)return D.cast[i];}return null;}
+function compatList(type){var s=D.compat[type]||"";var out=[],m,re=/([A-Z]{4})(\d+)/g;
+while((m=re.exec(s))!==null){out.push({type:m[1],pct:parseInt(m[2],10)});}
+out.sort(function(a,b){return b.pct-a.pct;});return out;}
+function compatItems(arr){var h="";
+for(var i=0;i<arr.length;i++){var c=byType(arr[i].type);if(!c)continue;
+h+='<div class="cmpi"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+
+'<span class="p">'+arr[i].pct+'%</span></span></div>';}
+return h;}
+function lineFor(pct){var L=D.compatLines||[];
+for(var i=0;i<L.length;i++){if(pct>=L[i].min)return L[i].text;}
+return L.length?L[L.length-1].text:"";}
+function compatHTML(type){var L=D.compatLabels||{};var list=compatList(type);
+if(!list.length)return "";
+var best=list.slice(0,2),worst=list.slice(-2).reverse();
+return '<div class="cmp"><div class="cmph">'+esc(L.title||"궁합")+'</div><div class="cmpg">'+
+'<div class="cmpc"><span class="lb">'+esc(L.good||"최고의 궁합")+'</span>'+compatItems(best)+
+'<div class="cmpnote">'+esc(lineFor(best[0].pct))+'</div></div>'+
+'<div class="cmpc bad"><span class="lb">'+esc(L.bad||"아쉬운 궁합")+'</span>'+compatItems(worst)+
+'<div class="cmpnote">'+esc(lineFor(worst[0].pct))+'</div></div>'+
+'</div></div>';}
+function tint(color,pct){var s=Math.max(0,Math.min(1,(pct-70)/29));
+return lerp2("#AEB4BF",color,Math.pow(s,2.5));}
+function mapHTML(type,color){var L=D.compatLabels||{};
+var list=compatList(type);if(!list.length)return "";
+var pm={};list.forEach(function(x){pm[x.type]=x.pct;});
+var g="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+if(c.type===type){
+var meFg=readable(color);
+g+='<div class="mapc me" style="background:'+color+';color:'+meFg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="badge">나</span></div>';
+}else{var p=pm[c.type]||0;var bg=tint(color,p);var fg=readable(bg);
+g+='<div class="mapc" style="background:'+bg+';color:'+fg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="p" style="opacity:1">'+p+'%</span></div>';}}
+var bar="linear-gradient(90deg,"+tint(color,72)+","+tint(color,99)+")";
+return '<div class="map"><div class="maph">'+esc(L.mapTitle||"나의 궁합 지도")+'</div>'+
+'<div class="mapg">'+g+'</div>'+
+'<div class="mapf"><span>안 맞음</span><span class="mapbar" style="background:'+bar+'"></span>'+
+'<span>잘 맞음</span></div></div>';}
+function blockHTML(name,r){
+if(name==="quote"&&r.quote){var qcls=D.quoteStyle==="bubble"?"qbb":"qb";
+return '<div class="blk"><div class="blt">'+esc(lab("quote")||"한마디")+'</div>'+
+'<div class="'+qcls+'">'+esc(r.quote)+'</div></div>';}
+if(name==="traits"&&r.traits&&r.traits.length){var h='<div class="blk"><div class="blt">'+
+esc(lab("traits")||"세부 특징")+'</div>';
+if(D.traitStyle==="sticker"){h+='<div class="trss">';
+for(var i=0;i<r.traits.length;i++){h+='<div class="tst">'+esc(r.traits[i])+'</div>';}
+h+='</div>';
+}else{h+='<div class="trs">';
+for(var i2=0;i2<r.traits.length;i2++){h+='<div class="tc">'+esc(r.traits[i2])+'</div>';}
+h+='</div>';}
+return h+"</div>";}
+if(name==="duo"&&r.duo){var g=r.duo.good||[],b=r.duo.bad||[];var chk=D.duoStyle==="check";
+var gm=chk?"✓":"",bm=chk?"✗":"",dcls=chk?" chk":"";
+var h2='<div class="blk duo"><div class="dsec g"><div class="dsh">'+esc(lab("duo","good")||"좋은 면")+'</div><div class="dls">';
+for(var j=0;j<g.length;j++){h2+='<div class="dit'+dcls+'"><b>'+gm+'</b><span>'+esc(g[j])+'</span></div>';}
+h2+='</div></div><div class="dsec b"><div class="dsh">'+esc(lab("duo","bad")||"아쉬운 면")+'</div><div class="dls">';
+for(var k2=0;k2<b.length;k2++){h2+='<div class="dit'+dcls+'"><b>'+bm+'</b><span>'+esc(b[k2])+'</span></div>';}
+return h2+"</div></div></div>";}
+if(name==="stats"&&r.stats&&r.stats.length){
+var h3='<div class="blk"><div class="blt">'+esc(lab("stats")||"지표")+'</div>';
+if(D.statStyle==="radial"){
+h3+='<div class="stsr">';
+for(var m=0;m<r.stats.length;m++){var s=r.stats[m];var v=Math.max(0,Math.min(100,s.value||0));
+var C=100.53;var off=C*(1-v/100);
+h3+='<div class="rgauge"><svg viewBox="0 0 38 38">'+
+'<circle class="rtrack" cx="19" cy="19" r="16"/>'+
+'<circle class="rfill" cx="19" cy="19" r="16" stroke-dasharray="'+C+'" stroke-dashoffset="'+off+'" transform="rotate(-90 19 19)"/>'+
+'<text x="19" y="23" text-anchor="middle" style="font-size:10px;font-weight:900;fill:var(--ink)">'+v+'%</text>'+
+'</svg><div class="rlab">'+esc(s.label)+'</div></div>';}
+h3+='</div>';
+}else{
+h3+='<div class="sts">';
+for(var m2=0;m2<r.stats.length;m2++){var s2=r.stats[m2];var v2=Math.max(0,Math.min(100,s2.value||0));
+var fc=Math.max(1,Math.min(10,Math.round(v2/10)));var sq="";
+for(var n2=1;n2<=10;n2++){sq+='<span class="sq'+(n2<=fc?" f":"")+'"></span>';}
+h3+='<div class="srow"><div class="slab">'+esc(s2.label)+'</div><div class="sqs">'+sq+'</div>'+
+'<div class="spc">'+v2+'%</div></div>';}
+h3+='</div>';
+}
+return h3+"</div>";}
+if(name==="cards"&&r.cards&&r.cards.length){
+var h4='<div class="blk"><div class="blt">'+esc(lab("cards")||"이런 사람")+'</div>';
+if(D.cardStyle==="ticket"){h4+='<div class="cdt">';
+for(var p=0;p<r.cards.length;p++){h4+='<div class="cdti"><b>'+esc(r.cards[p].label)+'</b><span>'+
+esc(r.cards[p].value)+'</span></div>';}
+h4+='</div>';
+}else{h4+='<div class="cds" style="margin-top:9px">';
+for(var p2=0;p2<r.cards.length;p2++){h4+='<div class="cd2"><b>'+esc(r.cards[p2].label)+'</b><p>'+
+esc(r.cards[p2].value)+'</p></div>';}
+h4+='</div>';}
+return h4+"</div>";}
+return "";}
+function result(code){var r=null;
+for(var i=0;i<D.results.length;i++){if(D.results[i].type===code){r=D.results[i];break;}}
+if(!r)r=D.results[0];
+setAcc(r.color||D.accent);
+var sum=(nick?esc(nick)+"님은 ":"")+esc(r.summary);
+var h='<div class="cap" id="cap"><div class="rh"><h2>'+esc(D.meta.title)+'</h2></div><div class="rb">'+
+'<div class="rn"><div class="em">'+esc(r.emoji||"✨")+'</div><h3>'+esc(r.name||D.meta.title)+'</h3>'+
+(r.tagline?'<div class="tg2">'+esc(r.tagline)+'</div>':"")+'</div>'+
+'<div class="rs">'+sum+'</div>';
+var col=r.color||D.accent;
+for(var b=0;b<D.blocks.length;b++){if(D.blocks[b]!=="map")h+=blockHTML(D.blocks[b],r);}
+h+=compatHTML(r.type);
+if(D.blocks.indexOf("map")>=0)h+=mapHTML(r.type,col);
+h+='<div class="rf">POWERED BY MAGIC FACTORY</div></div></div>'+
+'<div class="stk"><button class="btn fill" onclick="sheet(\''+code+'\')">'+
+esc(D.meta.sheetCta||"내 유형의 정체 확인하기")+'</button>'+
+'<button class="btn" onclick="saveImg(this)">결과 이미지 저장하기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+$("s5").innerHTML=h;}
+function sheet(code){var me=byType(code)||D.cast[0];
+var rows="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];var isMe=c.type===code;
+if(i===8){rows+='</div><div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div><div class="rows">';}
+rows+='<div class="row'+(isMe?" me":"")+'"><span class="no">'+("0"+(i+1)).slice(-2)+'</span>'+
+'<span class="em">'+c.emoji+'</span>'+
+'<span class="nm">'+esc(c.name)+(c.tagline?'<span class="tg">'+esc(c.tagline)+'</span>':"")+'</span>'+
+'<span class="cd">'+esc(c.type)+'</span></div>';}
+$("s6").innerHTML='<div class="sheet">'+
+'<div class="sheeth"><h2>'+esc(D.meta.sheetTitle||"전체 유형 정답지")+'</h2>'+
+'<p>열여섯 종류가 각각 어떤 성격 유형인지 전부 공개해요</p></div>'+
+'<div class="reveal"><div class="em">'+me.emoji+'</div>'+
+'<div class="nm">'+(nick?esc(nick)+"님의 ":"")+esc(me.name)+'</div>'+
+'<div class="eq">의 성격 유형은</div>'+
+'<div class="code">'+esc(me.type)+'</div></div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'<div class="sheetsec">'+esc(D.meta.setName||"전체 16종")+' 전체 목록</div>'+
+'<div class="rows">'+rows+'</div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'</div>'+
+'<div class="stk"><button class="btn fill" onclick="show(\'s5\')">내 결과로 돌아가기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+show("s6");}
+function frames(){return new Promise(function(r){requestAnimationFrame(function(){requestAnimationFrame(r);});});}
+function wait(ms){return new Promise(function(r){setTimeout(r,ms);});}
+var lastBlob=null,lastUrl="";
+function fileName(){return (D.meta.slug||"result")+".png";}
+function saveOptions(){
+var canShare=false;
+try{canShare=!!(navigator.canShare&&lastBlob&&navigator.canShare({files:[new File([lastBlob],fileName(),{type:"image/png"})]}));}catch(e){}
+var h="";
+if(canShare)h+='<button class="mbtn pri" onclick="shareImg()">사진으로 저장 · 공유</button>';
+else h+='<p class="mtip" style="margin:0 0 10px;">위 이미지를 <b>길게 눌러서 사진에 저장</b>해 주세요.</p>';
+h+='<a class="mbtn" href="'+lastUrl+'" download="'+fileName()+'" target="_blank" rel="noopener">새 탭에서 이미지 열기</a>';
+return '<div class="mbtns">'+h+'</div>'+
+'<p class="mtip">"이미지 열기"를 눌렀을 때 저장이 안 되면, 위 이미지를 직접 길게 눌러 저장해 주세요.</p>';}
+async function shareImg(){
+try{var f=new File([lastBlob],fileName(),{type:"image/png"});
+await navigator.share({files:[f],title:D.meta.title});}
+catch(e){if(e&&e.name!=="AbortError")toast("공유를 취소했거나 지원되지 않아요.");}}
+async function saveImg(btn){
+if(typeof html2canvas!=="function"){toast("이미지 도구를 불러오지 못했어요. 새로고침 후 다시 시도해 주세요.");return;}
+btn.disabled=true;var old=btn.textContent;btn.textContent="이미지 만드는 중...";
+$("mw").innerHTML='<p style="padding:40px 0;">이미지를 만들고 있어요...</p>';
+$("mo").classList.add("on");document.body.style.overflow="hidden";
+try{
+if(document.fonts){try{await document.fonts.ready;}catch(e){}}
+await frames();await wait(260);
+var cv=await html2canvas($("cap"),{backgroundColor:getComputedStyle(document.body).backgroundColor,
+scale:Math.min(window.devicePixelRatio||2,2),useCORS:true,logging:false,
+scrollX:0,scrollY:-window.scrollY,windowWidth:document.documentElement.clientWidth});
+if(lastUrl&&lastUrl.indexOf("blob:")===0){try{URL.revokeObjectURL(lastUrl);}catch(e){}}
+var dataUrl=cv.toDataURL("image/png");
+lastBlob=await new Promise(function(res){
+if(cv.toBlob)cv.toBlob(function(b){res(b);},"image/png");else res(null);});
+if(!lastBlob){
+  var bin=atob(dataUrl.split(",")[1]),arr=new Uint8Array(bin.length);
+  for(var i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);
+  lastBlob=new Blob([arr],{type:"image/png"});}
+lastUrl=dataUrl;
+$("mw").innerHTML='<img src="'+lastUrl+'" alt="결과 이미지">'+saveOptions();
+}catch(e){console.error(e);
+$("mw").innerHTML='<p style="padding:32px 0 8px;">이미지를 만들지 못했어요.<br>'+
+'대신 화면을 캡처해서 공유해 주세요.</p>'+
+'<p class="mtip">오류: '+esc(String(e&&e.message||e))+'</p>';
+}finally{btn.disabled=false;btn.textContent=old;}}
+function closeMo(){$("mo").classList.remove("on");document.body.style.overflow="";}
+$("mo").addEventListener("click",function(e){if(e.target===$("mo"))closeMo();});
+document.addEventListener("keydown",function(e){
+if(e.key==="Escape"&&$("mo").classList.contains("on"))closeMo();});
+async function share(){var dt={title:D.meta.title,text:D.meta.intro,url:location.href};
+try{if(navigator.share){await navigator.share(dt);return;}
+var tx=dt.text+"\n"+dt.url;
+if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(tx);
+toast("링크를 복사했어요.");return;}
+var ta=document.createElement("textarea");ta.value=tx;ta.style.position="fixed";ta.style.opacity="0";
+document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();
+toast("링크를 복사했어요.");}catch(e){if(e&&e.name!=="AbortError")toast("공유하지 못했어요.");}}
+function toast(m){clearTimeout(tT);var e=$("tst");e.textContent=m;e.classList.add("show");
+tT=setTimeout(function(){e.classList.remove("show");},2100);}
+intro();
+</script>
+</body>
+</html>
