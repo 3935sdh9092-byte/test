@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 여행 스타일 MBTI는? — 테스트팩토리</title>
+<meta name="description" content="여행 준비 습관과 현지에서 움직이는 방식으로 알아보는 나의 여행 스타일 MBTI 유형.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="나의 여행 스타일 MBTI는? — 테스트팩토리">
+<meta property="og:description" content="여행 준비 습관과 현지에서 움직이는 방식으로 알아보는 나의 여행 스타일 MBTI 유형.">
+<meta property="og:image" content="travel-mbti-test-thumb.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{--bg:#F4F2ED;--paper:#FDFCF8;--ink:#1C1C1C;--sub:#6B6B6B;--line:#B0A898;--acc:#8E6FB0;--soft:rgba(142,111,176,0.12);--deep:rgba(142,111,176,0.24);--accFg:#fff;--softFg:#1C1C1C;--deepFg:#1C1C1C;--chip:rgba(28,28,28,0.07);--chips:rgba(28,28,28,0.1);--r:2px;--bw:2px;--shadow:none;--fh:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;--fb:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+*{box-sizing:border-box;}
+html{background:#F4F2ED;}
+body{margin:0;min-height:100vh;color:var(--ink);background-color:var(--bg);background-image:none;background-size:auto;font-family:var(--fb);word-break:keep-all;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;line-height:1.6;}
+h1,h2,h3,.qx,.rn h3,.sheeth h2,.reveal .code,.dsh,.blt,.cmph,.maph,.sheetsec{font-family:var(--fh);}
+button,input{font:inherit;-webkit-tap-highlight-color:transparent;}
+.app{width:100%;max-width:560px;margin:0 auto;padding:26px 14px 46px;}
+.sc{display:none;} .sc.on{display:block;animation:in .18s ease;}
+@keyframes in{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+.pa{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);}
+.btn{width:100%;min-height:54px;padding:12px;cursor:pointer;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--ink);font-size:16px;font-weight:800;}
+.btn:active{transform:scale(.99);}
+.btn.fill{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.stk{display:grid;gap:10px;margin-top:14px;}
+.intro{padding:0 0 24px;text-align:center;overflow:hidden;}
+.hero{margin:0 0 20px;line-height:0;}
+.hero svg{display:block;width:100%;height:auto;}
+.intro>h1,.intro>p,.intro>.castt,.intro>.cast,.intro>.mt,.intro>.em{margin-left:18px;margin-right:18px;}
+.intro>.em{padding-top:34px;}
+.intro .em{font-size:54px;line-height:1;margin-bottom:12px;}
+.intro h1{font-size:25px;line-height:1.45;margin:0 0 10px;font-weight:700;letter-spacing:-.2px;text-wrap:balance;}
+.intro p{font-size:14.5px;color:var(--sub);line-height:1.8;margin:0;font-weight:400;text-wrap:pretty;}
+.castt{margin:20px 0 10px;font-size:12.5px;font-weight:800;color:var(--acc);}
+.mt{margin-top:16px;font-size:12.5px;font-weight:700;color:var(--sub);}
+.langhint{margin-top:8px;font-size:11px;font-weight:500;color:var(--sub);opacity:.75;line-height:1.6;}
+.cast{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;}
+.ci{min-width:0;padding:9px 3px 8px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);text-align:center;}
+.ci .e{font-size:22px;line-height:1;display:block;margin-bottom:4px;}
+.ci .n{font-size:11px;font-weight:600;line-height:1.4;word-break:keep-all;text-wrap:balance;}
+.ci .t{font-size:8.5px;color:var(--sub);opacity:.8;font-weight:700;margin-top:2px;display:block;}
+.intro .mt{font-size:12px;color:var(--sub);opacity:.75;margin-top:16px;font-weight:700;}
+.nb{padding:40px 24px;text-align:center;}
+.nb h2{font-size:22px;margin:0 0 22px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.nb input{width:100%;max-width:340px;height:54px;padding:0 14px;text-align:center;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-size:19px;font-weight:800;outline:none;}
+.nb input:focus{border-color:var(--acc);}
+.gd{max-width:400px;margin:24px auto 0;padding:14px 16px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);font-size:13.5px;line-height:1.8;font-weight:600;text-align:left;color:var(--sub);text-wrap:pretty;}
+.qw{padding:24px 20px 28px;}
+.qt{padding-bottom:14px;border-bottom:var(--bw) solid var(--line);}
+.qi{display:flex;justify-content:space-between;gap:12px;margin-bottom:9px;font-size:12px;font-weight:800;}
+.qi .sec{color:var(--acc);}
+.trk{width:100%;height:14px;padding:2px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.fil{width:0;height:100%;background:var(--acc);border-radius:var(--r);transition:width .2s ease;}
+.pdots{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.pdot{height:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--chip);opacity:.35;}
+.pdot.dn{opacity:1;background:var(--acc);}
+.pdot.now{opacity:1;background:var(--acc);animation:blink .7s infinite alternate;}
+@keyframes blink{from{opacity:.4;}to{opacity:1;}}
+.psq{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.psq i{display:block;aspect-ratio:1/1;min-height:12px;border:1px solid var(--line);border-radius:2px;background:var(--chip);}
+.psq i.dn{background:var(--acc);}
+.qn{margin-top:22px;color:var(--acc);font-size:13px;font-weight:900;}
+.qx{min-height:76px;margin:14px 0 20px;text-align:center;font-size:21px;line-height:1.6;letter-spacing:-.2px;font-weight:700;display:flex;align-items:center;justify-content:center;text-wrap:balance;}
+.ops{display:grid;gap:11px;}
+.op{position:relative;width:100%;min-height:70px;padding:15px 16px 15px 52px;cursor:pointer;text-align:left;color:var(--ink);background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15.5px;line-height:1.6;font-weight:500;text-wrap:pretty;}
+.op::before{content:attr(data-n);position:absolute;left:14px;top:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border:var(--bw) solid var(--line);border-radius:var(--r);transform:translateY(-50%);font-size:13px;font-weight:900;background:var(--paper);}
+.op.pk{background:var(--soft);border-color:var(--acc);color:var(--softFg);}
+.op.pk::before{color:var(--ink);}
+.op:disabled{cursor:default;}
+.qnote{margin:20px 0 0;color:var(--sub);text-align:center;font-size:12px;font-weight:700;}
+.qback{display:block;margin:14px auto 0;padding:8px 4px;background:none;border:0;color:var(--sub);font-family:var(--fb);font-size:12.5px;font-weight:700;cursor:pointer;text-align:center;}
+.lw{min-height:420px;padding:40px 22px;display:flex;align-items:center;justify-content:center;text-align:center;}
+.lw h2{margin:0 0 10px;font-size:24px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.lw p{margin:0;color:var(--sub);font-size:14px;}
+.dts{display:flex;justify-content:center;gap:9px;margin:28px 0 24px;}
+.dts span{width:12px;height:12px;background:var(--acc);border:var(--bw) solid var(--line);border-radius:var(--r);animation:bump 1.1s ease-in-out infinite;}
+.dts span:nth-child(2){animation-delay:.15s;} .dts span:nth-child(3){animation-delay:.3s;}
+@keyframes bump{0%,100%{transform:translateY(0);opacity:.4;}50%{transform:translateY(-7px);opacity:1;}}
+.lbar{width:100%;height:14px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.lbar span{display:block;width:32%;height:100%;background:var(--acc);animation:sld 1.05s ease-in-out infinite;}
+@keyframes sld{from{transform:translateX(-110%);}to{transform:translateX(340%);}}
+.cap{overflow:hidden;max-width:100%;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rh{padding:13px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.rh h2{margin:0;color:var(--accFg);font-size:15.5px;font-weight:700;line-height:1.45;letter-spacing:-.1px;text-wrap:balance;}
+.rb{padding:14px;}
+.rn{padding:24px 16px 20px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rn .em{font-size:64px;line-height:1;}
+.rn h3{margin:10px 0 6px;font-size:29px;font-weight:700;line-height:1.3;letter-spacing:-.3px;color:var(--acc);text-wrap:balance;}
+.rn .tg2{font-size:14.5px;font-weight:600;color:var(--ink);opacity:.85;}
+.rn .cd{display:inline-block;margin-top:12px;padding:4px 12px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:11px;font-weight:800;letter-spacing:1.2px;}
+.rs{margin-top:12px;padding:15px 16px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15px;line-height:1.8;font-weight:400;text-wrap:pretty;}
+.blk{margin-top:14px;}
+.blt{margin:0;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-bottom:0;border-radius:var(--r) var(--r) 0 0;font-size:13px;font-weight:900;text-align:center;text-wrap:balance;}
+.qb{padding:18px 16px;text-align:center;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);font-size:17px;font-weight:600;line-height:1.65;text-wrap:balance;}
+.qbb{position:relative;margin:6px 16px 24px;padding:18px 16px;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:16px;font-weight:600;line-height:1.65;text-align:center;text-wrap:balance;}
+.qbb::before{content:"";position:absolute;left:32px;bottom:-11px;width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-top:13px solid var(--line);}
+.qbb::after{content:"";position:absolute;left:34.5px;bottom:-6.5px;width:0;height:0;border-left:8.5px solid transparent;border-right:8.5px solid transparent;border-top:10px solid var(--soft);}
+.trs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:var(--bw) solid var(--line);border-left:var(--bw) solid var(--line);}
+.tc{min-height:82px;padding:9px 6px;display:flex;align-items:center;justify-content:center;background:var(--chip);color:var(--ink);border-right:var(--bw) solid var(--line);border-bottom:var(--bw) solid var(--line);text-align:center;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;text-wrap:balance;}
+.tc:nth-child(even){background:var(--soft);color:var(--softFg);}
+.trss{display:flex;flex-wrap:wrap;gap:10px 8px;padding:16px 14px;background:var(--chip);border-top:var(--bw) solid var(--line);}
+.tst{padding:8px 13px;background:var(--paper);border:var(--bw) solid var(--line);border-radius:999px;font-size:12.5px;font-weight:700;box-shadow:2px 2px 0 var(--line);word-break:keep-all;text-wrap:balance;color:var(--ink);}
+.tst:nth-child(3n+1){transform:rotate(-2.5deg);}
+.tst:nth-child(3n+2){transform:rotate(1.5deg);}
+.tst:nth-child(3n){transform:rotate(-0.5deg);}
+.tst:nth-child(even){background:var(--soft);color:var(--softFg);}
+.duo{display:grid;gap:10px;}
+.dsec{border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.dsh{padding:9px;text-align:center;font-size:14px;font-weight:900;color:var(--deepFg);border-bottom:var(--bw) solid var(--line);}
+.dsec.g .dsh{background:var(--acc);color:var(--accFg);}
+.dsec.b .dsh{background:var(--deep);}
+.dls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px 10px;padding:12px 11px;background:var(--chip);}
+.dit span{text-wrap:pretty;}
+.dit{display:flex;align-items:flex-start;min-width:0;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;}
+.dit b{width:7px;height:7px;margin:5px 6px 0 0;flex:0 0 auto;background:var(--acc);border-radius:1px;}
+.dit.chk b{width:17px;height:17px;margin:1px 8px 0 0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;background:var(--acc);color:var(--accFg);}
+.dsec.b .dit.chk b{background:var(--sub);color:var(--paper);}
+.sts{padding:14px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);}
+.srow{display:grid;grid-template-columns:76px 1fr 42px;align-items:center;gap:9px;}
+.srow+.srow{margin-top:11px;}
+.slab{font-size:12.5px;font-weight:900;}
+.sqs{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;}
+.sq{aspect-ratio:1/1;min-height:11px;border-radius:2px;background:var(--chips);box-shadow:inset 0 0 0 1px rgba(176,168,152,0.35);}
+.sq.f{background:var(--acc);}
+.spc{text-align:right;font-size:12.5px;font-weight:900;}
+.stsr{padding:16px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:14px 8px;}
+.rgauge{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.rgauge svg{width:64px;height:64px;overflow:visible;}
+.rgauge .rtrack{fill:none;stroke:var(--chips);stroke-width:6;}
+.rgauge .rfill{fill:none;stroke:var(--acc);stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset .5s ease;}
+.rgauge .rlab{font-size:11px;font-weight:800;color:var(--sub);text-align:center;line-height:1.35;}
+.cds{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px;}
+.cd2{padding:12px 11px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.cd2 b{display:inline-block;margin-bottom:7px;padding:3px 9px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:10.5px;font-weight:800;}
+.cd2 p{margin:0;font-size:13.5px;line-height:1.65;font-weight:500;text-wrap:pretty;}
+.cdt{background:var(--paper);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);padding:2px 16px;}
+.cdti{padding:12px 0;border-bottom:var(--bw) dashed var(--line);}
+.cdti:last-child{border-bottom:0;}
+.cdti b{display:block;font-size:11px;font-weight:900;color:var(--acc);margin-bottom:3px;letter-spacing:.2px;}
+.cdti span{display:block;font-size:13.5px;font-weight:600;line-height:1.55;text-wrap:pretty;}
+.map{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.maph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.mapg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--chip);}
+.mapc{position:relative;min-width:0;padding:9px 3px 8px;text-align:center;border-right:1px solid rgba(176,168,152,0.18);border-bottom:1px solid rgba(176,168,152,0.18);}
+.mapc:nth-child(4n){border-right:0;}
+.mapc:nth-last-child(-n+4){border-bottom:0;}
+.mapc .e{display:block;font-size:20px;line-height:1;}
+.mapc .n{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;margin-top:4px;font-size:9px;font-weight:600;line-height:1.35;overflow:hidden;word-break:keep-all;text-wrap:balance;padding:0 2px;min-height:24px;}
+.mapc .p{display:block;margin-top:2px;font-size:9.5px;font-weight:900;opacity:.75;}
+.mapc.me{outline:var(--bw) solid var(--acc);outline-offset:-2px;}
+.mapc .badge{display:inline-block;margin-top:2px;padding:1px 7px;border-radius:999px;background:var(--acc);color:var(--accFg);font-size:9px;font-weight:800;}
+.mapf{display:flex;align-items:center;gap:7px;padding:9px 12px;background:var(--chip);border-top:var(--bw) solid var(--line);font-size:9.5px;font-weight:800;color:var(--sub);}
+.mapbar{flex:1;height:7px;border-radius:999px;}
+.cmp{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.cmph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.cmpg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--chip);}
+.cmpc{min-width:0;padding:12px 8px 13px;text-align:center;}
+.cmpc+.cmpc{border-left:var(--bw) solid var(--line);}
+.cmpc .lb{display:inline-block;margin-bottom:10px;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;background:var(--acc);color:var(--accFg);}
+.cmpc.bad .lb{background:#AEB4BF;color:#fff;}
+.cmpi{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:7px;}
+.cmpi .e{font-size:24px;line-height:1;}
+.cmpi .n{min-width:0;font-size:13px;font-weight:600;line-height:1.45;text-align:left;word-break:keep-all;text-wrap:balance;}
+.cmpi .p{font-size:11.5px;font-weight:900;color:var(--acc);display:block;}
+.cmpc.bad .cmpi .p{color:var(--sub);}
+.cmpnote{margin-top:11px;padding-top:9px;border-top:1px dashed rgba(176,168,152,0.3);font-size:12px;line-height:1.65;font-weight:500;color:var(--sub);}
+.rf{margin-top:16px;padding-top:12px;border-top:var(--bw) dashed var(--line);color:var(--sub);text-align:center;font-size:11px;font-weight:700;letter-spacing:.6px;}
+.ad{display:none;}
+.sheet{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.sheeth{padding:16px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.sheeth h2{margin:0;color:var(--accFg);font-size:18px;font-weight:800;letter-spacing:-.4px;}
+.sheeth p{margin:5px 0 0;color:var(--accFg);opacity:.85;font-size:11.5px;font-weight:700;}
+.reveal{margin:14px;padding:20px 16px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.reveal .em{font-size:46px;line-height:1;}
+.reveal .nm{margin-top:8px;font-size:19px;font-weight:700;line-height:1.45;text-wrap:balance;}
+.reveal .eq{margin:9px 0 7px;font-size:13px;font-weight:800;color:var(--sub);}
+.reveal .code{display:inline-block;padding:8px 22px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:26px;font-weight:800;letter-spacing:3px;}
+.sheetad{display:none;}
+.sheetsec{margin:0 14px 10px;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:12.5px;font-weight:900;text-align:center;}
+.rows{margin:0 14px 14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.row{display:grid;grid-template-columns:26px 30px minmax(0,1fr) auto;align-items:center;gap:9px;padding:10px 11px;background:var(--chip);border-bottom:1px solid rgba(176,168,152,0.18);}
+.row:last-child{border-bottom:0;}
+.row.me{background:var(--soft);color:var(--softFg);}
+.row .no{font-size:10px;font-weight:800;color:var(--sub);opacity:.7;}
+.row .em{font-size:22px;line-height:1;text-align:center;}
+.row .nm{font-size:14px;font-weight:600;line-height:1.45;min-width:0;word-break:keep-all;text-wrap:balance;}
+.row .tg{display:block;font-size:10.5px;font-weight:700;color:var(--sub);opacity:.85;margin-top:2px;}
+.row .cd{padding:4px 10px;border-radius:999px;background:var(--deep);font-size:11px;font-weight:800;letter-spacing:.8px;white-space:nowrap;}
+.row.me .cd{background:var(--acc);color:var(--accFg);}
+.mo{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(20,20,20,.82);overflow-y:auto;}
+.mo.on{display:flex;}
+.mb2{width:100%;max-width:360px;max-height:92vh;overflow:auto;padding:20px 16px;text-align:center;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);margin:auto;}
+.mb2 h3{margin:0 0 8px;font-size:18px;font-weight:900;}
+.mb2 p{margin:0 0 16px;color:var(--sub);font-size:13px;line-height:1.55;font-weight:600;}
+.mb2 img{display:block;width:100%;border:var(--bw) solid var(--line);border-radius:var(--r);}
+.mbtns{display:grid;gap:8px;margin-top:14px;}
+.mbtn{display:block;width:100%;padding:14px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-family:var(--fb);font-size:14.5px;font-weight:600;text-align:center;text-decoration:none;cursor:pointer;box-sizing:border-box;}
+.mbtn.pri{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.mtip{margin:12px 0 0!important;font-size:12px;line-height:1.6;color:var(--sub);}
+.mb2 .cl{width:100%;min-height:46px;margin-top:14px;cursor:pointer;color:#fff;background:var(--line);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:14px;font-weight:800;}
+.tst{position:fixed;left:50%;bottom:26px;z-index:200;max-width:calc(100% - 32px);padding:12px 18px;color:#fff;background:rgba(28,28,28,.95);border:var(--bw) solid #fff;border-radius:var(--r);font-size:13.5px;font-weight:700;transform:translate(-50%,16px);opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+.tst.show{opacity:1;transform:translate(-50%,0);}
+@media(hover:hover) and (pointer:fine){
+.btn:hover{background:var(--soft);color:var(--softFg);}
+.btn.fill:hover{opacity:.9;background:var(--acc);}
+.op:hover{background:var(--soft);color:var(--softFg);}
+.op:hover::before{color:var(--ink);}
+.qback:hover{color:var(--ink);}
+}
+@media(max-width:520px){.app{padding:18px 11px 38px;}.intro{padding:28px 14px 20px;}.intro h1{font-size:22px;}
+.ci .n{font-size:9.5px;} .ci .e{font-size:19px;}
+.qw{padding:20px 15px 24px;}.qx{font-size:19px;min-height:66px;}
+.op{min-height:64px;padding:13px 13px 13px 48px;font-size:14px;}
+.tc{min-height:74px;font-size:11.5px;}.rn h3{font-size:26px;}.rh h2{font-size:14px;}
+.dls{gap:6px 7px;padding:10px 9px;}.dit{font-size:11.5px;}.cds{gap:7px;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <section class="sc on" id="s1"></section>
+  <section class="sc" id="s2"></section>
+  <section class="sc" id="s3"></section>
+  <section class="sc" id="s4"></section>
+  <section class="sc" id="s5"></section>
+  <section class="sc" id="s6"></section>
+  <div class="ad">광고 영역 (애드센스 코드 삽입 위치)</div>
+</div>
+<div class="mo" id="mo"><div class="mb2"><h3>이미지 꾹 눌러 저장하기</h3><p>아래 이미지를 길게 누르거나 우클릭해서<br>저장해 주세요.</p><div id="mw"><p style="padding:40px 0;">이미지를 만들고 있어요...</p></div><button class="cl" onclick="closeMo()">닫기</button></div></div>
+<div class="tst" id="tst"></div>
+<script>
+"use strict";
+var D={"useName":false,"meta":{"title":"나의 여행 스타일 MBTI는?","emoji":"✈️","intro":"여행을 준비하는 습관부터 현지에서 움직이는 방식까지. 12문항이면 내 안의 여행 스타일 유형을 알 수 있어요.","loadingText":"당신의 여행 스타일을 정리하는 중... ✈️","sheetTitle":"16가지 여행 스타일 유형 전체 도감","sheetCta":"16가지 여행 스타일 전체 보기","slug":"travel-mbti-test","setName":"여행 스타일 연구소"},"blocks":["cards","duo"],"blockLabels":{"cards":"✈️ 이 스타일의 특징 카드","duo":{"good":"✈️ 이 스타일의 매력","bad":"✈️ 아쉬운 점"}},"compatLabels":{"title":"여행 궁합","good":"찰떡궁합 여행 메이트","bad":"살짝 안 맞는 여행 메이트","mapTitle":"16가지 여행 스타일 전체 궁합"},"compat":{"ISTJ":"ISTP81 ISFJ77 ESTJ77 INTJ75 INFJ71 INTP70 ESFJ69 ISFP67 ESTP64 ENTJ64 INFP56 ENTP51 ENFJ51 ESFP47 ENFP45","ISFJ":"ISTJ83 ISFP83 ESFJ81 INFJ77 ISTP69 INTJ68 ESFP68 ESTJ67 ENFJ67 INFP62 ENTJ58 ENFP54 INTP47 ESTP47 ENTP45","INFJ":"ENFJ84 INTJ79 INFP77 ISFJ73 ISFP72 ENFP69 ENTJ64 ESFJ63 ISTJ62 INTP60 ISTP54 ESFP51 ENTP49 ESTJ49 ESTP46","INTJ":"ENTJ85 INFJ83 INTP82 ISTJ77 INFP71 ENTP70 ESTJ67 ISFJ62 ISTP62 ENFJ62 ESFJ52 ESTP50 ENFP50 ISFP49 ESFP45","ISTP":"ISFP80 ESTP78 ISTJ76 INTP74 INTJ71 ENTP70 ESFP68 ISFJ66 INFP64 ESTJ63 ESFJ59 ENFP54 ENTJ54 INFJ47 ENFJ45","ISFP":"INFP84 ESFP80 ISTP77 ISFJ74 ESTP72 ESFJ72 INTP69 ISTJ66 INFJ63 ENFP62 ENTP58 ESTJ53 INTJ52 ENFJ52 ENTJ45","INFP":"ISFP81 INFJ80 INTP80 ENFP76 INTJ69 ESFP69 ISTP65 ENTP64 ENFJ63 ISFJ60 ESTP53 ENTJ50 ISTJ49 ESFJ48 ESTJ46","INTP":"ISTP81 ENTP81 INTJ79 INFP75 ENTJ72 ESTP64 ISFP63 INFJ61 ISTJ60 ENFP60 ISFJ58 ESFP58 ESTJ50 ENFJ47 ESFJ45","ESTP":"ESTJ83 ISTP82 ESFP78 ENTP74 ESFJ70 ENTJ70 INTP65 ENFP64 ISTJ62 ISFP61 INFP55 ISFJ53 INTJ51 ENFJ49 INFJ45","ESFP":"ISFP85 ENFP82 ESTP80 ESFJ74 INFP67 ENFJ67 ESTJ63 ENTP62 ISTP61 ISFJ60 ISTJ54 INFJ54 ENTJ49 INTP47 INTJ45","ENFP":"ESFP84 ENFJ81 ENTP79 INFP76 ISFP71 INFJ70 ENTJ66 ESTP62 INTP61 ESFJ60 INTJ58 ESTJ56 ISFJ54 ISTP54 ISTJ45","ENTP":"ENFP75 ENTJ75 INTP73 ESTP73 INFP68 ESFP67 ENFJ65 ESTJ63 INTJ62 ISTP61 ISTJ56 ISFP56 INFJ53 ESFJ52 ISFJ45","ESTJ":"ISTJ81 ESTP76 ESFJ73 ENTJ73 ESFP72 ENFJ72 INTJ65 ENTP62 ISFJ61 ISTP60 INFJ53 INTP52 ISFP50 ENFP50 INFP45","ESFJ":"ESTJ85 ENFJ83 ISFJ75 ESFP75 ISFP71 ENTJ70 INFJ68 ISTJ64 ESTP60 ENFP60 INFP59 ISTP53 ENTP53 INTJ48 INTP45","ENFJ":"ENTJ85 ENFP84 INFJ75 ESFJ73 ISFJ71 INTJ71 INFP65 ENTP64 ESFP62 ESTJ61 INTP55 ISTJ48 ESTP48 ISFP47 ISTP45","ENTJ":"ENTP83 INTJ77 ENFJ77 ESTJ76 INTP72 ISTJ69 ESFJ69 INFJ68 ESTP66 ENFP61 ISFJ59 INFP50 ISTP47 ESFP47 ISFP45"},"compatLines":[{"min":92,"text":"이 조합이면 여행 스타일까지 완벽하게 통해요"},{"min":84,"text":"같이 여행 가면 다툴 일이 거의 없는 사이예요"},{"min":76,"text":"다르지만 서로의 여행 방식에 은근히 끌리는 조합이에요"},{"min":68,"text":"각자 스타일이 달라 새로운 여행법에 눈뜨게 돼요"},{"min":0,"text":"완전히 다른 스타일이라 오히려 신선한 여행이 될 조합이에요"}],"statStyle":"squares","traitStyle":"grid","cardStyle":"grid","duoStyle":"dot","quoteStyle":"banner","cast":[{"type":"ISTJ","name":"분 단위 플래너 여행러","emoji":"🗂️","tagline":"출발 전 이미 완성돼 있는 시간표"},{"type":"ISFJ","name":"든든한 준비성 여행러","emoji":"🎒","tagline":"다들 놓친 걸 꼭 챙겨오는 사람"},{"type":"INFJ","name":"의미 찾기 여행러","emoji":"🕯️","tagline":"관광지보다 골목 하나의 온도를 기억하는 사람"},{"type":"INTJ","name":"최적 동선 여행러","emoji":"🧭","tagline":"지도를 펼치기 전에 이미 경로가 그려진 사람"},{"type":"ISTP","name":"즉흥 배낭 여행러","emoji":"🛠️","tagline":"지도 없이도 어떻게든 찾아가는 사람"},{"type":"ISFP","name":"감성 셔터 여행러","emoji":"📷","tagline":"풍경 하나에 한참을 머무는 사람"},{"type":"INFP","name":"낭만 산책 여행러","emoji":"🌙","tagline":"정처 없이 걷다 마음에 드는 골목을 만나는 사람"},{"type":"INTP","name":"호기심 탐구 여행러","emoji":"🔍","tagline":"박물관 팻말까지 끝까지 다 읽는 사람"},{"type":"ESTP","name":"액티비티 여행러","emoji":"🏄","tagline":"일정표보다 몸이 먼저 움직이는 사람"},{"type":"ESFP","name":"인생샷 여행러","emoji":"🤳","tagline":"여행지마다 인생샷 한 장씩 남기는 사람"},{"type":"ENFP","name":"즉흥 만남 여행러","emoji":"✨","tagline":"현지인과도 금방 친구가 되는 사람"},{"type":"ENTP","name":"숨은 루트 여행러","emoji":"🗺️","tagline":"가이드북에 없는 길로 굳이 가보는 사람"},{"type":"ESTJ","name":"완벽 리더형 여행러","emoji":"📋","tagline":"일행의 동선을 끝까지 책임지는 사람"},{"type":"ESFJ","name":"다 함께 여행러","emoji":"🧳","tagline":"다들 만족했는지부터 챙기는 사람"},{"type":"ENFJ","name":"분위기 메이커 여행러","emoji":"🎉","tagline":"여행 내내 텐션을 끌어올리는 사람"},{"type":"ENTJ","name":"정복형 여행러","emoji":"🚀","tagline":"이 도시는 다 보고 가겠다는 사람"}],"questions":[{"section":"여행 계획","text":"여행을 계획할 때 나는?","options":[{"text":"친구들과 아이디어 나누며 다 같이 짠다","value":"E"},{"text":"혼자 조용히 검색해서 정리한다","value":"I"}]},{"section":"새로운 여행지","text":"안 가본 여행지 얘기를 들으면?","options":[{"text":"바로 같이 가자고 친구를 부른다","value":"E"},{"text":"일단 혼자 정보부터 찾아본다","value":"I"}]},{"section":"여행 중 SNS","text":"여행 중 좋은 순간을 만나면?","options":[{"text":"바로 스토리에 올려서 공유한다","value":"E"},{"text":"마음속에 담아두고 나중에 정리한다","value":"I"}]},{"section":"목적지 선택","text":"여행지를 고를 때 중요한 것은?","options":[{"text":"검증된 후기가 많은 익숙한 코스","value":"S"},{"text":"한 번도 안 가본 새로운 지역","value":"N"}]},{"section":"일정 정보","text":"여행 갈 곳을 조사할 때 나는?","options":[{"text":"평점, 가격을 표로 비교해서 정리한다","value":"S"},{"text":"'분위기 좋다'는 느낌으로 대략 정한다","value":"N"}]},{"section":"여행지 설명","text":"다녀온 곳을 설명할 때 나는?","options":[{"text":"거리, 시간, 가격을 구체적으로 말한다","value":"S"},{"text":"'꿈같았다'처럼 비유로 설명한다","value":"N"}]},{"section":"문제 발생 시","text":"여행 중 계획이 틀어지면?","options":[{"text":"원인을 파악하고 대안을 계산한다","value":"T"},{"text":"속상하지만 그 순간을 받아들인다","value":"F"}]},{"section":"여행 조언","text":"친구가 여행지를 물어보면?","options":[{"text":"장단점을 객관적으로 짚어준다","value":"T"},{"text":"그 친구가 좋아할지부터 생각한다","value":"F"}]},{"section":"여행 후기","text":"여행 후기를 남긴다면?","options":[{"text":"동선, 비용을 항목별로 정리한다","value":"T"},{"text":"그날 느낀 감정과 분위기를 적는다","value":"F"}]},{"section":"일정 관리","text":"평소 여행 일정을 짤 때?","options":[{"text":"시간 단위로 정해서 그대로 움직인다","value":"J"},{"text":"큰 틀만 정하고 그때그때 정한다","value":"P"}]},{"section":"여행 준비물","text":"짐을 쌀 때 나는?","options":[{"text":"체크리스트대로 미리미리 챙긴다","value":"J"},{"text":"출발 직전에 몰아서 챙긴다","value":"P"}]},{"section":"현지에서","text":"현지에서 자유시간이 생기면?","options":[{"text":"미리 정해둔 곳으로 이동한다","value":"J"},{"text":"발길 닿는 대로 즉흥적으로 움직인다","value":"P"}]}],"results":[{"type":"ISTJ","name":"분 단위 플래너 여행러","emoji":"🗂️","tagline":"출발 전 이미 완성돼 있는 시간표","summary":"분 단위 플래너 여행러처럼 여행하는 타입이에요. 여행을 준비하는 방식부터 현지에서 움직이는 태도까지, 여행 앞에서 성격이 자연스럽게 드러나요.","color":"#4A4238","cards":[{"label":"여행 준비","value":"출발 3주 전부터 엑셀로 정리하는 일정표"},{"label":"동선 스타일","value":"분 단위로 짜인 동선, 웬만해선 안 바뀜"},{"label":"돌발 상황 대처","value":"길을 잃으면 원래 계획으로 되돌아가는 편"},{"label":"여행 중 말버릇","value":"'여기 후기 몇 점이에요?'부터 물어봄"}],"duo":{"good":[{"label":"계획력","value":"준비물부터 예약까지 빈틈없이 챙겨요"},{"label":"신뢰감","value":"약속한 시간에 늘 정확하게 나타나요"},{"label":"안정감","value":"돌발 상황에도 흔들리지 않고 대응해요"}],"bad":[{"label":"즉흥성","value":"계획에 없던 변화는 불편해해요"},{"label":"여유","value":"일정 채우기에 급급할 때가 있어요"}]}},{"type":"ISFJ","name":"든든한 준비성 여행러","emoji":"🎒","tagline":"다들 놓친 걸 꼭 챙겨오는 사람","summary":"든든한 준비성 여행러처럼 여행하는 타입이에요. 여행을 준비하는 방식부터 현지에서 움직이는 태도까지, 여행 앞에서 성격이 자연스럽게 드러나요.","color":"#8C7355","cards":[{"label":"여행 준비","value":"상비약부터 우산까지 다 챙기는 캐리어"},{"label":"동선 스타일","value":"다들 챙기지 못한 걸 슬쩍 꺼내주는 사람"},{"label":"돌발 상황 대처","value":"힘들어도 티 안 내고 일행 컨디션부터 살핌"},{"label":"여행 중 말버릇","value":"'다들 괜찮아?'가 입버릇"}],"duo":{"good":[{"label":"배려심","value":"일행 컨디션을 가장 먼저 챙겨요"},{"label":"든든함","value":"비상용품까지 챙겨서 다들 의지하게 돼요"},{"label":"차분함","value":"트러블이 생겨도 침착하게 넘겨요"}],"bad":[{"label":"내 의견 말하기","value":"원하는 코스를 적극적으로 말 못 해요"},{"label":"과감한 시도","value":"낯선 음식이나 코스는 망설여요"}]}},{"type":"INFJ","name":"의미 찾기 여행러","emoji":"🕯️","tagline":"관광지보다 골목 하나의 온도를 기억하는 사람","summary":"의미 찾기 여행러처럼 여행하는 타입이에요. 여행을 준비하는 방식부터 현지에서 움직이는 태도까지, 여행 앞에서 성격이 자연스럽게 드러나요.","color":"#3D4C63","cards":[{"label":"여행 준비","value":"사람 적은 시간대를 미리 찾아두는 편"},{"label":"동선 스타일","value":"관광지보다 한적한 골목에서 더 오래 머묾"},{"label":"돌발 상황 대처","value":"계획이 틀어져도 조용히 다른 의미를 찾음"},{"label":"여행 중 말버릇","value":"'여긴 왜 이렇게 마음이 편하지'라는 혼잣말"}],"duo":{"good":[{"label":"깊은 여운","value":"혼자만의 시선으로 여행을 오래 기억해요"},{"label":"섬세한 관찰","value":"남들이 못 본 디테일을 잘 찾아내요"},{"label":"차분한 분위기","value":"같이 있으면 마음이 편안해져요"}],"bad":[{"label":"빠른 결정","value":"고민이 길어져 시간이 지체될 때가 있어요"},{"label":"체력 안배","value":"감상에 잠기다 일정이 늘어져요"}]}},{"type":"INTJ","name":"최적 동선 여행러","emoji":"🧭","tagline":"지도를 펼치기 전에 이미 경로가 그려진 사람","summary":"최적 동선 여행러처럼 여행하는 타입이에요. 여행을 준비하는 방식부터 현지에서 움직이는 태도까지, 여행 앞에서 성격이 자연스럽게 드러나요.","color":"#2B2B3D","cards":[{"label":"여행 준비","value":"동선 최적화 지도를 미리 만들어 감"},{"label":"동선 스타일","value":"환승과 이동 시간까지 계산해 짠 스케줄"},{"label":"돌발 상황 대처","value":"변수가 생기면 바로 대안 경로를 계산"},{"label":"여행 중 말버릇","value":"'이렇게 가면 20분 절약돼'라고 알려줌"}],"duo":{"good":[{"label":"효율성","value":"최소 시간으로 최대 코스를 소화해요"},{"label":"정보력","value":"동선과 팁을 꼼꼼히 조사해둬요"},{"label":"문제해결","value":"변수가 생겨도 빠르게 대안을 찾아요"}],"bad":[{"label":"여유로운 즉흥","value":"계획 밖의 제안은 잘 안 받아들여요"},{"label":"감상 표현","value":"좋아도 티를 잘 안 내는 편이에요"}]}},{"type":"ISTP","name":"즉흥 배낭 여행러","emoji":"🛠️","tagline":"지도 없이도 어떻게든 찾아가는 사람","summary":"즉흥 배낭 여행러처럼 여행하는 타입이에요. 여행을 준비하는 방식부터 현지에서 움직이는 태도까지, 여행 앞에서 성격이 자연스럽게 드러나요.","color":"#4A4A4A","cards":[{"label":"여행 준비","value":"짐은 최소한으로, 필요한 건 현지에서 조달"},{"label":"동선 스타일","value":"지도 앱 없이도 감으로 길을 찾아감"},{"label":"돌발 상황 대처","value":"문제가 생기면 일단 몸으로 부딪혀 해결"},{"label":"여행 중 말버릇","value":"말보다 행동으로 먼저 해결책을 찾음"}],"duo":{"good":[{"label":"적응력","value":"낯선 환경에도 금방 익숙해져요"},{"label":"실행력","value":"고민보다 행동이 먼저인 편이에요"},{"label":"쿨한 매력","value":"작은 실수엔 대범하게 넘어가요"}],"bad":[{"label":"사전 준비","value":"막상 필요한 걸 현지에서 급하게 사요"},{"label":"세심한 배려","value":"일행 컨디션을 놓칠 때가 있어요"}]}},{"type":"ISFP","name":"감성 셔터 여행러","emoji":"📷","tagline":"풍경 하나에 한참을 머무는 사람","summary":"감성 셔터 여행러처럼 여행하는 타입이에요. 여행을 준비하는 방식부터 현지에서 움직이는 태도까지, 여행 앞에서 성격이 자연스럽게 드러나요.","color":"#C98FA6","cards":[{"label":"여행 준비","value":"카메라 배터리부터 챙기는 우선순위"},{"label":"동선 스타일","value":"마음에 드는 풍경 앞에서 발걸음이 느려짐"},{"label":"돌발 상황 대처","value":"계획이 틀어져도 그 순간 자체를 즐김"},{"label":"여행 중 말버릇","value":"'이 색감 봐봐'라며 사진부터 보여줌"}],"duo":{"good":[{"label":"감성","value":"같은 풍경도 더 특별하게 담아내요"},{"label":"여유","value":"서두르지 않아도 만족스러운 하루를 만들어요"},{"label":"편안함","value":"함께 있으면 페이스를 안 재촉해서 좋아요"}],"bad":[{"label":"시간 관리","value":"사진 찍다 다음 일정이 늦어져요"},{"label":"계획 세우기","value":"예약 없이 갔다가 발길을 돌릴 때가 있어요"}]}},{"type":"INFP","name":"낭만 산책 여행러","emoji":"🌙","tagline":"정처 없이 걷다 마음에 드는 골목을 만나는 사람","summary":"낭만 산책 여행러처럼 여행하는 타입이에요. 여행을 준비하는 방식부터 현지에서 움직이는 태도까지, 여행 앞에서 성격이 자연스럽게 드러나요.","color":"#8E6FB0","cards":[{"label":"여행 준비","value":"정해진 일정보다 마음 가는 대로 이동"},{"label":"동선 스타일","value":"지도보다 마음이 끌리는 골목으로 걸어감"},{"label":"돌발 상황 대처","value":"힘든 순간도 나중엔 추억으로 남긴다고 생각"},{"label":"여행 중 말버릇","value":"여행지에서 편지나 일기를 씀"}],"duo":{"good":[{"label":"깊은 애정","value":"여행지 하나하나에 진심으로 몰입해요"},{"label":"포용력","value":"계획이 틀어져도 너그럽게 받아들여요"},{"label":"특별한 시선","value":"남들과 다른 순간을 특별하게 기억해요"}],"bad":[{"label":"일정 관리","value":"마음 가는 대로 가다 시간을 놓쳐요"},{"label":"현실적인 준비","value":"이동 수단이나 예약을 깜빡할 때가 있어요"}]}},{"type":"INTP","name":"호기심 탐구 여행러","emoji":"🔍","tagline":"박물관 팻말까지 끝까지 다 읽는 사람","summary":"호기심 탐구 여행러처럼 여행하는 타입이에요. 여행을 준비하는 방식부터 현지에서 움직이는 태도까지, 여행 앞에서 성격이 자연스럽게 드러나요.","color":"#5A6470","cards":[{"label":"여행 준비","value":"그 도시의 역사부터 검색해보고 출발"},{"label":"동선 스타일","value":"박물관 팻말, 안내문까지 끝까지 다 읽음"},{"label":"돌발 상황 대처","value":"궁금한 게 생기면 계획을 잠시 미뤄서라도 찾아봄"},{"label":"여행 중 말버릇","value":"'이거 왜 이런지 알아?'로 대화를 시작함"}],"duo":{"good":[{"label":"호기심","value":"여행지에 대한 배경지식이 풍부해요"},{"label":"독립성","value":"혼자서도 알아서 잘 다녀요"},{"label":"재밌는 이야기꾼","value":"알게 된 사실을 재밌게 풀어줘요"}],"bad":[{"label":"일정 진행","value":"궁금한 것 찾다 다음 코스가 늦어져요"},{"label":"현실적인 챙김","value":"지도보다 딴생각에 빠질 때가 있어요"}]}},{"type":"ESTP","name":"액티비티 여행러","emoji":"🏄","tagline":"일정표보다 몸이 먼저 움직이는 사람","summary":"액티비티 여행러처럼 여행하는 타입이에요. 여행을 준비하는 방식부터 현지에서 움직이는 태도까지, 여행 앞에서 성격이 자연스럽게 드러나요.","color":"#C1440E","cards":[{"label":"여행 준비","value":"짐은 가볍게, 몸이 먼저 움직이는 스타일"},{"label":"동선 스타일","value":"현지 액티비티부터 예약해두는 편"},{"label":"돌발 상황 대처","value":"변수가 생겨도 그 자리에서 바로 해결"},{"label":"여행 중 말버릇","value":"'일단 해보자'가 여행의 모토"}],"duo":{"good":[{"label":"실행력","value":"망설임 없이 바로 몸을 움직여요"},{"label":"에너지","value":"지친 순간에도 활력을 불어넣어요"},{"label":"순발력","value":"돌발 상황을 재빠르게 해결해요"}],"bad":[{"label":"신중함","value":"충동적으로 정했다 후회할 때가 있어요"},{"label":"계획 관리","value":"예약을 깜빡하고 즉흥으로 밀어붙여요"}]}},{"type":"ESFP","name":"인생샷 여행러","emoji":"🤳","tagline":"여행지마다 인생샷 한 장씩 남기는 사람","summary":"인생샷 여행러처럼 여행하는 타입이에요. 여행을 준비하는 방식부터 현지에서 움직이는 태도까지, 여행 앞에서 성격이 자연스럽게 드러나요.","color":"#E0568C","cards":[{"label":"여행 준비","value":"포토스팟 리스트부터 저장해두는 편"},{"label":"동선 스타일","value":"사진 찍느라 일정이 자꾸 늘어남"},{"label":"돌발 상황 대처","value":"기분 전환이 필요하면 즉흥적으로 코스 변경"},{"label":"여행 중 말버릇","value":"'여기 사진 미쳤다'가 하루에 열 번"}],"duo":{"good":[{"label":"분위기 메이커","value":"같이 있으면 여행이 더 신나져요"},{"label":"긍정 에너지","value":"작은 해프닝도 웃어넘기게 만들어요"},{"label":"표현력","value":"좋은 순간을 마음껏 만끽해요"}],"bad":[{"label":"체력 안배","value":"사진 찍느라 무리해서 지칠 때가 있어요"},{"label":"지출 관리","value":"현장 분위기에 지갑이 쉽게 열려요"}]}},{"type":"ENFP","name":"즉흥 만남 여행러","emoji":"✨","tagline":"현지인과도 금방 친구가 되는 사람","summary":"즉흥 만남 여행러처럼 여행하는 타입이에요. 여행을 준비하는 방식부터 현지에서 움직이는 태도까지, 여행 앞에서 성격이 자연스럽게 드러나요.","color":"#F2994A","cards":[{"label":"여행 준비","value":"일단 떠나고 계획은 현지에서 짜는 편"},{"label":"동선 스타일","value":"낯선 사람과도 금방 여행 정보를 주고받음"},{"label":"돌발 상황 대처","value":"변수가 생기면 오히려 새로운 모험이라 생각"},{"label":"여행 중 말버릇","value":"'우리 저기도 가볼까?'로 일정이 늘어남"}],"duo":{"good":[{"label":"친화력","value":"현지에서도 금방 인연을 만들어요"},{"label":"모험심","value":"예상 밖의 순간을 즐길 줄 알아요"},{"label":"따뜻한 에너지","value":"함께 있으면 여행이 더 즐거워져요"}],"bad":[{"label":"일정 완수","value":"새로운 제안에 원래 계획을 자주 바꿔요"},{"label":"체력 관리","value":"텐션이 높다 갑자기 방전될 때가 있어요"}]}},{"type":"ENTP","name":"숨은 루트 여행러","emoji":"🗺️","tagline":"가이드북에 없는 길로 굳이 가보는 사람","summary":"숨은 루트 여행러처럼 여행하는 타입이에요. 여행을 준비하는 방식부터 현지에서 움직이는 태도까지, 여행 앞에서 성격이 자연스럽게 드러나요.","color":"#C23B5A","cards":[{"label":"여행 준비","value":"가이드북보다 로컬 커뮤니티에서 정보 수집"},{"label":"동선 스타일","value":"남들 안 가는 루트를 일부러 찾아감"},{"label":"돌발 상황 대처","value":"계획이 틀어지면 더 재밌는 대안을 즉석에서 제안"},{"label":"여행 중 말버릇","value":"'이거보다 이 방법이 낫지 않아?'를 자주 말함"}],"duo":{"good":[{"label":"재치","value":"의외의 루트로 새로운 재미를 찾아줘요"},{"label":"적응력","value":"변수 앞에서도 금방 대안을 떠올려요"},{"label":"호기심","value":"새로운 걸 발견하는 눈이 밝아요"}],"bad":[{"label":"일정 준수","value":"새 루트에 꽂혀 원래 계획을 흐트려요"},{"label":"꾸준함","value":"흥미가 식으면 금방 다른 데 관심 가요"}]}},{"type":"ESTJ","name":"완벽 리더형 여행러","emoji":"📋","tagline":"일행의 동선을 끝까지 책임지는 사람","summary":"완벽 리더형 여행러처럼 여행하는 타입이에요. 여행을 준비하는 방식부터 현지에서 움직이는 태도까지, 여행 앞에서 성격이 자연스럽게 드러나요.","color":"#3B2A20","cards":[{"label":"여행 준비","value":"팀 전체 일정표를 엑셀로 관리"},{"label":"동선 스타일","value":"이동 시간까지 계산해 효율적으로 동선 설계"},{"label":"돌발 상황 대처","value":"문제가 생기면 바로 대안을 찾아 지시"},{"label":"여행 중 말버릇","value":"'다음 코스는 여기, 시간 맞춰서 움직이자'"}],"duo":{"good":[{"label":"추진력","value":"일정을 확실하게 완수해내요"},{"label":"책임감","value":"일행을 끝까지 잘 챙겨요"},{"label":"결단력","value":"고민 없이 빠르게 결정을 내려요"}],"bad":[{"label":"여유","value":"완벽한 일정에 집착해 스트레스받아요"},{"label":"즉흥적인 재미","value":"계획 밖의 제안은 잘 안 받아들여요"}]}},{"type":"ESFJ","name":"다 함께 여행러","emoji":"🧳","tagline":"다들 만족했는지부터 챙기는 사람","summary":"다 함께 여행러처럼 여행하는 타입이에요. 여행을 준비하는 방식부터 현지에서 움직이는 태도까지, 여행 앞에서 성격이 자연스럽게 드러나요.","color":"#D9A441","cards":[{"label":"여행 준비","value":"다 같이 좋아할 만한 코스 위주로 준비"},{"label":"동선 스타일","value":"모두의 취향을 반영해 일정을 조율"},{"label":"돌발 상황 대처","value":"문제가 생기면 일행 컨디션부터 먼저 챙김"},{"label":"여행 중 말버릇","value":"'다들 뭐 먹고 싶어?'로 하루를 시작"}],"duo":{"good":[{"label":"배려심","value":"모두가 만족하는 코스를 잘 짜요"},{"label":"친화력","value":"현지에서도 사람들과 잘 어울려요"},{"label":"세심함","value":"작은 것까지 살뜰하게 챙겨요"}],"bad":[{"label":"내 취향 우선","value":"남 챙기다 정작 내가 원하는 걸 놓쳐요"},{"label":"과감한 도전","value":"다수가 꺼리는 코스는 피하는 편이에요"}]}},{"type":"ENFJ","name":"분위기 메이커 여행러","emoji":"🎉","tagline":"여행 내내 텐션을 끌어올리는 사람","summary":"분위기 메이커 여행러처럼 여행하는 타입이에요. 여행을 준비하는 방식부터 현지에서 움직이는 태도까지, 여행 앞에서 성격이 자연스럽게 드러나요.","color":"#7C6A9C","cards":[{"label":"여행 준비","value":"일행이 좋아할 서프라이즈 코스를 준비"},{"label":"동선 스타일","value":"분위기를 살피며 텐션을 끌어올림"},{"label":"돌발 상황 대처","value":"문제가 생기면 분위기부터 다독이고 해결"},{"label":"여행 중 말버릇","value":"'오늘 다들 어땠어?'로 하루를 마무리"}],"duo":{"good":[{"label":"리더십","value":"자연스럽게 일행을 이끌어요"},{"label":"공감력","value":"다들 기분을 잘 살펴줘요"},{"label":"에너지","value":"분위기를 밝게 만드는 힘이 있어요"}],"bad":[{"label":"내 페이스 챙기기","value":"분위기 살피다 정작 나는 못 쉬어요"},{"label":"솔직한 의견","value":"불편해도 좋게 돌려 말해요"}]}},{"type":"ENTJ","name":"정복형 여행러","emoji":"🚀","tagline":"이 도시는 다 보고 가겠다는 사람","summary":"정복형 여행러처럼 여행하는 타입이에요. 여행을 준비하는 방식부터 현지에서 움직이는 태도까지, 여행 앞에서 성격이 자연스럽게 드러나요.","color":"#1F2430","cards":[{"label":"여행 준비","value":"여행 목표부터 명확히 세우고 시작"},{"label":"동선 스타일","value":"이 도시에서 꼭 해야 할 리스트를 완수"},{"label":"돌발 상황 대처","value":"문제가 생기면 즉시 대안을 세워 밀어붙임"},{"label":"여행 중 말버릇","value":"'여기까지 왔으면 저것도 해야지'"}],"duo":{"good":[{"label":"추진력","value":"목표한 코스를 끝까지 완수해요"},{"label":"결단력","value":"고민 없이 바로 다음 행동을 정해요"},{"label":"리더십","value":"여행 전체를 능숙하게 이끌어요"}],"bad":[{"label":"여유 갖기","value":"계획대로 안 되면 스트레스를 받아요"},{"label":"타협하기","value":"일행 의견보다 내 계획을 우선해요"}]}}],"accent":"#2E7D6B","progress":"bar"};
+var AXES=[['E','I'],['S','N'],['T','F'],['J','P']];
+var nick="",qi=0,sc={},lock=false,tT=null,answers=[];
+function $(i){return document.getElementById(i);}
+function esc(s){if(s==null)return"";return String(s).replace(/[&<>"']/g,function(m){
+return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m];});}
+function show(id){var a=document.querySelectorAll(".sc");
+for(var i=0;i<a.length;i++)a[i].classList.remove("on");
+$(id).classList.add("on");window.scrollTo({top:0,behavior:"auto"});}
+function reset(){sc={};answers=[];["E","I","S","N","T","F","J","P"].forEach(function(k){sc[k]=0;});}
+function mix(hex,ratio){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
+r=Math.round(r+(255-r)*ratio);g=Math.round(g+(255-g)*ratio);b=Math.round(b+(255-b)*ratio);
+return "#"+[r,g,b].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function lerp2(hexA,hexB,t){function rgb(h){h=(h||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+return[parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+var a=rgb(hexA),b=rgb(hexB);
+var r=Math.round(a[0]+(b[0]-a[0])*t),g=Math.round(a[1]+(b[1]-a[1])*t),bl=Math.round(a[2]+(b[2]-a[2])*t);
+return "#"+[r,g,bl].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function luminance(hex){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16)/255,g=parseInt(h.slice(2,4),16)/255,b=parseInt(h.slice(4,6),16)/255;
+function lin(c){return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);}
+return 0.2126*lin(r)+0.7152*lin(g)+0.0722*lin(b);}
+function readable(bgHex){return luminance(bgHex)>0.53?"#1a1a1a":"#fff";}
+function setAcc(c){var s=document.documentElement.style;
+var soft=mix(c,.86),deep=mix(c,.68);
+s.setProperty("--acc",c);s.setProperty("--soft",soft);s.setProperty("--deep",deep);
+s.setProperty("--accFg",readable(c));s.setProperty("--softFg",readable(soft));s.setProperty("--deepFg",readable(deep));}
+function intro(){nick="";qi=0;lock=false;reset();setAcc(D.accent);
+var cast="";for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+cast+='<div class="ci"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+(c.tagline?'<span class="t">'+esc(c.tagline)+'</span>':"")+'</div>';}
+$("s1").innerHTML='<div class="pa intro">'+
+'<div class="em">'+D.meta.emoji+'</div>'+
+'<h1>'+esc(D.meta.title)+'</h1><p>'+esc(D.meta.intro)+'</p>'+
+'<div class="castt">'+esc(D.meta.setName||"16가지 유형")+'</div>'+
+'<div class="cast">'+cast+'</div>'+
+'<div class="mt">질문 '+D.questions.length+'개 · 결과 16가지</div>'+
+'<div class="langhint">🌐 Prefer another language? Use your browser\'s translate feature.<br>다른 언어로 보고 싶다면 브라우저의 번역 기능을 이용해주세요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="'+(D.useName?"nameScreen()":"begin()")+'">테스트 시작하기</button></div>';
+show("s1");}
+function nameScreen(){$("s2").innerHTML='<div class="pa nb"><h2>어떻게 불러드릴까요?</h2>'+
+'<input id="nk" type="text" maxlength="12" placeholder="닉네임을 입력해주세요" autocomplete="off">'+
+'<div class="gd">○ 총 '+D.questions.length+'문항입니다.<br>○ 나에게 더 가까운 답을 골라주세요.<br>○ 결과에 닉네임이 함께 표시돼요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="begin()">시작하기</button>'+
+'<button class="btn" onclick="intro()">처음으로</button></div>';show("s2");
+setTimeout(function(){var n=$("nk");if(n){n.focus();
+n.addEventListener("keydown",function(e){if(e.key==="Enter")begin();});}},80);}
+function begin(){if(D.useName){var n=$("nk"),v=n?n.value.trim():"";
+if(!v){alert("닉네임을 입력해주세요.");if(n)n.focus();return;}nick=v;}
+qi=0;lock=false;reset();question();show("s3");}
+function progHTML(cur,total){var p=D.progress||"bar";
+if(p==="bar"){return '<div class="trk"><div class="fil" style="width:'+Math.round(cur/total*100)+'%"></div></div>';}
+var h=p==="dots"?'<div class="pdots">':'<div class="psq">',n=Math.min(total,12);
+for(var i=0;i<n;i++){var st=i<cur-1?" dn":i===cur-1?(p==="dots"?" now":" dn"):"";
+h+=p==="dots"?'<div class="pdot'+st+'"></div>':'<i class="'+st.trim()+'"></i>';}
+return h+"</div>";}
+function question(){lock=false;var tot=D.questions.length,q=D.questions[qi];
+var num=("0"+(qi+1)).slice(-2);
+var h='<div class="pa qw"><div class="qt"><div class="qi">'+
+'<span class="sec">'+esc(q.section||"진행 중")+'</span><span>'+(qi+1)+' / '+tot+'</span></div>'+
+progHTML(qi+1,tot)+'</div>'+
+'<div class="qn">문항 '+num+(nick?" · "+esc(nick):"")+'</div>'+
+'<div class="qx">'+esc(q.text)+'</div><div class="ops">';
+for(var i=0;i<q.options.length;i++){
+h+='<button class="op" data-n="'+(i+1)+'" data-v="'+esc(q.options[i].value)+'">'+esc(q.options[i].text)+'</button>';}
+h+='</div><p class="qnote">더 가까운 쪽을 골라주세요.</p>'+
+(qi>0?'<button type="button" class="qback" onclick="prevQ()">← 이전 문항</button>':"")+
+'</div>';
+$("s3").innerHTML=h;
+window.scrollTo({top:0,behavior:"auto"});
+var bs=$("s3").querySelectorAll(".op");
+for(var j=0;j<bs.length;j++){bs[j].addEventListener("click",function(){pick(this);});}}
+function pick(btn){if(lock)return;lock=true;
+var all=$("s3").querySelectorAll(".op");
+for(var i=0;i<all.length;i++){all[i].disabled=true;all[i].classList.remove("pk");}
+btn.classList.add("pk");
+var v=btn.getAttribute("data-v");if(sc[v]==null)sc[v]=0;sc[v]++;answers[qi]=v;
+setTimeout(function(){qi++;if(qi<D.questions.length){question();return;}finish();},110);}
+function prevQ(){if(qi<=0||lock)return;lock=true;
+var prevV=answers[qi-1];if(prevV!=null&&sc[prevV]>0)sc[prevV]--;
+answers[qi-1]=null;qi--;question();}
+function finish(){var code="";
+for(var i=0;i<AXES.length;i++){code+=(sc[AXES[i][0]]>=sc[AXES[i][1]]?AXES[i][0]:AXES[i][1]);}
+loading(code);}
+function loading(code){
+$("s4").innerHTML='<div class="pa lw"><div style="width:100%">'+
+'<h2>'+esc(D.meta.loadingText||"결과를 정리하는 중")+'</h2><p>잠시만 기다려 주세요.</p>'+
+'<div class="dts"><span></span><span></span><span></span></div>'+
+'<div class="lbar"><span></span></div></div></div>';show("s4");
+setTimeout(function(){result(code);show("s5");},2500);}
+function lab(key,sub){var L=D.blockLabels||{};var v=L[key];
+if(sub){
+if(v&&typeof v==="object"&&v[sub])return v[sub];
+return sub==="good"?"잘 맞는 유형":sub==="bad"?"안 맞는 유형":"";}
+return typeof v==="string"?v:"";}
+function byType(t){for(var i=0;i<D.cast.length;i++){if(D.cast[i].type===t)return D.cast[i];}return null;}
+function compatList(type){var s=D.compat[type]||"";var out=[],m,re=/([A-Z]{4})(\d+)/g;
+while((m=re.exec(s))!==null){out.push({type:m[1],pct:parseInt(m[2],10)});}
+out.sort(function(a,b){return b.pct-a.pct;});return out;}
+function compatItems(arr){var h="";
+for(var i=0;i<arr.length;i++){var c=byType(arr[i].type);if(!c)continue;
+h+='<div class="cmpi"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+
+'<span class="p">'+arr[i].pct+'%</span></span></div>';}
+return h;}
+function lineFor(pct){var L=D.compatLines||[];
+for(var i=0;i<L.length;i++){if(pct>=L[i].min)return L[i].text;}
+return L.length?L[L.length-1].text:"";}
+function compatHTML(type){var L=D.compatLabels||{};var list=compatList(type);
+if(!list.length)return "";
+var best=list.slice(0,2),worst=list.slice(-2).reverse();
+return '<div class="cmp"><div class="cmph">'+esc(L.title||"궁합")+'</div><div class="cmpg">'+
+'<div class="cmpc"><span class="lb">'+esc(L.good||"최고의 궁합")+'</span>'+compatItems(best)+
+'<div class="cmpnote">'+esc(lineFor(best[0].pct))+'</div></div>'+
+'<div class="cmpc bad"><span class="lb">'+esc(L.bad||"아쉬운 궁합")+'</span>'+compatItems(worst)+
+'<div class="cmpnote">'+esc(lineFor(worst[0].pct))+'</div></div>'+
+'</div></div>';}
+function tint(color,pct){var s=Math.max(0,Math.min(1,(pct-70)/29));
+return lerp2("#AEB4BF",color,Math.pow(s,2.5));}
+function mapHTML(type,color){var L=D.compatLabels||{};
+var list=compatList(type);if(!list.length)return "";
+var pm={};list.forEach(function(x){pm[x.type]=x.pct;});
+var g="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+if(c.type===type){
+var meFg=readable(color);
+g+='<div class="mapc me" style="background:'+color+';color:'+meFg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="badge">나</span></div>';
+}else{var p=pm[c.type]||0;var bg=tint(color,p);var fg=readable(bg);
+g+='<div class="mapc" style="background:'+bg+';color:'+fg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="p" style="opacity:1">'+p+'%</span></div>';}}
+var bar="linear-gradient(90deg,"+tint(color,72)+","+tint(color,99)+")";
+return '<div class="map"><div class="maph">'+esc(L.mapTitle||"나의 궁합 지도")+'</div>'+
+'<div class="mapg">'+g+'</div>'+
+'<div class="mapf"><span>안 맞음</span><span class="mapbar" style="background:'+bar+'"></span>'+
+'<span>잘 맞음</span></div></div>';}
+function blockHTML(name,r){
+if(name==="quote"&&r.quote){var qcls=D.quoteStyle==="bubble"?"qbb":"qb";
+return '<div class="blk"><div class="blt">'+esc(lab("quote")||"한마디")+'</div>'+
+'<div class="'+qcls+'">'+esc(r.quote)+'</div></div>';}
+if(name==="traits"&&r.traits&&r.traits.length){var h='<div class="blk"><div class="blt">'+
+esc(lab("traits")||"세부 특징")+'</div>';
+if(D.traitStyle==="sticker"){h+='<div class="trss">';
+for(var i=0;i<r.traits.length;i++){h+='<div class="tst">'+esc(r.traits[i])+'</div>';}
+h+='</div>';
+}else{h+='<div class="trs">';
+for(var i2=0;i2<r.traits.length;i2++){h+='<div class="tc">'+esc(r.traits[i2])+'</div>';}
+h+='</div>';}
+return h+"</div>";}
+if(name==="duo"&&r.duo){var g=r.duo.good||[],b=r.duo.bad||[];var chk=D.duoStyle==="check";
+var gm=chk?"✓":"",bm=chk?"✗":"",dcls=chk?" chk":"";
+var h2='<div class="blk duo"><div class="dsec g"><div class="dsh">'+esc(lab("duo","good")||"좋은 면")+'</div><div class="dls">';
+for(var j=0;j<g.length;j++){h2+='<div class="dit'+dcls+'"><b>'+gm+'</b><span>'+esc(g[j])+'</span></div>';}
+h2+='</div></div><div class="dsec b"><div class="dsh">'+esc(lab("duo","bad")||"아쉬운 면")+'</div><div class="dls">';
+for(var k2=0;k2<b.length;k2++){h2+='<div class="dit'+dcls+'"><b>'+bm+'</b><span>'+esc(b[k2])+'</span></div>';}
+return h2+"</div></div></div>";}
+if(name==="stats"&&r.stats&&r.stats.length){
+var h3='<div class="blk"><div class="blt">'+esc(lab("stats")||"지표")+'</div>';
+if(D.statStyle==="radial"){
+h3+='<div class="stsr">';
+for(var m=0;m<r.stats.length;m++){var s=r.stats[m];var v=Math.max(0,Math.min(100,s.value||0));
+var C=100.53;var off=C*(1-v/100);
+h3+='<div class="rgauge"><svg viewBox="0 0 38 38">'+
+'<circle class="rtrack" cx="19" cy="19" r="16"/>'+
+'<circle class="rfill" cx="19" cy="19" r="16" stroke-dasharray="'+C+'" stroke-dashoffset="'+off+'" transform="rotate(-90 19 19)"/>'+
+'<text x="19" y="23" text-anchor="middle" style="font-size:10px;font-weight:900;fill:var(--ink)">'+v+'%</text>'+
+'</svg><div class="rlab">'+esc(s.label)+'</div></div>';}
+h3+='</div>';
+}else{
+h3+='<div class="sts">';
+for(var m2=0;m2<r.stats.length;m2++){var s2=r.stats[m2];var v2=Math.max(0,Math.min(100,s2.value||0));
+var fc=Math.max(1,Math.min(10,Math.round(v2/10)));var sq="";
+for(var n2=1;n2<=10;n2++){sq+='<span class="sq'+(n2<=fc?" f":"")+'"></span>';}
+h3+='<div class="srow"><div class="slab">'+esc(s2.label)+'</div><div class="sqs">'+sq+'</div>'+
+'<div class="spc">'+v2+'%</div></div>';}
+h3+='</div>';
+}
+return h3+"</div>";}
+if(name==="cards"&&r.cards&&r.cards.length){
+var h4='<div class="blk"><div class="blt">'+esc(lab("cards")||"이런 사람")+'</div>';
+if(D.cardStyle==="ticket"){h4+='<div class="cdt">';
+for(var p=0;p<r.cards.length;p++){h4+='<div class="cdti"><b>'+esc(r.cards[p].label)+'</b><span>'+
+esc(r.cards[p].value)+'</span></div>';}
+h4+='</div>';
+}else{h4+='<div class="cds" style="margin-top:9px">';
+for(var p2=0;p2<r.cards.length;p2++){h4+='<div class="cd2"><b>'+esc(r.cards[p2].label)+'</b><p>'+
+esc(r.cards[p2].value)+'</p></div>';}
+h4+='</div>';}
+return h4+"</div>";}
+return "";}
+function result(code){var r=null;
+for(var i=0;i<D.results.length;i++){if(D.results[i].type===code){r=D.results[i];break;}}
+if(!r)r=D.results[0];
+setAcc(r.color||D.accent);
+var sum=(nick?esc(nick)+"님은 ":"")+esc(r.summary);
+var h='<div class="cap" id="cap"><div class="rh"><h2>'+esc(D.meta.title)+'</h2></div><div class="rb">'+
+'<div class="rn"><div class="em">'+esc(r.emoji||"✨")+'</div><h3>'+esc(r.name||D.meta.title)+'</h3>'+
+(r.tagline?'<div class="tg2">'+esc(r.tagline)+'</div>':"")+'</div>'+
+'<div class="rs">'+sum+'</div>';
+var col=r.color||D.accent;
+for(var b=0;b<D.blocks.length;b++){if(D.blocks[b]!=="map")h+=blockHTML(D.blocks[b],r);}
+h+=compatHTML(r.type);
+if(D.blocks.indexOf("map")>=0)h+=mapHTML(r.type,col);
+h+='<div class="rf">POWERED BY MAGIC FACTORY</div></div></div>'+
+'<div class="stk"><button class="btn fill" onclick="sheet(\''+code+'\')">'+
+esc(D.meta.sheetCta||"내 유형의 정체 확인하기")+'</button>'+
+'<button class="btn" onclick="saveImg(this)">결과 이미지 저장하기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+$("s5").innerHTML=h;}
+function sheet(code){var me=byType(code)||D.cast[0];
+var rows="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];var isMe=c.type===code;
+if(i===8){rows+='</div><div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div><div class="rows">';}
+rows+='<div class="row'+(isMe?" me":"")+'"><span class="no">'+("0"+(i+1)).slice(-2)+'</span>'+
+'<span class="em">'+c.emoji+'</span>'+
+'<span class="nm">'+esc(c.name)+(c.tagline?'<span class="tg">'+esc(c.tagline)+'</span>':"")+'</span>'+
+'<span class="cd">'+esc(c.type)+'</span></div>';}
+$("s6").innerHTML='<div class="sheet">'+
+'<div class="sheeth"><h2>'+esc(D.meta.sheetTitle||"전체 유형 정답지")+'</h2>'+
+'<p>열여섯 종류가 각각 어떤 성격 유형인지 전부 공개해요</p></div>'+
+'<div class="reveal"><div class="em">'+me.emoji+'</div>'+
+'<div class="nm">'+(nick?esc(nick)+"님의 ":"")+esc(me.name)+'</div>'+
+'<div class="eq">의 성격 유형은</div>'+
+'<div class="code">'+esc(me.type)+'</div></div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'<div class="sheetsec">'+esc(D.meta.setName||"전체 16종")+' 전체 목록</div>'+
+'<div class="rows">'+rows+'</div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'</div>'+
+'<div class="stk"><button class="btn fill" onclick="show(\'s5\')">내 결과로 돌아가기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+show("s6");}
+function frames(){return new Promise(function(r){requestAnimationFrame(function(){requestAnimationFrame(r);});});}
+function wait(ms){return new Promise(function(r){setTimeout(r,ms);});}
+var lastBlob=null,lastUrl="";
+function fileName(){return (D.meta.slug||"result")+".png";}
+function saveOptions(){
+var canShare=false;
+try{canShare=!!(navigator.canShare&&lastBlob&&navigator.canShare({files:[new File([lastBlob],fileName(),{type:"image/png"})]}));}catch(e){}
+var h="";
+if(canShare)h+='<button class="mbtn pri" onclick="shareImg()">사진으로 저장 · 공유</button>';
+else h+='<p class="mtip" style="margin:0 0 10px;">위 이미지를 <b>길게 눌러서 사진에 저장</b>해 주세요.</p>';
+h+='<a class="mbtn" href="'+lastUrl+'" download="'+fileName()+'" target="_blank" rel="noopener">새 탭에서 이미지 열기</a>';
+return '<div class="mbtns">'+h+'</div>'+
+'<p class="mtip">"이미지 열기"를 눌렀을 때 저장이 안 되면, 위 이미지를 직접 길게 눌러 저장해 주세요.</p>';}
+async function shareImg(){
+try{var f=new File([lastBlob],fileName(),{type:"image/png"});
+await navigator.share({files:[f],title:D.meta.title});}
+catch(e){if(e&&e.name!=="AbortError")toast("공유를 취소했거나 지원되지 않아요.");}}
+async function saveImg(btn){
+if(typeof html2canvas!=="function"){toast("이미지 도구를 불러오지 못했어요. 새로고침 후 다시 시도해 주세요.");return;}
+btn.disabled=true;var old=btn.textContent;btn.textContent="이미지 만드는 중...";
+$("mw").innerHTML='<p style="padding:40px 0;">이미지를 만들고 있어요...</p>';
+$("mo").classList.add("on");document.body.style.overflow="hidden";
+try{
+if(document.fonts){try{await document.fonts.ready;}catch(e){}}
+await frames();await wait(260);
+var cv=await html2canvas($("cap"),{backgroundColor:getComputedStyle(document.body).backgroundColor,
+scale:Math.min(window.devicePixelRatio||2,2),useCORS:true,logging:false,
+scrollX:0,scrollY:-window.scrollY,windowWidth:document.documentElement.clientWidth});
+if(lastUrl&&lastUrl.indexOf("blob:")===0){try{URL.revokeObjectURL(lastUrl);}catch(e){}}
+var dataUrl=cv.toDataURL("image/png");
+lastBlob=await new Promise(function(res){
+if(cv.toBlob)cv.toBlob(function(b){res(b);},"image/png");else res(null);});
+if(!lastBlob){
+  var bin=atob(dataUrl.split(",")[1]),arr=new Uint8Array(bin.length);
+  for(var i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);
+  lastBlob=new Blob([arr],{type:"image/png"});}
+lastUrl=dataUrl;
+$("mw").innerHTML='<img src="'+lastUrl+'" alt="결과 이미지">'+saveOptions();
+}catch(e){console.error(e);
+$("mw").innerHTML='<p style="padding:32px 0 8px;">이미지를 만들지 못했어요.<br>'+
+'대신 화면을 캡처해서 공유해 주세요.</p>'+
+'<p class="mtip">오류: '+esc(String(e&&e.message||e))+'</p>';
+}finally{btn.disabled=false;btn.textContent=old;}}
+function closeMo(){$("mo").classList.remove("on");document.body.style.overflow="";}
+$("mo").addEventListener("click",function(e){if(e.target===$("mo"))closeMo();});
+document.addEventListener("keydown",function(e){
+if(e.key==="Escape"&&$("mo").classList.contains("on"))closeMo();});
+async function share(){var dt={title:D.meta.title,text:D.meta.intro,url:location.href};
+try{if(navigator.share){await navigator.share(dt);return;}
+var tx=dt.text+"\n"+dt.url;
+if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(tx);
+toast("링크를 복사했어요.");return;}
+var ta=document.createElement("textarea");ta.value=tx;ta.style.position="fixed";ta.style.opacity="0";
+document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();
+toast("링크를 복사했어요.");}catch(e){if(e&&e.name!=="AbortError")toast("공유하지 못했어요.");}}
+function toast(m){clearTimeout(tT);var e=$("tst");e.textContent=m;e.classList.add("show");
+tT=setTimeout(function(){e.classList.remove("show");},2100);}
+intro();
+</script>
+</body>
+</html>
