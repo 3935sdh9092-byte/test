@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 향수 취향 MBTI는?</title>
+<meta name="description" content="매장에서 시향하는 습관부터 향수장을 정리하는 방식까지, 향 취향에도 성격이 묻어나요. 12문항이면 당신의 향수 페르소나가 드러납니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="나의 향수 취향 MBTI는?">
+<meta property="og:description" content="매장에서 시향하는 습관부터 향수장을 정리하는 방식까지, 향 취향에도 성격이 묻어나요. 12문항이면 당신의 향수 페르소나가 드러납니다.">
+<meta property="og:image" content="perfume-mbti-test-thumb.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{--bg:#F4F2ED;--paper:#FDFCF8;--ink:#1C1C1C;--sub:#6B6B6B;--line:#B0A898;--acc:#2C4A7C;--soft:rgba(44,74,124,0.12);--deep:rgba(44,74,124,0.24);--accFg:#fff;--softFg:#1C1C1C;--deepFg:#1C1C1C;--chip:rgba(28,28,28,0.07);--chips:rgba(28,28,28,0.1);--r:2px;--bw:2px;--shadow:none;--fh:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;--fb:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+*{box-sizing:border-box;}
+html{background:#F4F2ED;}
+body{margin:0;min-height:100vh;color:var(--ink);background-color:var(--bg);background-image:none;background-size:auto;font-family:var(--fb);word-break:keep-all;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;line-height:1.6;}
+h1,h2,h3,.qx,.rn h3,.sheeth h2,.reveal .code,.dsh,.blt,.cmph,.maph,.sheetsec{font-family:var(--fh);}
+button,input{font:inherit;-webkit-tap-highlight-color:transparent;}
+.app{width:100%;max-width:560px;margin:0 auto;padding:26px 14px 46px;}
+.sc{display:none;} .sc.on{display:block;animation:in .18s ease;}
+@keyframes in{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+.pa{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);}
+.btn{width:100%;min-height:54px;padding:12px;cursor:pointer;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--ink);font-size:16px;font-weight:800;}
+.btn:active{transform:scale(.99);}
+.btn.fill{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.stk{display:grid;gap:10px;margin-top:14px;}
+.intro{padding:0 0 24px;text-align:center;overflow:hidden;}
+.hero{margin:0 0 20px;line-height:0;}
+.hero svg{display:block;width:100%;height:auto;}
+.intro>h1,.intro>p,.intro>.castt,.intro>.cast,.intro>.mt,.intro>.em{margin-left:18px;margin-right:18px;}
+.intro>.em{padding-top:34px;}
+.intro .em{font-size:54px;line-height:1;margin-bottom:12px;}
+.intro h1{font-size:25px;line-height:1.45;margin:0 0 10px;font-weight:700;letter-spacing:-.2px;text-wrap:balance;}
+.intro p{font-size:14.5px;color:var(--sub);line-height:1.8;margin:0;font-weight:400;text-wrap:pretty;}
+.castt{margin:20px 0 10px;font-size:12.5px;font-weight:800;color:var(--acc);}
+.mt{margin-top:16px;font-size:12.5px;font-weight:700;color:var(--sub);}
+.langhint{margin-top:8px;font-size:11px;font-weight:500;color:var(--sub);opacity:.75;line-height:1.6;}
+.cast{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;}
+.ci{min-width:0;padding:9px 3px 8px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);text-align:center;}
+.ci .e{font-size:22px;line-height:1;display:block;margin-bottom:4px;}
+.ci .n{font-size:11px;font-weight:600;line-height:1.4;word-break:keep-all;text-wrap:balance;}
+.ci .t{font-size:8.5px;color:var(--sub);opacity:.8;font-weight:700;margin-top:2px;display:block;}
+.intro .mt{font-size:12px;color:var(--sub);opacity:.75;margin-top:16px;font-weight:700;}
+.nb{padding:40px 24px;text-align:center;}
+.nb h2{font-size:22px;margin:0 0 22px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.nb input{width:100%;max-width:340px;height:54px;padding:0 14px;text-align:center;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-size:19px;font-weight:800;outline:none;}
+.nb input:focus{border-color:var(--acc);}
+.gd{max-width:400px;margin:24px auto 0;padding:14px 16px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);font-size:13.5px;line-height:1.8;font-weight:600;text-align:left;color:var(--sub);text-wrap:pretty;}
+.qw{padding:24px 20px 28px;}
+.qt{padding-bottom:14px;border-bottom:var(--bw) solid var(--line);}
+.qi{display:flex;justify-content:space-between;gap:12px;margin-bottom:9px;font-size:12px;font-weight:800;}
+.qi .sec{color:var(--acc);}
+.trk{width:100%;height:14px;padding:2px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.fil{width:0;height:100%;background:var(--acc);border-radius:var(--r);transition:width .2s ease;}
+.pdots{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.pdot{height:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--chip);opacity:.35;}
+.pdot.dn{opacity:1;background:var(--acc);}
+.pdot.now{opacity:1;background:var(--acc);animation:blink .7s infinite alternate;}
+@keyframes blink{from{opacity:.4;}to{opacity:1;}}
+.psq{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.psq i{display:block;aspect-ratio:1/1;min-height:12px;border:1px solid var(--line);border-radius:2px;background:var(--chip);}
+.psq i.dn{background:var(--acc);}
+.qn{margin-top:22px;color:var(--acc);font-size:13px;font-weight:900;}
+.qx{min-height:76px;margin:14px 0 20px;text-align:center;font-size:21px;line-height:1.6;letter-spacing:-.2px;font-weight:700;display:flex;align-items:center;justify-content:center;text-wrap:balance;}
+.ops{display:grid;gap:11px;}
+.op{position:relative;width:100%;min-height:70px;padding:15px 16px 15px 52px;cursor:pointer;text-align:left;color:var(--ink);background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15.5px;line-height:1.6;font-weight:500;text-wrap:pretty;}
+.op::before{content:attr(data-n);position:absolute;left:14px;top:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border:var(--bw) solid var(--line);border-radius:var(--r);transform:translateY(-50%);font-size:13px;font-weight:900;background:var(--paper);}
+.op.pk{background:var(--soft);border-color:var(--acc);color:var(--softFg);}
+.op.pk::before{color:var(--ink);}
+.op:disabled{cursor:default;}
+.qnote{margin:20px 0 0;color:var(--sub);text-align:center;font-size:12px;font-weight:700;}
+.qback{display:block;margin:14px auto 0;padding:8px 4px;background:none;border:0;color:var(--sub);font-family:var(--fb);font-size:12.5px;font-weight:700;cursor:pointer;text-align:center;}
+.lw{min-height:420px;padding:40px 22px;display:flex;align-items:center;justify-content:center;text-align:center;}
+.lw h2{margin:0 0 10px;font-size:24px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.lw p{margin:0;color:var(--sub);font-size:14px;}
+.dts{display:flex;justify-content:center;gap:9px;margin:28px 0 24px;}
+.dts span{width:12px;height:12px;background:var(--acc);border:var(--bw) solid var(--line);border-radius:var(--r);animation:bump 1.1s ease-in-out infinite;}
+.dts span:nth-child(2){animation-delay:.15s;} .dts span:nth-child(3){animation-delay:.3s;}
+@keyframes bump{0%,100%{transform:translateY(0);opacity:.4;}50%{transform:translateY(-7px);opacity:1;}}
+.lbar{width:100%;height:14px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.lbar span{display:block;width:32%;height:100%;background:var(--acc);animation:sld 1.05s ease-in-out infinite;}
+@keyframes sld{from{transform:translateX(-110%);}to{transform:translateX(340%);}}
+.cap{overflow:hidden;max-width:100%;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rh{padding:13px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.rh h2{margin:0;color:var(--accFg);font-size:15.5px;font-weight:700;line-height:1.45;letter-spacing:-.1px;text-wrap:balance;}
+.rb{padding:14px;}
+.rn{padding:24px 16px 20px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rn .em{font-size:64px;line-height:1;}
+.rn h3{margin:10px 0 6px;font-size:29px;font-weight:700;line-height:1.3;letter-spacing:-.3px;color:var(--acc);text-wrap:balance;}
+.rn .tg2{font-size:14.5px;font-weight:600;color:var(--ink);opacity:.85;}
+.rn .cd{display:inline-block;margin-top:12px;padding:4px 12px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:11px;font-weight:800;letter-spacing:1.2px;}
+.rs{margin-top:12px;padding:15px 16px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15px;line-height:1.8;font-weight:400;text-wrap:pretty;}
+.blk{margin-top:14px;}
+.blt{margin:0;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-bottom:0;border-radius:var(--r) var(--r) 0 0;font-size:13px;font-weight:900;text-align:center;text-wrap:balance;}
+.qb{padding:18px 16px;text-align:center;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);font-size:17px;font-weight:600;line-height:1.65;text-wrap:balance;}
+.qbb{position:relative;margin:6px 16px 24px;padding:18px 16px;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:16px;font-weight:600;line-height:1.65;text-align:center;text-wrap:balance;}
+.qbb::before{content:"";position:absolute;left:32px;bottom:-11px;width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-top:13px solid var(--line);}
+.qbb::after{content:"";position:absolute;left:34.5px;bottom:-6.5px;width:0;height:0;border-left:8.5px solid transparent;border-right:8.5px solid transparent;border-top:10px solid var(--soft);}
+.trs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:var(--bw) solid var(--line);border-left:var(--bw) solid var(--line);}
+.tc{min-height:82px;padding:9px 6px;display:flex;align-items:center;justify-content:center;background:var(--chip);color:var(--ink);border-right:var(--bw) solid var(--line);border-bottom:var(--bw) solid var(--line);text-align:center;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;text-wrap:balance;}
+.tc:nth-child(even){background:var(--soft);color:var(--softFg);}
+.trss{display:flex;flex-wrap:wrap;gap:10px 8px;padding:16px 14px;background:var(--chip);border-top:var(--bw) solid var(--line);}
+.tst{padding:8px 13px;background:var(--paper);border:var(--bw) solid var(--line);border-radius:999px;font-size:12.5px;font-weight:700;box-shadow:2px 2px 0 var(--line);word-break:keep-all;text-wrap:balance;color:var(--ink);}
+.tst:nth-child(3n+1){transform:rotate(-2.5deg);}
+.tst:nth-child(3n+2){transform:rotate(1.5deg);}
+.tst:nth-child(3n){transform:rotate(-0.5deg);}
+.tst:nth-child(even){background:var(--soft);color:var(--softFg);}
+.duo{display:grid;gap:10px;}
+.dsec{border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.dsh{padding:9px;text-align:center;font-size:14px;font-weight:900;color:var(--deepFg);border-bottom:var(--bw) solid var(--line);}
+.dsec.g .dsh{background:var(--acc);color:var(--accFg);}
+.dsec.b .dsh{background:var(--deep);}
+.dls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px 10px;padding:12px 11px;background:var(--chip);}
+.dit span{text-wrap:pretty;}
+.dit{display:flex;align-items:flex-start;min-width:0;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;}
+.dit b{width:7px;height:7px;margin:5px 6px 0 0;flex:0 0 auto;background:var(--acc);border-radius:1px;}
+.dit.chk b{width:17px;height:17px;margin:1px 8px 0 0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;background:var(--acc);color:var(--accFg);}
+.dsec.b .dit.chk b{background:var(--sub);color:var(--paper);}
+.sts{padding:14px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);}
+.srow{display:grid;grid-template-columns:76px 1fr 42px;align-items:center;gap:9px;}
+.srow+.srow{margin-top:11px;}
+.slab{font-size:12.5px;font-weight:900;}
+.sqs{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;}
+.sq{aspect-ratio:1/1;min-height:11px;border-radius:2px;background:var(--chips);box-shadow:inset 0 0 0 1px rgba(176,168,152,0.35);}
+.sq.f{background:var(--acc);}
+.spc{text-align:right;font-size:12.5px;font-weight:900;}
+.stsr{padding:16px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:14px 8px;}
+.rgauge{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.rgauge svg{width:64px;height:64px;overflow:visible;}
+.rgauge .rtrack{fill:none;stroke:var(--chips);stroke-width:6;}
+.rgauge .rfill{fill:none;stroke:var(--acc);stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset .5s ease;}
+.rgauge .rlab{font-size:11px;font-weight:800;color:var(--sub);text-align:center;line-height:1.35;}
+.cds{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px;}
+.cd2{padding:12px 11px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.cd2 b{display:inline-block;margin-bottom:7px;padding:3px 9px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:10.5px;font-weight:800;}
+.cd2 p{margin:0;font-size:13.5px;line-height:1.65;font-weight:500;text-wrap:pretty;}
+.cdt{background:var(--paper);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);padding:2px 16px;}
+.cdti{padding:12px 0;border-bottom:var(--bw) dashed var(--line);}
+.cdti:last-child{border-bottom:0;}
+.cdti b{display:block;font-size:11px;font-weight:900;color:var(--acc);margin-bottom:3px;letter-spacing:.2px;}
+.cdti span{display:block;font-size:13.5px;font-weight:600;line-height:1.55;text-wrap:pretty;}
+.map{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.maph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.mapg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--chip);}
+.mapc{position:relative;min-width:0;padding:9px 3px 8px;text-align:center;border-right:1px solid rgba(176,168,152,0.18);border-bottom:1px solid rgba(176,168,152,0.18);}
+.mapc:nth-child(4n){border-right:0;}
+.mapc:nth-last-child(-n+4){border-bottom:0;}
+.mapc .e{display:block;font-size:20px;line-height:1;}
+.mapc .n{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;margin-top:4px;font-size:9px;font-weight:600;line-height:1.35;overflow:hidden;word-break:keep-all;text-wrap:balance;padding:0 2px;min-height:24px;}
+.mapc .p{display:block;margin-top:2px;font-size:9.5px;font-weight:900;opacity:.75;}
+.mapc.me{outline:var(--bw) solid var(--acc);outline-offset:-2px;}
+.mapc .badge{display:inline-block;margin-top:2px;padding:1px 7px;border-radius:999px;background:var(--acc);color:var(--accFg);font-size:9px;font-weight:800;}
+.mapf{display:flex;align-items:center;gap:7px;padding:9px 12px;background:var(--chip);border-top:var(--bw) solid var(--line);font-size:9.5px;font-weight:800;color:var(--sub);}
+.mapbar{flex:1;height:7px;border-radius:999px;}
+.cmp{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.cmph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.cmpg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--chip);}
+.cmpc{min-width:0;padding:12px 8px 13px;text-align:center;}
+.cmpc+.cmpc{border-left:var(--bw) solid var(--line);}
+.cmpc .lb{display:inline-block;margin-bottom:10px;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;background:var(--acc);color:var(--accFg);}
+.cmpc.bad .lb{background:#AEB4BF;color:#fff;}
+.cmpi{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:7px;}
+.cmpi .e{font-size:24px;line-height:1;}
+.cmpi .n{min-width:0;font-size:13px;font-weight:600;line-height:1.45;text-align:left;word-break:keep-all;text-wrap:balance;}
+.cmpi .p{font-size:11.5px;font-weight:900;color:var(--acc);display:block;}
+.cmpc.bad .cmpi .p{color:var(--sub);}
+.cmpnote{margin-top:11px;padding-top:9px;border-top:1px dashed rgba(176,168,152,0.3);font-size:12px;line-height:1.65;font-weight:500;color:var(--sub);}
+.rf{margin-top:16px;padding-top:12px;border-top:var(--bw) dashed var(--line);color:var(--sub);text-align:center;font-size:11px;font-weight:700;letter-spacing:.6px;}
+.ad{display:none;}
+.sheet{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.sheeth{padding:16px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.sheeth h2{margin:0;color:var(--accFg);font-size:18px;font-weight:800;letter-spacing:-.4px;}
+.sheeth p{margin:5px 0 0;color:var(--accFg);opacity:.85;font-size:11.5px;font-weight:700;}
+.reveal{margin:14px;padding:20px 16px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.reveal .em{font-size:46px;line-height:1;}
+.reveal .nm{margin-top:8px;font-size:19px;font-weight:700;line-height:1.45;text-wrap:balance;}
+.reveal .eq{margin:9px 0 7px;font-size:13px;font-weight:800;color:var(--sub);}
+.reveal .code{display:inline-block;padding:8px 22px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:26px;font-weight:800;letter-spacing:3px;}
+.sheetad{display:none;}
+.sheetsec{margin:0 14px 10px;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:12.5px;font-weight:900;text-align:center;}
+.rows{margin:0 14px 14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.row{display:grid;grid-template-columns:26px 30px minmax(0,1fr) auto;align-items:center;gap:9px;padding:10px 11px;background:var(--chip);border-bottom:1px solid rgba(176,168,152,0.18);}
+.row:last-child{border-bottom:0;}
+.row.me{background:var(--soft);color:var(--softFg);}
+.row .no{font-size:10px;font-weight:800;color:var(--sub);opacity:.7;}
+.row .em{font-size:22px;line-height:1;text-align:center;}
+.row .nm{font-size:14px;font-weight:600;line-height:1.45;min-width:0;word-break:keep-all;text-wrap:balance;}
+.row .tg{display:block;font-size:10.5px;font-weight:700;color:var(--sub);opacity:.85;margin-top:2px;}
+.row .cd{padding:4px 10px;border-radius:999px;background:var(--deep);font-size:11px;font-weight:800;letter-spacing:.8px;white-space:nowrap;}
+.row.me .cd{background:var(--acc);color:var(--accFg);}
+.mo{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(20,20,20,.82);overflow-y:auto;}
+.mo.on{display:flex;}
+.mb2{width:100%;max-width:360px;max-height:92vh;overflow:auto;padding:20px 16px;text-align:center;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);margin:auto;}
+.mb2 h3{margin:0 0 8px;font-size:18px;font-weight:900;}
+.mb2 p{margin:0 0 16px;color:var(--sub);font-size:13px;line-height:1.55;font-weight:600;}
+.mb2 img{display:block;width:100%;border:var(--bw) solid var(--line);border-radius:var(--r);}
+.mbtns{display:grid;gap:8px;margin-top:14px;}
+.mbtn{display:block;width:100%;padding:14px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-family:var(--fb);font-size:14.5px;font-weight:600;text-align:center;text-decoration:none;cursor:pointer;box-sizing:border-box;}
+.mbtn.pri{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.mtip{margin:12px 0 0!important;font-size:12px;line-height:1.6;color:var(--sub);}
+.mb2 .cl{width:100%;min-height:46px;margin-top:14px;cursor:pointer;color:#fff;background:var(--line);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:14px;font-weight:800;}
+.tst{position:fixed;left:50%;bottom:26px;z-index:200;max-width:calc(100% - 32px);padding:12px 18px;color:#fff;background:rgba(28,28,28,.95);border:var(--bw) solid #fff;border-radius:var(--r);font-size:13.5px;font-weight:700;transform:translate(-50%,16px);opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+.tst.show{opacity:1;transform:translate(-50%,0);}
+@media(hover:hover) and (pointer:fine){
+.btn:hover{background:var(--soft);color:var(--softFg);}
+.btn.fill:hover{opacity:.9;background:var(--acc);}
+.op:hover{background:var(--soft);color:var(--softFg);}
+.op:hover::before{color:var(--ink);}
+.qback:hover{color:var(--ink);}
+}
+@media(max-width:520px){.app{padding:18px 11px 38px;}.intro{padding:28px 14px 20px;}.intro h1{font-size:22px;}
+.ci .n{font-size:9.5px;} .ci .e{font-size:19px;}
+.qw{padding:20px 15px 24px;}.qx{font-size:19px;min-height:66px;}
+.op{min-height:64px;padding:13px 13px 13px 48px;font-size:14px;}
+.tc{min-height:74px;font-size:11.5px;}.rn h3{font-size:26px;}.rh h2{font-size:14px;}
+.dls{gap:6px 7px;padding:10px 9px;}.dit{font-size:11.5px;}.cds{gap:7px;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <section class="sc on" id="s1"></section>
+  <section class="sc" id="s2"></section>
+  <section class="sc" id="s3"></section>
+  <section class="sc" id="s4"></section>
+  <section class="sc" id="s5"></section>
+  <section class="sc" id="s6"></section>
+  <div class="ad">광고 영역 (애드센스 코드 삽입 위치)</div>
+</div>
+<div class="mo" id="mo"><div class="mb2"><h3>이미지 꾹 눌러 저장하기</h3><p>아래 이미지를 길게 누르거나 우클릭해서<br>저장해 주세요.</p><div id="mw"><p style="padding:40px 0;">이미지를 만들고 있어요...</p></div><button class="cl" onclick="closeMo()">닫기</button></div></div>
+<div class="tst" id="tst"></div>
+<script>
+"use strict";
+var D={"useName": true, "meta": {"title": "나의 향수 취향 MBTI는?", "emoji": "🌸", "intro": "매장에서 시향하는 습관부터 향수장을 정리하는 방식까지, 향 취향에도 성격이 묻어나요. 12문항이면 당신의 향수 페르소나가 드러납니다.", "loadingText": "당신의 향 취향을 분석하는 중...🌸", "sheetTitle": "16가지 향수 취향 유형 전체 공개", "sheetCta": "내 향수 페르소나 정체 확인하기", "slug": "perfume-mbti-test", "setName": "향수 취향 연구소"}, "blocks": ["cards", "duo"], "blockLabels": {"cards": "🌸 이 유형의 향 취향 카드", "duo": {"good": "🌸 이 유형의 매력 포인트", "bad": "🌸 아쉬운 점"}}, "compatLabels": {"title": "향수 취향 궁합", "good": "찰떡 시향 메이트", "bad": "살짝 다른 계열", "mapTitle": "16가지 향수 취향 유형 궁합"}, "compat": {"ISTJ": "ISFJ74 INFJ95 INTJ61 ISTP72 ISFP73 INFP79 INTP99 ESTP91 ESFP76 ENFP78 ENTP66 ESTJ79 ESFJ72 ENFJ82 ENTJ66", "ISFJ": "ISTJ73 INFJ92 INTJ86 ISTP62 ISFP71 INFP90 INTP84 ESTP66 ESFP88 ENFP75 ENTP69 ESTJ76 ESFJ63 ENFJ94 ENTJ82", "INFJ": "ISTJ68 ISFJ69 INTJ75 ISTP95 ISFP89 INFP62 INTP87 ESTP78 ESFP80 ENFP69 ENTP95 ESTJ99 ESFJ64 ENFJ75 ENTJ99", "INTJ": "ISTJ65 ISFJ82 INFJ99 ISTP69 ISFP67 INFP81 INTP69 ESTP67 ESFP74 ENFP95 ENTP85 ESTJ99 ESFJ98 ENFJ78 ENTJ87", "ISTP": "ISTJ85 ISFJ76 INFJ97 INTJ73 ISFP90 INFP79 INTP86 ESTP63 ESFP81 ENFP81 ENTP92 ESTJ68 ESFJ65 ENFJ64 ENTJ92", "ISFP": "ISTJ95 ISFJ75 INFJ82 INTJ70 ISTP92 INFP98 INTP99 ESTP92 ESFP84 ENFP77 ENTP78 ESTJ79 ESFJ81 ENFJ68 ENTJ98", "INFP": "ISTJ62 ISFJ84 INFJ76 INTJ61 ISTP64 ISFP98 INTP72 ESTP62 ESFP69 ENFP87 ENTP94 ESTJ65 ESFJ69 ENFJ85 ENTJ73", "INTP": "ISTJ63 ISFJ87 INFJ97 INTJ68 ISTP91 ISFP91 INFP84 ESTP98 ESFP60 ENFP90 ENTP90 ESTJ88 ESFJ81 ENFJ86 ENTJ65", "ESTP": "ISTJ99 ISFJ64 INFJ98 INTJ70 ISTP78 ISFP94 INFP82 INTP73 ESFP81 ENFP80 ENTP77 ESTJ91 ESFJ66 ENFJ89 ENTJ60", "ESFP": "ISTJ69 ISFJ67 INFJ80 INTJ75 ISTP72 ISFP91 INFP82 INTP88 ESTP75 ENFP80 ENTP75 ESTJ71 ESFJ69 ENFJ73 ENTJ86", "ENFP": "ISTJ99 ISFJ73 INFJ81 INTJ92 ISTP64 ISFP77 INFP61 INTP88 ESTP97 ESFP95 ENTP73 ESTJ69 ESFJ81 ENFJ76 ENTJ82", "ENTP": "ISTJ61 ISFJ92 INFJ80 INTJ92 ISTP85 ISFP80 INFP88 INTP74 ESTP69 ESFP92 ENFP87 ESTJ73 ESFJ97 ENFJ82 ENTJ71", "ESTJ": "ISTJ94 ISFJ75 INFJ85 INTJ99 ISTP69 ISFP64 INFP97 INTP93 ESTP85 ESFP65 ENFP65 ENTP89 ESFJ97 ENFJ70 ENTJ77", "ESFJ": "ISTJ91 ISFJ62 INFJ66 INTJ93 ISTP65 ISFP75 INFP72 INTP67 ESTP94 ESFP95 ENFP86 ENTP83 ESTJ90 ENFJ74 ENTJ94", "ENFJ": "ISTJ90 ISFJ83 INFJ81 INTJ95 ISTP80 ISFP90 INFP73 INTP83 ESTP71 ESFP76 ENFP98 ENTP65 ESTJ68 ESFJ65 ENTJ75", "ENTJ": "ISTJ95 ISFJ80 INFJ86 INTJ86 ISTP87 ISFP73 INFP81 INTP73 ESTP78 ESFP93 ENFP99 ENTP65 ESTJ92 ESFJ78 ENFJ75"}, "compatLines": [{"min": 95, "text": "향에 대한 취향이 놀랍도록 잘 맞아떨어지는 사이예요. 같은 향수를 나눠 뿌려도 될 정도로 결이 비슷합니다."}, {"min": 88, "text": "향 이야기만 나오면 대화가 끊이지 않는 사이예요. 좋아하는 계열이 비슷해서 편하게 어울립니다."}, {"min": 82, "text": "서로 다른 향 취향이 오히려 잘 어우러지는 조합이에요. 한쪽이 놓친 향을 다른 한쪽이 알아서 챙겨줍니다."}, {"min": 76, "text": "선호하는 향은 달라도 향을 대하는 태도는 비슷해요. 그 차이가 서로에게 새로운 향을 알려주는 계기가 됩니다."}, {"min": 0, "text": "전혀 다른 계열의 향을 즐기는 사이지만, 그래서 서로에게 없는 향의 세계를 소개해줄 수 있는 조합이에요."}], "cardStyle": "grid", "duoStyle": "check", "cast": [{"type": "ISTJ", "name": "클래식 우디 미니멀리스트", "emoji": "🪵", "tagline": "한 병을 오래 쓰는 사람"}, {"type": "ISFJ", "name": "포근한 머스크 홈바디", "emoji": "🕯️", "tagline": "은은하게 남는 향을 좋아하는 사람"}, {"type": "INFJ", "name": "신비로운 인센스 몽상가", "emoji": "🌙", "tagline": "혼자만의 향 세계가 있는 사람"}, {"type": "INTJ", "name": "시그니처 앰버 전략가", "emoji": "🧭", "tagline": "하나의 향으로 각인되고 싶은 사람"}, {"type": "ISTP", "name": "미니멀 시트러스 실용파", "emoji": "🍋", "tagline": "가볍게 필요한 만큼만 뿌리는 사람"}, {"type": "ISFP", "name": "감성 플로럴 아티스트", "emoji": "🌸", "tagline": "그날 기분 따라 향을 고르는 사람"}, {"type": "INFP", "name": "몽환적 바닐라 드리머", "emoji": "🍮", "tagline": "향으로 감정을 기록하는 사람"}, {"type": "INTP", "name": "실험적 조향 연구가", "emoji": "🧪", "tagline": "성분과 노트를 파고드는 사람"}, {"type": "ESTP", "name": "스파이시 무드메이커", "emoji": "🌶️", "tagline": "존재감 있는 향을 즐기는 사람"}, {"type": "ESFP", "name": "트로피컬 파티피플", "emoji": "🍹", "tagline": "향으로 분위기를 만드는 사람"}, {"type": "ENFP", "name": "프루티 큐리어스 익스플로러", "emoji": "🍑", "tagline": "새 향수를 계속 탐험하는 사람"}, {"type": "ENTP", "name": "유니크 니치퍼퓸 콜렉터", "emoji": "🧿", "tagline": "남들과 다른 향을 찾아다니는 사람"}, {"type": "ESTJ", "name": "파워 우디 리더", "emoji": "🌳", "tagline": "신뢰감을 주는 향을 고르는 사람"}, {"type": "ESFJ", "name": "스위트 로즈 호스트", "emoji": "🌹", "tagline": "손님 맞이할 때도 향을 챙기는 사람"}, {"type": "ENFJ", "name": "따뜻한 앰버 멘토", "emoji": "🕊️", "tagline": "향으로 사람 마음을 편하게 하는 사람"}, {"type": "ENTJ", "name": "볼드 우디 커맨더", "emoji": "👑", "tagline": "협상 자리에서도 존재감 있는 향"}], "questions": [{"section": "매장 탐방기", "text": "새로 생긴 향수 편집숍에 들어갔어요. 당신은?", "options": [{"text": "직원분께 이것저것 물어보며 신나게 시향한다", "value": "E"}, {"text": "혼자 조용히 하나씩 차분하게 시향해본다", "value": "I"}]}, {"section": "향 고르는 기준", "text": "향수를 고를 때 당신이 주로 보는 건?", "options": [{"text": "탑-미들-베이스 노트 구성을 꼼꼼히 확인한다", "value": "S"}, {"text": "향을 맡았을 때 떠오르는 분위기와 이미지에 끌린다", "value": "N"}]}, {"section": "모임 준비", "text": "친구들 모임에 가기 전 향수를 뿌릴 때, 당신은?", "options": [{"text": "존재감 있게 살짝 진하게 뿌린다", "value": "E"}, {"text": "나만 느낄 수 있을 정도로 은은하게 뿌린다", "value": "I"}]}, {"section": "향수 후기", "text": "향수 후기를 읽을 때 가장 눈에 들어오는 부분은?", "options": [{"text": "지속력, 잔향 시간 같은 구체적인 정보", "value": "S"}, {"text": "이 향이 전체적으로 주는 느낌이나 이야기", "value": "N"}]}, {"section": "선물 고르기", "text": "친구에게 향수를 선물한다면, 당신은?", "options": [{"text": "그 친구 스타일을 분석해서 논리적으로 고른다", "value": "T"}, {"text": "그 친구를 생각하면 떠오르는 향을 직관적으로 고른다", "value": "F"}]}, {"section": "향수 컬렉션", "text": "향수장을 보면 당신의 상태는?", "options": [{"text": "용도별(데일리·외출용 등)로 각 잡혀 있다", "value": "J"}, {"text": "그때그때 손 가는 대로 늘어나 있다", "value": "P"}]}, {"section": "향수 커뮤니티", "text": "향수 커뮤니티에서 내가 뿌리는 향 얘기가 나왔어요.", "options": [{"text": "반갑게 댓글 달며 적극적으로 대화에 낀다", "value": "E"}, {"text": "눈으로만 조용히 읽고 넘어간다", "value": "I"}]}, {"section": "신상 소식", "text": "신상 향수가 나왔다는 소식을 들으면, 당신은?", "options": [{"text": "성분과 지속시간 리뷰부터 찾아본다", "value": "S"}, {"text": "향의 컨셉과 이야기에 먼저 마음이 간다", "value": "N"}]}, {"section": "취향 논쟁", "text": "친구가 내가 뿌린 향수를 별로라고 말했어요.", "options": [{"text": "왜 그렇게 느꼈는지 이유를 차분히 물어본다", "value": "T"}, {"text": "순간 서운한 마음이 먼저 앞선다", "value": "F"}]}, {"section": "여행 준비", "text": "여행 갈 때 향수를 챙기는 방식은?", "options": [{"text": "여행용 미니 용기에 미리 소분해둔다", "value": "J"}, {"text": "일단 가방에 넣고 가서 그때그때 쓴다", "value": "P"}]}, {"section": "매장 상담", "text": "매장 직원이 예상과 다른 향을 추천했어요.", "options": [{"text": "왜 그 향을 추천했는지 근거를 물어본다", "value": "T"}, {"text": "일단 그 추천에 마음이 좀 복잡해진다", "value": "F"}]}, {"section": "화장대 정리", "text": "화장대 위 향수병들, 당신의 상태는?", "options": [{"text": "순서와 용도별로 라벨링되어 있다", "value": "J"}, {"text": "그날그날 손 가는 대로 놓여 있다", "value": "P"}]}], "results": [{"type": "ISTJ", "name": "클래식 우디 미니멀리스트", "emoji": "🪵", "tagline": "한 병을 오래 쓰는 사람", "summary": "클래식 우디 미니멀리스트는 한번 정한 시그니처 향을 오래도록 지키는 사람입니다. 유행하는 신상보다 이미 검증된 자신만의 향을 신뢰하고, 그 한결같음이 오히려 강한 인상을 남겨요. 향수병 개수는 적어도 그 안에 담긴 취향은 확고합니다.", "color": "#4A6FA5", "cards": [{"label": "향 고르는 기준", "value": "한번 검증된 시그니처 향을 오래 유지"}, {"label": "교체 주기", "value": "몇 년째 같은 향수를 재구매"}, {"label": "뿌리는 양", "value": "정해둔 만큼만 정확하게"}, {"label": "신상 반응", "value": "충분히 검증된 후에야 조심스럽게 시도"}], "duo": {"good": ["오래 신뢰할 향을 알아보는 안목", "한결같음이 주는 확실한 인상", "불필요한 소비 없이 관리하는 효율"], "bad": ["새로운 향 시도에는 다소 소극적인 편", "이미 정한 향을 바꾸는 데 시간이 걸림"]}}, {"type": "ISFJ", "name": "포근한 머스크 홈바디", "emoji": "🕯️", "tagline": "은은하게 남는 향을 좋아하는 사람", "summary": "포근한 머스크 홈바디는 존재감보다 여운을 중요하게 여기는 사람입니다. 스쳐 지나갈 때 은은하게 남는 향, 곁에 있는 사람을 편안하게 만드는 향을 좋아해요. 화려함보다 다정함이 묻어나는 향이 이 유형과 잘 어울립니다.", "color": "#6DBF8E", "cards": [{"label": "향 강도", "value": "스치듯 은은하게 남는 정도"}, {"label": "선호 계열", "value": "포근한 머스크·파우더리 계열"}, {"label": "뿌리는 순간", "value": "외출 전 습관처럼 자연스럽게"}, {"label": "공유 습관", "value": "좋았던 향은 슬쩍 알려줌"}], "duo": {"good": ["은은한 여운으로 편안함을 주는 힘", "곁에 있는 사람까지 배려하는 다정함", "무리하지 않는 자연스러운 향 선택"], "bad": ["존재감 있는 향은 살짝 부담스러워함", "새 향수 도전에는 소극적인 편"]}}, {"type": "INFJ", "name": "신비로운 인센스 몽상가", "emoji": "🌙", "tagline": "혼자만의 향 세계가 있는 사람", "summary": "신비로운 인센스 몽상가는 향 하나로도 자신만의 세계를 만들어내는 사람입니다. 남들이 잘 모르는 향, 깊이가 느껴지는 향에 마음이 끌리고, 그 선택에는 늘 이유가 있어요. 조용하지만 잊히지 않는 인상을 남기는 타입입니다.", "color": "#9B7DC8", "cards": [{"label": "선호 계열", "value": "깊이감 있는 인센스·우디 계열"}, {"label": "향 선택 기준", "value": "분위기와 의미가 담긴 향"}, {"label": "정보 습득", "value": "혼자 조용히 찾아보고 결정"}, {"label": "기억 방식", "value": "향으로 순간을 각인시킴"}], "duo": {"good": ["의미와 깊이가 담긴 향을 알아보는 안목", "조용하지만 잊히지 않는 인상을 남김", "나만의 확고한 향 철학"], "bad": ["결정을 오래 고민하다 미루는 편", "혼자 정보를 찾다 지칠 때가 있음"]}}, {"type": "INTJ", "name": "시그니처 앰버 전략가", "emoji": "🧭", "tagline": "하나의 향으로 각인되고 싶은 사람", "summary": "시그니처 앰버 전략가는 향수마저 전략적으로 접근하는 사람입니다. 상황과 인상을 계산해서 나를 각인시킬 단 하나의 향을 정교하게 고르고, 그 선택은 좀처럼 흔들리지 않아요. 향이 곧 나의 브랜딩이라는 감각을 가진 유형입니다.", "color": "#35507A", "cards": [{"label": "향 전략", "value": "상황에 맞춰 인상을 설계"}, {"label": "시그니처", "value": "단 하나의 향으로 각인"}, {"label": "정보 분석", "value": "노트 구성을 근거로 비교"}, {"label": "교체 기준", "value": "확실한 이유가 있을 때만 변경"}], "duo": {"good": ["명확한 기준으로 향을 설계하는 전략", "한번 정한 시그니처를 끝까지 지킴", "분석적으로 최적의 향을 찾아냄"], "bad": ["계획에 없던 변수엔 스트레스를 받음", "과정보다 결과(인상)를 중시하는 편"]}}, {"type": "ISTP", "name": "미니멀 시트러스 실용파", "emoji": "🍋", "tagline": "가볍게 필요한 만큼만 뿌리는 사람", "summary": "미니멀 시트러스 실용파는 향수도 군더더기 없이 실용적으로 접근하는 사람입니다. 가볍고 깔끔한 향을 필요한 만큼만 뿌리고, 복잡한 레이어링보다 심플한 한 방을 선호해요. 과하지 않아서 오히려 세련되게 느껴지는 스타일입니다.", "color": "#2E86AB", "cards": [{"label": "뿌리는 방식", "value": "가볍게 필요한 만큼만"}, {"label": "선호 계열", "value": "깔끔한 시트러스·아쿠아 계열"}, {"label": "구매 태도", "value": "실용성과 지속력 우선"}, {"label": "관리 습관", "value": "루틴보다 그때그때 판단"}], "duo": {"good": ["군더더기 없는 실용적인 선택", "돌발 상황에도 침착하게 대응", "깔끔한 자기관리"], "bad": ["기록하고 챙기는 루틴에는 약한 편", "가끔 필요한 관리도 귀찮아함"]}}, {"type": "ISFP", "name": "감성 플로럴 아티스트", "emoji": "🌸", "tagline": "그날 기분 따라 향을 고르는 사람", "summary": "감성 플로럴 아티스트는 그날의 기분과 분위기에 따라 향을 고르는 사람입니다. 꽃향기 속에서도 미묘하게 다른 결을 구분해내고, 향수 고르는 시간 자체를 하나의 힐링으로 여겨요. 섬세한 감각이 향 취향에도 고스란히 묻어납니다.", "color": "#E8A0BF", "cards": [{"label": "선택 기준", "value": "그날 기분과 분위기에 따라"}, {"label": "선호 계열", "value": "섬세한 플로럴 계열"}, {"label": "향수 시간", "value": "나만의 힐링 루틴처럼"}, {"label": "취향 다양성", "value": "기분별로 여러 병을 번갈아"}], "duo": {"good": ["기분과 분위기를 향으로 표현하는 감각", "자기만의 확고한 취향", "향수 시간을 힐링으로 만드는 능력"], "bad": ["기분 따라 선택이 자주 바뀜", "분석보다 감각을 우선해 정보를 놓침"]}}, {"type": "INFP", "name": "몽환적 바닐라 드리머", "emoji": "🍮", "tagline": "향으로 감정을 기록하는 사람", "summary": "몽환적 바닐라 드리머는 향으로 감정과 추억을 기록하는 사람입니다. 특정 향을 맡으면 그 시절 기억이 떠오를 만큼, 향과 감정을 깊이 연결지어요. 달콤하고 부드러운 향에서 위로를 찾는 경우가 많습니다.", "color": "#5FAE7D", "cards": [{"label": "향과 감정", "value": "향으로 추억을 기록"}, {"label": "선호 계열", "value": "달콤한 바닐라·머스크 계열"}, {"label": "몰입도", "value": "마음에 든 향은 깊이 애정"}, {"label": "구매 방식", "value": "향에 담긴 이야기까지 고려"}], "duo": {"good": ["향으로 감정을 표현하는 섬세함", "좋아하는 향에는 깊이 몰입", "의미 있는 소비를 지향함"], "bad": ["완벽한 선택 고민에 결정이 늦어짐", "감정에 따라 취향이 자주 흔들림"]}}, {"type": "INTP", "name": "실험적 조향 연구가", "emoji": "🧪", "tagline": "성분과 노트를 파고드는 사람", "summary": "실험적 조향 연구가는 향의 노트 구성 원리부터 파고드는 탐구자입니다. 탑-미들-베이스가 어떻게 어우러지는지 궁금해하고, 여러 향을 겹쳐 뿌려보며 나만의 조합을 실험해요. 그 집요함이 결국 남다른 취향으로 이어집니다.", "color": "#4E9A8B", "cards": [{"label": "탐구 방식", "value": "노트 구성 원리를 분석"}, {"label": "실험 정신", "value": "여러 향을 레이어링해봄"}, {"label": "정보 수집", "value": "성분과 조향 정보 탐독"}, {"label": "취향 형성", "value": "논리적으로 조합을 이해"}], "duo": {"good": ["원리부터 파고드는 탐구력", "데이터로 최적의 조합을 찾아냄", "유행에 휩쓸리지 않는 독립적 판단"], "bad": ["분석에 시간 쓰다 정작 결정이 늦음", "기록하고 관리하는 건 살짝 귀찮아함"]}}, {"type": "ESTP", "name": "스파이시 무드메이커", "emoji": "🌶️", "tagline": "존재감 있는 향을 즐기는 사람", "summary": "스파이시 무드메이커는 향으로도 존재감을 확실히 드러내는 사람입니다. 스치기만 해도 기억에 남는 향을 좋아하고, 망설임 없이 원하는 향을 바로 시도해봐요. 그 자신감 있는 선택이 매력으로 이어집니다.", "color": "#FF5733", "cards": [{"label": "존재감", "value": "스치기만 해도 기억에 남는 향"}, {"label": "시도 속도", "value": "궁금하면 바로 뿌려봄"}, {"label": "선호 계열", "value": "스파이시·우디 계열"}, {"label": "결단력", "value": "안 맞으면 바로 다른 향으로"}], "duo": {"good": ["망설임 없이 시도하는 실행력", "존재감 있는 선택을 즐기는 자신감", "안 맞으면 바로 정리하는 결단력"], "bad": ["꾸준한 관리보다 즉흥적인 편", "급하게 뿌리다 과할 때가 있음"]}}, {"type": "ESFP", "name": "트로피컬 파티피플", "emoji": "🍹", "tagline": "향으로 분위기를 만드는 사람", "summary": "트로피컬 파티피플은 향으로 분위기 자체를 바꿔버리는 사람입니다. 상큼하고 발랄한 향으로 그 자리를 화사하게 만들고, 새로 나온 향은 일단 시향해봐야 직성이 풀려요. 향수 뿌리는 순간부터 이미 신이 나 있는 타입입니다.", "color": "#FF9F1C", "cards": [{"label": "분위기 메이커", "value": "향으로 자리를 화사하게"}, {"label": "선호 계열", "value": "상큼한 트로피컬·프루티 계열"}, {"label": "공유 습관", "value": "좋은 향은 신나게 추천"}, {"label": "시도 정신", "value": "신상은 일단 시향부터"}], "duo": {"good": ["분위기를 화사하게 만드는 에너지", "좋은 경험을 신나게 나누는 공유력", "트렌드를 빠르게 캐치하는 감각"], "bad": ["충동적으로 구매한 향수가 쌓이는 편", "꾸준한 루틴보다 새 자극을 선호"]}}, {"type": "ENFP", "name": "프루티 큐리어스 익스플로러", "emoji": "🍑", "tagline": "새 향수를 계속 탐험하는 사람", "summary": "프루티 큐리어스 익스플로러는 새로운 향을 계속 탐험하는 사람입니다. 궁금한 향이 생기면 매장까지 찾아가서 직접 맡아보고, 발견한 좋은 향은 주변에도 신나게 알려요. 그 호기심 덕분에 취향의 폭이 점점 넓어집니다.", "color": "#2EC4B6", "cards": [{"label": "탐색력", "value": "새로운 향에 항상 안테나"}, {"label": "선호 계열", "value": "발랄한 프루티·플로럴 계열"}, {"label": "공유 에너지", "value": "좋은 발견은 적극적으로 공유"}, {"label": "취향 다양성", "value": "여러 향을 넘나들며 탐색"}], "duo": {"good": ["호기심 가득한 탐색력", "좋은 걸 나누고 싶어하는 열정", "다양한 시도 속에서 취향을 발견"], "bad": ["써보고 싶은 게 많아 선택이 자주 바뀜", "한 향을 끝까지 유지하기 어려워함"]}}, {"type": "ENTP", "name": "유니크 니치퍼퓸 콜렉터", "emoji": "🧿", "tagline": "남들과 다른 향을 찾아다니는 사람", "summary": "유니크 니치퍼퓸 콜렉터는 남들과 겹치지 않는 향을 찾아다니는 사람입니다. 대중적인 향보다 나만 아는 니치 브랜드에 끌리고, 왜 이 향이 특별한지 이유를 설명하는 것도 즐겨요. 그 독특한 취향 자체가 하나의 개성이 됩니다.", "color": "#7B2FBE", "cards": [{"label": "개성", "value": "남들과 겹치지 않는 향 선호"}, {"label": "선호 계열", "value": "독특한 니치 프래그런스"}, {"label": "설명 욕구", "value": "향의 매력을 논리적으로 설명"}, {"label": "실험 정신", "value": "새로운 조합을 계속 시도"}], "duo": {"good": ["틀에 얽매이지 않는 창의적 조합", "근거를 따지며 설득하는 논리력", "변화를 두려워하지 않는 적응력"], "bad": ["실험이 잦아 취향이 자주 바뀜", "꾸준함보다 새로움을 더 즐김"]}}, {"type": "ESTJ", "name": "파워 우디 리더", "emoji": "🌳", "tagline": "신뢰감을 주는 향을 고르는 사람", "summary": "파워 우디 리더는 신뢰감을 주는 향을 전략적으로 선택하는 사람입니다. 상황에 맞는 향을 정확히 구분해서 쓰고, 한번 정한 향은 꾸준히 관리하며 유지해요. 그 일관성이 곧 믿음직한 인상으로 이어집니다.", "color": "#2563EB", "cards": [{"label": "신뢰감", "value": "상황에 맞는 향을 정확히 구분"}, {"label": "관리 습관", "value": "정기적으로 향수량 체크"}, {"label": "선호 계열", "value": "클래식한 우디 계열"}, {"label": "일관성", "value": "정한 향을 꾸준히 유지"}], "duo": {"good": ["세운 기준을 흔들림 없이 지키는 실행력", "체계적인 관리로 만드는 신뢰감", "믿을 만한 선택을 빠르게 판단"], "bad": ["예상 밖 변수에 스트레스를 좀 받음", "가끔은 융통성 있게 넘어가도 좋음"]}}, {"type": "ESFJ", "name": "스위트 로즈 호스트", "emoji": "🌹", "tagline": "손님 맞이할 때도 향을 챙기는 사람", "summary": "스위트 로즈 호스트는 자신뿐 아니라 주변까지 향으로 챙기는 사람입니다. 손님을 맞이하는 공간의 향까지 신경 쓰고, 좋은 향수를 발견하면 선물로 나누는 걸 좋아해요. 그 다정함이 향 취향에도 자연스럽게 묻어납니다.", "color": "#F59E0B", "cards": [{"label": "배려심", "value": "손님 맞이할 공간까지 신경"}, {"label": "선호 계열", "value": "화사한 로즈·플로럴 계열"}, {"label": "공유 습관", "value": "좋은 향수는 선물로 나눔"}, {"label": "관계 케어", "value": "상대 취향까지 함께 고려"}], "duo": {"good": ["좋은 것을 아낌없이 나누는 다정함", "주변 취향까지 세심하게 챙김", "함께할 때 더 즐거워지는 관계력"], "bad": ["내 취향보다 남 챙기기를 우선할 때", "유행과 주변 반응에 흔들릴 때가 있음"]}}, {"type": "ENFJ", "name": "따뜻한 앰버 멘토", "emoji": "🕊️", "tagline": "향으로 사람 마음을 편하게 하는 사람", "summary": "따뜻한 앰버 멘토는 향으로 사람의 마음을 편안하게 해주는 사람입니다. 상대방이 좋아할 만한 향을 세심하게 골라 선물하고, 함께 있는 시간이 편안하게 느껴지도록 향까지 신경 써요. 배려가 향 취향에도 스며 있는 유형입니다.", "color": "#10B981", "cards": [{"label": "배려 방식", "value": "상대가 편안할 향을 고려"}, {"label": "선호 계열", "value": "따뜻한 앰버·머스크 계열"}, {"label": "선물 습관", "value": "맞춤 향을 세심하게 선택"}, {"label": "분위기", "value": "함께 있는 공간을 편안하게"}], "duo": {"good": ["상대를 배려한 섬세한 선택", "함께할 때 서로 편안해지는 분위기", "진심을 담은 다정한 태도"], "bad": ["남 챙기느라 정작 내 취향은 뒷전", "모두를 만족시키려다 지칠 때가 있음"]}}, {"type": "ENTJ", "name": "볼드 우디 커맨더", "emoji": "👑", "tagline": "협상 자리에서도 존재감 있는 향", "summary": "볼드 우디 커맨더는 협상 자리에서도 존재감을 잃지 않는 향을 고르는 사람입니다. 목표에 맞춰 인상을 설계하듯 향도 명확한 기준으로 선택하고, 그 결정은 좀처럼 흔들리지 않아요. 향 하나에도 리더십이 묻어나는 타입입니다.", "color": "#7C3AED", "cards": [{"label": "목표 의식", "value": "원하는 인상에 맞춰 선택"}, {"label": "선호 계열", "value": "묵직한 우디·앰버 계열"}, {"label": "결정력", "value": "한번 정하면 흔들림 없이 유지"}, {"label": "효율", "value": "불필요한 컬렉션은 정리"}], "duo": {"good": ["명확한 목표로 밀어붙이는 추진력", "불필요한 것은 걷어내는 판단력", "결과로 증명하는 강한 실행력"], "bad": ["과정의 즐거움보다 결과를 중시하는 편", "계획대로 안 되면 스트레스를 받음"]}}], "accent": "#E8A0BF", "progress": "bar"};
+var AXES=[['E','I'],['S','N'],['T','F'],['J','P']];
+var nick="",qi=0,sc={},lock=false,tT=null,answers=[];
+function $(i){return document.getElementById(i);}
+function esc(s){if(s==null)return"";return String(s).replace(/[&<>"']/g,function(m){
+return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m];});}
+function show(id){var a=document.querySelectorAll(".sc");
+for(var i=0;i<a.length;i++)a[i].classList.remove("on");
+$(id).classList.add("on");window.scrollTo({top:0,behavior:"auto"});}
+function reset(){sc={};answers=[];["E","I","S","N","T","F","J","P"].forEach(function(k){sc[k]=0;});}
+function mix(hex,ratio){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
+r=Math.round(r+(255-r)*ratio);g=Math.round(g+(255-g)*ratio);b=Math.round(b+(255-b)*ratio);
+return "#"+[r,g,b].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function lerp2(hexA,hexB,t){function rgb(h){h=(h||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+return[parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+var a=rgb(hexA),b=rgb(hexB);
+var r=Math.round(a[0]+(b[0]-a[0])*t),g=Math.round(a[1]+(b[1]-a[1])*t),bl=Math.round(a[2]+(b[2]-a[2])*t);
+return "#"+[r,g,bl].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function luminance(hex){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16)/255,g=parseInt(h.slice(2,4),16)/255,b=parseInt(h.slice(4,6),16)/255;
+function lin(c){return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);}
+return 0.2126*lin(r)+0.7152*lin(g)+0.0722*lin(b);}
+function readable(bgHex){return luminance(bgHex)>0.53?"#1a1a1a":"#fff";}
+function setAcc(c){var s=document.documentElement.style;
+var soft=mix(c,.86),deep=mix(c,.68);
+s.setProperty("--acc",c);s.setProperty("--soft",soft);s.setProperty("--deep",deep);
+s.setProperty("--accFg",readable(c));s.setProperty("--softFg",readable(soft));s.setProperty("--deepFg",readable(deep));}
+function intro(){nick="";qi=0;lock=false;reset();setAcc(D.accent);
+var cast="";for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+cast+='<div class="ci"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+(c.tagline?'<span class="t">'+esc(c.tagline)+'</span>':"")+'</div>';}
+$("s1").innerHTML='<div class="pa intro">'+
+'<div class="em">'+D.meta.emoji+'</div>'+
+'<h1>'+esc(D.meta.title)+'</h1><p>'+esc(D.meta.intro)+'</p>'+
+'<div class="castt">'+esc(D.meta.setName||"16가지 유형")+'</div>'+
+'<div class="cast">'+cast+'</div>'+
+'<div class="mt">질문 '+D.questions.length+'개 · 결과 16가지</div>'+
+'<div class="langhint">🌐 Prefer another language? Use your browser\'s translate feature.<br>다른 언어로 보고 싶다면 브라우저의 번역 기능을 이용해주세요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="'+(D.useName?"nameScreen()":"begin()")+'">테스트 시작하기</button></div>';
+show("s1");}
+function nameScreen(){$("s2").innerHTML='<div class="pa nb"><h2>어떻게 불러드릴까요?</h2>'+
+'<input id="nk" type="text" maxlength="12" placeholder="닉네임을 입력해주세요" autocomplete="off">'+
+'<div class="gd">○ 총 '+D.questions.length+'문항입니다.<br>○ 나에게 더 가까운 답을 골라주세요.<br>○ 결과에 닉네임이 함께 표시돼요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="begin()">시작하기</button>'+
+'<button class="btn" onclick="intro()">처음으로</button></div>';show("s2");
+setTimeout(function(){var n=$("nk");if(n){n.focus();
+n.addEventListener("keydown",function(e){if(e.key==="Enter")begin();});}},80);}
+function begin(){if(D.useName){var n=$("nk"),v=n?n.value.trim():"";
+if(!v){alert("닉네임을 입력해주세요.");if(n)n.focus();return;}nick=v;}
+qi=0;lock=false;reset();question();show("s3");}
+function progHTML(cur,total){var p=D.progress||"bar";
+if(p==="bar"){return '<div class="trk"><div class="fil" style="width:'+Math.round(cur/total*100)+'%"></div></div>';}
+var h=p==="dots"?'<div class="pdots">':'<div class="psq">',n=Math.min(total,12);
+for(var i=0;i<n;i++){var st=i<cur-1?" dn":i===cur-1?(p==="dots"?" now":" dn"):"";
+h+=p==="dots"?'<div class="pdot'+st+'"></div>':'<i class="'+st.trim()+'"></i>';}
+return h+"</div>";}
+function question(){lock=false;var tot=D.questions.length,q=D.questions[qi];
+var num=("0"+(qi+1)).slice(-2);
+var h='<div class="pa qw"><div class="qt"><div class="qi">'+
+'<span class="sec">'+esc(q.section||"진행 중")+'</span><span>'+(qi+1)+' / '+tot+'</span></div>'+
+progHTML(qi+1,tot)+'</div>'+
+'<div class="qn">문항 '+num+(nick?" · "+esc(nick):"")+'</div>'+
+'<div class="qx">'+esc(q.text)+'</div><div class="ops">';
+for(var i=0;i<q.options.length;i++){
+h+='<button class="op" data-n="'+(i+1)+'" data-v="'+esc(q.options[i].value)+'">'+esc(q.options[i].text)+'</button>';}
+h+='</div><p class="qnote">더 가까운 쪽을 골라주세요.</p>'+
+(qi>0?'<button type="button" class="qback" onclick="prevQ()">← 이전 문항</button>':"")+
+'</div>';
+$("s3").innerHTML=h;
+window.scrollTo({top:0,behavior:"auto"});
+var bs=$("s3").querySelectorAll(".op");
+for(var j=0;j<bs.length;j++){bs[j].addEventListener("click",function(){pick(this);});}}
+function pick(btn){if(lock)return;lock=true;
+var all=$("s3").querySelectorAll(".op");
+for(var i=0;i<all.length;i++){all[i].disabled=true;all[i].classList.remove("pk");}
+btn.classList.add("pk");
+var v=btn.getAttribute("data-v");if(sc[v]==null)sc[v]=0;sc[v]++;answers[qi]=v;
+setTimeout(function(){qi++;if(qi<D.questions.length){question();return;}finish();},110);}
+function prevQ(){if(qi<=0||lock)return;lock=true;
+var prevV=answers[qi-1];if(prevV!=null&&sc[prevV]>0)sc[prevV]--;
+answers[qi-1]=null;qi--;question();}
+function finish(){var code="";
+for(var i=0;i<AXES.length;i++){code+=(sc[AXES[i][0]]>=sc[AXES[i][1]]?AXES[i][0]:AXES[i][1]);}
+loading(code);}
+function loading(code){
+$("s4").innerHTML='<div class="pa lw"><div style="width:100%">'+
+'<h2>'+esc(D.meta.loadingText||"결과를 정리하는 중")+'</h2><p>잠시만 기다려 주세요.</p>'+
+'<div class="dts"><span></span><span></span><span></span></div>'+
+'<div class="lbar"><span></span></div></div></div>';show("s4");
+setTimeout(function(){result(code);show("s5");},2500);}
+function lab(key,sub){var L=D.blockLabels||{};var v=L[key];
+if(sub){
+if(v&&typeof v==="object"&&v[sub])return v[sub];
+return sub==="good"?"잘 맞는 유형":sub==="bad"?"안 맞는 유형":"";}
+return typeof v==="string"?v:"";}
+function byType(t){for(var i=0;i<D.cast.length;i++){if(D.cast[i].type===t)return D.cast[i];}return null;}
+function compatList(type){var s=D.compat[type]||"";var out=[],m,re=/([A-Z]{4})(\d+)/g;
+while((m=re.exec(s))!==null){out.push({type:m[1],pct:parseInt(m[2],10)});}
+out.sort(function(a,b){return b.pct-a.pct;});return out;}
+function compatItems(arr){var h="";
+for(var i=0;i<arr.length;i++){var c=byType(arr[i].type);if(!c)continue;
+h+='<div class="cmpi"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+
+'<span class="p">'+arr[i].pct+'%</span></span></div>';}
+return h;}
+function lineFor(pct){var L=D.compatLines||[];
+for(var i=0;i<L.length;i++){if(pct>=L[i].min)return L[i].text;}
+return L.length?L[L.length-1].text:"";}
+function compatHTML(type){var L=D.compatLabels||{};var list=compatList(type);
+if(!list.length)return "";
+var best=list.slice(0,2),worst=list.slice(-2).reverse();
+return '<div class="cmp"><div class="cmph">'+esc(L.title||"궁합")+'</div><div class="cmpg">'+
+'<div class="cmpc"><span class="lb">'+esc(L.good||"최고의 궁합")+'</span>'+compatItems(best)+
+'<div class="cmpnote">'+esc(lineFor(best[0].pct))+'</div></div>'+
+'<div class="cmpc bad"><span class="lb">'+esc(L.bad||"아쉬운 궁합")+'</span>'+compatItems(worst)+
+'<div class="cmpnote">'+esc(lineFor(worst[0].pct))+'</div></div>'+
+'</div></div>';}
+function tint(color,pct){var s=Math.max(0,Math.min(1,(pct-70)/29));
+return lerp2("#AEB4BF",color,Math.pow(s,2.5));}
+function mapHTML(type,color){var L=D.compatLabels||{};
+var list=compatList(type);if(!list.length)return "";
+var pm={};list.forEach(function(x){pm[x.type]=x.pct;});
+var g="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+if(c.type===type){
+var meFg=readable(color);
+g+='<div class="mapc me" style="background:'+color+';color:'+meFg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="badge">나</span></div>';
+}else{var p=pm[c.type]||0;var bg=tint(color,p);var fg=readable(bg);
+g+='<div class="mapc" style="background:'+bg+';color:'+fg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="p" style="opacity:1">'+p+'%</span></div>';}}
+var bar="linear-gradient(90deg,"+tint(color,72)+","+tint(color,99)+")";
+return '<div class="map"><div class="maph">'+esc(L.mapTitle||"나의 궁합 지도")+'</div>'+
+'<div class="mapg">'+g+'</div>'+
+'<div class="mapf"><span>안 맞음</span><span class="mapbar" style="background:'+bar+'"></span>'+
+'<span>잘 맞음</span></div></div>';}
+function blockHTML(name,r){
+if(name==="quote"&&r.quote){var qcls=D.quoteStyle==="bubble"?"qbb":"qb";
+return '<div class="blk"><div class="blt">'+esc(lab("quote")||"한마디")+'</div>'+
+'<div class="'+qcls+'">'+esc(r.quote)+'</div></div>';}
+if(name==="traits"&&r.traits&&r.traits.length){var h='<div class="blk"><div class="blt">'+
+esc(lab("traits")||"세부 특징")+'</div>';
+if(D.traitStyle==="sticker"){h+='<div class="trss">';
+for(var i=0;i<r.traits.length;i++){h+='<div class="tst">'+esc(r.traits[i])+'</div>';}
+h+='</div>';
+}else{h+='<div class="trs">';
+for(var i2=0;i2<r.traits.length;i2++){h+='<div class="tc">'+esc(r.traits[i2])+'</div>';}
+h+='</div>';}
+return h+"</div>";}
+if(name==="duo"&&r.duo){var g=r.duo.good||[],b=r.duo.bad||[];var chk=D.duoStyle==="check";
+var gm=chk?"✓":"",bm=chk?"✗":"",dcls=chk?" chk":"";
+var h2='<div class="blk duo"><div class="dsec g"><div class="dsh">'+esc(lab("duo","good")||"좋은 면")+'</div><div class="dls">';
+for(var j=0;j<g.length;j++){h2+='<div class="dit'+dcls+'"><b>'+gm+'</b><span>'+esc(g[j])+'</span></div>';}
+h2+='</div></div><div class="dsec b"><div class="dsh">'+esc(lab("duo","bad")||"아쉬운 면")+'</div><div class="dls">';
+for(var k2=0;k2<b.length;k2++){h2+='<div class="dit'+dcls+'"><b>'+bm+'</b><span>'+esc(b[k2])+'</span></div>';}
+return h2+"</div></div></div>";}
+if(name==="stats"&&r.stats&&r.stats.length){
+var h3='<div class="blk"><div class="blt">'+esc(lab("stats")||"지표")+'</div>';
+if(D.statStyle==="radial"){
+h3+='<div class="stsr">';
+for(var m=0;m<r.stats.length;m++){var s=r.stats[m];var v=Math.max(0,Math.min(100,s.value||0));
+var C=100.53;var off=C*(1-v/100);
+h3+='<div class="rgauge"><svg viewBox="0 0 38 38">'+
+'<circle class="rtrack" cx="19" cy="19" r="16"/>'+
+'<circle class="rfill" cx="19" cy="19" r="16" stroke-dasharray="'+C+'" stroke-dashoffset="'+off+'" transform="rotate(-90 19 19)"/>'+
+'<text x="19" y="23" text-anchor="middle" style="font-size:10px;font-weight:900;fill:var(--ink)">'+v+'%</text>'+
+'</svg><div class="rlab">'+esc(s.label)+'</div></div>';}
+h3+='</div>';
+}else{
+h3+='<div class="sts">';
+for(var m2=0;m2<r.stats.length;m2++){var s2=r.stats[m2];var v2=Math.max(0,Math.min(100,s2.value||0));
+var fc=Math.max(1,Math.min(10,Math.round(v2/10)));var sq="";
+for(var n2=1;n2<=10;n2++){sq+='<span class="sq'+(n2<=fc?" f":"")+'"></span>';}
+h3+='<div class="srow"><div class="slab">'+esc(s2.label)+'</div><div class="sqs">'+sq+'</div>'+
+'<div class="spc">'+v2+'%</div></div>';}
+h3+='</div>';
+}
+return h3+"</div>";}
+if(name==="cards"&&r.cards&&r.cards.length){
+var h4='<div class="blk"><div class="blt">'+esc(lab("cards")||"이런 사람")+'</div>';
+if(D.cardStyle==="ticket"){h4+='<div class="cdt">';
+for(var p=0;p<r.cards.length;p++){h4+='<div class="cdti"><b>'+esc(r.cards[p].label)+'</b><span>'+
+esc(r.cards[p].value)+'</span></div>';}
+h4+='</div>';
+}else{h4+='<div class="cds" style="margin-top:9px">';
+for(var p2=0;p2<r.cards.length;p2++){h4+='<div class="cd2"><b>'+esc(r.cards[p2].label)+'</b><p>'+
+esc(r.cards[p2].value)+'</p></div>';}
+h4+='</div>';}
+return h4+"</div>";}
+return "";}
+function result(code){var r=null;
+for(var i=0;i<D.results.length;i++){if(D.results[i].type===code){r=D.results[i];break;}}
+if(!r)r=D.results[0];
+setAcc(r.color||D.accent);
+var sum=(nick?esc(nick)+"님은 ":"")+esc(r.summary);
+var h='<div class="cap" id="cap"><div class="rh"><h2>'+esc(D.meta.title)+'</h2></div><div class="rb">'+
+'<div class="rn"><div class="em">'+esc(r.emoji||"✨")+'</div><h3>'+esc(r.name||D.meta.title)+'</h3>'+
+(r.tagline?'<div class="tg2">'+esc(r.tagline)+'</div>':"")+'</div>'+
+'<div class="rs">'+sum+'</div>';
+var col=r.color||D.accent;
+for(var b=0;b<D.blocks.length;b++){if(D.blocks[b]!=="map")h+=blockHTML(D.blocks[b],r);}
+h+=compatHTML(r.type);
+if(D.blocks.indexOf("map")>=0)h+=mapHTML(r.type,col);
+h+='<div class="rf">POWERED BY MAGIC FACTORY</div></div></div>'+
+'<div class="stk"><button class="btn fill" onclick="sheet(\''+code+'\')">'+
+esc(D.meta.sheetCta||"내 유형의 정체 확인하기")+'</button>'+
+'<button class="btn" onclick="saveImg(this)">결과 이미지 저장하기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+$("s5").innerHTML=h;}
+function sheet(code){var me=byType(code)||D.cast[0];
+var rows="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];var isMe=c.type===code;
+if(i===8){rows+='</div><div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div><div class="rows">';}
+rows+='<div class="row'+(isMe?" me":"")+'"><span class="no">'+("0"+(i+1)).slice(-2)+'</span>'+
+'<span class="em">'+c.emoji+'</span>'+
+'<span class="nm">'+esc(c.name)+(c.tagline?'<span class="tg">'+esc(c.tagline)+'</span>':"")+'</span>'+
+'<span class="cd">'+esc(c.type)+'</span></div>';}
+$("s6").innerHTML='<div class="sheet">'+
+'<div class="sheeth"><h2>'+esc(D.meta.sheetTitle||"전체 유형 정답지")+'</h2>'+
+'<p>열여섯 종류가 각각 어떤 성격 유형인지 전부 공개해요</p></div>'+
+'<div class="reveal"><div class="em">'+me.emoji+'</div>'+
+'<div class="nm">'+(nick?esc(nick)+"님의 ":"")+esc(me.name)+'</div>'+
+'<div class="eq">의 성격 유형은</div>'+
+'<div class="code">'+esc(me.type)+'</div></div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'<div class="sheetsec">'+esc(D.meta.setName||"전체 16종")+' 전체 목록</div>'+
+'<div class="rows">'+rows+'</div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'</div>'+
+'<div class="stk"><button class="btn fill" onclick="show(\'s5\')">내 결과로 돌아가기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+show("s6");}
+function frames(){return new Promise(function(r){requestAnimationFrame(function(){requestAnimationFrame(r);});});}
+function wait(ms){return new Promise(function(r){setTimeout(r,ms);});}
+var lastBlob=null,lastUrl="";
+function fileName(){return (D.meta.slug||"result")+".png";}
+function saveOptions(){
+var canShare=false;
+try{canShare=!!(navigator.canShare&&lastBlob&&navigator.canShare({files:[new File([lastBlob],fileName(),{type:"image/png"})]}));}catch(e){}
+var h="";
+if(canShare)h+='<button class="mbtn pri" onclick="shareImg()">사진으로 저장 · 공유</button>';
+else h+='<p class="mtip" style="margin:0 0 10px;">위 이미지를 <b>길게 눌러서 사진에 저장</b>해 주세요.</p>';
+h+='<a class="mbtn" href="'+lastUrl+'" download="'+fileName()+'" target="_blank" rel="noopener">새 탭에서 이미지 열기</a>';
+return '<div class="mbtns">'+h+'</div>'+
+'<p class="mtip">"이미지 열기"를 눌렀을 때 저장이 안 되면, 위 이미지를 직접 길게 눌러 저장해 주세요.</p>';}
+async function shareImg(){
+try{var f=new File([lastBlob],fileName(),{type:"image/png"});
+await navigator.share({files:[f],title:D.meta.title});}
+catch(e){if(e&&e.name!=="AbortError")toast("공유를 취소했거나 지원되지 않아요.");}}
+async function saveImg(btn){
+if(typeof html2canvas!=="function"){toast("이미지 도구를 불러오지 못했어요. 새로고침 후 다시 시도해 주세요.");return;}
+btn.disabled=true;var old=btn.textContent;btn.textContent="이미지 만드는 중...";
+$("mw").innerHTML='<p style="padding:40px 0;">이미지를 만들고 있어요...</p>';
+$("mo").classList.add("on");document.body.style.overflow="hidden";
+try{
+if(document.fonts){try{await document.fonts.ready;}catch(e){}}
+await frames();await wait(260);
+var cv=await html2canvas($("cap"),{backgroundColor:getComputedStyle(document.body).backgroundColor,
+scale:Math.min(window.devicePixelRatio||2,2),useCORS:true,logging:false,
+scrollX:0,scrollY:-window.scrollY,windowWidth:document.documentElement.clientWidth});
+if(lastUrl&&lastUrl.indexOf("blob:")===0){try{URL.revokeObjectURL(lastUrl);}catch(e){}}
+var dataUrl=cv.toDataURL("image/png");
+lastBlob=await new Promise(function(res){
+if(cv.toBlob)cv.toBlob(function(b){res(b);},"image/png");else res(null);});
+if(!lastBlob){
+  var bin=atob(dataUrl.split(",")[1]),arr=new Uint8Array(bin.length);
+  for(var i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);
+  lastBlob=new Blob([arr],{type:"image/png"});}
+lastUrl=dataUrl;
+$("mw").innerHTML='<img src="'+lastUrl+'" alt="결과 이미지">'+saveOptions();
+}catch(e){console.error(e);
+$("mw").innerHTML='<p style="padding:32px 0 8px;">이미지를 만들지 못했어요.<br>'+
+'대신 화면을 캡처해서 공유해 주세요.</p>'+
+'<p class="mtip">오류: '+esc(String(e&&e.message||e))+'</p>';
+}finally{btn.disabled=false;btn.textContent=old;}}
+function closeMo(){$("mo").classList.remove("on");document.body.style.overflow="";}
+$("mo").addEventListener("click",function(e){if(e.target===$("mo"))closeMo();});
+document.addEventListener("keydown",function(e){
+if(e.key==="Escape"&&$("mo").classList.contains("on"))closeMo();});
+async function share(){var dt={title:D.meta.title,text:D.meta.intro,url:location.href};
+try{if(navigator.share){await navigator.share(dt);return;}
+var tx=dt.text+"\n"+dt.url;
+if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(tx);
+toast("링크를 복사했어요.");return;}
+var ta=document.createElement("textarea");ta.value=tx;ta.style.position="fixed";ta.style.opacity="0";
+document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();
+toast("링크를 복사했어요.");}catch(e){if(e&&e.name!=="AbortError")toast("공유하지 못했어요.");}}
+function toast(m){clearTimeout(tT);var e=$("tst");e.textContent=m;e.classList.add("show");
+tT=setTimeout(function(){e.classList.remove("show");},2100);}
+intro();
+</script>
+</body>
+</html>
