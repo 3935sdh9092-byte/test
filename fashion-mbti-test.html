@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 패션 스타일 MBTI는? — 테스트팩토리</title>
+<meta name="description" content="옷장 앞 고민부터 쇼핑 습관까지, 알아보는 나의 패션 스타일 MBTI 유형.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="나의 패션 스타일 MBTI는? — 테스트팩토리">
+<meta property="og:description" content="옷장 앞 고민부터 쇼핑 습관까지, 알아보는 나의 패션 스타일 MBTI 유형.">
+<meta property="og:image" content="fashion-mbti-test-thumb.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{--bg:#F4F2ED;--paper:#FDFCF8;--ink:#1C1C1C;--sub:#6B6B6B;--line:#B0A898;--acc:#C1440E;--soft:rgba(193,68,14,0.12);--deep:rgba(193,68,14,0.24);--accFg:#fff;--softFg:#1C1C1C;--deepFg:#1C1C1C;--chip:rgba(28,28,28,0.07);--chips:rgba(28,28,28,0.1);--r:2px;--bw:2px;--shadow:none;--fh:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;--fb:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+*{box-sizing:border-box;}
+html{background:#F4F2ED;}
+body{margin:0;min-height:100vh;color:var(--ink);background-color:var(--bg);background-image:none;background-size:auto;font-family:var(--fb);word-break:keep-all;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;line-height:1.6;}
+h1,h2,h3,.qx,.rn h3,.sheeth h2,.reveal .code,.dsh,.blt,.cmph,.maph,.sheetsec{font-family:var(--fh);}
+button,input{font:inherit;-webkit-tap-highlight-color:transparent;}
+.app{width:100%;max-width:560px;margin:0 auto;padding:26px 14px 46px;}
+.sc{display:none;} .sc.on{display:block;animation:in .18s ease;}
+@keyframes in{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+.pa{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);}
+.btn{width:100%;min-height:54px;padding:12px;cursor:pointer;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--ink);font-size:16px;font-weight:800;}
+.btn:active{transform:scale(.99);}
+.btn.fill{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.stk{display:grid;gap:10px;margin-top:14px;}
+.intro{padding:0 0 24px;text-align:center;overflow:hidden;}
+.hero{margin:0 0 20px;line-height:0;}
+.hero svg{display:block;width:100%;height:auto;}
+.intro>h1,.intro>p,.intro>.castt,.intro>.cast,.intro>.mt,.intro>.em{margin-left:18px;margin-right:18px;}
+.intro>.em{padding-top:34px;}
+.intro .em{font-size:54px;line-height:1;margin-bottom:12px;}
+.intro h1{font-size:25px;line-height:1.45;margin:0 0 10px;font-weight:700;letter-spacing:-.2px;text-wrap:balance;}
+.intro p{font-size:14.5px;color:var(--sub);line-height:1.8;margin:0;font-weight:400;text-wrap:pretty;}
+.castt{margin:20px 0 10px;font-size:12.5px;font-weight:800;color:var(--acc);}
+.mt{margin-top:16px;font-size:12.5px;font-weight:700;color:var(--sub);}
+.langhint{margin-top:8px;font-size:11px;font-weight:500;color:var(--sub);opacity:.75;line-height:1.6;}
+.cast{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;}
+.ci{min-width:0;padding:9px 3px 8px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);text-align:center;}
+.ci .e{font-size:22px;line-height:1;display:block;margin-bottom:4px;}
+.ci .n{font-size:11px;font-weight:600;line-height:1.4;word-break:keep-all;text-wrap:balance;}
+.ci .t{font-size:8.5px;color:var(--sub);opacity:.8;font-weight:700;margin-top:2px;display:block;}
+.intro .mt{font-size:12px;color:var(--sub);opacity:.75;margin-top:16px;font-weight:700;}
+.nb{padding:40px 24px;text-align:center;}
+.nb h2{font-size:22px;margin:0 0 22px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.nb input{width:100%;max-width:340px;height:54px;padding:0 14px;text-align:center;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-size:19px;font-weight:800;outline:none;}
+.nb input:focus{border-color:var(--acc);}
+.gd{max-width:400px;margin:24px auto 0;padding:14px 16px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);font-size:13.5px;line-height:1.8;font-weight:600;text-align:left;color:var(--sub);text-wrap:pretty;}
+.qw{padding:24px 20px 28px;}
+.qt{padding-bottom:14px;border-bottom:var(--bw) solid var(--line);}
+.qi{display:flex;justify-content:space-between;gap:12px;margin-bottom:9px;font-size:12px;font-weight:800;}
+.qi .sec{color:var(--acc);}
+.trk{width:100%;height:14px;padding:2px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.fil{width:0;height:100%;background:var(--acc);border-radius:var(--r);transition:width .2s ease;}
+.pdots{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.pdot{height:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--chip);opacity:.35;}
+.pdot.dn{opacity:1;background:var(--acc);}
+.pdot.now{opacity:1;background:var(--acc);animation:blink .7s infinite alternate;}
+@keyframes blink{from{opacity:.4;}to{opacity:1;}}
+.psq{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.psq i{display:block;aspect-ratio:1/1;min-height:12px;border:1px solid var(--line);border-radius:2px;background:var(--chip);}
+.psq i.dn{background:var(--acc);}
+.qn{margin-top:22px;color:var(--acc);font-size:13px;font-weight:900;}
+.qx{min-height:76px;margin:14px 0 20px;text-align:center;font-size:21px;line-height:1.6;letter-spacing:-.2px;font-weight:700;display:flex;align-items:center;justify-content:center;text-wrap:balance;}
+.ops{display:grid;gap:11px;}
+.op{position:relative;width:100%;min-height:70px;padding:15px 16px 15px 52px;cursor:pointer;text-align:left;color:var(--ink);background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15.5px;line-height:1.6;font-weight:500;text-wrap:pretty;}
+.op::before{content:attr(data-n);position:absolute;left:14px;top:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border:var(--bw) solid var(--line);border-radius:var(--r);transform:translateY(-50%);font-size:13px;font-weight:900;background:var(--paper);}
+.op.pk{background:var(--soft);border-color:var(--acc);color:var(--softFg);}
+.op.pk::before{color:var(--ink);}
+.op:disabled{cursor:default;}
+.qnote{margin:20px 0 0;color:var(--sub);text-align:center;font-size:12px;font-weight:700;}
+.qback{display:block;margin:14px auto 0;padding:8px 4px;background:none;border:0;color:var(--sub);font-family:var(--fb);font-size:12.5px;font-weight:700;cursor:pointer;text-align:center;}
+.lw{min-height:420px;padding:40px 22px;display:flex;align-items:center;justify-content:center;text-align:center;}
+.lw h2{margin:0 0 10px;font-size:24px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.lw p{margin:0;color:var(--sub);font-size:14px;}
+.dts{display:flex;justify-content:center;gap:9px;margin:28px 0 24px;}
+.dts span{width:12px;height:12px;background:var(--acc);border:var(--bw) solid var(--line);border-radius:var(--r);animation:bump 1.1s ease-in-out infinite;}
+.dts span:nth-child(2){animation-delay:.15s;} .dts span:nth-child(3){animation-delay:.3s;}
+@keyframes bump{0%,100%{transform:translateY(0);opacity:.4;}50%{transform:translateY(-7px);opacity:1;}}
+.lbar{width:100%;height:14px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.lbar span{display:block;width:32%;height:100%;background:var(--acc);animation:sld 1.05s ease-in-out infinite;}
+@keyframes sld{from{transform:translateX(-110%);}to{transform:translateX(340%);}}
+.cap{overflow:hidden;max-width:100%;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rh{padding:13px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.rh h2{margin:0;color:var(--accFg);font-size:15.5px;font-weight:700;line-height:1.45;letter-spacing:-.1px;text-wrap:balance;}
+.rb{padding:14px;}
+.rn{padding:24px 16px 20px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rn .em{font-size:64px;line-height:1;}
+.rn h3{margin:10px 0 6px;font-size:29px;font-weight:700;line-height:1.3;letter-spacing:-.3px;color:var(--acc);text-wrap:balance;}
+.rn .tg2{font-size:14.5px;font-weight:600;color:var(--ink);opacity:.85;}
+.rn .cd{display:inline-block;margin-top:12px;padding:4px 12px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:11px;font-weight:800;letter-spacing:1.2px;}
+.rs{margin-top:12px;padding:15px 16px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15px;line-height:1.8;font-weight:400;text-wrap:pretty;}
+.blk{margin-top:14px;}
+.blt{margin:0;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-bottom:0;border-radius:var(--r) var(--r) 0 0;font-size:13px;font-weight:900;text-align:center;text-wrap:balance;}
+.qb{padding:18px 16px;text-align:center;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);font-size:17px;font-weight:600;line-height:1.65;text-wrap:balance;}
+.qbb{position:relative;margin:6px 16px 24px;padding:18px 16px;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:16px;font-weight:600;line-height:1.65;text-align:center;text-wrap:balance;}
+.qbb::before{content:"";position:absolute;left:32px;bottom:-11px;width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-top:13px solid var(--line);}
+.qbb::after{content:"";position:absolute;left:34.5px;bottom:-6.5px;width:0;height:0;border-left:8.5px solid transparent;border-right:8.5px solid transparent;border-top:10px solid var(--soft);}
+.trs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:var(--bw) solid var(--line);border-left:var(--bw) solid var(--line);}
+.tc{min-height:82px;padding:9px 6px;display:flex;align-items:center;justify-content:center;background:var(--chip);color:var(--ink);border-right:var(--bw) solid var(--line);border-bottom:var(--bw) solid var(--line);text-align:center;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;text-wrap:balance;}
+.tc:nth-child(even){background:var(--soft);color:var(--softFg);}
+.trss{display:flex;flex-wrap:wrap;gap:10px 8px;padding:16px 14px;background:var(--chip);border-top:var(--bw) solid var(--line);}
+.tst{padding:8px 13px;background:var(--paper);border:var(--bw) solid var(--line);border-radius:999px;font-size:12.5px;font-weight:700;box-shadow:2px 2px 0 var(--line);word-break:keep-all;text-wrap:balance;color:var(--ink);}
+.tst:nth-child(3n+1){transform:rotate(-2.5deg);}
+.tst:nth-child(3n+2){transform:rotate(1.5deg);}
+.tst:nth-child(3n){transform:rotate(-0.5deg);}
+.tst:nth-child(even){background:var(--soft);color:var(--softFg);}
+.duo{display:grid;gap:10px;}
+.dsec{border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.dsh{padding:9px;text-align:center;font-size:14px;font-weight:900;color:var(--deepFg);border-bottom:var(--bw) solid var(--line);}
+.dsec.g .dsh{background:var(--acc);color:var(--accFg);}
+.dsec.b .dsh{background:var(--deep);}
+.dls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px 10px;padding:12px 11px;background:var(--chip);}
+.dit span{text-wrap:pretty;}
+.dit{display:flex;align-items:flex-start;min-width:0;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;}
+.dit b{width:7px;height:7px;margin:5px 6px 0 0;flex:0 0 auto;background:var(--acc);border-radius:1px;}
+.dit.chk b{width:17px;height:17px;margin:1px 8px 0 0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;background:var(--acc);color:var(--accFg);}
+.dsec.b .dit.chk b{background:var(--sub);color:var(--paper);}
+.sts{padding:14px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);}
+.srow{display:grid;grid-template-columns:76px 1fr 42px;align-items:center;gap:9px;}
+.srow+.srow{margin-top:11px;}
+.slab{font-size:12.5px;font-weight:900;}
+.sqs{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;}
+.sq{aspect-ratio:1/1;min-height:11px;border-radius:2px;background:var(--chips);box-shadow:inset 0 0 0 1px rgba(176,168,152,0.35);}
+.sq.f{background:var(--acc);}
+.spc{text-align:right;font-size:12.5px;font-weight:900;}
+.stsr{padding:16px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:14px 8px;}
+.rgauge{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.rgauge svg{width:64px;height:64px;overflow:visible;}
+.rgauge .rtrack{fill:none;stroke:var(--chips);stroke-width:6;}
+.rgauge .rfill{fill:none;stroke:var(--acc);stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset .5s ease;}
+.rgauge .rlab{font-size:11px;font-weight:800;color:var(--sub);text-align:center;line-height:1.35;}
+.cds{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px;}
+.cd2{padding:12px 11px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.cd2 b{display:inline-block;margin-bottom:7px;padding:3px 9px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:10.5px;font-weight:800;}
+.cd2 p{margin:0;font-size:13.5px;line-height:1.65;font-weight:500;text-wrap:pretty;}
+.cdt{background:var(--paper);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);padding:2px 16px;}
+.cdti{padding:12px 0;border-bottom:var(--bw) dashed var(--line);}
+.cdti:last-child{border-bottom:0;}
+.cdti b{display:block;font-size:11px;font-weight:900;color:var(--acc);margin-bottom:3px;letter-spacing:.2px;}
+.cdti span{display:block;font-size:13.5px;font-weight:600;line-height:1.55;text-wrap:pretty;}
+.map{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.maph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.mapg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--chip);}
+.mapc{position:relative;min-width:0;padding:9px 3px 8px;text-align:center;border-right:1px solid rgba(176,168,152,0.18);border-bottom:1px solid rgba(176,168,152,0.18);}
+.mapc:nth-child(4n){border-right:0;}
+.mapc:nth-last-child(-n+4){border-bottom:0;}
+.mapc .e{display:block;font-size:20px;line-height:1;}
+.mapc .n{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;margin-top:4px;font-size:9px;font-weight:600;line-height:1.35;overflow:hidden;word-break:keep-all;text-wrap:balance;padding:0 2px;min-height:24px;}
+.mapc .p{display:block;margin-top:2px;font-size:9.5px;font-weight:900;opacity:.75;}
+.mapc.me{outline:var(--bw) solid var(--acc);outline-offset:-2px;}
+.mapc .badge{display:inline-block;margin-top:2px;padding:1px 7px;border-radius:999px;background:var(--acc);color:var(--accFg);font-size:9px;font-weight:800;}
+.mapf{display:flex;align-items:center;gap:7px;padding:9px 12px;background:var(--chip);border-top:var(--bw) solid var(--line);font-size:9.5px;font-weight:800;color:var(--sub);}
+.mapbar{flex:1;height:7px;border-radius:999px;}
+.cmp{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.cmph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.cmpg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--chip);}
+.cmpc{min-width:0;padding:12px 8px 13px;text-align:center;}
+.cmpc+.cmpc{border-left:var(--bw) solid var(--line);}
+.cmpc .lb{display:inline-block;margin-bottom:10px;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;background:var(--acc);color:var(--accFg);}
+.cmpc.bad .lb{background:#AEB4BF;color:#fff;}
+.cmpi{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:7px;}
+.cmpi .e{font-size:24px;line-height:1;}
+.cmpi .n{min-width:0;font-size:13px;font-weight:600;line-height:1.45;text-align:left;word-break:keep-all;text-wrap:balance;}
+.cmpi .p{font-size:11.5px;font-weight:900;color:var(--acc);display:block;}
+.cmpc.bad .cmpi .p{color:var(--sub);}
+.cmpnote{margin-top:11px;padding-top:9px;border-top:1px dashed rgba(176,168,152,0.3);font-size:12px;line-height:1.65;font-weight:500;color:var(--sub);}
+.rf{margin-top:16px;padding-top:12px;border-top:var(--bw) dashed var(--line);color:var(--sub);text-align:center;font-size:11px;font-weight:700;letter-spacing:.6px;}
+.ad{display:none;}
+.sheet{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.sheeth{padding:16px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.sheeth h2{margin:0;color:var(--accFg);font-size:18px;font-weight:800;letter-spacing:-.4px;}
+.sheeth p{margin:5px 0 0;color:var(--accFg);opacity:.85;font-size:11.5px;font-weight:700;}
+.reveal{margin:14px;padding:20px 16px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.reveal .em{font-size:46px;line-height:1;}
+.reveal .nm{margin-top:8px;font-size:19px;font-weight:700;line-height:1.45;text-wrap:balance;}
+.reveal .eq{margin:9px 0 7px;font-size:13px;font-weight:800;color:var(--sub);}
+.reveal .code{display:inline-block;padding:8px 22px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:26px;font-weight:800;letter-spacing:3px;}
+.sheetad{display:none;}
+.sheetsec{margin:0 14px 10px;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:12.5px;font-weight:900;text-align:center;}
+.rows{margin:0 14px 14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.row{display:grid;grid-template-columns:26px 30px minmax(0,1fr) auto;align-items:center;gap:9px;padding:10px 11px;background:var(--chip);border-bottom:1px solid rgba(176,168,152,0.18);}
+.row:last-child{border-bottom:0;}
+.row.me{background:var(--soft);color:var(--softFg);}
+.row .no{font-size:10px;font-weight:800;color:var(--sub);opacity:.7;}
+.row .em{font-size:22px;line-height:1;text-align:center;}
+.row .nm{font-size:14px;font-weight:600;line-height:1.45;min-width:0;word-break:keep-all;text-wrap:balance;}
+.row .tg{display:block;font-size:10.5px;font-weight:700;color:var(--sub);opacity:.85;margin-top:2px;}
+.row .cd{padding:4px 10px;border-radius:999px;background:var(--deep);font-size:11px;font-weight:800;letter-spacing:.8px;white-space:nowrap;}
+.row.me .cd{background:var(--acc);color:var(--accFg);}
+.mo{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(20,20,20,.82);overflow-y:auto;}
+.mo.on{display:flex;}
+.mb2{width:100%;max-width:360px;max-height:92vh;overflow:auto;padding:20px 16px;text-align:center;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);margin:auto;}
+.mb2 h3{margin:0 0 8px;font-size:18px;font-weight:900;}
+.mb2 p{margin:0 0 16px;color:var(--sub);font-size:13px;line-height:1.55;font-weight:600;}
+.mb2 img{display:block;width:100%;border:var(--bw) solid var(--line);border-radius:var(--r);}
+.mbtns{display:grid;gap:8px;margin-top:14px;}
+.mbtn{display:block;width:100%;padding:14px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-family:var(--fb);font-size:14.5px;font-weight:600;text-align:center;text-decoration:none;cursor:pointer;box-sizing:border-box;}
+.mbtn.pri{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.mtip{margin:12px 0 0!important;font-size:12px;line-height:1.6;color:var(--sub);}
+.mb2 .cl{width:100%;min-height:46px;margin-top:14px;cursor:pointer;color:#fff;background:var(--line);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:14px;font-weight:800;}
+.tst{position:fixed;left:50%;bottom:26px;z-index:200;max-width:calc(100% - 32px);padding:12px 18px;color:#fff;background:rgba(28,28,28,.95);border:var(--bw) solid #fff;border-radius:var(--r);font-size:13.5px;font-weight:700;transform:translate(-50%,16px);opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+.tst.show{opacity:1;transform:translate(-50%,0);}
+@media(hover:hover) and (pointer:fine){
+.btn:hover{background:var(--soft);color:var(--softFg);}
+.btn.fill:hover{opacity:.9;background:var(--acc);}
+.op:hover{background:var(--soft);color:var(--softFg);}
+.op:hover::before{color:var(--ink);}
+.qback:hover{color:var(--ink);}
+}
+@media(max-width:520px){.app{padding:18px 11px 38px;}.intro{padding:28px 14px 20px;}.intro h1{font-size:22px;}
+.ci .n{font-size:9.5px;} .ci .e{font-size:19px;}
+.qw{padding:20px 15px 24px;}.qx{font-size:19px;min-height:66px;}
+.op{min-height:64px;padding:13px 13px 13px 48px;font-size:14px;}
+.tc{min-height:74px;font-size:11.5px;}.rn h3{font-size:26px;}.rh h2{font-size:14px;}
+.dls{gap:6px 7px;padding:10px 9px;}.dit{font-size:11.5px;}.cds{gap:7px;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <section class="sc on" id="s1"></section>
+  <section class="sc" id="s2"></section>
+  <section class="sc" id="s3"></section>
+  <section class="sc" id="s4"></section>
+  <section class="sc" id="s5"></section>
+  <section class="sc" id="s6"></section>
+  <div class="ad">광고 영역 (애드센스 코드 삽입 위치)</div>
+</div>
+<div class="mo" id="mo"><div class="mb2"><h3>이미지 꾹 눌러 저장하기</h3><p>아래 이미지를 길게 누르거나 우클릭해서<br>저장해 주세요.</p><div id="mw"><p style="padding:40px 0;">이미지를 만들고 있어요...</p></div><button class="cl" onclick="closeMo()">닫기</button></div></div>
+<div class="tst" id="tst"></div>
+<script>
+"use strict";
+var D={"useName": false, "meta": {"title": "나의 패션 스타일 MBTI는?", "emoji": "👗", "intro": "옷장 앞 고민부터 쇼핑 습관까지. 12문항이면 내 안의 패션 스타일 유형을 알 수 있어요.", "loadingText": "당신의 패션 스타일을 코디하는 중... 👗", "sheetTitle": "16가지 패션 스타일 유형 전체 도감", "sheetCta": "16가지 패션 스타일 전체 보기", "slug": "fashion-mbti-test", "setName": "패션 스타일 연구소"}, "blocks": ["cards", "duo"], "blockLabels": {"cards": "👗 이 스타일의 특징 카드", "duo": {"good": "👗 이 스타일의 매력", "bad": "👗 아쉬운 점"}}, "compatLabels": {"title": "패션 취향 궁합", "good": "찰떡궁합 패션 친구", "bad": "살짝 안 어울리는 패션 친구", "mapTitle": "16가지 패션 스타일 전체 궁합"}, "compat": {"ISTJ": "ISFJ87 ESTJ84 ISTP83 INTJ81 ENTJ76 INTP74 ESTP73 INFJ66 ISFP66 ESFJ65 ESFP63 INFP61 ENTP54 ENFJ53 ENFP40", "ISFJ": "ISTJ86 ESFJ83 ISFP82 INFJ80 INTJ77 ISTP77 INFP75 ENFJ73 ESTJ67 ESFP65 ENFP61 ENTJ56 INTP54 ESTP52 ENTP46", "INFJ": "ISFJ87 INTJ87 INFP84 ENFJ78 ISFP74 ENTJ74 INTP69 ESFJ69 ENFP67 ISTJ66 ESFP61 ISTP60 ESTJ58 ENTP56 ESTP42", "INTJ": "ENTJ82 ISTJ80 INTP80 INFJ78 ENTP75 ISTP73 ESTJ70 ENFJ69 INFP68 ISFJ67 ESTP62 ENFP58 ISFP53 ESFJ52 ESFP40", "ISTP": "ISTJ86 ISFP85 INTP85 ESTP79 INTJ77 ISFJ73 INFP71 ESTJ68 ESFP67 ENTP67 ENFP62 INFJ58 ESFJ55 ENTJ55 ENFJ41", "ISFP": "ESFP86 ISFJ85 ISTP85 INFP81 INFJ77 ENFP73 ESTP66 ESFJ66 ISTJ65 INTP65 ENFJ64 ESTJ61 INTJ60 ENTP56 ENTJ44", "INFP": "INTP90 INFJ83 ISFP79 ENFP79 ENTP74 ISFJ73 ISTP72 ESFP70 INTJ68 ENFJ67 ESTP63 ESFJ62 ENTJ53 ISTJ52 ESTJ51", "INTP": "INTJ88 ISTP83 INFP83 ENTP80 ENFP77 ISTJ73 INFJ72 ISFP71 ESTP68 ENTJ66 ESTJ60 ESFP55 ISFJ53 ENFJ53 ESFJ41", "ESTP": "ESFP90 ISTP88 ENTP82 ESTJ78 ESFJ75 ISTJ72 ISFP71 ENFP70 INTP69 ENTJ66 INFP64 INTJ63 ENFJ62 ISFJ57 INFJ49", "ESFP": "ENFP88 ESFJ87 ISFP81 ESTP80 ISTP77 ESTJ71 INFP69 ENFJ69 ISFJ67 ENTP65 INFJ62 INTP57 ISTJ55 ENTJ55 INTJ50", "ENFP": "ESFP88 ENFJ86 ENTP83 INFP81 INTP77 ESTP74 ESFJ70 ENTJ67 ISFP66 INFJ65 ISTP60 INTJ54 ESTJ54 ISFJ52 ISTJ40", "ENTP": "INTP89 ESTP86 ENTJ84 ENFP78 ESFP76 INFP75 ESTJ72 ENFJ72 ISTP70 INTJ66 INFJ59 ESFJ58 ISFP53 ISTJ52 ISFJ48", "ESTJ": "ENTJ90 ISTJ87 ESTP84 ESFJ81 ENFJ76 ENTP72 INTJ71 ESFP71 ISTP70 ISFJ67 ISFP64 ENFP56 INFJ55 INTP55 INFP50", "ESFJ": "ISFJ90 ESTJ87 ENFJ87 ESFP82 INFJ76 ISTJ74 ENTJ74 ISFP73 ESTP73 ENFP72 ISTP62 INTJ58 ENTP58 INFP54 INTP42", "ENFJ": "ESFJ89 INFJ85 ENTJ84 ENFP80 ESFP75 INFP74 ESTJ73 INTJ72 ISFJ68 ENTP66 ISFP59 INTP57 ESTP54 ISTJ53 ISTP45", "ENTJ": "ESTJ88 INTJ81 ENTP81 ENFJ80 INTP77 ESFJ76 ISTJ75 ENFP73 INFJ72 ESTP67 ISFJ60 ISTP60 ESFP56 INFP55 ISFP44"}, "compatLines": [{"min": 95, "text": "이 조합이면 패션 취향까지 완벽하게 통해요"}, {"min": 88, "text": "같이 쇼핑 가면 고민이 필요 없는 사이예요"}, {"min": 82, "text": "다르지만 서로의 스타일에 은근히 끌리는 조합이에요"}, {"min": 76, "text": "각자 취향이 달라 새로운 스타일에 눈뜨게 돼요"}, {"min": 0, "text": "완전히 다른 스타일이라 오히려 신선한 조합이에요"}], "statStyle": "radial", "traitStyle": "sticker", "cardStyle": "ticket", "duoStyle": "check", "quoteStyle": "bubble", "cast": [{"type": "ISTJ", "name": "미니멀 클래식룩", "emoji": "🖤", "tagline": "10년을 입어도 질리지 않는 그 조합"}, {"type": "ISFJ", "name": "편안한 데일리룩", "emoji": "🤍", "tagline": "누가 봐도 편안하고 다정한 무드"}, {"type": "INFJ", "name": "무드있는 모노톤룩", "emoji": "🌙", "tagline": "조용히 오래 시선이 머무는 분위기"}, {"type": "INTJ", "name": "시크한 올블랙룩", "emoji": "🖇️", "tagline": "군더더기 없이 딱 떨어지는 실루엣"}, {"type": "ISTP", "name": "실용적인 스트릿룩", "emoji": "🛹", "tagline": "움직이기 편한 게 최고의 스타일"}, {"type": "ISFP", "name": "감성 빈티지룩", "emoji": "🍂", "tagline": "나만 아는 이야기가 담긴 옷장"}, {"type": "INFP", "name": "로맨틱 러블리룩", "emoji": "🎀", "tagline": "마음속 상상을 옷으로 표현하는 스타일"}, {"type": "INTP", "name": "편한 오버사이즈룩", "emoji": "🧩", "tagline": "신경 안 쓴 척하지만 다 계산된 편안함"}, {"type": "ESTP", "name": "트렌디 스포티룩", "emoji": "⚡", "tagline": "지금 제일 핫한 조합은 이미 입어봤음"}, {"type": "ESFP", "name": "화사한 컬러풀룩", "emoji": "🌈", "tagline": "사진 찍을 때마다 화사하게 살아나는 룩"}, {"type": "ENFP", "name": "자유로운 믹스매치룩", "emoji": "🎡", "tagline": "오늘 기분 따라 완전히 달라지는 조합"}, {"type": "ENTP", "name": "개성있는 실험룩", "emoji": "🎨", "tagline": "한 번쯤 시도해보는 과감한 조합"}, {"type": "ESTJ", "name": "단정한 오피스룩", "emoji": "📎", "tagline": "흐트러짐 없이 하루 종일 그대로"}, {"type": "ESFJ", "name": "무난한 트렌드룩", "emoji": "🍯", "tagline": "누구에게 보여줘도 예쁘다는 소리 듣는 조합"}, {"type": "ENFJ", "name": "우아한 페미닌룩", "emoji": "🕊️", "tagline": "함께 있는 사람까지 신경 쓴 부드러운 라인"}, {"type": "ENTJ", "name": "파워풀한 수트룩", "emoji": "🚀", "tagline": "어디서든 존재감을 드러내는 완벽한 각"}], "questions": [{"section": "옷 쇼핑", "text": "친구와 옷 쇼핑을 갈 때 나는?", "options": [{"text": "여러 매장을 같이 돌아다니며 의견을 나눈다", "value": "E"}, {"text": "혼자 조용히 둘러보고 결정한다", "value": "I"}]}, {"section": "새 매장 발견", "text": "분위기 좋은 편집숍을 발견하면?", "options": [{"text": "바로 친구한테 같이 가자고 말한다", "value": "E"}, {"text": "일단 혼자 가서 먼저 둘러본다", "value": "I"}]}, {"section": "코디 완성 후", "text": "마음에 드는 코디가 완성되면?", "options": [{"text": "SNS에 바로 올려서 반응을 살핀다", "value": "E"}, {"text": "마음에 들면 그냥 조용히 만족한다", "value": "I"}]}, {"section": "스타일 기준", "text": "옷을 고를 때 중요하게 보는 것은?", "options": [{"text": "실제로 입어본 적 있는 익숙한 스타일", "value": "S"}, {"text": "한 번도 안 입어본 새로운 스타일", "value": "N"}]}, {"section": "쇼핑 레퍼런스", "text": "원하는 옷을 설명할 때 나는?", "options": [{"text": "색상, 소재를 구체적인 수치로 말한다", "value": "S"}, {"text": "'가을 숲 같은 느낌'처럼 비유로 말한다", "value": "N"}]}, {"section": "옷장 정리", "text": "옷장을 정리할 때 나는?", "options": [{"text": "자주 입는 순서대로 눈에 보이게 정리한다", "value": "S"}, {"text": "계절과 느낌별로 나만의 기준으로 정리한다", "value": "N"}]}, {"section": "스타일 실패", "text": "산 옷이 생각과 다르게 안 어울리면?", "options": [{"text": "어느 부분이 문제였는지 원인을 분석한다", "value": "T"}, {"text": "속상한 기분을 느끼고 조용히 넘어간다", "value": "F"}]}, {"section": "친구 코디 조언", "text": "친구가 코디를 물어보면?", "options": [{"text": "체형과 장단점을 객관적으로 짚어준다", "value": "T"}, {"text": "친구가 좋아할지부터 먼저 생각한다", "value": "F"}]}, {"section": "쇼핑 후기", "text": "구매한 옷의 후기를 남긴다면?", "options": [{"text": "소재, 사이즈를 항목별로 정리한다", "value": "T"}, {"text": "그날 느낀 만족감을 감성적으로 적는다", "value": "F"}]}, {"section": "코디 준비", "text": "평소 옷 고르는 습관은?", "options": [{"text": "전날 미리 정해두고 잔다", "value": "J"}, {"text": "그날 아침 기분 따라 정한다", "value": "P"}]}, {"section": "쇼핑 계획", "text": "쇼핑하러 가는 주기는?", "options": [{"text": "계절이 바뀔 때 미리 계획해서 간다", "value": "J"}, {"text": "갖고 싶은 옷이 생각날 때 즉흥적으로 간다", "value": "P"}]}, {"section": "옷 정리 방식", "text": "집에서 옷을 정리할 때?", "options": [{"text": "순서와 방법을 정확히 지켜서 정리한다", "value": "J"}, {"text": "그때그때 손 가는 대로 정리한다", "value": "P"}]}], "results": [{"type": "ISTJ", "name": "미니멀 클래식룩", "emoji": "🖤", "tagline": "10년을 입어도 질리지 않는 그 조합", "summary": "미니멀 클래식룩처럼 손이 가는 패션 취향을 가진 타입이에요. 쇼핑 습관부터 코디하는 방식까지, 옷을 대하는 태도에서 성격이 자연스럽게 드러나요.", "color": "#3B3A36", "cards": [{"label": "옷장 구성", "value": "무채색 기본템 위주로 흔들림 없이 채움"}, {"label": "쇼핑 습관", "value": "필요한 걸 미리 정해두고 딱 그것만 삽니다"}, {"label": "코디 시간", "value": "아침에 고민 없이 정해진 조합으로 완성"}, {"label": "아이템 취향", "value": "오래 입을 수 있는 좋은 소재를 우선"}], "duo": {"good": [{"label": "한결같음", "value": "계절이 바뀌어도 나만의 스타일이 흔들리지 않아요"}, {"label": "신뢰감", "value": "단정한 옷차림만으로도 믿음직한 인상을 줘요"}, {"label": "실용성", "value": "유행보다 활용도 높은 옷을 고르는 눈이 있어요"}], "bad": [{"label": "새로운 시도", "value": "트렌디한 아이템엔 좀처럼 손이 안 가요"}, {"label": "즉흥적 쇼핑", "value": "계획에 없던 스타일 변화는 부담스러워요"}]}}, {"type": "ISFJ", "name": "편안한 데일리룩", "emoji": "🤍", "tagline": "누가 봐도 편안하고 다정한 무드", "summary": "편안한 데일리룩처럼 손이 가는 패션 취향을 가진 타입이에요. 쇼핑 습관부터 코디하는 방식까지, 옷을 대하는 태도에서 성격이 자연스럽게 드러나요.", "color": "#B08968", "cards": [{"label": "옷장 구성", "value": "부드러운 색감의 데일리 아이템이 대부분"}, {"label": "쇼핑 습관", "value": "가족이나 친구 취향도 함께 고려해서 고름"}, {"label": "코디 시간", "value": "입던 조합을 살짝만 바꿔서 편하게"}, {"label": "아이템 취향", "value": "촉감 좋고 활동하기 편한 소재 선호"}], "duo": {"good": [{"label": "포근한 인상", "value": "보기만 해도 편안한 분위기를 줘요"}, {"label": "무난한 매력", "value": "꾸미지 않아도 자연스럽게 예뻐 보여요"}, {"label": "배려심", "value": "함께 입을 사람 취향까지 챙겨요"}], "bad": [{"label": "내 취향 주장", "value": "원하는 스타일을 적극적으로 요구하기 어려워해요"}, {"label": "과감한 시도", "value": "화려한 아이템은 늘 다음으로 미뤄요"}]}}, {"type": "INFJ", "name": "무드있는 모노톤룩", "emoji": "🌙", "tagline": "조용히 오래 시선이 머무는 분위기", "summary": "무드있는 모노톤룩처럼 손이 가는 패션 취향을 가진 타입이에요. 쇼핑 습관부터 코디하는 방식까지, 옷을 대하는 태도에서 성격이 자연스럽게 드러나요.", "color": "#3D4C63", "cards": [{"label": "옷장 구성", "value": "톤이 맞는 모노톤 아이템으로 정돈"}, {"label": "쇼핑 습관", "value": "마음에 확신이 설 때까지 오래 고민"}, {"label": "코디 시간", "value": "분위기를 먼저 정하고 디테일을 맞춤"}, {"label": "아이템 취향", "value": "의미가 담긴 아이템에 애착이 큼"}], "duo": {"good": [{"label": "차분한 분위기", "value": "말 없이도 조용한 존재감을 남겨요"}, {"label": "섬세한 감각", "value": "색과 소재의 조화를 세심하게 챙겨요"}, {"label": "깊은 여운", "value": "한번 어울리는 스타일은 오래 기억에 남아요"}], "bad": [{"label": "빠른 결정", "value": "코디 하나 고르는 데도 고민이 꽤 길어요"}, {"label": "가벼운 변화", "value": "작은 시도조차 신중하게 재요"}]}}, {"type": "INTJ", "name": "시크한 올블랙룩", "emoji": "🖇️", "tagline": "군더더기 없이 딱 떨어지는 실루엣", "summary": "시크한 올블랙룩처럼 손이 가는 패션 취향을 가진 타입이에요. 쇼핑 습관부터 코디하는 방식까지, 옷을 대하는 태도에서 성격이 자연스럽게 드러나요.", "color": "#1F2430", "cards": [{"label": "옷장 구성", "value": "블랙 톤 위주로 효율적으로 구성"}, {"label": "쇼핑 습관", "value": "필요한 아이템을 미리 리서치해서 구매"}, {"label": "코디 시간", "value": "정해진 원칙대로 빠르고 정확하게"}, {"label": "아이템 취향", "value": "각 잡힌 실루엣의 완성도 높은 옷"}], "duo": {"good": [{"label": "완성도", "value": "흐트러짐 없는 깔끔한 룩을 유지해요"}, {"label": "효율성", "value": "최소한의 아이템으로 최대 효과를 내요"}, {"label": "확고한 취향", "value": "어울리는 스타일을 정확히 알고 있어요"}], "bad": [{"label": "감상 표현", "value": "마음에 들어도 티를 잘 안 내요"}, {"label": "즉흥적 시도", "value": "계획 없는 쇼핑은 거의 하지 않아요"}]}}, {"type": "ISTP", "name": "실용적인 스트릿룩", "emoji": "🛹", "tagline": "움직이기 편한 게 최고의 스타일", "summary": "실용적인 스트릿룩처럼 손이 가는 패션 취향을 가진 타입이에요. 쇼핑 습관부터 코디하는 방식까지, 옷을 대하는 태도에서 성격이 자연스럽게 드러나요.", "color": "#4A4A4A", "cards": [{"label": "옷장 구성", "value": "활동성 좋은 캐주얼 아이템 위주"}, {"label": "쇼핑 습관", "value": "필요하면 그때그때 빠르게 구매"}, {"label": "코디 시간", "value": "3분이면 준비 끝, 고민은 최소한으로"}, {"label": "아이템 취향", "value": "기능성과 편안함을 최우선으로 고려"}], "duo": {"good": [{"label": "쿨한 매력", "value": "꾸미지 않아도 자연스러운 멋이 있어요"}, {"label": "실용적 감각", "value": "활용도 높은 아이템을 잘 골라요"}, {"label": "담백함", "value": "호들갑 없이 담담하게 소화해요"}], "bad": [{"label": "세심한 관리", "value": "옷 관리를 자주 깜빡해요"}, {"label": "긴 쇼핑", "value": "오래 둘러보는 쇼핑은 살짝 지루해해요"}]}}, {"type": "ISFP", "name": "감성 빈티지룩", "emoji": "🍂", "tagline": "나만 아는 이야기가 담긴 옷장", "summary": "감성 빈티지룩처럼 손이 가는 패션 취향을 가진 타입이에요. 쇼핑 습관부터 코디하는 방식까지, 옷을 대하는 태도에서 성격이 자연스럽게 드러나요.", "color": "#C98FA6", "cards": [{"label": "옷장 구성", "value": "시간이 쌓인 듯한 빈티지 아이템 다수"}, {"label": "쇼핑 습관", "value": "마음에 드는 한 벌을 발견할 때까지 탐색"}, {"label": "코디 시간", "value": "그날 기분 따라 자연스럽게 결정"}, {"label": "아이템 취향", "value": "색감과 질감이 은은한 아이템"}], "duo": {"good": [{"label": "자연스러운 감각", "value": "억지스럽지 않은 편안한 멋이 있어요"}, {"label": "섬세한 색감", "value": "은은한 톤을 고르는 눈이 좋아요"}, {"label": "고유한 무드", "value": "꾸민 듯 안 꾸민 듯한 매력이 있어요"}], "bad": [{"label": "계획 쇼핑", "value": "마음에 드는 걸 놓치고 후회할 때가 있어요"}, {"label": "단호한 거절", "value": "안 어울려도 티를 잘 못 내요"}]}}, {"type": "INFP", "name": "로맨틱 러블리룩", "emoji": "🎀", "tagline": "마음속 상상을 옷으로 표현하는 스타일", "summary": "로맨틱 러블리룩처럼 손이 가는 패션 취향을 가진 타입이에요. 쇼핑 습관부터 코디하는 방식까지, 옷을 대하는 태도에서 성격이 자연스럽게 드러나요.", "color": "#8E6FB0", "cards": [{"label": "옷장 구성", "value": "포인트 컬러와 디테일이 있는 아이템"}, {"label": "쇼핑 습관", "value": "좋아하는 브랜드나 감성에 진심"}, {"label": "코디 시간", "value": "거울 보며 이런저런 조합을 상상"}, {"label": "아이템 취향", "value": "이야기가 담긴 듯한 독특한 디자인"}], "duo": {"good": [{"label": "고유한 감성", "value": "남들과 다른 자기만의 무드가 있어요"}, {"label": "섬세한 취향", "value": "좋아하는 색과 디테일에 진심이에요"}, {"label": "은은한 매력", "value": "보면 볼수록 정이 가는 스타일이에요"}], "bad": [{"label": "빠른 결정", "value": "코디 고르다 나갈 시간을 넘길 때가 있어요"}, {"label": "현실적 관리", "value": "이상만 크고 정작 옷 정리는 소홀해요"}]}}, {"type": "INTP", "name": "편한 오버사이즈룩", "emoji": "🧩", "tagline": "신경 안 쓴 척하지만 다 계산된 편안함", "summary": "편한 오버사이즈룩처럼 손이 가는 패션 취향을 가진 타입이에요. 쇼핑 습관부터 코디하는 방식까지, 옷을 대하는 태도에서 성격이 자연스럽게 드러나요.", "color": "#5A6470", "cards": [{"label": "옷장 구성", "value": "최소한의 아이템으로 효율적으로 구성"}, {"label": "쇼핑 습관", "value": "궁금하면 셀프로 이것저것 시도해봄"}, {"label": "코디 시간", "value": "옷보다 딴생각에 더 오래 씀"}, {"label": "아이템 취향", "value": "왜 이 조합이 어울리는지 이유가 궁금함"}], "duo": {"good": [{"label": "독창적 스타일", "value": "남들이 잘 안 하는 조합도 잘 소화해요"}, {"label": "호기심", "value": "새로운 스타일링을 궁금해하고 시도해요"}, {"label": "담백한 태도", "value": "과하지 않게 자연스레 잘 어울려요"}], "bad": [{"label": "꾸준한 관리", "value": "관심 시들면 옷 정리를 미루곤 해요"}, {"label": "정돈된 마무리", "value": "실험하다 마무리는 대충일 때가 있어요"}]}}, {"type": "ESTP", "name": "트렌디 스포티룩", "emoji": "⚡", "tagline": "지금 제일 핫한 조합은 이미 입어봤음", "summary": "트렌디 스포티룩처럼 손이 가는 패션 취향을 가진 타입이에요. 쇼핑 습관부터 코디하는 방식까지, 옷을 대하는 태도에서 성격이 자연스럽게 드러나요.", "color": "#C1440E", "cards": [{"label": "옷장 구성", "value": "유행하는 스포티 아이템으로 빠르게 채움"}, {"label": "쇼핑 습관", "value": "마음먹으면 바로 매장으로 직행"}, {"label": "코디 시간", "value": "빠르게 걸치고 바로 나감"}, {"label": "아이템 취향", "value": "눈에 띄는 로고와 컬러 포인트"}], "duo": {"good": [{"label": "자신감", "value": "어떤 스타일이든 당당하게 소화해요"}, {"label": "트렌드 감각", "value": "유행하는 아이템을 빠르게 캐치해요"}, {"label": "실행력", "value": "마음먹으면 바로 스타일 변신을 시도해요"}], "bad": [{"label": "신중한 선택", "value": "충동구매하고 후회할 때가 있어요"}, {"label": "차분한 관리", "value": "옷 관리는 꼼꼼히 못 챙겨요"}]}}, {"type": "ESFP", "name": "화사한 컬러풀룩", "emoji": "🌈", "tagline": "사진 찍을 때마다 화사하게 살아나는 룩", "summary": "화사한 컬러풀룩처럼 손이 가는 패션 취향을 가진 타입이에요. 쇼핑 습관부터 코디하는 방식까지, 옷을 대하는 태도에서 성격이 자연스럽게 드러나요.", "color": "#E0568C", "cards": [{"label": "옷장 구성", "value": "사진발 잘 받는 컬러 아이템 가득"}, {"label": "쇼핑 습관", "value": "기분 전환하고 싶을 때 바로 실행"}, {"label": "코디 시간", "value": "셀카 찍을 때까지 계속 매만짐"}, {"label": "아이템 취향", "value": "화사하고 눈에 띄는 포인트 아이템"}], "duo": {"good": [{"label": "화사한 매력", "value": "사진 찍을 때마다 화사하게 나와요"}, {"label": "긍정 에너지", "value": "스타일 바뀔 때마다 주변까지 신나게 해요"}, {"label": "표현력", "value": "좋아하는 스타일을 솔직하게 드러내요"}], "bad": [{"label": "차분한 유지", "value": "금방 질려서 또 바꾸고 싶어져요"}, {"label": "과한 지출", "value": "쇼핑에 돈을 많이 쓰게 돼요"}]}}, {"type": "ENFP", "name": "자유로운 믹스매치룩", "emoji": "🎡", "tagline": "오늘 기분 따라 완전히 달라지는 조합", "summary": "자유로운 믹스매치룩처럼 손이 가는 패션 취향을 가진 타입이에요. 쇼핑 습관부터 코디하는 방식까지, 옷을 대하는 태도에서 성격이 자연스럽게 드러나요.", "color": "#F2994A", "cards": [{"label": "옷장 구성", "value": "전혀 다른 스타일이 자유롭게 섞여있음"}, {"label": "쇼핑 습관", "value": "마음에 꽂히면 바로 지르는 편"}, {"label": "코디 시간", "value": "새로운 조합을 시도하는 재미로 시간 가는 줄 모름"}, {"label": "아이템 취향", "value": "의외의 조합이 되는 독특한 아이템"}], "duo": {"good": [{"label": "발랄한 매력", "value": "보는 사람도 덩달아 기분 좋아지는 분위기예요"}, {"label": "호기심 가득", "value": "새로운 스타일에 늘 열려있어요"}, {"label": "따뜻한 나눔", "value": "좋은 아이템 정보를 먼저 공유해줘요"}], "bad": [{"label": "한 스타일 유지", "value": "한 가지 스타일을 오래 못 고수해요"}, {"label": "차분한 마무리", "value": "마음이 앞서 코디가 살짝 급해질 때가 있어요"}]}}, {"type": "ENTP", "name": "개성있는 실험룩", "emoji": "🎨", "tagline": "한 번쯤 시도해보는 과감한 조합", "summary": "개성있는 실험룩처럼 손이 가는 패션 취향을 가진 타입이에요. 쇼핑 습관부터 코디하는 방식까지, 옷을 대하는 태도에서 성격이 자연스럽게 드러나요.", "color": "#C23B5A", "cards": [{"label": "옷장 구성", "value": "남들이 잘 안 하는 조합을 시도"}, {"label": "쇼핑 습관", "value": "실험적인 셀프 스타일링도 즐김"}, {"label": "코디 시간", "value": "논쟁이 될 만한 과감한 매치도 도전"}, {"label": "아이템 취향", "value": "트렌드를 재해석한 독특한 아이템"}], "duo": {"good": [{"label": "재치있는 발상", "value": "의외의 조합을 재밌게 시도해요"}, {"label": "빠른 적응력", "value": "새로운 유행에도 금방 관심을 가져요"}, {"label": "당당한 개성", "value": "눈치 안 보고 원하는 스타일을 밀고 나가요"}], "bad": [{"label": "꾸준함", "value": "금방 질려서 다음 스타일로 넘어가요"}, {"label": "무난한 선택", "value": "가끔은 너무 과감해서 부담스러울 때도 있어요"}]}}, {"type": "ESTJ", "name": "단정한 오피스룩", "emoji": "📎", "tagline": "흐트러짐 없이 하루 종일 그대로", "summary": "단정한 오피스룩처럼 손이 가는 패션 취향을 가진 타입이에요. 쇼핑 습관부터 코디하는 방식까지, 옷을 대하는 태도에서 성격이 자연스럽게 드러나요.", "color": "#3B2A20", "cards": [{"label": "옷장 구성", "value": "단정한 포멀 아이템 위주로 구성"}, {"label": "쇼핑 습관", "value": "필요한 목적에 맞춰 계획적으로 구매"}, {"label": "코디 시간", "value": "아침 루틴에 맞춰 시간 낭비 없이"}, {"label": "아이템 취향", "value": "각 잡힌 실루엣과 좋은 마감"}], "duo": {"good": [{"label": "완벽한 정돈", "value": "어디서든 흐트러짐 없는 모습을 유지해요"}, {"label": "결단력", "value": "바꾸기로 하면 망설임 없이 실행해요"}, {"label": "신뢰감", "value": "늘 단정해서 믿음이 가는 인상이에요"}], "bad": [{"label": "여유로운 변화", "value": "완벽하지 않으면 스트레스를 받아요"}, {"label": "가벼운 시도", "value": "실험적인 스타일엔 손이 잘 안 가요"}]}}, {"type": "ESFJ", "name": "무난한 트렌드룩", "emoji": "🍯", "tagline": "누구에게 보여줘도 예쁘다는 소리 듣는 조합", "summary": "무난한 트렌드룩처럼 손이 가는 패션 취향을 가진 타입이에요. 쇼핑 습관부터 코디하는 방식까지, 옷을 대하는 태도에서 성격이 자연스럽게 드러나요.", "color": "#D9A441", "cards": [{"label": "옷장 구성", "value": "다들 좋아할 만한 무난한 트렌드 위주"}, {"label": "쇼핑 습관", "value": "친구들과 정보 나누며 함께 쇼핑"}, {"label": "코디 시간", "value": "모임 있는 날은 조금 더 신경 씀"}, {"label": "아이템 취향", "value": "호불호 없이 두루 잘 어울리는 아이템"}], "duo": {"good": [{"label": "다정한 인상", "value": "누구에게나 호감 가는 무난한 매력이 있어요"}, {"label": "세심한 준비", "value": "모임 전엔 늘 신경 써서 준비해요"}, {"label": "배려심", "value": "함께 입을 사람 취향까지 살펴줘요"}], "bad": [{"label": "내 취향 우선", "value": "남 신경 쓰다 원하는 스타일을 못 할 때가 있어요"}, {"label": "과감한 변신", "value": "다들 놀랄 만한 변화는 망설이게 돼요"}]}}, {"type": "ENFJ", "name": "우아한 페미닌룩", "emoji": "🕊️", "tagline": "함께 있는 사람까지 신경 쓴 부드러운 라인", "summary": "우아한 페미닌룩처럼 손이 가는 패션 취향을 가진 타입이에요. 쇼핑 습관부터 코디하는 방식까지, 옷을 대하는 태도에서 성격이 자연스럽게 드러나요.", "color": "#7C6A9C", "cards": [{"label": "옷장 구성", "value": "부드러운 라인의 페미닌 아이템 위주"}, {"label": "쇼핑 습관", "value": "주변 사람과 함께 스타일을 맞추기도"}, {"label": "코디 시간", "value": "상대가 보기에도 부담 없는 조합 선호"}, {"label": "아이템 취향", "value": "우아하면서 편안한 실루엣"}], "duo": {"good": [{"label": "우아한 분위기", "value": "곁에 있으면 마음이 편안해지는 인상이에요"}, {"label": "따뜻한 배려", "value": "상대 시선까지 고려하는 세심함이 있어요"}, {"label": "자연스러운 리더십", "value": "모임의 스타일 트렌드를 자연스레 이끌어요"}], "bad": [{"label": "내 스타일 챙기기", "value": "남 챙기다 내 스타일은 뒷전이 돼요"}, {"label": "솔직한 요구", "value": "안 어울려도 좋게 돌려 말해요"}]}}, {"type": "ENTJ", "name": "파워풀한 수트룩", "emoji": "🚀", "tagline": "어디서든 존재감을 드러내는 완벽한 각", "summary": "파워풀한 수트룩처럼 손이 가는 패션 취향을 가진 타입이에요. 쇼핑 습관부터 코디하는 방식까지, 옷을 대하는 태도에서 성격이 자연스럽게 드러나요.", "color": "#2B2B3D", "cards": [{"label": "옷장 구성", "value": "이미지 관리 차원에서 철저히 계획"}, {"label": "쇼핑 습관", "value": "목표에 맞춰 필요한 아이템만 정확히"}, {"label": "코디 시간", "value": "완벽한 각이 나올 때까지 정돈"}, {"label": "아이템 취향", "value": "각 잡힌 파워 숄더와 좋은 원단"}], "duo": {"good": [{"label": "완벽한 이미지 관리", "value": "목표에 맞춰 스타일을 전략적으로 바꿔요"}, {"label": "당당한 카리스마", "value": "어떤 스타일이든 자신감 있게 소화해요"}, {"label": "추진력", "value": "마음먹은 변신은 바로 실행에 옮겨요"}], "bad": [{"label": "여유 갖기", "value": "완벽한 결과가 아니면 아쉬워해요"}, {"label": "타협하기", "value": "다른 사람 제안보다 내 계획을 우선해요"}]}}], "accent": "#C1440E", "progress": "bar"};
+var AXES=[['E','I'],['S','N'],['T','F'],['J','P']];
+var nick="",qi=0,sc={},lock=false,tT=null,answers=[];
+function $(i){return document.getElementById(i);}
+function esc(s){if(s==null)return"";return String(s).replace(/[&<>"']/g,function(m){
+return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m];});}
+function show(id){var a=document.querySelectorAll(".sc");
+for(var i=0;i<a.length;i++)a[i].classList.remove("on");
+$(id).classList.add("on");window.scrollTo({top:0,behavior:"auto"});}
+function reset(){sc={};answers=[];["E","I","S","N","T","F","J","P"].forEach(function(k){sc[k]=0;});}
+function mix(hex,ratio){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
+r=Math.round(r+(255-r)*ratio);g=Math.round(g+(255-g)*ratio);b=Math.round(b+(255-b)*ratio);
+return "#"+[r,g,b].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function lerp2(hexA,hexB,t){function rgb(h){h=(h||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+return[parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+var a=rgb(hexA),b=rgb(hexB);
+var r=Math.round(a[0]+(b[0]-a[0])*t),g=Math.round(a[1]+(b[1]-a[1])*t),bl=Math.round(a[2]+(b[2]-a[2])*t);
+return "#"+[r,g,bl].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function luminance(hex){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16)/255,g=parseInt(h.slice(2,4),16)/255,b=parseInt(h.slice(4,6),16)/255;
+function lin(c){return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);}
+return 0.2126*lin(r)+0.7152*lin(g)+0.0722*lin(b);}
+function readable(bgHex){return luminance(bgHex)>0.53?"#1a1a1a":"#fff";}
+function setAcc(c){var s=document.documentElement.style;
+var soft=mix(c,.86),deep=mix(c,.68);
+s.setProperty("--acc",c);s.setProperty("--soft",soft);s.setProperty("--deep",deep);
+s.setProperty("--accFg",readable(c));s.setProperty("--softFg",readable(soft));s.setProperty("--deepFg",readable(deep));}
+function intro(){nick="";qi=0;lock=false;reset();setAcc(D.accent);
+var cast="";for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+cast+='<div class="ci"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+(c.tagline?'<span class="t">'+esc(c.tagline)+'</span>':"")+'</div>';}
+$("s1").innerHTML='<div class="pa intro">'+
+'<div class="em">'+D.meta.emoji+'</div>'+
+'<h1>'+esc(D.meta.title)+'</h1><p>'+esc(D.meta.intro)+'</p>'+
+'<div class="castt">'+esc(D.meta.setName||"16가지 유형")+'</div>'+
+'<div class="cast">'+cast+'</div>'+
+'<div class="mt">질문 '+D.questions.length+'개 · 결과 16가지</div>'+
+'<div class="langhint">🌐 Prefer another language? Use your browser\'s translate feature.<br>다른 언어로 보고 싶다면 브라우저의 번역 기능을 이용해주세요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="'+(D.useName?"nameScreen()":"begin()")+'">테스트 시작하기</button></div>';
+show("s1");}
+function nameScreen(){$("s2").innerHTML='<div class="pa nb"><h2>어떻게 불러드릴까요?</h2>'+
+'<input id="nk" type="text" maxlength="12" placeholder="닉네임을 입력해주세요" autocomplete="off">'+
+'<div class="gd">○ 총 '+D.questions.length+'문항입니다.<br>○ 나에게 더 가까운 답을 골라주세요.<br>○ 결과에 닉네임이 함께 표시돼요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="begin()">시작하기</button>'+
+'<button class="btn" onclick="intro()">처음으로</button></div>';show("s2");
+setTimeout(function(){var n=$("nk");if(n){n.focus();
+n.addEventListener("keydown",function(e){if(e.key==="Enter")begin();});}},80);}
+function begin(){if(D.useName){var n=$("nk"),v=n?n.value.trim():"";
+if(!v){alert("닉네임을 입력해주세요.");if(n)n.focus();return;}nick=v;}
+qi=0;lock=false;reset();question();show("s3");}
+function progHTML(cur,total){var p=D.progress||"bar";
+if(p==="bar"){return '<div class="trk"><div class="fil" style="width:'+Math.round(cur/total*100)+'%"></div></div>';}
+var h=p==="dots"?'<div class="pdots">':'<div class="psq">',n=Math.min(total,12);
+for(var i=0;i<n;i++){var st=i<cur-1?" dn":i===cur-1?(p==="dots"?" now":" dn"):"";
+h+=p==="dots"?'<div class="pdot'+st+'"></div>':'<i class="'+st.trim()+'"></i>';}
+return h+"</div>";}
+function question(){lock=false;var tot=D.questions.length,q=D.questions[qi];
+var num=("0"+(qi+1)).slice(-2);
+var h='<div class="pa qw"><div class="qt"><div class="qi">'+
+'<span class="sec">'+esc(q.section||"진행 중")+'</span><span>'+(qi+1)+' / '+tot+'</span></div>'+
+progHTML(qi+1,tot)+'</div>'+
+'<div class="qn">문항 '+num+(nick?" · "+esc(nick):"")+'</div>'+
+'<div class="qx">'+esc(q.text)+'</div><div class="ops">';
+for(var i=0;i<q.options.length;i++){
+h+='<button class="op" data-n="'+(i+1)+'" data-v="'+esc(q.options[i].value)+'">'+esc(q.options[i].text)+'</button>';}
+h+='</div><p class="qnote">더 가까운 쪽을 골라주세요.</p>'+
+(qi>0?'<button type="button" class="qback" onclick="prevQ()">← 이전 문항</button>':"")+
+'</div>';
+$("s3").innerHTML=h;
+window.scrollTo({top:0,behavior:"auto"});
+var bs=$("s3").querySelectorAll(".op");
+for(var j=0;j<bs.length;j++){bs[j].addEventListener("click",function(){pick(this);});}}
+function pick(btn){if(lock)return;lock=true;
+var all=$("s3").querySelectorAll(".op");
+for(var i=0;i<all.length;i++){all[i].disabled=true;all[i].classList.remove("pk");}
+btn.classList.add("pk");
+var v=btn.getAttribute("data-v");if(sc[v]==null)sc[v]=0;sc[v]++;answers[qi]=v;
+setTimeout(function(){qi++;if(qi<D.questions.length){question();return;}finish();},110);}
+function prevQ(){if(qi<=0||lock)return;lock=true;
+var prevV=answers[qi-1];if(prevV!=null&&sc[prevV]>0)sc[prevV]--;
+answers[qi-1]=null;qi--;question();}
+function finish(){var code="";
+for(var i=0;i<AXES.length;i++){code+=(sc[AXES[i][0]]>=sc[AXES[i][1]]?AXES[i][0]:AXES[i][1]);}
+loading(code);}
+function loading(code){
+$("s4").innerHTML='<div class="pa lw"><div style="width:100%">'+
+'<h2>'+esc(D.meta.loadingText||"결과를 정리하는 중")+'</h2><p>잠시만 기다려 주세요.</p>'+
+'<div class="dts"><span></span><span></span><span></span></div>'+
+'<div class="lbar"><span></span></div></div></div>';show("s4");
+setTimeout(function(){result(code);show("s5");},2500);}
+function lab(key,sub){var L=D.blockLabels||{};var v=L[key];
+if(sub){
+if(v&&typeof v==="object"&&v[sub])return v[sub];
+return sub==="good"?"잘 맞는 유형":sub==="bad"?"안 맞는 유형":"";}
+return typeof v==="string"?v:"";}
+function byType(t){for(var i=0;i<D.cast.length;i++){if(D.cast[i].type===t)return D.cast[i];}return null;}
+function compatList(type){var s=D.compat[type]||"";var out=[],m,re=/([A-Z]{4})(\d+)/g;
+while((m=re.exec(s))!==null){out.push({type:m[1],pct:parseInt(m[2],10)});}
+out.sort(function(a,b){return b.pct-a.pct;});return out;}
+function compatItems(arr){var h="";
+for(var i=0;i<arr.length;i++){var c=byType(arr[i].type);if(!c)continue;
+h+='<div class="cmpi"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+
+'<span class="p">'+arr[i].pct+'%</span></span></div>';}
+return h;}
+function lineFor(pct){var L=D.compatLines||[];
+for(var i=0;i<L.length;i++){if(pct>=L[i].min)return L[i].text;}
+return L.length?L[L.length-1].text:"";}
+function compatHTML(type){var L=D.compatLabels||{};var list=compatList(type);
+if(!list.length)return "";
+var best=list.slice(0,2),worst=list.slice(-2).reverse();
+return '<div class="cmp"><div class="cmph">'+esc(L.title||"궁합")+'</div><div class="cmpg">'+
+'<div class="cmpc"><span class="lb">'+esc(L.good||"최고의 궁합")+'</span>'+compatItems(best)+
+'<div class="cmpnote">'+esc(lineFor(best[0].pct))+'</div></div>'+
+'<div class="cmpc bad"><span class="lb">'+esc(L.bad||"아쉬운 궁합")+'</span>'+compatItems(worst)+
+'<div class="cmpnote">'+esc(lineFor(worst[0].pct))+'</div></div>'+
+'</div></div>';}
+function tint(color,pct){var s=Math.max(0,Math.min(1,(pct-70)/29));
+return lerp2("#AEB4BF",color,Math.pow(s,2.5));}
+function mapHTML(type,color){var L=D.compatLabels||{};
+var list=compatList(type);if(!list.length)return "";
+var pm={};list.forEach(function(x){pm[x.type]=x.pct;});
+var g="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+if(c.type===type){
+var meFg=readable(color);
+g+='<div class="mapc me" style="background:'+color+';color:'+meFg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="badge">나</span></div>';
+}else{var p=pm[c.type]||0;var bg=tint(color,p);var fg=readable(bg);
+g+='<div class="mapc" style="background:'+bg+';color:'+fg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="p" style="opacity:1">'+p+'%</span></div>';}}
+var bar="linear-gradient(90deg,"+tint(color,72)+","+tint(color,99)+")";
+return '<div class="map"><div class="maph">'+esc(L.mapTitle||"나의 궁합 지도")+'</div>'+
+'<div class="mapg">'+g+'</div>'+
+'<div class="mapf"><span>안 맞음</span><span class="mapbar" style="background:'+bar+'"></span>'+
+'<span>잘 맞음</span></div></div>';}
+function blockHTML(name,r){
+if(name==="quote"&&r.quote){var qcls=D.quoteStyle==="bubble"?"qbb":"qb";
+return '<div class="blk"><div class="blt">'+esc(lab("quote")||"한마디")+'</div>'+
+'<div class="'+qcls+'">'+esc(r.quote)+'</div></div>';}
+if(name==="traits"&&r.traits&&r.traits.length){var h='<div class="blk"><div class="blt">'+
+esc(lab("traits")||"세부 특징")+'</div>';
+if(D.traitStyle==="sticker"){h+='<div class="trss">';
+for(var i=0;i<r.traits.length;i++){h+='<div class="tst">'+esc(r.traits[i])+'</div>';}
+h+='</div>';
+}else{h+='<div class="trs">';
+for(var i2=0;i2<r.traits.length;i2++){h+='<div class="tc">'+esc(r.traits[i2])+'</div>';}
+h+='</div>';}
+return h+"</div>";}
+if(name==="duo"&&r.duo){var g=r.duo.good||[],b=r.duo.bad||[];var chk=D.duoStyle==="check";
+var gm=chk?"✓":"",bm=chk?"✗":"",dcls=chk?" chk":"";
+var h2='<div class="blk duo"><div class="dsec g"><div class="dsh">'+esc(lab("duo","good")||"좋은 면")+'</div><div class="dls">';
+for(var j=0;j<g.length;j++){h2+='<div class="dit'+dcls+'"><b>'+gm+'</b><span>'+esc(g[j])+'</span></div>';}
+h2+='</div></div><div class="dsec b"><div class="dsh">'+esc(lab("duo","bad")||"아쉬운 면")+'</div><div class="dls">';
+for(var k2=0;k2<b.length;k2++){h2+='<div class="dit'+dcls+'"><b>'+bm+'</b><span>'+esc(b[k2])+'</span></div>';}
+return h2+"</div></div></div>";}
+if(name==="stats"&&r.stats&&r.stats.length){
+var h3='<div class="blk"><div class="blt">'+esc(lab("stats")||"지표")+'</div>';
+if(D.statStyle==="radial"){
+h3+='<div class="stsr">';
+for(var m=0;m<r.stats.length;m++){var s=r.stats[m];var v=Math.max(0,Math.min(100,s.value||0));
+var C=100.53;var off=C*(1-v/100);
+h3+='<div class="rgauge"><svg viewBox="0 0 38 38">'+
+'<circle class="rtrack" cx="19" cy="19" r="16"/>'+
+'<circle class="rfill" cx="19" cy="19" r="16" stroke-dasharray="'+C+'" stroke-dashoffset="'+off+'" transform="rotate(-90 19 19)"/>'+
+'<text x="19" y="23" text-anchor="middle" style="font-size:10px;font-weight:900;fill:var(--ink)">'+v+'%</text>'+
+'</svg><div class="rlab">'+esc(s.label)+'</div></div>';}
+h3+='</div>';
+}else{
+h3+='<div class="sts">';
+for(var m2=0;m2<r.stats.length;m2++){var s2=r.stats[m2];var v2=Math.max(0,Math.min(100,s2.value||0));
+var fc=Math.max(1,Math.min(10,Math.round(v2/10)));var sq="";
+for(var n2=1;n2<=10;n2++){sq+='<span class="sq'+(n2<=fc?" f":"")+'"></span>';}
+h3+='<div class="srow"><div class="slab">'+esc(s2.label)+'</div><div class="sqs">'+sq+'</div>'+
+'<div class="spc">'+v2+'%</div></div>';}
+h3+='</div>';
+}
+return h3+"</div>";}
+if(name==="cards"&&r.cards&&r.cards.length){
+var h4='<div class="blk"><div class="blt">'+esc(lab("cards")||"이런 사람")+'</div>';
+if(D.cardStyle==="ticket"){h4+='<div class="cdt">';
+for(var p=0;p<r.cards.length;p++){h4+='<div class="cdti"><b>'+esc(r.cards[p].label)+'</b><span>'+
+esc(r.cards[p].value)+'</span></div>';}
+h4+='</div>';
+}else{h4+='<div class="cds" style="margin-top:9px">';
+for(var p2=0;p2<r.cards.length;p2++){h4+='<div class="cd2"><b>'+esc(r.cards[p2].label)+'</b><p>'+
+esc(r.cards[p2].value)+'</p></div>';}
+h4+='</div>';}
+return h4+"</div>";}
+return "";}
+function result(code){var r=null;
+for(var i=0;i<D.results.length;i++){if(D.results[i].type===code){r=D.results[i];break;}}
+if(!r)r=D.results[0];
+setAcc(r.color||D.accent);
+var sum=(nick?esc(nick)+"님은 ":"")+esc(r.summary);
+var h='<div class="cap" id="cap"><div class="rh"><h2>'+esc(D.meta.title)+'</h2></div><div class="rb">'+
+'<div class="rn"><div class="em">'+esc(r.emoji||"✨")+'</div><h3>'+esc(r.name||D.meta.title)+'</h3>'+
+(r.tagline?'<div class="tg2">'+esc(r.tagline)+'</div>':"")+'</div>'+
+'<div class="rs">'+sum+'</div>';
+var col=r.color||D.accent;
+for(var b=0;b<D.blocks.length;b++){if(D.blocks[b]!=="map")h+=blockHTML(D.blocks[b],r);}
+h+=compatHTML(r.type);
+if(D.blocks.indexOf("map")>=0)h+=mapHTML(r.type,col);
+h+='<div class="rf">POWERED BY MAGIC FACTORY</div></div></div>'+
+'<div class="stk"><button class="btn fill" onclick="sheet(\''+code+'\')">'+
+esc(D.meta.sheetCta||"내 유형의 정체 확인하기")+'</button>'+
+'<button class="btn" onclick="saveImg(this)">결과 이미지 저장하기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+$("s5").innerHTML=h;}
+function sheet(code){var me=byType(code)||D.cast[0];
+var rows="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];var isMe=c.type===code;
+if(i===8){rows+='</div><div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div><div class="rows">';}
+rows+='<div class="row'+(isMe?" me":"")+'"><span class="no">'+("0"+(i+1)).slice(-2)+'</span>'+
+'<span class="em">'+c.emoji+'</span>'+
+'<span class="nm">'+esc(c.name)+(c.tagline?'<span class="tg">'+esc(c.tagline)+'</span>':"")+'</span>'+
+'<span class="cd">'+esc(c.type)+'</span></div>';}
+$("s6").innerHTML='<div class="sheet">'+
+'<div class="sheeth"><h2>'+esc(D.meta.sheetTitle||"전체 유형 정답지")+'</h2>'+
+'<p>열여섯 종류가 각각 어떤 성격 유형인지 전부 공개해요</p></div>'+
+'<div class="reveal"><div class="em">'+me.emoji+'</div>'+
+'<div class="nm">'+(nick?esc(nick)+"님의 ":"")+esc(me.name)+'</div>'+
+'<div class="eq">의 성격 유형은</div>'+
+'<div class="code">'+esc(me.type)+'</div></div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'<div class="sheetsec">'+esc(D.meta.setName||"전체 16종")+' 전체 목록</div>'+
+'<div class="rows">'+rows+'</div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'</div>'+
+'<div class="stk"><button class="btn fill" onclick="show(\'s5\')">내 결과로 돌아가기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+show("s6");}
+function frames(){return new Promise(function(r){requestAnimationFrame(function(){requestAnimationFrame(r);});});}
+function wait(ms){return new Promise(function(r){setTimeout(r,ms);});}
+var lastBlob=null,lastUrl="";
+function fileName(){return (D.meta.slug||"result")+".png";}
+function saveOptions(){
+var canShare=false;
+try{canShare=!!(navigator.canShare&&lastBlob&&navigator.canShare({files:[new File([lastBlob],fileName(),{type:"image/png"})]}));}catch(e){}
+var h="";
+if(canShare)h+='<button class="mbtn pri" onclick="shareImg()">사진으로 저장 · 공유</button>';
+else h+='<p class="mtip" style="margin:0 0 10px;">위 이미지를 <b>길게 눌러서 사진에 저장</b>해 주세요.</p>';
+h+='<a class="mbtn" href="'+lastUrl+'" download="'+fileName()+'" target="_blank" rel="noopener">새 탭에서 이미지 열기</a>';
+return '<div class="mbtns">'+h+'</div>'+
+'<p class="mtip">"이미지 열기"를 눌렀을 때 저장이 안 되면, 위 이미지를 직접 길게 눌러 저장해 주세요.</p>';}
+async function shareImg(){
+try{var f=new File([lastBlob],fileName(),{type:"image/png"});
+await navigator.share({files:[f],title:D.meta.title});}
+catch(e){if(e&&e.name!=="AbortError")toast("공유를 취소했거나 지원되지 않아요.");}}
+async function saveImg(btn){
+if(typeof html2canvas!=="function"){toast("이미지 도구를 불러오지 못했어요. 새로고침 후 다시 시도해 주세요.");return;}
+btn.disabled=true;var old=btn.textContent;btn.textContent="이미지 만드는 중...";
+$("mw").innerHTML='<p style="padding:40px 0;">이미지를 만들고 있어요...</p>';
+$("mo").classList.add("on");document.body.style.overflow="hidden";
+try{
+if(document.fonts){try{await document.fonts.ready;}catch(e){}}
+await frames();await wait(260);
+var cv=await html2canvas($("cap"),{backgroundColor:getComputedStyle(document.body).backgroundColor,
+scale:Math.min(window.devicePixelRatio||2,2),useCORS:true,logging:false,
+scrollX:0,scrollY:-window.scrollY,windowWidth:document.documentElement.clientWidth});
+if(lastUrl&&lastUrl.indexOf("blob:")===0){try{URL.revokeObjectURL(lastUrl);}catch(e){}}
+var dataUrl=cv.toDataURL("image/png");
+lastBlob=await new Promise(function(res){
+if(cv.toBlob)cv.toBlob(function(b){res(b);},"image/png");else res(null);});
+if(!lastBlob){
+  var bin=atob(dataUrl.split(",")[1]),arr=new Uint8Array(bin.length);
+  for(var i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);
+  lastBlob=new Blob([arr],{type:"image/png"});}
+lastUrl=dataUrl;
+$("mw").innerHTML='<img src="'+lastUrl+'" alt="결과 이미지">'+saveOptions();
+}catch(e){console.error(e);
+$("mw").innerHTML='<p style="padding:32px 0 8px;">이미지를 만들지 못했어요.<br>'+
+'대신 화면을 캡처해서 공유해 주세요.</p>'+
+'<p class="mtip">오류: '+esc(String(e&&e.message||e))+'</p>';
+}finally{btn.disabled=false;btn.textContent=old;}}
+function closeMo(){$("mo").classList.remove("on");document.body.style.overflow="";}
+$("mo").addEventListener("click",function(e){if(e.target===$("mo"))closeMo();});
+document.addEventListener("keydown",function(e){
+if(e.key==="Escape"&&$("mo").classList.contains("on"))closeMo();});
+async function share(){var dt={title:D.meta.title,text:D.meta.intro,url:location.href};
+try{if(navigator.share){await navigator.share(dt);return;}
+var tx=dt.text+"\n"+dt.url;
+if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(tx);
+toast("링크를 복사했어요.");return;}
+var ta=document.createElement("textarea");ta.value=tx;ta.style.position="fixed";ta.style.opacity="0";
+document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();
+toast("링크를 복사했어요.");}catch(e){if(e&&e.name!=="AbortError")toast("공유하지 못했어요.");}}
+function toast(m){clearTimeout(tT);var e=$("tst");e.textContent=m;e.classList.add("show");
+tT=setTimeout(function(){e.classList.remove("show");},2100);}
+intro();
+</script>
+</body>
+</html>
