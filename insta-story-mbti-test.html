@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 인스타 스토리 감성 MBTI는?</title>
+<meta name="description" content="스토리 하나를 올릴 때도 성격이 다 드러나요. 12문항으로 알아보는 나의 인스타 스토리 감성 유형.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="나의 인스타 스토리 감성 MBTI는?">
+<meta property="og:description" content="스토리 하나를 올릴 때도 성격이 다 드러나요. 12문항으로 알아보는 나의 인스타 스토리 감성 유형.">
+<meta property="og:image" content="insta-story-mbti-test-thumb.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{--bg:#F4F2ED;--paper:#FDFCF8;--ink:#1C1C1C;--sub:#6B6B6B;--line:#B0A898;--acc:#2C4A7C;--soft:rgba(44,74,124,0.12);--deep:rgba(44,74,124,0.24);--accFg:#fff;--softFg:#1C1C1C;--deepFg:#1C1C1C;--chip:rgba(28,28,28,0.07);--chips:rgba(28,28,28,0.1);--r:2px;--bw:2px;--shadow:none;--fh:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;--fb:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+*{box-sizing:border-box;}
+html{background:#F4F2ED;}
+body{margin:0;min-height:100vh;color:var(--ink);background-color:var(--bg);background-image:none;background-size:auto;font-family:var(--fb);word-break:keep-all;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;line-height:1.6;}
+h1,h2,h3,.qx,.rn h3,.sheeth h2,.reveal .code,.dsh,.blt,.cmph,.maph,.sheetsec{font-family:var(--fh);}
+button,input{font:inherit;-webkit-tap-highlight-color:transparent;}
+.app{width:100%;max-width:560px;margin:0 auto;padding:26px 14px 46px;}
+.sc{display:none;} .sc.on{display:block;animation:in .18s ease;}
+@keyframes in{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+.pa{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);}
+.btn{width:100%;min-height:54px;padding:12px;cursor:pointer;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--ink);font-size:16px;font-weight:800;}
+.btn:active{transform:scale(.99);}
+.btn.fill{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.stk{display:grid;gap:10px;margin-top:14px;}
+.intro{padding:0 0 24px;text-align:center;overflow:hidden;}
+.hero{margin:0 0 20px;line-height:0;}
+.hero svg{display:block;width:100%;height:auto;}
+.intro>h1,.intro>p,.intro>.castt,.intro>.cast,.intro>.mt,.intro>.em{margin-left:18px;margin-right:18px;}
+.intro>.em{padding-top:34px;}
+.intro .em{font-size:54px;line-height:1;margin-bottom:12px;}
+.intro h1{font-size:25px;line-height:1.45;margin:0 0 10px;font-weight:700;letter-spacing:-.2px;text-wrap:balance;}
+.intro p{font-size:14.5px;color:var(--sub);line-height:1.8;margin:0;font-weight:400;text-wrap:pretty;}
+.castt{margin:20px 0 10px;font-size:12.5px;font-weight:800;color:var(--acc);}
+.mt{margin-top:16px;font-size:12.5px;font-weight:700;color:var(--sub);}
+.langhint{margin-top:8px;font-size:11px;font-weight:500;color:var(--sub);opacity:.75;line-height:1.6;}
+.cast{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;}
+.ci{min-width:0;padding:9px 3px 8px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);text-align:center;}
+.ci .e{font-size:22px;line-height:1;display:block;margin-bottom:4px;}
+.ci .n{font-size:11px;font-weight:600;line-height:1.4;word-break:keep-all;text-wrap:balance;}
+.ci .t{font-size:8.5px;color:var(--sub);opacity:.8;font-weight:700;margin-top:2px;display:block;}
+.intro .mt{font-size:12px;color:var(--sub);opacity:.75;margin-top:16px;font-weight:700;}
+.nb{padding:40px 24px;text-align:center;}
+.nb h2{font-size:22px;margin:0 0 22px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.nb input{width:100%;max-width:340px;height:54px;padding:0 14px;text-align:center;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-size:19px;font-weight:800;outline:none;}
+.nb input:focus{border-color:var(--acc);}
+.gd{max-width:400px;margin:24px auto 0;padding:14px 16px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);font-size:13.5px;line-height:1.8;font-weight:600;text-align:left;color:var(--sub);text-wrap:pretty;}
+.qw{padding:24px 20px 28px;}
+.qt{padding-bottom:14px;border-bottom:var(--bw) solid var(--line);}
+.qi{display:flex;justify-content:space-between;gap:12px;margin-bottom:9px;font-size:12px;font-weight:800;}
+.qi .sec{color:var(--acc);}
+.trk{width:100%;height:14px;padding:2px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.fil{width:0;height:100%;background:var(--acc);border-radius:var(--r);transition:width .2s ease;}
+.pdots{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.pdot{height:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--chip);opacity:.35;}
+.pdot.dn{opacity:1;background:var(--acc);}
+.pdot.now{opacity:1;background:var(--acc);animation:blink .7s infinite alternate;}
+@keyframes blink{from{opacity:.4;}to{opacity:1;}}
+.psq{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.psq i{display:block;aspect-ratio:1/1;min-height:12px;border:1px solid var(--line);border-radius:2px;background:var(--chip);}
+.psq i.dn{background:var(--acc);}
+.qn{margin-top:22px;color:var(--acc);font-size:13px;font-weight:900;}
+.qx{min-height:76px;margin:14px 0 20px;text-align:center;font-size:21px;line-height:1.6;letter-spacing:-.2px;font-weight:700;display:flex;align-items:center;justify-content:center;text-wrap:balance;}
+.ops{display:grid;gap:11px;}
+.op{position:relative;width:100%;min-height:70px;padding:15px 16px 15px 52px;cursor:pointer;text-align:left;color:var(--ink);background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15.5px;line-height:1.6;font-weight:500;text-wrap:pretty;}
+.op::before{content:attr(data-n);position:absolute;left:14px;top:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border:var(--bw) solid var(--line);border-radius:var(--r);transform:translateY(-50%);font-size:13px;font-weight:900;background:var(--paper);}
+.op.pk{background:var(--soft);border-color:var(--acc);color:var(--softFg);}
+.op.pk::before{color:var(--ink);}
+.op:disabled{cursor:default;}
+.qnote{margin:20px 0 0;color:var(--sub);text-align:center;font-size:12px;font-weight:700;}
+.qback{display:block;margin:14px auto 0;padding:8px 4px;background:none;border:0;color:var(--sub);font-family:var(--fb);font-size:12.5px;font-weight:700;cursor:pointer;text-align:center;}
+.lw{min-height:420px;padding:40px 22px;display:flex;align-items:center;justify-content:center;text-align:center;}
+.lw h2{margin:0 0 10px;font-size:24px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.lw p{margin:0;color:var(--sub);font-size:14px;}
+.dts{display:flex;justify-content:center;gap:9px;margin:28px 0 24px;}
+.dts span{width:12px;height:12px;background:var(--acc);border:var(--bw) solid var(--line);border-radius:var(--r);animation:bump 1.1s ease-in-out infinite;}
+.dts span:nth-child(2){animation-delay:.15s;} .dts span:nth-child(3){animation-delay:.3s;}
+@keyframes bump{0%,100%{transform:translateY(0);opacity:.4;}50%{transform:translateY(-7px);opacity:1;}}
+.lbar{width:100%;height:14px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.lbar span{display:block;width:32%;height:100%;background:var(--acc);animation:sld 1.05s ease-in-out infinite;}
+@keyframes sld{from{transform:translateX(-110%);}to{transform:translateX(340%);}}
+.cap{overflow:hidden;max-width:100%;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rh{padding:13px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.rh h2{margin:0;color:var(--accFg);font-size:15.5px;font-weight:700;line-height:1.45;letter-spacing:-.1px;text-wrap:balance;}
+.rb{padding:14px;}
+.rn{padding:24px 16px 20px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rn .em{font-size:64px;line-height:1;}
+.rn h3{margin:10px 0 6px;font-size:29px;font-weight:700;line-height:1.3;letter-spacing:-.3px;color:var(--acc);text-wrap:balance;}
+.rn .tg2{font-size:14.5px;font-weight:600;color:var(--ink);opacity:.85;}
+.rn .cd{display:inline-block;margin-top:12px;padding:4px 12px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:11px;font-weight:800;letter-spacing:1.2px;}
+.rs{margin-top:12px;padding:15px 16px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15px;line-height:1.8;font-weight:400;text-wrap:pretty;}
+.blk{margin-top:14px;}
+.blt{margin:0;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-bottom:0;border-radius:var(--r) var(--r) 0 0;font-size:13px;font-weight:900;text-align:center;text-wrap:balance;}
+.qb{padding:18px 16px;text-align:center;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);font-size:17px;font-weight:600;line-height:1.65;text-wrap:balance;}
+.qbb{position:relative;margin:6px 16px 24px;padding:18px 16px;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:16px;font-weight:600;line-height:1.65;text-align:center;text-wrap:balance;}
+.qbb::before{content:"";position:absolute;left:32px;bottom:-11px;width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-top:13px solid var(--line);}
+.qbb::after{content:"";position:absolute;left:34.5px;bottom:-6.5px;width:0;height:0;border-left:8.5px solid transparent;border-right:8.5px solid transparent;border-top:10px solid var(--soft);}
+.trs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:var(--bw) solid var(--line);border-left:var(--bw) solid var(--line);}
+.tc{min-height:82px;padding:9px 6px;display:flex;align-items:center;justify-content:center;background:var(--chip);color:var(--ink);border-right:var(--bw) solid var(--line);border-bottom:var(--bw) solid var(--line);text-align:center;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;text-wrap:balance;}
+.tc:nth-child(even){background:var(--soft);color:var(--softFg);}
+.trss{display:flex;flex-wrap:wrap;gap:10px 8px;padding:16px 14px;background:var(--chip);border-top:var(--bw) solid var(--line);}
+.tst{padding:8px 13px;background:var(--paper);border:var(--bw) solid var(--line);border-radius:999px;font-size:12.5px;font-weight:700;box-shadow:2px 2px 0 var(--line);word-break:keep-all;text-wrap:balance;color:var(--ink);}
+.tst:nth-child(3n+1){transform:rotate(-2.5deg);}
+.tst:nth-child(3n+2){transform:rotate(1.5deg);}
+.tst:nth-child(3n){transform:rotate(-0.5deg);}
+.tst:nth-child(even){background:var(--soft);color:var(--softFg);}
+.duo{display:grid;gap:10px;}
+.dsec{border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.dsh{padding:9px;text-align:center;font-size:14px;font-weight:900;color:var(--deepFg);border-bottom:var(--bw) solid var(--line);}
+.dsec.g .dsh{background:var(--acc);color:var(--accFg);}
+.dsec.b .dsh{background:var(--deep);}
+.dls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px 10px;padding:12px 11px;background:var(--chip);}
+.dit span{text-wrap:pretty;}
+.dit{display:flex;align-items:flex-start;min-width:0;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;}
+.dit b{width:7px;height:7px;margin:5px 6px 0 0;flex:0 0 auto;background:var(--acc);border-radius:1px;}
+.dit.chk b{width:17px;height:17px;margin:1px 8px 0 0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;background:var(--acc);color:var(--accFg);}
+.dsec.b .dit.chk b{background:var(--sub);color:var(--paper);}
+.sts{padding:14px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);}
+.srow{display:grid;grid-template-columns:76px 1fr 42px;align-items:center;gap:9px;}
+.srow+.srow{margin-top:11px;}
+.slab{font-size:12.5px;font-weight:900;}
+.sqs{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;}
+.sq{aspect-ratio:1/1;min-height:11px;border-radius:2px;background:var(--chips);box-shadow:inset 0 0 0 1px rgba(176,168,152,0.35);}
+.sq.f{background:var(--acc);}
+.spc{text-align:right;font-size:12.5px;font-weight:900;}
+.stsr{padding:16px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:14px 8px;}
+.rgauge{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.rgauge svg{width:64px;height:64px;overflow:visible;}
+.rgauge .rtrack{fill:none;stroke:var(--chips);stroke-width:6;}
+.rgauge .rfill{fill:none;stroke:var(--acc);stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset .5s ease;}
+.rgauge .rlab{font-size:11px;font-weight:800;color:var(--sub);text-align:center;line-height:1.35;}
+.cds{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px;}
+.cd2{padding:12px 11px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.cd2 b{display:inline-block;margin-bottom:7px;padding:3px 9px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:10.5px;font-weight:800;}
+.cd2 p{margin:0;font-size:13.5px;line-height:1.65;font-weight:500;text-wrap:pretty;}
+.cdt{background:var(--paper);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);padding:2px 16px;}
+.cdti{padding:12px 0;border-bottom:var(--bw) dashed var(--line);}
+.cdti:last-child{border-bottom:0;}
+.cdti b{display:block;font-size:11px;font-weight:900;color:var(--acc);margin-bottom:3px;letter-spacing:.2px;}
+.cdti span{display:block;font-size:13.5px;font-weight:600;line-height:1.55;text-wrap:pretty;}
+.map{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.maph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.mapg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--chip);}
+.mapc{position:relative;min-width:0;padding:9px 3px 8px;text-align:center;border-right:1px solid rgba(176,168,152,0.18);border-bottom:1px solid rgba(176,168,152,0.18);}
+.mapc:nth-child(4n){border-right:0;}
+.mapc:nth-last-child(-n+4){border-bottom:0;}
+.mapc .e{display:block;font-size:20px;line-height:1;}
+.mapc .n{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;margin-top:4px;font-size:9px;font-weight:600;line-height:1.35;overflow:hidden;word-break:keep-all;text-wrap:balance;padding:0 2px;min-height:24px;}
+.mapc .p{display:block;margin-top:2px;font-size:9.5px;font-weight:900;opacity:.75;}
+.mapc.me{outline:var(--bw) solid var(--acc);outline-offset:-2px;}
+.mapc .badge{display:inline-block;margin-top:2px;padding:1px 7px;border-radius:999px;background:var(--acc);color:var(--accFg);font-size:9px;font-weight:800;}
+.mapf{display:flex;align-items:center;gap:7px;padding:9px 12px;background:var(--chip);border-top:var(--bw) solid var(--line);font-size:9.5px;font-weight:800;color:var(--sub);}
+.mapbar{flex:1;height:7px;border-radius:999px;}
+.cmp{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.cmph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.cmpg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--chip);}
+.cmpc{min-width:0;padding:12px 8px 13px;text-align:center;}
+.cmpc+.cmpc{border-left:var(--bw) solid var(--line);}
+.cmpc .lb{display:inline-block;margin-bottom:10px;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;background:var(--acc);color:var(--accFg);}
+.cmpc.bad .lb{background:#AEB4BF;color:#fff;}
+.cmpi{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:7px;}
+.cmpi .e{font-size:24px;line-height:1;}
+.cmpi .n{min-width:0;font-size:13px;font-weight:600;line-height:1.45;text-align:left;word-break:keep-all;text-wrap:balance;}
+.cmpi .p{font-size:11.5px;font-weight:900;color:var(--acc);display:block;}
+.cmpc.bad .cmpi .p{color:var(--sub);}
+.cmpnote{margin-top:11px;padding-top:9px;border-top:1px dashed rgba(176,168,152,0.3);font-size:12px;line-height:1.65;font-weight:500;color:var(--sub);}
+.rf{margin-top:16px;padding-top:12px;border-top:var(--bw) dashed var(--line);color:var(--sub);text-align:center;font-size:11px;font-weight:700;letter-spacing:.6px;}
+.ad{display:none;}
+.sheet{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.sheeth{padding:16px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.sheeth h2{margin:0;color:var(--accFg);font-size:18px;font-weight:800;letter-spacing:-.4px;}
+.sheeth p{margin:5px 0 0;color:var(--accFg);opacity:.85;font-size:11.5px;font-weight:700;}
+.reveal{margin:14px;padding:20px 16px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.reveal .em{font-size:46px;line-height:1;}
+.reveal .nm{margin-top:8px;font-size:19px;font-weight:700;line-height:1.45;text-wrap:balance;}
+.reveal .eq{margin:9px 0 7px;font-size:13px;font-weight:800;color:var(--sub);}
+.reveal .code{display:inline-block;padding:8px 22px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:26px;font-weight:800;letter-spacing:3px;}
+.sheetad{display:none;}
+.sheetsec{margin:0 14px 10px;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:12.5px;font-weight:900;text-align:center;}
+.rows{margin:0 14px 14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.row{display:grid;grid-template-columns:26px 30px minmax(0,1fr) auto;align-items:center;gap:9px;padding:10px 11px;background:var(--chip);border-bottom:1px solid rgba(176,168,152,0.18);}
+.row:last-child{border-bottom:0;}
+.row.me{background:var(--soft);color:var(--softFg);}
+.row .no{font-size:10px;font-weight:800;color:var(--sub);opacity:.7;}
+.row .em{font-size:22px;line-height:1;text-align:center;}
+.row .nm{font-size:14px;font-weight:600;line-height:1.45;min-width:0;word-break:keep-all;text-wrap:balance;}
+.row .tg{display:block;font-size:10.5px;font-weight:700;color:var(--sub);opacity:.85;margin-top:2px;}
+.row .cd{padding:4px 10px;border-radius:999px;background:var(--deep);font-size:11px;font-weight:800;letter-spacing:.8px;white-space:nowrap;}
+.row.me .cd{background:var(--acc);color:var(--accFg);}
+.mo{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(20,20,20,.82);overflow-y:auto;}
+.mo.on{display:flex;}
+.mb2{width:100%;max-width:360px;max-height:92vh;overflow:auto;padding:20px 16px;text-align:center;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);margin:auto;}
+.mb2 h3{margin:0 0 8px;font-size:18px;font-weight:900;}
+.mb2 p{margin:0 0 16px;color:var(--sub);font-size:13px;line-height:1.55;font-weight:600;}
+.mb2 img{display:block;width:100%;border:var(--bw) solid var(--line);border-radius:var(--r);}
+.mbtns{display:grid;gap:8px;margin-top:14px;}
+.mbtn{display:block;width:100%;padding:14px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-family:var(--fb);font-size:14.5px;font-weight:600;text-align:center;text-decoration:none;cursor:pointer;box-sizing:border-box;}
+.mbtn.pri{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.mtip{margin:12px 0 0!important;font-size:12px;line-height:1.6;color:var(--sub);}
+.mb2 .cl{width:100%;min-height:46px;margin-top:14px;cursor:pointer;color:#fff;background:var(--line);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:14px;font-weight:800;}
+.tst{position:fixed;left:50%;bottom:26px;z-index:200;max-width:calc(100% - 32px);padding:12px 18px;color:#fff;background:rgba(28,28,28,.95);border:var(--bw) solid #fff;border-radius:var(--r);font-size:13.5px;font-weight:700;transform:translate(-50%,16px);opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+.tst.show{opacity:1;transform:translate(-50%,0);}
+@media(hover:hover) and (pointer:fine){
+.btn:hover{background:var(--soft);color:var(--softFg);}
+.btn.fill:hover{opacity:.9;background:var(--acc);}
+.op:hover{background:var(--soft);color:var(--softFg);}
+.op:hover::before{color:var(--ink);}
+.qback:hover{color:var(--ink);}
+}
+@media(max-width:520px){.app{padding:18px 11px 38px;}.intro{padding:28px 14px 20px;}.intro h1{font-size:22px;}
+.ci .n{font-size:9.5px;} .ci .e{font-size:19px;}
+.qw{padding:20px 15px 24px;}.qx{font-size:19px;min-height:66px;}
+.op{min-height:64px;padding:13px 13px 13px 48px;font-size:14px;}
+.tc{min-height:74px;font-size:11.5px;}.rn h3{font-size:26px;}.rh h2{font-size:14px;}
+.dls{gap:6px 7px;padding:10px 9px;}.dit{font-size:11.5px;}.cds{gap:7px;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <section class="sc on" id="s1"></section>
+  <section class="sc" id="s2"></section>
+  <section class="sc" id="s3"></section>
+  <section class="sc" id="s4"></section>
+  <section class="sc" id="s5"></section>
+  <section class="sc" id="s6"></section>
+  <div class="ad">광고 영역 (애드센스 코드 삽입 위치)</div>
+</div>
+<div class="mo" id="mo"><div class="mb2"><h3>이미지 꾹 눌러 저장하기</h3><p>아래 이미지를 길게 누르거나 우클릭해서<br>저장해 주세요.</p><div id="mw"><p style="padding:40px 0;">이미지를 만들고 있어요...</p></div><button class="cl" onclick="closeMo()">닫기</button></div></div>
+<div class="tst" id="tst"></div>
+<script>
+"use strict";
+var D={"meta":{"title":"나의 인스타 스토리 감성 MBTI는?","emoji":"📸","intro":"스토리 하나를 올릴 때도 성격이 다 드러나요. 12문항으로 알아보는 나의 인스타 스토리 감성 유형.","loadingText":"스토리를 분석하고 있습니다… 당신의 인스타 감성 유형을 찾는 중입니다.","sheetTitle":"인스타 스토리 감성 MBTI 전체 유형표","sheetCta":"16종 인스타 감성 유형 전체 확인하기","slug":"insta-story-mbti-test","setName":"나의 인스타 스토리 감성 MBTI"},"blocks":["cards","duo"],"blockLabels":{"cards":"📸 이 유형의 스토리 습관","duo":{"good":"📸 이 유형의 장점","bad":"📸 보완하면 좋은 점"}},"compatLabels":{"title":"스토리 감성 궁합 진단","good":"스토리 감성이 제일 잘 맞는 상대","bad":"살짝 감성 차이가 있는 상대","mapTitle":"스토리 감성 유형 관계도"},"compat":{"ISTJ":"ENFP88 INFP87 INFJ85 INTP84 ENTP78 ISTP74 ESFP72 ESTJ71 ISFJ69 ESTP64 ENFJ60 ENTJ58 ISFP56 INTJ55 ESFJ55","ISFJ":"ENFP88 INFP86 ESTJ83 ESFJ83 ESFP81 ISFP79 ESTP78 ISTP75 ISTJ67 INTP65 ENTP65 ENFJ65 INTJ63 ENTJ61 INFJ59","INFJ":"ENFJ87 ENTJ87 INTP86 ISFP84 INFP83 ISTJ73 ISTP73 ESFJ73 ESFP67 INTJ65 ISFJ62 ESTJ62 ESTP57 ENFP55 ENTP55","INTJ":"ENTP86 ESTJ84 ISTP82 INFJ81 ISFP81 ESTP76 INTP75 INFP72 ISTJ69 ENFJ64 ENFP63 ENTJ63 ISFJ58 ESFJ58 ESFP57","ISTP":"INFP85 INTJ83 ENFP83 ESFJ83 ESTJ80 INTP78 ENFJ76 INFJ70 ENTP66 ISFJ65 ESTP63 ISTJ62 ISFP60 ESFP59 ENTJ59","ISFP":"ISTP83 ESTJ81 ENFJ80 INTP78 INFP74 ESTP73 ENTP73 ENFP71 ENTJ71 ISTJ70 INFJ70 ISFJ68 ESFJ67 ESFP64 INTJ59","INFP":"INTP88 ENTP88 ENFP86 ESFJ85 ISTJ81 ENFJ77 INTJ75 ISTP75 ISFJ69 ENTJ66 ESTJ61 ESTP59 ESFP59 INFJ58 ISFP56","INTP":"ESTP88 ISFP87 ISTP85 INFJ82 ENFP82 ENTP82 ENTJ76 ESFJ75 INTJ74 ESFP74 ESTJ72 ISFJ71 ISTJ66 INFP60 ENFJ60","ESTP":"ENTJ88 INFJ85 ISTP81 INTJ80 INTP79 INFP78 ESFP77 ESTJ76 ENFJ69 ENTP67 ISTJ66 ISFJ64 ENFP63 ESFJ60 ISFP55","ESFP":"ISFP87 ENTP87 ESTJ85 ENTJ85 INFP81 ENFP77 INTJ73 ENFJ72 INFJ71 ISFJ67 INTP64 ISTJ63 ESTP62 ESFJ59 ISTP55","ENFP":"INFJ86 ISFJ83 ISTP78 ENTP78 ISFP77 ENFJ76 INTP74 ISTJ72 ESFJ70 ESTJ68 INTJ62 ESFP62 INFP60 ESTP59 ENTJ56","ENTP":"ENTJ88 INFJ87 ISFP87 ENFP86 ISTJ83 INTJ83 INFP73 INTP68 ISTP67 ESTP67 ESTJ66 ENFJ65 ISFJ62 ESFJ62 ESFP60","ESTJ":"INTJ88 ISFJ86 ISTP85 ESFJ79 ENTJ77 INTP76 ENTP74 ISTJ67 ISFP67 ENFP64 ESFP61 INFJ59 ENFJ58 INFP57 ESTP56","ESFJ":"ESTP87 ISTJ86 ISFP83 INTP82 ENFP82 ESTJ81 ESFP77 ISTP68 INFJ67 INTJ67 ENTJ64 ISFJ63 ENTP60 ENFJ60 INFP55","ENFJ":"ESFJ88 ESTJ86 ISFJ83 ENFP82 INTP80 INTJ76 ESFP75 ESTP74 ISTJ70 INFJ65 ISTP63 INFP61 ENTJ61 ISFP60 ENTP55","ENTJ":"INTJ87 INFP81 ESFP81 ESTP78 ENTP78 ISTP77 ISFJ74 ENFJ73 ESFJ72 ISFP70 ENFP70 ESTJ68 ISTJ66 INFJ63 INTP56"},"compatLines":[{"min":88,"text":"스토리만 봐도 서로 텔레파시가 통하는 궁합이에요. 감성 코드가 놀랍도록 잘 맞아요."},{"min":80,"text":"서로의 스토리에 자연스럽게 리액션하게 되는 사이예요. 보는 눈이 비슷해요."},{"min":72,"text":"스타일은 달라도 묘하게 서로의 스토리를 챙겨보게 되는 조합이에요."},{"min":64,"text":"가끔 스타일이 부딪혀도 그만큼 새로운 감성을 알게 되는 사이예요."},{"min":0,"text":"감성은 많이 다르지만, 그래서 서로에게 낯선 재미를 보여줄 수 있는 조합이에요."}],"statStyle":"squares","traitStyle":"grid","cardStyle":"grid","duoStyle":"dot","quoteStyle":"banner","cast":[{"type":"ISTJ","name":"일상 기록 아카이버","emoji":"📔","tagline":"매일 비슷한 루틴도 꾸준히 스토리로 남김"},{"type":"ISFJ","name":"친구 챙김 스토리텔러","emoji":"💌","tagline":"기념일마다 정성껏 축하 스토리를 남김"},{"type":"INFJ","name":"감성 사진 큐레이터","emoji":"🕯️","tagline":"의미 담긴 한 장을 오래 고민해서 올림"},{"type":"INTJ","name":"테마 기획형 스토리러","emoji":"🗂️","tagline":"스토리도 컨셉과 흐름을 미리 구상함"},{"type":"ISTP","name":"찍기만 하고 안 올리는 형","emoji":"📷","tagline":"기록은 하되 실제 업로드는 드묾"},{"type":"ISFP","name":"무드 톤 감성러","emoji":"🎨","tagline":"그날 감성에 맞는 필터와 색감을 고심함"},{"type":"INFP","name":"혼잣말 스토리형","emoji":"🌙","tagline":"나만 보는 것처럼 감정을 담아 올림"},{"type":"INTP","name":"밈·정보 공유형","emoji":"🔍","tagline":"재밌는 정보나 밈을 발견하면 공유함"},{"type":"ESTP","name":"그 순간 라이브형","emoji":"⚡","tagline":"지금 이 순간을 즉석에서 바로 올림"},{"type":"ESFP","name":"리액션 부자형","emoji":"🎉","tagline":"친구 스토리에 답장하고 리액션이 활발함"},{"type":"ENFP","name":"하루 다섯 번 업로더","emoji":"🌈","tagline":"소소한 순간도 다 스토리로 기록함"},{"type":"ENTP","name":"드립 캡션러","emoji":"🎭","tagline":"위트있는 캡션으로 웃음 포인트를 만듦"},{"type":"ESTJ","name":"정보·일정 공유형","emoji":"📌","tagline":"유용한 정보나 일정 공지 위주로 올림"},{"type":"ESFJ","name":"다 같이 태그형","emoji":"🎀","tagline":"친구들 태그하고 함께 찍은 사진 위주"},{"type":"ENFJ","name":"응원 메시지형","emoji":"💫","tagline":"친구를 응원하고 좋은 소식을 축하함"},{"type":"ENTJ","name":"셀프 브랜딩형","emoji":"🎯","tagline":"내 이미지를 계획적으로 관리하며 업로드"}],"questions":[{"section":"친구 태그","text":"친구가 스토리에 나를 태그했을 때 나는?","options":[{"text":"바로 리포스트하고 답장까지 남긴다","value":"E"},{"text":"일단 조용히 보기만 하고 넘어간다","value":"I"}]},{"section":"재밌는 순간","text":"재밌는 일이 생기면 나는?","options":[{"text":"바로 스토리로 실시간 공유한다","value":"E"},{"text":"일단 나만 알고 지나간다","value":"I"}]},{"section":"질문 스티커","text":"스토리에 투표·질문 스티커를 붙일 때 나는?","options":[{"text":"친구들 반응을 유도하려고 자주 쓴다","value":"E"},{"text":"거의 안 쓰고 혼자 보는 용도로 올린다","value":"I"}]},{"section":"오늘 뭘 올릴까","text":"오늘 스토리에 뭘 올릴지 고민할 때 나는?","options":[{"text":"방금 먹은 음식이나 눈앞 풍경을 그대로 올린다","value":"S"},{"text":"떠오르는 생각이나 분위기를 감성적으로 표현한다","value":"N"}]},{"section":"필터 선택","text":"필터를 고를 때 나는?","options":[{"text":"원본에 가까운 자연스러운 필터를 쓴다","value":"S"},{"text":"현실감이 없어도 감성적인 톤의 필터를 쓴다","value":"N"}]},{"section":"여행 스토리","text":"여행 중 스토리를 올릴 때 나는?","options":[{"text":"일정과 장소 정보를 정확히 적는다","value":"S"},{"text":"그 순간 느낀 감정 위주로 짧게 적는다","value":"N"}]},{"section":"캡션 스타일","text":"스토리 캡션을 쓸 때 나는?","options":[{"text":"정보나 사실 위주로 간결하게 적는다","value":"T"},{"text":"그때 기분을 솔직하게 담아서 적는다","value":"F"}]},{"section":"친구 스토리 답장","text":"친구 스토리에 답장할 때 나는?","options":[{"text":"궁금한 점이나 팩트를 물어본다","value":"T"},{"text":"감정에 공감하며 리액션한다","value":"F"}]},{"section":"반응이 없을 때","text":"스토리 반응이 별로 없을 때 나는?","options":[{"text":"그런가보다 하고 신경 안 쓴다","value":"T"},{"text":"은근히 신경 쓰이고 살짝 서운하다","value":"F"}]},{"section":"하이라이트 관리","text":"스토리 하이라이트를 관리할 때 나는?","options":[{"text":"카테고리별로 깔끔하게 정리해둔다","value":"J"},{"text":"그때그때 올리고 거의 정리 안 한다","value":"P"}]},{"section":"업로드 타이밍","text":"스토리를 올리는 타이밍은?","options":[{"text":"정해둔 시간대(출근길, 저녁 등)에 맞춰 올린다","value":"J"},{"text":"생각날 때 아무 때나 올린다","value":"P"}]},{"section":"여러 장 찍었을 때","text":"여러 장을 찍었을 때 나는?","options":[{"text":"제일 잘 나온 한두 장만 골라 올린다","value":"J"},{"text":"그냥 찍은 순서대로 다 올린다","value":"P"}]}],"results":[{"type":"ISTJ","name":"일상 기록 아카이버","emoji":"📔","tagline":"매일 비슷한 루틴도 꾸준히 스토리로 남김","summary":"일상 기록 아카이버는 매일 비슷한 루틴이어도 꾸준히 스토리로 남기는 타입이에요. 화려한 연출보다 있는 그대로를 기록하는 걸 좋아하고, 지난 스토리를 다시 돌려보며 그날을 떠올리는 걸 즐겨요. 유행하는 템플릿보다 나만의 방식을 오래 유지하는 편이에요.","color":"#4A5568","cards":[{"label":"업로드 빈도","value":"매일 비슷한 루틴도 꾸준히 기록"},{"label":"연출","value":"화려한 편집보다 있는 그대로"},{"label":"다시보기","value":"지난 스토리를 종종 돌려봄"},{"label":"스타일","value":"한번 정한 방식을 오래 유지"}],"duo":{"good":[{"label":"꾸준하게 일상을","value":"꾸준하게 일상을 기록해요"},{"label":"믿음직한 톤을 ","value":"믿음직한 톤을 유지해요"},{"label":"과장 없이 담백","value":"과장 없이 담백해요"}],"bad":[{"label":"가끔 스토리가 ","value":"가끔 스토리가 심심해 보일 수 있어요"},{"label":"새로운 시도를 ","value":"새로운 시도를 조금 더 해봐도 좋아요"}]}},{"type":"ISFJ","name":"친구 챙김 스토리텔러","emoji":"💌","tagline":"기념일마다 정성껏 축하 스토리를 남김","summary":"친구 챙김 스토리텔러는 친구의 생일이나 기념일마다 정성껏 축하 스토리를 남기는 다정한 타입이에요. 내 얘기보다 주변 사람들의 좋은 소식을 알리는 데 진심이고, 소소한 순간도 따뜻한 말 한마디를 꼭 곁들여요.","color":"#C97B84","cards":[{"label":"축하 습관","value":"기념일마다 정성스러운 스토리"},{"label":"관심사","value":"내 얘기보다 친구 소식 위주"},{"label":"캡션","value":"따뜻한 말을 꼭 곁들임"},{"label":"태그","value":"주인공을 정확히 태그해줌"}],"duo":{"good":[{"label":"다정하게 마음을","value":"다정하게 마음을 표현해요"},{"label":"친구를 세심하게","value":"친구를 세심하게 챙겨요"},{"label":"분위기를 따뜻하","value":"분위기를 따뜻하게 만들어요"}],"bad":[{"label":"정작 내 이야기","value":"정작 내 이야기는 잘 안 올려요"},{"label":"가끔은 나를 위","value":"가끔은 나를 위한 스토리도 올려보세요"}]}},{"type":"INFJ","name":"감성 사진 큐레이터","emoji":"🕯️","tagline":"의미 담긴 한 장을 오래 고민해서 올림","summary":"감성 사진 큐레이터는 의미 담긴 한 장을 고르기 위해 오래 고민하는 타입이에요. 화려한 순간보다 조용히 마음이 움직인 장면을 기록하고, 캡션 한 줄에도 여러 번 뜻을 곱씹어요. 자주 올리진 않아도 올릴 때마다 분위기가 확실해요.","color":"#5B6EAE","cards":[{"label":"선택 기준","value":"마음이 움직인 장면을 고름"},{"label":"업로드 빈도","value":"자주는 아니지만 확실한 분위기"},{"label":"캡션","value":"짧아도 뜻을 오래 고민함"},{"label":"톤","value":"조용하고 사색적인 무드"}],"duo":{"good":[{"label":"분위기 있는 감","value":"분위기 있는 감성을 잘 담아요"},{"label":"진심이 느껴지는","value":"진심이 느껴지는 기록을 해요"},{"label":"말 한마디의 무","value":"말 한마디의 무게가 있어요"}],"bad":[{"label":"올리기까지 고민","value":"올리기까지 고민이 길어질 때가 있어요"},{"label":"가끔은 가볍게 ","value":"가끔은 가볍게 올려보는 것도 좋아요"}]}},{"type":"INTJ","name":"테마 기획형 스토리러","emoji":"🗂️","tagline":"스토리도 컨셉과 흐름을 미리 구상함","summary":"테마 기획형 스토리러는 스토리에도 컨셉과 흐름을 미리 구상하는 타입이에요. 하이라이트 커버 색까지 통일감 있게 맞추고, 목적 없이 올리는 스토리는 드물어요. 계획한 대로 완성된 피드를 볼 때 만족감을 느낍니다.","color":"#3B3A6B","cards":[{"label":"기획력","value":"컨셉과 흐름을 미리 구상함"},{"label":"통일감","value":"하이라이트 커버까지 맞춤"},{"label":"업로드 기준","value":"목적 없는 스토리는 잘 안 올림"},{"label":"완성도","value":"짜임새 있는 피드를 선호"}],"duo":{"good":[{"label":"짜임새 있게 관","value":"짜임새 있게 관리해요"},{"label":"기준이 명확해요","value":"기준이 명확해요"},{"label":"완성도를 끝까지","value":"완성도를 끝까지 신경써요"}],"bad":[{"label":"계획에 없던 순","value":"계획에 없던 순간은 놓칠 때가 있어요"},{"label":"가끔은 즉흥적으","value":"가끔은 즉흥적으로 올려봐도 좋아요"}]}},{"type":"ISTP","name":"찍기만 하고 안 올리는 형","emoji":"📷","tagline":"기록은 하되 실제 업로드는 드묾","summary":"찍기만 하고 안 올리는 형은 사진과 영상은 부지런히 찍어두지만 실제 업로드는 드문 타입이에요. 기록 자체를 즐기고, 마음이 내킬 때만 슬쩍 올려요. 남에게 보여주기보다 나를 위해 남기는 느낌이 더 강해요.","color":"#2F3E46","cards":[{"label":"촬영량","value":"사진·영상은 부지런히 찍음"},{"label":"업로드","value":"실제로 올리는 건 드묾"},{"label":"목적","value":"보여주기보다 나를 위한 기록"},{"label":"타이밍","value":"마음 내킬 때만 슬쩍 올림"}],"duo":{"good":[{"label":"과시하지 않고 ","value":"과시하지 않고 담백해요"},{"label":"기록을 꾸준히 ","value":"기록을 꾸준히 남겨요"},{"label":"취향이 확고해요","value":"취향이 확고해요"}],"bad":[{"label":"좋은 순간을 잘","value":"좋은 순간을 잘 안 알려요"},{"label":"가끔은 공유해봐","value":"가끔은 공유해봐도 좋은 반응이 올 거예요"}]}},{"type":"ISFP","name":"무드 톤 감성러","emoji":"🎨","tagline":"그날 감성에 맞는 필터와 색감을 고심함","summary":"무드 톤 감성러는 그날의 기분에 맞는 필터와 색감을 고심해서 고르는 타입이에요. 현실감이 없어도 감성적인 톤을 선호하고, 스토리 전체에 은은한 무드가 흘러요. 그 순간의 분위기를 가장 소중히 여깁니다.","color":"#6B8E4E","cards":[{"label":"필터 선택","value":"감성적인 톤을 우선 고려함"},{"label":"색감","value":"스토리 전체의 무드를 신경씀"},{"label":"업로드 기준","value":"분위기가 맞을 때만 올림"},{"label":"감상 순간","value":"그 순간의 감정을 소중히 여김"}],"duo":{"good":[{"label":"감성적인 톤을 ","value":"감성적인 톤을 잘 살려요"},{"label":"분위기 연출을 ","value":"분위기 연출을 잘해요"},{"label":"취향이 섬세해요","value":"취향이 섬세해요"}],"bad":[{"label":"기분에 따라 스","value":"기분에 따라 스타일이 자주 바뀌어요"},{"label":"가끔은 하나의 ","value":"가끔은 하나의 톤을 유지해봐도 좋아요"}]}},{"type":"INFP","name":"혼잣말 스토리형","emoji":"🌙","tagline":"나만 보는 것처럼 감정을 담아 올림","summary":"혼잣말 스토리형은 나만 보는 것처럼 감정을 솔직하게 담아 올리는 타입이에요. 시적인 문장이나 잔잔한 사진에 마음이 움직이고, 스토리를 쓰면서 스스로 감정을 정리하는 시간을 가져요. 겉으론 조용해도 속엔 풍부한 이야기가 있어요.","color":"#8A6FBF","cards":[{"label":"캡션 스타일","value":"솔직한 감정을 그대로 담음"},{"label":"선호","value":"시적인 문장과 잔잔한 사진"},{"label":"목적","value":"스스로 감정을 정리하는 시간"},{"label":"공개 범위","value":"친한 친구에게만 공개하기도 함"}],"duo":{"good":[{"label":"진심이 담긴 기","value":"진심이 담긴 기록을 해요"},{"label":"감정 표현이 섬","value":"감정 표현이 섬세해요"},{"label":"자기만의 색이 ","value":"자기만의 색이 뚜렷해요"}],"bad":[{"label":"감정 기복이 스","value":"감정 기복이 스토리에 그대로 드러나요"},{"label":"가끔은 가볍게 ","value":"가끔은 가볍게 넘겨도 괜찮아요"}]}},{"type":"INTP","name":"밈·정보 공유형","emoji":"🔍","tagline":"재밌는 정보나 밈을 발견하면 공유함","summary":"밈·정보 공유형은 재밌는 밈이나 유용한 정보를 발견하면 바로 공유하는 타입이에요. 자기 얼굴보다 흥미로운 콘텐츠 위주로 스토리를 채우고, 왜 재밌는지 짧은 코멘트를 다는 걸 즐겨요.","color":"#3F8F8A","cards":[{"label":"콘텐츠","value":"밈·정보 위주로 스토리를 채움"},{"label":"등장 빈도","value":"자기 얼굴은 잘 안 나옴"},{"label":"코멘트","value":"왜 흥미로운지 짧게 덧붙임"},{"label":"소스","value":"여기저기서 재밌는 걸 잘 찾아냄"}],"duo":{"good":[{"label":"흥미로운 걸 잘","value":"흥미로운 걸 잘 찾아 공유해요"},{"label":"유쾌한 포인트를","value":"유쾌한 포인트를 잘 짚어요"},{"label":"정보성 콘텐츠에","value":"정보성 콘텐츠에 강해요"}],"bad":[{"label":"정작 본인 일상","value":"정작 본인 일상은 잘 안 보여줘요"},{"label":"가끔은 내 얘기","value":"가끔은 내 얘기도 올려보세요"}]}},{"type":"ESTP","name":"그 순간 라이브형","emoji":"⚡","tagline":"지금 이 순간을 즉석에서 바로 올림","summary":"그 순간 라이브형은 지금 이 순간을 즉석에서 바로 스토리로 올리는 타입이에요. 편집이나 필터를 오래 고민하지 않고, 현장의 텐션을 그대로 전달하는 데 강해요. 스토리를 보면 그날 뭘 했는지 실시간으로 알 수 있어요.","color":"#C1440E","cards":[{"label":"업로드 속도","value":"그 자리에서 바로 올림"},{"label":"편집","value":"오래 고민하지 않고 즉석에서"},{"label":"전달력","value":"현장의 텐션을 그대로 살림"},{"label":"성향","value":"실시간 중계에 가까운 스타일"}],"duo":{"good":[{"label":"생동감 있는 순","value":"생동감 있는 순간을 잘 담아요"},{"label":"반응이 빠르고 ","value":"반응이 빠르고 솔직해요"},{"label":"보는 재미가 있","value":"보는 재미가 있어요"}],"bad":[{"label":"편집 없이 올려","value":"편집 없이 올려서 아쉬울 때가 있어요"},{"label":"가끔은 한 박자","value":"가끔은 한 박자 쉬고 올려도 좋아요"}]}},{"type":"ESFP","name":"리액션 부자형","emoji":"🎉","tagline":"친구 스토리에 답장하고 리액션이 활발함","summary":"리액션 부자형은 친구 스토리에 열심히 답장하고 리액션을 남기는 타입이에요. 자기 스토리도 자주 올리지만, 남의 스토리를 챙겨보고 반응해주는 데 더 진심이에요. 소통이 활발해서 친구들과의 DM이 끊이지 않아요.","color":"#E85D75","cards":[{"label":"리액션","value":"친구 스토리에 답장을 자주 남김"},{"label":"업로드 빈도","value":"자기 스토리도 자주 올림"},{"label":"소통","value":"DM으로 이어지는 대화가 많음"},{"label":"에너지","value":"활발하고 밝은 텐션"}],"duo":{"good":[{"label":"소통을 즐겁게 ","value":"소통을 즐겁게 이어가요"},{"label":"반응이 빠르고 ","value":"반응이 빠르고 다정해요"},{"label":"분위기를 밝게 ","value":"분위기를 밝게 만들어요"}],"bad":[{"label":"리액션하느라 시","value":"리액션하느라 시간을 많이 써요"},{"label":"가끔은 조용히 ","value":"가끔은 조용히 보는 것도 괜찮아요"}]}},{"type":"ENFP","name":"하루 다섯 번 업로더","emoji":"🌈","tagline":"소소한 순간도 다 스토리로 기록함","summary":"하루 다섯 번 업로더는 소소한 순간도 다 스토리로 기록하는 잡식성 타입이에요. 밥 먹을 때, 이동할 때, 갑자기 생각난 게 있을 때까지 다 올리고, 하루가 끝나면 스토리만 봐도 일상이 그려져요.","color":"#F2A65A","cards":[{"label":"업로드 빈도","value":"하루에도 여러 번 올림"},{"label":"소재","value":"소소한 순간도 놓치지 않음"},{"label":"톤","value":"밝고 즉흥적인 분위기"},{"label":"기록","value":"스토리만 봐도 하루가 그려짐"}],"duo":{"good":[{"label":"에너지가 넘치고","value":"에너지가 넘치고 생동감 있어요"},{"label":"친구들이 일상을","value":"친구들이 일상을 재밌게 봐요"},{"label":"솔직하고 꾸밈없","value":"솔직하고 꾸밈없어요"}],"bad":[{"label":"가끔 너무 자주","value":"가끔 너무 자주 올려 피로할 수 있어요"},{"label":"조금 골라서 올","value":"조금 골라서 올려봐도 좋아요"}]}},{"type":"ENTP","name":"드립 캡션러","emoji":"🎭","tagline":"위트있는 캡션으로 웃음 포인트를 만듦","summary":"드립 캡션러는 위트있는 캡션으로 웃음 포인트를 만드는 타입이에요. 평범한 사진도 재치있는 한 줄을 붙이면 재밌어지고, 친구들이 캡션 보는 재미로 스토리를 챙겨보기도 해요.","color":"#9B59B6","cards":[{"label":"캡션 감각","value":"위트있는 한 줄을 잘 만듦"},{"label":"반응","value":"친구들이 캡션 보는 재미로 챙겨봄"},{"label":"소재","value":"평범한 순간도 재밌게 바꿈"},{"label":"톤","value":"장난기 있고 가벼운 분위기"}],"duo":{"good":[{"label":"유머 감각이 뛰","value":"유머 감각이 뛰어나요"},{"label":"분위기를 재밌게","value":"분위기를 재밌게 만들어요"},{"label":"센스있는 표현을","value":"센스있는 표현을 잘해요"}],"bad":[{"label":"가끔 진지한 순","value":"가끔 진지한 순간에도 장난스러울 때가 있어요"},{"label":"진심을 담은 스","value":"진심을 담은 스토리도 가끔 올려보세요"}]}},{"type":"ESTJ","name":"정보·일정 공유형","emoji":"📌","tagline":"유용한 정보나 일정 공지 위주로 올림","summary":"정보·일정 공유형은 유용한 정보나 일정 공지를 위주로 스토리를 채우는 타입이에요. 감성보다 실용성을 우선하고, 친구들에게 도움이 될 만한 소식을 정리해서 올리는 걸 좋아해요.","color":"#1F4E79","cards":[{"label":"콘텐츠","value":"정보·일정 공지 위주"},{"label":"기준","value":"감성보다 실용성 우선"},{"label":"정리","value":"필요한 정보를 깔끔하게 정리"},{"label":"목적","value":"친구들에게 도움 되는 소식 공유"}],"duo":{"good":[{"label":"정보를 유용하게","value":"정보를 유용하게 잘 정리해요"},{"label":"믿을 만한 소식","value":"믿을 만한 소식통이에요"},{"label":"실용적인 도움을","value":"실용적인 도움을 잘 줘요"}],"bad":[{"label":"개인적인 감정은","value":"개인적인 감정은 잘 안 드러내요"},{"label":"가끔은 소소한 ","value":"가끔은 소소한 일상도 올려보세요"}]}},{"type":"ESFJ","name":"다 같이 태그형","emoji":"🎀","tagline":"친구들 태그하고 함께 찍은 사진 위주","summary":"다 같이 태그형은 친구들을 태그하고 함께 찍은 사진을 위주로 올리는 타입이에요. 모임이 있으면 그 자리에 있던 사람들을 빠짐없이 챙기고, 다 같이 즐거웠던 순간을 나누는 데 진심이에요.","color":"#D97E4A","cards":[{"label":"태그 습관","value":"함께한 사람을 빠짐없이 태그"},{"label":"소재","value":"모임·함께 찍은 사진 위주"},{"label":"목적","value":"즐거운 순간을 다같이 나눔"},{"label":"분위기","value":"화기애애하고 다정한 톤"}],"duo":{"good":[{"label":"함께한 순간을 ","value":"함께한 순간을 잘 기록해요"},{"label":"배려심 있게 챙","value":"배려심 있게 챙겨요"},{"label":"분위기를 화기애","value":"분위기를 화기애애하게 만들어요"}],"bad":[{"label":"내 취향보단 모","value":"내 취향보단 모두를 먼저 챙길 때가 많아요"},{"label":"가끔은 나만을 ","value":"가끔은 나만을 위한 스토리도 올려보세요"}]}},{"type":"ENFJ","name":"응원 메시지형","emoji":"💫","tagline":"친구를 응원하고 좋은 소식을 축하함","summary":"응원 메시지형은 친구를 응원하고 좋은 소식을 축하하는 스토리를 자주 올리는 타입이에요. 힘든 시기를 보내는 친구에게 위로가 될 만한 메시지를 슬쩍 올려주기도 하고, 스토리로 사람의 마음을 움직이는 데 진심이에요.","color":"#2ECC71","cards":[{"label":"콘텐츠","value":"응원·축하 메시지를 자주 올림"},{"label":"위로 방식","value":"상황에 맞는 메시지로 마음을 전함"},{"label":"태도","value":"진심으로 공감하는 톤"},{"label":"목적","value":"사람들과 좋은 기운을 나눔"}],"duo":{"good":[{"label":"따뜻한 메시지를","value":"따뜻한 메시지를 잘 전해요"},{"label":"공감 능력이 뛰","value":"공감 능력이 뛰어나요"},{"label":"주변을 세심하게","value":"주변을 세심하게 챙겨요"}],"bad":[{"label":"내 감정보다 남","value":"내 감정보다 남 신경을 더 쓸 때가 있어요"},{"label":"가끔은 나를 위","value":"가끔은 나를 위한 응원도 스스로 해주세요"}]}},{"type":"ENTJ","name":"셀프 브랜딩형","emoji":"🎯","tagline":"내 이미지를 계획적으로 관리하며 업로드","summary":"셀프 브랜딩형은 내 이미지를 계획적으로 관리하며 스토리를 올리는 타입이에요. 어떤 콘텐츠가 나를 잘 보여줄지 기준이 명확하고, 목적에 안 맞는 스토리는 과감히 걸러내요. 효율적이면서도 확실한 분위기를 완성해내요.","color":"#7A1F2B","cards":[{"label":"관리 방식","value":"이미지를 계획적으로 관리함"},{"label":"기준","value":"목적에 맞는 콘텐츠만 선별"},{"label":"완성도","value":"확실한 분위기를 유지함"},{"label":"성향","value":"효율적이고 목표 지향적"}],"duo":{"good":[{"label":"일관된 이미지를","value":"일관된 이미지를 잘 관리해요"},{"label":"완성도가 높아요","value":"완성도가 높아요"},{"label":"기준이 확실해요","value":"기준이 확실해요"}],"bad":[{"label":"기준에서 벗어나","value":"기준에서 벗어나면 잘 안 올려요"},{"label":"가끔은 자연스러","value":"가끔은 자연스러운 순간도 올려보세요"}]}}],"accent":"#D6336C","progress":"bar"};
+var AXES=[['E','I'],['S','N'],['T','F'],['J','P']];
+var nick="",qi=0,sc={},lock=false,tT=null,answers=[];
+function $(i){return document.getElementById(i);}
+function esc(s){if(s==null)return"";return String(s).replace(/[&<>"']/g,function(m){
+return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m];});}
+function show(id){var a=document.querySelectorAll(".sc");
+for(var i=0;i<a.length;i++)a[i].classList.remove("on");
+$(id).classList.add("on");window.scrollTo({top:0,behavior:"auto"});}
+function reset(){sc={};answers=[];["E","I","S","N","T","F","J","P"].forEach(function(k){sc[k]=0;});}
+function mix(hex,ratio){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
+r=Math.round(r+(255-r)*ratio);g=Math.round(g+(255-g)*ratio);b=Math.round(b+(255-b)*ratio);
+return "#"+[r,g,b].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function lerp2(hexA,hexB,t){function rgb(h){h=(h||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+return[parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+var a=rgb(hexA),b=rgb(hexB);
+var r=Math.round(a[0]+(b[0]-a[0])*t),g=Math.round(a[1]+(b[1]-a[1])*t),bl=Math.round(a[2]+(b[2]-a[2])*t);
+return "#"+[r,g,bl].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function luminance(hex){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16)/255,g=parseInt(h.slice(2,4),16)/255,b=parseInt(h.slice(4,6),16)/255;
+function lin(c){return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);}
+return 0.2126*lin(r)+0.7152*lin(g)+0.0722*lin(b);}
+function readable(bgHex){return luminance(bgHex)>0.53?"#1a1a1a":"#fff";}
+function setAcc(c){var s=document.documentElement.style;
+var soft=mix(c,.86),deep=mix(c,.68);
+s.setProperty("--acc",c);s.setProperty("--soft",soft);s.setProperty("--deep",deep);
+s.setProperty("--accFg",readable(c));s.setProperty("--softFg",readable(soft));s.setProperty("--deepFg",readable(deep));}
+function intro(){nick="";qi=0;lock=false;reset();setAcc(D.accent);
+var cast="";for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+cast+='<div class="ci"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+(c.tagline?'<span class="t">'+esc(c.tagline)+'</span>':"")+'</div>';}
+$("s1").innerHTML='<div class="pa intro">'+
+'<div class="em">'+D.meta.emoji+'</div>'+
+'<h1>'+esc(D.meta.title)+'</h1><p>'+esc(D.meta.intro)+'</p>'+
+'<div class="castt">'+esc(D.meta.setName||"16가지 유형")+'</div>'+
+'<div class="cast">'+cast+'</div>'+
+'<div class="mt">질문 '+D.questions.length+'개 · 결과 16가지</div>'+
+'<div class="langhint">🌐 Prefer another language? Use your browser\'s translate feature.<br>다른 언어로 보고 싶다면 브라우저의 번역 기능을 이용해주세요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="'+(D.useName?"nameScreen()":"begin()")+'">테스트 시작하기</button></div>';
+show("s1");}
+function nameScreen(){$("s2").innerHTML='<div class="pa nb"><h2>어떻게 불러드릴까요?</h2>'+
+'<input id="nk" type="text" maxlength="12" placeholder="닉네임을 입력해주세요" autocomplete="off">'+
+'<div class="gd">○ 총 '+D.questions.length+'문항입니다.<br>○ 나에게 더 가까운 답을 골라주세요.<br>○ 결과에 닉네임이 함께 표시돼요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="begin()">시작하기</button>'+
+'<button class="btn" onclick="intro()">처음으로</button></div>';show("s2");
+setTimeout(function(){var n=$("nk");if(n){n.focus();
+n.addEventListener("keydown",function(e){if(e.key==="Enter")begin();});}},80);}
+function begin(){if(D.useName){var n=$("nk"),v=n?n.value.trim():"";
+if(!v){alert("닉네임을 입력해주세요.");if(n)n.focus();return;}nick=v;}
+qi=0;lock=false;reset();question();show("s3");}
+function progHTML(cur,total){var p=D.progress||"bar";
+if(p==="bar"){return '<div class="trk"><div class="fil" style="width:'+Math.round(cur/total*100)+'%"></div></div>';}
+var h=p==="dots"?'<div class="pdots">':'<div class="psq">',n=Math.min(total,12);
+for(var i=0;i<n;i++){var st=i<cur-1?" dn":i===cur-1?(p==="dots"?" now":" dn"):"";
+h+=p==="dots"?'<div class="pdot'+st+'"></div>':'<i class="'+st.trim()+'"></i>';}
+return h+"</div>";}
+function question(){lock=false;var tot=D.questions.length,q=D.questions[qi];
+var num=("0"+(qi+1)).slice(-2);
+var h='<div class="pa qw"><div class="qt"><div class="qi">'+
+'<span class="sec">'+esc(q.section||"진행 중")+'</span><span>'+(qi+1)+' / '+tot+'</span></div>'+
+progHTML(qi+1,tot)+'</div>'+
+'<div class="qn">문항 '+num+(nick?" · "+esc(nick):"")+'</div>'+
+'<div class="qx">'+esc(q.text)+'</div><div class="ops">';
+for(var i=0;i<q.options.length;i++){
+h+='<button class="op" data-n="'+(i+1)+'" data-v="'+esc(q.options[i].value)+'">'+esc(q.options[i].text)+'</button>';}
+h+='</div><p class="qnote">더 가까운 쪽을 골라주세요.</p>'+
+(qi>0?'<button type="button" class="qback" onclick="prevQ()">← 이전 문항</button>':"")+
+'</div>';
+$("s3").innerHTML=h;
+window.scrollTo({top:0,behavior:"auto"});
+var bs=$("s3").querySelectorAll(".op");
+for(var j=0;j<bs.length;j++){bs[j].addEventListener("click",function(){pick(this);});}}
+function pick(btn){if(lock)return;lock=true;
+var all=$("s3").querySelectorAll(".op");
+for(var i=0;i<all.length;i++){all[i].disabled=true;all[i].classList.remove("pk");}
+btn.classList.add("pk");
+var v=btn.getAttribute("data-v");if(sc[v]==null)sc[v]=0;sc[v]++;answers[qi]=v;
+setTimeout(function(){qi++;if(qi<D.questions.length){question();return;}finish();},110);}
+function prevQ(){if(qi<=0||lock)return;lock=true;
+var prevV=answers[qi-1];if(prevV!=null&&sc[prevV]>0)sc[prevV]--;
+answers[qi-1]=null;qi--;question();}
+function finish(){var code="";
+for(var i=0;i<AXES.length;i++){code+=(sc[AXES[i][0]]>=sc[AXES[i][1]]?AXES[i][0]:AXES[i][1]);}
+loading(code);}
+function loading(code){
+$("s4").innerHTML='<div class="pa lw"><div style="width:100%">'+
+'<h2>'+esc(D.meta.loadingText||"결과를 정리하는 중")+'</h2><p>잠시만 기다려 주세요.</p>'+
+'<div class="dts"><span></span><span></span><span></span></div>'+
+'<div class="lbar"><span></span></div></div></div>';show("s4");
+setTimeout(function(){result(code);show("s5");},2500);}
+function lab(key,sub){var L=D.blockLabels||{};var v=L[key];
+if(sub){
+if(v&&typeof v==="object"&&v[sub])return v[sub];
+return sub==="good"?"잘 맞는 유형":sub==="bad"?"안 맞는 유형":"";}
+return typeof v==="string"?v:"";}
+function byType(t){for(var i=0;i<D.cast.length;i++){if(D.cast[i].type===t)return D.cast[i];}return null;}
+function compatList(type){var s=D.compat[type]||"";var out=[],m,re=/([A-Z]{4})(\d+)/g;
+while((m=re.exec(s))!==null){out.push({type:m[1],pct:parseInt(m[2],10)});}
+out.sort(function(a,b){return b.pct-a.pct;});return out;}
+function compatItems(arr){var h="";
+for(var i=0;i<arr.length;i++){var c=byType(arr[i].type);if(!c)continue;
+h+='<div class="cmpi"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+
+'<span class="p">'+arr[i].pct+'%</span></span></div>';}
+return h;}
+function lineFor(pct){var L=D.compatLines||[];
+for(var i=0;i<L.length;i++){if(pct>=L[i].min)return L[i].text;}
+return L.length?L[L.length-1].text:"";}
+function compatHTML(type){var L=D.compatLabels||{};var list=compatList(type);
+if(!list.length)return "";
+var best=list.slice(0,2),worst=list.slice(-2).reverse();
+return '<div class="cmp"><div class="cmph">'+esc(L.title||"궁합")+'</div><div class="cmpg">'+
+'<div class="cmpc"><span class="lb">'+esc(L.good||"최고의 궁합")+'</span>'+compatItems(best)+
+'<div class="cmpnote">'+esc(lineFor(best[0].pct))+'</div></div>'+
+'<div class="cmpc bad"><span class="lb">'+esc(L.bad||"아쉬운 궁합")+'</span>'+compatItems(worst)+
+'<div class="cmpnote">'+esc(lineFor(worst[0].pct))+'</div></div>'+
+'</div></div>';}
+function tint(color,pct){var s=Math.max(0,Math.min(1,(pct-70)/29));
+return lerp2("#AEB4BF",color,Math.pow(s,2.5));}
+function mapHTML(type,color){var L=D.compatLabels||{};
+var list=compatList(type);if(!list.length)return "";
+var pm={};list.forEach(function(x){pm[x.type]=x.pct;});
+var g="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+if(c.type===type){
+var meFg=readable(color);
+g+='<div class="mapc me" style="background:'+color+';color:'+meFg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="badge">나</span></div>';
+}else{var p=pm[c.type]||0;var bg=tint(color,p);var fg=readable(bg);
+g+='<div class="mapc" style="background:'+bg+';color:'+fg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="p" style="opacity:1">'+p+'%</span></div>';}}
+var bar="linear-gradient(90deg,"+tint(color,72)+","+tint(color,99)+")";
+return '<div class="map"><div class="maph">'+esc(L.mapTitle||"나의 궁합 지도")+'</div>'+
+'<div class="mapg">'+g+'</div>'+
+'<div class="mapf"><span>안 맞음</span><span class="mapbar" style="background:'+bar+'"></span>'+
+'<span>잘 맞음</span></div></div>';}
+function blockHTML(name,r){
+if(name==="quote"&&r.quote){var qcls=D.quoteStyle==="bubble"?"qbb":"qb";
+return '<div class="blk"><div class="blt">'+esc(lab("quote")||"한마디")+'</div>'+
+'<div class="'+qcls+'">'+esc(r.quote)+'</div></div>';}
+if(name==="traits"&&r.traits&&r.traits.length){var h='<div class="blk"><div class="blt">'+
+esc(lab("traits")||"세부 특징")+'</div>';
+if(D.traitStyle==="sticker"){h+='<div class="trss">';
+for(var i=0;i<r.traits.length;i++){h+='<div class="tst">'+esc(r.traits[i])+'</div>';}
+h+='</div>';
+}else{h+='<div class="trs">';
+for(var i2=0;i2<r.traits.length;i2++){h+='<div class="tc">'+esc(r.traits[i2])+'</div>';}
+h+='</div>';}
+return h+"</div>";}
+if(name==="duo"&&r.duo){var g=r.duo.good||[],b=r.duo.bad||[];var chk=D.duoStyle==="check";
+var gm=chk?"✓":"",bm=chk?"✗":"",dcls=chk?" chk":"";
+var h2='<div class="blk duo"><div class="dsec g"><div class="dsh">'+esc(lab("duo","good")||"좋은 면")+'</div><div class="dls">';
+for(var j=0;j<g.length;j++){h2+='<div class="dit'+dcls+'"><b>'+gm+'</b><span>'+esc(g[j])+'</span></div>';}
+h2+='</div></div><div class="dsec b"><div class="dsh">'+esc(lab("duo","bad")||"아쉬운 면")+'</div><div class="dls">';
+for(var k2=0;k2<b.length;k2++){h2+='<div class="dit'+dcls+'"><b>'+bm+'</b><span>'+esc(b[k2])+'</span></div>';}
+return h2+"</div></div></div>";}
+if(name==="stats"&&r.stats&&r.stats.length){
+var h3='<div class="blk"><div class="blt">'+esc(lab("stats")||"지표")+'</div>';
+if(D.statStyle==="radial"){
+h3+='<div class="stsr">';
+for(var m=0;m<r.stats.length;m++){var s=r.stats[m];var v=Math.max(0,Math.min(100,s.value||0));
+var C=100.53;var off=C*(1-v/100);
+h3+='<div class="rgauge"><svg viewBox="0 0 38 38">'+
+'<circle class="rtrack" cx="19" cy="19" r="16"/>'+
+'<circle class="rfill" cx="19" cy="19" r="16" stroke-dasharray="'+C+'" stroke-dashoffset="'+off+'" transform="rotate(-90 19 19)"/>'+
+'<text x="19" y="23" text-anchor="middle" style="font-size:10px;font-weight:900;fill:var(--ink)">'+v+'%</text>'+
+'</svg><div class="rlab">'+esc(s.label)+'</div></div>';}
+h3+='</div>';
+}else{
+h3+='<div class="sts">';
+for(var m2=0;m2<r.stats.length;m2++){var s2=r.stats[m2];var v2=Math.max(0,Math.min(100,s2.value||0));
+var fc=Math.max(1,Math.min(10,Math.round(v2/10)));var sq="";
+for(var n2=1;n2<=10;n2++){sq+='<span class="sq'+(n2<=fc?" f":"")+'"></span>';}
+h3+='<div class="srow"><div class="slab">'+esc(s2.label)+'</div><div class="sqs">'+sq+'</div>'+
+'<div class="spc">'+v2+'%</div></div>';}
+h3+='</div>';
+}
+return h3+"</div>";}
+if(name==="cards"&&r.cards&&r.cards.length){
+var h4='<div class="blk"><div class="blt">'+esc(lab("cards")||"이런 사람")+'</div>';
+if(D.cardStyle==="ticket"){h4+='<div class="cdt">';
+for(var p=0;p<r.cards.length;p++){h4+='<div class="cdti"><b>'+esc(r.cards[p].label)+'</b><span>'+
+esc(r.cards[p].value)+'</span></div>';}
+h4+='</div>';
+}else{h4+='<div class="cds" style="margin-top:9px">';
+for(var p2=0;p2<r.cards.length;p2++){h4+='<div class="cd2"><b>'+esc(r.cards[p2].label)+'</b><p>'+
+esc(r.cards[p2].value)+'</p></div>';}
+h4+='</div>';}
+return h4+"</div>";}
+return "";}
+function result(code){var r=null;
+for(var i=0;i<D.results.length;i++){if(D.results[i].type===code){r=D.results[i];break;}}
+if(!r)r=D.results[0];
+setAcc(r.color||D.accent);
+var sum=(nick?esc(nick)+"님은 ":"")+esc(r.summary);
+var h='<div class="cap" id="cap"><div class="rh"><h2>'+esc(D.meta.title)+'</h2></div><div class="rb">'+
+'<div class="rn"><div class="em">'+esc(r.emoji||"✨")+'</div><h3>'+esc(r.name||D.meta.title)+'</h3>'+
+(r.tagline?'<div class="tg2">'+esc(r.tagline)+'</div>':"")+'</div>'+
+'<div class="rs">'+sum+'</div>';
+var col=r.color||D.accent;
+for(var b=0;b<D.blocks.length;b++){if(D.blocks[b]!=="map")h+=blockHTML(D.blocks[b],r);}
+h+=compatHTML(r.type);
+if(D.blocks.indexOf("map")>=0)h+=mapHTML(r.type,col);
+h+='<div class="rf">POWERED BY MAGIC FACTORY</div></div></div>'+
+'<div class="stk"><button class="btn fill" onclick="sheet(\''+code+'\')">'+
+esc(D.meta.sheetCta||"내 유형의 정체 확인하기")+'</button>'+
+'<button class="btn" onclick="saveImg(this)">결과 이미지 저장하기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+$("s5").innerHTML=h;}
+function sheet(code){var me=byType(code)||D.cast[0];
+var rows="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];var isMe=c.type===code;
+if(i===8){rows+='</div><div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div><div class="rows">';}
+rows+='<div class="row'+(isMe?" me":"")+'"><span class="no">'+("0"+(i+1)).slice(-2)+'</span>'+
+'<span class="em">'+c.emoji+'</span>'+
+'<span class="nm">'+esc(c.name)+(c.tagline?'<span class="tg">'+esc(c.tagline)+'</span>':"")+'</span>'+
+'<span class="cd">'+esc(c.type)+'</span></div>';}
+$("s6").innerHTML='<div class="sheet">'+
+'<div class="sheeth"><h2>'+esc(D.meta.sheetTitle||"전체 유형 정답지")+'</h2>'+
+'<p>열여섯 종류가 각각 어떤 성격 유형인지 전부 공개해요</p></div>'+
+'<div class="reveal"><div class="em">'+me.emoji+'</div>'+
+'<div class="nm">'+(nick?esc(nick)+"님의 ":"")+esc(me.name)+'</div>'+
+'<div class="eq">의 성격 유형은</div>'+
+'<div class="code">'+esc(me.type)+'</div></div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'<div class="sheetsec">'+esc(D.meta.setName||"전체 16종")+' 전체 목록</div>'+
+'<div class="rows">'+rows+'</div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'</div>'+
+'<div class="stk"><button class="btn fill" onclick="show(\'s5\')">내 결과로 돌아가기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+show("s6");}
+function frames(){return new Promise(function(r){requestAnimationFrame(function(){requestAnimationFrame(r);});});}
+function wait(ms){return new Promise(function(r){setTimeout(r,ms);});}
+var lastBlob=null,lastUrl="";
+function fileName(){return (D.meta.slug||"result")+".png";}
+function saveOptions(){
+var canShare=false;
+try{canShare=!!(navigator.canShare&&lastBlob&&navigator.canShare({files:[new File([lastBlob],fileName(),{type:"image/png"})]}));}catch(e){}
+var h="";
+if(canShare)h+='<button class="mbtn pri" onclick="shareImg()">사진으로 저장 · 공유</button>';
+else h+='<p class="mtip" style="margin:0 0 10px;">위 이미지를 <b>길게 눌러서 사진에 저장</b>해 주세요.</p>';
+h+='<a class="mbtn" href="'+lastUrl+'" download="'+fileName()+'" target="_blank" rel="noopener">새 탭에서 이미지 열기</a>';
+return '<div class="mbtns">'+h+'</div>'+
+'<p class="mtip">"이미지 열기"를 눌렀을 때 저장이 안 되면, 위 이미지를 직접 길게 눌러 저장해 주세요.</p>';}
+async function shareImg(){
+try{var f=new File([lastBlob],fileName(),{type:"image/png"});
+await navigator.share({files:[f],title:D.meta.title});}
+catch(e){if(e&&e.name!=="AbortError")toast("공유를 취소했거나 지원되지 않아요.");}}
+async function saveImg(btn){
+if(typeof html2canvas!=="function"){toast("이미지 도구를 불러오지 못했어요. 새로고침 후 다시 시도해 주세요.");return;}
+btn.disabled=true;var old=btn.textContent;btn.textContent="이미지 만드는 중...";
+$("mw").innerHTML='<p style="padding:40px 0;">이미지를 만들고 있어요...</p>';
+$("mo").classList.add("on");document.body.style.overflow="hidden";
+try{
+if(document.fonts){try{await document.fonts.ready;}catch(e){}}
+await frames();await wait(260);
+var cv=await html2canvas($("cap"),{backgroundColor:getComputedStyle(document.body).backgroundColor,
+scale:Math.min(window.devicePixelRatio||2,2),useCORS:true,logging:false,
+scrollX:0,scrollY:-window.scrollY,windowWidth:document.documentElement.clientWidth});
+if(lastUrl&&lastUrl.indexOf("blob:")===0){try{URL.revokeObjectURL(lastUrl);}catch(e){}}
+var dataUrl=cv.toDataURL("image/png");
+lastBlob=await new Promise(function(res){
+if(cv.toBlob)cv.toBlob(function(b){res(b);},"image/png");else res(null);});
+if(!lastBlob){
+  var bin=atob(dataUrl.split(",")[1]),arr=new Uint8Array(bin.length);
+  for(var i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);
+  lastBlob=new Blob([arr],{type:"image/png"});}
+lastUrl=dataUrl;
+$("mw").innerHTML='<img src="'+lastUrl+'" alt="결과 이미지">'+saveOptions();
+}catch(e){console.error(e);
+$("mw").innerHTML='<p style="padding:32px 0 8px;">이미지를 만들지 못했어요.<br>'+
+'대신 화면을 캡처해서 공유해 주세요.</p>'+
+'<p class="mtip">오류: '+esc(String(e&&e.message||e))+'</p>';
+}finally{btn.disabled=false;btn.textContent=old;}}
+function closeMo(){$("mo").classList.remove("on");document.body.style.overflow="";}
+$("mo").addEventListener("click",function(e){if(e.target===$("mo"))closeMo();});
+document.addEventListener("keydown",function(e){
+if(e.key==="Escape"&&$("mo").classList.contains("on"))closeMo();});
+async function share(){var dt={title:D.meta.title,text:D.meta.intro,url:location.href};
+try{if(navigator.share){await navigator.share(dt);return;}
+var tx=dt.text+"\n"+dt.url;
+if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(tx);
+toast("링크를 복사했어요.");return;}
+var ta=document.createElement("textarea");ta.value=tx;ta.style.position="fixed";ta.style.opacity="0";
+document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();
+toast("링크를 복사했어요.");}catch(e){if(e&&e.name!=="AbortError")toast("공유하지 못했어요.");}}
+function toast(m){clearTimeout(tT);var e=$("tst");e.textContent=m;e.classList.add("show");
+tT=setTimeout(function(){e.classList.remove("show");},2100);}
+intro();
+</script>
+</body>
+</html>

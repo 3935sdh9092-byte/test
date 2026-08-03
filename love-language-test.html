@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 사랑의 언어(러브랭귀지) 유형 테스트 — 테스트팩토리</title>
+<meta name="description" content="말, 시간, 선물, 배려, 스킨십 — 나는 어떤 방식으로 사랑을 느끼고 표현할까? 12문항으로 알아보는 나의 러브랭귀지.">
+<meta property="og:title" content="나의 사랑의 언어(러브랭귀지) 유형 테스트 — 테스트팩토리">
+<meta property="og:description" content="말, 시간, 선물, 배려, 스킨십 — 나는 어떤 방식으로 사랑을 느끼고 표현할까? 12문항으로 알아보는 나의 러브랭귀지.">
+<meta property="og:image" content="love-language-test-thumb.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg:#F0F4F8; --paper:#FFFFFF; --ink:#0A1428; --sub:#5B6B82;
+  --line:#C9D8E8; --acc:#0BA6A0; --gold:#C8942C; --chip:rgba(10,20,40,.06); --r:14px; --bw:2px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;min-height:100vh;}
+.wrap{max-width:560px;margin:0 auto;padding:28px 18px 80px;}
+.back{display:inline-block;margin-bottom:18px;font-size:13px;font-weight:700;color:var(--sub);text-decoration:none;}
+.hero{text-align:center;padding:16px 0 24px;}
+.hero .em{font-size:52px;line-height:1;margin-bottom:12px;}
+.hero h1{font-size:22px;font-weight:900;margin-bottom:8px;letter-spacing:-.3px;word-break:keep-all;}
+.hero p{font-size:14px;color:var(--sub);line-height:1.65;}
+.start-btn{width:100%;padding:16px;border:0;border-radius:var(--r);background:var(--acc);color:#fff;
+  font-family:inherit;font-size:16px;font-weight:900;cursor:pointer;margin-top:20px;}
+.prog-wrap{margin-bottom:20px;}
+.prog-info{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;margin-bottom:8px;color:var(--sub);}
+.prog-track{height:8px;background:var(--chip);border-radius:999px;overflow:hidden;border:var(--bw) solid var(--line);}
+.prog-fill{height:100%;background:var(--acc);border-radius:999px;transition:width .25s ease;}
+.qcard{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:22px 18px;}
+.qnum{display:inline-block;padding:4px 10px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:11px;font-weight:800;margin-bottom:14px;}
+.qtext{font-size:18px;font-weight:800;line-height:1.5;margin-bottom:18px;word-break:keep-all;}
+.opts{display:grid;gap:10px;}
+.opt{width:100%;padding:13px 15px;border:var(--bw) solid var(--line);border-radius:10px;
+  background:#fff;font-family:inherit;font-size:14px;font-weight:600;text-align:left;cursor:pointer;
+  color:var(--ink);transition:all .15s ease;word-break:keep-all;}
+.opt:hover{background:var(--chip);border-color:var(--acc);}
+.opt:disabled{cursor:default;}
+.opt.pk{background:var(--chip);border-color:var(--acc);}
+#cap{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:24px 18px;margin-bottom:16px;}
+.res-header{text-align:center;padding:6px 0 16px;border-bottom:var(--bw) solid var(--line);margin-bottom:16px;}
+.res-em{font-size:56px;line-height:1;margin-bottom:10px;}
+.res-badge{display:inline-block;padding:6px 16px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:12.5px;font-weight:900;margin-bottom:12px;}
+.res-title{font-size:23px;font-weight:900;margin-bottom:6px;word-break:keep-all;}
+.res-tag{font-size:13.5px;color:var(--gold);font-weight:800;margin-bottom:2px;word-break:keep-all;}
+.res-desc{font-size:14.5px;line-height:1.8;color:var(--ink);text-align:left;margin-top:14px;}
+.traits{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;}
+.trait{padding:6px 12px;background:var(--chip);border-radius:999px;font-size:12px;font-weight:700;color:var(--acc);}
+.dist-wrap{margin-top:20px;}
+.dist-title{font-size:12.5px;font-weight:800;color:var(--sub);margin-bottom:10px;}
+.dist-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.dist-row .lab{width:56px;font-size:12px;font-weight:800;flex-shrink:0;}
+.dist-row .track{flex:1;height:10px;background:var(--chip);border-radius:999px;overflow:hidden;}
+.dist-row .fill{height:100%;background:var(--acc);border-radius:999px;transition:width .5s ease;}
+.dist-row.me .fill{background:var(--gold);}
+.dist-row .num{width:20px;text-align:right;font-size:11.5px;font-weight:800;color:var(--sub);}
+.footer-note{font-size:11px;color:var(--sub);text-align:center;margin-top:18px;}
+.stk{display:grid;gap:10px;}
+.btn{width:100%;padding:14px;border:var(--bw) solid var(--ink);border-radius:var(--r);background:#fff;
+  font-family:inherit;font-weight:800;font-size:14.5px;cursor:pointer;color:var(--ink);}
+.btn.fill{background:var(--ink);color:#fff;border-color:var(--ink);}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:center;justify-content:center;padding:20px;}
+.mo.on{display:flex;}
+.mb{background:#fff;border-radius:16px;padding:20px;max-width:340px;width:100%;text-align:center;}
+.mb img{width:100%;border-radius:10px;margin-bottom:12px;}
+.mb .cl{width:100%;padding:12px;border:0;border-radius:10px;background:var(--chip);font-family:inherit;font-weight:800;cursor:pointer;color:var(--ink);}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← 목록으로</a>
+  <div id="s1">
+    <div class="hero">
+      <div class="em">💗</div>
+      <h1>나의 사랑의 언어(러브랭귀지) 유형 테스트</h1>
+      <p>말, 시간, 선물, 배려, 스킨십. 나는 어떤 방식으로 사랑을 느끼고 표현할까? 12문항이면 바로 알 수 있어요.</p>
+      <button class="start-btn" onclick="startQuiz()">테스트 시작하기</button>
+    </div>
+  </div>
+  <div id="s2" class="hidden">
+    <div class="prog-wrap">
+      <div class="prog-info"><span id="progLabel">1 / 12</span><span id="progPos"></span></div>
+      <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+    </div>
+    <div class="qcard">
+      <div class="qnum" id="qNum">Q1</div>
+      <div class="qtext" id="qText"></div>
+      <div class="opts" id="opts"></div>
+    </div>
+  </div>
+  <div id="s3" class="hidden">
+    <div id="cap">
+      <div class="res-header">
+        <div class="res-em" id="resEm"></div>
+        <div class="res-badge" id="resBadge"></div>
+        <div class="res-title" id="resTitle"></div>
+        <div class="res-tag" id="resTag"></div>
+      </div>
+      <div class="res-desc" id="resDesc"></div>
+      <div class="traits" id="resTraits"></div>
+      <div class="dist-wrap">
+        <div class="dist-title">📊 나의 포지션 분포</div>
+        <div id="distBox"></div>
+      </div>
+      <div class="footer-note">POWERED BY 테스트팩토리 · 재미로 봐주세요.</div>
+    </div>
+    <div class="stk">
+      <button class="btn fill" onclick="saveImg()">결과 이미지 저장하기</button>
+      <button class="btn" onclick="location.reload()">다시 풀기</button>
+      <button class="btn" onclick="location.href='index.html'">다른 테스트 보기</button>
+    </div>
+  </div>
+</div>
+<div class="mo" id="mo">
+  <div class="mb">
+    <div id="mw">이미지를 만들고 있어요...</div>
+    <button class="cl" onclick="document.getElementById('mo').classList.remove('on')">닫기</button>
+  </div>
+</div>
+<script>
+var POS = ["인정하는 말", "함께하는 시간", "선물", "봉사와 배려", "스킨십"];
+var QUESTIONS = [{"q":"힘든 하루를 보낸 나에게 애인이 해줬으면 하는 건?","options":["고생했다고, 잘하고 있다고 말해주기","옆에서 그냥 같이 시간 보내주기","좋아하는 간식이나 선물 사다 주기","집안일이나 잔심부름을 대신 해주기","말없이 꼭 안아주기"]},{"q":"연인에게 서운했던 감정을 표현할 때 나는?","options":["말로 정확히 표현해주길 바란다","같이 시간 보내며 자연스레 풀리길 바란다","작은 선물로 화해의 마음을 전해주길 바란다","행동으로 챙겨주는 걸로 느끼고 싶다","스킨십으로 다독여주길 바란다"]},{"q":"데이트에서 제일 기억에 남는 순간은?","options":["\"너랑 있으면 좋다\"는 말을 들었을 때","아무것도 안 해도 같이 있던 시간","예상 못한 선물을 받았을 때","내가 힘들 때 대신 나서서 챙겨줬을 때","손 잡고 걸었던 순간"]},{"q":"애인에게 사랑을 표현할 때 나는 주로?","options":["고맙다, 좋아한다는 말을 자주 한다","바쁜 와중에도 시간을 내서 함께한다","작은 선물을 챙겨서 준다","필요한 걸 먼저 알아채고 도와준다","스킨십으로 애정을 표현한다"]},{"q":"기념일에 가장 받고 싶은 건?","options":["진심 담긴 편지나 메시지","온전히 둘만의 시간","정성껏 고른 선물","평소 하기 귀찮던 걸 대신 해주는 것","다정한 포옹과 스킨십"]},{"q":"연인이 바빠서 연락이 뜸할 때 나는?","options":["따뜻한 말 한마디만 있어도 괜찮다","짧더라도 같이 있는 시간이 있으면 괜찮다","작은 선물 하나로도 마음이 풀린다","바쁜 나를 대신 챙겨주면 안심된다","만났을 때 스킨십이 있으면 서운함이 풀린다"]},{"q":"연인과 싸운 뒤 화해할 때 나는?","options":["미안하다는 말을 직접 들어야 풀린다","같이 시간을 보내다 보면 자연스레 풀린다","작은 선물이나 이벤트로 마음이 풀린다","행동으로 챙겨주는 모습에 마음이 풀린다","손을 잡거나 안아주면 금방 풀린다"]},{"q":"친구에게 내 연애를 자랑한다면?","options":["애인이 해준 다정한 말들을 자랑한다","같이 보낸 시간과 추억을 자랑한다","애인이 준 선물을 자랑한다","애인이 챙겨준 세심한 배려를 자랑한다","다정한 스킨십 얘기를 자랑한다"]},{"q":"연애할 때 가장 중요하게 생각하는 건?","options":["서로에게 하는 말의 온도","함께 보내는 시간의 양과 질","마음을 표현하는 작은 선물","서로를 챙기는 배려와 행동","자연스러운 스킨십과 애정 표현"]},{"q":"장거리 연애를 하게 된다면 가장 힘들 것 같은 건?","options":["다정한 말을 자주 못 듣는 것","같이 있는 시간이 없는 것","직접 챙겨줄 선물을 못 주는 것","옆에서 챙겨주지 못하는 것","스킨십을 할 수 없는 것"]},{"q":"애인이 나를 사랑한다고 느끼는 순간은?","options":["다정한 말을 해줄 때","바쁜데도 시간을 내줄 때","내가 좋아할 만한 걸 준비해줄 때","말 안 해도 알아서 챙겨줄 때","자연스럽게 스킨십을 해올 때"]},{"q":"이상적인 주말 데이트는?","options":["대화를 많이 나눌 수 있는 데이트","온종일 같이 붙어있는 데이트","서로 선물을 준비해서 만나는 데이트","서로를 위해 뭔가 해주는 데이트(요리 등)","꼭 붙어서 스킨십 많은 데이트"]}];
+var RESULTS = [{"name":"말 한마디에 마음이 움직이는 사람","emoji":"💬","tagline":"다정한 말 한마디가 사랑의 언어","color":"#D6336C","desc":"\"고맙다\", \"좋아한다\", \"잘하고 있다\" 같은 말 한마디에 마음이 크게 움직이는 타입이에요. 표현되지 않은 마음보다 직접 들려주는 말을 더 신뢰하고, 애인이 챙겨주는 말투나 칭찬에서 사랑을 확인해요. 반대로 아무 말 없이 지나가면 서운함이 쌓이기 쉬운 편이라, 서로 마음을 자주 소리 내어 표현하는 관계가 잘 맞아요.","traits":["말에 예민함","칭찬에 약함","표현을 중요시","서운함도 말로 풀림"]},{"name":"함께 있는 시간 자체가 사랑인 사람","emoji":"⏳","tagline":"온전히 집중해주는 시간이 곧 사랑","color":"#3B5B92","desc":"거창한 이벤트보다 온전히 집중해서 함께 보내는 시간 자체를 사랑으로 느끼는 타입이에요. 같이 있을 때 휴대폰을 보지 않고 눈을 맞춰주는 것만으로도 충분히 사랑받는다고 느껴요. 바쁘다는 이유로 시간을 자꾸 미루면 서운함이 쌓이기 쉬우니, 짧더라도 온전히 함께하는 시간이 꾸준히 필요한 편이에요.","traits":["함께하는 시간 중시","집중받는 걸 좋아함","꾸준함을 원함","소소한 데이트도 만족"]},{"name":"마음을 담은 선물에 감동하는 사람","emoji":"🎁","tagline":"작아도 정성이 담긴 선물에 마음이 녹음","color":"#C97A2B","desc":"선물의 크기보다 그 안에 담긴 정성과 마음을 더 크게 느끼는 타입이에요. 애인이 내 취향을 기억해서 골라준 작은 선물 하나에도 크게 감동하고, 오래도록 소중히 간직해요. 반대로 기념일에 아무 준비가 없으면 서운함이 유독 크게 느껴질 수 있는 편이에요.","traits":["정성을 알아봄","취향 기억에 감동","기념일 챙김 중요","작은 선물도 소중히 여김"]},{"name":"챙겨주는 행동에서 사랑을 느끼는 사람","emoji":"🤲","tagline":"말보다 행동으로 보여주는 사랑을 믿음","color":"#3F8F5C","desc":"화려한 말이나 이벤트보다 실질적으로 챙겨주는 행동에서 사랑을 느끼는 타입이에요. 힘들 때 옆에서 실질적으로 도와주거나, 말 안 해도 필요한 걸 알아서 챙겨주는 모습에 마음이 크게 움직여요. 반대로 힘든 상황에서 행동으로 나서주지 않으면 서운함을 느끼기 쉬운 편이에요.","traits":["행동을 중요시","눈치 있게 챙김","실질적 도움에 감동","말보다 실천 신뢰"]},{"name":"다정한 스킨십으로 사랑을 확인하는 사람","emoji":"🤗","tagline":"손 한번, 포옹 한번이 큰 위로","color":"#8A6FBF","desc":"손을 잡거나 안아주는 것 같은 자연스러운 스킨십에서 사랑을 크게 느끼는 타입이에요. 말로 표현하지 않아도 스킨십 하나로 서로의 마음이 통한다고 느끼고, 다정한 접촉이 있는 것만으로 하루의 피로가 풀리기도 해요. 스킨십이 뜸해지면 사랑이 식은 것 같은 불안을 느끼기 쉬운 편이에요.","traits":["스킨십에 민감","접촉으로 안정감","애정 표현이 자연스러움","가까운 거리 선호"]}];
+
+var qi=0, counts=[0,0,0,0,0];
+function show(id){ ['s1','s2','s3'].forEach(function(s){ document.getElementById(s).className=s===id?'':'hidden'; }); }
+function startQuiz(){ qi=0; counts=[0,0,0,0,0]; show('s2'); renderQ(); }
+function renderQ(){
+  var q=QUESTIONS[qi], total=QUESTIONS.length;
+  document.getElementById('progLabel').textContent=(qi+1)+' / '+total;
+  document.getElementById('progFill').style.width=Math.round((qi)/total*100)+'%';
+  document.getElementById('qNum').textContent='Q'+(qi+1);
+  document.getElementById('qText').textContent=q.q;
+  var opts=document.getElementById('opts');
+  opts.innerHTML='';
+  q.options.forEach(function(opt,i){
+    var b=document.createElement('button');
+    b.className='opt'; b.textContent=opt;
+    b.onclick=function(){ pick(i); };
+    opts.appendChild(b);
+  });
+}
+function pick(i){
+  var btns=document.querySelectorAll('.opt');
+  btns.forEach(function(b){ b.disabled=true; });
+  btns[i].className='opt pk';
+  counts[i]++;
+  setTimeout(function(){ qi++; if(qi<QUESTIONS.length){ renderQ(); } else { showResult(); } }, 260);
+}
+function showResult(){
+  show('s3');
+  var best=0;
+  for(var i=1;i<counts.length;i++){ if(counts[i]>counts[best]) best=i; }
+  var r=RESULTS[best];
+  document.getElementById('resEm').textContent=r.emoji;
+  document.getElementById('resBadge').textContent=POS[best]+' 유형';
+  document.getElementById('resBadge').style.background=r.color;
+  document.getElementById('resTitle').textContent=r.name;
+  document.getElementById('resTag').textContent=r.tagline;
+  document.getElementById('resTag').style.color=r.color;
+  document.getElementById('resDesc').textContent=r.desc;
+  document.getElementById('resTraits').innerHTML=r.traits.map(function(t){return '<span class="trait">#'+t+'</span>';}).join('');
+  var total=QUESTIONS.length;
+  var distHtml='';
+  POS.forEach(function(p,i){
+    var pct=Math.round(counts[i]/total*100);
+    distHtml+='<div class="dist-row'+(i===best?' me':'')+'"><div class="lab">'+p+'</div>'+
+      '<div class="track"><div class="fill" style="width:'+pct+'%"></div></div>'+
+      '<div class="num">'+counts[i]+'</div></div>';
+  });
+  document.getElementById('distBox').innerHTML=distHtml;
+}
+async function saveImg(){
+  document.getElementById('mo').classList.add('on');
+  document.getElementById('mw').innerHTML='이미지를 만들고 있어요...';
+  try{
+    if(document.fonts) await document.fonts.ready;
+    var cv=await html2canvas(document.getElementById('cap'),{backgroundColor:'#FFFFFF',scale:2});
+    var img=new Image(); img.src=cv.toDataURL('image/png');
+    document.getElementById('mw').innerHTML='';
+    document.getElementById('mw').appendChild(img);
+    var p=document.createElement('p'); p.style.cssText='font-size:12px;color:#888;margin-top:8px;';
+    p.textContent='이미지를 길게 눌러서 저장해주세요.';
+    document.getElementById('mw').appendChild(p);
+  }catch(e){ document.getElementById('mw').textContent='이미지 생성에 실패했어요.'; }
+}
+
+</script>
+</body>
+</html>
