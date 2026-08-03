@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 플레이리스트 MBTI는?</title>
+<meta name="description" content="노래를 고르는 습관, 플레이리스트를 관리하는 방식까지 12문항이면 나만의 음악 취향 유형이 드러나요.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="나의 플레이리스트 MBTI는?">
+<meta property="og:description" content="노래를 고르는 습관, 플레이리스트를 관리하는 방식까지 12문항이면 나만의 음악 취향 유형이 드러나요.">
+<meta property="og:image" content="playlist-mbti-test-thumb.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{--bg:#F4F2ED;--paper:#FDFCF8;--ink:#1C1C1C;--sub:#6B6B6B;--line:#B0A898;--acc:#2C4A7C;--soft:rgba(44,74,124,0.12);--deep:rgba(44,74,124,0.24);--accFg:#fff;--softFg:#1C1C1C;--deepFg:#1C1C1C;--chip:rgba(28,28,28,0.07);--chips:rgba(28,28,28,0.1);--r:2px;--bw:2px;--shadow:none;--fh:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;--fb:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+*{box-sizing:border-box;}
+html{background:#F4F2ED;}
+body{margin:0;min-height:100vh;color:var(--ink);background-color:var(--bg);background-image:none;background-size:auto;font-family:var(--fb);word-break:keep-all;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;line-height:1.6;}
+h1,h2,h3,.qx,.rn h3,.sheeth h2,.reveal .code,.dsh,.blt,.cmph,.maph,.sheetsec{font-family:var(--fh);}
+button,input{font:inherit;-webkit-tap-highlight-color:transparent;}
+.app{width:100%;max-width:560px;margin:0 auto;padding:26px 14px 46px;}
+.sc{display:none;} .sc.on{display:block;animation:in .18s ease;}
+@keyframes in{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+.pa{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);}
+.btn{width:100%;min-height:54px;padding:12px;cursor:pointer;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--ink);font-size:16px;font-weight:800;}
+.btn:active{transform:scale(.99);}
+.btn.fill{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.stk{display:grid;gap:10px;margin-top:14px;}
+.intro{padding:0 0 24px;text-align:center;overflow:hidden;}
+.hero{margin:0 0 20px;line-height:0;}
+.hero svg{display:block;width:100%;height:auto;}
+.intro>h1,.intro>p,.intro>.castt,.intro>.cast,.intro>.mt,.intro>.em{margin-left:18px;margin-right:18px;}
+.intro>.em{padding-top:34px;}
+.intro .em{font-size:54px;line-height:1;margin-bottom:12px;}
+.intro h1{font-size:25px;line-height:1.45;margin:0 0 10px;font-weight:700;letter-spacing:-.2px;text-wrap:balance;}
+.intro p{font-size:14.5px;color:var(--sub);line-height:1.8;margin:0;font-weight:400;text-wrap:pretty;}
+.castt{margin:20px 0 10px;font-size:12.5px;font-weight:800;color:var(--acc);}
+.mt{margin-top:16px;font-size:12.5px;font-weight:700;color:var(--sub);}
+.langhint{margin-top:8px;font-size:11px;font-weight:500;color:var(--sub);opacity:.75;line-height:1.6;}
+.cast{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;}
+.ci{min-width:0;padding:9px 3px 8px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);text-align:center;}
+.ci .e{font-size:22px;line-height:1;display:block;margin-bottom:4px;}
+.ci .n{font-size:11px;font-weight:600;line-height:1.4;word-break:keep-all;text-wrap:balance;}
+.ci .t{font-size:8.5px;color:var(--sub);opacity:.8;font-weight:700;margin-top:2px;display:block;}
+.intro .mt{font-size:12px;color:var(--sub);opacity:.75;margin-top:16px;font-weight:700;}
+.nb{padding:40px 24px;text-align:center;}
+.nb h2{font-size:22px;margin:0 0 22px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.nb input{width:100%;max-width:340px;height:54px;padding:0 14px;text-align:center;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-size:19px;font-weight:800;outline:none;}
+.nb input:focus{border-color:var(--acc);}
+.gd{max-width:400px;margin:24px auto 0;padding:14px 16px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);font-size:13.5px;line-height:1.8;font-weight:600;text-align:left;color:var(--sub);text-wrap:pretty;}
+.qw{padding:24px 20px 28px;}
+.qt{padding-bottom:14px;border-bottom:var(--bw) solid var(--line);}
+.qi{display:flex;justify-content:space-between;gap:12px;margin-bottom:9px;font-size:12px;font-weight:800;}
+.qi .sec{color:var(--acc);}
+.trk{width:100%;height:14px;padding:2px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.fil{width:0;height:100%;background:var(--acc);border-radius:var(--r);transition:width .2s ease;}
+.pdots{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.pdot{height:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--chip);opacity:.35;}
+.pdot.dn{opacity:1;background:var(--acc);}
+.pdot.now{opacity:1;background:var(--acc);animation:blink .7s infinite alternate;}
+@keyframes blink{from{opacity:.4;}to{opacity:1;}}
+.psq{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;}
+.psq i{display:block;aspect-ratio:1/1;min-height:12px;border:1px solid var(--line);border-radius:2px;background:var(--chip);}
+.psq i.dn{background:var(--acc);}
+.qn{margin-top:22px;color:var(--acc);font-size:13px;font-weight:900;}
+.qx{min-height:76px;margin:14px 0 20px;text-align:center;font-size:21px;line-height:1.6;letter-spacing:-.2px;font-weight:700;display:flex;align-items:center;justify-content:center;text-wrap:balance;}
+.ops{display:grid;gap:11px;}
+.op{position:relative;width:100%;min-height:70px;padding:15px 16px 15px 52px;cursor:pointer;text-align:left;color:var(--ink);background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15.5px;line-height:1.6;font-weight:500;text-wrap:pretty;}
+.op::before{content:attr(data-n);position:absolute;left:14px;top:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border:var(--bw) solid var(--line);border-radius:var(--r);transform:translateY(-50%);font-size:13px;font-weight:900;background:var(--paper);}
+.op.pk{background:var(--soft);border-color:var(--acc);color:var(--softFg);}
+.op.pk::before{color:var(--ink);}
+.op:disabled{cursor:default;}
+.qnote{margin:20px 0 0;color:var(--sub);text-align:center;font-size:12px;font-weight:700;}
+.qback{display:block;margin:14px auto 0;padding:8px 4px;background:none;border:0;color:var(--sub);font-family:var(--fb);font-size:12.5px;font-weight:700;cursor:pointer;text-align:center;}
+.lw{min-height:420px;padding:40px 22px;display:flex;align-items:center;justify-content:center;text-align:center;}
+.lw h2{margin:0 0 10px;font-size:24px;font-weight:800;line-height:1.4;text-wrap:balance;}
+.lw p{margin:0;color:var(--sub);font-size:14px;}
+.dts{display:flex;justify-content:center;gap:9px;margin:28px 0 24px;}
+.dts span{width:12px;height:12px;background:var(--acc);border:var(--bw) solid var(--line);border-radius:var(--r);animation:bump 1.1s ease-in-out infinite;}
+.dts span:nth-child(2){animation-delay:.15s;} .dts span:nth-child(3){animation-delay:.3s;}
+@keyframes bump{0%,100%{transform:translateY(0);opacity:.4;}50%{transform:translateY(-7px);opacity:1;}}
+.lbar{width:100%;height:14px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.lbar span{display:block;width:32%;height:100%;background:var(--acc);animation:sld 1.05s ease-in-out infinite;}
+@keyframes sld{from{transform:translateX(-110%);}to{transform:translateX(340%);}}
+.cap{overflow:hidden;max-width:100%;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rh{padding:13px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.rh h2{margin:0;color:var(--accFg);font-size:15.5px;font-weight:700;line-height:1.45;letter-spacing:-.1px;text-wrap:balance;}
+.rb{padding:14px;}
+.rn{padding:24px 16px 20px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.rn .em{font-size:64px;line-height:1;}
+.rn h3{margin:10px 0 6px;font-size:29px;font-weight:700;line-height:1.3;letter-spacing:-.3px;color:var(--acc);text-wrap:balance;}
+.rn .tg2{font-size:14.5px;font-weight:600;color:var(--ink);opacity:.85;}
+.rn .cd{display:inline-block;margin-top:12px;padding:4px 12px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:11px;font-weight:800;letter-spacing:1.2px;}
+.rs{margin-top:12px;padding:15px 16px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:15px;line-height:1.8;font-weight:400;text-wrap:pretty;}
+.blk{margin-top:14px;}
+.blt{margin:0;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-bottom:0;border-radius:var(--r) var(--r) 0 0;font-size:13px;font-weight:900;text-align:center;text-wrap:balance;}
+.qb{padding:18px 16px;text-align:center;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);font-size:17px;font-weight:600;line-height:1.65;text-wrap:balance;}
+.qbb{position:relative;margin:6px 16px 24px;padding:18px 16px;background:var(--soft);color:var(--softFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:16px;font-weight:600;line-height:1.65;text-align:center;text-wrap:balance;}
+.qbb::before{content:"";position:absolute;left:32px;bottom:-11px;width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-top:13px solid var(--line);}
+.qbb::after{content:"";position:absolute;left:34.5px;bottom:-6.5px;width:0;height:0;border-left:8.5px solid transparent;border-right:8.5px solid transparent;border-top:10px solid var(--soft);}
+.trs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:var(--bw) solid var(--line);border-left:var(--bw) solid var(--line);}
+.tc{min-height:82px;padding:9px 6px;display:flex;align-items:center;justify-content:center;background:var(--chip);color:var(--ink);border-right:var(--bw) solid var(--line);border-bottom:var(--bw) solid var(--line);text-align:center;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;text-wrap:balance;}
+.tc:nth-child(even){background:var(--soft);color:var(--softFg);}
+.trss{display:flex;flex-wrap:wrap;gap:10px 8px;padding:16px 14px;background:var(--chip);border-top:var(--bw) solid var(--line);}
+.tst{padding:8px 13px;background:var(--paper);border:var(--bw) solid var(--line);border-radius:999px;font-size:12.5px;font-weight:700;box-shadow:2px 2px 0 var(--line);word-break:keep-all;text-wrap:balance;color:var(--ink);}
+.tst:nth-child(3n+1){transform:rotate(-2.5deg);}
+.tst:nth-child(3n+2){transform:rotate(1.5deg);}
+.tst:nth-child(3n){transform:rotate(-0.5deg);}
+.tst:nth-child(even){background:var(--soft);color:var(--softFg);}
+.duo{display:grid;gap:10px;}
+.dsec{border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.dsh{padding:9px;text-align:center;font-size:14px;font-weight:900;color:var(--deepFg);border-bottom:var(--bw) solid var(--line);}
+.dsec.g .dsh{background:var(--acc);color:var(--accFg);}
+.dsec.b .dsh{background:var(--deep);}
+.dls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px 10px;padding:12px 11px;background:var(--chip);}
+.dit span{text-wrap:pretty;}
+.dit{display:flex;align-items:flex-start;min-width:0;font-size:13px;line-height:1.55;font-weight:500;word-break:keep-all;}
+.dit b{width:7px;height:7px;margin:5px 6px 0 0;flex:0 0 auto;background:var(--acc);border-radius:1px;}
+.dit.chk b{width:17px;height:17px;margin:1px 8px 0 0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;background:var(--acc);color:var(--accFg);}
+.dsec.b .dit.chk b{background:var(--sub);color:var(--paper);}
+.sts{padding:14px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);}
+.srow{display:grid;grid-template-columns:76px 1fr 42px;align-items:center;gap:9px;}
+.srow+.srow{margin-top:11px;}
+.slab{font-size:12.5px;font-weight:900;}
+.sqs{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;}
+.sq{aspect-ratio:1/1;min-height:11px;border-radius:2px;background:var(--chips);box-shadow:inset 0 0 0 1px rgba(176,168,152,0.35);}
+.sq.f{background:var(--acc);}
+.spc{text-align:right;font-size:12.5px;font-weight:900;}
+.stsr{padding:16px 12px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:14px 8px;}
+.rgauge{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.rgauge svg{width:64px;height:64px;overflow:visible;}
+.rgauge .rtrack{fill:none;stroke:var(--chips);stroke-width:6;}
+.rgauge .rfill{fill:none;stroke:var(--acc);stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset .5s ease;}
+.rgauge .rlab{font-size:11px;font-weight:800;color:var(--sub);text-align:center;line-height:1.35;}
+.cds{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px;}
+.cd2{padding:12px 11px;background:var(--chip);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.cd2 b{display:inline-block;margin-bottom:7px;padding:3px 9px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:10.5px;font-weight:800;}
+.cd2 p{margin:0;font-size:13.5px;line-height:1.65;font-weight:500;text-wrap:pretty;}
+.cdt{background:var(--paper);border:var(--bw) solid var(--line);border-radius:0 0 var(--r) var(--r);padding:2px 16px;}
+.cdti{padding:12px 0;border-bottom:var(--bw) dashed var(--line);}
+.cdti:last-child{border-bottom:0;}
+.cdti b{display:block;font-size:11px;font-weight:900;color:var(--acc);margin-bottom:3px;letter-spacing:.2px;}
+.cdti span{display:block;font-size:13.5px;font-weight:600;line-height:1.55;text-wrap:pretty;}
+.map{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.maph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.mapg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--chip);}
+.mapc{position:relative;min-width:0;padding:9px 3px 8px;text-align:center;border-right:1px solid rgba(176,168,152,0.18);border-bottom:1px solid rgba(176,168,152,0.18);}
+.mapc:nth-child(4n){border-right:0;}
+.mapc:nth-last-child(-n+4){border-bottom:0;}
+.mapc .e{display:block;font-size:20px;line-height:1;}
+.mapc .n{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;margin-top:4px;font-size:9px;font-weight:600;line-height:1.35;overflow:hidden;word-break:keep-all;text-wrap:balance;padding:0 2px;min-height:24px;}
+.mapc .p{display:block;margin-top:2px;font-size:9.5px;font-weight:900;opacity:.75;}
+.mapc.me{outline:var(--bw) solid var(--acc);outline-offset:-2px;}
+.mapc .badge{display:inline-block;margin-top:2px;padding:1px 7px;border-radius:999px;background:var(--acc);color:var(--accFg);font-size:9px;font-weight:800;}
+.mapf{display:flex;align-items:center;gap:7px;padding:9px 12px;background:var(--chip);border-top:var(--bw) solid var(--line);font-size:9.5px;font-weight:800;color:var(--sub);}
+.mapbar{flex:1;height:7px;border-radius:999px;}
+.cmp{margin-top:14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.cmph{padding:9px 12px;background:var(--deep);color:var(--deepFg);border-bottom:var(--bw) solid var(--line);font-size:13px;font-weight:900;text-align:center;}
+.cmpg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--chip);}
+.cmpc{min-width:0;padding:12px 8px 13px;text-align:center;}
+.cmpc+.cmpc{border-left:var(--bw) solid var(--line);}
+.cmpc .lb{display:inline-block;margin-bottom:10px;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;background:var(--acc);color:var(--accFg);}
+.cmpc.bad .lb{background:#AEB4BF;color:#fff;}
+.cmpi{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:7px;}
+.cmpi .e{font-size:24px;line-height:1;}
+.cmpi .n{min-width:0;font-size:13px;font-weight:600;line-height:1.45;text-align:left;word-break:keep-all;text-wrap:balance;}
+.cmpi .p{font-size:11.5px;font-weight:900;color:var(--acc);display:block;}
+.cmpc.bad .cmpi .p{color:var(--sub);}
+.cmpnote{margin-top:11px;padding-top:9px;border-top:1px dashed rgba(176,168,152,0.3);font-size:12px;line-height:1.65;font-weight:500;color:var(--sub);}
+.rf{margin-top:16px;padding-top:12px;border-top:var(--bw) dashed var(--line);color:var(--sub);text-align:center;font-size:11px;font-weight:700;letter-spacing:.6px;}
+.ad{display:none;}
+.sheet{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.sheeth{padding:16px 18px;background:var(--acc);border-bottom:var(--bw) solid var(--line);text-align:center;}
+.sheeth h2{margin:0;color:var(--accFg);font-size:18px;font-weight:800;letter-spacing:-.4px;}
+.sheeth p{margin:5px 0 0;color:var(--accFg);opacity:.85;font-size:11.5px;font-weight:700;}
+.reveal{margin:14px;padding:20px 16px;text-align:center;background:var(--soft);border:var(--bw) solid var(--line);border-radius:var(--r);}
+.reveal .em{font-size:46px;line-height:1;}
+.reveal .nm{margin-top:8px;font-size:19px;font-weight:700;line-height:1.45;text-wrap:balance;}
+.reveal .eq{margin:9px 0 7px;font-size:13px;font-weight:800;color:var(--sub);}
+.reveal .code{display:inline-block;padding:8px 22px;background:var(--acc);color:var(--accFg);border-radius:999px;font-size:26px;font-weight:800;letter-spacing:3px;}
+.sheetad{display:none;}
+.sheetsec{margin:0 14px 10px;padding:9px 12px;background:var(--deep);color:var(--deepFg);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:12.5px;font-weight:900;text-align:center;}
+.rows{margin:0 14px 14px;border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;}
+.row{display:grid;grid-template-columns:26px 30px minmax(0,1fr) auto;align-items:center;gap:9px;padding:10px 11px;background:var(--chip);border-bottom:1px solid rgba(176,168,152,0.18);}
+.row:last-child{border-bottom:0;}
+.row.me{background:var(--soft);color:var(--softFg);}
+.row .no{font-size:10px;font-weight:800;color:var(--sub);opacity:.7;}
+.row .em{font-size:22px;line-height:1;text-align:center;}
+.row .nm{font-size:14px;font-weight:600;line-height:1.45;min-width:0;word-break:keep-all;text-wrap:balance;}
+.row .tg{display:block;font-size:10.5px;font-weight:700;color:var(--sub);opacity:.85;margin-top:2px;}
+.row .cd{padding:4px 10px;border-radius:999px;background:var(--deep);font-size:11px;font-weight:800;letter-spacing:.8px;white-space:nowrap;}
+.row.me .cd{background:var(--acc);color:var(--accFg);}
+.mo{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(20,20,20,.82);overflow-y:auto;}
+.mo.on{display:flex;}
+.mb2{width:100%;max-width:360px;max-height:92vh;overflow:auto;padding:20px 16px;text-align:center;background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);margin:auto;}
+.mb2 h3{margin:0 0 8px;font-size:18px;font-weight:900;}
+.mb2 p{margin:0 0 16px;color:var(--sub);font-size:13px;line-height:1.55;font-weight:600;}
+.mb2 img{display:block;width:100%;border:var(--bw) solid var(--line);border-radius:var(--r);}
+.mbtns{display:grid;gap:8px;margin-top:14px;}
+.mbtn{display:block;width:100%;padding:14px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--chip);color:var(--ink);font-family:var(--fb);font-size:14.5px;font-weight:600;text-align:center;text-decoration:none;cursor:pointer;box-sizing:border-box;}
+.mbtn.pri{background:var(--acc);border-color:var(--acc);color:var(--accFg);}
+.mtip{margin:12px 0 0!important;font-size:12px;line-height:1.6;color:var(--sub);}
+.mb2 .cl{width:100%;min-height:46px;margin-top:14px;cursor:pointer;color:#fff;background:var(--line);border:var(--bw) solid var(--line);border-radius:var(--r);font-size:14px;font-weight:800;}
+.tst{position:fixed;left:50%;bottom:26px;z-index:200;max-width:calc(100% - 32px);padding:12px 18px;color:#fff;background:rgba(28,28,28,.95);border:var(--bw) solid #fff;border-radius:var(--r);font-size:13.5px;font-weight:700;transform:translate(-50%,16px);opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+.tst.show{opacity:1;transform:translate(-50%,0);}
+@media(hover:hover) and (pointer:fine){
+.btn:hover{background:var(--soft);color:var(--softFg);}
+.btn.fill:hover{opacity:.9;background:var(--acc);}
+.op:hover{background:var(--soft);color:var(--softFg);}
+.op:hover::before{color:var(--ink);}
+.qback:hover{color:var(--ink);}
+}
+@media(max-width:520px){.app{padding:18px 11px 38px;}.intro{padding:28px 14px 20px;}.intro h1{font-size:22px;}
+.ci .n{font-size:9.5px;} .ci .e{font-size:19px;}
+.qw{padding:20px 15px 24px;}.qx{font-size:19px;min-height:66px;}
+.op{min-height:64px;padding:13px 13px 13px 48px;font-size:14px;}
+.tc{min-height:74px;font-size:11.5px;}.rn h3{font-size:26px;}.rh h2{font-size:14px;}
+.dls{gap:6px 7px;padding:10px 9px;}.dit{font-size:11.5px;}.cds{gap:7px;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <section class="sc on" id="s1"></section>
+  <section class="sc" id="s2"></section>
+  <section class="sc" id="s3"></section>
+  <section class="sc" id="s4"></section>
+  <section class="sc" id="s5"></section>
+  <section class="sc" id="s6"></section>
+  <div class="ad">광고 영역 (애드센스 코드 삽입 위치)</div>
+</div>
+<div class="mo" id="mo"><div class="mb2"><h3>이미지 꾹 눌러 저장하기</h3><p>아래 이미지를 길게 누르거나 우클릭해서<br>저장해 주세요.</p><div id="mw"><p style="padding:40px 0;">이미지를 만들고 있어요...</p></div><button class="cl" onclick="closeMo()">닫기</button></div></div>
+<div class="tst" id="tst"></div>
+<script>
+"use strict";
+var D={"meta":{"title":"나의 플레이리스트 MBTI는?","emoji":"🎧","intro":"노래를 고르는 습관, 플레이리스트를 관리하는 방식까지 12문항이면 나만의 음악 취향 유형이 드러나요.","loadingText":"플레이리스트를 분석하고 있습니다… 당신의 음악 취향 유형을 찾는 중입니다.","sheetTitle":"플레이리스트 MBTI 전체 유형표","sheetCta":"16종 플레이리스트 유형 전체 확인하기","slug":"playlist-mbti-test","setName":"나의 플레이리스트 MBTI"},"blocks":["cards","duo"],"blockLabels":{"cards":"🎧 이 유형의 음악 습관","duo":{"good":"🎧 이 유형의 장점","bad":"🎧 보완하면 좋은 점"}},"compatLabels":{"title":"플레이리스트 궁합 진단","good":"플레이리스트가 제일 잘 맞는 상대","bad":"살짝 취향 조율이 필요한 상대","mapTitle":"플레이리스트 유형 관계도"},"compat":{"ISTJ":"INTJ85 ISFJ82 ISTP81 ESTJ80 ESFJ78 ESTP77 INFJ74 INTP73 ENTJ72 ISFP70 ENTP69 ESFP66 INFP62 ENFJ61 ENFP58","ISFJ":"ISTJ85 INFJ84 ISFP80 ESFJ79 INTJ77 ESFP76 ISTP73 INFP72 ESTJ72 ENFJ71 ESTP69 ENFP68 INTP65 ENTJ64 ENTP55","INFJ":"INTJ85 ISFJ82 INFP80 ENFJ79 ESFJ78 ENFP76 ISTJ75 INTP73 ENTJ72 ISFP70 ENTP69 ESFP66 ISTP63 ESTJ62 ESTP59","INTJ":"ISTJ83 INFJ82 INTP81 ENTJ80 ENFJ78 ENTP77 ISFJ72 ISTP71 INFP70 ESTJ70 ISFP69 ESFJ68 ESTP67 ENFP66 ESFP56","ISTP":"ISFP85 ESTP83 ISTJ81 INTP79 INFP77 ESTJ77 ENTP75 INTJ73 ESFP72 ISFJ70 ENTJ69 ESFJ66 ENFP64 INFJ62 ENFJ58","ISFP":"INFP87 ESFP82 ISFJ80 ISTP79 ESFJ76 ESTP75 ENFP74 ISTJ73 INFJ72 INTP71 ESTJ69 ENFJ68 ENTP67 INTJ65 ENTJ55","INFP":"ISFP85 ENFP82 INFJ80 INTP79 ISTP78 ENFJ76 ENTP75 INTJ73 ESFP72 ISFJ70 ENTJ69 ESFJ66 ESTP65 ISTJ63 ESTJ59","INTP":"ISTP86 INFP85 ENTP83 INTJ81 ENTJ77 ISFP75 ESTP73 ENFP72 ISTJ71 INFJ70 ISFJ69 ESTJ67 ENFJ66 ESFP62 ESFJ56","ESTP":"ISTP85 ESTJ84 ENTP82 ESFP79 INTP77 ENTJ76 ISFP74 ESFJ73 ENFP71 ISTJ70 ISFJ68 INFP66 ENFJ65 INTJ62 INFJ60","ESFP":"ISFP84 ESFJ83 ESTP82 ENFP81 ISFJ78 ISTP77 INFP76 ESTJ76 ENFJ75 ENTP74 INTP69 ENTJ68 ISTJ62 INFJ61 INTJ55","ENFP":"INFP84 ENFJ83 ENTP82 ESFP79 INFJ78 INTP77 ENTJ76 ISFP74 ESFJ73 ESTP72 ISFJ68 ISTP67 ESTJ66 INTJ62 ISTJ55","ENTP":"INTP85 ENTJ84 ESTP80 ENFP79 ESFP78 ISTP75 INFP74 ESTJ74 ENFJ73 INTJ70 ISTJ69 INFJ68 ISFP64 ESFJ63 ISFJ58","ESTJ":"ESFJ85 ESTP84 ISTJ82 ENTJ79 ENFJ77 ENTP76 INTJ74 ESFP73 ISFJ71 ISTP70 ISFP68 ENFP65 INFJ63 INTP62 INFP60","ESFJ":"ENFJ87 ESFP83 ISFJ81 ESTJ79 ISFP78 ESTP76 ENFP75 ISTJ74 INFJ73 ENTJ71 ENTP68 INTJ66 ISTP62 INFP61 INTP55","ENFJ":"ESFJ85 ENFP83 INFJ81 ENTJ79 INFP78 ESTJ78 ENTP76 INTJ74 ESFP73 ISFJ71 ISFP68 ESTP66 ISTJ64 INTP62 ISTP55","ENTJ":"ESTJ86 ENFJ85 ENTP84 INTJ82 ESFJ75 ESTP74 ENFP73 ISTJ72 INFJ71 INTP70 ISTP69 INFP68 ESFP63 ISFJ61 ISFP58"},"compatLines":[{"min":88,"text":"플레이리스트를 공유해도 스킵 버튼 누를 일이 거의 없는 궁합이에요. 취향이 놀랍도록 잘 맞습니다."},{"min":80,"text":"같이 드라이브 가도 곡 선택으로 다툴 일이 없는 사이예요. 서로의 취향을 자연스럽게 존중해요."},{"min":72,"text":"장르는 달라도 묘하게 잘 어울려요. 서로의 플레이리스트에서 새 곡을 발견하게 되는 조합이에요."},{"min":64,"text":"가끔 취향이 부딪혀도 그만큼 서로의 새로운 장르를 알게 되는 사이예요."},{"min":0,"text":"음악 취향은 많이 다르지만, 그래서 서로에게 낯선 곡을 소개해주기 좋은 조합이에요."}],"statStyle":"squares","traitStyle":"grid","cardStyle":"grid","duoStyle":"dot","quoteStyle":"banner","cast":[{"type":"ISTJ","name":"정주행 아카이비스트","emoji":"🗂️","tagline":"좋아하는 곡은 몇 년째 재생목록 맨 위"},{"type":"ISFJ","name":"추억 보관함 큐레이터","emoji":"💌","tagline":"그 시절 기억이 담긴 노래를 오래 간직함"},{"type":"INFJ","name":"가사 해석가","emoji":"🔮","tagline":"노래 속 숨은 의미까지 곱씹어보는 편"},{"type":"INTJ","name":"플레이리스트 설계자","emoji":"🧩","tagline":"기승전결이 있는 재생목록을 짜는 게 취미"},{"type":"ISTP","name":"숨은 명곡 발굴러","emoji":"🎧","tagline":"아무도 모르는 곡을 찾아내는 게 재미"},{"type":"ISFP","name":"무드 체인지 리스너","emoji":"🎨","tagline":"그날 기분 따라 완전히 다른 장르로 이동"},{"type":"INFP","name":"몰입형 반복재생러","emoji":"🌙","tagline":"한 곡에 꽂히면 감정까지 푹 잠기는 타입"},{"type":"INTP","name":"장르 탐구자","emoji":"🔬","tagline":"추천 알고리즘을 거슬러 직접 파고드는 편"},{"type":"ESTP","name":"즉석 텐션 메이커","emoji":"⚡","tagline":"그 순간 분위기에 맞춰 바로 곡을 바꿔 튼다"},{"type":"ESFP","name":"노래방 인생곡 부자","emoji":"🎤","tagline":"흥 넘치는 곡으로 분위기를 몰고 가는 타입"},{"type":"ENFP","name":"장르 다 찍먹러","emoji":"🌈","tagline":"하루에도 몇 개 장르를 오가는 잡식성 리스너"},{"type":"ENTP","name":"믹스테이프 실험가","emoji":"🎛️","tagline":"안 어울릴 것 같은 곡들을 붙여보는 걸 즐김"},{"type":"ESTJ","name":"차트 정주행러","emoji":"📊","tagline":"최신 차트를 꼼꼼히 챙기고 목적별로 관리"},{"type":"ESFJ","name":"다같이 듣기 큐레이터","emoji":"🎉","tagline":"모임용 플레이리스트를 짜서 공유하는 걸 좋아함"},{"type":"ENFJ","name":"감성 전도사","emoji":"💫","tagline":"좋은 노래를 발견하면 주변에 적극 추천"},{"type":"ENTJ","name":"플레이리스트 프로듀서","emoji":"🎯","tagline":"목적에 딱 맞게 곡을 골라 완성도를 높임"}],"questions":[{"section":"새 플레이리스트 발견","text":"친구가 만든 플레이리스트를 발견했어요.","options":[{"text":"바로 링크를 보내며 같이 듣자고 한다","value":"E"},{"text":"혼자 조용히 정주행부터 해본다","value":"I"}]},{"section":"최애곡이 나올 때","text":"좋아하는 노래가 흘러나오면 나는?","options":[{"text":"다 같이 있을 때 볼륨을 키우고 따라 부른다","value":"E"},{"text":"이어폰을 끼고 혼자 몰입해서 듣는다","value":"I"}]},{"section":"신보 발매일","text":"최애 아티스트의 새 앨범이 나왔어요.","options":[{"text":"친구들과 감상평을 나누며 같이 챙겨 듣는다","value":"E"},{"text":"혼자 처음부터 끝까지 집중해서 듣는다","value":"I"}]},{"section":"곡을 고를 때","text":"플레이리스트에 곡을 추가할 때 나는?","options":[{"text":"익숙하고 편안한 멜로디의 곡을 고른다","value":"S"},{"text":"낯설고 새로운 시도가 담긴 곡에 끌린다","value":"N"}]},{"section":"플레이리스트 이름","text":"새 플레이리스트 제목을 지을 때 나는?","options":[{"text":"지금 상황을 그대로 쓴다 (출근길, 운동 등)","value":"S"},{"text":"곡들의 분위기를 은유적으로 표현한다","value":"N"}]},{"section":"새 아티스트 발견","text":"새로운 아티스트를 알게 됐을 때 나는?","options":[{"text":"대표곡부터 순서대로 들어본다","value":"S"},{"text":"떠오르는 이미지나 스토리부터 상상해본다","value":"N"}]},{"section":"곡 추천 기준","text":"누군가에게 노래를 추천할 때 기준은?","options":[{"text":"완성도와 편곡의 짜임새","value":"T"},{"text":"그 곡을 들을 때 드는 감정","value":"F"}]},{"section":"슬픈 노래를 들을 때","text":"가사가 슬픈 노래를 들으면 나는?","options":[{"text":"왜 슬픈지 상황과 맥락을 분석해본다","value":"T"},{"text":"그 감정에 그대로 이입되어 몰입한다","value":"F"}]},{"section":"취향이 다른 추천을 받을 때","text":"친구가 내 취향과 다른 노래를 추천했을 때 나는?","options":[{"text":"왜 좋은지 이유를 논리적으로 물어본다","value":"T"},{"text":"친구가 좋다니까 일단 열린 마음으로 들어본다","value":"F"}]},{"section":"플레이리스트 관리","text":"플레이리스트를 관리하는 방식은?","options":[{"text":"상황별, 기분별로 폴더를 나눠서 관리한다","value":"J"},{"text":"그때그때 꽂히는 곡을 아무 데나 추가한다","value":"P"}]},{"section":"즐겨찾기 정리","text":"즐겨찾기한 곡이 너무 많아졌을 때 나는?","options":[{"text":"주기적으로 정리하고 순서를 정돈한다","value":"J"},{"text":"그냥 계속 쌓아두고 셔플로 듣는다","value":"P"}]},{"section":"드라이브 플레이리스트","text":"긴 드라이브에 쓸 플레이리스트를 짤 때 나는?","options":[{"text":"미리 순서와 흐름까지 계획해서 완성해둔다","value":"J"},{"text":"출발하고 나서 그때 기분 따라 즉흥적으로 고른다","value":"P"}]}],"results":[{"type":"ISTJ","name":"정주행 아카이비스트","emoji":"🗂️","tagline":"좋아하는 곡은 몇 년째 재생목록 맨 위","summary":"정주행 아카이비스트는 한번 좋아하게 된 곡은 몇 년이 지나도 재생목록 맨 위에 그대로 두는 타입이에요. 새 곡은 충분히 검증된 후에야 추가하고, 폴더나 태그로 곡을 꼼꼼하게 정리해두는 편이라 원하는 곡을 찾는 데 오래 걸리지 않아요. 유행보다는 나만의 확실한 취향을 오래 유지하는 리스너예요.","color":"#4A5568","cards":[{"label":"관리 방식","value":"폴더별로 꼼꼼하게 곡을 정리해둠"},{"label":"신곡 수용","value":"여러 번 들어보고 확신이 들면 추가"},{"label":"플레이리스트 수명","value":"몇 년째 그대로 유지되는 목록이 있음"},{"label":"취향","value":"한번 자리잡은 취향은 잘 안 바뀜"}],"duo":{"good":[{"label":"꾸준함이 있어요","value":"꾸준함이 있어요"},{"label":"한번 정한 취향","value":"한번 정한 취향을 오래 지켜요"},{"label":"필요한 곡을 빠","value":"필요한 곡을 빠르게 찾아줘요"}],"bad":[{"label":"새로운","value":"새로운 장르에 마음을 여는 데 시간이 걸려요"},{"label":"가끔은","value":"가끔은 즉흥적으로 골라보는 것도 재밌어요"}]}},{"type":"ISFJ","name":"추억 보관함 큐레이터","emoji":"💌","tagline":"그 시절 기억이 담긴 노래를 오래 간직함","summary":"추억 보관함 큐레이터는 노래 한 곡에 그 시절의 기억이 통째로 담겨있는 걸 아는 리스너예요. 오래된 곡도 함부로 지우지 않고 소중히 보관해두고, 친구의 취향을 기억해뒀다가 그 사람만을 위한 플레이리스트를 만들어주는 다정함도 있어요. 유행보다 애정이 담긴 곡을 더 오래 곁에 둡니다.","color":"#C97B84","cards":[{"label":"보관 습관","value":"옛날 곡도 지우지 않고 소중히 보관"},{"label":"선물 감각","value":"친구 취향 맞춤 플레이리스트를 자주 만듦"},{"label":"몰입 포인트","value":"곡에 얽힌 추억을 자주 떠올림"},{"label":"재생 습관","value":"익숙한 곡을 반복해서 듣는 편"}],"duo":{"good":[{"label":"다정하게 곡을 ","value":"다정하게 곡을 챙겨줘요"},{"label":"추억을 소중히 ","value":"추억을 소중히 여겨요"},{"label":"상대 취향을 잘","value":"상대 취향을 잘 기억해요"}],"bad":[{"label":"새","value":"새 곡보다 익숙한 곡에 자꾸 손이 가요"},{"label":"가끔은","value":"가끔은 낯선 장르에도 도전해봐도 좋아요"}]}},{"type":"INFJ","name":"가사 해석가","emoji":"🔮","tagline":"노래 속 숨은 의미까지 곱씹어보는 편","summary":"가사 해석가는 노래를 들을 때 멜로디보다 가사 속 행간을 먼저 읽는 리스너예요. 대중적인 히트곡보다 소수의 아티스트를 깊이 파고드는 편이고, 한 줄의 가사에서 다른 사람은 못 본 의미를 발견해내곤 해요. 조용히 몰입하며 듣는 시간을 가장 소중하게 여깁니다.","color":"#5B6EAE","cards":[{"label":"감상 포인트","value":"가사 속 숨은 의미를 곱씹어봄"},{"label":"취향 깊이","value":"소수의 아티스트를 깊게 파고드는 편"},{"label":"감상 방식","value":"혼자 조용히 몰입해서 듣는 걸 선호"},{"label":"곡 선택 기준","value":"분위기와 메시지가 통하는 곡에 끌림"}],"duo":{"good":[{"label":"가사를 섬세하게","value":"가사를 섬세하게 이해해요"},{"label":"취향이 깊고 확","value":"취향이 깊고 확고해요"},{"label":"조용한 몰입감이","value":"조용한 몰입감이 있어요"}],"bad":[{"label":"좋아하는","value":"좋아하는 곡을 남과 나누는 데 조금 소극적이에요"},{"label":"가끔은","value":"가끔은 가볍게 즐기는 곡도 필요해요"}]}},{"type":"INTJ","name":"플레이리스트 설계자","emoji":"🧩","tagline":"기승전결이 있는 재생목록을 짜는 게 취미","summary":"플레이리스트 설계자는 곡 하나하나보다 전체 흐름을 먼저 그리는 리스너예요. 시작과 중간, 마무리까지 기승전결이 있는 재생목록을 짜는 걸 즐기고, 테마가 정해지면 그에 딱 맞는 곡만 골라 완성도 높은 목록을 만들어요. 얼기설기 섞인 플레이리스트는 잘 못 견디는 편이에요.","color":"#3B3A6B","cards":[{"label":"설계 방식","value":"목록 전체의 흐름을 미리 구상함"},{"label":"곡 선정 기준","value":"테마에 딱 맞는 곡만 엄선함"},{"label":"완성도","value":"기승전결이 있는 재생목록을 선호"},{"label":"관리 스타일","value":"불필요한 곡은 과감히 정리함"}],"duo":{"good":[{"label":"짜임새 있는 목","value":"짜임새 있는 목록을 만들어요"},{"label":"기준이 명확해요","value":"기준이 명확해요"},{"label":"완성도를 끝까지","value":"완성도를 끝까지 신경써요"}],"bad":[{"label":"계획에","value":"계획에 없던 곡이 끼면 살짝 불편해해요"},{"label":"가끔은","value":"가끔은 완벽하지 않아도 괜찮아요"}]}},{"type":"ISTP","name":"숨은 명곡 발굴러","emoji":"🎧","tagline":"아무도 모르는 곡을 찾아내는 게 재미","summary":"숨은 명곡 발굴러는 남들이 잘 모르는 곡을 찾아내는 데서 큰 재미를 느끼는 리스너예요. 실험적인 사운드나 낯선 편곡에 오히려 끌리고, 발견한 명곡은 말없이 혼자 즐기다가 마음이 내킬 때만 슬쩍 공유해요. 유행하는 곡보다 자기만의 감각을 믿는 편이에요.","color":"#2F3E46","cards":[{"label":"탐색 습관","value":"알려지지 않은 곡을 찾아다님"},{"label":"취향","value":"실험적인 사운드에 끌림"},{"label":"공유 방식","value":"마음 내킬 때만 슬쩍 추천함"},{"label":"감상 스타일","value":"이어폰으로 혼자 몰입해서 들음"}],"duo":{"good":[{"label":"감각적인 곡을 ","value":"감각적인 곡을 잘 찾아내요"},{"label":"취향이 확실해요","value":"취향이 확실해요"},{"label":"유행에 휘둘리지","value":"유행에 휘둘리지 않아요"}],"bad":[{"label":"좋은","value":"좋은 곡을 발견해도 잘 안 알려줘요"},{"label":"가끔은","value":"가끔은 대중적인 곡도 즐겨보면 좋아요"}]}},{"type":"ISFP","name":"무드 체인지 리스너","emoji":"🎨","tagline":"그날 기분 따라 완전히 다른 장르로 이동","summary":"무드 체인지 리스너는 그날의 기분에 따라 완전히 다른 장르로 넘어가는 리스너예요. 감각적인 커버아트나 색감에도 자연스레 끌리고, 정해진 장르 없이 마음이 이끄는 대로 곡을 고르는 자유로움이 있어요. 그 순간의 감성을 가장 소중히 여깁니다.","color":"#6B8E4E","cards":[{"label":"선곡 기준","value":"그날 기분에 따라 장르가 달라짐"},{"label":"감각","value":"커버아트나 색감에도 끌림"},{"label":"플레이리스트 성향","value":"장르가 자유롭게 섞여 있음"},{"label":"감상 순간","value":"혼자만의 시간에 감성적으로 몰입"}],"duo":{"good":[{"label":"감성적인 곡을 ","value":"감성적인 곡을 잘 골라요"},{"label":"취향이 자유롭고","value":"취향이 자유롭고 다채로워요"},{"label":"순간의 분위기를","value":"순간의 분위기를 잘 살려요"}],"bad":[{"label":"기분에","value":"기분에 따라 취향이 자주 바뀌어요"},{"label":"가끔은","value":"가끔은 하나에 집중해보는 것도 좋아요"}]}},{"type":"INFP","name":"몰입형 반복재생러","emoji":"🌙","tagline":"한 곡에 꽂히면 감정까지 푹 잠기는 타입","summary":"몰입형 반복재생러는 마음에 든 한 곡을 몇 번이고 반복해서 듣는 리스너예요. 시적인 가사나 잔잔한 자작곡에 특히 마음이 움직이고, 노래를 들으며 그 감정에 완전히 젖어드는 시간을 좋아해요. 겉으론 조용해 보여도 속으론 풍부한 이야기를 담고 있어요.","color":"#8A6FBF","cards":[{"label":"재생 습관","value":"마음에 든 곡을 몇 번이고 반복함"},{"label":"취향","value":"시적인 가사와 잔잔한 멜로디 선호"},{"label":"몰입도","value":"감정에 완전히 젖어드는 편"},{"label":"곡 발견","value":"우연히 알게 된 곡에 깊이 빠짐"}],"duo":{"good":[{"label":"감정을 깊이 느껴요","value":"감정을 깊이 느껴요"},{"label":"취향이 섬세하고","value":"취향이 섬세하고 진심 어려요"},{"label":"좋아하는 곡에 ","value":"좋아하는 곡에 진심을 다해요"}],"bad":[{"label":"같은","value":"같은 곡만 계속 듣는 편이에요"},{"label":"가끔은","value":"가끔은 새로운 곡도 열어보면 좋아요"}]}},{"type":"INTP","name":"장르 탐구자","emoji":"🔬","tagline":"추천 알고리즘을 거슬러 직접 파고드는 편","summary":"장르 탐구자는 추천 알고리즘을 그대로 따르기보다 직접 새로운 장르를 파고드는 리스너예요. 곡의 구성이나 편곡 방식에도 관심이 많아서 왜 이 곡이 좋은지 분석해보는 걸 즐기고, 흥미가 향하는 장르라면 낯설어도 끝까지 탐구합니다.","color":"#3F8F8A","cards":[{"label":"탐구 방식","value":"알고리즘을 거슬러 직접 장르를 탐색"},{"label":"관심사","value":"곡의 구성과 편곡 방식까지 분석"},{"label":"취향 확장","value":"흥미로우면 낯선 장르도 파고듦"},{"label":"감상 스타일","value":"분석하며 듣는 걸 즐김"}],"duo":{"good":[{"label":"새로운 장르를 ","value":"새로운 장르를 잘 발굴해요"},{"label":"분석력이 뛰어나요","value":"분석력이 뛰어나요"},{"label":"호기심이 넓어요","value":"호기심이 넓어요"}],"bad":[{"label":"취향을","value":"취향을 남에게 설명하는 게 귀찮을 때가 있어요"},{"label":"가끔은","value":"가끔은 그냥 편하게 즐겨도 좋아요"}]}},{"type":"ESTP","name":"즉석 텐션 메이커","emoji":"⚡","tagline":"그 순간 분위기에 맞춰 바로 곡을 바꿔 튼다","summary":"즉석 텐션 메이커는 그 순간의 분위기에 맞춰 바로바로 곡을 바꿔 트는 리스너예요. 신곡이 나오면 누구보다 빠르게 반응하고, 그 자리의 텐션을 살리는 곡을 직감적으로 골라내는 감각이 있어요. 미리 계획된 목록보다 즉흥적인 선곡을 즐깁니다.","color":"#C1440E","cards":[{"label":"선곡 속도","value":"분위기에 맞춰 즉석에서 곡을 바꿈"},{"label":"신곡 반응","value":"신곡이 나오면 가장 빠르게 들음"},{"label":"감각","value":"그 자리의 텐션을 살리는 곡을 잘 고름"},{"label":"플레이리스트 성향","value":"고정된 목록보다 즉흥 선곡 선호"}],"duo":{"good":[{"label":"분위기를 잘 살려요","value":"분위기를 잘 살려요"},{"label":"반응이 빠르고 ","value":"반응이 빠르고 감각적이에요"},{"label":"즉흥적인 재미가","value":"즉흥적인 재미가 있어요"}],"bad":[{"label":"미리","value":"미리 계획한 목록은 잘 안 지켜요"},{"label":"가끔은","value":"가끔은 차분하게 정주행하는 것도 좋아요"}]}},{"type":"ESFP","name":"노래방 인생곡 부자","emoji":"🎤","tagline":"흥 넘치는 곡으로 분위기를 몰고 가는 타입","summary":"노래방 인생곡 부자는 흥이 넘치는 곡으로 자리 분위기를 살리는 리스너예요. 노래방에서도 분위기 메이커 역할을 도맡고, 신나는 곡이 나오면 가장 먼저 몸을 들썩이는 타입이에요. 혼자 듣기보다 함께 즐기는 순간에 더 큰 만족을 느낍니다.","color":"#E85D75","cards":[{"label":"선곡 성향","value":"흥 넘치는 곡 위주로 즐김"},{"label":"역할","value":"모임에서 분위기 메이커를 도맡음"},{"label":"감상 방식","value":"혼자보단 함께 들을 때 더 즐거워함"},{"label":"인생곡","value":"노래방 단골 레퍼토리가 확실함"}],"duo":{"good":[{"label":"분위기를 밝게 ","value":"분위기를 밝게 만들어요"},{"label":"흥을 나눌 줄 ","value":"흥을 나눌 줄 알아요"},{"label":"함께 듣는 즐거","value":"함께 듣는 즐거움을 잘 알아요"}],"bad":[{"label":"신나는","value":"신나는 곡에만 자꾸 손이 가요"},{"label":"가끔은","value":"가끔은 잔잔한 곡도 즐겨보면 좋아요"}]}},{"type":"ENFP","name":"장르 다 찍먹러","emoji":"🌈","tagline":"하루에도 몇 개 장르를 오가는 잡식성 리스너","summary":"장르 다 찍먹러는 하루에도 몇 개의 장르를 오가는 잡식성 리스너예요. 새로운 아티스트 소식을 들으면 가장 먼저 찾아 듣고, 좋다고 느낀 곡은 주변에 신나게 전도하는 편이에요. 플레이리스트가 매일 조금씩 달라지는 게 오히려 이 리스너의 매력이에요.","color":"#F2A65A","cards":[{"label":"장르 폭","value":"하루에도 여러 장르를 넘나듦"},{"label":"신곡 반응","value":"새 아티스트 소식에 가장 먼저 반응"},{"label":"공유 성향","value":"좋은 곡은 적극적으로 추천함"},{"label":"플레이리스트 변화","value":"매일 조금씩 새롭게 바뀜"}],"duo":{"good":[{"label":"새로운 곡을 잘","value":"새로운 곡을 잘 발견해요"},{"label":"취향을 나누는 ","value":"취향을 나누는 걸 좋아해요"},{"label":"에너지가 넘쳐요","value":"에너지가 넘쳐요"}],"bad":[{"label":"한","value":"한 곡에 오래 머물지 못해요"},{"label":"가끔은","value":"가끔은 좋아하는 곡을 반복해서 들어봐도 좋아요"}]}},{"type":"ENTP","name":"믹스테이프 실험가","emoji":"🎛️","tagline":"안 어울릴 것 같은 곡들을 붙여보는 걸 즐김","summary":"믹스테이프 실험가는 안 어울릴 것 같은 곡들을 나란히 붙여보는 걸 즐기는 리스너예요. 정해진 장르 조합을 깨는 실험적인 플레이리스트를 만들고, 예상 밖의 곡 전환에서 오히려 짜릿함을 느껴요. 남들이 안 하는 조합일수록 더 흥미를 느낍니다.","color":"#9B59B6","cards":[{"label":"실험 성향","value":"안 어울릴 법한 곡들을 조합해봄"},{"label":"플레이리스트 스타일","value":"장르 경계를 넘나드는 구성"},{"label":"재미 포인트","value":"예상 밖의 곡 전환을 즐김"},{"label":"취향","value":"남들이 안 하는 조합에 흥미를 느낌"}],"duo":{"good":[{"label":"창의적인 조합을","value":"창의적인 조합을 잘 만들어요"},{"label":"새로운 시도를 ","value":"새로운 시도를 두려워하지 않아요"},{"label":"재치있는 선곡 ","value":"재치있는 선곡 감각이 있어요"}],"bad":[{"label":"일관된","value":"일관된 무드를 유지하긴 어려워해요"},{"label":"가끔은","value":"가끔은 안정적인 흐름도 필요해요"}]}},{"type":"ESTJ","name":"차트 정주행러","emoji":"📊","tagline":"최신 차트를 꼼꼼히 챙기고 목적별로 관리","summary":"차트 정주행러는 최신 차트를 꼼꼼히 챙기고 목적에 맞게 플레이리스트를 관리하는 리스너예요. 운동용, 출근용, 집중용처럼 상황별로 목록을 딱딱 나눠두고, 효율적으로 관리된 재생목록에서 안정감을 느낍니다. 유행에 뒤처지지 않는 것도 중요하게 생각해요.","color":"#1F4E79","cards":[{"label":"관리 방식","value":"상황별로 목록을 명확히 구분함"},{"label":"트렌드 체크","value":"최신 차트를 꾸준히 확인함"},{"label":"효율성","value":"목적에 맞는 곡을 빠르게 배치함"},{"label":"플레이리스트 성향","value":"체계적으로 정돈되어 있음"}],"duo":{"good":[{"label":"체계적으로 관리해요","value":"체계적으로 관리해요"},{"label":"트렌드를 잘 챙겨요","value":"트렌드를 잘 챙겨요"},{"label":"목적에 맞게 잘","value":"목적에 맞게 잘 활용해요"}],"bad":[{"label":"계획에","value":"계획에 없던 곡은 잘 안 넣는 편이에요"},{"label":"가끔은","value":"가끔은 즉흥적인 선곡도 재밌어요"}]}},{"type":"ESFJ","name":"다같이 듣기 큐레이터","emoji":"🎉","tagline":"모임용 플레이리스트를 짜서 공유하는 걸 좋아함","summary":"다같이 듣기 큐레이터는 모임이나 드라이브에 어울리는 플레이리스트를 짜서 다 같이 즐기는 걸 좋아하는 리스너예요. 참석자들의 취향을 두루 고려해서 다들 좋아할 만한 곡으로 목록을 채우고, 함께 듣는 시간을 더 즐겁게 만드는 재주가 있어요.","color":"#D97E4A","cards":[{"label":"큐레이션 감각","value":"모두가 좋아할 곡을 두루 고려함"},{"label":"역할","value":"모임용 플레이리스트를 자주 도맡음"},{"label":"공유 습관","value":"완성된 목록을 적극적으로 공유함"},{"label":"감상 방식","value":"함께 듣는 시간을 소중히 여김"}],"duo":{"good":[{"label":"다 같이 즐길 ","value":"다 같이 즐길 곡을 잘 골라요"},{"label":"배려심 있게 취","value":"배려심 있게 취향을 고려해요"},{"label":"분위기를 화기애","value":"분위기를 화기애애하게 만들어요"}],"bad":[{"label":"내","value":"내 취향보단 남 취향을 먼저 챙길 때가 많아요"},{"label":"가끔은","value":"가끔은 온전히 내 취향대로 골라봐도 좋아요"}]}},{"type":"ENFJ","name":"감성 전도사","emoji":"💫","tagline":"좋은 노래를 발견하면 주변에 적극 추천","summary":"감성 전도사는 좋은 노래를 발견하면 가만히 있지 못하고 주변에 적극적으로 추천하는 리스너예요. 힘들어하는 친구에게 위로가 될 만한 곡을 골라 보내주는 다정함이 있고, 노래로 사람의 마음을 움직이는 데 진심입니다.","color":"#2ECC71","cards":[{"label":"공유 성향","value":"좋은 곡은 꼭 주변에 추천함"},{"label":"위로 방식","value":"상황에 맞는 곡으로 마음을 전함"},{"label":"감상 태도","value":"곡이 주는 메시지에 진심으로 공감함"},{"label":"플레이리스트 목적","value":"사람들과 감정을 나누는 데 활용함"}],"duo":{"good":[{"label":"곡으로 마음을 ","value":"곡으로 마음을 잘 전해요"},{"label":"공감 능력이 뛰","value":"공감 능력이 뛰어나요"},{"label":"주변을 세심하게","value":"주변을 세심하게 챙겨요"}],"bad":[{"label":"내","value":"내 취향보다 상대 반응을 더 신경 쓸 때가 있어요"},{"label":"가끔은","value":"가끔은 온전히 나만을 위한 곡도 즐겨보세요"}]}},{"type":"ENTJ","name":"플레이리스트 프로듀서","emoji":"🎯","tagline":"목적에 딱 맞게 곡을 골라 완성도를 높임","summary":"플레이리스트 프로듀서는 운동, 집중, 드라이브 같은 목적에 딱 맞게 곡을 골라 완성도 높은 목록을 만드는 리스너예요. 곡 선정 기준이 명확하고, 목적에 안 맞는 곡은 과감히 빼는 결단력도 있어요. 효율적이면서도 취향이 확실한 플레이리스트를 완성해냅니다.","color":"#7A1F2B","cards":[{"label":"기획력","value":"목적에 맞는 곡을 정확히 골라냄"},{"label":"선정 기준","value":"기준에 안 맞으면 과감히 제외함"},{"label":"완성도","value":"목적별로 최적화된 목록을 만듦"},{"label":"관리 스타일","value":"효율적이면서도 취향이 뚜렷함"}],"duo":{"good":[{"label":"목적에 맞게 곡","value":"목적에 맞게 곡을 잘 선정해요"},{"label":"완성도가 높아요","value":"완성도가 높아요"},{"label":"기준이 확실해요","value":"기준이 확실해요"}],"bad":[{"label":"기준에서","value":"기준에서 벗어난 곡은 잘 안 받아들여요"},{"label":"가끔은","value":"가끔은 예외를 허용해보는 것도 좋아요"}]}}],"accent":"#5B6EAE","progress":"bar"};
+var AXES=[['E','I'],['S','N'],['T','F'],['J','P']];
+var nick="",qi=0,sc={},lock=false,tT=null,answers=[];
+function $(i){return document.getElementById(i);}
+function esc(s){if(s==null)return"";return String(s).replace(/[&<>"']/g,function(m){
+return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m];});}
+function show(id){var a=document.querySelectorAll(".sc");
+for(var i=0;i<a.length;i++)a[i].classList.remove("on");
+$(id).classList.add("on");window.scrollTo({top:0,behavior:"auto"});}
+function reset(){sc={};answers=[];["E","I","S","N","T","F","J","P"].forEach(function(k){sc[k]=0;});}
+function mix(hex,ratio){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
+r=Math.round(r+(255-r)*ratio);g=Math.round(g+(255-g)*ratio);b=Math.round(b+(255-b)*ratio);
+return "#"+[r,g,b].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function lerp2(hexA,hexB,t){function rgb(h){h=(h||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+return[parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+var a=rgb(hexA),b=rgb(hexB);
+var r=Math.round(a[0]+(b[0]-a[0])*t),g=Math.round(a[1]+(b[1]-a[1])*t),bl=Math.round(a[2]+(b[2]-a[2])*t);
+return "#"+[r,g,bl].map(function(v){return v.toString(16).padStart(2,"0");}).join("");}
+function luminance(hex){var h=(hex||"#888").replace("#","");
+if(h.length===3)h=h.split("").map(function(c){return c+c;}).join("");
+var r=parseInt(h.slice(0,2),16)/255,g=parseInt(h.slice(2,4),16)/255,b=parseInt(h.slice(4,6),16)/255;
+function lin(c){return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);}
+return 0.2126*lin(r)+0.7152*lin(g)+0.0722*lin(b);}
+function readable(bgHex){return luminance(bgHex)>0.53?"#1a1a1a":"#fff";}
+function setAcc(c){var s=document.documentElement.style;
+var soft=mix(c,.86),deep=mix(c,.68);
+s.setProperty("--acc",c);s.setProperty("--soft",soft);s.setProperty("--deep",deep);
+s.setProperty("--accFg",readable(c));s.setProperty("--softFg",readable(soft));s.setProperty("--deepFg",readable(deep));}
+function intro(){nick="";qi=0;lock=false;reset();setAcc(D.accent);
+var cast="";for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+cast+='<div class="ci"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+(c.tagline?'<span class="t">'+esc(c.tagline)+'</span>':"")+'</div>';}
+$("s1").innerHTML='<div class="pa intro">'+
+'<div class="em">'+D.meta.emoji+'</div>'+
+'<h1>'+esc(D.meta.title)+'</h1><p>'+esc(D.meta.intro)+'</p>'+
+'<div class="castt">'+esc(D.meta.setName||"16가지 유형")+'</div>'+
+'<div class="cast">'+cast+'</div>'+
+'<div class="mt">질문 '+D.questions.length+'개 · 결과 16가지</div>'+
+'<div class="langhint">🌐 Prefer another language? Use your browser\'s translate feature.<br>다른 언어로 보고 싶다면 브라우저의 번역 기능을 이용해주세요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="'+(D.useName?"nameScreen()":"begin()")+'">테스트 시작하기</button></div>';
+show("s1");}
+function nameScreen(){$("s2").innerHTML='<div class="pa nb"><h2>어떻게 불러드릴까요?</h2>'+
+'<input id="nk" type="text" maxlength="12" placeholder="닉네임을 입력해주세요" autocomplete="off">'+
+'<div class="gd">○ 총 '+D.questions.length+'문항입니다.<br>○ 나에게 더 가까운 답을 골라주세요.<br>○ 결과에 닉네임이 함께 표시돼요.</div></div>'+
+'<div class="stk"><button class="btn fill" onclick="begin()">시작하기</button>'+
+'<button class="btn" onclick="intro()">처음으로</button></div>';show("s2");
+setTimeout(function(){var n=$("nk");if(n){n.focus();
+n.addEventListener("keydown",function(e){if(e.key==="Enter")begin();});}},80);}
+function begin(){if(D.useName){var n=$("nk"),v=n?n.value.trim():"";
+if(!v){alert("닉네임을 입력해주세요.");if(n)n.focus();return;}nick=v;}
+qi=0;lock=false;reset();question();show("s3");}
+function progHTML(cur,total){var p=D.progress||"bar";
+if(p==="bar"){return '<div class="trk"><div class="fil" style="width:'+Math.round(cur/total*100)+'%"></div></div>';}
+var h=p==="dots"?'<div class="pdots">':'<div class="psq">',n=Math.min(total,12);
+for(var i=0;i<n;i++){var st=i<cur-1?" dn":i===cur-1?(p==="dots"?" now":" dn"):"";
+h+=p==="dots"?'<div class="pdot'+st+'"></div>':'<i class="'+st.trim()+'"></i>';}
+return h+"</div>";}
+function question(){lock=false;var tot=D.questions.length,q=D.questions[qi];
+var num=("0"+(qi+1)).slice(-2);
+var h='<div class="pa qw"><div class="qt"><div class="qi">'+
+'<span class="sec">'+esc(q.section||"진행 중")+'</span><span>'+(qi+1)+' / '+tot+'</span></div>'+
+progHTML(qi+1,tot)+'</div>'+
+'<div class="qn">문항 '+num+(nick?" · "+esc(nick):"")+'</div>'+
+'<div class="qx">'+esc(q.text)+'</div><div class="ops">';
+for(var i=0;i<q.options.length;i++){
+h+='<button class="op" data-n="'+(i+1)+'" data-v="'+esc(q.options[i].value)+'">'+esc(q.options[i].text)+'</button>';}
+h+='</div><p class="qnote">더 가까운 쪽을 골라주세요.</p>'+
+(qi>0?'<button type="button" class="qback" onclick="prevQ()">← 이전 문항</button>':"")+
+'</div>';
+$("s3").innerHTML=h;
+window.scrollTo({top:0,behavior:"auto"});
+var bs=$("s3").querySelectorAll(".op");
+for(var j=0;j<bs.length;j++){bs[j].addEventListener("click",function(){pick(this);});}}
+function pick(btn){if(lock)return;lock=true;
+var all=$("s3").querySelectorAll(".op");
+for(var i=0;i<all.length;i++){all[i].disabled=true;all[i].classList.remove("pk");}
+btn.classList.add("pk");
+var v=btn.getAttribute("data-v");if(sc[v]==null)sc[v]=0;sc[v]++;answers[qi]=v;
+setTimeout(function(){qi++;if(qi<D.questions.length){question();return;}finish();},110);}
+function prevQ(){if(qi<=0||lock)return;lock=true;
+var prevV=answers[qi-1];if(prevV!=null&&sc[prevV]>0)sc[prevV]--;
+answers[qi-1]=null;qi--;question();}
+function finish(){var code="";
+for(var i=0;i<AXES.length;i++){code+=(sc[AXES[i][0]]>=sc[AXES[i][1]]?AXES[i][0]:AXES[i][1]);}
+loading(code);}
+function loading(code){
+$("s4").innerHTML='<div class="pa lw"><div style="width:100%">'+
+'<h2>'+esc(D.meta.loadingText||"결과를 정리하는 중")+'</h2><p>잠시만 기다려 주세요.</p>'+
+'<div class="dts"><span></span><span></span><span></span></div>'+
+'<div class="lbar"><span></span></div></div></div>';show("s4");
+setTimeout(function(){result(code);show("s5");},2500);}
+function lab(key,sub){var L=D.blockLabels||{};var v=L[key];
+if(sub){
+if(v&&typeof v==="object"&&v[sub])return v[sub];
+return sub==="good"?"잘 맞는 유형":sub==="bad"?"안 맞는 유형":"";}
+return typeof v==="string"?v:"";}
+function byType(t){for(var i=0;i<D.cast.length;i++){if(D.cast[i].type===t)return D.cast[i];}return null;}
+function compatList(type){var s=D.compat[type]||"";var out=[],m,re=/([A-Z]{4})(\d+)/g;
+while((m=re.exec(s))!==null){out.push({type:m[1],pct:parseInt(m[2],10)});}
+out.sort(function(a,b){return b.pct-a.pct;});return out;}
+function compatItems(arr){var h="";
+for(var i=0;i<arr.length;i++){var c=byType(arr[i].type);if(!c)continue;
+h+='<div class="cmpi"><span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+
+'<span class="p">'+arr[i].pct+'%</span></span></div>';}
+return h;}
+function lineFor(pct){var L=D.compatLines||[];
+for(var i=0;i<L.length;i++){if(pct>=L[i].min)return L[i].text;}
+return L.length?L[L.length-1].text:"";}
+function compatHTML(type){var L=D.compatLabels||{};var list=compatList(type);
+if(!list.length)return "";
+var best=list.slice(0,2),worst=list.slice(-2).reverse();
+return '<div class="cmp"><div class="cmph">'+esc(L.title||"궁합")+'</div><div class="cmpg">'+
+'<div class="cmpc"><span class="lb">'+esc(L.good||"최고의 궁합")+'</span>'+compatItems(best)+
+'<div class="cmpnote">'+esc(lineFor(best[0].pct))+'</div></div>'+
+'<div class="cmpc bad"><span class="lb">'+esc(L.bad||"아쉬운 궁합")+'</span>'+compatItems(worst)+
+'<div class="cmpnote">'+esc(lineFor(worst[0].pct))+'</div></div>'+
+'</div></div>';}
+function tint(color,pct){var s=Math.max(0,Math.min(1,(pct-70)/29));
+return lerp2("#AEB4BF",color,Math.pow(s,2.5));}
+function mapHTML(type,color){var L=D.compatLabels||{};
+var list=compatList(type);if(!list.length)return "";
+var pm={};list.forEach(function(x){pm[x.type]=x.pct;});
+var g="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];
+if(c.type===type){
+var meFg=readable(color);
+g+='<div class="mapc me" style="background:'+color+';color:'+meFg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="badge">나</span></div>';
+}else{var p=pm[c.type]||0;var bg=tint(color,p);var fg=readable(bg);
+g+='<div class="mapc" style="background:'+bg+';color:'+fg+'">'+
+'<span class="e">'+c.emoji+'</span><span class="n">'+esc(c.name)+'</span>'+
+'<span class="p" style="opacity:1">'+p+'%</span></div>';}}
+var bar="linear-gradient(90deg,"+tint(color,72)+","+tint(color,99)+")";
+return '<div class="map"><div class="maph">'+esc(L.mapTitle||"나의 궁합 지도")+'</div>'+
+'<div class="mapg">'+g+'</div>'+
+'<div class="mapf"><span>안 맞음</span><span class="mapbar" style="background:'+bar+'"></span>'+
+'<span>잘 맞음</span></div></div>';}
+function blockHTML(name,r){
+if(name==="quote"&&r.quote){var qcls=D.quoteStyle==="bubble"?"qbb":"qb";
+return '<div class="blk"><div class="blt">'+esc(lab("quote")||"한마디")+'</div>'+
+'<div class="'+qcls+'">'+esc(r.quote)+'</div></div>';}
+if(name==="traits"&&r.traits&&r.traits.length){var h='<div class="blk"><div class="blt">'+
+esc(lab("traits")||"세부 특징")+'</div>';
+if(D.traitStyle==="sticker"){h+='<div class="trss">';
+for(var i=0;i<r.traits.length;i++){h+='<div class="tst">'+esc(r.traits[i])+'</div>';}
+h+='</div>';
+}else{h+='<div class="trs">';
+for(var i2=0;i2<r.traits.length;i2++){h+='<div class="tc">'+esc(r.traits[i2])+'</div>';}
+h+='</div>';}
+return h+"</div>";}
+if(name==="duo"&&r.duo){var g=r.duo.good||[],b=r.duo.bad||[];var chk=D.duoStyle==="check";
+var gm=chk?"✓":"",bm=chk?"✗":"",dcls=chk?" chk":"";
+var h2='<div class="blk duo"><div class="dsec g"><div class="dsh">'+esc(lab("duo","good")||"좋은 면")+'</div><div class="dls">';
+for(var j=0;j<g.length;j++){h2+='<div class="dit'+dcls+'"><b>'+gm+'</b><span>'+esc(g[j])+'</span></div>';}
+h2+='</div></div><div class="dsec b"><div class="dsh">'+esc(lab("duo","bad")||"아쉬운 면")+'</div><div class="dls">';
+for(var k2=0;k2<b.length;k2++){h2+='<div class="dit'+dcls+'"><b>'+bm+'</b><span>'+esc(b[k2])+'</span></div>';}
+return h2+"</div></div></div>";}
+if(name==="stats"&&r.stats&&r.stats.length){
+var h3='<div class="blk"><div class="blt">'+esc(lab("stats")||"지표")+'</div>';
+if(D.statStyle==="radial"){
+h3+='<div class="stsr">';
+for(var m=0;m<r.stats.length;m++){var s=r.stats[m];var v=Math.max(0,Math.min(100,s.value||0));
+var C=100.53;var off=C*(1-v/100);
+h3+='<div class="rgauge"><svg viewBox="0 0 38 38">'+
+'<circle class="rtrack" cx="19" cy="19" r="16"/>'+
+'<circle class="rfill" cx="19" cy="19" r="16" stroke-dasharray="'+C+'" stroke-dashoffset="'+off+'" transform="rotate(-90 19 19)"/>'+
+'<text x="19" y="23" text-anchor="middle" style="font-size:10px;font-weight:900;fill:var(--ink)">'+v+'%</text>'+
+'</svg><div class="rlab">'+esc(s.label)+'</div></div>';}
+h3+='</div>';
+}else{
+h3+='<div class="sts">';
+for(var m2=0;m2<r.stats.length;m2++){var s2=r.stats[m2];var v2=Math.max(0,Math.min(100,s2.value||0));
+var fc=Math.max(1,Math.min(10,Math.round(v2/10)));var sq="";
+for(var n2=1;n2<=10;n2++){sq+='<span class="sq'+(n2<=fc?" f":"")+'"></span>';}
+h3+='<div class="srow"><div class="slab">'+esc(s2.label)+'</div><div class="sqs">'+sq+'</div>'+
+'<div class="spc">'+v2+'%</div></div>';}
+h3+='</div>';
+}
+return h3+"</div>";}
+if(name==="cards"&&r.cards&&r.cards.length){
+var h4='<div class="blk"><div class="blt">'+esc(lab("cards")||"이런 사람")+'</div>';
+if(D.cardStyle==="ticket"){h4+='<div class="cdt">';
+for(var p=0;p<r.cards.length;p++){h4+='<div class="cdti"><b>'+esc(r.cards[p].label)+'</b><span>'+
+esc(r.cards[p].value)+'</span></div>';}
+h4+='</div>';
+}else{h4+='<div class="cds" style="margin-top:9px">';
+for(var p2=0;p2<r.cards.length;p2++){h4+='<div class="cd2"><b>'+esc(r.cards[p2].label)+'</b><p>'+
+esc(r.cards[p2].value)+'</p></div>';}
+h4+='</div>';}
+return h4+"</div>";}
+return "";}
+function result(code){var r=null;
+for(var i=0;i<D.results.length;i++){if(D.results[i].type===code){r=D.results[i];break;}}
+if(!r)r=D.results[0];
+setAcc(r.color||D.accent);
+var sum=(nick?esc(nick)+"님은 ":"")+esc(r.summary);
+var h='<div class="cap" id="cap"><div class="rh"><h2>'+esc(D.meta.title)+'</h2></div><div class="rb">'+
+'<div class="rn"><div class="em">'+esc(r.emoji||"✨")+'</div><h3>'+esc(r.name||D.meta.title)+'</h3>'+
+(r.tagline?'<div class="tg2">'+esc(r.tagline)+'</div>':"")+'</div>'+
+'<div class="rs">'+sum+'</div>';
+var col=r.color||D.accent;
+for(var b=0;b<D.blocks.length;b++){if(D.blocks[b]!=="map")h+=blockHTML(D.blocks[b],r);}
+h+=compatHTML(r.type);
+if(D.blocks.indexOf("map")>=0)h+=mapHTML(r.type,col);
+h+='<div class="rf">POWERED BY MAGIC FACTORY</div></div></div>'+
+'<div class="stk"><button class="btn fill" onclick="sheet(\''+code+'\')">'+
+esc(D.meta.sheetCta||"내 유형의 정체 확인하기")+'</button>'+
+'<button class="btn" onclick="saveImg(this)">결과 이미지 저장하기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+$("s5").innerHTML=h;}
+function sheet(code){var me=byType(code)||D.cast[0];
+var rows="";
+for(var i=0;i<D.cast.length;i++){var c=D.cast[i];var isMe=c.type===code;
+if(i===8){rows+='</div><div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div><div class="rows">';}
+rows+='<div class="row'+(isMe?" me":"")+'"><span class="no">'+("0"+(i+1)).slice(-2)+'</span>'+
+'<span class="em">'+c.emoji+'</span>'+
+'<span class="nm">'+esc(c.name)+(c.tagline?'<span class="tg">'+esc(c.tagline)+'</span>':"")+'</span>'+
+'<span class="cd">'+esc(c.type)+'</span></div>';}
+$("s6").innerHTML='<div class="sheet">'+
+'<div class="sheeth"><h2>'+esc(D.meta.sheetTitle||"전체 유형 정답지")+'</h2>'+
+'<p>열여섯 종류가 각각 어떤 성격 유형인지 전부 공개해요</p></div>'+
+'<div class="reveal"><div class="em">'+me.emoji+'</div>'+
+'<div class="nm">'+(nick?esc(nick)+"님의 ":"")+esc(me.name)+'</div>'+
+'<div class="eq">의 성격 유형은</div>'+
+'<div class="code">'+esc(me.type)+'</div></div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'<div class="sheetsec">'+esc(D.meta.setName||"전체 16종")+' 전체 목록</div>'+
+'<div class="rows">'+rows+'</div>'+
+'<div class="sheetad">광고 영역 (애드센스 코드 삽입 위치)</div>'+
+'</div>'+
+'<div class="stk"><button class="btn fill" onclick="show(\'s5\')">내 결과로 돌아가기</button>'+
+'<button class="btn" onclick="share()">테스트 공유하기</button>'+
+'<button class="btn" onclick="intro()">다시 해보기</button></div>';
+show("s6");}
+function frames(){return new Promise(function(r){requestAnimationFrame(function(){requestAnimationFrame(r);});});}
+function wait(ms){return new Promise(function(r){setTimeout(r,ms);});}
+var lastBlob=null,lastUrl="";
+function fileName(){return (D.meta.slug||"result")+".png";}
+function saveOptions(){
+var canShare=false;
+try{canShare=!!(navigator.canShare&&lastBlob&&navigator.canShare({files:[new File([lastBlob],fileName(),{type:"image/png"})]}));}catch(e){}
+var h="";
+if(canShare)h+='<button class="mbtn pri" onclick="shareImg()">사진으로 저장 · 공유</button>';
+else h+='<p class="mtip" style="margin:0 0 10px;">위 이미지를 <b>길게 눌러서 사진에 저장</b>해 주세요.</p>';
+h+='<a class="mbtn" href="'+lastUrl+'" download="'+fileName()+'" target="_blank" rel="noopener">새 탭에서 이미지 열기</a>';
+return '<div class="mbtns">'+h+'</div>'+
+'<p class="mtip">"이미지 열기"를 눌렀을 때 저장이 안 되면, 위 이미지를 직접 길게 눌러 저장해 주세요.</p>';}
+async function shareImg(){
+try{var f=new File([lastBlob],fileName(),{type:"image/png"});
+await navigator.share({files:[f],title:D.meta.title});}
+catch(e){if(e&&e.name!=="AbortError")toast("공유를 취소했거나 지원되지 않아요.");}}
+async function saveImg(btn){
+if(typeof html2canvas!=="function"){toast("이미지 도구를 불러오지 못했어요. 새로고침 후 다시 시도해 주세요.");return;}
+btn.disabled=true;var old=btn.textContent;btn.textContent="이미지 만드는 중...";
+$("mw").innerHTML='<p style="padding:40px 0;">이미지를 만들고 있어요...</p>';
+$("mo").classList.add("on");document.body.style.overflow="hidden";
+try{
+if(document.fonts){try{await document.fonts.ready;}catch(e){}}
+await frames();await wait(260);
+var cv=await html2canvas($("cap"),{backgroundColor:getComputedStyle(document.body).backgroundColor,
+scale:Math.min(window.devicePixelRatio||2,2),useCORS:true,logging:false,
+scrollX:0,scrollY:-window.scrollY,windowWidth:document.documentElement.clientWidth});
+if(lastUrl&&lastUrl.indexOf("blob:")===0){try{URL.revokeObjectURL(lastUrl);}catch(e){}}
+var dataUrl=cv.toDataURL("image/png");
+lastBlob=await new Promise(function(res){
+if(cv.toBlob)cv.toBlob(function(b){res(b);},"image/png");else res(null);});
+if(!lastBlob){
+  var bin=atob(dataUrl.split(",")[1]),arr=new Uint8Array(bin.length);
+  for(var i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);
+  lastBlob=new Blob([arr],{type:"image/png"});}
+lastUrl=dataUrl;
+$("mw").innerHTML='<img src="'+lastUrl+'" alt="결과 이미지">'+saveOptions();
+}catch(e){console.error(e);
+$("mw").innerHTML='<p style="padding:32px 0 8px;">이미지를 만들지 못했어요.<br>'+
+'대신 화면을 캡처해서 공유해 주세요.</p>'+
+'<p class="mtip">오류: '+esc(String(e&&e.message||e))+'</p>';
+}finally{btn.disabled=false;btn.textContent=old;}}
+function closeMo(){$("mo").classList.remove("on");document.body.style.overflow="";}
+$("mo").addEventListener("click",function(e){if(e.target===$("mo"))closeMo();});
+document.addEventListener("keydown",function(e){
+if(e.key==="Escape"&&$("mo").classList.contains("on"))closeMo();});
+async function share(){var dt={title:D.meta.title,text:D.meta.intro,url:location.href};
+try{if(navigator.share){await navigator.share(dt);return;}
+var tx=dt.text+"\n"+dt.url;
+if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(tx);
+toast("링크를 복사했어요.");return;}
+var ta=document.createElement("textarea");ta.value=tx;ta.style.position="fixed";ta.style.opacity="0";
+document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();
+toast("링크를 복사했어요.");}catch(e){if(e&&e.name!=="AbortError")toast("공유하지 못했어요.");}}
+function toast(m){clearTimeout(tT);var e=$("tst");e.textContent=m;e.classList.add("show");
+tT=setTimeout(function(){e.classList.remove("show");},2100);}
+intro();
+</script>
+</body>
+</html>
