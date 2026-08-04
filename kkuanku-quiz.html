@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 뷰티 꾸밈 지수는? — 테스트팩토리</title>
+<meta name="description" content="9가지 질문으로 알아보는 나의 뷰티 꾸밈 스타일. 내추럴부터 풀글램까지, 재미로 보는 취향 테스트.">
+<meta property="og:title" content="나의 뷰티 꾸밈 지수는? — 테스트팩토리">
+<meta property="og:description" content="9가지 질문으로 알아보는 나의 뷰티 꾸밈 스타일. 내추럴부터 풀글램까지, 재미로 보는 취향 테스트.">
+<meta property="og:image" content="kkuanku-quiz-thumb.png">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg:#FDF1F5; --paper:#FFFFFF; --ink:#2B2230; --sub:#8C7683;
+  --line:#F3C4DA; --acc:#DB5F94; --chip:rgba(0,0,0,.05); --r:14px; --bw:2px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;min-height:100vh;}
+.wrap{max-width:560px;margin:0 auto;padding:28px 18px 80px;}
+.back{display:inline-block;margin-bottom:18px;font-size:13px;font-weight:700;color:var(--sub);text-decoration:none;}
+.hero{text-align:center;padding:16px 0 24px;}
+.hero .em{font-size:52px;line-height:1;margin-bottom:12px;}
+.hero h1{font-size:23px;font-weight:900;margin-bottom:8px;letter-spacing:-.3px;}
+.hero p{font-size:14px;color:var(--sub);line-height:1.65;}
+.start-btn{width:100%;padding:16px;border:0;border-radius:var(--r);background:var(--acc);color:#fff;
+  font-family:inherit;font-size:16px;font-weight:900;cursor:pointer;margin-top:20px;}
+.prog-wrap{margin-bottom:20px;}
+.prog-info{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;margin-bottom:8px;color:var(--sub);}
+.prog-track{height:8px;background:var(--chip);border-radius:999px;overflow:hidden;border:var(--bw) solid var(--line);}
+.prog-fill{height:100%;background:var(--acc);border-radius:999px;transition:width .25s ease;}
+.qcard{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:22px 18px;}
+.qnum{display:inline-block;padding:4px 10px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:11px;font-weight:800;margin-bottom:14px;}
+.qtext{font-size:18px;font-weight:800;line-height:1.5;margin-bottom:18px;word-break:keep-all;}
+.opts{display:grid;gap:10px;}
+.opt{width:100%;padding:13px 15px;border:var(--bw) solid var(--line);border-radius:10px;
+  background:#fff;font-family:inherit;font-size:14px;font-weight:600;text-align:left;cursor:pointer;
+  color:var(--ink);transition:all .15s ease;word-break:keep-all;}
+.opt:hover{background:var(--chip);border-color:var(--acc);}
+.opt.correct{background:#D1FAE5;border-color:#10B981;color:#065F46;}
+.opt.wrong{background:#FEE2E2;border-color:#EF4444;color:#991B1B;}
+.opt:disabled{cursor:default;}
+#cap{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:22px 18px;margin-bottom:16px;}
+.res-header{text-align:center;padding:18px 0 14px;border-bottom:var(--bw) solid var(--line);margin-bottom:18px;}
+.res-grade{display:inline-block;padding:6px 18px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:13px;font-weight:900;margin-bottom:12px;}
+.res-score{font-size:42px;font-weight:900;color:var(--acc);margin-bottom:4px;}
+.res-score span{font-size:18px;color:var(--sub);}
+.res-title{font-size:22px;font-weight:900;margin-bottom:8px;}
+.res-desc{font-size:14.5px;line-height:1.75;color:var(--sub);}
+.score-bar-wrap{margin:18px 0;}
+.score-bar-label{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--sub);margin-bottom:6px;}
+.score-bar-track{height:14px;background:var(--chip);border-radius:999px;overflow:hidden;border:var(--bw) solid var(--line);}
+.score-bar-fill{height:100%;background:var(--acc);border-radius:999px;transition:width .5s ease;}
+.wrong-list{margin-top:16px;}
+.wrong-title{font-size:13px;font-weight:800;color:var(--sub);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--line);}
+.wrong-item{padding:10px 12px;background:var(--chip);border-radius:10px;margin-bottom:8px;font-size:13px;line-height:1.6;}
+.wrong-item .wq{font-weight:700;margin-bottom:4px;}
+.wrong-item .wa{color:var(--acc);font-weight:800;}
+.footer-note{font-size:11px;color:var(--sub);text-align:center;margin-top:16px;}
+.stk{display:grid;gap:10px;}
+.btn{width:100%;padding:14px;border:var(--bw) solid var(--ink);border-radius:var(--r);background:#fff;
+  font-family:inherit;font-weight:800;font-size:14.5px;cursor:pointer;color:var(--ink);}
+.btn.fill{background:var(--acc);color:#fff;border-color:var(--acc);}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:center;justify-content:center;padding:20px;}
+.mo.on{display:flex;}
+.mb{background:#fff;border-radius:16px;padding:20px;max-width:340px;width:100%;text-align:center;}
+.mb img{width:100%;border-radius:10px;margin-bottom:12px;}
+.mb .cl{width:100%;padding:12px;border:0;border-radius:10px;background:var(--chip);font-family:inherit;font-weight:800;cursor:pointer;}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← 목록으로</a>
+  <div id="s1">
+    <div class="hero">
+      <div class="em">💄</div>
+      <h1>나의 뷰티 꾸밈 지수는?</h1>
+      <p>9가지 질문으로 알아보는 나의 뷰티 스타일. 내추럴부터 풀글램까지, 재미로 보는 취향 테스트예요.</p>
+      <button class="start-btn" onclick="startQuiz()">테스트 시작하기</button>
+    </div>
+  </div>
+  <div id="s2" class="hidden">
+    <div class="prog-wrap">
+      <div class="prog-info"><span id="progLabel">1 / 10</span><span id="progScore">0점</span></div>
+      <div class="prog-track"><div class="prog-fill" id="progFill" style="width:5%"></div></div>
+    </div>
+    <div class="qcard">
+      <div class="qnum" id="qNum">Q1</div>
+      <div class="qtext" id="qText"></div>
+      <div class="opts" id="opts"></div>
+    </div>
+  </div>
+  <div id="s3" class="hidden">
+    <div id="cap">
+      <div class="res-header">
+        <div class="res-grade" id="resGrade"></div>
+        <div class="res-score" id="resScore"></div>
+        <div class="res-title" id="resTitle"></div>
+        <div class="res-desc" id="resDesc"></div>
+        <div class="score-bar-wrap">
+          <div class="score-bar-label"><span>0점</span><span id="resMax"></span></div>
+          <div class="score-bar-track"><div class="score-bar-fill" id="resBar"></div></div>
+        </div>
+      </div>
+      <div class="wrong-list" id="wrongList"></div>
+      <div class="footer-note">POWERED BY 테스트팩토리 · 재미로 봐주세요.</div>
+    </div>
+    <div class="stk">
+      <button class="btn fill" onclick="saveImg()">결과 이미지 저장하기</button>
+      <button class="btn" onclick="location.reload()">다시 풀기</button>
+      <button class="btn" onclick="location.href='index.html'">다른 테스트 보기</button>
+    </div>
+  </div>
+</div>
+<div class="mo" id="mo">
+  <div class="mb">
+    <div id="mw">이미지를 만들고 있어요...</div>
+    <button class="cl" onclick="document.getElementById('mo').classList.remove('on')">닫기</button>
+  </div>
+</div>
+<script>
+var QUESTIONS = [{"q": "아침에 외출 준비하는 시간은 보통?", "options": ["5분 안에 후딱 끝낸다", "선크림+립밤 정도만 바른다", "가벼운 메이크업까지 15분 정도", "풀 메이크업까지 30분 이상 걸린다"], "scores": [2, 5, 7, 10]}, {"q": "내 화장품 파우치 안에는?", "options": ["선크림 하나가 전부다", "립틴트, 아이브로우 정도만 있다", "쿠션·아이섀도까지 기본템 세트가 있다", "프라이머부터 픽서까지 풀 라인업이다"], "scores": [2, 5, 7, 10]}, {"q": "친구가 '오늘 뭔가 달라 보인다'고 하면?", "options": ["딱히 바뀐 거 없는데 하고 넘긴다", "화장품 하나 바꿔봤다고 답한다", "오늘 신경 좀 썼다고 웃는다", "포인트 어디가 달라졌는지 바로 설명한다"], "scores": [2, 5, 7, 10]}, {"q": "새로운 화장품이 화제가 되면?", "options": ["별로 관심이 안 간다", "괜찮아 보이면 나중에 사본다", "리뷰 찾아보고 고민하다 산다", "제일 먼저 써보고 싶어서 바로 산다"], "scores": [2, 5, 7, 10]}, {"q": "평소 헤어스타일링은?", "options": ["그냥 감고 자연 건조한다", "드라이기로 정돈만 한다", "고데기로 손질하는 편이다", "매일 다른 스타일로 세팅한다"], "scores": [2, 5, 7, 10]}, {"q": "옷장에 가장 많은 아이템은?", "options": ["편한 무채색 옷 위주다", "심플하지만 포인트 아이템이 있다", "그때그때 트렌디한 아이템 위주다", "화려하고 개성 있는 룩이 많다"], "scores": [2, 5, 7, 10]}, {"q": "친구들이 뷰티 관련해서 물어보면?", "options": ["나도 잘 모른다고 한다", "아는 만큼만 알려준다", "먼저 정보를 찾아서 공유하는 편이다", "다들 나부터 찾는 뷰티 인싸다"], "scores": [2, 5, 7, 10]}, {"q": "여행 갈 때 캐리어에는?", "options": ["선크림 하나만 챙긴다", "기본 스킨케어 세트만 챙긴다", "메이크업 파우치는 꼭 챙긴다", "풀 세트 없이는 못 간다"], "scores": [2, 5, 7, 10]}, {"q": "거울 앞에 서 있는 시간이 하루에?", "options": ["세수할 때 정도가 전부다", "가끔 신경 쓰일 때만 본다", "아침저녁으로 꾸준히 본다", "틈날 때마다 자꾸 확인한다"], "scores": [2, 5, 7, 10]}];
+var GRADES = [{"min": 80, "grade": "S", "title": "리얼 뷰티 인플루언서st", "desc": "뷰티에 진심인 편이에요. 트렌드에 밝고 자신을 꾸미는 시간 자체를 즐기는 타입이라, 그날그날 다른 매력을 보여줄 수 있어요. 그 정성과 감각이 주변에서도 부러움을 사는 편이에요."}, {"min": 60, "grade": "A", "title": "센스있는 꾸밈 마스터", "desc": "필요할 땐 확실하게, 평소엔 부담 없이 꾸미는 밸런스가 좋은 편이에요. 상황에 맞춰 스타일을 조절할 줄 아는 센스가 이 타입의 매력이에요."}, {"min": 40, "grade": "B", "title": "꾸안꾸의 정석", "desc": "꾸민 듯 안 꾸민 듯한 자연스러운 스타일을 잘 아는 편이에요. 과하지 않으면서도 포인트는 놓치지 않는, 은근한 정성파예요."}, {"min": 20, "grade": "C", "title": "내추럴 미니멀 뷰티파", "desc": "꾸미는 것보다 편안함을 우선하는 편이에요. 최소한의 정성으로도 자기만의 분위기를 만들어낼 줄 아는 타입이에요."}, {"min": 0, "grade": "D", "title": "완전 생얼 자신감파", "desc": "꾸밈보다 있는 그대로의 나를 편하게 여기는 편이에요. 화장품보다 자신감으로 승부하는, 쿨한 매력의 소유자예요."}];
+var qi=0, score=0, maxScore=0, wrongs=[];
+function show(id){ ['s1','s2','s3'].forEach(function(s){ document.getElementById(s).className=s===id?'':'hidden'; }); }
+function startQuiz(){ qi=0; score=0; maxScore=0; wrongs=[]; show('s2'); renderQ(); }
+function renderQ(){
+  var q=QUESTIONS[qi], total=QUESTIONS.length;
+  document.getElementById('progLabel').textContent=(qi+1)+' / '+total;
+  document.getElementById('progScore').textContent=score+'점';
+  document.getElementById('progFill').style.width=Math.round((qi+1)/total*100)+'%';
+  document.getElementById('qNum').textContent='Q'+(qi+1);
+  document.getElementById('qText').textContent=q.q;
+  var opts=document.getElementById('opts');
+  opts.innerHTML='';
+  q.options.forEach(function(opt,i){
+    var b=document.createElement('button');
+    b.className='opt'; b.textContent=opt;
+    b.onclick=function(){ pick(i); };
+    opts.appendChild(b);
+  });
+}
+function pick(i){
+  var q=QUESTIONS[qi], btns=document.querySelectorAll('.opt');
+  btns.forEach(function(b){ b.disabled=true; });
+  var isAnswer=q.hasOwnProperty('answer');
+  if(isAnswer){
+    var correct=(i===q.answer);
+    btns[i].className='opt '+(correct?'correct':'wrong');
+    if(!correct) btns[q.answer].className='opt correct';
+    if(correct){ score+=5; maxScore+=5; }
+    else{ maxScore+=5; wrongs.push({q:q.q,a:q.options[q.answer]}); }
+  } else {
+    score+=q.scores[i];
+    maxScore+=Math.max.apply(null,q.scores);
+  }
+  setTimeout(function(){ qi++; if(qi<QUESTIONS.length){ renderQ(); } else { showResult(); } }, isAnswer?700:0);
+}
+function showResult(){
+  show('s3');
+  var pct=Math.round(score/maxScore*100);
+  var grade=GRADES[GRADES.length-1];
+  for(var i=0;i<GRADES.length;i++){ if(pct>=GRADES[i].min){ grade=GRADES[i]; break; } }
+  document.getElementById('resGrade').textContent=grade.grade+'등급';
+  document.getElementById('resScore').innerHTML=score+'점 <span>/ '+maxScore+'점</span>';
+  document.getElementById('resTitle').textContent=grade.title;
+  document.getElementById('resDesc').textContent=grade.desc;
+  document.getElementById('resMax').textContent=maxScore+'점';
+  setTimeout(function(){ document.getElementById('resBar').style.width=pct+'%'; },200);
+  if(wrongs.length>0){
+    var wl=document.getElementById('wrongList');
+    wl.innerHTML='<div class="wrong-title">⚡ 틀린 문제 다시보기 ('+wrongs.length+'개)</div>';
+    wrongs.forEach(function(w){ wl.innerHTML+='<div class="wrong-item"><div class="wq">'+w.q+'</div><div class="wa">✓ 정답: '+w.a+'</div></div>'; });
+  }
+}
+async function saveImg(){
+  document.getElementById('mo').classList.add('on');
+  document.getElementById('mw').innerHTML='이미지를 만들고 있어요...';
+  try{
+    if(document.fonts) await document.fonts.ready;
+    var cv=await html2canvas(document.getElementById('cap'),{backgroundColor:'#FFFFFF',scale:2});
+    var img=new Image(); img.src=cv.toDataURL('image/png');
+    document.getElementById('mw').innerHTML='';
+    document.getElementById('mw').appendChild(img);
+    var p=document.createElement('p'); p.style.cssText='font-size:12px;color:#888;margin-top:8px;';
+    p.textContent='이미지를 길게 눌러서 저장해주세요.';
+    document.getElementById('mw').appendChild(p);
+  }catch(e){ document.getElementById('mw').textContent='이미지 생성에 실패했어요.'; }
+}
+</script>
+</body>
+</html>
