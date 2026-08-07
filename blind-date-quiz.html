@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 소개팅 긴장 지수 테스트 — 테스트팩토리</title>
+<meta name="description" content="9가지 상황으로 알아보는 나의 소개팅 긴장 지수. 재미로 보는 연애 성향 테스트.">
+<meta property="og:title" content="나의 소개팅 긴장 지수 테스트 — 테스트팩토리">
+<meta property="og:description" content="9가지 상황으로 알아보는 나의 소개팅 긴장 지수. 재미로 보는 연애 성향 테스트.">
+<meta property="og:image" content="blind-date-quiz-thumb.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg:#FDF2F6; --paper:#FFFFFF; --ink:#2B2230; --sub:#8C7683;
+  --line:#F4C9DC; --acc:#D6598B; --chip:rgba(0,0,0,.05); --r:14px; --bw:2px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;min-height:100vh;}
+.wrap{max-width:560px;margin:0 auto;padding:28px 18px 80px;}
+.back{display:inline-block;margin-bottom:18px;font-size:13px;font-weight:700;color:var(--sub);text-decoration:none;}
+.hero{text-align:center;padding:16px 0 24px;}
+.hero .em{font-size:52px;line-height:1;margin-bottom:12px;}
+.hero h1{font-size:23px;font-weight:900;margin-bottom:8px;letter-spacing:-.3px;}
+.hero p{font-size:14px;color:var(--sub);line-height:1.65;}
+.start-btn{width:100%;padding:16px;border:0;border-radius:var(--r);background:var(--acc);color:#fff;
+  font-family:inherit;font-size:16px;font-weight:900;cursor:pointer;margin-top:20px;}
+.prog-wrap{margin-bottom:20px;}
+.prog-info{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;margin-bottom:8px;color:var(--sub);}
+.prog-track{height:8px;background:var(--chip);border-radius:999px;overflow:hidden;border:var(--bw) solid var(--line);}
+.prog-fill{height:100%;background:var(--acc);border-radius:999px;transition:width .25s ease;}
+.qcard{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:22px 18px;}
+.qnum{display:inline-block;padding:4px 10px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:11px;font-weight:800;margin-bottom:14px;}
+.qtext{font-size:18px;font-weight:800;line-height:1.5;margin-bottom:18px;word-break:keep-all;}
+.opts{display:grid;gap:10px;}
+.opt{width:100%;padding:13px 15px;border:var(--bw) solid var(--line);border-radius:10px;
+  background:#fff;font-family:inherit;font-size:14px;font-weight:600;text-align:left;cursor:pointer;
+  color:var(--ink);transition:all .15s ease;word-break:keep-all;}
+.opt:hover{background:var(--chip);border-color:var(--acc);}
+.opt.pk{background:var(--chip);border-color:var(--acc);}
+.opt:disabled{cursor:default;}
+#cap{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:22px 18px;margin-bottom:16px;}
+.res-header{text-align:center;padding:18px 0 14px;border-bottom:var(--bw) solid var(--line);margin-bottom:18px;}
+.res-grade{display:inline-block;padding:6px 18px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:13px;font-weight:900;margin-bottom:12px;}
+.res-score{font-size:42px;font-weight:900;color:var(--acc);margin-bottom:4px;}
+.res-score span{font-size:18px;color:var(--sub);}
+.res-title{font-size:22px;font-weight:900;margin-bottom:8px;}
+.res-desc{font-size:14.5px;line-height:1.75;color:var(--sub);}
+.score-bar-wrap{margin:18px 0;}
+.score-bar-label{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--sub);margin-bottom:6px;}
+.score-bar-track{height:14px;background:var(--chip);border-radius:999px;overflow:hidden;border:var(--bw) solid var(--line);}
+.score-bar-fill{height:100%;background:var(--acc);border-radius:999px;transition:width .5s ease;}
+.footer-note{font-size:11px;color:var(--sub);text-align:center;margin-top:16px;}
+.stk{display:grid;gap:10px;}
+.btn{width:100%;padding:14px;border:var(--bw) solid var(--ink);border-radius:var(--r);background:#fff;
+  font-family:inherit;font-weight:800;font-size:14.5px;cursor:pointer;color:var(--ink);}
+.btn.fill{background:var(--acc);color:#fff;border-color:var(--acc);}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:center;justify-content:center;padding:20px;}
+.mo.on{display:flex;}
+.mb{background:#fff;border-radius:16px;padding:20px;max-width:340px;width:100%;text-align:center;}
+.mb img{width:100%;border-radius:10px;margin-bottom:12px;}
+.mb .cl{width:100%;padding:12px;border:0;border-radius:10px;background:var(--chip);font-family:inherit;font-weight:800;cursor:pointer;}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← 목록으로</a>
+  <div id="s1">
+    <div class="hero">
+      <div class="em">💓</div>
+      <h1>나의 소개팅 긴장 지수 테스트</h1>
+      <p>9가지 상황으로 알아보는 나의 소개팅 긴장 지수. 재미로 보는 연애 성향 테스트예요.</p>
+      <button class="start-btn" onclick="startQuiz()">테스트 시작하기</button>
+    </div>
+  </div>
+  <div id="s2" class="hidden">
+    <div class="prog-wrap">
+      <div class="prog-info"><span id="progLabel">1 / 9</span><span id="progScore">0점</span></div>
+      <div class="prog-track"><div class="prog-fill" id="progFill" style="width:5%"></div></div>
+    </div>
+    <div class="qcard">
+      <div class="qnum" id="qNum">Q1</div>
+      <div class="qtext" id="qText"></div>
+      <div class="opts" id="opts"></div>
+    </div>
+  </div>
+  <div id="s3" class="hidden">
+    <div id="cap">
+      <div class="res-header">
+        <div class="res-grade" id="resGrade"></div>
+        <div class="res-score" id="resScore"></div>
+        <div class="res-title" id="resTitle"></div>
+        <div class="res-desc" id="resDesc"></div>
+        <div class="score-bar-wrap">
+          <div class="score-bar-label"><span>0점</span><span id="resMax"></span></div>
+          <div class="score-bar-track"><div class="score-bar-fill" id="resBar"></div></div>
+        </div>
+      </div>
+      <div class="footer-note">POWERED BY 테스트팩토리 · 재미로 봐주세요.</div>
+    </div>
+    <div class="stk">
+      <button class="btn fill" onclick="saveImg()">결과 이미지 저장하기</button>
+      <button class="btn" onclick="location.reload()">다시 풀기</button>
+      <button class="btn" onclick="location.href='index.html'">다른 테스트 보기</button>
+    </div>
+  </div>
+</div>
+<div class="mo" id="mo">
+  <div class="mb">
+    <div id="mw">이미지를 만들고 있어요...</div>
+    <button class="cl" onclick="document.getElementById('mo').classList.remove('on')">닫기</button>
+  </div>
+</div>
+<script>
+var QUESTIONS = [
+  {"q":"소개팅 약속을 잡고 나면?","options":["당일까지 계속 생각난다","며칠 전부터 뭘 입을지 고민한다","전날 정도만 살짝 신경 쓰인다","약속 당일까지 크게 신경 안 쓴다"],"scores":[10,8,5,3]},
+  {"q":"소개팅 장소로 가는 길에 나는?","options":["심장이 빠르게 뛰고 손에 땀이 난다","머릿속으로 할 말을 계속 정리한다","괜히 딴생각하며 긴장을 풀어본다","평소와 다를 것 없이 편안하다"],"scores":[10,8,5,3]},
+  {"q":"상대방을 처음 마주친 순간?","options":["눈을 어디에 둬야 할지 모르겠다","어색하게 웃으며 인사를 건넨다","자연스럽게 먼저 인사한다","편하게 웃으며 분위기를 이끈다"],"scores":[10,7,5,3]},
+  {"q":"대화가 잠깐 끊기면?","options":["머릿속이 하얘지고 진땀이 난다","빨리 다음 화제를 찾으려 애쓴다","잠깐의 침묵도 자연스럽게 넘긴다","오히려 여유롭게 상대를 관찰한다"],"scores":[10,8,5,3]},
+  {"q":"물이나 음료를 마실 때?","options":["손이 떨릴까봐 신경 쓰인다","평소보다 조심스럽게 마신다","딱히 의식하지 않는다","편하게 대화하며 마신다"],"scores":[10,7,5,3]},
+  {"q":"상대방이 질문을 하면?","options":["대답을 준비했는데도 말이 꼬인다","조금 긴장한 채로 또박또박 답한다","자연스럽게 대화를 이어간다","여유 있게 농담까지 섞어 답한다"],"scores":[10,8,5,3]},
+  {"q":"화장실에 갈 타이밍이 생기면?","options":["거울 보며 표정과 옷매무새를 다시 체크한다","숨 한번 크게 고르고 돌아간다","가볍게 다녀오고 신경 안 쓴다","딱히 필요성을 못 느낀다"],"scores":[10,7,5,3]},
+  {"q":"소개팅이 끝나고 집에 가는 길?","options":["오늘 한 말들을 계속 곱씹어본다","잘한 것 같기도 하고 아쉽기도 하다","편안한 마음으로 하루를 마무리한다","별생각 없이 다음 일정으로 넘어간다"],"scores":[10,8,5,3]},
+  {"q":"다음 소개팅이 잡힌다면?","options":["또 며칠 전부터 긴장될 것 같다","이번보단 좀 더 편해질 것 같다","비슷한 정도로 편하게 임할 것 같다","전혀 긴장 안 하고 나갈 것 같다"],"scores":[10,7,5,3]}
+];
+var GRADES = [
+  {"min":85,"grade":"S","title":"진심 가득 두근두근형","desc":"소개팅 자리 하나하나에 진심을 다하는 편이에요. 긴장이 많이 된다는 건 그만큼 상대에게 잘 보이고 싶고 좋은 인연을 만들고 싶다는 마음이 큰 거예요. 그 설렘 자체가 매력으로 비칠 수 있어요."},
+  {"min":68,"grade":"A","title":"설렘 반 긴장 반형","desc":"적당히 긴장하면서도 최선을 다해 임하는 편이에요. 너무 힘 빼지 않아도 준비된 모습이 자연스럽게 전해질 거예요. 지금처럼 편한 마음으로 나가면 좋은 분위기를 만들 수 있어요."},
+  {"min":50,"grade":"B","title":"침착한 밸런스형","desc":"긴장과 여유 사이에서 균형을 잘 잡는 편이에요. 상황에 휘둘리지 않고 자기 페이스를 지키는 모습이 상대에게 편안한 인상을 줄 수 있어요."},
+  {"min":32,"grade":"C","title":"여유로운 관찰자형","desc":"큰 긴장 없이 상황을 편안하게 즐기는 편이에요. 덕분에 대화도 자연스럽게 흘러가고, 상대도 부담 없이 편하게 다가올 수 있는 분위기를 만들어요."},
+  {"min":0,"grade":"D","title":"완전 여유만렙형","desc":"어떤 자리에서도 흔들리지 않는 편안한 태도가 매력이에요. 긴장하지 않는 만큼 있는 그대로의 모습을 자연스럽게 보여줄 수 있는 타입이에요."}
+];
+var qi=0, score=0, maxScore=0;
+function show(id){ ['s1','s2','s3'].forEach(function(s){ document.getElementById(s).className=s===id?'':'hidden'; }); }
+function startQuiz(){ qi=0; score=0; maxScore=0; show('s2'); renderQ(); }
+function renderQ(){
+  var q=QUESTIONS[qi], total=QUESTIONS.length;
+  document.getElementById('progLabel').textContent=(qi+1)+' / '+total;
+  document.getElementById('progScore').textContent=score+'점';
+  document.getElementById('progFill').style.width=Math.round((qi+1)/total*100)+'%';
+  document.getElementById('qNum').textContent='Q'+(qi+1);
+  document.getElementById('qText').textContent=q.q;
+  var opts=document.getElementById('opts');
+  opts.innerHTML='';
+  q.options.forEach(function(opt,i){
+    var b=document.createElement('button');
+    b.className='opt'; b.textContent=opt;
+    b.onclick=function(){ pick(i); };
+    opts.appendChild(b);
+  });
+}
+function pick(i){
+  var q=QUESTIONS[qi], btns=document.querySelectorAll('.opt');
+  btns.forEach(function(b){ b.disabled=true; });
+  btns[i].className='opt pk';
+  score+=q.scores[i];
+  maxScore+=Math.max.apply(null,q.scores);
+  setTimeout(function(){ qi++; if(qi<QUESTIONS.length){ renderQ(); } else { showResult(); } }, 260);
+}
+function showResult(){
+  show('s3');
+  var pct=Math.round(score/maxScore*100);
+  var grade=GRADES[GRADES.length-1];
+  for(var i=0;i<GRADES.length;i++){ if(pct>=GRADES[i].min){ grade=GRADES[i]; break; } }
+  document.getElementById('resGrade').textContent=grade.grade+'등급';
+  document.getElementById('resScore').innerHTML=score+'점 <span>/ '+maxScore+'점</span>';
+  document.getElementById('resTitle').textContent=grade.title;
+  document.getElementById('resDesc').textContent=grade.desc;
+  document.getElementById('resMax').textContent=maxScore+'점';
+  setTimeout(function(){ document.getElementById('resBar').style.width=pct+'%'; },200);
+}
+async function saveImg(){
+  document.getElementById('mo').classList.add('on');
+  document.getElementById('mw').innerHTML='이미지를 만들고 있어요...';
+  try{
+    if(document.fonts) await document.fonts.ready;
+    var cv=await html2canvas(document.getElementById('cap'),{backgroundColor:'#FFFFFF',scale:2});
+    var img=new Image(); img.src=cv.toDataURL('image/png');
+    document.getElementById('mw').innerHTML='';
+    document.getElementById('mw').appendChild(img);
+    var p=document.createElement('p'); p.style.cssText='font-size:12px;color:#888;margin-top:8px;';
+    p.textContent='이미지를 길게 눌러서 저장해주세요.';
+    document.getElementById('mw').appendChild(p);
+  }catch(e){ document.getElementById('mw').textContent='이미지 생성에 실패했어요.'; }
+}
+</script>
+</body>
+</html>
