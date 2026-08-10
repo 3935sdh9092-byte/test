@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나는 어떤 여행 메이트 유형일까? 여행 스타일 밸런스 테스트 — 테스트팩토리</title>
+<meta name="description" content="즉흥러·계획러·감성러·액티비티러, 선택으로 알아보는 나의 여행 스타일. 12문항이면 바로 알 수 있어요.">
+<meta property="og:title" content="나는 어떤 여행 메이트 유형일까? 여행 스타일 밸런스 테스트 — 테스트팩토리">
+<meta property="og:description" content="즉흥러·계획러·감성러·액티비티러, 선택으로 알아보는 나의 여행 스타일. 12문항이면 바로 알 수 있어요.">
+<meta property="og:image" content="travel-style-balance-thumb.png">
+<meta property="og:image:width" content="900">
+<meta property="og:image:height" content="1260">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg:#FFF4EC; --paper:#FFFFFF; --ink:#2A1D14; --sub:#8A6E5A;
+  --line:#F3D9C4; --acc:#E08E45; --gold:#3B6FA0; --chip:rgba(42,29,20,.06); --r:14px; --bw:2px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;min-height:100vh;}
+.wrap{max-width:560px;margin:0 auto;padding:28px 18px 80px;}
+.back{display:inline-block;margin-bottom:18px;font-size:13px;font-weight:700;color:var(--sub);text-decoration:none;}
+.hero{text-align:center;padding:16px 0 24px;}
+.hero .em{font-size:52px;line-height:1;margin-bottom:12px;}
+.hero h1{font-size:22px;font-weight:900;margin-bottom:8px;letter-spacing:-.3px;word-break:keep-all;}
+.hero p{font-size:14px;color:var(--sub);line-height:1.65;}
+.start-btn{width:100%;padding:16px;border:0;border-radius:var(--r);background:var(--acc);color:#fff;
+  font-family:inherit;font-size:16px;font-weight:900;cursor:pointer;margin-top:20px;}
+.prog-wrap{margin-bottom:20px;}
+.prog-info{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;margin-bottom:8px;color:var(--sub);}
+.prog-track{height:8px;background:var(--chip);border-radius:999px;overflow:hidden;border:var(--bw) solid var(--line);}
+.prog-fill{height:100%;background:var(--acc);border-radius:999px;transition:width .25s ease;}
+.qcard{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:22px 18px;}
+.qnum{display:inline-block;padding:4px 10px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:11px;font-weight:800;margin-bottom:14px;}
+.qtext{font-size:18px;font-weight:800;line-height:1.5;margin-bottom:18px;word-break:keep-all;}
+.opts{display:grid;gap:10px;}
+.opt{width:100%;padding:13px 15px;border:var(--bw) solid var(--line);border-radius:10px;
+  background:#fff;font-family:inherit;font-size:14px;font-weight:600;text-align:left;cursor:pointer;
+  color:var(--ink);transition:all .15s ease;word-break:keep-all;}
+.opt:hover{background:var(--chip);border-color:var(--acc);}
+.opt:disabled{cursor:default;}
+.opt.pk{background:var(--chip);border-color:var(--acc);}
+#cap{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:24px 18px;margin-bottom:16px;}
+.res-header{text-align:center;padding:6px 0 16px;border-bottom:var(--bw) solid var(--line);margin-bottom:16px;}
+.res-em{font-size:56px;line-height:1;margin-bottom:10px;}
+.res-badge{display:inline-block;padding:6px 16px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:12.5px;font-weight:900;margin-bottom:12px;}
+.res-title{font-size:23px;font-weight:900;margin-bottom:6px;word-break:keep-all;}
+.res-tag{font-size:13.5px;color:var(--gold);font-weight:800;margin-bottom:2px;word-break:keep-all;}
+.res-desc{font-size:14.5px;line-height:1.8;color:var(--ink);text-align:left;margin-top:14px;}
+.traits{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;}
+.trait{padding:6px 12px;background:var(--chip);border-radius:999px;font-size:12px;font-weight:700;color:var(--acc);}
+.dist-wrap{margin-top:20px;}
+.dist-title{font-size:12.5px;font-weight:800;color:var(--sub);margin-bottom:10px;}
+.dist-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.dist-row .lab{width:56px;font-size:12px;font-weight:800;flex-shrink:0;}
+.dist-row .track{flex:1;height:10px;background:var(--chip);border-radius:999px;overflow:hidden;}
+.dist-row .fill{height:100%;background:var(--acc);border-radius:999px;transition:width .5s ease;}
+.dist-row.me .fill{background:var(--gold);}
+.dist-row .num{width:20px;text-align:right;font-size:11.5px;font-weight:800;color:var(--sub);}
+.footer-note{font-size:11px;color:var(--sub);text-align:center;margin-top:18px;}
+.stk{display:grid;gap:10px;}
+.btn{width:100%;padding:14px;border:var(--bw) solid var(--ink);border-radius:var(--r);background:#fff;
+  font-family:inherit;font-weight:800;font-size:14.5px;cursor:pointer;color:var(--ink);}
+.btn.fill{background:var(--ink);color:#fff;border-color:var(--ink);}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:center;justify-content:center;padding:20px;}
+.mo.on{display:flex;}
+.mb{background:#fff;border-radius:16px;padding:20px;max-width:340px;width:100%;text-align:center;}
+.mb img{width:100%;border-radius:10px;margin-bottom:12px;}
+.mb .cl{width:100%;padding:12px;border:0;border-radius:10px;background:var(--chip);font-family:inherit;font-weight:800;cursor:pointer;color:var(--ink);}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← 목록으로</a>
+  <div id="s1">
+    <div class="hero">
+      <div class="em">✈️</div>
+      <h1>나는 어떤 여행 메이트 유형일까?</h1>
+      <p>즉흥러·계획러·감성러·액티비티러, 선택으로 알아보는 나의 여행 스타일. 12문항이면 바로 알 수 있어요.</p>
+      <button class="start-btn" onclick="startQuiz()">테스트 시작하기</button>
+    </div>
+  </div>
+  <div id="s2" class="hidden">
+    <div class="prog-wrap">
+      <div class="prog-info"><span id="progLabel">1 / 12</span><span id="progPos"></span></div>
+      <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+    </div>
+    <div class="qcard">
+      <div class="qnum" id="qNum">Q1</div>
+      <div class="qtext" id="qText"></div>
+      <div class="opts" id="opts"></div>
+    </div>
+  </div>
+  <div id="s3" class="hidden">
+    <div id="cap">
+      <div class="res-header">
+        <div class="res-em" id="resEm"></div>
+        <div class="res-badge" id="resBadge"></div>
+        <div class="res-title" id="resTitle"></div>
+        <div class="res-tag" id="resTag"></div>
+      </div>
+      <div class="res-desc" id="resDesc"></div>
+      <div class="traits" id="resTraits"></div>
+      <div class="dist-wrap">
+        <div class="dist-title">📊 나의 여행 성향 분포</div>
+        <div id="distBox"></div>
+      </div>
+      <div class="footer-note">POWERED BY 테스트팩토리 · 재미로 가볍게 봐주세요.</div>
+    </div>
+    <div class="stk">
+      <button class="btn fill" onclick="saveImg()">결과 이미지 저장하기</button>
+      <button class="btn" onclick="location.reload()">다시 풀기</button>
+      <button class="btn" onclick="location.href='index.html'">다른 테스트 보기</button>
+    </div>
+  </div>
+</div>
+<div class="mo" id="mo">
+  <div class="mb">
+    <div id="mw">이미지를 만들고 있어요...</div>
+    <button class="cl" onclick="document.getElementById('mo').classList.remove('on')">닫기</button>
+  </div>
+</div>
+<script>
+var POS = ["즉흥러", "계획러", "감성러", "액티비티러"];
+var QUESTIONS = [{"q": "여행 가기 전 나의 모습은?", "options": ["비행기표만 끊고 나머지는 가서 정한다", "시간별 일정표를 꼼꼼히 짠다", "인생샷 찍을 장소부터 검색한다", "액티비티 예약부터 서두른다"]}, {"q": "여행지에서 아침에 눈뜨면?", "options": ["기분 내키는 대로 발길 닿는 대로 나선다", "어제 짜둔 일정대로 움직인다", "감성적인 카페부터 찾아간다", "오늘 할 액티비티 컨디션부터 체크한다"]}, {"q": "여행 짐을 쌀 때 나는?", "options": ["전날 밤에 대충 챙긴다", "체크리스트를 만들어서 미리 챙긴다", "사진 찍기 좋은 옷 위주로 챙긴다", "활동하기 편한 옷과 장비부터 챙긴다"]}, {"q": "여행 중 예상치 못한 일이 생기면?", "options": ["오히려 재밌다, 즉흥적으로 대처한다", "미리 세워둔 플랜B로 전환한다", "그 순간의 분위기를 사진이나 글로 남긴다", "몸으로 부딪히며 바로 해결한다"]}, {"q": "맛집을 고를 때 나는?", "options": ["일단 걷다가 끌리는 곳으로 들어간다", "미리 찾아둔 리스트에서 고른다", "분위기 있고 감성적인 곳을 고른다", "배 채우고 바로 움직일 수 있는 곳으로 고른다"]}, {"q": "여행에서 가장 기억에 남는 순간은?", "options": ["예상 못한 우연한 만남", "완벽하게 계획대로 흘러간 하루", "노을이나 야경 같은 풍경", "스카이다이빙 같은 짜릿한 순간"]}, {"q": "동행이 있다면 나는?", "options": ["그때그때 의견 맞춰서 움직인다", "일정 관리를 도맡아서 한다", "사진 찍어주고 찍히는 걸 즐긴다", "활동적인 코스를 먼저 제안한다"]}, {"q": "여행지 숙소를 고를 때?", "options": ["예약 없이 가서 마음에 드는 곳으로 정한다", "리뷰와 평점을 꼼꼼히 비교한다", "뷰나 인테리어가 예쁜 곳으로 고른다", "위치나 액티비티 접근성으로 고른다"]}, {"q": "여행 예산을 쓸 때 나는?", "options": ["그때그때 내키는 대로 쓴다", "항목별로 예산을 미리 짜둔다", "카페나 소품에 아낌없이 쓴다", "액티비티나 체험에 아낌없이 쓴다"]}, {"q": "여행 마지막 날, 나는?", "options": ["남은 시간까지 즉흥적으로 돌아다닌다", "계획했던 마지막 코스를 마무리한다", "사진첩을 정리하며 여운을 즐긴다", "마지막 액티비티까지 알차게 즐긴다"]}, {"q": "내 여행 스타일을 한마디로 하면?", "options": ["자유로움", "완벽한 계획", "낭만", "에너지"]}, {"q": "여행에서 가장 중요하게 생각하는 건?", "options": ["순간의 즐거움", "시간 관리", "분위기와 감성", "다양한 경험"]}];
+var RESULTS = [{"name": "자유로운 즉흥 여행러", "emoji": "🎒", "tagline": "계획보다 순간의 끌림을 따라가는 타입", "color": "#E08E45", "desc": "빡빡한 일정보다 그 순간의 기분과 끌림을 따라 움직이는 걸 좋아하는 타입이에요. 덕분에 예상치 못한 좋은 순간을 자주 만나고, 여행이 늘 새로운 이야기로 채워져요. 가끔은 최소한의 정보만 미리 챙겨두면 더 편안한 여행이 될 수 있어요.", "traits": ["자유로운 감각", "즉흥적인 매력", "우연을 즐김", "유연한 대처"]}, {"name": "완벽한 계획 여행러", "emoji": "📋", "tagline": "여행도 촘촘하게 준비해야 마음이 편한 타입", "color": "#3B6FA0", "desc": "시간과 동선을 미리 짜둬야 마음이 편한 타입이에요. 덕분에 일행들이 여행 중 헤매는 일이 적고, 알찬 일정으로 후회 없는 여행을 만들어요. 가끔은 계획에 없던 순간에도 여유를 가져보면 더 즐거운 발견이 있을 수 있어요.", "traits": ["꼼꼼한 준비성", "효율적인 동선", "든든한 리더", "알찬 일정"]}, {"name": "분위기 찾는 감성 여행러", "emoji": "🌇", "tagline": "풍경과 순간을 마음에 담는 타입", "color": "#C06C9E", "desc": "화려한 일정보다 그 장소만의 분위기와 감성을 느끼는 걸 중요하게 생각하는 타입이에요. 노을 지는 풍경 하나에도 오래 머물고, 소소한 순간들을 사진과 기억으로 예쁘게 남겨요. 그 여운이 여행을 오래도록 특별하게 만들어줘요.", "traits": ["섬세한 감성", "분위기 메이커", "기록하는 습관", "여운을 즐김"]}, {"name": "에너지 넘치는 액티비티 여행러", "emoji": "🏄", "tagline": "몸으로 부딪히며 여행을 즐기는 타입", "color": "#3E8E5B", "desc": "가만히 구경하기보다 직접 몸으로 체험하며 여행을 즐기는 타입이에요. 새로운 활동에 망설임이 없고, 그 에너지 덕분에 동행들도 덩달아 신나는 경우가 많아요. 가끔은 체력 관리도 함께 챙기면 더 오래 즐거운 여행이 될 수 있어요.", "traits": ["넘치는 에너지", "도전 정신", "활동적인 매력", "분위기 메이커"]}];
+
+var qi=0, counts=[0,0,0,0];
+function show(id){ ['s1','s2','s3'].forEach(function(s){ document.getElementById(s).className=s===id?'':'hidden'; }); }
+function startQuiz(){ qi=0; counts=[0,0,0,0]; show('s2'); renderQ(); }
+function renderQ(){
+  var q=QUESTIONS[qi], total=QUESTIONS.length;
+  document.getElementById('progLabel').textContent=(qi+1)+' / '+total;
+  document.getElementById('progFill').style.width=Math.round((qi)/total*100)+'%';
+  document.getElementById('qNum').textContent='Q'+(qi+1);
+  document.getElementById('qText').textContent=q.q;
+  var opts=document.getElementById('opts');
+  opts.innerHTML='';
+  q.options.forEach(function(opt,i){
+    var b=document.createElement('button');
+    b.className='opt'; b.textContent=opt;
+    b.onclick=function(){ pick(i); };
+    opts.appendChild(b);
+  });
+}
+function pick(i){
+  var btns=document.querySelectorAll('.opt');
+  btns.forEach(function(b){ b.disabled=true; });
+  btns[i].className='opt pk';
+  counts[i]++;
+  setTimeout(function(){ qi++; if(qi<QUESTIONS.length){ renderQ(); } else { showResult(); } }, 260);
+}
+function showResult(){
+  show('s3');
+  var best=0;
+  for(var i=1;i<counts.length;i++){ if(counts[i]>counts[best]) best=i; }
+  var r=RESULTS[best];
+  document.getElementById('resEm').textContent=r.emoji;
+  document.getElementById('resBadge').textContent=POS[best]+' 유형';
+  document.getElementById('resBadge').style.background=r.color;
+  document.getElementById('resTitle').textContent=r.name;
+  document.getElementById('resTag').textContent=r.tagline;
+  document.getElementById('resTag').style.color=r.color;
+  document.getElementById('resDesc').textContent=r.desc;
+  document.getElementById('resTraits').innerHTML=r.traits.map(function(t){return '<span class="trait">#'+t+'</span>';}).join('');
+  var total=QUESTIONS.length;
+  var distHtml='';
+  POS.forEach(function(p,i){
+    var pct=Math.round(counts[i]/total*100);
+    distHtml+='<div class="dist-row'+(i===best?' me':'')+'"><div class="lab">'+p+'</div>'+
+      '<div class="track"><div class="fill" style="width:'+pct+'%"></div></div>'+
+      '<div class="num">'+counts[i]+'</div></div>';
+  });
+  document.getElementById('distBox').innerHTML=distHtml;
+}
+async function saveImg(){
+  document.getElementById('mo').classList.add('on');
+  document.getElementById('mw').innerHTML='이미지를 만들고 있어요...';
+  try{
+    if(document.fonts) await document.fonts.ready;
+    var cv=await html2canvas(document.getElementById('cap'),{backgroundColor:'#FFFFFF',scale:2});
+    var img=new Image(); img.src=cv.toDataURL('image/png');
+    document.getElementById('mw').innerHTML='';
+    document.getElementById('mw').appendChild(img);
+    var p=document.createElement('p'); p.style.cssText='font-size:12px;color:#888;margin-top:8px;';
+    p.textContent='이미지를 길게 눌러서 저장해주세요.';
+    document.getElementById('mw').appendChild(p);
+  }catch(e){ document.getElementById('mw').textContent='이미지 생성에 실패했어요.'; }
+}
+
+</script>
+</body>
+</html>
