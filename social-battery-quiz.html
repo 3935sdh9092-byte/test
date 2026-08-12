@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 소셜 배터리 지수는? — 테스트팩토리</title>
+<meta name="description" content="사람들과 함께 있을 때 나의 에너지가 채워지는지 소모되는지 알아보는 소셜 배터리 지수. 9문항이면 충분해요.">
+<meta property="og:title" content="나의 소셜 배터리 지수는? — 테스트팩토리">
+<meta property="og:description" content="사람들과 함께 있을 때 나의 에너지가 채워지는지 소모되는지 알아보는 소셜 배터리 지수. 9문항이면 충분해요.">
+<meta property="og:image" content="social-battery-quiz-thumb.png">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg:#F4F1FF; --paper:#FFFFFF; --ink:#24203A; --sub:#726B95;
+  --line:#D9D0FA; --acc:#6D4FE0; --chip:rgba(0,0,0,.05); --r:14px; --bw:2px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;min-height:100vh;}
+.wrap{max-width:560px;margin:0 auto;padding:28px 18px 80px;}
+.back{display:inline-block;margin-bottom:18px;font-size:13px;font-weight:700;color:var(--sub);text-decoration:none;}
+.hero{text-align:center;padding:16px 0 24px;}
+.hero .em{font-size:52px;line-height:1;margin-bottom:12px;}
+.hero h1{font-size:23px;font-weight:900;margin-bottom:8px;letter-spacing:-.3px;}
+.hero p{font-size:14px;color:var(--sub);line-height:1.65;}
+.start-btn{width:100%;padding:16px;border:0;border-radius:var(--r);background:var(--acc);color:#fff;
+  font-family:inherit;font-size:16px;font-weight:900;cursor:pointer;margin-top:20px;}
+.prog-wrap{margin-bottom:20px;}
+.prog-info{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;margin-bottom:8px;color:var(--sub);}
+.prog-track{height:8px;background:var(--chip);border-radius:999px;overflow:hidden;border:var(--bw) solid var(--line);}
+.prog-fill{height:100%;background:var(--acc);border-radius:999px;transition:width .25s ease;}
+.qcard{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:22px 18px;}
+.qnum{display:inline-block;padding:4px 10px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:11px;font-weight:800;margin-bottom:14px;}
+.qtext{font-size:18px;font-weight:800;line-height:1.5;margin-bottom:18px;word-break:keep-all;}
+.opts{display:grid;gap:10px;}
+.opt{width:100%;padding:13px 15px;border:var(--bw) solid var(--line);border-radius:10px;
+  background:#fff;font-family:inherit;font-size:14px;font-weight:600;text-align:left;cursor:pointer;
+  color:var(--ink);transition:all .15s ease;word-break:keep-all;}
+.opt:hover{background:var(--chip);border-color:var(--acc);}
+.opt.correct{background:#D1FAE5;border-color:#10B981;color:#065F46;}
+.opt.wrong{background:#FEE2E2;border-color:#EF4444;color:#991B1B;}
+.opt:disabled{cursor:default;}
+#cap{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:22px 18px;margin-bottom:16px;}
+.res-header{text-align:center;padding:18px 0 14px;border-bottom:var(--bw) solid var(--line);margin-bottom:18px;}
+.res-grade{display:inline-block;padding:6px 18px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:13px;font-weight:900;margin-bottom:12px;}
+.res-score{font-size:42px;font-weight:900;color:var(--acc);margin-bottom:4px;}
+.res-score span{font-size:18px;color:var(--sub);}
+.res-title{font-size:22px;font-weight:900;margin-bottom:8px;}
+.res-desc{font-size:14.5px;line-height:1.75;color:var(--sub);}
+.score-bar-wrap{margin:18px 0;}
+.score-bar-label{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--sub);margin-bottom:6px;}
+.score-bar-track{height:14px;background:var(--chip);border-radius:999px;overflow:hidden;border:var(--bw) solid var(--line);}
+.score-bar-fill{height:100%;background:var(--acc);border-radius:999px;transition:width .5s ease;}
+.wrong-list{margin-top:16px;}
+.wrong-title{font-size:13px;font-weight:800;color:var(--sub);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--line);}
+.wrong-item{padding:10px 12px;background:var(--chip);border-radius:10px;margin-bottom:8px;font-size:13px;line-height:1.6;}
+.wrong-item .wq{font-weight:700;margin-bottom:4px;}
+.wrong-item .wa{color:var(--acc);font-weight:800;}
+.footer-note{font-size:11px;color:var(--sub);text-align:center;margin-top:16px;}
+.stk{display:grid;gap:10px;}
+.btn{width:100%;padding:14px;border:var(--bw) solid var(--ink);border-radius:var(--r);background:#fff;
+  font-family:inherit;font-weight:800;font-size:14.5px;cursor:pointer;color:var(--ink);}
+.btn.fill{background:var(--acc);color:#fff;border-color:var(--acc);}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:center;justify-content:center;padding:20px;}
+.mo.on{display:flex;}
+.mb{background:#fff;border-radius:16px;padding:20px;max-width:340px;width:100%;text-align:center;}
+.mb img{width:100%;border-radius:10px;margin-bottom:12px;}
+.mb .cl{width:100%;padding:12px;border:0;border-radius:10px;background:var(--chip);font-family:inherit;font-weight:800;cursor:pointer;}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← 목록으로</a>
+  <div id="s1">
+    <div class="hero">
+      <div class="em">🔋</div>
+      <h1>나의 소셜 배터리 지수는?</h1>
+      <p>사람들과 함께 있을 때 에너지가 채워지는지, 소모되는지 알아보는 소셜 배터리 테스트. 9문항이면 충분해요.</p>
+      <button class="start-btn" onclick="startQuiz()">테스트 시작하기</button>
+    </div>
+  </div>
+  <div id="s2" class="hidden">
+    <div class="prog-wrap">
+      <div class="prog-info"><span id="progLabel">1 / 10</span><span id="progScore">0점</span></div>
+      <div class="prog-track"><div class="prog-fill" id="progFill" style="width:5%"></div></div>
+    </div>
+    <div class="qcard">
+      <div class="qnum" id="qNum">Q1</div>
+      <div class="qtext" id="qText"></div>
+      <div class="opts" id="opts"></div>
+    </div>
+  </div>
+  <div id="s3" class="hidden">
+    <div id="cap">
+      <div class="res-header">
+        <div class="res-grade" id="resGrade"></div>
+        <div class="res-score" id="resScore"></div>
+        <div class="res-title" id="resTitle"></div>
+        <div class="res-desc" id="resDesc"></div>
+        <div class="score-bar-wrap">
+          <div class="score-bar-label"><span>0점</span><span id="resMax"></span></div>
+          <div class="score-bar-track"><div class="score-bar-fill" id="resBar"></div></div>
+        </div>
+      </div>
+      <div class="wrong-list" id="wrongList"></div>
+      <div class="footer-note">POWERED BY 테스트팩토리 · 재미로 가볍게 봐주세요. 어떤 배터리 타입이든 다 나답고 좋은 거예요!</div>
+    </div>
+    <div class="stk">
+      <button class="btn fill" onclick="saveImg()">결과 이미지 저장하기</button>
+      <button class="btn" onclick="location.reload()">다시 풀기</button>
+      <button class="btn" onclick="location.href='index.html'">다른 테스트 보기</button>
+    </div>
+  </div>
+</div>
+<div class="mo" id="mo">
+  <div class="mb">
+    <div id="mw">이미지를 만들고 있어요...</div>
+    <button class="cl" onclick="document.getElementById('mo').classList.remove('on')">닫기</button>
+  </div>
+</div>
+<script>
+var QUESTIONS = [{"q": "친구들과 3시간 넘게 놀고 집에 오면?", "options": ["아직도 에너지가 넘쳐서 뭔가 더 하고 싶다", "즐거웠지만 조용히 쉬고 싶어진다", "즐거웠어도 완전히 방전된 느낌이다", "그 순간엔 좋았는데 집에 와서야 피곤함이 몰려온다"], "scores": [9, 6, 2, 4]}, {"q": "주말 약속이 3개나 잡혀 있다면?", "options": ["오히려 신나고 기대된다", "적당히 괜찮지만 하루쯤은 비워두고 싶다", "생각만 해도 벌써 지친다", "일단 가보고 그때그때 컨디션에 맡긴다"], "scores": [9, 6, 2, 5]}, {"q": "모르는 사람이 많은 모임에 가면?", "options": ["여기저기 다니며 새로운 사람과 이야기한다", "친한 사람 한둘과 주로 붙어있는다", "구석 자리를 찾아 최소한의 대화만 한다", "분위기 봐서 자연스럽게 낄 타이밍을 찾는다"], "scores": [9, 6, 2, 5]}, {"q": "단체 카톡방 알림이 계속 울리면?", "options": ["재밌어서 바로바로 확인하고 답장한다", "나중에 몰아서 확인하는 편이다", "알림을 꺼두고 싶어질 때가 많다", "내용 봐서 중요한 것만 먼저 본다"], "scores": [8, 6, 2, 5]}, {"q": "혼자만의 시간이 하루 종일 주어지면?", "options": ["심심해서 결국 누군가에게 연락한다", "좋아하는 걸 하다가 사람이 그리워진다", "온전히 힐링되는 최고의 하루다", "처음엔 좋다가 저녁쯤엔 사람이 그리워진다"], "scores": [9, 6, 1, 5]}, {"q": "회식이나 모임 자리에서 나는?", "options": ["분위기를 이끄는 역할을 자주 맡는다", "대화에 자연스럽게 끼어드는 편이다", "빨리 끝났으면 하는 마음이 크다", "적당히 있다가 조용히 빠지는 타이밍을 잰다"], "scores": [9, 7, 2, 5]}, {"q": "친한 친구와 오래 통화한 뒤 기분은?", "options": ["기분이 더 좋아지고 힘이 난다", "즐거웠지만 이제 그만 쉬고 싶다", "좋아하는 친구여도 통화 자체가 은근히 힘들다", "내용에 따라 다르다"], "scores": [9, 6, 2, 5]}, {"q": "새로운 사람을 만나는 자리를 제안받으면?", "options": ["바로 좋다고 하고 기대된다", "낯설지만 한번 가볼까 고민한다", "웬만하면 정중히 거절하고 싶다", "친한 사람이 같이 가면 참여한다"], "scores": [9, 6, 2, 5]}, {"q": "바쁜 일주일을 보낸 주말, 가장 하고 싶은 건?", "options": ["친구들 불러서 신나게 노는 것", "가까운 사람 한둘과 조용히 만나는 것", "아무도 안 만나고 집에서 완전히 쉬는 것", "일단 계획 없이 몸이 원하는 대로 하는 것"], "scores": [9, 6, 2, 5]}];
+var GRADES = [{"min": 80, "grade": "S", "title": "무한 충전 소셜배터리", "desc": "사람을 만날수록 오히려 에너지가 차오르는 타입이에요. 약속 많은 주말이 부담이 아니라 활력소가 되고, 새로운 사람을 만나는 자리도 즐겁게 느껴져요. 다만 가끔은 배터리도 잠깐 꺼두고 충전하는 시간이 필요하다는 걸 잊지 마세요."}, {"min": 62, "grade": "A", "title": "튼튼한 소셜배터리", "desc": "사람들과 함께하는 시간을 편안하게 즐기는 편이에요. 웬만해선 쉽게 방전되지 않지만, 가끔은 혼자만의 시간으로 배터리를 미리 채워두면 더 오래 즐겁게 지낼 수 있어요."}, {"min": 45, "grade": "B", "title": "밸런스형 소셜배터리", "desc": "사람과 함께 있는 것도 좋아하지만, 어느 정도 시간이 지나면 혼자만의 시간이 필요한 균형 잡힌 타입이에요. 상황에 따라 유연하게 에너지를 조절하는 게 나름의 강점이에요."}, {"min": 28, "grade": "C", "title": "알뜰 절약형 소셜배터리", "desc": "소셜 활동에서 에너지를 비교적 빨리 쓰는 편이라, 그 뒤엔 확실한 회복 시간이 필요해요. 가까운 사람들과의 시간은 여전히 소중하니, 무리하지 않는 선에서 나만의 페이스를 지키는 게 중요해요."}, {"min": 0, "grade": "D", "title": "인도어 힐링형 배터리", "desc": "혼자 있는 시간에서 진짜 에너지가 채워지는 타입이에요. 사람을 싫어하는 게 아니라, 조용한 회복 시간이 꼭 필요한 것뿐이에요. 나만의 속도로 관계를 맺는 것도 충분히 좋은 방식이에요."}];
+var qi=0, score=0, maxScore=0, wrongs=[];
+function show(id){ ['s1','s2','s3'].forEach(function(s){ document.getElementById(s).className=s===id?'':'hidden'; }); }
+function startQuiz(){ qi=0; score=0; maxScore=0; wrongs=[]; show('s2'); renderQ(); }
+function renderQ(){
+  var q=QUESTIONS[qi], total=QUESTIONS.length;
+  document.getElementById('progLabel').textContent=(qi+1)+' / '+total;
+  document.getElementById('progScore').textContent=score+'점';
+  document.getElementById('progFill').style.width=Math.round((qi+1)/total*100)+'%';
+  document.getElementById('qNum').textContent='Q'+(qi+1);
+  document.getElementById('qText').textContent=q.q;
+  var opts=document.getElementById('opts');
+  opts.innerHTML='';
+  q.options.forEach(function(opt,i){
+    var b=document.createElement('button');
+    b.className='opt'; b.textContent=opt;
+    b.onclick=function(){ pick(i); };
+    opts.appendChild(b);
+  });
+}
+function pick(i){
+  var q=QUESTIONS[qi], btns=document.querySelectorAll('.opt');
+  btns.forEach(function(b){ b.disabled=true; });
+  var isAnswer=q.hasOwnProperty('answer');
+  if(isAnswer){
+    var correct=(i===q.answer);
+    btns[i].className='opt '+(correct?'correct':'wrong');
+    if(!correct) btns[q.answer].className='opt correct';
+    if(correct){ score+=5; maxScore+=5; }
+    else{ maxScore+=5; wrongs.push({q:q.q,a:q.options[q.answer]}); }
+  } else {
+    score+=q.scores[i];
+    maxScore+=Math.max.apply(null,q.scores);
+  }
+  setTimeout(function(){ qi++; if(qi<QUESTIONS.length){ renderQ(); } else { showResult(); } }, isAnswer?700:0);
+}
+function showResult(){
+  show('s3');
+  var pct=Math.round(score/maxScore*100);
+  var grade=GRADES[GRADES.length-1];
+  for(var i=0;i<GRADES.length;i++){ if(pct>=GRADES[i].min){ grade=GRADES[i]; break; } }
+  document.getElementById('resGrade').textContent=grade.grade+'등급';
+  document.getElementById('resScore').innerHTML=score+'점 <span>/ '+maxScore+'점</span>';
+  document.getElementById('resTitle').textContent=grade.title;
+  document.getElementById('resDesc').textContent=grade.desc;
+  document.getElementById('resMax').textContent=maxScore+'점';
+  setTimeout(function(){ document.getElementById('resBar').style.width=pct+'%'; },200);
+  if(wrongs.length>0){
+    var wl=document.getElementById('wrongList');
+    wl.innerHTML='<div class="wrong-title">⚡ 틀린 문제 다시보기 ('+wrongs.length+'개)</div>';
+    wrongs.forEach(function(w){ wl.innerHTML+='<div class="wrong-item"><div class="wq">'+w.q+'</div><div class="wa">✓ 정답: '+w.a+'</div></div>'; });
+  }
+}
+async function saveImg(){
+  document.getElementById('mo').classList.add('on');
+  document.getElementById('mw').innerHTML='이미지를 만들고 있어요...';
+  try{
+    if(document.fonts) await document.fonts.ready;
+    var cv=await html2canvas(document.getElementById('cap'),{backgroundColor:'#FFFFFF',scale:2});
+    var img=new Image(); img.src=cv.toDataURL('image/png');
+    document.getElementById('mw').innerHTML='';
+    document.getElementById('mw').appendChild(img);
+    var p=document.createElement('p'); p.style.cssText='font-size:12px;color:#888;margin-top:8px;';
+    p.textContent='이미지를 길게 눌러서 저장해주세요.';
+    document.getElementById('mw').appendChild(p);
+  }catch(e){ document.getElementById('mw').textContent='이미지 생성에 실패했어요.'; }
+}
+</script>
+</body>
+</html>

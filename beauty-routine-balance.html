@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나는 어떤 뷰티 루틴 유형일까? 뷰티 루틴 밸런스 테스트 — 테스트팩토리</title>
+<meta name="description" content="미니멀·퍼펙션·트렌드·스킨케어·실험정신, 선택으로 알아보는 나의 뷰티 루틴 유형. 12문항이면 바로 알 수 있어요.">
+<meta property="og:title" content="나는 어떤 뷰티 루틴 유형일까? 뷰티 루틴 밸런스 테스트 — 테스트팩토리">
+<meta property="og:description" content="미니멀·퍼펙션·트렌드·스킨케어·실험정신, 선택으로 알아보는 나의 뷰티 루틴 유형. 12문항이면 바로 알 수 있어요.">
+<meta property="og:image" content="beauty-routine-balance-thumb.png">
+<meta property="og:image:width" content="900">
+<meta property="og:image:height" content="1260">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg:#FFF5F3; --paper:#FFFFFF; --ink:#2E1E22; --sub:#8C6E76;
+  --line:#F6D6D9; --acc:#D6667F; --gold:#C8942C; --chip:rgba(46,30,34,.06); --r:14px; --bw:2px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;min-height:100vh;}
+.wrap{max-width:560px;margin:0 auto;padding:28px 18px 80px;}
+.back{display:inline-block;margin-bottom:18px;font-size:13px;font-weight:700;color:var(--sub);text-decoration:none;}
+.hero{text-align:center;padding:16px 0 24px;}
+.hero .em{font-size:52px;line-height:1;margin-bottom:12px;}
+.hero h1{font-size:22px;font-weight:900;margin-bottom:8px;letter-spacing:-.3px;word-break:keep-all;}
+.hero p{font-size:14px;color:var(--sub);line-height:1.65;}
+.start-btn{width:100%;padding:16px;border:0;border-radius:var(--r);background:var(--acc);color:#fff;
+  font-family:inherit;font-size:16px;font-weight:900;cursor:pointer;margin-top:20px;}
+.prog-wrap{margin-bottom:20px;}
+.prog-info{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;margin-bottom:8px;color:var(--sub);}
+.prog-track{height:8px;background:var(--chip);border-radius:999px;overflow:hidden;border:var(--bw) solid var(--line);}
+.prog-fill{height:100%;background:var(--acc);border-radius:999px;transition:width .25s ease;}
+.qcard{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:22px 18px;}
+.qnum{display:inline-block;padding:4px 10px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:11px;font-weight:800;margin-bottom:14px;}
+.qtext{font-size:18px;font-weight:800;line-height:1.5;margin-bottom:18px;word-break:keep-all;}
+.opts{display:grid;gap:10px;}
+.opt{width:100%;padding:13px 15px;border:var(--bw) solid var(--line);border-radius:10px;
+  background:#fff;font-family:inherit;font-size:14px;font-weight:600;text-align:left;cursor:pointer;
+  color:var(--ink);transition:all .15s ease;word-break:keep-all;}
+.opt:hover{background:var(--chip);border-color:var(--acc);}
+.opt:disabled{cursor:default;}
+.opt.pk{background:var(--chip);border-color:var(--acc);}
+#cap{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:24px 18px;margin-bottom:16px;}
+.res-header{text-align:center;padding:6px 0 16px;border-bottom:var(--bw) solid var(--line);margin-bottom:16px;}
+.res-em{font-size:56px;line-height:1;margin-bottom:10px;}
+.res-badge{display:inline-block;padding:6px 16px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:12.5px;font-weight:900;margin-bottom:12px;}
+.res-title{font-size:23px;font-weight:900;margin-bottom:6px;word-break:keep-all;}
+.res-tag{font-size:13.5px;color:var(--gold);font-weight:800;margin-bottom:2px;word-break:keep-all;}
+.res-desc{font-size:14.5px;line-height:1.8;color:var(--ink);text-align:left;margin-top:14px;}
+.traits{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;}
+.trait{padding:6px 12px;background:var(--chip);border-radius:999px;font-size:12px;font-weight:700;color:var(--acc);}
+.dist-wrap{margin-top:20px;}
+.dist-title{font-size:12.5px;font-weight:800;color:var(--sub);margin-bottom:10px;}
+.dist-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.dist-row .lab{width:56px;font-size:12px;font-weight:800;flex-shrink:0;}
+.dist-row .track{flex:1;height:10px;background:var(--chip);border-radius:999px;overflow:hidden;}
+.dist-row .fill{height:100%;background:var(--acc);border-radius:999px;transition:width .5s ease;}
+.dist-row.me .fill{background:var(--gold);}
+.dist-row .num{width:20px;text-align:right;font-size:11.5px;font-weight:800;color:var(--sub);}
+.footer-note{font-size:11px;color:var(--sub);text-align:center;margin-top:18px;}
+.stk{display:grid;gap:10px;}
+.btn{width:100%;padding:14px;border:var(--bw) solid var(--ink);border-radius:var(--r);background:#fff;
+  font-family:inherit;font-weight:800;font-size:14.5px;cursor:pointer;color:var(--ink);}
+.btn.fill{background:var(--ink);color:#fff;border-color:var(--ink);}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:center;justify-content:center;padding:20px;}
+.mo.on{display:flex;}
+.mb{background:#fff;border-radius:16px;padding:20px;max-width:340px;width:100%;text-align:center;}
+.mb img{width:100%;border-radius:10px;margin-bottom:12px;}
+.mb .cl{width:100%;padding:12px;border:0;border-radius:10px;background:var(--chip);font-family:inherit;font-weight:800;cursor:pointer;color:var(--ink);}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← 목록으로</a>
+  <div id="s1">
+    <div class="hero">
+      <div class="em">💄</div>
+      <h1>나는 어떤 뷰티 루틴 유형일까? 뷰티 루틴 밸런스 테스트</h1>
+      <p>미니멀·퍼펙션·트렌드·스킨케어·실험정신, 선택으로 알아보는 나의 뷰티 루틴 유형. 12문항이면 바로 알 수 있어요.</p>
+      <button class="start-btn" onclick="startQuiz()">테스트 시작하기</button>
+    </div>
+  </div>
+  <div id="s2" class="hidden">
+    <div class="prog-wrap">
+      <div class="prog-info"><span id="progLabel">1 / 12</span><span id="progPos"></span></div>
+      <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+    </div>
+    <div class="qcard">
+      <div class="qnum" id="qNum">Q1</div>
+      <div class="qtext" id="qText"></div>
+      <div class="opts" id="opts"></div>
+    </div>
+  </div>
+  <div id="s3" class="hidden">
+    <div id="cap">
+      <div class="res-header">
+        <div class="res-em" id="resEm"></div>
+        <div class="res-badge" id="resBadge"></div>
+        <div class="res-title" id="resTitle"></div>
+        <div class="res-tag" id="resTag"></div>
+      </div>
+      <div class="res-desc" id="resDesc"></div>
+      <div class="traits" id="resTraits"></div>
+      <div class="dist-wrap">
+        <div class="dist-title">📊 나의 뷰티 루틴 분포</div>
+        <div id="distBox"></div>
+      </div>
+      <div class="footer-note">POWERED BY 테스트팩토리 · 재미로 봐주세요.</div>
+    </div>
+    <div class="stk">
+      <button class="btn fill" onclick="saveImg()">결과 이미지 저장하기</button>
+      <button class="btn" onclick="location.reload()">다시 풀기</button>
+      <button class="btn" onclick="location.href='index.html'">다른 테스트 보기</button>
+    </div>
+  </div>
+</div>
+<div class="mo" id="mo">
+  <div class="mb">
+    <div id="mw">이미지를 만들고 있어요...</div>
+    <button class="cl" onclick="document.getElementById('mo').classList.remove('on')">닫기</button>
+  </div>
+</div>
+<script>
+var POS = ["미니멀","퍼펙션","트렌드","스킨케어","실험정신"];
+var QUESTIONS = [{"q":"아침에 일어나서 가장 먼저 하는 케어는?","options":["세안하고 선크림만 슥 바른다","풀 스킨케어 루틴을 순서대로 다 한다","그날 유행하는 신상템부터 발라본다","토너부터 앰플까지 정성껏 겹겹이 바른다","직접 만든 팩이나 셀프 레시피를 시도한다"]},{"q":"화장품 쇼핑할 때 나는?","options":["꼭 필요한 것만 재구매한다","풀 메이크업 라인업을 세트로 구매한다","SNS에서 화제인 신상부터 장바구니에 담는다","성분표부터 꼼꼼히 확인하고 구매한다","믹스해서 나만의 조합을 만들 재료를 산다"]},{"q":"메이크업에 걸리는 시간은?","options":["5분 컷, 선크림+립밤 정도","베이스부터 아이섀도까지 30분 이상","그날 유행하는 신상 룩을 따라하며 즐긴다","피부 표현에 공들이고 포인트는 최소화한다","매번 다른 방식으로 시도하다 시간 가는 줄 모른다"]},{"q":"화장대(파우치)를 보면?","options":["몇 개 안 되고 다 필수템이다","브랜드별로 풀세트가 각 잡혀있다","최신 신상, 한정판 위주로 가득하다","스킨케어 제품이 8할 이상이다","직접 리필하거나 커스텀한 병들이 있다"]},{"q":"친구가 화장품을 추천해달라고 하면?","options":["나도 잘 안 써서 순한 제품 하나만 추천","풀 라인업으로 코디해서 추천한다","요즘 뜨는 신상 위주로 추천한다","성분 좋은 스킨케어부터 추천한다","직접 조합해보라고 레시피를 알려준다"]},{"q":"스킨케어는 보통 몇 단계로 하나요?","options":["세안+로션 정도, 심플하게","정해진 풀 루틴 순서를 다 지킨다","그때그때 유행하는 단계를 추가한다","10단계 이상, 정성 들여 겹겹이 바른다","그날 피부 상태를 보고 즉흥적으로 조합한다"]},{"q":"화장품 유통기한이나 성분, 신경 쓰는 편?","options":["별로 신경 안 쓰고 그냥 쓴다","제품마다 꼼꼼히 체크해서 관리한다","신상이면 일단 써보고 판단한다","성분표부터 꼼꼼히 확인하는 편이다","직접 섞어도 되는 성분인지부터 확인한다"]},{"q":"메이크업 튜토리얼 영상을 본다면?","options":["보면서도 실천은 잘 안 한다","단계별로 똑같이 따라하는 편이다","요즘 유행하는 룩만 골라서 본다","피부 표현·베이스 튜토리얼 위주로 본다","이것저것 섞어서 나만의 버전으로 응용한다"]},{"q":"여행 갈 때 화장품 파우치는?","options":["선크림, 립밤 딱 두 개만 챙긴다","풀 세트를 미니 사이즈로 다 챙긴다","그 지역 로드샵 신상부터 살 생각을 한다","스킨케어 제품 위주로 넉넉히 챙긴다","숙소에서 즉흥적으로 조합해볼 생각을 한다"]},{"q":"뷰티 유튜버·인플루언서를 볼 때 관심사는?","options":["간단한 꿀팁 위주로만 본다","완성도 높은 풀메이크업 룩을 참고한다","신상 리뷰나 언박싱 영상을 즐겨본다","성분 분석이나 스킨케어 루틴 영상을 선호한다","DIY, 셀프 레시피 영상에 관심이 많다"]},{"q":"화장 지울 때 나는?","options":["폼클렌징 하나로 끝낸다","클렌징오일부터 이중세안까지 꼼꼼히 한다","새로 나온 클렌징 아이템을 시도해본다","저자극 성분 위주로 신경 써서 지운다","직접 만든 클렌징밤이나 레시피를 활용한다"]},{"q":"나에게 '뷰티'란?","options":["최소한의 필수템, 편한 게 최고다","완벽하게 갖춰야 마음이 편하다","늘 새로운 걸 시도하는 즐거움이다","피부 건강을 챙기는 자기관리다","나만의 방식으로 표현하는 놀이다"]}];
+var RESULTS = [{"name":"미니멀 클린 뷰티","emoji":"🧴","tagline":"군더더기 없이 심플한 게 진리","color":"#7FA98F","desc":"복잡한 단계보다 꼭 필요한 것만 남기는 걸 좋아하는 타입이에요. 짧은 시간에도 깨끗하고 건강한 인상을 주는 게 특기라서, 꾸미지 않은 듯한 자연스러운 매력이 돋보여요. 있는 그대로도 충분히 매력적이라는 걸 스스로 잘 아는 편이에요.","traits":["효율 중시","자연스러운 매력","시간 절약","군더더기 없음"]},{"name":"퍼펙션 풀글램 뷰티","emoji":"💋","tagline":"완벽하게 갖춰야 직성이 풀리는","color":"#B23A48","desc":"단계 하나하나 정성껏 챙기고, 완성된 룩에서 오는 만족감을 중요하게 여기는 타입이에요. 디테일까지 꼼꼼히 신경 쓰는 성실함 덕분에 늘 완성도 높은 결과물을 만들어내요. 준비하는 시간 자체를 스스로를 가꾸는 소중한 루틴으로 즐기는 편이에요.","traits":["디테일 강자","완성도 추구","꾸준한 루틴","자기관리 만렙"]},{"name":"트렌드 헌터 뷰티","emoji":"✨","tagline":"늘 새로운 걸 가장 먼저 시도하는","color":"#C98A2C","desc":"유행에 민감하고 새로운 제품이나 스타일을 시도하는 데 거침없는 타입이에요. 남들보다 한발 빠르게 트렌드를 캐치하는 감각이 있어서, 주변 친구들이 뷰티 정보를 물어보러 오는 경우가 많아요. 늘 신선한 자극을 즐기는 호기심 많은 성격이에요.","traits":["트렌드 감각","호기심 대장","얼리어답터","정보력 만렙"]},{"name":"스킨케어 러버","emoji":"🌿","tagline":"피부 건강이 최우선인 자기관리파","color":"#4E8C7C","desc":"화려한 메이크업보다 건강한 피부 그 자체를 가꾸는 데 진심인 타입이에요. 성분 하나하나 꼼꼼히 확인하고, 장기적인 관점에서 꾸준히 관리하는 걸 즐겨요. 그 덕분에 화장을 안 해도 자신 있는 맑은 피부가 진짜 무기가 돼요.","traits":["성분 꼼꼼","꾸준함","건강한 피부","장기적 관리"]},{"name":"실험정신 DIY 뷰티","emoji":"🎨","tagline":"나만의 방식으로 만들어가는 창작파","color":"#6C63A6","desc":"정해진 공식보다 직접 조합하고 응용하는 과정 자체를 즐기는 타입이에요. 제품을 섞어보거나 셀프 레시피를 시도하며 나만의 뷰티 스타일을 만들어가요. 실패해도 그 과정에서 배우는 걸 즐기는 자유로운 창작 정신의 소유자예요.","traits":["창의적 응용","자기만의 스타일","도전 정신","즐거운 실험"]}];
+
+var qi=0, counts=[0,0,0,0,0];
+function show(id){ ['s1','s2','s3'].forEach(function(s){ document.getElementById(s).className=s===id?'':'hidden'; }); }
+function startQuiz(){ qi=0; counts=[0,0,0,0,0]; show('s2'); renderQ(); }
+function renderQ(){
+  var q=QUESTIONS[qi], total=QUESTIONS.length;
+  document.getElementById('progLabel').textContent=(qi+1)+' / '+total;
+  document.getElementById('progFill').style.width=Math.round((qi)/total*100)+'%';
+  document.getElementById('qNum').textContent='Q'+(qi+1);
+  document.getElementById('qText').textContent=q.q;
+  var opts=document.getElementById('opts');
+  opts.innerHTML='';
+  q.options.forEach(function(opt,i){
+    var b=document.createElement('button');
+    b.className='opt'; b.textContent=opt;
+    b.onclick=function(){ pick(i); };
+    opts.appendChild(b);
+  });
+}
+function pick(i){
+  var btns=document.querySelectorAll('.opt');
+  btns.forEach(function(b){ b.disabled=true; });
+  btns[i].className='opt pk';
+  counts[i]++;
+  setTimeout(function(){ qi++; if(qi<QUESTIONS.length){ renderQ(); } else { showResult(); } }, 260);
+}
+function showResult(){
+  show('s3');
+  var best=0;
+  for(var i=1;i<counts.length;i++){ if(counts[i]>counts[best]) best=i; }
+  var r=RESULTS[best];
+  document.getElementById('resEm').textContent=r.emoji;
+  document.getElementById('resBadge').textContent=POS[best]+' 유형';
+  document.getElementById('resBadge').style.background=r.color;
+  document.getElementById('resTitle').textContent=r.name;
+  document.getElementById('resTag').textContent=r.tagline;
+  document.getElementById('resTag').style.color=r.color;
+  document.getElementById('resDesc').textContent=r.desc;
+  document.getElementById('resTraits').innerHTML=r.traits.map(function(t){return '<span class="trait">#'+t+'</span>';}).join('');
+  var total=QUESTIONS.length;
+  var distHtml='';
+  POS.forEach(function(p,i){
+    var pct=Math.round(counts[i]/total*100);
+    distHtml+='<div class="dist-row'+(i===best?' me':'')+'"><div class="lab">'+p+'</div>'+
+      '<div class="track"><div class="fill" style="width:'+pct+'%"></div></div>'+
+      '<div class="num">'+counts[i]+'</div></div>';
+  });
+  document.getElementById('distBox').innerHTML=distHtml;
+}
+async function saveImg(){
+  document.getElementById('mo').classList.add('on');
+  document.getElementById('mw').innerHTML='이미지를 만들고 있어요...';
+  try{
+    if(document.fonts) await document.fonts.ready;
+    var cv=await html2canvas(document.getElementById('cap'),{backgroundColor:'#FFFFFF',scale:2});
+    var img=new Image(); img.src=cv.toDataURL('image/png');
+    document.getElementById('mw').innerHTML='';
+    document.getElementById('mw').appendChild(img);
+    var p=document.createElement('p'); p.style.cssText='font-size:12px;color:#888;margin-top:8px;';
+    p.textContent='이미지를 길게 눌러서 저장해주세요.';
+    document.getElementById('mw').appendChild(p);
+  }catch(e){ document.getElementById('mw').textContent='이미지 생성에 실패했어요.'; }
+}
+
+</script>
+</body>
+</html>
