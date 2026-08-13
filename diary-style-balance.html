@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나는 어떤 다이어리 꾸미기 스타일일까? 다꾸 밸런스 테스트 — 테스트팩토리</title>
+<meta name="description" content="미니멀형부터 스티커범벅형까지, 12문항으로 알아보는 나의 다이어리 꾸미기(다꾸) 스타일.">
+<meta property="og:title" content="나는 어떤 다이어리 꾸미기 스타일일까? 다꾸 밸런스 테스트 — 테스트팩토리">
+<meta property="og:description" content="미니멀형부터 스티커범벅형까지, 12문항으로 알아보는 나의 다이어리 꾸미기(다꾸) 스타일.">
+<meta property="og:image" content="diary-style-balance-thumb.png">
+<meta property="og:image:width" content="900">
+<meta property="og:image:height" content="1260">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg:#FDF6EC; --paper:#FFFFFF; --ink:#2B2420; --sub:#8C7C6D;
+  --line:#EDDDC4; --acc:#C2687A; --gold:#B8863F; --chip:rgba(43,32,24,.06); --r:14px; --bw:2px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;min-height:100vh;}
+.wrap{max-width:560px;margin:0 auto;padding:28px 18px 80px;}
+.back{display:inline-block;margin-bottom:18px;font-size:13px;font-weight:700;color:var(--sub);text-decoration:none;}
+.hero{text-align:center;padding:16px 0 24px;}
+.hero .em{font-size:52px;line-height:1;margin-bottom:12px;}
+.hero h1{font-size:22px;font-weight:900;margin-bottom:8px;letter-spacing:-.3px;word-break:keep-all;}
+.hero p{font-size:14px;color:var(--sub);line-height:1.65;}
+.start-btn{width:100%;padding:16px;border:0;border-radius:var(--r);background:var(--acc);color:#fff;
+  font-family:inherit;font-size:16px;font-weight:900;cursor:pointer;margin-top:20px;}
+.prog-wrap{margin-bottom:20px;}
+.prog-info{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;margin-bottom:8px;color:var(--sub);}
+.prog-track{height:8px;background:var(--chip);border-radius:999px;overflow:hidden;border:var(--bw) solid var(--line);}
+.prog-fill{height:100%;background:var(--acc);border-radius:999px;transition:width .25s ease;}
+.qcard{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:22px 18px;}
+.qnum{display:inline-block;padding:4px 10px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:11px;font-weight:800;margin-bottom:14px;}
+.qtext{font-size:18px;font-weight:800;line-height:1.5;margin-bottom:18px;word-break:keep-all;}
+.opts{display:grid;gap:10px;}
+.opt{width:100%;padding:13px 15px;border:var(--bw) solid var(--line);border-radius:10px;
+  background:#fff;font-family:inherit;font-size:14px;font-weight:600;text-align:left;cursor:pointer;
+  color:var(--ink);transition:all .15s ease;word-break:keep-all;}
+.opt:hover{background:var(--chip);border-color:var(--acc);}
+.opt:disabled{cursor:default;}
+.opt.pk{background:var(--chip);border-color:var(--acc);}
+#cap{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:24px 18px;margin-bottom:16px;}
+.res-header{text-align:center;padding:6px 0 16px;border-bottom:var(--bw) solid var(--line);margin-bottom:16px;}
+.res-em{font-size:56px;line-height:1;margin-bottom:10px;}
+.res-badge{display:inline-block;padding:6px 16px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:12.5px;font-weight:900;margin-bottom:12px;}
+.res-title{font-size:23px;font-weight:900;margin-bottom:6px;word-break:keep-all;}
+.res-tag{font-size:13.5px;color:var(--gold);font-weight:800;margin-bottom:2px;word-break:keep-all;}
+.res-desc{font-size:14.5px;line-height:1.8;color:var(--ink);text-align:left;margin-top:14px;}
+.traits{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;}
+.trait{padding:6px 12px;background:var(--chip);border-radius:999px;font-size:12px;font-weight:700;color:var(--acc);}
+.dist-wrap{margin-top:20px;}
+.dist-title{font-size:12.5px;font-weight:800;color:var(--sub);margin-bottom:10px;}
+.dist-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.dist-row .lab{width:72px;font-size:12px;font-weight:800;flex-shrink:0;}
+.dist-row .track{flex:1;height:10px;background:var(--chip);border-radius:999px;overflow:hidden;}
+.dist-row .fill{height:100%;background:var(--acc);border-radius:999px;transition:width .5s ease;}
+.dist-row.me .fill{background:var(--gold);}
+.dist-row .num{width:20px;text-align:right;font-size:11.5px;font-weight:800;color:var(--sub);}
+.footer-note{font-size:11px;color:var(--sub);text-align:center;margin-top:18px;}
+.stk{display:grid;gap:10px;}
+.btn{width:100%;padding:14px;border:var(--bw) solid var(--ink);border-radius:var(--r);background:#fff;
+  font-family:inherit;font-weight:800;font-size:14.5px;cursor:pointer;color:var(--ink);}
+.btn.fill{background:var(--ink);color:#fff;border-color:var(--ink);}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:center;justify-content:center;padding:20px;}
+.mo.on{display:flex;}
+.mb{background:#fff;border-radius:16px;padding:20px;max-width:340px;width:100%;text-align:center;}
+.mb img{width:100%;border-radius:10px;margin-bottom:12px;}
+.mb .cl{width:100%;padding:12px;border:0;border-radius:10px;background:var(--chip);font-family:inherit;font-weight:800;cursor:pointer;color:var(--ink);}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← 목록으로</a>
+  <div id="s1">
+    <div class="hero">
+      <div class="em">📔</div>
+      <h1>나는 어떤 다이어리 꾸미기 스타일일까? 다꾸 밸런스 테스트</h1>
+      <p>미니멀형부터 스티커범벅형까지, 12문항으로 알아보는 나만의 다꾸(다이어리 꾸미기) 스타일이에요.</p>
+      <button class="start-btn" onclick="startQuiz()">테스트 시작하기</button>
+    </div>
+  </div>
+  <div id="s2" class="hidden">
+    <div class="prog-wrap">
+      <div class="prog-info"><span id="progLabel">1 / 12</span><span id="progPos"></span></div>
+      <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+    </div>
+    <div class="qcard">
+      <div class="qnum" id="qNum">Q1</div>
+      <div class="qtext" id="qText"></div>
+      <div class="opts" id="opts"></div>
+    </div>
+  </div>
+  <div id="s3" class="hidden">
+    <div id="cap">
+      <div class="res-header">
+        <div class="res-em" id="resEm"></div>
+        <div class="res-badge" id="resBadge"></div>
+        <div class="res-title" id="resTitle"></div>
+        <div class="res-tag" id="resTag"></div>
+      </div>
+      <div class="res-desc" id="resDesc"></div>
+      <div class="traits" id="resTraits"></div>
+      <div class="dist-wrap">
+        <div class="dist-title">📊 나의 스타일 분포</div>
+        <div id="distBox"></div>
+      </div>
+      <div class="footer-note">POWERED BY 테스트팩토리 · 재미로 봐주세요.</div>
+    </div>
+    <div class="stk">
+      <button class="btn fill" onclick="saveImg()">결과 이미지 저장하기</button>
+      <button class="btn" onclick="location.reload()">다시 풀기</button>
+      <button class="btn" onclick="location.href='index.html'">다른 테스트 보기</button>
+    </div>
+  </div>
+</div>
+<div class="mo" id="mo">
+  <div class="mb">
+    <div id="mw">이미지를 만들고 있어요...</div>
+    <button class="cl" onclick="document.getElementById('mo').classList.remove('on')">닫기</button>
+  </div>
+</div>
+<script>
+var POS = ["미니멀형", "감성기록형", "스티커범벅형", "체크리스트형"];
+var QUESTIONS = [
+  {"q":"새 다이어리를 사면 제일 먼저 하는 일은?","options":["깔끔하게 첫 페이지부터 심플하게 쓴다","오늘 기분이나 사진을 붙이며 꾸민다","스티커랑 마스킹테이프부터 고른다","먼슬리·위클리 칸부터 채운다"]},
+  {"q":"다이어리에 가장 많이 쓰는 건?","options":["짧은 한 줄 메모","그날의 감정과 생각","예쁜 스티커와 그림","해야 할 일 목록"]},
+  {"q":"다이어리 쓸 때 즐겨 쓰는 펜은?","options":["검정 볼펜 하나로 충분하다","마음에 드는 감성 펜 여러 자루","컬러펜에 반짝이 펜까지 풀세트","형광펜으로 우선순위를 표시한다"]},
+  {"q":"다꾸(다이어리 꾸미기) 영상을 보면?","options":["심플한 레이아웃만 눈에 들어온다","감성 사진이랑 색감에 반한다","스티커 조합 아이디어를 저장해둔다","효율적인 정리 방법을 참고한다"]},
+  {"q":"다이어리를 쓰는 이유는?","options":["기록을 남기기 위해서","그날의 감정을 남기고 싶어서","꾸미는 자체가 힐링이라서","일정과 할 일을 관리하려고"]},
+  {"q":"빈 페이지를 펼치면?","options":["군더더기 없이 채우고 싶어진다","어떤 이야기를 담을지 설렌다","뭘로 꾸밀지부터 상상한다","칸부터 나누고 시작한다"]},
+  {"q":"다꾸 준비물 쇼핑을 하면?","options":["필요한 것만 딱 산다","감성 문구류에 자꾸 눈이 간다","예쁜 건 일단 다 담고 본다","기능성 좋은 아이템 위주로 고른다"]},
+  {"q":"다이어리를 다시 펼쳐볼 때는?","options":["필요한 정보를 확인할 때만","그때의 기분이 그리울 때","예쁘게 꾸민 페이지를 구경할 때","할 일을 체크할 때"]},
+  {"q":"다이어리에 사진을 붙인다면?","options":["거의 안 붙이는 편이다","그날의 순간을 감성 있게 붙인다","포토스티커로 알록달록 꾸며 붙인다","일정 관련 사진만 붙인다"]},
+  {"q":"다이어리 꾸미기에 가장 오래 쓰는 시간은?","options":["5분이면 충분하다","글 쓰는 데 오래 걸린다","꾸미는 데 제일 오래 걸린다","칸 채우고 체크하는 데 시간을 쓴다"]},
+  {"q":"내 다이어리의 색감은?","options":["화이트·그레이 톤","따뜻한 파스텔톤","알록달록 다채로운 색","깔끔한 투톤 컬러"]},
+  {"q":"한 달치 다이어리를 다 채웠을 때 느낌은?","options":["깔끔하게 정리된 느낌이 좋다","한 편의 일기 같아서 뿌듯하다","작품 하나를 완성한 기분이다","할 일을 다 해낸 성취감이 든다"]}
+];
+var RESULTS = [
+  {"name":"미니멀형","emoji":"🤍","tagline":"군더더기 없이 깔끔하게, 심플함이 매력인 미니멀리스트","color":"#6B7280","desc":"다이어리를 실용적으로 활용하는 편이에요. 필요한 정보만 깔끔하게 남기고, 화려하게 꾸미기보다는 정리에 집중하는 스타일이죠. 그 담백함 자체가 매력이지만, 가끔은 마음에 드는 스티커 하나쯤 붙여보는 것도 소소한 재미가 될 수 있어요.","traits":["심플함","효율성","깔끔한 취향","군더더기 없음"]},
+  {"name":"감성기록형","emoji":"🌷","tagline":"하루의 감정을 글과 사진으로 담아내는 감성러","color":"#C2687A","desc":"다이어리에 그날의 생각과 감정을 진솔하게 담는 편이에요. 사진이나 글로 순간을 기록하면서 스스로를 돌아보는 시간을 소중히 여기는 타입이죠. 다이어리가 나만의 작은 힐링 공간이 되어주고 있을 거예요.","traits":["섬세한 감성","자기 성찰","기록의 힘","진솔함"]},
+  {"name":"스티커범벅형","emoji":"🎨","tagline":"꾸미는 순간이 곧 힐링, 알록달록 다꾸 장인","color":"#E8A33D","desc":"다이어리 한 페이지를 예쁘게 채우는 과정 자체를 즐기는 편이에요. 스티커, 마스킹테이프, 색깔펜을 활용해서 나만의 작품을 만들어내는 감각이 있어요. 완성된 페이지를 보면 그 자체로 큰 성취감과 힐링을 느끼는 타입이에요.","traits":["창의력","꾸미기 감각","힐링 타임","디테일 챙기기"]},
+  {"name":"체크리스트형","emoji":"✅","tagline":"일정과 할 일을 착착 관리하는 플래닝 고수","color":"#3F8F5C","desc":"다이어리를 일정 관리와 목표 달성의 도구로 활용하는 편이에요. 해야 할 일을 체크해나가며 성취감을 느끼고, 계획적으로 하루하루를 채워가는 타입이죠. 가끔은 계획 없이 여백을 즐기는 하루도 스스로에게 선물해보세요.","traits":["계획력","성취감","꾸준함","자기관리"]}
+];
+
+var qi=0, counts=[0,0,0,0];
+function show(id){ ['s1','s2','s3'].forEach(function(s){ document.getElementById(s).className=s===id?'':'hidden'; }); }
+function startQuiz(){ qi=0; counts=[0,0,0,0]; show('s2'); renderQ(); }
+function renderQ(){
+  var q=QUESTIONS[qi], total=QUESTIONS.length;
+  document.getElementById('progLabel').textContent=(qi+1)+' / '+total;
+  document.getElementById('progFill').style.width=Math.round((qi)/total*100)+'%';
+  document.getElementById('qNum').textContent='Q'+(qi+1);
+  document.getElementById('qText').textContent=q.q;
+  var opts=document.getElementById('opts');
+  opts.innerHTML='';
+  q.options.forEach(function(opt,i){
+    var b=document.createElement('button');
+    b.className='opt'; b.textContent=opt;
+    b.onclick=function(){ pick(i); };
+    opts.appendChild(b);
+  });
+}
+function pick(i){
+  var btns=document.querySelectorAll('.opt');
+  btns.forEach(function(b){ b.disabled=true; });
+  btns[i].className='opt pk';
+  counts[i]++;
+  setTimeout(function(){ qi++; if(qi<QUESTIONS.length){ renderQ(); } else { showResult(); } }, 260);
+}
+function showResult(){
+  show('s3');
+  var best=0;
+  for(var i=1;i<counts.length;i++){ if(counts[i]>counts[best]) best=i; }
+  var r=RESULTS[best];
+  document.getElementById('resEm').textContent=r.emoji;
+  document.getElementById('resBadge').textContent=POS[best]+' 유형';
+  document.getElementById('resBadge').style.background=r.color;
+  document.getElementById('resTitle').textContent=r.name;
+  document.getElementById('resTag').textContent=r.tagline;
+  document.getElementById('resTag').style.color=r.color;
+  document.getElementById('resDesc').textContent=r.desc;
+  document.getElementById('resTraits').innerHTML=r.traits.map(function(t){return '<span class="trait">#'+t+'</span>';}).join('');
+  var total=QUESTIONS.length;
+  var distHtml='';
+  POS.forEach(function(p,i){
+    var pct=Math.round(counts[i]/total*100);
+    distHtml+='<div class="dist-row'+(i===best?' me':'')+'"><div class="lab">'+p+'</div>'+
+      '<div class="track"><div class="fill" style="width:'+pct+'%"></div></div>'+
+      '<div class="num">'+counts[i]+'</div></div>';
+  });
+  document.getElementById('distBox').innerHTML=distHtml;
+}
+async function saveImg(){
+  document.getElementById('mo').classList.add('on');
+  document.getElementById('mw').innerHTML='이미지를 만들고 있어요...';
+  try{
+    if(document.fonts) await document.fonts.ready;
+    var cv=await html2canvas(document.getElementById('cap'),{backgroundColor:'#FFFFFF',scale:2});
+    var img=new Image(); img.src=cv.toDataURL('image/png');
+    document.getElementById('mw').innerHTML='';
+    document.getElementById('mw').appendChild(img);
+    var p=document.createElement('p'); p.style.cssText='font-size:12px;color:#888;margin-top:8px;';
+    p.textContent='이미지를 길게 눌러서 저장해주세요.';
+    document.getElementById('mw').appendChild(p);
+  }catch(e){ document.getElementById('mw').textContent='이미지 생성에 실패했어요.'; }
+}
+</script>
+</body>
+</html>
