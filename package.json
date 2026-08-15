@@ -1,0 +1,9 @@
+{
+  "name": "testfactory-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TEST:FACTORY static site + Netlify Functions",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}

@@ -150,7 +150,6 @@ footer a:hover{color:var(--ink);}
         <span class="count-chip" id="count"></span>
       </div>
       <nav class="nav">
-        <a href="group-mbti.html">🗺️ 그룹 MBTI 지도</a>
         <a href="about.html" id="t-about">⊙ 공장장 소개</a>
         <span class="langs" id="langs"></span>
       </nav>
@@ -243,6 +242,19 @@ footer a:hover{color:var(--ink);}
    (참고: 테스트 본문 자체는 한국어예요. 링크를 눌러 들어가면 한국어 테스트가 나와요.)
 ============================================================ */
 var TESTS = [
+  {
+    title: "그룹 MBTI 지도 — 친구들과 함께",
+    titleEn: "Group MBTI Map — With Your Friends",
+    titleJa: "グループMBTIマップ — 友達と一緒に",
+    titleZh: "群组MBTI地图 — 和朋友们一起",
+    emoji: "🗺️",
+    file: "group-mbti.html",
+    thumb: "site-thumb.png",
+    date: "2026-08-15",
+    color: "",
+    category: "group",
+    pinned: true
+  },
   {
     title: "사주로 보는 나의 소통 방식",
     titleEn: "My Communication Style, Told by Saju",
@@ -1412,7 +1424,7 @@ var I18N = {
     footer: '테스트팩토리 · <a href="about.html">공장장 소개</a> · <a href="privacy.html">개인정보처리방침</a>',
     titleKey: 'title',
     catAll: '전체',
-    catLabels: { mbti: 'MBTI', saju: '사주', quiz: '퀴즈', balance: '밸런스게임' }
+    catLabels: { mbti: 'MBTI', saju: '사주', quiz: '퀴즈', balance: '밸런스게임', group: '그룹' }
   },
   en: {
     desc: '<b>Test Factory</b> \u2014 a new topic, a new story, every time.',
@@ -1423,7 +1435,7 @@ var I18N = {
     footer: 'Test Factory · <a href="about.html">About</a> · <a href="privacy.html">Privacy Policy</a>',
     titleKey: 'titleEn',
     catAll: 'All',
-    catLabels: { mbti: 'MBTI', saju: 'Saju', quiz: 'Quiz', balance: 'Balance Game' }
+    catLabels: { mbti: 'MBTI', saju: 'Saju', quiz: 'Quiz', balance: 'Balance Game', group: 'Group' }
   },
   ja: {
     desc: '<b>テストファクトリー</b> — 毎回違うテーマ、毎回新しい物語。',
@@ -1434,7 +1446,7 @@ var I18N = {
     footer: 'テストファクトリー · <a href="about.html">紹介</a> · <a href="privacy.html">プライバシーポリシー</a>',
     titleKey: 'titleJa',
     catAll: 'すべて',
-    catLabels: { mbti: 'MBTI', saju: '四柱推命', quiz: 'クイズ', balance: 'バランスゲーム' }
+    catLabels: { mbti: 'MBTI', saju: '四柱推命', quiz: 'クイズ', balance: 'バランスゲーム', group: 'グループ' }
   },
   zh: {
     desc: '<b>测试工厂</b> — 每次不同的主题，每次全新的故事。',
@@ -1445,7 +1457,7 @@ var I18N = {
     footer: '测试工厂 · <a href="about.html">关于</a> · <a href="privacy.html">隐私政策</a>',
     titleKey: 'titleZh',
     catAll: '全部',
-    catLabels: { mbti: 'MBTI', saju: '生辰八字', quiz: '测验', balance: '平衡游戏' }
+    catLabels: { mbti: 'MBTI', saju: '生辰八字', quiz: '测验', balance: '平衡游戏', group: '群组' }
   }
 };
 var curLang = 'ko';
@@ -1463,7 +1475,11 @@ function esc(s){
 }
 
 function sorted(){
-  return TESTS.slice().sort(function(a,b){ return (b.date||'').localeCompare(a.date||''); });
+  return TESTS.slice().sort(function(a,b){
+    var pa = a.pinned ? 1 : 0, pb = b.pinned ? 1 : 0;
+    if(pa !== pb) return pb - pa;
+    return (b.date||'').localeCompare(a.date||'');
+  });
 }
 
 function titleFor(t){
@@ -1479,6 +1495,7 @@ function metaFor(t){
   if(cat === 'saju')    return [['Type','사주'],['방식','입력형'],['Result','오행']];
   if(cat === 'quiz')    return [['Type','퀴즈'],['Q', String(t.q||10)],['Result','5단계']];
   if(cat === 'balance') return [['Type','밸런스'],['Round', String(t.q||12)],['통계','실시간']];
+  if(cat === 'group')   return [['Type','그룹'],['Q','12'],['지도','실시간']];
   return [['Type', cat||'-'],['-','-'],['-','-']];
 }
 

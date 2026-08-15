@@ -174,6 +174,23 @@ body{font-family:'SSRONET','Pretendard Variable',Pretendard,-apple-system,sans-s
   </div>
 </div>
 
+<div class="modal" id="invite-modal" onclick="if(event.target===this)this.classList.remove('on')">
+  <div class="mbox">
+    <div style="font-size:18px;font-weight:700;margin-bottom:14px;color:#333;">📤 친구 초대하기</div>
+    <div style="font-size:12px;color:#888;margin-bottom:6px;">초대 코드</div>
+    <div style="display:flex;gap:8px;margin-bottom:14px;">
+      <div id="invite-code-text" style="flex:1;font-size:20px;font-weight:900;letter-spacing:2px;background:#F5F5F5;border:2px solid #333;border-radius:10px;padding:10px;text-align:center;"></div>
+      <button class="bb-btn" style="background:#FFE566;" onclick="copyInvite('code')">복사</button>
+    </div>
+    <div style="font-size:12px;color:#888;margin-bottom:6px;">초대 링크</div>
+    <div style="display:flex;gap:8px;margin-bottom:14px;">
+      <div id="invite-link-text" style="flex:1;font-size:11px;color:#555;background:#F5F5F5;border:2px solid #333;border-radius:10px;padding:10px 8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:flex;align-items:center;"></div>
+      <button class="bb-btn" style="background:#72B8FF;" onclick="copyInvite('link')">복사</button>
+    </div>
+    <button class="bb-btn" style="width:100%;background:#eee;" onclick="document.getElementById('invite-modal').classList.remove('on')">닫기</button>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -229,14 +246,8 @@ var QS = [
    opts:[{t:'"그때쯤이면 이걸 달성해야지" 구체적인 목표가 먼저 떠오른다',v:'S'},{t:'"어떤 사람이 되고 싶지?" 내가 원하는 삶의 모습이 먼저 그려진다',v:'N'}]}
 ];
 
-var DEMO = [
-  {name:'지수',type:'ENFP'},{name:'민준',type:'ISTJ'},{name:'서연',type:'INFP'},
-  {name:'준호',type:'ESTP'},{name:'유나',type:'ENFJ'},{name:'태양',type:'INTJ'},
-  {name:'하은',type:'ISFJ'},{name:'소율',type:'ESFP'}
-];
-
 var S = {
-  groupName:'',userName:'',code:'',
+  groupName:'',userName:'',code:'',mode:'create',meIndex:-1,pollTimer:null,
   qi:0,scores:{E:0,I:0,S:0,N:0,T:0,F:0,J:0,P:0},
   myType:'',members:[],
   sc:1,ox:0,oy:0,W:0,H:0
@@ -264,8 +275,7 @@ function createGroup() {
   var g = document.getElementById('in-group').value.trim();
   var n = document.getElementById('in-name').value.trim();
   if (!g || !n) { toast('그룹 이름과 내 이름을 입력해주세요!'); return; }
-  S.groupName = g; S.userName = n;
-  S.code = Math.random().toString(36).substr(2, 6).toUpperCase();
+  S.groupName = g; S.userName = n; S.mode = 'create';
   startTest();
 }
 
@@ -273,7 +283,7 @@ function joinGroup() {
   var c = document.getElementById('in-code').value.trim().toUpperCase();
   var n = document.getElementById('in-name').value.trim();
   if (!c || !n) { toast('초대 코드와 이름을 입력해주세요!'); return; }
-  S.code = c; S.userName = n; S.groupName = '친구들 그룹';
+  S.code = c; S.userName = n; S.groupName = '그룹'; S.mode = 'join';
   startTest();
 }
 
@@ -324,9 +334,59 @@ function finishTest() {
     sc.T >= sc.F ? 'T' : 'F',
     sc.J >= sc.P ? 'J' : 'P'
   ].join('');
-  S.members = DEMO.slice();
-  S.members.push({name: S.userName, type: S.myType, isMe: true});
-  showMap();
+  syncGroup();
+}
+
+function syncGroup() {
+  toast('그룹에 연결하는 중... ⏳');
+  var payload = S.mode === 'join'
+    ? { action: 'join', code: S.code, name: S.userName, type: S.myType }
+    : { action: 'create', groupName: S.groupName, name: S.userName, type: S.myType };
+
+  fetch('/.netlify/functions/group', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).then(function(r) {
+    if (!r.ok) return r.json().catch(function(){ return {}; }).then(function(e) {
+      throw new Error(e.error || ('HTTP ' + r.status));
+    });
+    return r.json();
+  }).then(function(group) {
+    S.groupName = group.groupName;
+    S.code = group.code;
+    S.meIndex = group.members.length - 1;
+    S.members = group.members.map(function(m, i) {
+      return { name: m.name, type: m.type, isMe: i === S.meIndex };
+    });
+    showMap();
+    startPolling();
+  }).catch(function(err) {
+    console.log('group sync error:', err);
+    toast('그룹 연결에 실패했어요 😥 초대 코드를 확인하고 다시 시도해주세요');
+    document.getElementById('test-scr').style.display = 'none';
+    document.getElementById('land').style.display = '';
+  });
+}
+
+function startPolling() {
+  if (S.pollTimer) clearInterval(S.pollTimer);
+  S.pollTimer = setInterval(function() {
+    fetch('/.netlify/functions/group?code=' + encodeURIComponent(S.code))
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(group) {
+        if (!group || !group.members || group.members.length === S.members.length) return;
+        S.members = group.members.map(function(m, i) {
+          return { name: m.name, type: m.type, isMe: i === S.meIndex };
+        });
+        renderMap();
+        renderStats();
+        renderRank();
+        document.getElementById('hd-sub').textContent = S.members.length + '명 참여 중 · 코드: ' + S.code;
+        toast('👋 새 멤버가 합류했어요!');
+      })
+      .catch(function() {});
+  }, 5000);
 }
 
 function renderMap() {
@@ -438,8 +498,8 @@ function openPanel(m, inf) {
 
   document.getElementById('panel-body').innerHTML =
     '<div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">' +
-      '<div style="width:64px;height:64px;border-radius:50%;background:' + (imgSrc ? '#fff' : inf.c) + ';border:3px solid #333;overflow:hidden;box-shadow:3px 3px 0 #333;flex-shrink:0;">' +
-        (imgSrc ? '<img src="' + imgSrc + '" style="width:80px;height:80px;object-fit:contain;">' : '<span style="font-size:40px;line-height:1;">😊</span>') +
+      '<div style="width:64px;height:64px;flex-shrink:0;display:flex;align-items:center;justify-content:center;">' +
+        (imgSrc ? '<img src="' + imgSrc + '" style="width:76px;height:76px;object-fit:contain;">' : '<span style="font-size:40px;line-height:1;">😊</span>') +
       '</div>' +
       '<div><div style="font-size:19px;font-weight:700;color:#333;">' + m.name + '</div>' +
       '<div style="font-size:13px;color:#888;margin-top:2px;">' + m.type + ' · ' + inf.n + '</div></div>' +
@@ -492,8 +552,8 @@ function renderStats() {
     var pct = Math.round(e[1] / S.members.length * 100);
     var imgSrc = CHARS[e[0]] || '';
     html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;">' +
-      '<div style="width:32px;height:32px;border-radius:50%;overflow:hidden;border:2px solid #333;flex-shrink:0;">' +
-        (imgSrc ? '<img src="' + imgSrc + '" style="width:100%;height:100%;object-fit:cover;">' : '<div style="background:' + inf.c + ';width:100%;height:100%;"></div>') +
+      '<div style="width:32px;height:32px;flex-shrink:0;display:flex;align-items:center;justify-content:center;">' +
+        (imgSrc ? '<img src="' + imgSrc + '" style="width:32px;height:32px;object-fit:contain;">' : '<div style="background:' + inf.c + ';width:100%;height:100%;border-radius:50%;"></div>') +
       '</div>' +
       '<span style="font-size:12px;font-weight:700;color:#333;width:36px;">' + e[0] + '</span>' +
       '<div style="flex:1;height:11px;background:#E8E8E8;border-radius:999px;border:1.5px solid #333;overflow:hidden;">' +
@@ -542,28 +602,22 @@ function initDrag() {
 }
 
 function shareGroup() {
-  var groupName = S.groupName;
-  var code = S.code;
-  var url = 'https://testfactory.kr/group-mbti.html?code=' + code;
+  var url = 'https://testfactory.kr/group-mbti.html?code=' + S.code;
+  document.getElementById('invite-code-text').textContent = S.code;
+  document.getElementById('invite-link-text').textContent = url;
+  document.getElementById('invite-modal').classList.add('on');
+}
 
-  if (typeof Kakao !== 'undefined' && Kakao.isInitialized()) {
-    Kakao.Share.sendDefault({
-      objectType: 'feed',
-      content: {
-        title: groupName + '의 MBTI 지도 🗺️',
-        description: '우리 그룹 MBTI 지도에 참여해봐! 초대 코드: ' + code,
-        imageUrl: 'https://majestic-kulfi-a53da9.netlify.app/site-thumb.png',
-        link: { mobileWebUrl: url, webUrl: url }
-      },
-      buttons: [{ title: '지도 참여하기', link: { mobileWebUrl: url, webUrl: url } }]
+function copyInvite(kind) {
+  var text = kind === 'code' ? S.code : ('https://testfactory.kr/group-mbti.html?code=' + S.code);
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() {
+      toast(kind === 'code' ? '코드 복사됨! 📋' : '링크 복사됨! 📋');
+    }).catch(function() {
+      toast('복사에 실패했어요. 직접 선택해서 복사해주세요.');
     });
   } else {
-    var text = '🗺️ ' + groupName + ' MBTI 지도에 참여해봐!\n초대 코드: ' + code + '\n👉 ' + url;
-    if (navigator.share) {
-      navigator.share({ title: groupName + '의 MBTI 지도', text: text });
-    } else {
-      navigator.clipboard.writeText(text).then(function() { toast('초대 링크 복사됨! 카톡에 붙여넣으세요 📋'); });
-    }
+    toast('복사에 실패했어요. 직접 선택해서 복사해주세요.');
   }
 }
 
@@ -638,6 +692,17 @@ function renderRank() {
 }
 
 window.onresize = function() { if (S.members.length > 0) renderMap(); };
+
+(function() {
+  try {
+    var params = new URLSearchParams(location.search);
+    var codeParam = params.get('code');
+    if (codeParam) {
+      var el = document.getElementById('in-code');
+      if (el) el.value = codeParam.toUpperCase();
+    }
+  } catch (e) {}
+})();
 </script>
 </body>
 </html>
