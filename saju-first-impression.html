@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>사주로 보는 나의 첫인상 — 테스트팩토리</title>
+<meta name="description" content="태어난 순간의 기운으로 알아보는 남들 눈에 비치는 나의 첫인상과, 알아갈수록 드러나는 반전 매력.">
+<meta property="og:title" content="사주로 보는 나의 첫인상 — 테스트팩토리">
+<meta property="og:description" content="태어난 순간의 기운으로 알아보는 남들 눈에 비치는 나의 첫인상과, 알아갈수록 드러나는 반전 매력.">
+<meta property="og:image" content="saju-first-impression-thumb.png">
+<meta property="og:image:width" content="900">
+<meta property="og:image:height" content="1260">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg:#FAF1F3; --paper:#FFFDFB; --ink:#2B2024; --sub:#957F86; --line:#EAD5DC;
+  --acc:#C05C7E; --gold:#C9986B; --chip:rgba(43,32,36,.06);
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;line-height:1.65;}
+html{background:var(--bg);}
+a{color:inherit;}
+.wrap{max-width:560px;margin:0 auto;padding:28px 18px 70px;}
+.back{display:inline-block;margin-bottom:18px;font-size:13px;font-weight:700;color:var(--sub);text-decoration:none;}
+.back:hover{color:var(--ink);}
+
+.hero{text-align:center;padding:14px 0 22px;}
+.hero .em{font-size:44px;line-height:1;margin-bottom:10px;}
+.hero h1{font-size:24px;font-weight:900;margin:0 0 8px;letter-spacing:-.3px;}
+.hero p{font-size:13.5px;color:var(--sub);margin:0;font-weight:500;}
+
+.card{background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:20px 18px;margin-bottom:16px;}
+
+.field{margin-bottom:14px;}
+.field label{display:block;font-size:12.5px;font-weight:800;color:var(--sub);margin-bottom:6px;}
+.row3{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:8px;}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+select,input[type=number]{
+  width:100%;padding:11px 10px;border:1.5px solid var(--line);border-radius:10px;
+  font-family:inherit;font-size:14.5px;font-weight:600;background:#fff;color:var(--ink);
+}
+.unknown{display:flex;align-items:center;gap:7px;margin-top:8px;font-size:12.5px;font-weight:700;color:var(--sub);}
+.unknown input{width:auto;}
+
+.gender{display:flex;gap:8px;}
+.gender button{flex:1;padding:10px;border:1.5px solid var(--line);border-radius:10px;background:#fff;
+  font-family:inherit;font-weight:800;font-size:13.5px;color:var(--sub);cursor:pointer;}
+.gender button.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+
+.submit{
+  width:100%;padding:15px;border:0;border-radius:12px;background:var(--acc);color:#fff;
+  font-family:inherit;font-weight:900;font-size:15.5px;cursor:pointer;margin-top:6px;
+}
+.submit:active{opacity:.85;}
+
+.precision-note{font-size:11px;color:var(--sub);line-height:1.6;margin-top:12px;padding:10px 12px;
+  background:var(--chip);border-radius:10px;}
+
+#result{display:none;}
+#result.on{display:block;}
+#cap{background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:20px 18px;margin-bottom:16px;}
+
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0 4px;}
+.pillar{text-align:center;padding:12px 4px;background:var(--chip);border-radius:10px;}
+.pillar .role{font-size:10.5px;font-weight:800;color:var(--sub);margin-bottom:6px;}
+.pillar .gz{font-size:20px;font-weight:900;letter-spacing:1px;}
+.pillar .el{font-size:10px;color:var(--sub);margin-top:4px;}
+
+.sectitle{font-size:13.5px;font-weight:900;margin:22px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--ink);}
+.daymaster{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
+.stage{position:relative;height:170px;overflow:hidden;border:1.5px solid var(--line);border-radius:14px;
+  margin-bottom:14px;background:linear-gradient(180deg,#F6E1E7 0%,var(--chip) 100%);}
+.stg-cloud{position:absolute;top:16px;width:46px;height:18px;background:#fff;opacity:.85;border-radius:999px;}
+.stg-cloud::before,.stg-cloud::after{content:"";position:absolute;background:#fff;border-radius:50%;top:-8px;}
+.stg-cloud::before{width:20px;height:20px;left:7px;}
+.stg-cloud::after{width:14px;height:14px;right:8px;top:-5px;}
+.stg-cloud.l{left:20px;}
+.stg-cloud.r{right:22px;top:30px;transform:scale(.85);}
+.stg-hill{position:absolute;bottom:40px;height:62px;opacity:.85;}
+.stg-hill.l{left:-10%;width:58%;background:#EFC7D3;border-radius:0 100% 0 0;}
+.stg-hill.r{right:-10%;width:60%;height:74px;background:#D98FA8;opacity:.55;border-radius:100% 0 0 0;}
+.stg-ground{position:absolute;left:0;right:0;bottom:0;height:40px;background:var(--acc);opacity:.18;
+  border-top:1.5px solid var(--line);}
+.stg-char{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);font-size:52px;line-height:1;
+  filter:drop-shadow(0 6px 4px rgba(0,0,0,.15));z-index:3;}
+.stg-badge{position:absolute;left:50%;bottom:9px;transform:translateX(-50%);padding:5px 14px;
+  background:var(--paper);border:1.5px solid var(--line);border-radius:999px;font-size:12.5px;font-weight:800;
+  color:var(--ink);white-space:nowrap;z-index:3;}
+.daymaster .em{font-size:34px;}
+.daymaster .name{font-size:17px;font-weight:900;}
+.daymaster .tg{font-size:12.5px;color:var(--sub);font-weight:600;}
+.daymaster-desc{font-size:14px;line-height:1.75;}
+
+.elbars{display:flex;flex-direction:column;gap:8px;margin:10px 0;}
+.elbar-row{display:flex;align-items:center;gap:8px;}
+.elbar-row .lab{width:44px;font-size:12px;font-weight:800;flex-shrink:0;}
+.elbar-row .track{flex:1;height:10px;background:var(--chip);border-radius:999px;overflow:hidden;}
+.elbar-row .fill{height:100%;background:var(--acc);border-radius:999px;}
+.elbar-row .num{width:18px;text-align:right;font-size:12px;font-weight:800;color:var(--sub);}
+
+.eldesc{font-size:13.5px;line-height:1.7;margin:6px 0 14px;padding:12px 14px;background:var(--chip);border-radius:10px;}
+.eldesc b{color:var(--acc);}
+
+.stk{display:grid;gap:9px;margin-top:18px;}
+.btn{width:100%;padding:13px;border:1.5px solid var(--ink);border-radius:11px;background:#fff;color:var(--ink);
+  font-family:inherit;font-weight:800;font-size:14px;cursor:pointer;}
+.btn.fill{background:var(--ink);color:#fff;}
+
+.footer-note{font-size:11px;color:var(--sub);text-align:center;margin-top:20px;line-height:1.7;}
+
+/* 저장 모달 */
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:center;justify-content:center;padding:20px;}
+.mo.on{display:flex;}
+.mb{background:#fff;border-radius:16px;padding:20px;max-width:340px;width:100%;text-align:center;}
+.mb img{width:100%;border-radius:10px;margin-bottom:12px;}
+.mb .cl{width:100%;padding:12px;border:0;border-radius:10px;background:var(--chip);font-family:inherit;font-weight:800;cursor:pointer;color:var(--ink);}
+
+
+.styletags{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px;}
+.styletag{padding:6px 12px;background:var(--chip);border-radius:999px;font-size:12.5px;font-weight:700;color:var(--ink);}
+
+@media(max-width:380px){
+  .pillars{gap:6px;}
+  .pillar .gz{font-size:17px;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← 목록으로</a>
+
+  <div class="hero">
+    <div class="em">🪞</div>
+    <h1>사주로 보는 나의 첫인상</h1>
+    <p>태어난 순간의 기운으로 알아보는, 남들 눈에 비치는 나의 첫인상과 알아갈수록 드러나는 반전 매력.</p>
+  </div>
+
+  <div class="card" id="formCard">
+    <div class="field">
+      <label>태어난 날 (양력)</label>
+      <div class="row3">
+        <select id="fy"></select>
+        <select id="fm"></select>
+        <select id="fd"></select>
+      </div>
+    </div>
+    <div class="field">
+      <label>태어난 시각</label>
+      <div class="row2">
+        <select id="fh"></select>
+        <select id="fmin"></select>
+      </div>
+      <div class="unknown">
+        <input type="checkbox" id="funknown">
+        <label for="funknown" style="margin:0;font-weight:600;">태어난 시각을 몰라요 (시주 제외하고 볼게요)</label>
+      </div>
+    </div>
+    <div class="field">
+      <label>성별 <span style="font-weight:500;color:var(--sub);">(선택, 참고용)</span></label>
+      <div class="gender" id="genderBtns">
+        <button type="button" data-g="">선택 안 함</button>
+        <button type="button" data-g="f">여성</button>
+        <button type="button" data-g="m">남성</button>
+      </div>
+    </div>
+    <button class="submit" id="calcBtn">내 첫인상 보기</button>
+    <div class="precision-note">
+      ⚠️ 이 계산기는 천문학적 근사 공식으로 절기를 계산해요. 실제 발표되는 절입시각과 최대 몇 분 정도 차이가 날 수 있어서, <b>절기가 바뀌는 시점(입춘 등) 근처 몇 분 이내에 태어나신 경우</b> 월주·년주가 실제와 다르게 나올 가능성이 있어요. 대부분의 경우엔 정확해요.
+    </div>
+  </div>
+
+  <div id="result">
+    <div class="card" id="cap">
+      <div class="sectitle" style="margin-top:0;">🎴 나의 사주 네 기둥</div>
+      <div class="pillars" id="pillarsBox"></div>
+
+      <div class="sectitle">🌱 오행 균형</div>
+      <div class="elbars" id="elbarsBox"></div>
+      <div id="elDescBox"></div>
+
+      <div class="sectitle">☯︎ 일간(日干) — 나의 기질의 뿌리</div>
+      <div class="stage" id="dayMasterStage">
+        <div class="stg-cloud l"></div><div class="stg-cloud r"></div>
+        <div class="stg-hill l"></div><div class="stg-hill r"></div><div class="stg-ground"></div>
+        <div class="stg-char" id="dayMasterEm"></div>
+        <div class="stg-badge" id="dayMasterName"></div>
+      </div>
+      <div class="daymaster-tg" id="dayMasterTg" style="font-size:13px;font-weight:700;color:var(--acc);margin:2px 0 8px;"></div>
+      <div class="daymaster-desc" id="dayMasterDesc"></div>
+
+      <div class="sectitle">🎭 처음 만났을 때 주는 인상</div>
+      <div id="impressionBox"></div>
+
+      <div class="sectitle">🔍 알아갈수록 드러나는 반전 인상</div>
+      <div id="secondBox"></div>
+
+      <div class="sectitle">💌 인상을 더 좋게 남기고 싶을 때</div>
+      <div id="tipBox"></div>
+
+      <div class="sectitle">✨ 내 인상이 가장 잘 전달되는 순간</div>
+      <div id="momentBox"></div>
+
+      <div class="footer-note">POWERED BY 테스트팩토리 · 재미로 가볍게 봐주세요. 첫인상은 사주로 다 설명되지 않는, 더 다채로운 거예요.</div>
+    </div>
+
+    <div class="stk">
+      <button class="btn fill" id="saveBtn">결과 이미지 저장하기</button>
+      <button class="btn" id="retryBtn">다시 보기</button>
+    </div>
+  </div>
+</div>
+
+<div class="mo" id="mo">
+  <div class="mb">
+    <div id="mw">이미지를 만들고 있어요...</div>
+    <button class="cl" id="moClose">닫기</button>
+  </div>
+</div>
+
+<script>
+var DAY_STEM = {"갑": {"name": "갑목(甲木)", "emoji": "🌳", "tagline": "곧게 뻗어나가는 큰 나무", "desc": "갑목은 하늘을 향해 곧게 뻗는 큰 나무의 기운이에요. 정직하고 리더십이 강하며, 한번 마음먹으면 끝까지 밀고 나가는 추진력이 있어요. 다만 융통성보다 원칙을 우선시해서 가끔 고집스러워 보일 수 있어요."}, "을": {"name": "을목(乙木)", "emoji": "🌿", "tagline": "바람에 유연하게 휘는 풀", "desc": "을목은 어떤 환경에서도 뿌리내리는 유연한 풀의 기운이에요. 적응력이 뛰어나고 부드럽지만 은근히 끈질긴 생명력을 가졌어요. 남의 마음을 잘 헤아리는 섬세함이 있는 반면, 우유부단해 보일 때도 있어요."}, "병": {"name": "병화(丙火)", "emoji": "☀️", "tagline": "세상을 밝히는 태양", "desc": "병화는 하늘 높이 떠서 세상을 두루 비추는 태양의 기운이에요. 밝고 열정적이며 주변을 이끄는 에너지가 넘쳐요. 다만 감정이 앞서 일을 벌이기 쉽고, 꾸준함보다 순간의 열기로 몰아붙이는 편이에요."}, "정": {"name": "정화(丁火)", "emoji": "🕯️", "tagline": "어둠을 밝히는 촛불", "desc": "정화는 조용히, 그러나 확실하게 주변을 밝히는 촛불의 기운이에요. 섬세하고 다정하며 사람의 마음을 따뜻하게 데워주는 힘이 있어요. 겉으로 드러내지 않아도 속에는 강한 신념을 품고 있는 타입이에요."}, "무": {"name": "무토(戊土)", "emoji": "⛰️", "tagline": "흔들리지 않는 큰 산", "desc": "무토는 어떤 비바람에도 자리를 지키는 큰 산의 기운이에요. 믿음직스럽고 포용력이 넓어서 주변 사람들이 기대게 되는 존재예요. 다만 변화를 받아들이는 속도가 느리고, 속마음을 잘 안 드러내는 편이에요."}, "기": {"name": "기토(己土)", "emoji": "🌾", "tagline": "만물을 길러내는 논밭", "desc": "기토는 씨앗을 품고 곡식을 길러내는 기름진 논밭의 기운이에요. 세심하고 현실적이며, 주변을 돌보는 데 능숙해요. 남을 챙기느라 정작 자신을 위한 시간은 뒤로 미루는 경향이 있어요."}, "경": {"name": "경금(庚金)", "emoji": "⚔️", "tagline": "제련되지 않은 강철", "desc": "경금은 아직 다듬어지지 않은 원석 같은 강철의 기운이에요. 결단력 있고 의리를 중요하게 여기며, 옳다고 믿는 일에는 거침이 없어요. 직설적인 화법 때문에 가끔 오해를 사기도 해요."}, "신": {"name": "신금(辛金)", "emoji": "💎", "tagline": "정교하게 다듬어진 보석", "desc": "신금은 세공을 거쳐 반짝이게 다듬어진 보석의 기운이에요. 감각이 예리하고 완성도에 대한 기준이 높아요. 자기관리에 철저한 만큼 스스로에게도, 남에게도 엄격해지기 쉬운 편이에요."}, "임": {"name": "임수(壬水)", "emoji": "🌊", "tagline": "거침없이 흐르는 큰 강물", "desc": "임수는 넓은 바다를 향해 거침없이 흘러가는 큰 강물의 기운이에요. 사고가 유연하고 스케일이 크며, 새로운 것을 향한 호기심이 많아요. 다만 한곳에 머무르지 못하고 마음이 자주 바뀌는 편이에요."}, "계": {"name": "계수(癸水)", "emoji": "💧", "tagline": "만물을 적시는 이슬비", "desc": "계수는 소리 없이 스며들어 만물을 적시는 이슬비의 기운이에요. 감수성이 풍부하고 상상력이 뛰어나며, 사람의 감정을 섬세하게 읽어내요. 겉으로는 잔잔해 보여도 내면엔 깊은 생각이 흐르고 있는 타입이에요."}};
+var ELEMENT = {"목": {"name": "목(木)", "emoji": "🌳", "high": "목의 기운이 풍부해요. 성장하고 뻗어나가려는 에너지가 강하고, 새로운 일을 시작하는 추진력이 좋아요. 다만 여러 일을 한꺼번에 벌이다 지치지 않게 속도 조절이 필요해요.", "low": "목의 기운이 부족해요. 새로운 시작이나 계획을 세우는 데 조금 더 의식적인 노력이 필요할 수 있어요. 초록빛 식물을 곁에 두거나 아침 산책처럼 성장의 기운을 채우는 습관이 도움이 돼요."}, "화": {"name": "화(火)", "emoji": "🔥", "high": "화의 기운이 풍부해요. 열정적이고 표현력이 풍부하며, 주변에 에너지를 퍼뜨리는 힘이 있어요. 다만 감정 기복이 커질 수 있어서, 흥분했을 때 한 박자 쉬어가는 습관이 도움이 돼요.", "low": "화의 기운이 부족해요. 감정을 표현하거나 열정을 드러내는 데 조금 신중한 편일 수 있어요. 밝은 조명이나 따뜻한 색感의 공간이 기운을 북돋아 줄 수 있어요."}, "토": {"name": "토(土)", "emoji": "⛰️", "high": "토의 기운이 풍부해요. 안정감 있고 신뢰를 주는 사람이라 주변에서 많이 의지해요. 다만 변화를 받아들이는 데 시간이 걸릴 수 있어서, 가끔은 익숙한 걸 내려놓는 용기도 필요해요.", "low": "토의 기운이 부족해요. 계획을 끝까지 밀고 가는 지구력이 약해질 수 있어요. 규칙적인 루틴을 만들거나, 하나의 목표에 집중하는 연습이 균형을 잡는 데 도움이 돼요."}, "금": {"name": "금(金)", "emoji": "⚔️", "high": "금의 기운이 풍부해요. 결단력 있고 원칙이 확고해서, 옳고 그름을 명확히 하는 편이에요. 다만 너무 날카로워질 수 있으니, 부드러운 표현을 의식적으로 섞어보는 게 좋아요.", "low": "금의 기운이 부족해요. 결단을 내리거나 선을 긋는 일이 어렵게 느껴질 수 있어요. 우선순위를 정하는 연습이나, 하얀색·금속 소재의 소품이 기운을 채우는 데 도움이 될 수 있어요."}, "수": {"name": "수(水)", "emoji": "🌊", "high": "수의 기운이 풍부해요. 사고가 유연하고 지혜로우며, 상황에 맞게 잘 적응해요. 다만 생각이 너무 많아져 결정이 늦어질 수 있으니, 마감 기한을 정해두는 게 도움이 돼요.", "low": "수의 기운이 부족해요. 유연하게 흘러가기보다 한 방향을 고집하는 편일 수 있어요. 충분한 수면과 휴식, 물을 자주 마시는 습관이 균형을 채우는 데 도움이 돼요."}};
+
+/* ===== 첫인상 — 새로운 블렌딩 콘텐츠 (일간의 오행 = 첫인상, CONTROLS 매핑 = 반전 인상) ===== */
+var CONTROLS = {'목':'토','토':'수','수':'화','화':'금','금':'목'};
+var IMPRESSION_BASE = {
+  '목': { tag:'상큼하고 활동적인 인상', desc:'처음 만나면 밝고 에너지 넘치는 사람이라는 인상을 줘요. 표정이 살아있고 행동이 시원시원해서, 어색한 자리에서도 분위기를 편하게 풀어주는 사람으로 기억되는 편이에요.' },
+  '화': { tag:'화사하고 사교적인 인상', desc:'처음 보는 순간부터 눈에 띄는 화사함이 있어요. 리액션이 좋고 말을 편하게 걸어주는 편이라, 낯가림 있는 상대도 금방 마음을 여는 경우가 많아요.' },
+  '토': { tag:'편안하고 믿음직한 인상', desc:'말수가 적어도 왠지 편안하다는 인상을 주는 편이에요. 서두르지 않는 태도와 안정된 분위기 덕분에, 처음 만난 사람도 이상하게 경계심을 풀게 되는 타입이에요.' },
+  '금': { tag:'깔끔하고 야무진 인상', desc:'정돈된 태도와 분명한 말투 때문에 똑 부러진다는 인상을 자주 받아요. 예의 바르면서도 할 말은 하는 모습이 신뢰감을 주는 편이에요.' },
+  '수': { tag:'차분하고 신비로운 인상', desc:'많은 말을 하지 않아도 묘하게 여운이 남는 인상을 줘요. 조용한 분위기 속에 알 수 없는 깊이가 느껴져서, 궁금증을 자아내는 타입이에요.' }
+};
+var SECOND_IMPRESSION = {
+  '목': '시원시원해 보이지만, 친해질수록 은근히 세심하게 남을 챙기는 다정함이 드러나요. 그 반전이 오히려 더 깊은 신뢰로 이어지는 편이에요.',
+  '화': '밝고 가벼워 보이지만, 가까워질수록 의외로 진지하고 한결같은 면이 보여요. 겉으로 보이는 것보다 속이 훨씬 단단한 사람이라는 걸 알게 돼요.',
+  '토': '무던해 보이지만, 알고 보면 자기만의 확고한 기준과 재치있는 유머감각을 가지고 있어요. 편안함 뒤에 숨겨진 이 매력이 은근한 반전이에요.',
+  '금': '깐깐해 보일 수 있지만, 마음을 연 사람에게는 의외로 다정하고 살가운 면을 보여줘요. 엄격함 뒤에 숨은 다정함이 반전 포인트예요.',
+  '수': '무심해 보여도, 실은 상대의 작은 변화까지 알아채는 섬세한 관찰력을 가지고 있어요. 이 뜻밖의 다정한 관심이 반전 매력이에요.'
+};
+var IMPRESSION_TIP = {
+  '목': '먼저 다가가 인사를 건네는 것만으로도 이미 타고난 장점이 발휘돼요. 대화 중간중간 상대의 말에 한 박자 여유를 두고 반응해주면 성급해 보이는 인상을 줄일 수 있어요.',
+  '화': '리액션은 이미 충분히 좋으니, 대화 끝에 상대의 이야기를 한 번 더 짚어주는 습관을 더하면 훨씬 배려 깊은 인상을 남길 수 있어요.',
+  '토': '편안한 분위기가 강점이니 굳이 애써 말을 많이 하려 하지 않아도 괜찮아요. 대신 먼저 살짝 미소를 지어 보이는 것만으로 다가가기 쉬운 인상이 배가돼요.',
+  '금': '정돈된 태도는 이미 신뢰를 주니, 대화 초반에 가벼운 스몰토크로 분위기를 살짝 풀어주면 차갑다는 오해를 줄일 수 있어요.',
+  '수': '차분한 분위기가 매력이니, 눈을 맞추며 짧게라도 먼저 안부를 물어보는 습관을 더하면 거리감이 훨씬 줄어들어요.'
+};
+var BEST_MOMENT = {
+  '목': '새로운 사람들과 처음 만나는 자리, 활기찬 모임 자리에서 인상이 가장 잘 전달돼요.',
+  '화': '여러 사람이 모여 대화가 활발히 오가는 시끌벅적한 자리에서 매력이 가장 잘 드러나요.',
+  '토': '천천히 대화를 나눌 수 있는 조용하고 편안한 자리에서 진가가 잘 전해져요.',
+  '금': '격식이 있는 자리나 첫 미팅처럼 신뢰가 중요한 자리에서 인상이 가장 좋게 남아요.',
+  '수': '일대일로 깊은 대화를 나눌 수 있는 조용한 자리에서 매력이 가장 잘 전달돼요.'
+};
+
+
+var STEMS = ['갑','을','병','정','무','기','경','신','임','계'];
+var BRANCHES = ['자','축','인','묘','진','사','오','미','신','유','술','해'];
+var STEM_IDX = {}; STEMS.forEach(function(s,i){STEM_IDX[s]=i;});
+var STEM_EL = {'갑':'목','을':'목','병':'화','정':'화','무':'토','기':'토','경':'금','신':'금','임':'수','계':'수'};
+var BR_EL = {'자':'수','축':'토','인':'목','묘':'목','진':'토','사':'화','오':'화','미':'토','신':'금','유':'금','술':'토','해':'수'};
+
+// ===== JDN =====
+function toJDN(y,m,d){
+  var a = Math.floor((14-m)/12), yy=y+4800-a, mm=m+12*a-3;
+  return d + Math.floor((153*mm+2)/5) + 365*yy + Math.floor(yy/4) - Math.floor(yy/100) + Math.floor(yy/400) - 32045;
+}
+var BASE_JDN = toJDN(1900,1,1), BASE_IDX = 12; // 1900-01-01 = 병자일 (만세력 8개 지점 검증됨)
+function dayPillarIndex(y,m,d){
+  var jdn = toJDN(y,m,d);
+  return ((jdn - BASE_JDN + BASE_IDX) % 60 + 60) % 60;
+}
+
+// ===== 태양 황경(절기) =====
+function toJD(y,m,d,h){
+  h=h||0; if(m<=2){y-=1;m+=12;}
+  var A=Math.floor(y/100), B=2-A+Math.floor(A/4);
+  return Math.floor(365.25*(y+4716))+Math.floor(30.6001*(m+1))+d+h/24+B-1524.5;
+}
+function deg2rad(d){return d*Math.PI/180;}
+function norm360(d){d=d%360; if(d<0)d+=360; return d;}
+function sunLon(JD){
+  var T=(JD-2451545.0)/36525;
+  var L0=norm360(280.46646+36000.76983*T+0.0003032*T*T);
+  var M=norm360(357.52911+35999.05029*T-0.0001537*T*T);
+  var Mr=deg2rad(M);
+  var C=(1.914602-0.004817*T-0.000014*T*T)*Math.sin(Mr)+(0.019993-0.000101*T)*Math.sin(2*Mr)+0.000289*Math.sin(3*Mr);
+  var Omega=125.04-1934.136*T;
+  return norm360(L0+C-0.00569-0.00478*Math.sin(deg2rad(Omega)));
+}
+function findTermJD(approxJD,targetDeg){
+  var jd=approxJD;
+  for(var i=0;i<8;i++){
+    var diff=targetDeg-sunLon(jd);
+    while(diff>180)diff-=360; while(diff<-180)diff+=360;
+    if(Math.abs(diff)<0.0000001)break;
+    jd+=diff/0.9856;
+  }
+  return jd;
+}
+
+var JIE = [
+  {deg:315,branch:'인'},{deg:345,branch:'묘'},{deg:15, branch:'진'},{deg:45, branch:'사'},
+  {deg:75, branch:'오'},{deg:105,branch:'미'},{deg:135,branch:'신'},{deg:165,branch:'유'},
+  {deg:195,branch:'술'},{deg:225,branch:'해'},{deg:255,branch:'자'},{deg:285,branch:'축'}
+];
+var JIE_APPROX_MONTH = {315:2,345:3,15:4,45:5,75:6,105:7,135:8,165:9,195:10,225:11,255:12,285:1};
+
+function findMonthBranch(y,m,d,h,min){
+  var birthJD = toJD(y,m,d,h-9+(min||0)/60);
+  var candidates = [];
+  [y-1,y,y+1].forEach(function(yy){
+    JIE.forEach(function(j){
+      var approx = toJD(yy, JIE_APPROX_MONTH[j.deg], 15, 0);
+      var jd = findTermJD(approx, j.deg);
+      candidates.push({jd:jd, branch:j.branch});
+    });
+  });
+  candidates.sort(function(a,b){return a.jd-b.jd;});
+  var cur = candidates[0];
+  for(var i=0;i<candidates.length;i++){
+    if(candidates[i].jd <= birthJD) cur = candidates[i]; else break;
+  }
+  return cur.branch;
+}
+
+var YEAR_STEM_TO_INMONTH_STEM = {'갑':'병','기':'병','을':'무','경':'무','병':'경','신':'경','정':'임','임':'임','무':'갑','계':'갑'};
+var MONTH_BRANCH_ORDER = ['인','묘','진','사','오','미','신','유','술','해','자','축'];
+var HOUR_BRANCH_ORDER = ['자','축','인','묘','진','사','오','미','신','유','술','해'];
+var DAY_STEM_TO_JASI_STEM = {'갑':'갑','기':'갑','을':'병','경':'병','병':'무','신':'무','정':'경','임':'경','무':'임','계':'임'};
+
+function getSaju(y,m,d,h,min,noHour){
+  min = min||0;
+  var dIdx = dayPillarIndex(y,m,d);
+  var dayStem = STEMS[dIdx%10], dayBranch = BRANCHES[dIdx%12];
+
+  var hh = noHour ? 12 : h; // 시간 모를 땐 정오로 가정(절기 판정에만 사용, 시주는 표시 안 함)
+  var monthBranch = findMonthBranch(y,m,d,hh,min);
+
+  var ipchunJD = findTermJD(toJD(y,2,4,0), 315);
+  var birthJD = toJD(y,m,d,hh-9+min/60);
+  var sajuYear = (birthJD < ipchunJD) ? y-1 : y;
+  var yIdx = ((sajuYear-1984)%60+60)%60;
+  var yearStem = STEMS[yIdx%10], yearBranch = BRANCHES[yIdx%12];
+
+  var startStem = YEAR_STEM_TO_INMONTH_STEM[yearStem];
+  var pos = MONTH_BRANCH_ORDER.indexOf(monthBranch);
+  var monthStem = STEMS[(STEM_IDX[startStem]+pos)%10];
+
+  var out = {
+    year: yearStem+yearBranch, month: monthStem+monthBranch, day: dayStem+dayBranch, hour: null
+  };
+  if(!noHour){
+    var hshift=(h+1)%24, hIdx=Math.floor(hshift/2)%12;
+    var hourBranch = HOUR_BRANCH_ORDER[hIdx];
+    var hStartStem = DAY_STEM_TO_JASI_STEM[dayStem];
+    var hPos = HOUR_BRANCH_ORDER.indexOf(hourBranch);
+    var hourStem = STEMS[(STEM_IDX[hStartStem]+hPos)%10];
+    out.hour = hourStem+hourBranch;
+  }
+  return out;
+}
+
+// ===== UI =====
+function $(id){return document.getElementById(id);}
+function fillSelect(sel, from, to, pad){
+  var h='';
+  for(var i=from;i<=to;i++){
+    h += '<option value="'+i+'">'+(pad?String(i).padStart(2,'0'):i)+'</option>';
+  }
+  sel.innerHTML = h;
+}
+var curYear = new Date().getFullYear();
+fillSelect($('fy'), 1940, curYear, false);
+$('fy').value = 2000;
+fillSelect($('fm'), 1, 12, false);
+fillSelect($('fd'), 1, 31, false);
+fillSelect($('fh'), 0, 23, true);
+fillSelect($('fmin'), 0, 59, true);
+
+$('genderBtns').querySelectorAll('button').forEach(function(b){
+  b.addEventListener('click', function(){
+    $('genderBtns').querySelectorAll('button').forEach(function(x){x.classList.remove('on');});
+    b.classList.add('on');
+  });
+});
+$('genderBtns').querySelector('button').classList.add('on');
+
+$('funknown').addEventListener('change', function(e){
+  $('fh').disabled = e.target.checked;
+  $('fmin').disabled = e.target.checked;
+});
+
+function renderPillar(role, gz){
+  if(!gz) return '<div class="pillar"><div class="role">'+role+'</div><div class="gz" style="color:var(--sub);font-size:13px;">모름</div></div>';
+  var stem = gz[0], branch = gz[1];
+  return '<div class="pillar"><div class="role">'+role+'</div><div class="gz">'+gz+'</div>'+
+    '<div class="el">'+STEM_EL[stem]+'·'+BR_EL[branch]+'</div></div>';
+}
+
+function calcElementCounts(saju){
+  var counts = {'목':0,'화':0,'토':0,'금':0,'수':0};
+  [saju.year, saju.month, saju.day, saju.hour].forEach(function(gz){
+    if(!gz) return;
+    counts[STEM_EL[gz[0]]]++;
+    counts[BR_EL[gz[1]]]++;
+  });
+  return counts;
+}
+
+$('calcBtn').addEventListener('click', function(){
+  var y = parseInt($('fy').value,10), m = parseInt($('fm').value,10), d = parseInt($('fd').value,10);
+  var noHour = $('funknown').checked;
+  var h = noHour ? 12 : parseInt($('fh').value,10);
+  var min = noHour ? 0 : parseInt($('fmin').value,10);
+
+  // 유효 날짜 체크
+  var test = new Date(y, m-1, d);
+  if(test.getFullYear()!==y || test.getMonth()!==m-1 || test.getDate()!==d){
+    alert('존재하지 않는 날짜예요. 다시 확인해주세요.');
+    return;
+  }
+
+  var saju = getSaju(y,m,d,h,min,noHour);
+
+  $('pillarsBox').innerHTML =
+    renderPillar('시주', saju.hour) +
+    renderPillar('일주', saju.day) +
+    renderPillar('월주', saju.month) +
+    renderPillar('년주', saju.year);
+
+  var counts = calcElementCounts(saju);
+  var maxCount = Math.max.apply(null, Object.values(counts));
+  var elOrder = ['목','화','토','금','수'];
+  $('elbarsBox').innerHTML = elOrder.map(function(el){
+    var n = counts[el];
+    var pct = maxCount ? Math.round(n/Math.max(maxCount,1)*100) : 0;
+    return '<div class="elbar-row"><div class="lab">'+ELEMENT[el].emoji+' '+el+'</div>'+
+      '<div class="track"><div class="fill" style="width:'+pct+'%"></div></div>'+
+      '<div class="num">'+n+'</div></div>';
+  }).join('');
+
+  // 가장 많은/적은 오행 하나씩 설명
+  var sortedEl = elOrder.slice().sort(function(a,b){return counts[b]-counts[a];});
+  var highEl = sortedEl[0], lowEl = sortedEl[sortedEl.length-1];
+  var descHtml = '';
+  if(counts[highEl] >= 3){
+    descHtml += '<div class="eldesc"><b>'+ELEMENT[highEl].name+'이 두드러져요.</b> '+ELEMENT[highEl].high+'</div>';
+  }
+  if(counts[lowEl] === 0){
+    descHtml += '<div class="eldesc"><b>'+ELEMENT[lowEl].name+'이 부족해요.</b> '+ELEMENT[lowEl].low+'</div>';
+  }
+  if(!descHtml){
+    descHtml = '<div class="eldesc">오행이 비교적 고르게 분포돼 있어요. 균형 잡힌 기운을 가지고 있는 편이에요.</div>';
+  }
+  $('elDescBox').innerHTML = descHtml;
+
+  var dayStemChar = saju.day[0];
+  var dm = DAY_STEM[dayStemChar];
+  $('dayMasterEm').textContent = dm.emoji;
+  $('dayMasterName').textContent = dm.name;
+  $('dayMasterTg').textContent = dm.tagline;
+  $('dayMasterDesc').textContent = dm.desc;
+
+  var dayEl = STEM_EL[dayStemChar];
+  var ib = IMPRESSION_BASE[dayEl];
+  $('impressionBox').innerHTML = '<div class="eldesc">'+ELEMENT[dayEl].emoji+' <b>'+ib.tag+'</b> '+ib.desc+'</div>';
+
+  $('secondBox').innerHTML = '<div class="eldesc">'+SECOND_IMPRESSION[dayEl]+'</div>';
+
+  $('tipBox').innerHTML = '<div class="eldesc">'+IMPRESSION_TIP[dayEl]+'</div>';
+
+  $('momentBox').innerHTML = '<div class="eldesc">'+BEST_MOMENT[dayEl]+'</div>';
+
+  $('result').classList.add('on');
+  $('formCard').style.display = 'none';
+  $('result').scrollIntoView({behavior:'smooth', block:'start'});
+});
+
+$('retryBtn').addEventListener('click', function(){
+  $('result').classList.remove('on');
+  $('formCard').style.display = 'block';
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+
+function frames(){return new Promise(function(r){requestAnimationFrame(function(){requestAnimationFrame(r);});});}
+function wait(ms){return new Promise(function(r){setTimeout(r,ms);});}
+
+$('saveBtn').addEventListener('click', async function(){
+  $('mo').classList.add('on');
+  $('mw').innerHTML = '이미지를 만들고 있어요...';
+  try{
+    if(document.fonts){try{await document.fonts.ready;}catch(e){}}
+    await frames(); await wait(260);
+    var cv = await html2canvas($('cap'), {backgroundColor:'#FFFDFB', scale:2});
+    var dataUrl = cv.toDataURL('image/png');
+    $('mw').innerHTML = '<img src="'+dataUrl+'" alt="사주 결과"><p style="font-size:12px;color:var(--sub);margin:0;">이미지를 길게 눌러서 저장해주세요.</p>';
+  }catch(e){
+    $('mw').innerHTML = '<p style="font-size:13px;">이미지를 만들지 못했어요. 화면을 직접 캡처해주세요.</p>';
+  }
+});
+$('moClose').addEventListener('click', function(){ $('mo').classList.remove('on'); });
+$('mo').addEventListener('click', function(e){ if(e.target===$('mo')) $('mo').classList.remove('on'); });
+</script>
+</body>
+</html>

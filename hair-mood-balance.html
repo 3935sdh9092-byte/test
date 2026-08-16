@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나는 어떤 헤어 무드가 어울릴까? 헤어 스타일링 밸런스 테스트 — 테스트팩토리</title>
+<meta name="description" content="청순웨이브·시크스트레이트·러블리볼륨펌·내추럴히피펌·걸크러시숏컷, 선택으로 알아보는 나의 헤어 무드. 12문항이면 바로 알 수 있어요.">
+<meta property="og:title" content="나는 어떤 헤어 무드가 어울릴까? 헤어 스타일링 밸런스 테스트 — 테스트팩토리">
+<meta property="og:description" content="청순웨이브·시크스트레이트·러블리볼륨펌·내추럴히피펌·걸크러시숏컷, 선택으로 알아보는 나의 헤어 무드. 12문항이면 바로 알 수 있어요.">
+<meta property="og:image" content="hair-mood-balance-thumb.png">
+<meta property="og:image:width" content="900">
+<meta property="og:image:height" content="1260">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg:#FFF5F3; --paper:#FFFFFF; --ink:#2E1E22; --sub:#8C6E76;
+  --line:#F6D6D9; --acc:#D6667F; --gold:#C8942C; --chip:rgba(46,30,34,.06); --r:14px; --bw:2px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;min-height:100vh;}
+.wrap{max-width:560px;margin:0 auto;padding:28px 18px 80px;}
+.back{display:inline-block;margin-bottom:18px;font-size:13px;font-weight:700;color:var(--sub);text-decoration:none;}
+.hero{text-align:center;padding:16px 0 24px;}
+.hero .em{font-size:52px;line-height:1;margin-bottom:12px;}
+.hero h1{font-size:22px;font-weight:900;margin-bottom:8px;letter-spacing:-.3px;word-break:keep-all;}
+.hero p{font-size:14px;color:var(--sub);line-height:1.65;}
+.start-btn{width:100%;padding:16px;border:0;border-radius:var(--r);background:var(--acc);color:#fff;
+  font-family:inherit;font-size:16px;font-weight:900;cursor:pointer;margin-top:20px;}
+.prog-wrap{margin-bottom:20px;}
+.prog-info{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;margin-bottom:8px;color:var(--sub);}
+.prog-track{height:8px;background:var(--chip);border-radius:999px;overflow:hidden;border:var(--bw) solid var(--line);}
+.prog-fill{height:100%;background:var(--acc);border-radius:999px;transition:width .25s ease;}
+.qcard{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:22px 18px;}
+.qnum{display:inline-block;padding:4px 10px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:11px;font-weight:800;margin-bottom:14px;}
+.qtext{font-size:18px;font-weight:800;line-height:1.5;margin-bottom:18px;word-break:keep-all;}
+.opts{display:grid;gap:10px;}
+.opt{width:100%;padding:13px 15px;border:var(--bw) solid var(--line);border-radius:10px;
+  background:#fff;font-family:inherit;font-size:14px;font-weight:600;text-align:left;cursor:pointer;
+  color:var(--ink);transition:all .15s ease;word-break:keep-all;}
+.opt:hover{background:var(--chip);border-color:var(--acc);}
+.opt:disabled{cursor:default;}
+.opt.pk{background:var(--chip);border-color:var(--acc);}
+#cap{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:24px 18px;margin-bottom:16px;}
+.res-header{text-align:center;padding:6px 0 16px;border-bottom:var(--bw) solid var(--line);margin-bottom:16px;}
+.res-em{font-size:56px;line-height:1;margin-bottom:10px;}
+.res-badge{display:inline-block;padding:6px 16px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:12.5px;font-weight:900;margin-bottom:12px;}
+.res-title{font-size:23px;font-weight:900;margin-bottom:6px;word-break:keep-all;}
+.res-tag{font-size:13.5px;color:var(--gold);font-weight:800;margin-bottom:2px;word-break:keep-all;}
+.res-desc{font-size:14.5px;line-height:1.8;color:var(--ink);text-align:left;margin-top:14px;}
+.traits{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;}
+.trait{padding:6px 12px;background:var(--chip);border-radius:999px;font-size:12px;font-weight:700;color:var(--acc);}
+.dist-wrap{margin-top:20px;}
+.dist-title{font-size:12.5px;font-weight:800;color:var(--sub);margin-bottom:10px;}
+.dist-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.dist-row .lab{width:76px;font-size:11.5px;font-weight:800;flex-shrink:0;}
+.dist-row .track{flex:1;height:10px;background:var(--chip);border-radius:999px;overflow:hidden;}
+.dist-row .fill{height:100%;background:var(--acc);border-radius:999px;transition:width .5s ease;}
+.dist-row.me .fill{background:var(--gold);}
+.dist-row .num{width:20px;text-align:right;font-size:11.5px;font-weight:800;color:var(--sub);}
+.footer-note{font-size:11px;color:var(--sub);text-align:center;margin-top:18px;}
+.stk{display:grid;gap:10px;}
+.btn{width:100%;padding:14px;border:var(--bw) solid var(--ink);border-radius:var(--r);background:#fff;
+  font-family:inherit;font-weight:800;font-size:14.5px;cursor:pointer;color:var(--ink);}
+.btn.fill{background:var(--ink);color:#fff;border-color:var(--ink);}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:center;justify-content:center;padding:20px;}
+.mo.on{display:flex;}
+.mb{background:#fff;border-radius:16px;padding:20px;max-width:340px;width:100%;text-align:center;}
+.mb img{width:100%;border-radius:10px;margin-bottom:12px;}
+.mb .cl{width:100%;padding:12px;border:0;border-radius:10px;background:var(--chip);font-family:inherit;font-weight:800;cursor:pointer;color:var(--ink);}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← 목록으로</a>
+  <div id="s1">
+    <div class="hero">
+      <div class="em">💇‍♀️</div>
+      <h1>나는 어떤 헤어 무드가 어울릴까? 헤어 스타일링 밸런스 테스트</h1>
+      <p>청순웨이브·시크스트레이트·러블리볼륨펌·내추럴히피펌·걸크러시숏컷, 선택으로 알아보는 나의 헤어 무드. 12문항이면 바로 알 수 있어요.</p>
+      <button class="start-btn" onclick="startQuiz()">테스트 시작하기</button>
+    </div>
+  </div>
+  <div id="s2" class="hidden">
+    <div class="prog-wrap">
+      <div class="prog-info"><span id="progLabel">1 / 12</span><span id="progPos"></span></div>
+      <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+    </div>
+    <div class="qcard">
+      <div class="qnum" id="qNum">Q1</div>
+      <div class="qtext" id="qText"></div>
+      <div class="opts" id="opts"></div>
+    </div>
+  </div>
+  <div id="s3" class="hidden">
+    <div id="cap">
+      <div class="res-header">
+        <div class="res-em" id="resEm"></div>
+        <div class="res-badge" id="resBadge"></div>
+        <div class="res-title" id="resTitle"></div>
+        <div class="res-tag" id="resTag"></div>
+      </div>
+      <div class="res-desc" id="resDesc"></div>
+      <div class="traits" id="resTraits"></div>
+      <div class="dist-wrap">
+        <div class="dist-title">📊 나의 헤어 무드 분포</div>
+        <div id="distBox"></div>
+      </div>
+      <div class="footer-note">POWERED BY 테스트팩토리 · 재미로 봐주세요.</div>
+    </div>
+    <div class="stk">
+      <button class="btn fill" onclick="saveImg()">결과 이미지 저장하기</button>
+      <button class="btn" onclick="location.reload()">다시 풀기</button>
+      <button class="btn" onclick="location.href='index.html'">다른 테스트 보기</button>
+    </div>
+  </div>
+</div>
+<div class="mo" id="mo">
+  <div class="mb">
+    <div id="mw">이미지를 만들고 있어요...</div>
+    <button class="cl" onclick="document.getElementById('mo').classList.remove('on')">닫기</button>
+  </div>
+</div>
+<script>
+var POS = ["청순웨이브","시크스트레이트","러블리볼륨펌","내추럴히피펌","걸크러시숏컷"];
+var QUESTIONS = [
+{"q":"아침에 머리 손질할 때 가장 많이 하는 스타일링은?","options":["차분하게 웨이브 고데기로 마무리한다","스트레이트로 곧게 펴서 정리한다","롤로 볼륨을 살려 풍성하게 만든다","자연스럽게 헝클어진 느낌을 살린다","짧은 머리라 손질이 거의 필요 없다"]},
+{"q":"좋아하는 헤어 액세서리는?","options":["리본이나 진주 헤어핀","심플한 헤어밴드나 클립","리본 스크런치나 볼륨 헤어롤","비즈나 자연스러운 브레이드 끈","시크한 헤어핀 하나로 포인트"]},
+{"q":"미용실 가서 가장 많이 요청하는 스타일은?","options":["부드러운 C컬 웨이브펌","윤기나는 매직 스트레이트","탄력있는 볼륨매직이나 펌","가볍고 러프한 히피펌","과감한 숏컷이나 보브컷"]},
+{"q":"선호하는 헤어 컬러는?","options":["애쉬브라운이나 밀크티 톤","윤기나는 블랙이나 다크브라운","웜톤 갈색이나 오렌지 브라운","애쉬그레이나 카키 계열","블랙 또는 과감한 원포인트 컬러"]},
+{"q":"데이트 전 머리 스타일링에 가장 공들이는 부분은?","options":["잔머리까지 부드럽게 웨이브 살리기","윤기와 매끈함 살리기","풍성한 볼륨감 만들기","자연스러운 흐트러짐 연출하기","깔끔한 라인 정리하기"]},
+{"q":"여행 갈 때 챙기는 헤어 도구는?","options":["웨이브 고데기는 꼭 챙긴다","스트레이트 고데기만 있으면 된다","볼륨 스타일러를 챙긴다","그냥 자연스럽게 두고 다닌다","짧아서 그냥 물로 정리하고 끝낸다"]},
+{"q":"좋아하는 헤어스타일 무드는?","options":["청순하고 사랑스러운 무드","깔끔하고 시크한 무드","화사하고 러블리한 무드","자유롭고 힙한 무드","쿨하고 개성있는 무드"]},
+{"q":"머리를 묶을 때 즐겨 하는 스타일은?","options":["느슨한 웨이브 포니테일","깔끔한 로우 포니테일","높게 묶은 볼륨 업두","반묶음 브레이드 스타일","짧아서 묶을 필요가 없다"]},
+{"q":"친구들이 내 헤어스타일을 보고 자주 하는 말은?","options":["부드럽고 여성스럽다","단정하고 세련됐다","화사하고 생기있다","자연스럽고 힙하다","시원하고 개성있다"]},
+{"q":"새로 사고 싶은 헤어 스타일링 제품은?","options":["웨이브 에센스나 컬크림","헤어 오일이나 광택 세럼","볼륨 무스나 스프레이","텍스처 스프레이나 소금 스프레이","스타일링 왁스나 포마드"]},
+{"q":"헤어스타일 참고 자료를 찾을 때 검색하는 키워드는?","options":["청순 웨이브 헤어","시크 스트레이트 헤어","볼륨 러블리 헤어","히피펌 내추럴 헤어","숏컷 걸크러시 헤어"]},
+{"q":"10년 뒤에도 유지하고 싶은 나의 헤어 무드는?","options":["부드럽고 사랑스러운 웨이브","단정하고 우아한 스트레이트","화사하고 볼륨있는 스타일","자유롭고 자연스러운 스타일","짧고 개성있는 스타일"]}
+];
+var RESULTS = [
+{"name":"청순 웨이브형","emoji":"🌸","tagline":"부드럽게 마음을 사로잡는 웨이브","color":"#D98FA8","desc":"부드럽게 흘러내리는 웨이브가 자연스럽게 잘 어울리는 타입이에요. 사랑스럽고 다정한 인상을 주는 헤어 무드라, 첫 만남에서도 편안하고 다가가기 쉬운 느낌을 줘요. 화려하지 않아도 은은하게 시선을 끄는 매력이 있어요.","traits":["사랑스러움","부드러운 인상","여성스러움","편안한 매력"]},
+{"name":"시크 스트레이트형","emoji":"🖤","tagline":"군더더기 없이 깔끔한 매력","color":"#4A4750","desc":"윤기나는 스트레이트 헤어가 가장 잘 어울리는 타입이에요. 정돈된 헤어 라인만으로도 세련되고 신뢰감 있는 인상을 줘서, 어떤 자리에서도 프로페셔널한 느낌을 연출할 수 있어요. 꾸미지 않은 듯 완벽한 게 이 스타일의 매력이에요.","traits":["세련미","깔끔한 인상","신뢰감","미니멀 감성"]},
+{"name":"러블리 볼륨펌형","emoji":"💗","tagline":"화사하게 생기를 더하는 볼륨","color":"#E8879C","desc":"풍성한 볼륨감이 살아있는 헤어스타일이 잘 어울리는 타입이에요. 화사하고 생기있는 무드 덕분에 사진 찍을 때도, 실제로 마주할 때도 늘 밝은 인상을 남겨요. 존재감 있게 화사한 분위기를 만들고 싶을 때 제격이에요.","traits":["화사함","생기있는 인상","볼륨감","사진발 만점"]},
+{"name":"내추럴 히피펌형","emoji":"🌾","tagline":"자유롭고 힙한 분위기 메이커","color":"#A88B5C","desc":"자연스럽게 흐트러진 텍스처가 매력적인 타입이에요. 정형화되지 않은 자유로운 분위기 덕분에 개성있고 힙한 인상을 줘서, 어디서든 스타일이 좋다는 얘기를 듣는 편이에요. 애쓰지 않은 듯한 감각적인 매력이 이 스타일의 무기예요.","traits":["개성있는 감각","힙한 분위기","자유로움","트렌디한 매력"]},
+{"name":"걸크러시 숏컷형","emoji":"⚡","tagline":"짧지만 강렬한 존재감","color":"#5C6B73","desc":"짧고 깔끔한 헤어스타일이 잘 어울리는 타입이에요. 군더더기 없는 실루엣만으로도 시원하고 당당한 인상을 줘서, 자신감 있는 매력이 자연스럽게 드러나요. 스타일에 확신이 있는 사람만 소화할 수 있는 개성 있는 무드예요.","traits":["당당한 매력","시원한 인상","개성","자신감"]}
+];
+
+var qi=0, counts=[0,0,0,0,0];
+function show(id){ ['s1','s2','s3'].forEach(function(s){ document.getElementById(s).className=s===id?'':'hidden'; }); }
+function startQuiz(){ qi=0; counts=[0,0,0,0,0]; show('s2'); renderQ(); }
+function renderQ(){
+  var q=QUESTIONS[qi], total=QUESTIONS.length;
+  document.getElementById('progLabel').textContent=(qi+1)+' / '+total;
+  document.getElementById('progFill').style.width=Math.round((qi)/total*100)+'%';
+  document.getElementById('qNum').textContent='Q'+(qi+1);
+  document.getElementById('qText').textContent=q.q;
+  var opts=document.getElementById('opts');
+  opts.innerHTML='';
+  q.options.forEach(function(opt,i){
+    var b=document.createElement('button');
+    b.className='opt'; b.textContent=opt;
+    b.onclick=function(){ pick(i); };
+    opts.appendChild(b);
+  });
+}
+function pick(i){
+  var btns=document.querySelectorAll('.opt');
+  btns.forEach(function(b){ b.disabled=true; });
+  btns[i].className='opt pk';
+  counts[i]++;
+  setTimeout(function(){ qi++; if(qi<QUESTIONS.length){ renderQ(); } else { showResult(); } }, 260);
+}
+function showResult(){
+  show('s3');
+  var best=0;
+  for(var i=1;i<counts.length;i++){ if(counts[i]>counts[best]) best=i; }
+  var r=RESULTS[best];
+  document.getElementById('resEm').textContent=r.emoji;
+  document.getElementById('resBadge').textContent=POS[best]+' 유형';
+  document.getElementById('resBadge').style.background=r.color;
+  document.getElementById('resTitle').textContent=r.name;
+  document.getElementById('resTag').textContent=r.tagline;
+  document.getElementById('resTag').style.color=r.color;
+  document.getElementById('resDesc').textContent=r.desc;
+  document.getElementById('resTraits').innerHTML=r.traits.map(function(t){return '<span class="trait">#'+t+'</span>';}).join('');
+  var total=QUESTIONS.length;
+  var distHtml='';
+  POS.forEach(function(p,i){
+    var pct=Math.round(counts[i]/total*100);
+    distHtml+='<div class="dist-row'+(i===best?' me':'')+'"><div class="lab">'+p+'</div>'+
+      '<div class="track"><div class="fill" style="width:'+pct+'%"></div></div>'+
+      '<div class="num">'+counts[i]+'</div></div>';
+  });
+  document.getElementById('distBox').innerHTML=distHtml;
+}
+async function saveImg(){
+  document.getElementById('mo').classList.add('on');
+  document.getElementById('mw').innerHTML='이미지를 만들고 있어요...';
+  try{
+    if(document.fonts) await document.fonts.ready;
+    var cv=await html2canvas(document.getElementById('cap'),{backgroundColor:'#FFFFFF',scale:2});
+    var img=new Image(); img.src=cv.toDataURL('image/png');
+    document.getElementById('mw').innerHTML='';
+    document.getElementById('mw').appendChild(img);
+    var p=document.createElement('p'); p.style.cssText='font-size:12px;color:#888;margin-top:8px;';
+    p.textContent='이미지를 길게 눌러서 저장해주세요.';
+    document.getElementById('mw').appendChild(p);
+  }catch(e){ document.getElementById('mw').textContent='이미지 생성에 실패했어요.'; }
+}
+
+</script>
+</body>
+</html>

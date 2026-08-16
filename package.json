@@ -2,6 +2,7 @@
   "name": "testfactory-site",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "TEST:FACTORY static site + Netlify Functions",
   "dependencies": {
     "@netlify/blobs": "^10.7.13"

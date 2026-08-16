@@ -1,8 +1,9 @@
-// 그룹 MBTI 지도 - 실제 그룹 동기화용 서버리스 함수
+// 그룹 MBTI 지도 - 실제 그룹 동기화용 서버리스 함수 (Netlify Functions v2, ESM)
 // Netlify Blobs(내장 key-value 저장소)를 사용해 그룹/참여자 정보를 저장한다.
-// 별도의 외부 DB 계정 없이 동작한다.
+// v1(CommonJS exports.handler) 형식에서는 Blobs 자동 설정(auto-injection)이
+// 누락되는 경우가 있어(MissingBlobsEnvironmentError), v2(ESM export default) 형식으로 작성한다.
 
-const { getStore } = require('@netlify/blobs');
+import { getStore } from '@netlify/blobs';
 
 const HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -11,17 +12,17 @@ const HEADERS = {
   'Content-Type': 'application/json; charset=utf-8'
 };
 
-function json(statusCode, obj) {
-  return { statusCode: statusCode, headers: HEADERS, body: JSON.stringify(obj) };
+function json(status, obj) {
+  return new Response(JSON.stringify(obj), { status: status, headers: HEADERS });
 }
 
 function makeCode() {
   return Math.random().toString(36).slice(2, 8).toUpperCase();
 }
 
-exports.handler = async function (event) {
-  if (event.httpMethod === 'OPTIONS') {
-    return { statusCode: 200, headers: HEADERS, body: '' };
+export default async (req, context) => {
+  if (req.method === 'OPTIONS') {
+    return new Response('', { status: 200, headers: HEADERS });
   }
 
   let store;
@@ -32,18 +33,19 @@ exports.handler = async function (event) {
   }
 
   try {
-    if (event.httpMethod === 'GET') {
-      const code = ((event.queryStringParameters && event.queryStringParameters.code) || '').toUpperCase().trim();
+    if (req.method === 'GET') {
+      const url = new URL(req.url);
+      const code = (url.searchParams.get('code') || '').toUpperCase().trim();
       if (!code) return json(400, { error: 'code required' });
       const group = await store.get(code, { type: 'json' });
       if (!group) return json(404, { error: 'group not found' });
       return json(200, group);
     }
 
-    if (event.httpMethod === 'POST') {
+    if (req.method === 'POST') {
       let body;
       try {
-        body = JSON.parse(event.body || '{}');
+        body = await req.json();
       } catch (e) {
         return json(400, { error: 'invalid json body' });
       }
