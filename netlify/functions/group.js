@@ -26,9 +26,9 @@ exports.handler = async function (event) {
 
   let store;
   try {
-    store = getStore('group-mbti');
+    store = getStore({ name: 'group-mbti', consistency: 'strong' });
   } catch (e) {
-    return json(500, { error: 'blobs store init failed: ' + (e && e.message) });
+    return json(500, { error: '[store-init] ' + (e && e.name) + ': ' + (e && e.message) });
   }
 
   try {
@@ -94,6 +94,6 @@ exports.handler = async function (event) {
 
     return json(405, { error: 'method not allowed' });
   } catch (e) {
-    return json(500, { error: String((e && e.message) || e) });
+    return json(500, { error: '[handler] ' + ((e && e.name) || 'Error') + ': ' + String((e && e.message) || e) });
   }
 };
