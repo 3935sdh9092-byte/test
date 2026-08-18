@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나는 콘서트에서 어떤 직관러일까? 콘서트 직관 스타일 테스트 — 테스트팩토리</title>
+<meta name="description" content="떼창러부터 응원봉파, 감동눈물형까지. 12문항으로 알아보는 나의 콘서트 직관 스타일.">
+<meta property="og:title" content="나는 콘서트에서 어떤 직관러일까? 콘서트 직관 스타일 테스트 — 테스트팩토리">
+<meta property="og:description" content="떼창러부터 응원봉파, 감동눈물형까지. 12문항으로 알아보는 나의 콘서트 직관 스타일.">
+<meta property="og:image" content="concert-style-balance-thumb.png">
+<meta property="og:image:width" content="900">
+<meta property="og:image:height" content="1260">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg:#FFF5F7; --paper:#FFFFFF; --ink:#1F1420; --sub:#8A7686;
+  --line:#F4D3DE; --acc:#E0245E; --gold:#C8942C; --chip:rgba(31,20,32,.06); --r:14px; --bw:2px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;min-height:100vh;}
+.wrap{max-width:560px;margin:0 auto;padding:28px 18px 80px;}
+.back{display:inline-block;margin-bottom:18px;font-size:13px;font-weight:700;color:var(--sub);text-decoration:none;}
+.hero{text-align:center;padding:16px 0 24px;}
+.hero .em{font-size:52px;line-height:1;margin-bottom:12px;}
+.hero h1{font-size:22px;font-weight:900;margin-bottom:8px;letter-spacing:-.3px;word-break:keep-all;}
+.hero p{font-size:14px;color:var(--sub);line-height:1.65;}
+.start-btn{width:100%;padding:16px;border:0;border-radius:var(--r);background:var(--acc);color:#fff;
+  font-family:inherit;font-size:16px;font-weight:900;cursor:pointer;margin-top:20px;}
+.prog-wrap{margin-bottom:20px;}
+.prog-info{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;margin-bottom:8px;color:var(--sub);}
+.prog-track{height:8px;background:var(--chip);border-radius:999px;overflow:hidden;border:var(--bw) solid var(--line);}
+.prog-fill{height:100%;background:var(--acc);border-radius:999px;transition:width .25s ease;}
+.qcard{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:22px 18px;}
+.qnum{display:inline-block;padding:4px 10px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:11px;font-weight:800;margin-bottom:14px;}
+.qtext{font-size:18px;font-weight:800;line-height:1.5;margin-bottom:18px;word-break:keep-all;}
+.opts{display:grid;gap:10px;}
+.opt{width:100%;padding:13px 15px;border:var(--bw) solid var(--line);border-radius:10px;
+  background:#fff;font-family:inherit;font-size:14px;font-weight:600;text-align:left;cursor:pointer;
+  color:var(--ink);transition:all .15s ease;word-break:keep-all;}
+.opt:hover{background:var(--chip);border-color:var(--acc);}
+.opt:disabled{cursor:default;}
+.opt.pk{background:var(--chip);border-color:var(--acc);}
+#cap{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:24px 18px;margin-bottom:16px;}
+.res-header{text-align:center;padding:6px 0 16px;border-bottom:var(--bw) solid var(--line);margin-bottom:16px;}
+.res-em{font-size:56px;line-height:1;margin-bottom:10px;}
+.res-badge{display:inline-block;padding:6px 16px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:12.5px;font-weight:900;margin-bottom:12px;}
+.res-title{font-size:23px;font-weight:900;margin-bottom:6px;word-break:keep-all;}
+.res-tag{font-size:13.5px;color:var(--gold);font-weight:800;margin-bottom:2px;word-break:keep-all;}
+.res-desc{font-size:14.5px;line-height:1.8;color:var(--ink);text-align:left;margin-top:14px;}
+.traits{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;}
+.trait{padding:6px 12px;background:var(--chip);border-radius:999px;font-size:12px;font-weight:700;color:var(--acc);}
+.dist-wrap{margin-top:20px;}
+.dist-title{font-size:12.5px;font-weight:800;color:var(--sub);margin-bottom:10px;}
+.dist-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.dist-row .lab{width:64px;font-size:12px;font-weight:800;flex-shrink:0;}
+.dist-row .track{flex:1;height:10px;background:var(--chip);border-radius:999px;overflow:hidden;}
+.dist-row .fill{height:100%;background:var(--acc);border-radius:999px;transition:width .5s ease;}
+.dist-row.me .fill{background:var(--gold);}
+.dist-row .num{width:20px;text-align:right;font-size:11.5px;font-weight:800;color:var(--sub);}
+.footer-note{font-size:11px;color:var(--sub);text-align:center;margin-top:18px;}
+.stk{display:grid;gap:10px;}
+.btn{width:100%;padding:14px;border:var(--bw) solid var(--ink);border-radius:var(--r);background:#fff;
+  font-family:inherit;font-weight:800;font-size:14.5px;cursor:pointer;color:var(--ink);}
+.btn.fill{background:var(--ink);color:#fff;border-color:var(--ink);}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:center;justify-content:center;padding:20px;}
+.mo.on{display:flex;}
+.mb{background:#fff;border-radius:16px;padding:20px;max-width:340px;width:100%;text-align:center;}
+.mb img{width:100%;border-radius:10px;margin-bottom:12px;}
+.mb .cl{width:100%;padding:12px;border:0;border-radius:10px;background:var(--chip);font-family:inherit;font-weight:800;cursor:pointer;color:var(--ink);}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← 목록으로</a>
+  <div id="s1">
+    <div class="hero">
+      <div class="em">🎫</div>
+      <h1>나는 콘서트에서 어떤 직관러일까? 콘서트 직관 스타일 테스트</h1>
+      <p>떼창러부터 응원봉파, 감동눈물형까지. 12문항으로 알아보는 나의 콘서트 직관 스타일.</p>
+      <button class="start-btn" onclick="startQuiz()">테스트 시작하기</button>
+    </div>
+  </div>
+  <div id="s2" class="hidden">
+    <div class="prog-wrap">
+      <div class="prog-info"><span id="progLabel">1 / 12</span><span id="progPos"></span></div>
+      <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+    </div>
+    <div class="qcard">
+      <div class="qnum" id="qNum">Q1</div>
+      <div class="qtext" id="qText"></div>
+      <div class="opts" id="opts"></div>
+    </div>
+  </div>
+  <div id="s3" class="hidden">
+    <div id="cap">
+      <div class="res-header">
+        <div class="res-em" id="resEm"></div>
+        <div class="res-badge" id="resBadge"></div>
+        <div class="res-title" id="resTitle"></div>
+        <div class="res-tag" id="resTag"></div>
+      </div>
+      <div class="res-desc" id="resDesc"></div>
+      <div class="traits" id="resTraits"></div>
+      <div class="dist-wrap">
+        <div class="dist-title">📊 나의 직관 스타일 분포</div>
+        <div id="distBox"></div>
+      </div>
+      <div class="footer-note">POWERED BY 테스트팩토리 · 재미로 봐주세요.</div>
+    </div>
+    <div class="stk">
+      <button class="btn fill" onclick="saveImg()">결과 이미지 저장하기</button>
+      <button class="btn" onclick="location.reload()">다시 풀기</button>
+      <button class="btn" onclick="location.href='index.html'">다른 테스트 보기</button>
+    </div>
+  </div>
+</div>
+<div class="mo" id="mo">
+  <div class="mb">
+    <div id="mw">이미지를 만들고 있어요...</div>
+    <button class="cl" onclick="document.getElementById('mo').classList.remove('on')">닫기</button>
+  </div>
+</div>
+<script>
+var POS = ["떼창 리더형","응원봉 파워형","감동 눈물형","기록형","플로어 폭발형"];
+var QUESTIONS = [{"q":"콘서트 시작 전, 나는?","options":["셋리스트 가사를 미리 다 외워둔다","응원법과 떼창 타이밍을 정리해둔다","그날의 감동을 상상하며 벌써 마음이 벅차오른다","카메라 배터리와 저장공간부터 확인한다","컨디션 관리하며 체력을 아껴둔다, 오늘 다 태울 거니까"]},{"q":"좋아하는 노래의 전주가 시작되면?","options":["첫 소절부터 목청껏 따라 부른다","응원법에 맞춰 손동작부터 준비한다","벌써 울컥해서 눈물이 핑 돈다","일단 카메라부터 켠다","몸이 먼저 반응해서 뛰기 시작한다"]},{"q":"공연 중 무대 위 아티스트와 눈이 마주쳤다면?","options":["더 크게 따라 부르며 화답한다","응원봉을 크게 흔들며 반응한다","감격해서 눈물이 왈칵 난다","반사적으로 그 순간을 카메라에 담는다","소리 지르며 방방 뛴다"]},{"q":"콘서트에서 꼭 챙기는 준비물은?","options":["목 건강 챙길 사탕이나 물","응원봉과 여분 배터리","눈물 닦을 손수건","보조배터리와 카메라","편한 운동화와 헤어밴드"]},{"q":"발라드 곡이 나올 때 나는?","options":["가사 한 소절도 놓치지 않고 함께 부른다","조용히 응원봉 불빛만 살랑살랑 흔든다","가사에 몰입해서 눈물을 참지 못한다","이 무드를 놓칠세라 영상으로 남긴다","잠깐 숨 고르며 다음 곡을 위해 체력을 비축한다"]},{"q":"떼창 구간에서 목이 다 쉬었는데도?","options":["그래도 끝까지 부른다, 이게 낙이다","대신 응원법과 박수로 에너지를 보탠다","목이 쉰 것도 모를 만큼 감정에 몰입해 있다","목소리 대신 카메라 셔터를 누른다","목 대신 몸으로 에너지를 표출한다"]},{"q":"콘서트 다음날 나에게 남는 것은?","options":["며칠째 쉬어있는 목소리","팔이 얼얼할 정도로 흔든 응원봉의 여운","그날 느꼈던 감정이 계속 마음에 남는다","정리해야 할 사진과 영상 수백 장","근육통, 그래도 후회 없다"]},{"q":"친구가 콘서트 후기를 물으면?","options":["\"떼창 미쳤었어\" 하며 부른 노래를 재연한다","응원법 영상부터 보여준다","\"진짜 눈물 나더라\"며 그날의 감정을 얘기한다","찍어온 사진과 영상을 쭉 보여준다","\"완전 다 태우고 왔어\" 하며 에너지를 얘기한다"]},{"q":"공연 중 MC 타임(쉬는 시간)이 생기면?","options":["다음 떼창곡 가사를 다시 점검한다","응원봉 색을 바꾸고 다음 응원법을 준비한다","방금 본 장면의 여운에 잠겨있다","지금까지 찍은 사진을 확인한다","잠깐이라도 숨을 고르며 텐션을 유지한다"]},{"q":"이상적인 콘서트 자리는?","options":["다 같이 크게 불러도 눈치 안 보이는 자리","응원법이 잘 보이고 소리가 잘 들리는 자리","아티스트 표정이 잘 보이는 감성적인 자리","사진이 잘 나오는 시야 좋은 자리","마음껏 뛰고 움직일 수 있는 스탠딩 자리"]},{"q":"콘서트 티켓팅에 성공했을 때 첫 반응은?","options":["\"떼창곡 뭐 나올까\" 셋리스트부터 찾아본다","응원법을 미리 연습해야겠다고 다짐한다","갈 수 있다는 것만으로 벌써 울컥한다","뭘 입고 뭘로 찍을지부터 고민한다","체력 관리부터 시작한다, 다 태울 준비"]},{"q":"공연이 끝나고 앵콜을 기다릴 때?","options":["앵콜 떼창을 다 같이 유도한다","응원봉을 흔들며 앵콜을 연호한다","벌써 아쉬워서 눈물이 난다","마지막 순간까지 놓치지 않고 촬영한다","마지막 체력까지 다 쓸 준비를 한다"]}];
+var RESULTS = [{"name":"떼창 리더형","emoji":"🎤","tagline":"공연장의 떼창을 이끄는 목청 담당","color":"#E85D75","desc":"노래 하나하나를 자기 것처럼 부르는 스타일이에요. 가사를 완벽하게 외우고 있어서, 공연장의 떼창을 이끄는 존재가 되곤 해요. 노래로 아티스트와 함께 호흡한다는 느낌을 가장 크게 느끼는 편이라, 다음날 목이 쉬어도 후회는 없어요.","traits":["가사 완벽 암기","떼창 리더","목청 담당","무대와 함께 호흡"]},{"name":"응원봉 파워형","emoji":"💡","tagline":"응원법 완벽 숙지, 팬덤과 하나 되는 순간이 최고","color":"#4C6FFF","desc":"정성껏 준비한 응원법으로 공연장 분위기를 살리는 스타일이에요. 다 같이 맞춰서 응원봉을 흔들 때 짜릿함을 느끼고, 팬덤 전체가 하나로 움직이는 순간을 가장 소중하게 여겨요. 준비성과 팀워크가 남다른 타입이에요.","traits":["응원법 마스터","팬덤 케미","꼼꼼한 준비성","한마음 무드메이커"]},{"name":"감동 눈물형","emoji":"🥹","tagline":"노래 한 소절에도 마음이 벅차오르는","color":"#7C6BA8","desc":"공연의 감정선을 온몸으로 느끼는 스타일이에요. 아티스트의 표정, 가사 한 줄에도 깊이 몰입해서 눈물이 핑 도는 순간이 많아요. 그만큼 진심을 다해 순간순간을 즐기는 사람이라, 공연이 끝난 뒤에도 여운이 오래 남아요.","traits":["깊은 몰입감","섬세한 감성","진심 가득","여운 오래가는 편"]},{"name":"기록형","emoji":"📸","tagline":"이 순간을 영원히 남기고 싶은","color":"#2C9E8F","desc":"소중한 순간을 사진과 영상으로 차곡차곡 담아두는 스타일이에요. 나중에 다시 꺼내볼 때도 그날의 설렘이 고스란히 느껴지도록, 순간을 포착하는 데 진심이에요. 덕분에 함께 간 사람들도 그날의 기억을 선명하게 간직할 수 있어요.","traits":["순간포착 장인","꼼꼼한 기록력","추억 보관 담당","센스있는 앵글"]},{"name":"플로어 폭발형","emoji":"🔥","tagline":"체력 소진 각오하고 다 태우는","color":"#F2994A","desc":"몸으로 에너지를 발산하며 즐기는 스타일이에요. 뛰고 소리 지르고 춤추면서 공연장 자체를 온몸으로 즐기는 타입이라, 주변까지 텐션을 끌어올리는 힘이 있어요. 다음날 근육통은 예약이지만, 그만큼 후회 없이 즐긴 거예요.","traits":["폭발적인 에너지","분위기 메이커","몸으로 즐기기","화끈한 텐션"]}];
+
+var qi=0, counts=[0,0,0,0,0];
+function show(id){ ['s1','s2','s3'].forEach(function(s){ document.getElementById(s).className=s===id?'':'hidden'; }); }
+function startQuiz(){ qi=0; counts=[0,0,0,0,0]; show('s2'); renderQ(); }
+function renderQ(){
+  var q=QUESTIONS[qi], total=QUESTIONS.length;
+  document.getElementById('progLabel').textContent=(qi+1)+' / '+total;
+  document.getElementById('progFill').style.width=Math.round((qi)/total*100)+'%';
+  document.getElementById('qNum').textContent='Q'+(qi+1);
+  document.getElementById('qText').textContent=q.q;
+  var opts=document.getElementById('opts');
+  opts.innerHTML='';
+  q.options.forEach(function(opt,i){
+    var b=document.createElement('button');
+    b.className='opt'; b.textContent=opt;
+    b.onclick=function(){ pick(i); };
+    opts.appendChild(b);
+  });
+}
+function pick(i){
+  var btns=document.querySelectorAll('.opt');
+  btns.forEach(function(b){ b.disabled=true; });
+  btns[i].className='opt pk';
+  counts[i]++;
+  setTimeout(function(){ qi++; if(qi<QUESTIONS.length){ renderQ(); } else { showResult(); } }, 260);
+}
+function showResult(){
+  show('s3');
+  var best=0;
+  for(var i=1;i<counts.length;i++){ if(counts[i]>counts[best]) best=i; }
+  var r=RESULTS[best];
+  document.getElementById('resEm').textContent=r.emoji;
+  document.getElementById('resBadge').textContent=POS[best];
+  document.getElementById('resBadge').style.background=r.color;
+  document.getElementById('resTitle').textContent=r.name;
+  document.getElementById('resTag').textContent=r.tagline;
+  document.getElementById('resTag').style.color=r.color;
+  document.getElementById('resDesc').textContent=r.desc;
+  document.getElementById('resTraits').innerHTML=r.traits.map(function(t){return '<span class="trait">#'+t+'</span>';}).join('');
+  var total=QUESTIONS.length;
+  var distHtml='';
+  POS.forEach(function(p,i){
+    var pct=Math.round(counts[i]/total*100);
+    distHtml+='<div class="dist-row'+(i===best?' me':'')+'"><div class="lab">'+p+'</div>'+
+      '<div class="track"><div class="fill" style="width:'+pct+'%"></div></div>'+
+      '<div class="num">'+counts[i]+'</div></div>';
+  });
+  document.getElementById('distBox').innerHTML=distHtml;
+}
+async function saveImg(){
+  document.getElementById('mo').classList.add('on');
+  document.getElementById('mw').innerHTML='이미지를 만들고 있어요...';
+  try{
+    if(document.fonts) await document.fonts.ready;
+    var cv=await html2canvas(document.getElementById('cap'),{backgroundColor:'#FFFFFF',scale:2});
+    var img=new Image(); img.src=cv.toDataURL('image/png');
+    document.getElementById('mw').innerHTML='';
+    document.getElementById('mw').appendChild(img);
+    var p=document.createElement('p'); p.style.cssText='font-size:12px;color:#888;margin-top:8px;';
+    p.textContent='이미지를 길게 눌러서 저장해주세요.';
+    document.getElementById('mw').appendChild(p);
+  }catch(e){ document.getElementById('mw').textContent='이미지 생성에 실패했어요.'; }
+}
+
+</script>
+</body>
+</html>
