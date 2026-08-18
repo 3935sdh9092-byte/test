@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나는 어떤 선물 스타일일까? 선물 취향 밸런스 테스트 — 테스트팩토리</title>
+<meta name="description" content="손편지부터 깜짝 이벤트까지, 선물을 주고받을 때 드러나는 나의 진짜 취향 유형. 12문항이면 바로 알 수 있어요.">
+<meta property="og:title" content="나는 어떤 선물 스타일일까? 선물 취향 밸런스 테스트 — 테스트팩토리">
+<meta property="og:description" content="손편지부터 깜짝 이벤트까지, 선물을 주고받을 때 드러나는 나의 진짜 취향 유형. 12문항이면 바로 알 수 있어요.">
+<meta property="og:image" content="gift-style-balance-thumb.png">
+<meta property="og:image:width" content="900">
+<meta property="og:image:height" content="1260">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg:#FBF1EC; --paper:#FFFFFF; --ink:#382522; --sub:#8C7268;
+  --line:#F0D9CE; --acc:#C9687A; --gold:#C8942C; --chip:rgba(56,37,34,.06); --r:14px; --bw:2px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;min-height:100vh;}
+.wrap{max-width:560px;margin:0 auto;padding:28px 18px 80px;}
+.back{display:inline-block;margin-bottom:18px;font-size:13px;font-weight:700;color:var(--sub);text-decoration:none;}
+.hero{text-align:center;padding:16px 0 24px;}
+.hero .em{font-size:52px;line-height:1;margin-bottom:12px;}
+.hero h1{font-size:22px;font-weight:900;margin-bottom:8px;letter-spacing:-.3px;word-break:keep-all;}
+.hero p{font-size:14px;color:var(--sub);line-height:1.65;}
+.start-btn{width:100%;padding:16px;border:0;border-radius:var(--r);background:var(--acc);color:#fff;
+  font-family:inherit;font-size:16px;font-weight:900;cursor:pointer;margin-top:20px;}
+.prog-wrap{margin-bottom:20px;}
+.prog-info{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;margin-bottom:8px;color:var(--sub);}
+.prog-track{height:8px;background:var(--chip);border-radius:999px;overflow:hidden;border:var(--bw) solid var(--line);}
+.prog-fill{height:100%;background:var(--acc);border-radius:999px;transition:width .25s ease;}
+.qcard{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:22px 18px;}
+.qnum{display:inline-block;padding:4px 10px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:11px;font-weight:800;margin-bottom:14px;}
+.qtext{font-size:18px;font-weight:800;line-height:1.5;margin-bottom:18px;word-break:keep-all;}
+.opts{display:grid;gap:10px;}
+.opt{width:100%;padding:13px 15px;border:var(--bw) solid var(--line);border-radius:10px;
+  background:#fff;font-family:inherit;font-size:14px;font-weight:600;text-align:left;cursor:pointer;
+  color:var(--ink);transition:all .15s ease;word-break:keep-all;}
+.opt:hover{background:var(--chip);border-color:var(--acc);}
+.opt:disabled{cursor:default;}
+.opt.pk{background:var(--chip);border-color:var(--acc);}
+#cap{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:24px 18px;margin-bottom:16px;}
+.res-header{text-align:center;padding:6px 0 16px;border-bottom:var(--bw) solid var(--line);margin-bottom:16px;}
+.res-em{font-size:56px;line-height:1;margin-bottom:10px;}
+.res-badge{display:inline-block;padding:6px 16px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:12.5px;font-weight:900;margin-bottom:12px;}
+.res-title{font-size:23px;font-weight:900;margin-bottom:6px;word-break:keep-all;}
+.res-tag{font-size:13.5px;color:var(--gold);font-weight:800;margin-bottom:2px;word-break:keep-all;}
+.res-desc{font-size:14.5px;line-height:1.8;color:var(--ink);text-align:left;margin-top:14px;}
+.traits{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;}
+.trait{padding:6px 12px;background:var(--chip);border-radius:999px;font-size:12px;font-weight:700;color:var(--acc);}
+.dist-wrap{margin-top:20px;}
+.dist-title{font-size:12.5px;font-weight:800;color:var(--sub);margin-bottom:10px;}
+.dist-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.dist-row .lab{width:56px;font-size:12px;font-weight:800;flex-shrink:0;}
+.dist-row .track{flex:1;height:10px;background:var(--chip);border-radius:999px;overflow:hidden;}
+.dist-row .fill{height:100%;background:var(--acc);border-radius:999px;transition:width .5s ease;}
+.dist-row.me .fill{background:var(--gold);}
+.dist-row .num{width:20px;text-align:right;font-size:11.5px;font-weight:800;color:var(--sub);}
+.footer-note{font-size:11px;color:var(--sub);text-align:center;margin-top:18px;}
+.stk{display:grid;gap:10px;}
+.btn{width:100%;padding:14px;border:var(--bw) solid var(--ink);border-radius:var(--r);background:#fff;
+  font-family:inherit;font-weight:800;font-size:14.5px;cursor:pointer;color:var(--ink);}
+.btn.fill{background:var(--ink);color:#fff;border-color:var(--ink);}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:center;justify-content:center;padding:20px;}
+.mo.on{display:flex;}
+.mb{background:#fff;border-radius:16px;padding:20px;max-width:340px;width:100%;text-align:center;}
+.mb img{width:100%;border-radius:10px;margin-bottom:12px;}
+.mb .cl{width:100%;padding:12px;border:0;border-radius:10px;background:var(--chip);font-family:inherit;font-weight:800;cursor:pointer;color:var(--ink);}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← 목록으로</a>
+  <div id="s1">
+    <div class="hero">
+      <div class="em">🎁</div>
+      <h1>나는 어떤 선물 스타일일까? 선물 취향 밸런스 테스트</h1>
+      <p>손편지부터 깜짝 이벤트까지, 선물을 주고받을 때 드러나는 나의 진짜 취향 유형. 12문항이면 바로 알 수 있어요.</p>
+      <button class="start-btn" onclick="startQuiz()">테스트 시작하기</button>
+    </div>
+  </div>
+  <div id="s2" class="hidden">
+    <div class="prog-wrap">
+      <div class="prog-info"><span id="progLabel">1 / 12</span><span id="progPos"></span></div>
+      <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+    </div>
+    <div class="qcard">
+      <div class="qnum" id="qNum">Q1</div>
+      <div class="qtext" id="qText"></div>
+      <div class="opts" id="opts"></div>
+    </div>
+  </div>
+  <div id="s3" class="hidden">
+    <div id="cap">
+      <div class="res-header">
+        <div class="res-em" id="resEm"></div>
+        <div class="res-badge" id="resBadge"></div>
+        <div class="res-title" id="resTitle"></div>
+        <div class="res-tag" id="resTag"></div>
+      </div>
+      <div class="res-desc" id="resDesc"></div>
+      <div class="traits" id="resTraits"></div>
+      <div class="dist-wrap">
+        <div class="dist-title">📊 나의 선물 취향 분포</div>
+        <div id="distBox"></div>
+      </div>
+      <div class="footer-note">POWERED BY 테스트팩토리 · 재미로 봐주세요.</div>
+    </div>
+    <div class="stk">
+      <button class="btn fill" onclick="saveImg()">결과 이미지 저장하기</button>
+      <button class="btn" onclick="location.reload()">다시 풀기</button>
+      <button class="btn" onclick="location.href='index.html'">다른 테스트 보기</button>
+    </div>
+  </div>
+</div>
+<div class="mo" id="mo">
+  <div class="mb">
+    <div id="mw">이미지를 만들고 있어요...</div>
+    <button class="cl" onclick="document.getElementById('mo').classList.remove('on')">닫기</button>
+  </div>
+</div>
+<script>
+var POS = ["정성형","실용형","서프라이즈형","센스템형","경험형"];
+var QUESTIONS = [
+  {"q":"선물을 준비할 때 가장 먼저 하는 일은?","options":["손편지에 담을 말을 고민한다","상대에게 필요한 게 뭔지부터 물어본다","깜짝 놀랄 타이밍부터 계획한다","요즘 뜨는 아이템부터 검색한다","같이 할 수 있는 걸 찾아본다"]},
+  {"q":"선물 포장을 고른다면?","options":["직접 손으로 꾸민 포장","심플하고 깔끔한 포장","포장부터 서프라이즈 요소를 넣는다","트렌디한 굿즈 느낌 포장","선물이 아니라 초대장 형태로"]},
+  {"q":"받았을 때 제일 기뻤던 선물은?","options":["정성이 느껴지는 손편지나 다이어리","평소 필요했던 실용템","예상 못한 깜짝 이벤트","요즘 유행하는 감성 소품","함께 보낸 여행이나 공연"]},
+  {"q":"선물 예산을 짤 때 나는?","options":["가격보다 의미를 먼저 생각한다","가성비를 꼼꼼히 따진다","서프라이즈 준비 비용도 아끼지 않는다","트렌드템이면 예산을 조금 넘겨도 괜찮다","경험을 함께 하는 데 투자한다"]},
+  {"q":"생일을 챙길 때 나의 스타일은?","options":["편지와 함께 마음을 전한다","필요한 걸 미리 물어보고 챙긴다","깜짝 파티나 이벤트를 준비한다","인기템으로 센스있게 챙긴다","함께 시간을 보내는 데 집중한다"]},
+  {"q":"선물 받는 걸 좋아하는 이유는?","options":["나를 생각해준 마음이 느껴져서","실제로 쓸모가 있어서","예상 못한 즐거움이 있어서","취향이 반영된 게 느껴져서","함께한 추억이 남아서"]},
+  {"q":"선물을 고를 때 가장 신경 쓰는 부분은?","options":["상대에게 어떤 의미가 될지","실생활에 얼마나 도움이 될지","얼마나 놀라게 할 수 있을지","얼마나 세련되고 힙한지","함께 나눌 수 있는 경험인지"]},
+  {"q":"친구 집들이에 간다면?","options":["직접 만든 소품이나 편지를 챙긴다","생활에 필요한 실용템을 챙긴다","깜짝 이벤트를 준비해간다","요즘 인기있는 홈 아이템을 챙긴다","함께 즐길 수 있는 걸 챙긴다"]},
+  {"q":"선물 리스트를 짤 때 나는?","options":["상대와의 추억을 먼저 떠올린다","평소 필요하다고 했던 걸 메모해둔다","깜짝 요소를 어떻게 넣을지 고민한다","요즘 화제인 아이템을 찾아본다","같이 할 수 있는 활동을 찾아본다"]},
+  {"q":"선물 받고 답례를 한다면?","options":["진심을 담은 편지로 답한다","필요한 걸 물어보고 챙긴다","이번엔 내가 깜짝 이벤트를 준비한다","센스있는 아이템으로 답한다","같이 놀러가는 걸로 답한다"]},
+  {"q":"기념일을 앞두고 나는?","options":["어떤 말을 전할지 미리 적어본다","뭐가 필요한지 넌지시 물어본다","날짜와 장소를 비밀리에 준비한다","최근 유행하는 아이템을 찾아본다","같이 할 계획부터 세운다"]},
+  {"q":"이상적인 선물이란?","options":["마음이 전해지는 선물","오래도록 유용하게 쓰는 선물","잊지 못할 순간을 만드는 선물","취향을 저격하는 선물","함께한 시간이 남는 선물"]}
+];
+var RESULTS = [
+  {"name":"정성 담은 손편지형","emoji":"💌","tagline":"마음이 전해지는 게 최고의 선물","color":"#C97B84","desc":"선물의 가격보다 그 안에 담긴 마음을 가장 중요하게 생각하는 타입이에요. 손편지 한 장, 직접 고른 문구 하나에도 진심을 꾹꾹 눌러 담는 편이라, 받는 사람도 그 정성을 고스란히 느낄 수 있어요. 화려하지 않아도 오래 기억에 남는 선물을 주는 사람이에요.","traits":["진심 가득","손편지 애호가","섬세한 배려","오래 기억되는 선물"]},
+  {"name":"실속 만점 실용형","emoji":"🧺","tagline":"진짜 필요한 걸 챙겨주는 센스","color":"#5B8C6E","desc":"상대에게 실제로 도움이 되는 걸 챙겨주는 현실적인 타입이에요. 예쁘지만 안 쓰는 것보다, 오래 잘 쓸 수 있는 걸 골라주는 세심함이 있어요. 은근히 상대를 잘 관찰하고 있다가 필요한 순간 딱 맞는 걸 내미는 스타일이에요.","traits":["현실적 센스","꾸준한 관찰력","가성비 챙김","믿음직한 선물러"]},
+  {"name":"두근두근 서프라이즈형","emoji":"🎉","tagline":"깜짝 이벤트로 감동을 주는 타입","color":"#D98F3C","desc":"예상치 못한 순간에 짠 하고 나타나는 걸 좋아하는 이벤트 메이커예요. 준비 과정부터 몰래 계획을 짜는 걸 즐기고, 상대의 놀란 표정을 보는 게 가장 큰 보람이에요. 선물 자체보다 그 순간의 설렘을 선물하는 사람이에요.","traits":["이벤트 메이커","깜짝 준비 마스터","순간의 설렘","리액션 부자"]},
+  {"name":"트렌드 센스템형","emoji":"✨","tagline":"요즘 취향을 정확히 저격하는 감각파","color":"#8B6FC9","desc":"요즘 뜨는 아이템과 상대의 취향을 정확히 매치시키는 감각이 뛰어난 타입이에요. 평소에도 트렌드에 관심이 많아서, 선물을 고를 때도 '이거 딱 네 스타일이야' 소리를 자주 들어요. 센스있는 선택으로 상대를 감탄하게 만드는 사람이에요.","traits":["트렌드 감각","취향 저격","안목 좋은 선택","감탄 유발자"]},
+  {"name":"함께하는 경험형","emoji":"🎈","tagline":"물건보다 함께한 순간을 선물하는 타입","color":"#3C8FA0","desc":"물건보다 함께 보내는 시간과 추억을 더 값지게 여기는 타입이에요. 여행, 공연, 맛있는 식사처럼 같이 경험할 수 있는 걸 선물로 고르는 편이라, 상대와의 관계도 자연스럽게 더 깊어져요. 함께한 순간이 곧 가장 특별한 선물이라고 믿는 사람이에요.","traits":["추억 메이커","함께하는 시간 중시","관계를 깊게 만듦","특별한 순간 선물"]}
+];
+
+var qi=0, counts=[0,0,0,0,0];
+function show(id){ ['s1','s2','s3'].forEach(function(s){ document.getElementById(s).className=s===id?'':'hidden'; }); }
+function startQuiz(){ qi=0; counts=[0,0,0,0,0]; show('s2'); renderQ(); }
+function renderQ(){
+  var q=QUESTIONS[qi], total=QUESTIONS.length;
+  document.getElementById('progLabel').textContent=(qi+1)+' / '+total;
+  document.getElementById('progFill').style.width=Math.round((qi)/total*100)+'%';
+  document.getElementById('qNum').textContent='Q'+(qi+1);
+  document.getElementById('qText').textContent=q.q;
+  var opts=document.getElementById('opts');
+  opts.innerHTML='';
+  q.options.forEach(function(opt,i){
+    var b=document.createElement('button');
+    b.className='opt'; b.textContent=opt;
+    b.onclick=function(){ pick(i); };
+    opts.appendChild(b);
+  });
+}
+function pick(i){
+  var btns=document.querySelectorAll('.opt');
+  btns.forEach(function(b){ b.disabled=true; });
+  btns[i].className='opt pk';
+  counts[i]++;
+  setTimeout(function(){ qi++; if(qi<QUESTIONS.length){ renderQ(); } else { showResult(); } }, 260);
+}
+function showResult(){
+  show('s3');
+  var best=0;
+  for(var i=1;i<counts.length;i++){ if(counts[i]>counts[best]) best=i; }
+  var r=RESULTS[best];
+  document.getElementById('resEm').textContent=r.emoji;
+  document.getElementById('resBadge').textContent=POS[best]+' 유형';
+  document.getElementById('resBadge').style.background=r.color;
+  document.getElementById('resTitle').textContent=r.name;
+  document.getElementById('resTag').textContent=r.tagline;
+  document.getElementById('resTag').style.color=r.color;
+  document.getElementById('resDesc').textContent=r.desc;
+  document.getElementById('resTraits').innerHTML=r.traits.map(function(t){return '<span class="trait">#'+t+'</span>';}).join('');
+  var total=QUESTIONS.length;
+  var distHtml='';
+  POS.forEach(function(p,i){
+    var pct=Math.round(counts[i]/total*100);
+    distHtml+='<div class="dist-row'+(i===best?' me':'')+'"><div class="lab">'+p+'</div>'+
+      '<div class="track"><div class="fill" style="width:'+pct+'%"></div></div>'+
+      '<div class="num">'+counts[i]+'</div></div>';
+  });
+  document.getElementById('distBox').innerHTML=distHtml;
+}
+async function saveImg(){
+  document.getElementById('mo').classList.add('on');
+  document.getElementById('mw').innerHTML='이미지를 만들고 있어요...';
+  try{
+    if(document.fonts) await document.fonts.ready;
+    var cv=await html2canvas(document.getElementById('cap'),{backgroundColor:'#FFFFFF',scale:2});
+    var img=new Image(); img.src=cv.toDataURL('image/png');
+    document.getElementById('mw').innerHTML='';
+    document.getElementById('mw').appendChild(img);
+    var p=document.createElement('p'); p.style.cssText='font-size:12px;color:#888;margin-top:8px;';
+    p.textContent='이미지를 길게 눌러서 저장해주세요.';
+    document.getElementById('mw').appendChild(p);
+  }catch(e){ document.getElementById('mw').textContent='이미지 생성에 실패했어요.'; }
+}
+
+</script>
+</body>
+</html>
