@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나는 어떤 감성 카페가 어울릴까? 카페 무드 밸런스 테스트 — 테스트팩토리</title>
+<meta name="description" content="화이트 미니멀·빈티지·플랜테리어·레트로 다방·모던 브루잉, 취향으로 알아보는 나의 카페 무드 유형. 12문항이면 바로 알 수 있어요.">
+<meta property="og:title" content="나는 어떤 감성 카페가 어울릴까? 카페 무드 밸런스 테스트 — 테스트팩토리">
+<meta property="og:description" content="화이트 미니멀·빈티지·플랜테리어·레트로 다방·모던 브루잉, 취향으로 알아보는 나의 카페 무드 유형. 12문항이면 바로 알 수 있어요.">
+<meta property="og:image" content="cafe-mood-balance-thumb.png">
+<meta property="og:image:width" content="900">
+<meta property="og:image:height" content="1260">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4595078545343262" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg:#FBF4EC; --paper:#FFFFFF; --ink:#2E2317; --sub:#8A7A66;
+  --line:#E9D9C4; --acc:#B5702F; --gold:#C8942C; --chip:rgba(46,35,23,.06); --r:14px; --bw:2px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;min-height:100vh;}
+.wrap{max-width:560px;margin:0 auto;padding:28px 18px 80px;}
+.back{display:inline-block;margin-bottom:18px;font-size:13px;font-weight:700;color:var(--sub);text-decoration:none;}
+.hero{text-align:center;padding:16px 0 24px;}
+.hero .em{font-size:52px;line-height:1;margin-bottom:12px;}
+.hero h1{font-size:22px;font-weight:900;margin-bottom:8px;letter-spacing:-.3px;word-break:keep-all;}
+.hero p{font-size:14px;color:var(--sub);line-height:1.65;}
+.start-btn{width:100%;padding:16px;border:0;border-radius:var(--r);background:var(--acc);color:#fff;
+  font-family:inherit;font-size:16px;font-weight:900;cursor:pointer;margin-top:20px;}
+.prog-wrap{margin-bottom:20px;}
+.prog-info{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;margin-bottom:8px;color:var(--sub);}
+.prog-track{height:8px;background:var(--chip);border-radius:999px;overflow:hidden;border:var(--bw) solid var(--line);}
+.prog-fill{height:100%;background:var(--acc);border-radius:999px;transition:width .25s ease;}
+.qcard{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:22px 18px;}
+.qnum{display:inline-block;padding:4px 10px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:11px;font-weight:800;margin-bottom:14px;}
+.qtext{font-size:18px;font-weight:800;line-height:1.5;margin-bottom:18px;word-break:keep-all;}
+.opts{display:grid;gap:10px;}
+.opt{width:100%;padding:13px 15px;border:var(--bw) solid var(--line);border-radius:10px;
+  background:#fff;font-family:inherit;font-size:14px;font-weight:600;text-align:left;cursor:pointer;
+  color:var(--ink);transition:all .15s ease;word-break:keep-all;}
+.opt:hover{background:var(--chip);border-color:var(--acc);}
+.opt:disabled{cursor:default;}
+.opt.pk{background:var(--chip);border-color:var(--acc);}
+#cap{background:var(--paper);border:var(--bw) solid var(--line);border-radius:var(--r);padding:24px 18px;margin-bottom:16px;}
+.res-header{text-align:center;padding:6px 0 16px;border-bottom:var(--bw) solid var(--line);margin-bottom:16px;}
+.res-em{font-size:56px;line-height:1;margin-bottom:10px;}
+.res-badge{display:inline-block;padding:6px 16px;background:var(--acc);color:#fff;border-radius:999px;
+  font-size:12.5px;font-weight:900;margin-bottom:12px;}
+.res-title{font-size:23px;font-weight:900;margin-bottom:6px;word-break:keep-all;}
+.res-tag{font-size:13.5px;color:var(--gold);font-weight:800;margin-bottom:2px;word-break:keep-all;}
+.res-desc{font-size:14.5px;line-height:1.8;color:var(--ink);text-align:left;margin-top:14px;}
+.traits{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;}
+.trait{padding:6px 12px;background:var(--chip);border-radius:999px;font-size:12px;font-weight:700;color:var(--acc);}
+.dist-wrap{margin-top:20px;}
+.dist-title{font-size:12.5px;font-weight:800;color:var(--sub);margin-bottom:10px;}
+.dist-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.dist-row .lab{width:96px;font-size:12px;font-weight:800;flex-shrink:0;}
+.dist-row .track{flex:1;height:10px;background:var(--chip);border-radius:999px;overflow:hidden;}
+.dist-row .fill{height:100%;background:var(--acc);border-radius:999px;transition:width .5s ease;}
+.dist-row.me .fill{background:var(--gold);}
+.dist-row .num{width:20px;text-align:right;font-size:11.5px;font-weight:800;color:var(--sub);}
+.footer-note{font-size:11px;color:var(--sub);text-align:center;margin-top:18px;}
+.stk{display:grid;gap:10px;}
+.btn{width:100%;padding:14px;border:var(--bw) solid var(--ink);border-radius:var(--r);background:#fff;
+  font-family:inherit;font-weight:800;font-size:14.5px;cursor:pointer;color:var(--ink);}
+.btn.fill{background:var(--ink);color:#fff;border-color:var(--ink);}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:center;justify-content:center;padding:20px;}
+.mo.on{display:flex;}
+.mb{background:#fff;border-radius:16px;padding:20px;max-width:340px;width:100%;text-align:center;}
+.mb img{width:100%;border-radius:10px;margin-bottom:12px;}
+.mb .cl{width:100%;padding:12px;border:0;border-radius:10px;background:var(--chip);font-family:inherit;font-weight:800;cursor:pointer;color:var(--ink);}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← 목록으로</a>
+  <div id="s1">
+    <div class="hero">
+      <div class="em">☕️</div>
+      <h1>나는 어떤 감성 카페가 어울릴까? 카페 무드 밸런스 테스트</h1>
+      <p>화이트 미니멀·빈티지·플랜테리어·레트로 다방·모던 브루잉, 취향으로 알아보는 나의 카페 무드 유형. 12문항이면 바로 알 수 있어요.</p>
+      <button class="start-btn" onclick="startQuiz()">테스트 시작하기</button>
+    </div>
+  </div>
+  <div id="s2" class="hidden">
+    <div class="prog-wrap">
+      <div class="prog-info"><span id="progLabel">1 / 12</span><span id="progPos"></span></div>
+      <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+    </div>
+    <div class="qcard">
+      <div class="qnum" id="qNum">Q1</div>
+      <div class="qtext" id="qText"></div>
+      <div class="opts" id="opts"></div>
+    </div>
+  </div>
+  <div id="s3" class="hidden">
+    <div id="cap">
+      <div class="res-header">
+        <div class="res-em" id="resEm"></div>
+        <div class="res-badge" id="resBadge"></div>
+        <div class="res-title" id="resTitle"></div>
+        <div class="res-tag" id="resTag"></div>
+      </div>
+      <div class="res-desc" id="resDesc"></div>
+      <div class="traits" id="resTraits"></div>
+      <div class="dist-wrap">
+        <div class="dist-title">📊 나의 카페 무드 분포</div>
+        <div id="distBox"></div>
+      </div>
+      <div class="footer-note">POWERED BY 테스트팩토리 · 재미로 봐주세요.</div>
+    </div>
+    <div class="stk">
+      <button class="btn fill" onclick="saveImg()">결과 이미지 저장하기</button>
+      <button class="btn" onclick="location.reload()">다시 풀기</button>
+      <button class="btn" onclick="location.href='index.html'">다른 테스트 보기</button>
+    </div>
+  </div>
+</div>
+<div class="mo" id="mo">
+  <div class="mb">
+    <div id="mw">이미지를 만들고 있어요...</div>
+    <button class="cl" onclick="document.getElementById('mo').classList.remove('on')">닫기</button>
+  </div>
+</div>
+<script>
+var POS = ["화이트 미니멀","빈티지 앤틱","플랜테리어 그린","레트로 다방","모던 브루잉"];
+var QUESTIONS = [
+{"q":"카페에 들어갔을 때 가장 먼저 눈에 들어오는 건?","options":["화이트톤의 깔끔한 인테리어","손때 묻은 빈티지 소품들","가득한 초록 식물들","레트로한 손글씨 메뉴판","감각적인 원두 로스팅 기계"]},
+{"q":"좋아하는 카페 좌석은?","options":["창가의 심플한 1인석","낡은 나무 테이블과 의자","식물로 둘러싸인 좌석","폭신한 벨벳 소파","바 스탠딩 좌석"]},
+{"q":"주문하는 음료 스타일은?","options":["아메리카노나 화이트 라떼","핸드드립 원두커피","허브티나 그린 스무디","쌍화차나 전통 음료","스페셜티 싱글오리진 커피"]},
+{"q":"카페에서 듣고 싶은 음악은?","options":["잔잔한 로파이 음악","올드팝이나 재즈","어쿠스틱 자연 음악","7080 가요","인디음악이나 실험적인 사운드"]},
+{"q":"카페 조명 취향은?","options":["밝고 화사한 자연광","따뜻한 노란 조명","은은한 그린빛 감도는 조명","레트로 네온사인 조명","미니멀한 펜던트 조명"]},
+{"q":"친구랑 카페 갈 때 나의 역할은?","options":["깔끔하게 자리 먼저 잡는 사람","숨은 감성 카페 찾아내는 사람","사진 예쁘게 찍어주는 사람","추억 이야기 꺼내는 사람","메뉴 추천해주는 사람"]},
+{"q":"카페에서 사진을 찍는다면?","options":["여백 많은 미니멀한 컷","필름카메라st 빈티지 컷","식물과 함께 담은 초록 컷","레트로 소품과 함께 찍는 컷","라떼아트나 브루잉 과정 컷"]},
+{"q":"나에게 카페란?","options":["잠깐의 여유를 찾는 곳","옛 감성을 느끼는 곳","숨통 트이는 힐링 공간","추억을 소환하는 공간","커피 본연의 맛을 즐기는 곳"]},
+{"q":"좋아하는 디저트는?","options":["심플한 크루아상이나 스콘","클래식한 캐러멜 마키아토 케이크","말차나 곡물 디저트","옛날 팥빙수나 토스트","시그니처 홈메이드 디저트"]},
+{"q":"인테리어에서 가장 끌리는 소재는?","options":["화이트 대리석과 유리","짙은 원목과 가죽","라탄과 식물 소재","레트로 타일과 조명","콘크리트와 스틸 소재"]},
+{"q":"카페에서 시간을 보내는 방식은?","options":["노트북으로 집중해서 작업","혼자 책 읽으며 사색","여유롭게 멍때리기","친구와 옛날 얘기 나누기","커피 맛 음미하며 대화"]},
+{"q":"이상적인 카페 위치는?","options":["도심 속 조용한 골목","오래된 동네 골목길","숲이나 정원이 보이는 곳","추억의 옛날 시장통","감각적인 로스터리 거리"]}
+];
+var RESULTS = [
+{"name":"화이트 미니멀 카페","emoji":"🤍","tagline":"여백이 주는 편안함","color":"#8FA0B8","desc":"불필요한 걸 덜어낸 깔끔한 공간에서 마음이 편안해지는 타입이에요. 화이트톤의 여백과 자연광이 잘 드는 창가 자리를 좋아하고, 복잡한 하루도 이런 공간에서 정리가 되는 느낌을 받아요. 심플하지만 그 안에서 나만의 여유를 찾는 편이에요.","traits":["여백의 미학","차분한 집중력","자연광 선호","심플 라이프"]},
+{"name":"빈티지 앤틱 카페","emoji":"📻","tagline":"세월이 담긴 깊은 멋","color":"#8B6F47","desc":"손때 묻은 오래된 소품과 낡은 나무 가구에서 편안함을 느끼는 타입이에요. 유행보다는 시간이 쌓인 것들의 깊은 멋을 좋아하고, 핸드드립 커피처럼 정성이 담긴 걸 즐기는 편이에요. 조용히 앉아 있어도 그 자체로 분위기 있는 사람이에요.","traits":["깊은 감성","클래식한 취향","정성 중시","여유로운 무드"]},
+{"name":"플랜테리어 그린 카페","emoji":"🌿","tagline":"초록이 주는 숨통","color":"#6B9B5E","desc":"식물이 가득한 공간에서 숨통이 트이는 걸 느끼는 타입이에요. 자연스러운 것, 건강한 것에 자연스럽게 끌리고, 복잡한 도심 속에서도 초록빛 힐링 공간을 찾아다니는 편이에요. 함께 있으면 마음이 편안해진다는 얘기를 자주 들어요.","traits":["힐링 추구","자연 친화적","편안한 존재감","건강한 취향"]},
+{"name":"레트로 다방 카페","emoji":"☕️","tagline":"추억을 부르는 그 시절 감성","color":"#C0435B","desc":"옛날 감성이 담긴 소품과 추억의 메뉴에서 특별한 재미를 느끼는 타입이에요. 새로운 것보다 정겹고 그리운 분위기를 더 좋아하고, 친구들과 옛날 이야기를 나누며 웃는 시간을 소중히 여겨요. 어디서든 분위기 메이커 역할을 자주 맡는 편이에요.","traits":["정겨운 매력","추억 애호가","분위기 메이커","레트로 감성"]},
+{"name":"모던 브루잉 스탠드 카페","emoji":"⚙️","tagline":"커피 본연에 진심인 감각파","color":"#4A4A4A","desc":"커피 맛 자체에 진심인 감각파 타입이에요. 트렌디한 원두와 브루잉 방식에 관심이 많고, 미니멀하지만 세련된 공간을 선호해요. 취향이 확실해서 좋아하는 걸 고를 때 망설임이 없는 편이에요.","traits":["확실한 취향","트렌디한 감각","미니멀 선호","전문가적 안목"]}
+];
+
+var qi=0, counts=[0,0,0,0,0];
+function show(id){ ['s1','s2','s3'].forEach(function(s){ document.getElementById(s).className=s===id?'':'hidden'; }); }
+function startQuiz(){ qi=0; counts=[0,0,0,0,0]; show('s2'); renderQ(); }
+function renderQ(){
+  var q=QUESTIONS[qi], total=QUESTIONS.length;
+  document.getElementById('progLabel').textContent=(qi+1)+' / '+total;
+  document.getElementById('progFill').style.width=Math.round((qi)/total*100)+'%';
+  document.getElementById('qNum').textContent='Q'+(qi+1);
+  document.getElementById('qText').textContent=q.q;
+  var opts=document.getElementById('opts');
+  opts.innerHTML='';
+  q.options.forEach(function(opt,i){
+    var b=document.createElement('button');
+    b.className='opt'; b.textContent=opt;
+    b.onclick=function(){ pick(i); };
+    opts.appendChild(b);
+  });
+}
+function pick(i){
+  var btns=document.querySelectorAll('.opt');
+  btns.forEach(function(b){ b.disabled=true; });
+  btns[i].className='opt pk';
+  counts[i]++;
+  setTimeout(function(){ qi++; if(qi<QUESTIONS.length){ renderQ(); } else { showResult(); } }, 260);
+}
+function showResult(){
+  show('s3');
+  var best=0;
+  for(var i=1;i<counts.length;i++){ if(counts[i]>counts[best]) best=i; }
+  var r=RESULTS[best];
+  document.getElementById('resEm').textContent=r.emoji;
+  document.getElementById('resBadge').textContent=POS[best]+' 유형';
+  document.getElementById('resBadge').style.background=r.color;
+  document.getElementById('resTitle').textContent=r.name;
+  document.getElementById('resTag').textContent=r.tagline;
+  document.getElementById('resTag').style.color=r.color;
+  document.getElementById('resDesc').textContent=r.desc;
+  document.getElementById('resTraits').innerHTML=r.traits.map(function(t){return '<span class="trait">#'+t+'</span>';}).join('');
+  var total=QUESTIONS.length;
+  var distHtml='';
+  POS.forEach(function(p,i){
+    var pct=Math.round(counts[i]/total*100);
+    distHtml+='<div class="dist-row'+(i===best?' me':'')+'"><div class="lab">'+p+'</div>'+
+      '<div class="track"><div class="fill" style="width:'+pct+'%"></div></div>'+
+      '<div class="num">'+counts[i]+'</div></div>';
+  });
+  document.getElementById('distBox').innerHTML=distHtml;
+}
+async function saveImg(){
+  document.getElementById('mo').classList.add('on');
+  document.getElementById('mw').innerHTML='이미지를 만들고 있어요...';
+  try{
+    if(document.fonts) await document.fonts.ready;
+    var cv=await html2canvas(document.getElementById('cap'),{backgroundColor:'#FFFFFF',scale:2});
+    var img=new Image(); img.src=cv.toDataURL('image/png');
+    document.getElementById('mw').innerHTML='';
+    document.getElementById('mw').appendChild(img);
+    var p=document.createElement('p'); p.style.cssText='font-size:12px;color:#888;margin-top:8px;';
+    p.textContent='이미지를 길게 눌러서 저장해주세요.';
+    document.getElementById('mw').appendChild(p);
+  }catch(e){ document.getElementById('mw').textContent='이미지 생성에 실패했어요.'; }
+}
+
+</script>
+</body>
+</html>
